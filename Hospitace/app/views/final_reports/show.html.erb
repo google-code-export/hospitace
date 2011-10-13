@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Text:</b>
+  <%= @final_report.text %>
+</p>
+
+<p>
+  <b>Created:</b>
+  <%= @final_report.created %>
+</p>
+
+<p>
+  <b>Observation:</b>
+  <%= @final_report.observation %>
+</p>
+
+
+<%= link_to 'Edit', edit_final_report_path(@final_report) %> |
+<%= link_to 'Back', final_reports_path %>

@@ -1,0 +1,21 @@
+<h1>Listing observations</h1>
+
+<table>
+  <tr>
+    <th>id</th>
+    <th>Name</th>
+    <th>Code</th>
+    <th></th>
+  </tr>
+
+<% @courses.each do |course| %>
+  <tr>
+    <td><%= course.id %></td>
+    <td><%= course.name %></td>
+    <td><%= course.code %></td>
+    <td><%= link_to 'Show', course %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
