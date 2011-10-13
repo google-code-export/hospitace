@@ -13,7 +13,11 @@
     <td><%= course.id %></td>
     <td><%= course.name %></td>
     <td><%= course.code %></td>
-    <td><%= link_to 'Show', course %></td>
+    <td><%= link_to "detail", courses_path(:id => course.code) %></td>
+    
+    
+    
+    
   </tr>
 <% end %>
 </table>

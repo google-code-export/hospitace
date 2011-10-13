@@ -7,8 +7,19 @@ Hospitace::Application.routes.draw do
 
   resources :observations
   
-  resources :courses, :only => [:index, :show]
 
+  #controller :courses do
+   # match 'blog'     => :index
+   # match 'blog/:id'   => :show, constraints => {
+   #  :id       => /[0-9A-Z]+/
+  #  }
+ # end
+
+  controller 'courses' do
+    match 'blog/:id' => :show, :constraints => {
+      :id => /[0-9A-Z]+/i
+    }
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -66,4 +77,5 @@ Hospitace::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   match ':controller(/:action(/:id(.:format)))'
+  
 end
