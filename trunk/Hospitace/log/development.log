@@ -1,0 +1,1896 @@
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2011-10-11 18:46:01 +0200
+Served asset /rails.png - 200 OK (3ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2011-10-11 18:54:23 +0200
+Served asset /rails.png - 200 OK (2ms)
+  [1m[36m (0.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (122.3ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35m (88.2ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateObservations (20111011185316)
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateObservations (20111011185316)
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "observations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "announced" boolean, "day" date, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20111011185316')
+  [1m[36m (0.2ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("observations")[0m
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateObservations (20111011185316)
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("observations")
+  [1m[36m (0.2ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (165.3ms)[0m  CREATE TABLE "observations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "announced" boolean, "day" date, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (64.3ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (102.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (128.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111011185316')[0m
+  [1m[36m (0.3ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (136.6ms)[0m  CREATE TABLE "observations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "announced" boolean, "day" date, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (78.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36m (111.5ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (76.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111011185316')[0m
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (188.1ms)[0m  [1mCREATE TABLE "observations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "announced" boolean, "day" date, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (72.7ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35m (84.7ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (69.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111011185316')
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2011-10-13 10:17:16 +0200
+Served asset /rails.png - 200 OK (29ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-13 10:24:37 +0200
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (39.0ms)
+Compiled application.css  (2ms)  (pid 3302)
+Compiled final_reports.css  (12ms)  (pid 3302)
+Compiled home.css  (1ms)  (pid 3302)
+Compiled observations.css  (1ms)  (pid 3302)
+Compiled scaffolds.css  (10ms)  (pid 3302)
+Compiled application.js  (15ms)  (pid 3302)
+Compiled jquery.js  (19ms)  (pid 3302)
+Compiled jquery_ujs.js  (19ms)  (pid 3302)
+Compiled final_reports.js  (63ms)  (pid 3302)
+Compiled home.js  (0ms)  (pid 3302)
+Compiled observations.js  (0ms)  (pid 3302)
+Completed 200 OK in 358ms (Views: 356.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/final_reports.css?body=1" for 127.0.0.1 at 2011-10-13 10:24:38 +0200
+Served asset /final_reports.css - 200 OK (6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-13 10:24:39 +0200
+Served asset /application.css - 200 OK (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-13 10:24:39 +0200
+Served asset /home.css - 200 OK (1ms)
+
+
+Started GET "/assets/observations.css?body=1" for 127.0.0.1 at 2011-10-13 10:24:39 +0200
+Served asset /observations.css - 200 OK (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-13 10:24:39 +0200
+Served asset /jquery.js - 200 OK (3ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-13 10:24:39 +0200
+Served asset /scaffolds.css - 200 OK (1ms)
+
+
+Started GET "/assets/final_reports.js?body=1" for 127.0.0.1 at 2011-10-13 10:24:39 +0200
+Served asset /final_reports.js - 200 OK (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-13 10:24:39 +0200
+Served asset /jquery_ujs.js - 200 OK (2ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-13 10:24:39 +0200
+Served asset /home.js - 200 OK (2ms)
+
+
+Started GET "/assets/observations.js?body=1" for 127.0.0.1 at 2011-10-13 10:24:39 +0200
+Served asset /observations.js - 200 OK (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-13 10:24:39 +0200
+Served asset /application.js - 200 OK (0ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2011-10-13 10:24:44 +0200
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-13 10:24:44 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/final_reports.css?body=1" for 127.0.0.1 at 2011-10-13 10:24:44 +0200
+Served asset /final_reports.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-13 10:24:44 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-13 10:24:44 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-13 10:24:44 +0200
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/observations.css?body=1" for 127.0.0.1 at 2011-10-13 10:24:44 +0200
+Served asset /observations.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/observations.js?body=1" for 127.0.0.1 at 2011-10-13 10:24:44 +0200
+Served asset /observations.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-13 10:24:44 +0200
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-13 10:24:44 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/final_reports.js?body=1" for 127.0.0.1 at 2011-10-13 10:24:44 +0200
+Served asset /final_reports.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-13 10:24:44 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-13 10:24:47 +0200
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-13 10:24:47 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-13 10:24:47 +0200
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-13 10:24:47 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-13 10:24:47 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/observations.css?body=1" for 127.0.0.1 at 2011-10-13 10:24:47 +0200
+Served asset /observations.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/final_reports.css?body=1" for 127.0.0.1 at 2011-10-13 10:24:47 +0200
+Served asset /final_reports.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-13 10:24:47 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/final_reports.js?body=1" for 127.0.0.1 at 2011-10-13 10:24:47 +0200
+Served asset /final_reports.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/observations.js?body=1" for 127.0.0.1 at 2011-10-13 10:24:47 +0200
+Served asset /observations.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-13 10:24:47 +0200
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-13 10:24:47 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/observation" for 127.0.0.1 at 2011-10-13 10:25:07 +0200
+
+ActionController::RoutingError (No route matches [GET] "/observation"):
+  
+
+Rendered /home/osman/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/observations" for 127.0.0.1 at 2011-10-13 10:25:26 +0200
+  Processing by ObservationsController#index as HTML
+  [1m[36mObservation Load (0.2ms)[0m  [1mSELECT "observations".* FROM "observations" [0m
+Rendered observations/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 50ms (Views: 49.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/final_reports.css?body=1" for 127.0.0.1 at 2011-10-13 10:25:26 +0200
+Served asset /final_reports.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-13 10:25:26 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-13 10:25:26 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-13 10:25:26 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-13 10:25:26 +0200
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-13 10:25:26 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/observations.css?body=1" for 127.0.0.1 at 2011-10-13 10:25:26 +0200
+Served asset /observations.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/final_reports.js?body=1" for 127.0.0.1 at 2011-10-13 10:25:26 +0200
+Served asset /final_reports.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/observations.js?body=1" for 127.0.0.1 at 2011-10-13 10:25:26 +0200
+Served asset /observations.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-13 10:25:26 +0200
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-13 10:25:26 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/observations/new" for 127.0.0.1 at 2011-10-13 10:25:30 +0200
+  Processing by ObservationsController#new as HTML
+Rendered observations/_form.html.erb (13.7ms)
+Rendered observations/new.html.erb within layouts/application (24.5ms)
+Completed 200 OK in 33ms (Views: 32.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-13 10:25:30 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-13 10:25:30 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-13 10:25:30 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/final_reports.css?body=1" for 127.0.0.1 at 2011-10-13 10:25:30 +0200
+Served asset /final_reports.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/observations.css?body=1" for 127.0.0.1 at 2011-10-13 10:25:30 +0200
+Served asset /observations.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-13 10:25:30 +0200
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-13 10:25:30 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/final_reports.js?body=1" for 127.0.0.1 at 2011-10-13 10:25:30 +0200
+Served asset /final_reports.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/observations.js?body=1" for 127.0.0.1 at 2011-10-13 10:25:30 +0200
+Served asset /observations.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-13 10:25:30 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-13 10:25:30 +0200
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-13 10:57:48 +0200
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (13.3ms)
+Compiled application.css  (2ms)  (pid 11268)
+Compiled courses.css  (6ms)  (pid 11268)
+Cache for Asset (application.js) is stale
+/home/osman/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/gems/1.9.1/gems/jquery-rails-1.0.14/vendor/assets/javascripts/jquery.js isn't in paths: /home/osman/NetBeansProjects/Hospitace/app/assets/images, /home/osman/NetBeansProjects/Hospitace/app/assets/javascripts, /home/osman/NetBeansProjects/Hospitace/app/assets/stylesheets, /home/osman/NetBeansProjects/Hospitace/vendor/assets/stylesheets, /home/osman/.rvm/gems/ruby-1.9.2-p290/gems/jquery-rails-1.0.14/vendor/assets/javascripts
+Compiled application.js  (20ms)  (pid 11268)
+Compiled jquery.js  (43ms)  (pid 11268)
+Compiled jquery_ujs.js  (1ms)  (pid 11268)
+Compiled courses.js  (78ms)  (pid 11268)
+Completed 200 OK in 278ms (Views: 277.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-13 10:57:49 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/courses.css?body=1" for 127.0.0.1 at 2011-10-13 10:57:49 +0200
+Served asset /courses.css - 200 OK (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-13 10:57:49 +0200
+Served asset /jquery.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/final_reports.css?body=1" for 127.0.0.1 at 2011-10-13 10:57:49 +0200
+Served asset /final_reports.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-13 10:57:49 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/observations.css?body=1" for 127.0.0.1 at 2011-10-13 10:57:49 +0200
+Served asset /observations.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-13 10:57:49 +0200
+Served asset /home.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-13 10:57:49 +0200
+Served asset /scaffolds.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/courses.js?body=1" for 127.0.0.1 at 2011-10-13 10:57:49 +0200
+Served asset /courses.js - 200 OK (2ms)
+
+
+Started GET "/assets/final_reports.js?body=1" for 127.0.0.1 at 2011-10-13 10:57:49 +0200
+Served asset /final_reports.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-13 10:57:49 +0200
+Served asset /home.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/observations.js?body=1" for 127.0.0.1 at 2011-10-13 10:57:49 +0200
+Served asset /observations.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-13 10:57:49 +0200
+Served asset /application.js - 200 OK (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-13 11:20:25 +0200
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 9ms (Views: 8.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-13 11:20:25 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-13 11:20:25 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/courses.css?body=1" for 127.0.0.1 at 2011-10-13 11:20:25 +0200
+Served asset /courses.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/observations.css?body=1" for 127.0.0.1 at 2011-10-13 11:20:25 +0200
+Served asset /observations.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-13 11:20:25 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/final_reports.css?body=1" for 127.0.0.1 at 2011-10-13 11:20:25 +0200
+Served asset /final_reports.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-13 11:20:25 +0200
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-13 11:20:25 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/courses.js?body=1" for 127.0.0.1 at 2011-10-13 11:20:25 +0200
+Served asset /courses.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-13 11:20:25 +0200
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/final_reports.js?body=1" for 127.0.0.1 at 2011-10-13 11:20:25 +0200
+Served asset /final_reports.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/observations.js?body=1" for 127.0.0.1 at 2011-10-13 11:20:25 +0200
+Served asset /observations.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-13 11:20:25 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-13 11:42:53 +0200
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (45.0ms)
+Cache for Asset (application.js) is stale
+/home/osman/.rvm/gems/ruby-1.9.2-p290/gems/jquery-rails-1.0.14/vendor/assets/javascripts/jquery.js isn't in paths: /home/osman/NetBeansProjects/Hospitace/app/assets/images, /home/osman/NetBeansProjects/Hospitace/app/assets/javascripts, /home/osman/NetBeansProjects/Hospitace/app/assets/stylesheets, /home/osman/NetBeansProjects/Hospitace/vendor/assets/stylesheets, /home/osman/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/gems/1.9.1/gems/jquery-rails-1.0.14/vendor/assets/javascripts
+Compiled application.js  (4ms)  (pid 23070)
+Completed 200 OK in 155ms (Views: 154.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-13 11:42:54 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/observations.css?body=1" for 127.0.0.1 at 2011-10-13 11:42:54 +0200
+Served asset /observations.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/final_reports.css?body=1" for 127.0.0.1 at 2011-10-13 11:42:54 +0200
+Served asset /final_reports.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-13 11:42:54 +0200
+Served asset /home.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/courses.css?body=1" for 127.0.0.1 at 2011-10-13 11:42:54 +0200
+Served asset /courses.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-13 11:42:54 +0200
+Served asset /scaffolds.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-13 11:42:54 +0200
+Served asset /jquery.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-13 11:42:54 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/courses.js?body=1" for 127.0.0.1 at 2011-10-13 11:42:54 +0200
+Served asset /courses.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/final_reports.js?body=1" for 127.0.0.1 at 2011-10-13 11:42:54 +0200
+Served asset /final_reports.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-13 11:42:54 +0200
+Served asset /home.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/observations.js?body=1" for 127.0.0.1 at 2011-10-13 11:42:54 +0200
+Served asset /observations.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-13 11:42:54 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/observations" for 127.0.0.1 at 2011-10-13 11:44:18 +0200
+  Processing by ObservationsController#index as HTML
+  [1m[36mObservation Load (0.2ms)[0m  [1mSELECT "observations".* FROM "observations" [0m
+Rendered observations/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-13 11:44:18 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/courses.css?body=1" for 127.0.0.1 at 2011-10-13 11:44:18 +0200
+Served asset /courses.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-13 11:44:18 +0200
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/final_reports.css?body=1" for 127.0.0.1 at 2011-10-13 11:44:18 +0200
+Served asset /final_reports.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/observations.css?body=1" for 127.0.0.1 at 2011-10-13 11:44:18 +0200
+Served asset /observations.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-13 11:44:18 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-13 11:44:18 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-13 11:44:18 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/courses.js?body=1" for 127.0.0.1 at 2011-10-13 11:44:18 +0200
+Served asset /courses.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/final_reports.js?body=1" for 127.0.0.1 at 2011-10-13 11:44:18 +0200
+Served asset /final_reports.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-13 11:44:18 +0200
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/observations.js?body=1" for 127.0.0.1 at 2011-10-13 11:44:18 +0200
+Served asset /observations.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-13 11:44:18 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2011-10-13 11:44:56 +0200
+  Processing by CoursesController#index as HTML
+Completed 500 Internal Server Error in 1ms
+
+NameError (uninitialized constant CoursesController::Course):
+  app/controllers/courses_controller.rb:5:in `index'
+
+Rendered /home/osman/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /home/osman/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+Rendered /home/osman/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.5ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2011-10-13 11:46:16 +0200
+
+LoadError (no such file to load -- yajl):
+  lib/kosapi.rb:2:in `<top (required)>'
+  app/controllers/courses_controller.rb:1:in `<top (required)>'
+
+Rendered /home/osman/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+Rendered /home/osman/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+Rendered /home/osman/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (5.4ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2011-10-13 11:48:58 +0200
+
+LoadError (no such file to load -- yajl):
+  lib/kosapi.rb:2:in `<top (required)>'
+  app/controllers/courses_controller.rb:1:in `<top (required)>'
+
+Rendered /home/osman/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /home/osman/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+Rendered /home/osman/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.3ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2011-10-13 11:49:00 +0200
+
+LoadError (no such file to load -- yajl):
+  lib/kosapi.rb:2:in `<top (required)>'
+  app/controllers/courses_controller.rb:1:in `<top (required)>'
+
+Rendered /home/osman/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /home/osman/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+Rendered /home/osman/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.3ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2011-10-13 11:50:06 +0200
+
+LoadError (no such file to load -- yajl):
+  lib/kosapi.rb:3:in `<top (required)>'
+  app/controllers/courses_controller.rb:1:in `<top (required)>'
+
+Rendered /home/osman/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /home/osman/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+Rendered /home/osman/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.5ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2011-10-13 11:54:25 +0200
+
+LoadError (no such file to load -- yajl):
+  lib/kosapi.rb:2:in `<top (required)>'
+  app/controllers/courses_controller.rb:1:in `<top (required)>'
+
+Rendered /home/osman/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /home/osman/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+Rendered /home/osman/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.5ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2011-10-13 11:54:40 +0200
+
+LoadError (no such file to load -- yajl):
+  lib/kosapi.rb:2:in `<top (required)>'
+  app/controllers/courses_controller.rb:1:in `<top (required)>'
+
+Rendered /home/osman/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+Rendered /home/osman/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+Rendered /home/osman/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (5.3ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2011-10-13 11:54:43 +0200
+
+LoadError (no such file to load -- yajl):
+  lib/kosapi.rb:2:in `<top (required)>'
+  app/controllers/courses_controller.rb:1:in `<top (required)>'
+
+Rendered /home/osman/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (6.4ms)
+Rendered /home/osman/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+Rendered /home/osman/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.1ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2011-10-13 11:54:43 +0200
+
+LoadError (no such file to load -- yajl):
+  lib/kosapi.rb:2:in `<top (required)>'
+  app/controllers/courses_controller.rb:1:in `<top (required)>'
+
+Rendered /home/osman/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /home/osman/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+Rendered /home/osman/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/gems/1.9.1/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.5ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2011-10-13 12:15:53 +0200
+  Processing by CoursesController#index as HTML
+Completed 500 Internal Server Error in 1ms
+
+NameError (uninitialized constant CoursesController::Course):
+  app/controllers/courses_controller.rb:8:in `index'
+
+Rendered /home/osman/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /home/osman/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+Rendered /home/osman/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (49.9ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2011-10-13 12:21:29 +0200
+  Processing by CoursesController#index as HTML
+Rendered courses/index.html.erb within layouts/application (0.3ms)
+Cache for Asset (application.js) is stale
+/home/osman/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/gems/1.9.1/gems/jquery-rails-1.0.14/vendor/assets/javascripts/jquery.js isn't in paths: /home/osman/NetBeansProjects/Hospitace/app/assets/images, /home/osman/NetBeansProjects/Hospitace/app/assets/javascripts, /home/osman/NetBeansProjects/Hospitace/app/assets/stylesheets, /home/osman/NetBeansProjects/Hospitace/vendor/assets/stylesheets, /home/osman/.rvm/gems/ruby-1.9.2-p290/gems/jquery-rails-1.0.14/vendor/assets/javascripts
+Compiled application.js  (4ms)  (pid 16796)
+Completed 200 OK in 3898ms (Views: 36.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/final_reports.css?body=1" for 127.0.0.1 at 2011-10-13 12:21:32 +0200
+Served asset /final_reports.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/courses.css?body=1" for 127.0.0.1 at 2011-10-13 12:21:32 +0200
+Served asset /courses.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-13 12:21:32 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-13 12:21:32 +0200
+Served asset /home.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-13 12:21:32 +0200
+Served asset /scaffolds.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/observations.css?body=1" for 127.0.0.1 at 2011-10-13 12:21:33 +0200
+Served asset /observations.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-13 12:21:33 +0200
+Served asset /jquery.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/courses.js?body=1" for 127.0.0.1 at 2011-10-13 12:21:33 +0200
+Served asset /courses.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-13 12:21:33 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/final_reports.js?body=1" for 127.0.0.1 at 2011-10-13 12:21:33 +0200
+Served asset /final_reports.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-13 12:21:33 +0200
+Served asset /home.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/observations.js?body=1" for 127.0.0.1 at 2011-10-13 12:21:33 +0200
+Served asset /observations.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-13 12:21:33 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2011-10-13 12:36:18 +0200
+  Processing by CoursesController#index as HTML
+Rendered courses/index.html.erb within layouts/application (50.6ms)
+Completed 500 Internal Server Error in 56ms
+
+ActionView::Template::Error (undefined method `uri' for #<KOSapi::Course:0x000000066a0968>):
+    12: <% @courses.each do |course| %>
+    13:   <tr>
+    14:     <td><%= course.name %></td>
+    15:     <td><%= course.uri %></td>
+    16:     <td><%= link_to 'Show', course_path %></td>
+    17:   </tr>
+    18: <% end %>
+  app/views/courses/index.html.erb:15:in `block in _app_views_courses_index_html_erb__2172371095110480610_63002260'
+  app/views/courses/index.html.erb:12:in `each'
+  app/views/courses/index.html.erb:12:in `_app_views_courses_index_html_erb__2172371095110480610_63002260'
+  app/controllers/courses_controller.rb:10:in `index'
+
+Rendered /home/osman/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /home/osman/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+Rendered /home/osman/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (4.5ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2011-10-13 12:38:56 +0200
+  Processing by CoursesController#index as HTML
+Rendered courses/index.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 8ms
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"courses"}):
+    13:     <td><%= course.id %></td>
+    14:     <td><%= course.name %></td>
+    15:     <td><%= course.code %></td>
+    16:     <td><%= link_to 'Show', course_path %></td>
+    17:   </tr>
+    18: <% end %>
+    19: </table>
+  app/views/courses/index.html.erb:16:in `block in _app_views_courses_index_html_erb__2172371095110480610_62100380'
+  app/views/courses/index.html.erb:11:in `each'
+  app/views/courses/index.html.erb:11:in `_app_views_courses_index_html_erb__2172371095110480610_62100380'
+  app/controllers/courses_controller.rb:10:in `index'
+
+Rendered /home/osman/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/courses/show" for 127.0.0.1 at 2011-10-13 12:39:18 +0200
+  Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"show"}
+Rendered courses/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 54ms (Views: 9.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-13 12:39:18 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-13 12:39:18 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/courses.css?body=1" for 127.0.0.1 at 2011-10-13 12:39:18 +0200
+Served asset /courses.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/observations.css?body=1" for 127.0.0.1 at 2011-10-13 12:39:18 +0200
+Served asset /observations.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-13 12:39:18 +0200
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/final_reports.css?body=1" for 127.0.0.1 at 2011-10-13 12:39:18 +0200
+Served asset /final_reports.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-13 12:39:18 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-13 12:39:18 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/courses.js?body=1" for 127.0.0.1 at 2011-10-13 12:39:18 +0200
+Served asset /courses.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/final_reports.js?body=1" for 127.0.0.1 at 2011-10-13 12:39:18 +0200
+Served asset /final_reports.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-13 12:39:18 +0200
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/observations.js?body=1" for 127.0.0.1 at 2011-10-13 12:39:18 +0200
+Served asset /observations.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-13 12:39:18 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/courses/show/X39DIP" for 127.0.0.1 at 2011-10-13 12:39:33 +0200
+
+ActionController::RoutingError (No route matches [GET] "/courses/show/X39DIP"):
+  
+
+Rendered /home/osman/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/courses/show/" for 127.0.0.1 at 2011-10-13 12:43:54 +0200
+  Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"show"}
+Rendered courses/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 166ms (Views: 9.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-13 12:43:54 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/courses.css?body=1" for 127.0.0.1 at 2011-10-13 12:43:54 +0200
+Served asset /courses.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-13 12:43:54 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-13 12:43:54 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-13 12:43:54 +0200
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/observations.css?body=1" for 127.0.0.1 at 2011-10-13 12:43:54 +0200
+Served asset /observations.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/final_reports.css?body=1" for 127.0.0.1 at 2011-10-13 12:43:54 +0200
+Served asset /final_reports.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-13 12:43:54 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/courses.js?body=1" for 127.0.0.1 at 2011-10-13 12:43:54 +0200
+Served asset /courses.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-13 12:43:54 +0200
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/final_reports.js?body=1" for 127.0.0.1 at 2011-10-13 12:43:54 +0200
+Served asset /final_reports.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/observations.js?body=1" for 127.0.0.1 at 2011-10-13 12:43:54 +0200
+Served asset /observations.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-13 12:43:54 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/courses/show/11882804" for 127.0.0.1 at 2011-10-13 12:44:40 +0200
+
+ActionController::RoutingError (No route matches [GET] "/courses/show/11882804"):
+  
+
+Rendered /home/osman/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/courses/11882804" for 127.0.0.1 at 2011-10-13 12:44:51 +0200
+  Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"11882804"}
+Rendered courses/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 11ms (Views: 9.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-13 12:44:51 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/courses.css?body=1" for 127.0.0.1 at 2011-10-13 12:44:51 +0200
+Served asset /courses.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-13 12:44:51 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/observations.css?body=1" for 127.0.0.1 at 2011-10-13 12:44:51 +0200
+Served asset /observations.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-13 12:44:51 +0200
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-13 12:44:51 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/final_reports.css?body=1" for 127.0.0.1 at 2011-10-13 12:44:51 +0200
+Served asset /final_reports.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-13 12:44:51 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/courses.js?body=1" for 127.0.0.1 at 2011-10-13 12:44:51 +0200
+Served asset /courses.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/final_reports.js?body=1" for 127.0.0.1 at 2011-10-13 12:44:51 +0200
+Served asset /final_reports.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/observations.js?body=1" for 127.0.0.1 at 2011-10-13 12:44:51 +0200
+Served asset /observations.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-13 12:44:51 +0200
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-13 12:44:51 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/courses/X39ITT2" for 127.0.0.1 at 2011-10-13 12:44:58 +0200
+  Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"X39ITT2"}
+Rendered courses/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 11ms (Views: 8.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/observations.css?body=1" for 127.0.0.1 at 2011-10-13 12:44:58 +0200
+Served asset /observations.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/courses.css?body=1" for 127.0.0.1 at 2011-10-13 12:44:58 +0200
+Served asset /courses.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/final_reports.css?body=1" for 127.0.0.1 at 2011-10-13 12:44:58 +0200
+Served asset /final_reports.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-13 12:44:58 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-13 12:44:58 +0200
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-13 12:44:58 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-13 12:44:58 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-13 12:44:58 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/final_reports.js?body=1" for 127.0.0.1 at 2011-10-13 12:44:58 +0200
+Served asset /final_reports.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/courses.js?body=1" for 127.0.0.1 at 2011-10-13 12:44:58 +0200
+Served asset /courses.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-13 12:44:58 +0200
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-13 12:44:58 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/observations.js?body=1" for 127.0.0.1 at 2011-10-13 12:44:58 +0200
+Served asset /observations.js - 304 Not Modified (0ms)
+
+
+Started GET "/courses/X39ITT2" for 127.0.0.1 at 2011-10-13 12:45:12 +0200
+  Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"X39ITT2"}
+Rendered courses/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 11ms (Views: 9.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-13 12:45:12 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/courses.css?body=1" for 127.0.0.1 at 2011-10-13 12:45:12 +0200
+Served asset /courses.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-13 12:45:12 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-13 12:45:12 +0200
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/final_reports.css?body=1" for 127.0.0.1 at 2011-10-13 12:45:12 +0200
+Served asset /final_reports.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/observations.css?body=1" for 127.0.0.1 at 2011-10-13 12:45:12 +0200
+Served asset /observations.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/observations.js?body=1" for 127.0.0.1 at 2011-10-13 12:45:12 +0200
+Served asset /observations.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-13 12:45:12 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/final_reports.js?body=1" for 127.0.0.1 at 2011-10-13 12:45:12 +0200
+Served asset /final_reports.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/courses.js?body=1" for 127.0.0.1 at 2011-10-13 12:45:12 +0200
+Served asset /courses.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-13 12:45:12 +0200
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-13 12:45:12 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-13 12:45:12 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/courses/X39ITT2" for 127.0.0.1 at 2011-10-13 12:45:15 +0200
+  Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"X39ITT2"}
+Rendered courses/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 11ms (Views: 8.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-13 12:45:15 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-13 12:45:15 +0200
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-13 12:45:15 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/observations.css?body=1" for 127.0.0.1 at 2011-10-13 12:45:15 +0200
+Served asset /observations.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/courses.css?body=1" for 127.0.0.1 at 2011-10-13 12:45:15 +0200
+Served asset /courses.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/final_reports.css?body=1" for 127.0.0.1 at 2011-10-13 12:45:15 +0200
+Served asset /final_reports.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-13 12:45:15 +0200
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-13 12:45:15 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/courses.js?body=1" for 127.0.0.1 at 2011-10-13 12:45:15 +0200
+Served asset /courses.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/final_reports.js?body=1" for 127.0.0.1 at 2011-10-13 12:45:15 +0200
+Served asset /final_reports.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-13 12:45:15 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/observations.js?body=1" for 127.0.0.1 at 2011-10-13 12:45:15 +0200
+Served asset /observations.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-13 12:45:15 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/courses/Y39MM1" for 127.0.0.1 at 2011-10-13 12:45:30 +0200
+  Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"Y39MM1"}
+Rendered courses/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 109ms (Views: 8.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-13 12:45:30 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/observations.css?body=1" for 127.0.0.1 at 2011-10-13 12:45:30 +0200
+Served asset /observations.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/final_reports.css?body=1" for 127.0.0.1 at 2011-10-13 12:45:30 +0200
+Served asset /final_reports.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-13 12:45:30 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-13 12:45:30 +0200
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/courses.css?body=1" for 127.0.0.1 at 2011-10-13 12:45:30 +0200
+Served asset /courses.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-13 12:45:30 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/courses.js?body=1" for 127.0.0.1 at 2011-10-13 12:45:30 +0200
+Served asset /courses.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/final_reports.js?body=1" for 127.0.0.1 at 2011-10-13 12:45:30 +0200
+Served asset /final_reports.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-13 12:45:30 +0200
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-13 12:45:30 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/observations.js?body=1" for 127.0.0.1 at 2011-10-13 12:45:30 +0200
+Served asset /observations.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-13 12:45:30 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2011-10-13 12:45:34 +0200
+  Processing by CoursesController#index as HTML
+Rendered courses/index.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 7ms
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"courses"}):
+    13:     <td><%= course.id %></td>
+    14:     <td><%= course.name %></td>
+    15:     <td><%= course.code %></td>
+    16:     <td><%= link_to 'Show', course_path %></td>
+    17:   </tr>
+    18: <% end %>
+    19: </table>
+  app/views/courses/index.html.erb:16:in `block in _app_views_courses_index_html_erb__2172371095110480610_62100380'
+  app/views/courses/index.html.erb:11:in `each'
+  app/views/courses/index.html.erb:11:in `_app_views_courses_index_html_erb__2172371095110480610_62100380'
+  app/controllers/courses_controller.rb:10:in `index'
+
+Rendered /home/osman/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2011-10-13 12:46:17 +0200
+  Processing by CoursesController#index as HTML
+Rendered courses/index.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 6ms
+
+ActionView::Template::Error (undefined method `model_name' for KOSapi::Course:Class):
+    13:     <td><%= course.id %></td>
+    14:     <td><%= course.name %></td>
+    15:     <td><%= course.code %></td>
+    16:     <td><%= link_to 'Show', course %></td>
+    17:   </tr>
+    18: <% end %>
+    19: </table>
+  app/views/courses/index.html.erb:16:in `block in _app_views_courses_index_html_erb__2172371095110480610_65265700'
+  app/views/courses/index.html.erb:11:in `each'
+  app/views/courses/index.html.erb:11:in `_app_views_courses_index_html_erb__2172371095110480610_65265700'
+  app/controllers/courses_controller.rb:10:in `index'
+
+Rendered /home/osman/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /home/osman/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+Rendered /home/osman/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (4.4ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2011-10-13 12:49:47 +0200
+  Processing by CoursesController#index as HTML
+Rendered courses/index.html.erb within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 7ms
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"courses"}):
+    13:     <td><%= course.id %></td>
+    14:     <td><%= course.name %></td>
+    15:     <td><%= course.code %></td>
+    16:     <td><%= link_to 'Show', course_path %></td>
+    17:   </tr>
+    18: <% end %>
+    19: </table>
+  app/views/courses/index.html.erb:16:in `block in _app_views_courses_index_html_erb__2172371095110480610_63323900'
+  app/views/courses/index.html.erb:11:in `each'
+  app/views/courses/index.html.erb:11:in `_app_views_courses_index_html_erb__2172371095110480610_63323900'
+  app/controllers/courses_controller.rb:10:in `index'
+
+Rendered /home/osman/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2011-10-13 12:53:14 +0200
+  Processing by CoursesController#index as HTML
+Rendered courses/index.html.erb within layouts/application (1752.9ms)
+Completed 200 OK in 1780ms (Views: 1779.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-13 12:53:16 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/courses.css?body=1" for 127.0.0.1 at 2011-10-13 12:53:16 +0200
+Served asset /courses.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/final_reports.css?body=1" for 127.0.0.1 at 2011-10-13 12:53:16 +0200
+Served asset /final_reports.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/observations.css?body=1" for 127.0.0.1 at 2011-10-13 12:53:16 +0200
+Served asset /observations.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-13 12:53:16 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-13 12:53:16 +0200
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-13 12:53:16 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/courses.js?body=1" for 127.0.0.1 at 2011-10-13 12:53:16 +0200
+Served asset /courses.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-13 12:53:16 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/final_reports.js?body=1" for 127.0.0.1 at 2011-10-13 12:53:16 +0200
+Served asset /final_reports.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/observations.js?body=1" for 127.0.0.1 at 2011-10-13 12:53:16 +0200
+Served asset /observations.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-13 12:53:16 +0200
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-13 12:53:16 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2011-10-13 12:53:17 +0200
+  Processing by CoursesController#index as HTML
+Rendered courses/index.html.erb within layouts/application (1854.8ms)
+Completed 200 OK in 1884ms (Views: 1883.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-13 12:53:19 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/courses.css?body=1" for 127.0.0.1 at 2011-10-13 12:53:19 +0200
+Served asset /courses.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-13 12:53:19 +0200
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/observations.css?body=1" for 127.0.0.1 at 2011-10-13 12:53:19 +0200
+Served asset /observations.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-13 12:53:19 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-13 12:53:19 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-13 12:53:19 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/observations.js?body=1" for 127.0.0.1 at 2011-10-13 12:53:19 +0200
+Served asset /observations.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-13 12:53:19 +0200
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-13 12:53:19 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/courses.js?body=1" for 127.0.0.1 at 2011-10-13 12:53:19 +0200
+Served asset /courses.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/final_reports.js?body=1" for 127.0.0.1 at 2011-10-13 12:53:19 +0200
+Served asset /final_reports.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/final_reports.css?body=1" for 127.0.0.1 at 2011-10-13 12:53:19 +0200
+Served asset /final_reports.css - 304 Not Modified (0ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2011-10-13 12:53:25 +0200
+  Processing by CoursesController#index as HTML
+Rendered courses/index.html.erb within layouts/application (1764.1ms)
+Completed 200 OK in 1788ms (Views: 1787.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-13 12:53:27 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/observations.css?body=1" for 127.0.0.1 at 2011-10-13 12:53:27 +0200
+Served asset /observations.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-13 12:53:27 +0200
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-13 12:53:27 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/final_reports.css?body=1" for 127.0.0.1 at 2011-10-13 12:53:27 +0200
+Served asset /final_reports.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-13 12:53:27 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/courses.js?body=1" for 127.0.0.1 at 2011-10-13 12:53:27 +0200
+Served asset /courses.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-13 12:53:27 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-13 12:53:27 +0200
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/observations.js?body=1" for 127.0.0.1 at 2011-10-13 12:53:27 +0200
+Served asset /observations.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/final_reports.js?body=1" for 127.0.0.1 at 2011-10-13 12:53:27 +0200
+Served asset /final_reports.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/courses.css?body=1" for 127.0.0.1 at 2011-10-13 12:53:27 +0200
+Served asset /courses.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-13 12:53:27 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2011-10-13 12:53:31 +0200
+  Processing by CoursesController#index as HTML
+Rendered courses/index.html.erb within layouts/application (1750.3ms)
+Completed 200 OK in 1772ms (Views: 1771.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-13 12:53:33 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/observations.css?body=1" for 127.0.0.1 at 2011-10-13 12:53:33 +0200
+Served asset /observations.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-13 12:53:33 +0200
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-13 12:53:33 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/courses.css?body=1" for 127.0.0.1 at 2011-10-13 12:53:33 +0200
+Served asset /courses.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/final_reports.css?body=1" for 127.0.0.1 at 2011-10-13 12:53:33 +0200
+Served asset /final_reports.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/courses.js?body=1" for 127.0.0.1 at 2011-10-13 12:53:33 +0200
+Served asset /courses.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-13 12:53:33 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/final_reports.js?body=1" for 127.0.0.1 at 2011-10-13 12:53:33 +0200
+Served asset /final_reports.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-13 12:53:33 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-13 12:53:33 +0200
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/observations.js?body=1" for 127.0.0.1 at 2011-10-13 12:53:33 +0200
+Served asset /observations.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-13 12:53:33 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2011-10-13 12:56:27 +0200
+  Processing by CoursesController#index as HTML
+Rendered courses/index.html.erb within layouts/application (1.6ms)
+Completed 500 Internal Server Error in 9ms
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"courses"}):
+    13:     <td><%= course.id %></td>
+    14:     <td><%= course.name %></td>
+    15:     <td><%= course.code %></td>
+    16:     <td><%= link_to 'Show', course_path(@course) %></td>
+    17:   </tr>
+    18: <% end %>
+    19: </table>
+  app/views/courses/index.html.erb:16:in `block in _app_views_courses_index_html_erb__2172371095110480610_69948880'
+  app/views/courses/index.html.erb:11:in `each'
+  app/views/courses/index.html.erb:11:in `_app_views_courses_index_html_erb__2172371095110480610_69948880'
+  app/controllers/courses_controller.rb:10:in `index'
+
+Rendered /home/osman/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2011-10-13 12:57:46 +0200
+
+NoMethodError (undefined method `to_sym' for nil:NilClass):
+  config/routes.rb:9:in `block (2 levels) in <top (required)>'
+  config/routes.rb:8:in `block in <top (required)>'
+  config/routes.rb:1:in `<top (required)>'
+
+Rendered /home/osman/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /home/osman/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+Rendered /home/osman/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (3.9ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2011-10-13 13:02:22 +0200
+
+NoMethodError (undefined method `to_sym' for nil:NilClass):
+  config/routes.rb:11:in `block (2 levels) in <top (required)>'
+  config/routes.rb:10:in `block in <top (required)>'
+  config/routes.rb:1:in `<top (required)>'
+
+Rendered /home/osman/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /home/osman/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+Rendered /home/osman/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.0ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2011-10-13 13:02:23 +0200
+
+ActionController::RoutingError (No route matches [GET] "/courses"):
+  
+
+Rendered /home/osman/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2011-10-13 13:46:30 +0200
+  Processing by CoursesController#index as HTML
+Rendered courses/index.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 6ms
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"courses"}):
+    13:     <td><%= course.id %></td>
+    14:     <td><%= course.name %></td>
+    15:     <td><%= course.code %></td>
+    16:     <td><%= link_to 'Show', course_path(@course) %></td>
+    17:   </tr>
+    18: <% end %>
+    19: </table>
+  app/views/courses/index.html.erb:16:in `block in _app_views_courses_index_html_erb__2172371095110480610_69948880'
+  app/views/courses/index.html.erb:11:in `each'
+  app/views/courses/index.html.erb:11:in `_app_views_courses_index_html_erb__2172371095110480610_69948880'
+  app/controllers/courses_controller.rb:10:in `index'
+
+Rendered /home/osman/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/courses/X39ITT2" for 127.0.0.1 at 2011-10-13 13:46:40 +0200
+
+ActionController::RoutingError (No route matches [GET] "/courses/X39ITT2"):
+  
+
+Rendered /home/osman/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/courses/X39ITT2" for 127.0.0.1 at 2011-10-13 13:47:25 +0200
+  Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"X39ITT2"}
+Rendered courses/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 12ms (Views: 9.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-13 13:47:26 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-13 13:47:26 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/observations.css?body=1" for 127.0.0.1 at 2011-10-13 13:47:26 +0200
+Served asset /observations.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/final_reports.css?body=1" for 127.0.0.1 at 2011-10-13 13:47:26 +0200
+Served asset /final_reports.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-13 13:47:26 +0200
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/courses.css?body=1" for 127.0.0.1 at 2011-10-13 13:47:26 +0200
+Served asset /courses.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-13 13:47:26 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/courses.js?body=1" for 127.0.0.1 at 2011-10-13 13:47:26 +0200
+Served asset /courses.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/final_reports.js?body=1" for 127.0.0.1 at 2011-10-13 13:47:26 +0200
+Served asset /final_reports.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-13 13:47:26 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-13 13:47:26 +0200
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/observations.js?body=1" for 127.0.0.1 at 2011-10-13 13:47:26 +0200
+Served asset /observations.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-13 13:47:26 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2011-10-13 13:47:30 +0200
+  Processing by CoursesController#index as HTML
+Rendered courses/index.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 6ms
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"courses"}):
+    13:     <td><%= course.id %></td>
+    14:     <td><%= course.name %></td>
+    15:     <td><%= course.code %></td>
+    16:     <td><%= link_to 'Show', course_path(@course) %></td>
+    17:   </tr>
+    18: <% end %>
+    19: </table>
+  app/views/courses/index.html.erb:16:in `block in _app_views_courses_index_html_erb__2172371095110480610_69948880'
+  app/views/courses/index.html.erb:11:in `each'
+  app/views/courses/index.html.erb:11:in `_app_views_courses_index_html_erb__2172371095110480610_69948880'
+  app/controllers/courses_controller.rb:10:in `index'
+
+Rendered /home/osman/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2011-10-13 13:47:33 +0200
+  Processing by CoursesController#index as HTML
+Rendered courses/index.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 6ms
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"courses"}):
+    13:     <td><%= course.id %></td>
+    14:     <td><%= course.name %></td>
+    15:     <td><%= course.code %></td>
+    16:     <td><%= link_to 'Show', course_path(@course) %></td>
+    17:   </tr>
+    18: <% end %>
+    19: </table>
+  app/views/courses/index.html.erb:16:in `block in _app_views_courses_index_html_erb__2172371095110480610_69948880'
+  app/views/courses/index.html.erb:11:in `each'
+  app/views/courses/index.html.erb:11:in `_app_views_courses_index_html_erb__2172371095110480610_69948880'
+  app/controllers/courses_controller.rb:10:in `index'
+
+Rendered /home/osman/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/courses/" for 127.0.0.1 at 2011-10-13 13:47:36 +0200
+  Processing by CoursesController#index as HTML
+Rendered courses/index.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 6ms
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"courses"}):
+    13:     <td><%= course.id %></td>
+    14:     <td><%= course.name %></td>
+    15:     <td><%= course.code %></td>
+    16:     <td><%= link_to 'Show', course_path(@course) %></td>
+    17:   </tr>
+    18: <% end %>
+    19: </table>
+  app/views/courses/index.html.erb:16:in `block in _app_views_courses_index_html_erb__2172371095110480610_69948880'
+  app/views/courses/index.html.erb:11:in `each'
+  app/views/courses/index.html.erb:11:in `_app_views_courses_index_html_erb__2172371095110480610_69948880'
+  app/controllers/courses_controller.rb:10:in `index'
+
+Rendered /home/osman/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/courses/" for 127.0.0.1 at 2011-10-13 13:47:52 +0200
+  Processing by CoursesController#index as HTML
+Rendered courses/index.html.erb within layouts/application (3824.3ms)
+Completed 500 Internal Server Error in 3831ms
+
+ActionView::Template::Error (undefined method `show_course_path' for #<#<Class:0x00000008505ac0>:0x00000008500020>):
+    13:     <td><%= course.id %></td>
+    14:     <td><%= course.name %></td>
+    15:     <td><%= course.code %></td>
+    16:     <td><%= link_to 'Show', show_course_path(@course) %></td>
+    17:   </tr>
+    18: <% end %>
+    19: </table>
+  app/views/courses/index.html.erb:16:in `block in _app_views_courses_index_html_erb__2172371095110480610_69727900'
+  app/views/courses/index.html.erb:11:in `each'
+  app/views/courses/index.html.erb:11:in `_app_views_courses_index_html_erb__2172371095110480610_69727900'
+  app/controllers/courses_controller.rb:10:in `index'
+
+Rendered /home/osman/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /home/osman/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+Rendered /home/osman/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (4.5ms)
+
+
+Started GET "/courses/" for 127.0.0.1 at 2011-10-13 13:48:12 +0200
+  Processing by CoursesController#index as HTML
+Rendered courses/index.html.erb within layouts/application (89.4ms)
+Completed 200 OK in 100ms (Views: 99.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-13 13:48:12 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/courses.css?body=1" for 127.0.0.1 at 2011-10-13 13:48:12 +0200
+Served asset /courses.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/final_reports.css?body=1" for 127.0.0.1 at 2011-10-13 13:48:12 +0200
+Served asset /final_reports.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-13 13:48:12 +0200
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/observations.css?body=1" for 127.0.0.1 at 2011-10-13 13:48:12 +0200
+Served asset /observations.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-13 13:48:12 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/courses.js?body=1" for 127.0.0.1 at 2011-10-13 13:48:12 +0200
+Served asset /courses.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-13 13:48:12 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/final_reports.js?body=1" for 127.0.0.1 at 2011-10-13 13:48:12 +0200
+Served asset /final_reports.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-13 13:48:12 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-13 13:48:12 +0200
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/observations.js?body=1" for 127.0.0.1 at 2011-10-13 13:48:12 +0200
+Served asset /observations.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-13 13:48:12 +0200
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/courses/" for 127.0.0.1 at 2011-10-13 13:52:41 +0200
+  Processing by CoursesController#index as HTML
+Rendered courses/index.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 6ms
+
+ActionView::Template::Error (undefined method `model_name' for KOSapi::Course:Class):
+    13:     <td><%= course.id %></td>
+    14:     <td><%= course.name %></td>
+    15:     <td><%= course.code %></td>
+    16:     <td><%= link_to 'Show', course %></td>
+    17:   </tr>
+    18: <% end %>
+    19: </table>
+  app/views/courses/index.html.erb:16:in `block in _app_views_courses_index_html_erb__2172371095110480610_65470720'
+  app/views/courses/index.html.erb:11:in `each'
+  app/views/courses/index.html.erb:11:in `_app_views_courses_index_html_erb__2172371095110480610_65470720'
+  app/controllers/courses_controller.rb:10:in `index'
+
+Rendered /home/osman/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /home/osman/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+Rendered /home/osman/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (4.6ms)
+
+
+Started GET "/courses/" for 127.0.0.1 at 2011-10-13 13:54:20 +0200
+  Processing by CoursesController#index as HTML
+Rendered courses/index.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 6ms
+
+ActionView::Template::Error (undefined method `model_name' for KOSapi::Course:Class):
+    13:     <td><%= course.id %></td>
+    14:     <td><%= course.name %></td>
+    15:     <td><%= course.code %></td>
+    16:     <td><%= link_to 'Show', course %></td>
+    17:   </tr>
+    18: <% end %>
+    19: </table>
+  app/views/courses/index.html.erb:16:in `block in _app_views_courses_index_html_erb__2172371095110480610_65470720'
+  app/views/courses/index.html.erb:11:in `each'
+  app/views/courses/index.html.erb:11:in `_app_views_courses_index_html_erb__2172371095110480610_65470720'
+  app/controllers/courses_controller.rb:10:in `index'
+
+Rendered /home/osman/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /home/osman/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+Rendered /home/osman/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (4.0ms)
+
+
+Started GET "/courses/" for 127.0.0.1 at 2011-10-13 13:54:21 +0200
+  Processing by CoursesController#index as HTML
+Rendered courses/index.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 6ms
+
+ActionView::Template::Error (undefined method `model_name' for KOSapi::Course:Class):
+    13:     <td><%= course.id %></td>
+    14:     <td><%= course.name %></td>
+    15:     <td><%= course.code %></td>
+    16:     <td><%= link_to 'Show', course %></td>
+    17:   </tr>
+    18: <% end %>
+    19: </table>
+  app/views/courses/index.html.erb:16:in `block in _app_views_courses_index_html_erb__2172371095110480610_65470720'
+  app/views/courses/index.html.erb:11:in `each'
+  app/views/courses/index.html.erb:11:in `_app_views_courses_index_html_erb__2172371095110480610_65470720'
+  app/controllers/courses_controller.rb:10:in `index'
+
+Rendered /home/osman/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /home/osman/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+Rendered /home/osman/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (4.1ms)
+
+
+Started GET "/courses/" for 127.0.0.1 at 2011-10-13 14:01:29 +0200
+  Processing by CoursesController#index as HTML
+Rendered courses/index.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 6ms
+
+ActionView::Template::Error (undefined method `model_name' for KOSapi::Course:Class):
+    13:     <td><%= course.id %></td>
+    14:     <td><%= course.name %></td>
+    15:     <td><%= course.code %></td>
+    16:     <td><%= link_to 'Show', course %></td>
+    17:   </tr>
+    18: <% end %>
+    19: </table>
+  app/views/courses/index.html.erb:16:in `block in _app_views_courses_index_html_erb__2172371095110480610_65470720'
+  app/views/courses/index.html.erb:11:in `each'
+  app/views/courses/index.html.erb:11:in `_app_views_courses_index_html_erb__2172371095110480610_65470720'
+  app/controllers/courses_controller.rb:10:in `index'
+
+Rendered /home/osman/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /home/osman/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+Rendered /home/osman/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (4.0ms)
