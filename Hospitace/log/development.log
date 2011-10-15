@@ -3948,3 +3948,995 @@ ActionView::Template::Error (No route matches {:controller=>"courses", :id=>"203
   app/controllers/courses_controller.rb:10:in `index'
 
 Rendered /home/osman/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2011-10-14 17:27:27 +0200
+
+ActionController::RoutingError (No route matches [GET] "/courses"):
+  
+
+Rendered /home/osman/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (16.6ms)
+
+
+Started GET "/courses/" for 127.0.0.1 at 2011-10-14 17:28:37 +0200
+  Processing by CoursesController#index as HTML
+Rendered courses/index.html.erb within layouts/application (2196.5ms)
+Completed 200 OK in 6291ms (Views: 2418.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-14 17:28:44 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/courses.css?body=1" for 127.0.0.1 at 2011-10-14 17:28:44 +0200
+Served asset /courses.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-14 17:28:44 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-14 17:28:44 +0200
+Served asset /home.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-14 17:28:44 +0200
+Served asset /scaffolds.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/observations.css?body=1" for 127.0.0.1 at 2011-10-14 17:28:44 +0200
+Served asset /observations.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/final_reports.css?body=1" for 127.0.0.1 at 2011-10-14 17:28:44 +0200
+Served asset /final_reports.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-14 17:28:44 +0200
+Served asset /jquery.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/courses.js?body=1" for 127.0.0.1 at 2011-10-14 17:28:44 +0200
+Served asset /courses.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-14 17:28:44 +0200
+Served asset /home.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/observations.js?body=1" for 127.0.0.1 at 2011-10-14 17:28:44 +0200
+Served asset /observations.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/final_reports.js?body=1" for 127.0.0.1 at 2011-10-14 17:28:44 +0200
+Served asset /final_reports.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-14 17:28:44 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/courses/17VTV5A" for 127.0.0.1 at 2011-10-14 17:29:06 +0200
+  Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"17VTV5A"}
+Rendered courses/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 108ms (Views: 17.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/final_reports.css?body=1" for 127.0.0.1 at 2011-10-14 17:29:06 +0200
+Served asset /final_reports.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-14 17:29:06 +0200
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/courses.css?body=1" for 127.0.0.1 at 2011-10-14 17:29:06 +0200
+Served asset /courses.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-14 17:29:06 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/observations.css?body=1" for 127.0.0.1 at 2011-10-14 17:29:06 +0200
+Served asset /observations.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-14 17:29:06 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/courses.js?body=1" for 127.0.0.1 at 2011-10-14 17:29:06 +0200
+Served asset /courses.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-14 17:29:06 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-14 17:29:06 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-14 17:29:06 +0200
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/final_reports.js?body=1" for 127.0.0.1 at 2011-10-14 17:29:06 +0200
+Served asset /final_reports.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-14 17:29:06 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/observations.js?body=1" for 127.0.0.1 at 2011-10-14 17:29:06 +0200
+Served asset /observations.js - 304 Not Modified (0ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2011-10-14 17:29:10 +0200
+  Processing by CoursesController#index as HTML
+Rendered courses/index.html.erb within layouts/application (2143.0ms)
+Completed 200 OK in 2161ms (Views: 2160.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-14 17:29:12 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/courses.css?body=1" for 127.0.0.1 at 2011-10-14 17:29:12 +0200
+Served asset /courses.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-14 17:29:12 +0200
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/observations.css?body=1" for 127.0.0.1 at 2011-10-14 17:29:12 +0200
+Served asset /observations.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-14 17:29:12 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/final_reports.css?body=1" for 127.0.0.1 at 2011-10-14 17:29:12 +0200
+Served asset /final_reports.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-14 17:29:12 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-14 17:29:12 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/courses.js?body=1" for 127.0.0.1 at 2011-10-14 17:29:12 +0200
+Served asset /courses.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/final_reports.js?body=1" for 127.0.0.1 at 2011-10-14 17:29:12 +0200
+Served asset /final_reports.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-14 17:29:12 +0200
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/observations.js?body=1" for 127.0.0.1 at 2011-10-14 17:29:12 +0200
+Served asset /observations.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-14 17:29:12 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2011-10-14 17:46:46 +0200
+  Processing by CoursesController#index as HTML
+Rendered courses/index.html.erb within layouts/application (4002.0ms)
+Completed 200 OK in 4108ms (Views: 4107.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-14 17:46:51 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/courses.css?body=1" for 127.0.0.1 at 2011-10-14 17:46:51 +0200
+Served asset /courses.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-14 17:46:51 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-14 17:46:51 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/final_reports.css?body=1" for 127.0.0.1 at 2011-10-14 17:46:51 +0200
+Served asset /final_reports.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/observations.css?body=1" for 127.0.0.1 at 2011-10-14 17:46:51 +0200
+Served asset /observations.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-14 17:46:51 +0200
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-14 17:46:51 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/courses.js?body=1" for 127.0.0.1 at 2011-10-14 17:46:51 +0200
+Served asset /courses.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/observations.js?body=1" for 127.0.0.1 at 2011-10-14 17:46:51 +0200
+Served asset /observations.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/final_reports.js?body=1" for 127.0.0.1 at 2011-10-14 17:46:51 +0200
+Served asset /final_reports.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-14 17:46:51 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-14 17:46:51 +0200
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/courses/X39ITT2" for 127.0.0.1 at 2011-10-14 17:47:13 +0200
+  Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"X39ITT2"}
+Rendered courses/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 431ms (Views: 9.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-14 17:47:14 +0200
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/courses.css?body=1" for 127.0.0.1 at 2011-10-14 17:47:14 +0200
+Served asset /courses.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/observations.css?body=1" for 127.0.0.1 at 2011-10-14 17:47:14 +0200
+Served asset /observations.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/final_reports.css?body=1" for 127.0.0.1 at 2011-10-14 17:47:14 +0200
+Served asset /final_reports.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-14 17:47:14 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/final_reports.js?body=1" for 127.0.0.1 at 2011-10-14 17:47:14 +0200
+Served asset /final_reports.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-14 17:47:14 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/courses.js?body=1" for 127.0.0.1 at 2011-10-14 17:47:14 +0200
+Served asset /courses.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-14 17:47:14 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-14 17:47:14 +0200
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-14 17:47:14 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/observations.js?body=1" for 127.0.0.1 at 2011-10-14 17:47:14 +0200
+Served asset /observations.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-14 17:47:14 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2011-10-14 17:55:56 +0200
+  Processing by CoursesController#index as HTML
+Rendered courses/index.html.erb within layouts/application (5982.8ms)
+Completed 200 OK in 6007ms (Views: 6006.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-14 17:56:02 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/courses.css?body=1" for 127.0.0.1 at 2011-10-14 17:56:02 +0200
+Served asset /courses.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/final_reports.css?body=1" for 127.0.0.1 at 2011-10-14 17:56:02 +0200
+Served asset /final_reports.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-14 17:56:02 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-14 17:56:02 +0200
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-14 17:56:02 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-14 17:56:02 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/observations.css?body=1" for 127.0.0.1 at 2011-10-14 17:56:02 +0200
+Served asset /observations.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-14 17:56:02 +0200
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/courses.js?body=1" for 127.0.0.1 at 2011-10-14 17:56:02 +0200
+Served asset /courses.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/final_reports.js?body=1" for 127.0.0.1 at 2011-10-14 17:56:02 +0200
+Served asset /final_reports.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-14 17:56:02 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/observations.js?body=1" for 127.0.0.1 at 2011-10-14 17:56:02 +0200
+Served asset /observations.js - 304 Not Modified (0ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2011-10-14 17:58:05 +0200
+  Processing by CoursesController#index as HTML
+Rendered courses/index.html.erb within layouts/application (6033.8ms)
+Completed 200 OK in 6058ms (Views: 6057.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-14 17:58:11 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/courses.css?body=1" for 127.0.0.1 at 2011-10-14 17:58:11 +0200
+Served asset /courses.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/observations.css?body=1" for 127.0.0.1 at 2011-10-14 17:58:11 +0200
+Served asset /observations.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-14 17:58:11 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/final_reports.css?body=1" for 127.0.0.1 at 2011-10-14 17:58:11 +0200
+Served asset /final_reports.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-14 17:58:11 +0200
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-14 17:58:11 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-14 17:58:11 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/courses.js?body=1" for 127.0.0.1 at 2011-10-14 17:58:11 +0200
+Served asset /courses.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/observations.js?body=1" for 127.0.0.1 at 2011-10-14 17:58:11 +0200
+Served asset /observations.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-14 17:58:11 +0200
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-14 17:58:11 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/final_reports.js?body=1" for 127.0.0.1 at 2011-10-14 17:58:11 +0200
+Served asset /final_reports.js - 304 Not Modified (0ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2011-10-14 19:05:08 +0200
+  Processing by CoursesController#index as HTML
+Rendered courses/index.html.erb within layouts/application (6045.2ms)
+Completed 200 OK in 6065ms (Views: 6064.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-14 19:05:14 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/courses.css?body=1" for 127.0.0.1 at 2011-10-14 19:05:14 +0200
+Served asset /courses.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-14 19:05:14 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-14 19:05:14 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/observations.css?body=1" for 127.0.0.1 at 2011-10-14 19:05:14 +0200
+Served asset /observations.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/final_reports.css?body=1" for 127.0.0.1 at 2011-10-14 19:05:14 +0200
+Served asset /final_reports.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-14 19:05:14 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-14 19:05:14 +0200
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-14 19:05:14 +0200
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/courses.js?body=1" for 127.0.0.1 at 2011-10-14 19:05:14 +0200
+Served asset /courses.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/observations.js?body=1" for 127.0.0.1 at 2011-10-14 19:05:14 +0200
+Served asset /observations.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-14 19:05:14 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/final_reports.js?body=1" for 127.0.0.1 at 2011-10-14 19:05:14 +0200
+Served asset /final_reports.js - 304 Not Modified (0ms)
+
+
+Started HEAD "/" for 127.0.0.1 at 2011-10-14 19:44:38 +0200
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (13.4ms)
+Completed 200 OK in 204ms (Views: 203.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-10-14 19:45:18 +0200
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-14 19:45:18 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-14 19:45:18 +0200
+Served asset /jquery.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/courses.css?body=1" for 127.0.0.1 at 2011-10-14 19:45:18 +0200
+Served asset /courses.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/final_reports.css?body=1" for 127.0.0.1 at 2011-10-14 19:45:18 +0200
+Served asset /final_reports.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/final_reports.js?body=1" for 127.0.0.1 at 2011-10-14 19:45:18 +0200
+Served asset /final_reports.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-14 19:45:18 +0200
+Served asset /home.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/observations.js?body=1" for 127.0.0.1 at 2011-10-14 19:45:18 +0200
+Served asset /observations.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-14 19:45:18 +0200
+Served asset /scaffolds.css - 304 Not Modified (12ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-14 19:45:18 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-14 19:45:18 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-14 19:45:24 +0200
+Served asset /home.css - 304 Not Modified (16ms)
+
+
+Started GET "/assets/observations.css?body=1" for 127.0.0.1 at 2011-10-14 19:45:25 +0200
+Served asset /observations.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/courses.js?body=1" for 127.0.0.1 at 2011-10-14 19:45:25 +0200
+Served asset /courses.js - 304 Not Modified (3ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2011-10-14 19:45:32 +0200
+  Processing by CoursesController#index as HTML
+Rendered courses/index.html.erb within layouts/application (7180.9ms)
+Completed 200 OK in 11200ms (Views: 7247.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-14 19:45:44 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/courses.css?body=1" for 127.0.0.1 at 2011-10-14 19:45:44 +0200
+Served asset /courses.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/observations.css?body=1" for 127.0.0.1 at 2011-10-14 19:45:44 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-14 19:45:44 +0200
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-14 19:45:44 +0200
+Served asset /observations.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/final_reports.css?body=1" for 127.0.0.1 at 2011-10-14 19:45:44 +0200
+Served asset /jquery.js - 304 Not Modified (11ms)
+Served asset /home.css - 304 Not Modified (22ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-14 19:45:44 +0200
+
+
+Started GET "/assets/final_reports.js?body=1" for 127.0.0.1 at 2011-10-14 19:45:44 +0200
+Served asset /final_reports.css - 304 Not Modified (11ms)
+
+
+Started GET "/assets/courses.js?body=1" for 127.0.0.1 at 2011-10-14 19:45:44 +0200
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-14 19:45:44 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (16ms)
+Served asset /courses.js - 304 Not Modified (16ms)
+
+
+Started GET "/assets/observations.js?body=1" for 127.0.0.1 at 2011-10-14 19:45:44 +0200
+Served asset /home.js - 304 Not Modified (16ms)
+Served asset /final_reports.js - 304 Not Modified (29ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-14 19:45:44 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+Served asset /observations.js - 304 Not Modified (17ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-14 19:45:46 +0200
+Served asset /scaffolds.css - 304 Not Modified (5ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2011-10-14 19:50:24 +0200
+  Processing by CoursesController#index as HTML
+Rendered courses/index.html.erb within layouts/application (7025.4ms)
+Completed 200 OK in 10859ms (Views: 7095.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-14 19:50:35 +0200
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/courses.css?body=1" for 127.0.0.1 at 2011-10-14 19:50:35 +0200
+
+
+Started GET "/assets/final_reports.css?body=1" for 127.0.0.1 at 2011-10-14 19:50:35 +0200
+Served asset /courses.css - 304 Not Modified (2ms)
+Served asset /final_reports.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/observations.css?body=1" for 127.0.0.1 at 2011-10-14 19:50:35 +0200
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-14 19:50:35 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-14 19:50:35 +0200
+Served asset /jquery.js - 304 Not Modified (11ms)
+Served asset /scaffolds.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-14 19:50:35 +0200
+
+
+Started GET "/assets/courses.js?body=1" for 127.0.0.1 at 2011-10-14 19:50:35 +0200
+Served asset /observations.css - 304 Not Modified (10ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-14 19:50:35 +0200
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-14 19:50:35 +0200
+
+
+Started GET "/assets/final_reports.js?body=1" for 127.0.0.1 at 2011-10-14 19:50:35 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/observations.js?body=1" for 127.0.0.1 at 2011-10-14 19:50:35 +0200
+Served asset /courses.js - 304 Not Modified (16ms)
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-14 19:50:35 +0200
+Served asset /observations.js - 304 Not Modified (0ms)
+Served asset /home.css - 304 Not Modified (34ms)
+Served asset /final_reports.js - 304 Not Modified (30ms)
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/courses.hml" for 127.0.0.1 at 2011-10-14 21:37:56 +0200
+  Processing by CoursesController#index as 
+Completed 406 Not Acceptable in 4003ms
+
+
+Started GET "/courses.xml" for 127.0.0.1 at 2011-10-14 21:38:03 +0200
+  Processing by CoursesController#index as XML
+Completed 406 Not Acceptable in 1ms
+
+
+Started GET "/courses/xml" for 127.0.0.1 at 2011-10-14 21:38:14 +0200
+  Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"xml"}
+Rendered courses/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 62ms (Views: 10.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-14 21:38:14 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/courses.css?body=1" for 127.0.0.1 at 2011-10-14 21:38:14 +0200
+Served asset /courses.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/final_reports.css?body=1" for 127.0.0.1 at 2011-10-14 21:38:14 +0200
+Served asset /final_reports.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-14 21:38:14 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/observations.css?body=1" for 127.0.0.1 at 2011-10-14 21:38:14 +0200
+Served asset /observations.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-14 21:38:14 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-14 21:38:15 +0200
+Served asset /home.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-14 21:38:15 +0200
+Served asset /jquery.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/courses.js?body=1" for 127.0.0.1 at 2011-10-14 21:38:15 +0200
+Served asset /courses.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/final_reports.js?body=1" for 127.0.0.1 at 2011-10-14 21:38:15 +0200
+Served asset /final_reports.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-14 21:38:15 +0200
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/observations.js?body=1" for 127.0.0.1 at 2011-10-14 21:38:15 +0200
+Served asset /observations.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-14 21:38:15 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/courses/AA.xml" for 127.0.0.1 at 2011-10-14 21:38:25 +0200
+  Processing by CoursesController#show as XML
+  Parameters: {"id"=>"AA"}
+Completed 406 Not Acceptable in 218ms
+
+
+Started GET "/courses.json" for 127.0.0.1 at 2011-10-14 21:38:33 +0200
+  Processing by CoursesController#index as JSON
+Completed 200 OK in 12303ms (Views: 8720.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/courses/" for 127.0.0.1 at 2011-10-14 21:41:19 +0200
+  Processing by CoursesController#index as HTML
+Rendered courses/index.html.erb within layouts/application (7195.6ms)
+Completed 200 OK in 7766ms (Views: 7765.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-14 21:41:27 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/courses.css?body=1" for 127.0.0.1 at 2011-10-14 21:41:27 +0200
+
+
+Started GET "/assets/final_reports.css?body=1" for 127.0.0.1 at 2011-10-14 21:41:27 +0200
+Served asset /final_reports.css - 304 Not Modified (0ms)
+Served asset /courses.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-14 21:41:27 +0200
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-14 21:41:27 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-14 21:41:27 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-14 21:41:27 +0200
+Served asset /scaffolds.css - 304 Not Modified (11ms)
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/courses.js?body=1" for 127.0.0.1 at 2011-10-14 21:41:27 +0200
+
+
+Started GET "/assets/observations.js?body=1" for 127.0.0.1 at 2011-10-14 21:41:27 +0200
+Served asset /observations.js - 304 Not Modified (1ms)
+Served asset /courses.js - 304 Not Modified (12ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-14 21:41:27 +0200
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/final_reports.js?body=1" for 127.0.0.1 at 2011-10-14 21:41:27 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-14 21:41:27 +0200
+Served asset /application.js - 304 Not Modified (3ms)
+Served asset /final_reports.js - 304 Not Modified (25ms)
+
+
+Started GET "/assets/observations.css?body=1" for 127.0.0.1 at 2011-10-14 21:41:30 +0200
+Served asset /observations.css - 304 Not Modified (6ms)
+
+
+Started GET "/courses?id=BI-TV3&method=get" for 127.0.0.1 at 2011-10-14 21:41:40 +0200
+  Processing by CoursesController#index as HTML
+  Parameters: {"id"=>"BI-TV3", "method"=>"get"}
+Rendered courses/index.html.erb within layouts/application (6990.0ms)
+Completed 200 OK in 11067ms (Views: 7057.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/courses.css?body=1" for 127.0.0.1 at 2011-10-14 21:41:51 +0200
+
+
+Started GET "/assets/final_reports.css?body=1" for 127.0.0.1 at 2011-10-14 21:41:51 +0200
+Served asset /courses.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/observations.css?body=1" for 127.0.0.1 at 2011-10-14 21:41:51 +0200
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-14 21:41:51 +0200
+Served asset /final_reports.css - 304 Not Modified (18ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-14 21:41:51 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+Served asset /application.css - 304 Not Modified (0ms)
+Served asset /observations.css - 304 Not Modified (35ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-14 21:41:51 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/courses.js?body=1" for 127.0.0.1 at 2011-10-14 21:41:51 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-14 21:41:51 +0200
+
+
+Started GET "/assets/final_reports.js?body=1" for 127.0.0.1 at 2011-10-14 21:41:51 +0200
+Served asset /final_reports.js - 304 Not Modified (0ms)
+Served asset /courses.js - 304 Not Modified (30ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-14 21:41:51 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-14 21:41:51 +0200
+Served asset /home.js - 304 Not Modified (0ms)
+Served asset /jquery_ujs.js - 304 Not Modified (74ms)
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-14 21:41:55 +0200
+Served asset /home.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/observations.js?body=1" for 127.0.0.1 at 2011-10-14 21:41:56 +0200
+Served asset /observations.js - 304 Not Modified (5ms)
+
+
+Started GET "/courses?id=51VTVL" for 127.0.0.1 at 2011-10-14 21:42:01 +0200
+  Processing by CoursesController#index as HTML
+  Parameters: {"id"=>"51VTVL"}
+Rendered courses/index.html.erb within layouts/application (6918.7ms)
+Completed 200 OK in 10754ms (Views: 6991.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-14 21:42:12 +0200
+
+
+Started GET "/assets/courses.css?body=1" for 127.0.0.1 at 2011-10-14 21:42:12 +0200
+Served asset /courses.css - 304 Not Modified (3ms)
+Served asset /application.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-14 21:42:12 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-14 21:42:12 +0200
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-14 21:42:12 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/courses.js?body=1" for 127.0.0.1 at 2011-10-14 21:42:12 +0200
+
+
+Started GET "/assets/final_reports.js?body=1" for 127.0.0.1 at 2011-10-14 21:42:12 +0200
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-14 21:42:12 +0200
+Served asset /courses.js - 304 Not Modified (0ms)
+Served asset /final_reports.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/final_reports.css?body=1" for 127.0.0.1 at 2011-10-14 21:42:12 +0200
+Served asset /scaffolds.css - 304 Not Modified (21ms)
+Served asset /home.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-14 21:42:12 +0200
+
+
+Started GET "/assets/observations.js?body=1" for 127.0.0.1 at 2011-10-14 21:42:12 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-14 21:42:12 +0200
+Served asset /final_reports.css - 304 Not Modified (18ms)
+Served asset /home.js - 304 Not Modified (0ms)
+Served asset /observations.js - 304 Not Modified (21ms)
+Served asset /application.js - 304 Not Modified (30ms)
+
+
+Started GET "/assets/observations.css?body=1" for 127.0.0.1 at 2011-10-14 21:42:14 +0200
+Served asset /observations.css - 304 Not Modified (6ms)
+
+
+Started GET "/courses/51VTVL" for 127.0.0.1 at 2011-10-14 21:42:23 +0200
+  Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"51VTVL"}
+Rendered courses/show.html.erb within layouts/application (51.5ms)
+Completed 200 OK in 450ms (Views: 117.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/courses.css?body=1" for 127.0.0.1 at 2011-10-14 21:42:24 +0200
+
+
+Started GET "/assets/final_reports.css?body=1" for 127.0.0.1 at 2011-10-14 21:42:24 +0200
+Served asset /courses.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/observations.css?body=1" for 127.0.0.1 at 2011-10-14 21:42:24 +0200
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2011-10-14 21:42:24 +0200
+Served asset /observations.css - 304 Not Modified (0ms)
+Served asset /final_reports.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-10-14 21:42:24 +0200
+Served asset /home.css - 304 Not Modified (1ms)
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-10-14 21:42:24 +0200
+
+
+Started GET "/assets/courses.js?body=1" for 127.0.0.1 at 2011-10-14 21:42:24 +0200
+
+
+Started GET "/assets/final_reports.js?body=1" for 127.0.0.1 at 2011-10-14 21:42:24 +0200
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-10-14 21:42:24 +0200
+Served asset /courses.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2011-10-14 21:42:24 +0200
+Served asset /home.js - 304 Not Modified (1ms)
+Served asset /final_reports.js - 304 Not Modified (13ms)
+
+
+Started GET "/assets/observations.js?body=1" for 127.0.0.1 at 2011-10-14 21:42:24 +0200
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-10-14 21:42:24 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (12ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-10-14 21:42:24 +0200
+Served asset /observations.js - 304 Not Modified (10ms)
+Served asset /scaffolds.css - 304 Not Modified (12ms)
+Served asset /application.js - 304 Not Modified (7ms)
+Served asset /jquery.js - 304 Not Modified (9ms)
+
+
+Started GET "/courses/51VTVL" for 127.0.0.1 at 2011-10-14 21:45:05 +0200
+  Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"51VTVL"}
+Rendered courses/show.html.erb within layouts/application (114.3ms)
+Completed 500 Internal Server Error in 122ms
+
+ActionView::Template::Error (undefined local variable or method `resource_uri' for KOSapi::CourseInstance:Class):
+    1: <p id="notice"><%= notice %></p>
+    2: 
+    3: 
+    4: <% course_instances = KOSapi::CourseInstance.find_by_course_code(@course.code) %>
+    5: 
+    6: <p>
+    7:   <b>Id:</b>
+  lib/kosapi/course_instance.rb:12:in `find_by_course_code'
+  app/views/courses/show.html.erb:4:in `_app_views_courses_show_html_erb___2337297365459803353_30137960'
+  app/controllers/courses_controller.rb:19:in `show'
+
+Rendered /home/osman/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /home/osman/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+Rendered /home/osman/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (5.1ms)
