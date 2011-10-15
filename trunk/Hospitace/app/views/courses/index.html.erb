@@ -13,8 +13,10 @@
     <td><%= course.id %></td>
     <td><%= course.name %></td>
     <td><%= course.code %></td>
+      
+    <td><%= courses_path(:id => course.code) %></td>
     <td><%= link_to "detail", courses_path(:id => course.code) %></td>
-    
+    <td><%= link_to "detail", :controller => "courses", :id => course.code, :method =>:get %></td>
     
     
     
