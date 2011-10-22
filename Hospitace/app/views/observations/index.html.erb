@@ -2,8 +2,9 @@
 
 <table>
   <tr>
-    <th>Announced</th>
-    <th>Day</th>
+    <th>User</th>
+    <th>Week</th>
+    <th>Paraller</th>
     <th></th>
     <th></th>
     <th></th>
@@ -11,8 +12,9 @@
 
 <% @observations.each do |observation| %>
   <tr>
-    <td><%= observation.announced %></td>
-    <td><%= observation.day %></td>
+    <td><%= observation.user %></td>
+    <td><%= observation.week %></td>
+    <td><%= observation.paraller %></td>
     <td><%= link_to 'Show', observation %></td>
     <td><%= link_to 'Edit', edit_observation_path(observation) %></td>
     <td><%= link_to 'Destroy', observation, confirm: 'Are you sure?', method: :delete %></td>

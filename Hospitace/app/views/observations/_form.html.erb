@@ -12,12 +12,16 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :announced %><br />
-    <%= f.text_field :announced %>
+    <%= f.label :user %><br />
+    <%= f.select :user, User.all.collect {|p| [ p.full_name, p.id ] } %>
   </div>
   <div class="field">
-    <%= f.label :day %><br />
-    <%= f.date_select :day %>
+    <%= f.label :week %><br />
+    <%= f.number_field :week %>
+  </div>
+  <div class="field">
+    <%= f.label :paraller %><br />
+    <%= f.number_field :paraller %>
   </div>
   <div class="actions">
     <%= f.submit %>

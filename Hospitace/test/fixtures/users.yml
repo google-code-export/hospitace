@@ -1,11 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  user: 
-  week: 1
-  paraller: 1
+  login: MyString
+  role: MyString
 
 two:
-  user: 
-  week: 1
-  paraller: 1
+  login: MyString
+  role: MyString
