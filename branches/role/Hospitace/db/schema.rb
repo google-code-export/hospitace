@@ -11,11 +11,29 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111011185316) do
+ActiveRecord::Schema.define(:version => 20111022115825) do
+
+  create_table "final_reports", :force => true do |t|
+    t.text     "text"
+    t.datetime "created"
+    t.integer  "observation_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "final_reports", ["observation_id"], :name => "index_final_reports_on_observation_id"
 
   create_table "observations", :force => true do |t|
-    t.boolean  "announced"
-    t.date     "day"
+    t.integer  "user_id"
+    t.integer  "week"
+    t.integer  "paraller"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "login"
+    t.string   "role"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
