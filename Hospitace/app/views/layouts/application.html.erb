@@ -11,7 +11,9 @@
     <li><%= link_to "Uživatelé", users_path %></li>
     <li><%= link_to "Hospitace", observations_path %></li>
   </ul>
-<%= yield %>
+  <h1><%= @title %></h1>
+  
+  <%= yield %>
 
 </body>
 </html>

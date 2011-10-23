@@ -1,7 +1,7 @@
 require "kosapi"
 
 module UsersHelper
-  def get_users
+  def peoples
     return KOSapi::User.all.sort_by(&:lastname)
   end
   

@@ -11,9 +11,11 @@
     </div>
   <% end %>
 
+  <%= peoples.size %>
+
   <div class="field">
     <%= f.label :login %><br />
-    <%= f.collection_select :login, get_users, :username, :full_name %>
+    <%= f.select :login, peoples.collect {|p| [ p.full_name, p.username ] } %>
   </div>
   <div class="field">
     <%= f.label :role %><br />

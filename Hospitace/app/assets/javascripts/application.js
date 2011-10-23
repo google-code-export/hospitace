@@ -7,3 +7,27 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+
+$(function () {  
+            
+    // Sorting and pagination links.  
+    $('#users th a, #users .pagination a').live('click',   
+        function () {  
+            $.getScript(this.href);  
+            return false;  
+        }  
+    );  
+    
+    // Search form.  
+    $('#users_search').submit(function () {  
+        $.get(this.action, $(this).serialize(), null, 'script');  
+        return false;  
+    });    
+    
+    $('#users_search input').keyup(function () {  
+        $.get($('#users_search').attr('action'),  
+        $('#users_search').serialize(), null, 'script');  
+        return false;  
+    }); 
+})  
