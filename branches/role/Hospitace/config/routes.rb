@@ -1,4 +1,6 @@
 Hospitace::Application.routes.draw do
+  get "peoples/peoples"
+
   resources :users
 
   get "home/index"

@@ -14,10 +14,19 @@ class User < ActiveRecord::Base
     @email = user.email
     @firstname = user.firstname
     @lastname = user.lastname
+    @title_pre = user.title_pre
+    @title_post = user.title_post
   end
   
   def full_name
-      "#{@title_pre} #{@firstname} #{@lastname} #{@title_post}"
+    "#{@title_pre} #{@firstname} #{@lastname} #{@title_post}"
   end
-
+  
+  def self.search(search)  
+    if search  
+      where('login LIKE ?', "%#{search}%")  
+    else  
+      scoped  
+    end  
+  end 
 end

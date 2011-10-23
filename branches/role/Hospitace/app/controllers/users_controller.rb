@@ -1,10 +1,14 @@
 class UsersController < ApplicationController
+  helper_method :sort_column, :sort_direction
+  
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    
+    @users =  User.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 5, :page => params[:page]) 
 
     respond_to do |format|
+      format.js
       format.html # index.html.erb
       format.json { render json: @users }
     end
@@ -79,5 +83,13 @@ class UsersController < ApplicationController
       format.html { redirect_to users_url }
       format.json { head :ok }
     end
+  end
+  
+  def sort_column
+    User.column_names.include?(params[:sort]) ? params[:sort] : "login"
+  end
+  
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
   end
 end
