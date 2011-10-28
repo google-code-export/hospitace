@@ -1,0 +1,56 @@
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "observations"[0m
+  [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO "observations" ("announced", "day", "created_at", "updated_at", "id") VALUES ('f', '2011-10-11', '2011-10-11 19:33:40', '2011-10-11 19:33:40', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "observations" ("announced", "day", "created_at", "updated_at", "id") VALUES ('t', '2011-10-11', '2011-10-11 19:33:40', '2011-10-11 19:33:40', 298486374)[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "observations"[0m
+  [1m[35mFixture Insert (1.6ms)[0m  INSERT INTO "observations" ("announced", "day", "created_at", "updated_at", "id") VALUES ('f', '2011-10-11', '2011-10-11 19:40:08', '2011-10-11 19:40:08', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "observations" ("announced", "day", "created_at", "updated_at", "id") VALUES ('t', '2011-10-11', '2011-10-11 19:40:08', '2011-10-11 19:40:08', 298486374)[0m
+  [1m[35mObservation Load (0.2ms)[0m  SELECT "observations".* FROM "observations" WHERE "observations"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "observations" [0m
+  Processing by ObservationsController#create as HTML
+  Parameters: {"observation"=>{"id"=>"980190962", "announced"=>false, "day"=>"2011-10-11", "created_at"=>"2011-10-11 19:40:08 UTC", "updated_at"=>"2011-10-11 19:40:08 UTC"}}
+WARNING: Can't mass-assign protected attributes: id
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "observations" ("announced", "created_at", "day", "updated_at") VALUES (?, ?, ?, ?)[0m  [["announced", false], ["created_at", Tue, 11 Oct 2011 19:40:08 UTC +00:00], ["day", Tue, 11 Oct 2011], ["updated_at", Tue, 11 Oct 2011 19:40:08 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/observations/980190963
+Completed 302 Found in 7ms
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "observations" [0m
+  [1m[35mObservation Load (0.1ms)[0m  SELECT "observations".* FROM "observations" WHERE "observations"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "observations" [0m
+  Processing by ObservationsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mObservation Load (0.1ms)[0m  SELECT "observations".* FROM "observations" WHERE "observations"."id" = ? LIMIT 1  [["id", "980190962"]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "observations" WHERE "observations"."id" = ?  [["id", 980190962]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/observations
+Completed 302 Found in 2ms
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "observations" 
+  [1m[36mObservation Load (0.1ms)[0m  [1mSELECT "observations".* FROM "observations" WHERE "observations"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  Processing by ObservationsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mObservation Load (0.1ms)[0m  SELECT "observations".* FROM "observations" WHERE "observations"."id" = ? LIMIT 1  [["id", "980190962"]]
+Rendered observations/_form.html.erb (5.8ms)
+Completed 200 OK in 114ms (Views: 113.4ms | ActiveRecord: 0.1ms)
+  [1m[36mObservation Load (0.1ms)[0m  [1mSELECT "observations".* FROM "observations" WHERE "observations"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  Processing by ObservationsController#index as HTML
+  [1m[35mObservation Load (0.1ms)[0m  SELECT "observations".* FROM "observations" 
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.1ms)
+  [1m[36mObservation Load (0.1ms)[0m  [1mSELECT "observations".* FROM "observations" WHERE "observations"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  Processing by ObservationsController#new as HTML
+Rendered observations/_form.html.erb (38.8ms)
+Completed 200 OK in 43ms (Views: 42.0ms | ActiveRecord: 0.0ms)
+  [1m[35mObservation Load (0.1ms)[0m  SELECT "observations".* FROM "observations" WHERE "observations"."id" = ? LIMIT 1  [["id", 980190962]]
+  Processing by ObservationsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mObservation Load (0.1ms)[0m  [1mSELECT "observations".* FROM "observations" WHERE "observations"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 0.1ms)
+  [1m[35mObservation Load (0.1ms)[0m  SELECT "observations".* FROM "observations" WHERE "observations"."id" = ? LIMIT 1  [["id", 980190962]]
+  Processing by ObservationsController#update as HTML
+  Parameters: {"observation"=>{"id"=>"980190962", "announced"=>false, "day"=>"2011-10-11", "created_at"=>"2011-10-11 19:40:08 UTC", "updated_at"=>"2011-10-11 19:40:08 UTC"}, "id"=>"980190962"}
+  [1m[36mObservation Load (0.1ms)[0m  [1mSELECT "observations".* FROM "observations" WHERE "observations"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+WARNING: Can't mass-assign protected attributes: id
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/observations/980190962
+Completed 302 Found in 5ms

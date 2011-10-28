@@ -1,0 +1,41 @@
+NOTE: Gem.source_index is deprecated, use Specification. It will be removed on or after 2011-11-01.
+Gem.source_index called from /home/osman/.rvm/gems/ruby-1.9.2-p290/gems/yard-0.6.1/lib/yard.rb:40.
+NOTE: Gem::SourceIndex#find_name is deprecated, use Specification.find_by_name. It will be removed on or after 2011-11-01.
+Gem::SourceIndex#find_name called from /home/osman/.rvm/gems/ruby-1.9.2-p290/gems/yard-0.6.1/lib/yard.rb:40.
+/home/osman/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.3.4/lib/rack/backports/uri/common_192.rb:53: warning: already initialized constant WFKV_
+cache: [GET /api/2/courses/?paging=false&level=1] stale, invalid
+cache: [GET /api/2/courses/?paging=false&level=1] stale, invalid
+cache: [GET /api/2/courses/?paging=false&level=1] stale, invalid
+[ pid=17747 thr=139751534462720 file=ext/nginx/HelperAgent.cpp:921 time=2011-10-14 21:38:00.667 ]: Couldn't forward the HTTP response back to the HTTP client: It seems the user clicked on the 'Stop' button in his browser.
+cache: [GET /api/2/courses/xml?paging=false&level=1] miss, store
+Error getting https://kosapi4:IN_VoFuQnrUNdcYyltR47AZE@kosapi.feld.cvut.cz/api/2/courses/xml?paging=false&level=1
+NOTE: Gem.source_index is deprecated, use Specification. It will be removed on or after 2011-11-01.
+Gem.source_index called from /home/osman/.rvm/gems/ruby-1.9.2-p290/gems/yard-0.6.1/lib/yard.rb:40.
+NOTE: Gem::SourceIndex#find_name is deprecated, use Specification.find_by_name. It will be removed on or after 2011-11-01.
+Gem::SourceIndex#find_name called from /home/osman/.rvm/gems/ruby-1.9.2-p290/gems/yard-0.6.1/lib/yard.rb:40.
+/home/osman/.rvm/gems/ruby-1.9.2-p290/gems/rack-1.3.4/lib/rack/backports/uri/common_192.rb:53: warning: already initialized constant WFKV_
+cache: [GET /api/2/courses/AA?paging=false&level=1] miss, store
+Error getting https://kosapi4:IN_VoFuQnrUNdcYyltR47AZE@kosapi.feld.cvut.cz/api/2/courses/AA?paging=false&level=1
+cache: [GET /api/2/courses/?paging=false&level=1] stale, invalid
+cache: [GET /api/2/courses/?paging=false&level=1] stale, invalid
+cache: [GET /api/2/courses/?paging=false&level=1] stale, invalid
+cache: [GET /api/2/courses/51VTVL?paging=false&level=1] miss, store
+cache: [GET /api/2/courses/51VTVL?paging=false&level=1] fresh
+[ pid=20628 thr=3317040 file=utils.rb:176 time=2011-10-14 21:49:33.060 ]: *** Exception SignalException in PhusionPassenger::Rack::ApplicationSpawner (SIGTERM) (process 20628, thread #<Thread:0x00000000653a60>):
+	from /home/osman/.passenger/standalone/3.0.9-x86_64-ruby1.9.2-linux-gcc4.5.1-1002/support/lib/phusion_passenger/abstract_server.rb:343:in `select'
+	from /home/osman/.passenger/standalone/3.0.9-x86_64-ruby1.9.2-linux-gcc4.5.1-1002/support/lib/phusion_passenger/abstract_server.rb:343:in `server_main_loop'
+	from /home/osman/.passenger/standalone/3.0.9-x86_64-ruby1.9.2-linux-gcc4.5.1-1002/support/lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+	from /home/osman/.passenger/standalone/3.0.9-x86_64-ruby1.9.2-linux-gcc4.5.1-1002/support/lib/phusion_passenger/abstract_server.rb:180:in `start'
+	from /home/osman/.passenger/standalone/3.0.9-x86_64-ruby1.9.2-linux-gcc4.5.1-1002/support/lib/phusion_passenger/rack/application_spawner.rb:128:in `start'
+	from /home/osman/.passenger/standalone/3.0.9-x86_64-ruby1.9.2-linux-gcc4.5.1-1002/support/lib/phusion_passenger/spawn_manager.rb:253:in `block (2 levels) in spawn_rack_application'
+	from /home/osman/.passenger/standalone/3.0.9-x86_64-ruby1.9.2-linux-gcc4.5.1-1002/support/lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+	from /home/osman/.passenger/standalone/3.0.9-x86_64-ruby1.9.2-linux-gcc4.5.1-1002/support/lib/phusion_passenger/spawn_manager.rb:246:in `block in spawn_rack_application'
+	from /home/osman/.passenger/standalone/3.0.9-x86_64-ruby1.9.2-linux-gcc4.5.1-1002/support/lib/phusion_passenger/abstract_server_collection.rb:82:in `block in synchronize'
+	from <internal:prelude>:10:in `synchronize'
+	from /home/osman/.passenger/standalone/3.0.9-x86_64-ruby1.9.2-linux-gcc4.5.1-1002/support/lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+	from /home/osman/.passenger/standalone/3.0.9-x86_64-ruby1.9.2-linux-gcc4.5.1-1002/support/lib/phusion_passenger/spawn_manager.rb:244:in `spawn_rack_application'
+	from /home/osman/.passenger/standalone/3.0.9-x86_64-ruby1.9.2-linux-gcc4.5.1-1002/support/lib/phusion_passenger/spawn_manager.rb:137:in `spawn_application'
+	from /home/osman/.passenger/standalone/3.0.9-x86_64-ruby1.9.2-linux-gcc4.5.1-1002/support/lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+	from /home/osman/.passenger/standalone/3.0.9-x86_64-ruby1.9.2-linux-gcc4.5.1-1002/support/lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+	from /home/osman/.passenger/standalone/3.0.9-x86_64-ruby1.9.2-linux-gcc4.5.1-1002/support/lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+	from /home/osman/.passenger/standalone/3.0.9-x86_64-ruby1.9.2-linux-gcc4.5.1-1002/support/helper-scripts/passenger-spawn-server:99:in `<main>'
