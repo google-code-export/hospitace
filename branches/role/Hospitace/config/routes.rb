@@ -10,7 +10,7 @@ Hospitace::Application.routes.draw do
   resources :final_reports
 
   resources :observations
-  
+  resources :peoples
 
   #controller :courses do
    # match 'blog'     => :index

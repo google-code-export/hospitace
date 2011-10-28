@@ -1,3 +1,5 @@
+
+
 <%= form_for(@user) do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
@@ -11,12 +13,22 @@
     </div>
   <% end %>
 
-  <%= peoples.size %>
+  
+  <% if @user.persisted? %>
+    <div class="field">
+      <%= f.label :login %><br />
+      <%= @user.login %>
+    </div>
+  
+  <% else %>
+    <%#*<div id="peoples"><%= render 'peoples/peoples' %#></div>%>
 
-  <div class="field">
-    <%= f.label :login %><br />
-    <%= f.select :login, peoples.collect {|p| [ p.full_name, p.username ] } %>
-  </div>
+    <div class="field">
+      <%= f.label :login %><br />
+      <%= f.select :login, peoples.collect {|p| [ p.full_name, p.username ] } %>
+    </div>
+  <% end %>
+
   <div class="field">
     <%= f.label :role %><br />
     <%= f.select :role, {"Admin" => "admin", "Hospitatel" => "hospital"} %>

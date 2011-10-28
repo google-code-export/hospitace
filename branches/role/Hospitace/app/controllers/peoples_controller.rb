@@ -1,13 +1,16 @@
 require 'kosapi'
+require 'will_paginate/array'
 
 class PeoplesController < ApplicationController
   
   # GET /peoples
   # GET /peoples.json
   def index
-    @peoples = KOSapi::User.all
+    
+    @peoples = KOSapi::User.all.paginate(:per_page => 5, :page => params[:page])
 
     respond_to do |format|
+      format.js
       format.html # index.html.erb
       format.json { render json: @peoples }
     end
@@ -24,4 +27,11 @@ class PeoplesController < ApplicationController
     end
   end
   
+  def sort_column
+    User.column_names.include?(params[:sort]) ? params[:sort] : "id"
+  end
+  
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+  end
 end
