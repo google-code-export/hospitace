@@ -1,0 +1,27 @@
+<h1>Listing observations</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Week</th>
+    <th>Paraller</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @observations.each do |observation| %>
+  <tr>
+    <td><%= observation.user %></td>
+    <td><%= observation.week %></td>
+    <td><%= observation.paraller %></td>
+    <td><%= link_to 'Show', observation %></td>
+    <td><%= link_to 'Edit', edit_observation_path(observation) %></td>
+    <td><%= link_to 'Destroy', observation, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Observation', new_observation_path %>

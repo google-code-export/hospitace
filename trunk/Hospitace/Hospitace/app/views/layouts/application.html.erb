@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hospitace</title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <ul>
+    <li><%= link_to "Uživatelé", users_path %></li>
+    <li><%= link_to "Hospitace", observations_path %></li>
+    <li><%= link_to "Lidé", peoples_path %></li>
+  </ul>
+  <h1><%= @title %></h1>
+  
+  <%= yield %>
+
+</body>
+</html>

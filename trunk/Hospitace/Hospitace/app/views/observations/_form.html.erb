@@ -1,0 +1,29 @@
+<%= form_for(@observation) do |f| %>
+  <% if @observation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@observation.errors.count, "error") %> prohibited this observation from being saved:</h2>
+
+      <ul>
+      <% @observation.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user %><br />
+    <%= f.select :user, User.all.collect {|p| [ p.full_name, p.id ] } %>
+  </div>
+  <div class="field">
+    <%= f.label :week %><br />
+    <%= f.number_field :week %>
+  </div>
+  <div class="field">
+    <%= f.label :paraller %><br />
+    <%= f.number_field :paraller %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
