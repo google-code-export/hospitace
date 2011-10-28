@@ -11,7 +11,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111022115825) do
+ActiveRecord::Schema.define(:version => 20111028114920) do
+
+  create_table "buildings", :force => true do |t|
+    t.string   "name"
+    t.string   "code"
+    t.string   "description"
+    t.integer  "faculty_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "events", :force => true do |t|
+    t.datetime "date"
+    t.text     "text"
+    t.string   "entity"
+    t.integer  "entity_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "final_reports", :force => true do |t|
     t.text     "text"
@@ -30,6 +48,16 @@ ActiveRecord::Schema.define(:version => 20111022115825) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "rooms", :force => true do |t|
+    t.string   "name"
+    t.string   "code"
+    t.integer  "building_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "rooms", ["building_id"], :name => "index_rooms_on_building_id"
 
   create_table "users", :force => true do |t|
     t.string   "login"

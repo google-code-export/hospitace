@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Jméno:</b>
+  <%= @peoples.full_name %>
+</p>
+
+<p>
+  <b>Login:</b>
+  <%= @peoples.username %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @peoples.email %>
+</p>
+
+<h2>Hospitace</h2>
+
+<%= link_to 'Back', peoples_path %>
