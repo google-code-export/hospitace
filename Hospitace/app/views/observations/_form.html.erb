@@ -17,11 +17,19 @@
   </div>
   <div class="field">
     <%= f.label :week %><br />
-    <%= f.number_field :week %>
+    <%= f.select :week, 1..14 %>
   </div>
-  <div class="field">
-    <%= f.label :paraller %><br />
-    <%= f.number_field :paraller %>
+
+  <div><div class="field">
+    <%= f.label 'Kurs' %><br />
+    <%= f.select :course, @courses.collect {|p| [ p.code, p.id ] },{:include_blank => "-- Select --"} %>
+  </div>
+  <div class="field" id=paraller">
+    <%=:course.eql? "course"%>
+    <%  unless :course.eql? "course" %>
+      <%= f.label :paraller %><br />
+      <%= f.number_field :paraller %>
+    <% end %>
   </div>
   <div class="actions">
     <%= f.submit %>

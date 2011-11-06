@@ -1,3 +1,5 @@
+
+
 <%= hidden_field_tag :direction, params[:direction] %>  
 <%= hidden_field_tag :sort, params[:sort] %>  
 <table class="pretty">
@@ -9,11 +11,12 @@
   </tr>
 
 <% @peoples.each do |people| %>
+  <%  @people = people %>
   <tr>
     <td><%= people.username %></td>
     <td><%= people.full_name %></td>
     <td><%= people.email %></td>
-    <td><%= link_to 'Show', people %></td>
+    <td><%= yield :people %></td>
   </tr>
 <% end %>
 </table>

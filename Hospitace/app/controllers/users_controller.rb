@@ -1,3 +1,5 @@
+require 'will_paginate/array'
+
 class UsersController < ApplicationController
   helper_method :sort_column, :sort_direction
   
@@ -5,7 +7,7 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     
-    @users =  User.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 5, :page => params[:page]) 
+    @users =  User.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:page => params[:page]) 
 
     respond_to do |format|
       format.js
@@ -28,6 +30,7 @@ class UsersController < ApplicationController
   # GET /users/new
   # GET /users/new.json
   def new
+    load_persons
     @user = User.new
 
     respond_to do |format|
@@ -45,6 +48,7 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     
+    logger.debug "####### The object is #{params[:user]}"
     @user = User.new(params[:user])
 
     respond_to do |format|
@@ -92,5 +96,11 @@ class UsersController < ApplicationController
   
   def sort_direction
     %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+  end
+  
+  private 
+  
+  def load_persons
+    @peoples = KOSapi::User.all
   end
 end
