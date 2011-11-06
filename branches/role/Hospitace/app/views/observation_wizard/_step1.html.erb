@@ -1,0 +1,6 @@
+<h2>Step1</h2>
+  
+  <p>
+    <%= f.label :user_id %><br />
+    <%= f.select :user_id, User.all.collect {|p| [ p.full_name, p.id ] } %>
+  </p>

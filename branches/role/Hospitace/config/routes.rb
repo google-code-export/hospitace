@@ -1,23 +1,29 @@
 Hospitace::Application.routes.draw do
-  get "peoples/peoples"
+  
 
-  resources :users
+  resources :tests
 
+  #get "peoples/peoples"
+
+ 
   get "home/index"
   get 'courses/show'
   
+  resource :tests
+  
+  resources :users do
+    resources :peoples
+  end
+
   
   resources :final_reports
-
   resources :observations
-  resources :peoples
-
-  #controller :courses do
-   # match 'blog'     => :index
-   # match 'blog/:id'   => :show, constraints => {
-   #  :id       => /[0-9A-Z]+/
-  #  }
- # end
+  resources :observation_wizard, :only=>[:new,:create,:reset] do
+    get 'reset'
+  end
+  resources :peoples, :only => [:index, :show,:search] do
+     get 'search', :on => :collection
+  end
 
   controller 'courses' do
     match 'courses' => :index

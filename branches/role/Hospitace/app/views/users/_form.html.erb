@@ -21,11 +21,13 @@
     </div>
   
   <% else %>
-    <%#*<div id="peoples"><%= render 'peoples/peoples' %#></div>%>
+    
 
     <div class="field">
-      <%= f.label :login %><br />
-      <%= f.select :login, peoples.collect {|p| [ p.full_name, p.username ] } %>
+      <%= f.label :login %>
+      <br />
+      <%= f.select :login, @peoples.collect {|p| [ p.full_name, p.username ] } %>
+      <%= link_to 'Search', search_peoples_path %>
     </div>
   <% end %>
 

@@ -1,0 +1,7 @@
+
+<h2>Step2</h2>
+  
+  <p>
+    <%= f.label :course %><br />
+    <%= f.select :course, KOSapi::Course.all.collect {|p| [ p.code, p.code ] }  %>
+  </p>

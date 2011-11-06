@@ -10,4 +10,8 @@ module ApplicationHelper
     link_to title, params.merge(:sort => column, :direction => direction, :page => nil), {:class => css_class} 
   end
   
+  def table_action item
+    yield item
+  end
+  
 end

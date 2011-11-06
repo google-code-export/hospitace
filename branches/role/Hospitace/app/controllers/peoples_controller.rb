@@ -7,7 +7,7 @@ class PeoplesController < ApplicationController
   # GET /peoples.json
   def index
     
-    @peoples = KOSapi::User.all.paginate(:per_page => 5, :page => params[:page])
+    @peoples = KOSapi::User.all.paginate(:page => params[:page])
 
     respond_to do |format|
       format.js
@@ -19,12 +19,26 @@ class PeoplesController < ApplicationController
   # GET /peoples/1
   # GET /peoples/1.json
   def show
-    @peoples = User.find(params[:id])
-
+    @people = User.find(params[:id])
+    
     respond_to do |format|
       format.html # show.html.erb
+      format.json { render json: @people }
+    end
+  end
+  
+  def search
+    @peoples = KOSapi::User.all.paginate(:page => params[:page])
+
+    respond_to do |format|
+      format.js
+      format.html # index.html.erb
       format.json { render json: @peoples }
     end
+  end
+  
+  def peoples
+    index
   end
   
   def sort_column
