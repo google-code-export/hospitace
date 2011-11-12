@@ -3,7 +3,15 @@
 
 
 class Course < KOSapi::Course
-    include KOSapi
-    include ActiveModel::Naming
   
+    def self.search(search)  
+      if search  
+        data = all
+        find = data.select do |x|
+          x.code =~ /#{search}/ ||x.name =~ /#{search}/
+        end
+      else  
+        all  
+      end  
+    end 
 end

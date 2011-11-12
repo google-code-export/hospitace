@@ -8,15 +8,10 @@
 //= require jquery_ujs
 //= require_tree .
 
-
-jQuery(function(){
-    jQuery("#tabs").tabs();
-});
-
 $(function () {    
             
     // Sorting and pagination links.  
-    $('#users th a, #users .pagination a, #peoples th a, #peoples .pagination a').live('click',   
+    $('#datagrid th a, #datagrid .pagination a').live('click',   
         function () {  
             $.getScript(this.href);  
             return false;  
@@ -24,16 +19,13 @@ $(function () {
     );  
     
     // Search form.  
-    $('#users_search, #peoples_search').submit(function () {  
-        $.get(this.action, $(this).serialize(), null, 'script');  
-        return false;  
-    });    
-    
-    $('#users_search input').keyup(function () {  
-        $.get($('#users_search').attr('action'),  
-        $('#users_search').serialize(), null, 'script');  
+    $('#datagrid_search').submit(function () {  
+        $.get($('#datagrid_search').attr('action'),  
+        $('#datagrid_search').serialize(), null, 'script');  
         return false;  
     }); 
+    
+    
     
     $('#observation_course').change(function(){
         $.getScript(this.href);

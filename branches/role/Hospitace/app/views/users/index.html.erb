@@ -1,13 +1,13 @@
 <% title "Uživaté" %>
 
-<div id="users"><%= render :layout=>'users' do |user| %></div> 
+<%= render :layout=>'datagrid' do |user| %>
 
     <%= link_to 'Show', user %>
     <%= link_to 'Edit', edit_user_path(user) %>
     <%= link_to 'Destroy', user, confirm: 'Are you sure?', method: :delete %> 
 
 <%end%>
-
+</div>
  
 
 

@@ -38,11 +38,11 @@ class ObservationWizardController < ApplicationController
   end
   
   def step2
-    @courses = Course.all.paginate(:page => params[:page])
+    @courses = Course.search(params[:search]).paginate(:page => params[:page])
   end
   
   def step3
-    @parallels = Parallel.find_by_course(@observation.code).paginate(:page => params[:page])
+    @parallels = Parallel.find_by_course(@observation.course).paginate(:page => params[:page])
   end
   
   def confirmation
@@ -50,18 +50,28 @@ class ObservationWizardController < ApplicationController
   end
   
   def new
-    @users = User.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:page => params[:page]) 
     session[:observation_params] = {}
     @observation = Observation.new
     
     session[:observation_step] = self.current_step
+    load_step
+    
     respond_to do |format|
+      format.js
       format.html
     end
   end
   
+  def index
+    self.current_step = session[:observation_step] if session[:observation_step]
+    load_step
+    respond_to do |format|
+        format.js {render "new.js"}
+    end
+
+  end
+  
   def create
-    #@users = User.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:page => params[:page]) 
     
     session[:observation_params] = {} unless session[:observation_params] 
     session[:observation_params].deep_merge!(params[:observation]) if params[:observation]
@@ -70,7 +80,7 @@ class ObservationWizardController < ApplicationController
     @observation = Observation.new(session[:observation_params])
     @observation.enable_validation_group self.current_step
     
-    
+
     
     if params[:back_button]
         self.previous_step
@@ -84,6 +94,8 @@ class ObservationWizardController < ApplicationController
         end  
     end
     session[:observation_step] = self.current_step
+    
+    load_step
     
     respond_to do |format|
       if @observation.persisted?
@@ -103,6 +115,12 @@ class ObservationWizardController < ApplicationController
   
   def sort_direction
     %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+  end
+  
+  private 
+  def load_step
+    step_method = self.method(self.current_step)
+    step_method.call()
   end
   
 end
