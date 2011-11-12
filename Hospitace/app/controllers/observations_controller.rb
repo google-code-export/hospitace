@@ -25,14 +25,7 @@ class ObservationsController < ApplicationController
   # GET /observations/new
   # GET /observations/new.json
   def new
-    load_courses
-    @observation = Observation.new
-
-    respond_to do |format|
-      format.js
-      format.html # new.html.erb
-      format.json { render json: @observation }
-    end
+    redirect_to :controller => "observation_wizard", :action => "new"
   end
 
   # GET /observations/1/edit

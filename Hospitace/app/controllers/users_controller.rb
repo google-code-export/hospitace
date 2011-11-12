@@ -31,10 +31,12 @@ class UsersController < ApplicationController
   # GET /users/new
   # GET /users/new.json
   def new
-    #load_persons
+    load_persons
+    @peoples = People.search(params[:search]).paginate(:page=>params[:page])
     @user = User.new
     
     respond_to do |format|
+      format.js
       format.html # new.html.erb
       format.json { render json: @user }
     end
@@ -102,4 +104,7 @@ class UsersController < ApplicationController
   end
   
   private 
+  def load_persons
+    @peoples = People.all.paginate(:page => params[:page]) 
+  end
 end

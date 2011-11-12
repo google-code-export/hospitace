@@ -1,29 +1,6 @@
 <h1>Courses</h1>
 
-<%#*<table>%>
-  <%#*<tr>%>
-    <%#*<th>id</th>%>
-    <%#*<th>Name</th>%>
-    <%#*<th>Code</th>%>
-    <%#*<th></th>%>
-  <%#*</tr>%>
-
-<%# @courses.each do |course| %>
-  <%#*<tr>%>
-    <%#*<td><%= course.id %></td>%>
-    <%#*<td><%= course.name %></td>%>
-    <%#*<td><%= course.code %></td>%>
-      
-    <%#*<td><%#= link_to "Detail", course_parallels_url %></td>%>
-    <%#*<td><%= link_to "Detail", url_for(:controller => "courses",:action=>:show ,:id => course.code) %></td>%>
-
-    
-    
-    
-  <%#*</tr>%>
-<%# end %>
-<%#*</table>%>
-
-<%= render :partial => "datagrid", :locals => { :courses => @courses } %>
-
+<%= render :layout => "datagrid", :locals => { :courses => @courses } do |course| %>
+  <%= link_to "Detail", url_for(:controller => "courses",:action=>:show ,:id => course.code) %>
+<% end %>
 <br />

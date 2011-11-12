@@ -4,9 +4,10 @@ class CoursesController < ApplicationController
   # GET /courses.json
   def index
     
-    @courses = Course.all.paginate(:page => params[:page])
+    @courses = Course.search(params[:search]).paginate(:page => params[:page])
 
     respond_to do |format|
+      format.js
       format.html # index.html.erb
       format.json { render json: @courses }
     end

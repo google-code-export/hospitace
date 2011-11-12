@@ -5,7 +5,7 @@ class Parallel < KOSapi::Parallel
   
   def self.find_by_course(code)
     instance = Course.find_by_code(code).instance
-    return if instance == nil
+    return [] if instance == nil
     
     return instance.parallels
   end
@@ -15,6 +15,7 @@ class Parallel < KOSapi::Parallel
     parallels.each do |parallel| 
       return parallel if parallel.id == parallel_id     
     end
+    return []
   end
   
 end

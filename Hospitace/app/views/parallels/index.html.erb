@@ -1,5 +1,6 @@
 <h1>Listing observations</h1>
 
-<%= render :partial => "datagrid", :locals => { :parallels => @parallels } %>
-
+<%= render :layout => "datagrid", :locals => { :parallels => @parallels } do |parallel| %>
+  <%= parallel.id %>
+<% end %>
 <br />
