@@ -2,7 +2,7 @@ require 'date'
 
 module KOSapi
   class Semester < Resource
-    RESOURCE = "#{API_URI}dumps/semesters"
+    RESOURCE = "#{API_URI}semesters?level=2"
     
     attr_reader :id, :code, :name, :start, :end
     
@@ -22,19 +22,40 @@ module KOSapi
       end
     end
     
-    def self.current_semester
-      return @@current_semester if not @@current_semester.nil?
-      current_semester_code = "B101"
+    #def self.current_semester
+    #  return @@current_semester if not @@current_semester.nil?
+    #  current_semester_code = "B101"
+    #  return if Semester.all.nil?
+    #  Semester.all.each do |semester|
+    #    if semester.code == current_semester_code
+    #      return @@current_semester ||= semester
+    #    end
+    #  end
+    #end
+    
+    def self.find_by_code semester_code
       return if Semester.all.nil?
       Semester.all.each do |semester|
-        if semester.code == current_semester_code
-          return @@current_semester ||= semester
+        if semester.code == semester_code
+          return semester
         end
       end
     end
-
+    
+    def self.current_semester
+      self.find_by_code "B102" # must be harcoded, KOSapi still returns previous semester
+    end 
+    
+    def self.__current_semester
+      return @@current_semester if not @@current_semester.nil?
+      pure_data = get("#{RESOURCE}/current")
+      return if pure_data.nil?
+      @@current_semester ||= self.new pure_data
+    end
+    
     def initialize(semester)
-      # dumps doesnt have url so cant be check whether data are valid
+      return unless valid? semester
+      
       @id = semester['@id']
       @code = semester['code']
       @name = semester['nameCz'] # also nameEn but systems on FEL CVUT are CZ only

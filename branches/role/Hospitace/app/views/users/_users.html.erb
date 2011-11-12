@@ -1,3 +1,12 @@
+
+<%#= form_tag users_path, :method => 'get', :id => "users_search" do %>  
+  <%#= hidden_field_tag :direction, params[:direction] %>  
+  <%#= hidden_field_tag :sort, params[:sort] %>
+  <%#*<p>%>  
+    <%#= text_field_tag :search, params[:search] %>  
+    <%#= submit_tag "Search", :name => nil %>  
+  <%#*</p>%> 
+
 <%= hidden_field_tag :direction, params[:direction] %>  
 <%= hidden_field_tag :sort, params[:sort] %>  
 <table class="pretty">
@@ -7,7 +16,6 @@
     <th><%= sortable "role" %></th>
     <th><%= sortable "email" %></th>
     <th></th>
-    <th></th>
   </tr>
 
 <% @users.each do |user| %>
@@ -16,11 +24,11 @@
     <td><%= user.full_name %></td>
     <td><%= user.role %></td>
     <td><%= user.email %></td>
-    <td><%= link_to 'Show', user %></td>
-    <td><%= link_to 'Edit', edit_user_path(user) %></td>
-    <td><%= link_to 'Destroy', user, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= yield user %></td>
   </tr>
 <% end %>
 </table>
 
 <%= will_paginate @users %>
+  
+<%# end %> 

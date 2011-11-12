@@ -1,6 +1,15 @@
 <h2>ObservationWizard#step3</h2>
-
+<% par = KOSapi::Course.find_by_code("X39ITT2").instance.parallels %>
+<% semestr = KOSapi::Semester.current_semester %>
   <p>
     <%= f.label :paraller %><br />
-    <%= f.select :paraller, KOSapi::CourseInstance.find_by_course_code(@observation.course)  %>
+    <%= f.select :paraller, par.collect {|p| [ p.type+" "+p.parallel_number.to_s, p.id ] } %>
+  </p>
+  <p>
+    <%= f.label :week %><br />
+    <%= f.select :week,  1..14%>
+  </p>
+  <p>
+    <%= f.label :announced %><br />
+    <%= f.select :week,  1..14%>
   </p>

@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   has_many :observations, :dependent => :destroy
  
   def load_user
-    user = KOSapi::User.find_by_username(self.login)
+    user = People.find_by_username(self.login)
     @email = user.email
     @firstname = user.firstname
     @lastname = user.lastname

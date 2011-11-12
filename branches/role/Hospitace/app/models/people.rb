@@ -1,3 +1,4 @@
 
-class People < ActiveRecord::Base
+class People < KOSapi::User
+  include KOSapi
 end

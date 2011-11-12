@@ -1,5 +1,16 @@
 <% title "Lidé" %>
 
-<%= render :file=>"peoples/search" %>
 
   
+<div id="peoples">  
+
+<%= render :layout=>"peoples" do |person| %>
+      <%= link_to "Show", :controller=>"peoples", :action=>"show", :id=>person.id  %>
+<% end %>
+
+</div> 
+
+
+
+
+ 

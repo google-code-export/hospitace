@@ -1,6 +1,6 @@
 
 <% title "New Observation" %>
- 
+
   
 <%= form_for @observation, :method=>"post",:url=>"/observation_wizard"  do |f| %>
   <% if @observation.errors.any? %>
@@ -24,7 +24,9 @@
 
   <div class="actions">
     <%= f.submit "Back", :name => "back_button" unless @_controller.first_step? %>
-    <%= f.submit "Continue" %>
+    <%= f.submit "Continue", :name=>"next" unless @_controller.last_step? %>
+    <%= f.submit "Create", :name=>"create" if @_controller.last_step? %>
     <%= f.submit "Reset", :action=>"reset" %>
   </div>
 <% end %>
+

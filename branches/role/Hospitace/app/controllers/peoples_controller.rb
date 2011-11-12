@@ -1,4 +1,4 @@
-require 'kosapi'
+
 require 'will_paginate/array'
 
 class PeoplesController < ApplicationController
@@ -7,7 +7,7 @@ class PeoplesController < ApplicationController
   # GET /peoples.json
   def index
     
-    @peoples = KOSapi::User.all.paginate(:page => params[:page])
+    @peoples = KOSapi::User.all.find_all { |e| e.username=~ /#{params[:search]}/  }.paginate(:page => params[:page])
 
     respond_to do |format|
       format.js
@@ -19,7 +19,7 @@ class PeoplesController < ApplicationController
   # GET /peoples/1
   # GET /peoples/1.json
   def show
-    @people = User.find(params[:id])
+    @people = KOSapi::User.find_by_id(params[:id]);
     
     respond_to do |format|
       format.html # show.html.erb
@@ -28,8 +28,8 @@ class PeoplesController < ApplicationController
   end
   
   def search
-    @peoples = KOSapi::User.all.paginate(:page => params[:page])
-
+    @peoples = KOSapi::User.all.find_all { |e| e.username=~ /#{params[:search]}/  }.paginate(:page => params[:page])
+    
     respond_to do |format|
       format.js
       format.html # index.html.erb

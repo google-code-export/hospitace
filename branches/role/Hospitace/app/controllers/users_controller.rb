@@ -21,6 +21,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
 
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @user }
@@ -30,9 +31,9 @@ class UsersController < ApplicationController
   # GET /users/new
   # GET /users/new.json
   def new
-    load_persons
+    #load_persons
     @user = User.new
-
+    
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @user }
@@ -47,8 +48,6 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    
-    logger.debug "####### The object is #{params[:user]}"
     @user = User.new(params[:user])
 
     respond_to do |format|
@@ -90,6 +89,10 @@ class UsersController < ApplicationController
     end
   end
   
+  def search_people
+    redirect_to :controller=>"peoples",:action=>"index"
+  end
+  
   def sort_column
     User.column_names.include?(params[:sort]) ? params[:sort] : "login"
   end
@@ -99,8 +102,4 @@ class UsersController < ApplicationController
   end
   
   private 
-  
-  def load_persons
-    @peoples = KOSapi::User.all
-  end
 end

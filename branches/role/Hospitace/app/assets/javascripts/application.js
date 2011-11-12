@@ -9,7 +9,11 @@
 //= require_tree .
 
 
-$(function () {  
+jQuery(function(){
+    jQuery("#tabs").tabs();
+});
+
+$(function () {    
             
     // Sorting and pagination links.  
     $('#users th a, #users .pagination a, #peoples th a, #peoples .pagination a').live('click',   
@@ -25,7 +29,7 @@ $(function () {
         return false;  
     });    
     
-    $('#users_search input, #peoples_search input').keyup(function () {  
+    $('#users_search input').keyup(function () {  
         $.get($('#users_search').attr('action'),  
         $('#users_search').serialize(), null, 'script');  
         return false;  

@@ -1,5 +1,3 @@
-require 'kosapi'
-
 class ObservationsController < ApplicationController
   
   # GET /observations
