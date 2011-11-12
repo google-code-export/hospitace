@@ -27,7 +27,6 @@ module KOSapi
       @teachers = convert_users parallel['teachers']
       @type = parallel['type']
       @uri = parallel['@uri']
-      
     end
     
     def students

@@ -1,7 +1,9 @@
 
 <h2>Step2</h2>
   
-  <p>
+  <%= render :partial => 'courses/index' %>
+
+  <p>   
     <%= f.label :course %><br />
     <%= f.select :course, KOSapi::Course.all.collect {|p| [ p.code, p.code ] }  %>
   </p>

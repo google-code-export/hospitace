@@ -1,11 +1,10 @@
-require 'lib/kosapi.rb' 
 
 class CoursesController < ApplicationController
-  # GET /observations
-  # GET /observations.json
+  # GET /courses
+  # GET /courses.json
   def index
     
-    @courses = KOSapi::Course.all;
+    @courses = Course.all.paginate(:page => params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -14,12 +13,16 @@ class CoursesController < ApplicationController
   end
   
   def show
-    @course = KOSapi::Course.find_by_code(params[:id])
+    @course = Course.find_by_code(params[:id])
     
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @course }
     end
+  end
+  
+  def instances
+    @instances = @course.instance
   end
 
 end

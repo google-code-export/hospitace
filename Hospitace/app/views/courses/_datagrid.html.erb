@@ -1,0 +1,40 @@
+
+
+<%#= form_tag users_path, :method => 'get', :id => "users_search" do %>  
+  <%#= hidden_field_tag :direction, params[:direction] %>  
+  <%#= hidden_field_tag :sort, params[:sort] %>
+  <%#*<p>%>  
+    <%#= text_field_tag :search, params[:search] %>  
+    <%#= submit_tag "Search", :name => nil %>  
+  <%#*</p>%> 
+
+<%= hidden_field_tag :direction, params[:direction] %>  
+<%= hidden_field_tag :sort, params[:sort] %>  
+<table class="pretty">
+  <tr>
+    <th><%= "id" %></th>
+    <th><%= "code" %></th>
+    <th><%= "name" %></th>
+    <th><%= "classes_type" %></th>
+    <th><%= "keywords" %></th>
+    <th></th>
+  </tr>
+
+  <%  courses.each do |course| %>
+  
+  <tr>
+    <td><%= course.id %></td>
+    <td><%= course.code %></td>
+    <td><%= course.name %></td>
+    <td><%= course.classes_type %></td>
+    <td><%= course.keywords %></td>
+    <td><%#= yield parallel %></td>
+  </tr>
+
+  <% end %>
+
+</table>
+
+<%= will_paginate courses %>
+  
+<%# end %> 

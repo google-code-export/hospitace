@@ -17,9 +17,8 @@ module KOSapi
     
     @@all = nil
 
-    def self.all  
+    def self.all
       return @@all if not @@all.nil?
-      
       pure_data = get("#{RESOURCE}?#{PARAM}")
       return Array[] if pure_data.nil?
       data_courses = pure_data['course']

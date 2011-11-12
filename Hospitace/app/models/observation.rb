@@ -10,4 +10,5 @@ class Observation < ActiveRecord::Base
   validation_group :step2, :fields=>[:course]
   validation_group :step3, :fields=>[:paraller,:week]
   validation_group :confirmation, :fields=>:all
+  
 end

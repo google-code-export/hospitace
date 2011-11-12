@@ -1,0 +1,1 @@
+{"@uri":"https://kosapi.feld.cvut.cz/api/2/people/id-322671000","@id":"322671000","email":"anderm1@fel.cvut.cz","firstName":"Milan","login":"andermil","student":{"@uri":"https://kosapi.feld.cvut.cz/api/2/people/andermil/student/"},"surname":"Anderle","teacher":{"@uri":"https://kosapi.feld.cvut.cz/api/2/people/andermil/teacher/","@id":"322671000"},"titlePre":"Ing."}

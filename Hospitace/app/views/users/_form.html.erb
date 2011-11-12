@@ -20,7 +20,7 @@
       <%= @user.login %>
     </div>
   
-  <% else %>
+  <% elsif false %>
     
 
     <div class="field">
@@ -30,6 +30,18 @@
       <%= link_to 'Search', search_peoples_path %>
     </div>
   <% end %>
+
+
+  <div id="peoples">  
+
+
+    
+  <%#= render :layout=>"peoples/peoples", :controller=>"peoples" do |person| %>
+        <%#= link_to "Show", :controller=>"peoples", :action=>"show", :id=>person.id  %>
+  <%# end %>
+
+  </div> 
+
 
   <div class="field">
     <%= f.label :role %><br />

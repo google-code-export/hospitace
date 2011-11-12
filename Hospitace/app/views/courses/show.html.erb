@@ -16,4 +16,6 @@
 </p>
 
 
+<%= render :partial=>"parallels/datagrid", :locals => { :parallels => Parallel.find_by_course(@course.code) } %>
+
 <%= link_to 'Back', courses_path %>

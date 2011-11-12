@@ -1,27 +1,29 @@
-<h1>Listing observations</h1>
+<h1>Courses</h1>
 
-<table>
-  <tr>
-    <th>id</th>
-    <th>Name</th>
-    <th>Code</th>
-    <th></th>
-  </tr>
+<%#*<table>%>
+  <%#*<tr>%>
+    <%#*<th>id</th>%>
+    <%#*<th>Name</th>%>
+    <%#*<th>Code</th>%>
+    <%#*<th></th>%>
+  <%#*</tr>%>
 
-<% @courses.each do |course| %>
-  <tr>
-    <td><%= course.id %></td>
-    <td><%= course.name %></td>
-    <td><%= course.code %></td>
+<%# @courses.each do |course| %>
+  <%#*<tr>%>
+    <%#*<td><%= course.id %></td>%>
+    <%#*<td><%= course.name %></td>%>
+    <%#*<td><%= course.code %></td>%>
       
-    <td><%= courses_path(:id => course.code) %></td>
-    <td><%= link_to "detail", courses_path(:id => course.code) %></td>
-    <td><%= link_to "detail", :controller => "courses", :id => course.code, :method =>:get %></td>
+    <%#*<td><%#= link_to "Detail", course_parallels_url %></td>%>
+    <%#*<td><%= link_to "Detail", url_for(:controller => "courses",:action=>:show ,:id => course.code) %></td>%>
+
     
     
     
-  </tr>
-<% end %>
-</table>
+  <%#*</tr>%>
+<%# end %>
+<%#*</table>%>
+
+<%= render :partial => "datagrid", :locals => { :courses => @courses } %>
 
 <br />

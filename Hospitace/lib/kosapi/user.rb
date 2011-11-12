@@ -68,5 +68,5 @@ module KOSapi
     def full_name
       "#{@title_pre} #{@firstname} #{@lastname} #{@title_post}"
     end
-  end
+  end 
 end
