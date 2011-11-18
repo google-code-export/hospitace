@@ -3,6 +3,8 @@
 
 class Parallel < KOSapi::Parallel
   
+  include KOSapi
+  
   def self.find_by_course(code)
     instance = Course.find_by_code(code).instance
     return [] if instance == nil
