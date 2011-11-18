@@ -2,20 +2,27 @@
 <html>
 <head>
   <title>Hospitace</title>
-  <%= stylesheet_link_tag    "application" %>
+  <%= stylesheet_link_tag    "application","960","template","colour" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <ul>
+  <h1 id="head">Hospitace</h1>
+  <ul id="navigation">
     <li><%= link_to "Uživatelé", users_path %></li>
     <li><%= link_to "Hospitace", observations_path %></li>
     <li><%= link_to "Lidé", peoples_path %></li>
     <li><%= link_to "Předměty", courses_path %></li>
   </ul>
-  <h1><%= @title %></h1>
-  <%= yield :search_form %>
-  <%= yield %>
+  <div id="content" class="container_16 clearfix">
+    <h2><%= @title %></h2>
+    <%= @add_button %>
+    <%= yield :search_form %>
+    <%= yield %>
 
+  </div>
+  <div id="foot">
+    <i>Designed by </i><a href="http://mathew-davies.co.uk/">Mathew Davies</a>
+  </div>
 </body>
 </html>

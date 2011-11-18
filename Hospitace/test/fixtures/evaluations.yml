@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  preparation: 1
+  teacher_calrity_interpretation: 1
+  teacher_quality_of_interpretation: 1
+  teacher_communication: 1
+  teacher_active_participation: 1
+  teacher_willing_explains: 1
+  teacher_student_satisfaction: 1
+  students_readiness: 1
+  students_independence: 1
+  students_active: 1
+  students_teacher_satisfaction: 1
+
+two:
+  preparation: 1
+  teacher_calrity_interpretation: 1
+  teacher_quality_of_interpretation: 1
+  teacher_communication: 1
+  teacher_active_participation: 1
+  teacher_willing_explains: 1
+  teacher_student_satisfaction: 1
+  students_readiness: 1
+  students_independence: 1
+  students_active: 1
+  students_teacher_satisfaction: 1

@@ -1,4 +1,6 @@
 
+require 'will_paginate/array'
+
 class CoursesController < ApplicationController
   # GET /courses
   # GET /courses.json

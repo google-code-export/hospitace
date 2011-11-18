@@ -3,6 +3,7 @@
 
 
 class Course < KOSapi::Course
+  include KOSapi
   
     def self.search(search)  
       if search  
@@ -11,7 +12,7 @@ class Course < KOSapi::Course
           x.code =~ /#{search}/ ||x.name =~ /#{search}/
         end
       else  
-        all  
+        all
       end  
     end 
 end
