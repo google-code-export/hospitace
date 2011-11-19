@@ -30,7 +30,7 @@
     <td><%= course.code %></td>
     <td><%= course.name %></td>
     <td><%= course.keywords %></td>
-    <td><%= yield course %></td>
+    <td><%= yield course if block_given?  %></td>
   </tr>
 
   <% end %>

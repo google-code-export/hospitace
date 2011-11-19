@@ -25,6 +25,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'cancan', '>=1.5'
 gem 'yard'
 gem 'yajl-ruby'
 gem 'jquery-rails'

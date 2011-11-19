@@ -3,7 +3,7 @@ class ObservationsController < ApplicationController
   # GET /observations
   # GET /observations.json
   def index
-    @observations = Observation.all
+    @observations = Observation.search(params[:search]).paginate(:page => params[:page]) 
 
     respond_to do |format|
       format.html # index.html.erb
@@ -75,6 +75,21 @@ class ObservationsController < ApplicationController
       format.html { redirect_to observations_url }
       format.json { head :ok }
     end
+  end
+  
+  # GET /observation/1/evalvation
+  # GET /observation/1/evalvation.json
+  def evalvation
+    @observation = Observation.find(params[:id])
+    
+    if(@observation == nil) 
+      redirect_to :action => "index", notice: 'Neexistuje' 
+    elsif(@observation.evaluation.nil?)
+      redirect_to new_evaluation_url
+    else  
+      redirect_to evaluation(@observation.evaluation)
+    end
+    
   end
   
   private 

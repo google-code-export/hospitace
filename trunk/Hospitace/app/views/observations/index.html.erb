@@ -1,26 +1,11 @@
-<h1>Listing observations</h1>
+<% title "Hospitace" %>
 
-<table>
-  <tr>
-    <th>User</th>
-    <th>Week</th>
-    <th>Paraller</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<%= render :layout => "datagrid", :locals => { :observations => @observations } do |observation| %>
+  <%= link_to 'Show', observation %>
+  <%= link_to 'Edit', edit_observation_path(observation) %>
+  <%= link_to 'Destroy', observation, confirm: 'Are you sure?', method: :delete %>
 
-<% @observations.each do |observation| %>
-  <tr>
-    <td><%= observation.user %></td>
-    <td><%= observation.week %></td>
-    <td><%= observation.paraller %></td>
-    <td><%= link_to 'Show', observation %></td>
-    <td><%= link_to 'Edit', edit_observation_path(observation) %></td>
-    <td><%= link_to 'Destroy', observation, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
 <% end %>
-</table>
 
 <br />
 <%= link_to 'Wizard', 'observation_wizard/new' %>

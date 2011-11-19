@@ -1,7 +1,3 @@
 class FinalReport < ActiveRecord::Base
-  
-  validates :day,  :presence => true
-  validates :announced, :presence => true
-  
-  belongs_to :observation
+  belongs_to :evaluation
 end

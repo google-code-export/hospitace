@@ -15,6 +15,11 @@
   <%= @observation.paraller %>
 </p>
 
+<% unless @observation.evaluation.nil? %>
+  <%= link_to 'Hodnocení', @observation.evaluation %>
+<% else %>
+  <%= link_to 'Nové hodnocení', new_observation_evaluation_path(@observation) %>
+<% end %>
 
 <%= link_to 'Edit', edit_observation_path(@observation) %> |
 <%= link_to 'Back', observations_path %>

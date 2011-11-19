@@ -1,11 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  text: MyText
-  created: 2011-10-11 21:56:24
-  observation: 
+  pros: MyText
+  cons: MyText
+  measures: MyText
+  conclusion: MyText
+  evaluation: 
 
 two:
-  text: MyText
-  created: 2011-10-11 21:56:24
-  observation: 
+  pros: MyText
+  cons: MyText
+  measures: MyText
+  conclusion: MyText
+  evaluation: 

@@ -1,9 +1,45 @@
 Hospitace::Application.routes.draw do
 
 
-  #get "parallels/index"
+  get "verbal_evaluations/index"
 
-  #get "parallels/show"
+  get "verbal_evaluations/show"
+
+  get "verbal_evaluations/new"
+
+  get "protocols/index"
+
+  get "protocols/show"
+
+  get "protocols/new"
+
+  get "opinion/index"
+
+  get "opinion/show"
+
+  get "opinion/new"
+
+  get "final_reports/index"
+
+  get "final_reports/show"
+
+  get "final_reports/new"
+
+  get "attachments/index"
+
+  get "attachments/show"
+
+  get "attachments/new"
+
+  resources :attachments
+
+  resources :evaluations do
+    resources :attachments
+    resources :opinions
+    resources :verbal_evaluations
+    resources :final_reports
+    resources :protocols
+  end
 
   root :to => 'home#index'
   
@@ -16,18 +52,17 @@ Hospitace::Application.routes.draw do
   
   resources :parallels, :only => [:index, :show]
   
-  resources :peoples, :only => [:index, :show,:search] do
-     get 'search', :on => :collection
-  end
+  resources :peoples, :only => [:index, :show]
 
-  resources :observations
+  resources :observations do 
+    resources :evaluations
+    #match 'observations/:id/evalvation' => 'observation#evalvation', :as => :observation_evalvation
+  end
 
   resources :users do
     resources :observations
   end
   
-  resources :final_reports
-
   resources :observation_wizard, :only=>[:new,:create,:reset] do
     get 'reset', :on => :member
   end

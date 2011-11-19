@@ -1,5 +1,5 @@
 <% content_for :search_form do %>
-  <%= form_tag request.path, :method => 'get', :id => "peoples_search" do %>  
+  <%= form_tag request.path, :method => 'get', :id => "datagrid_search" do %>  
     <%= hidden_field_tag :direction, params[:direction] %>  
     <%= hidden_field_tag :sort, params[:sort] %>
     <p>  
@@ -30,7 +30,7 @@
     <td><%= people.username %></td>
     <td><%= people.full_name %></td>
     <td><%= people.teacher? %></td>
-    <td><%= yield people %></td>
+    <td><%= yield people if block_given? %></td>
   </tr>
 
   <% end %>

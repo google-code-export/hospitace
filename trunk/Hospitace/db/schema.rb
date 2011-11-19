@@ -11,7 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111108114055) do
+ActiveRecord::Schema.define(:version => 20111119154521) do
+
+  create_table "attachments", :force => true do |t|
+    t.string   "filename"
+    t.string   "content_type"
+    t.binary   "data"
+    t.integer  "evaluation_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "attachments", ["evaluation_id"], :name => "index_attachments_on_evaluation_id"
 
   create_table "buildings", :force => true do |t|
     t.string   "name"
@@ -21,6 +32,17 @@ ActiveRecord::Schema.define(:version => 20111108114055) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "evaluations", :force => true do |t|
+    t.integer  "teacher"
+    t.string   "room"
+    t.datetime "date_time"
+    t.integer  "observation_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "evaluations", ["observation_id"], :name => "index_evaluations_on_observation_id"
 
   create_table "events", :force => true do |t|
     t.datetime "date"
@@ -32,14 +54,16 @@ ActiveRecord::Schema.define(:version => 20111108114055) do
   end
 
   create_table "final_reports", :force => true do |t|
-    t.text     "text"
-    t.datetime "created"
-    t.integer  "observation_id"
+    t.text     "pros"
+    t.text     "cons"
+    t.text     "measures"
+    t.text     "conclusion"
+    t.integer  "evaluation_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "final_reports", ["observation_id"], :name => "index_final_reports_on_observation_id"
+  add_index "final_reports", ["evaluation_id"], :name => "index_final_reports_on_evaluation_id"
 
   create_table "models", :force => true do |t|
     t.string   "attr1"
@@ -57,6 +81,15 @@ ActiveRecord::Schema.define(:version => 20111108114055) do
     t.boolean  "announced"
     t.string   "course"
   end
+
+  create_table "opinions", :force => true do |t|
+    t.text     "opinion"
+    t.integer  "evaluation_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "opinions", ["evaluation_id"], :name => "index_opinions_on_evaluation_id"
 
   create_table "rooms", :force => true do |t|
     t.string   "name"
@@ -91,5 +124,14 @@ ActiveRecord::Schema.define(:version => 20111108114055) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "verbal_evaluations", :force => true do |t|
+    t.text     "verbal"
+    t.integer  "evaluation_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "verbal_evaluations", ["evaluation_id"], :name => "index_verbal_evaluations_on_evaluation_id"
 
 end

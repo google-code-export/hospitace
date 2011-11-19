@@ -1,6 +1,9 @@
 require 'kosapi'
 
 class User < ActiveRecord::Base
+  
+  ROLES = %w[admin hospital hospital_admin teacher]
+  
   attr_reader :email, :firstname, :lastname, :title_pre, :title_post
   
   after_find :load_user

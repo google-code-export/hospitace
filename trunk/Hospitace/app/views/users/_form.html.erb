@@ -49,7 +49,10 @@
 
   <div class="field">
     <%= f.label :role %><br />
-    <%= f.select :role, {"Admin" => "admin", "Hospitatel" => "hospital"} %>
+    
+    <%=  f.collection_select :role, User::ROLES, :to_s, :humanize %>
+    
+    <%#= f.select :role, {"Admin" => "admin", "Hospitatel" => "hospital"} %>
   </div>
   
   <div class="actions">

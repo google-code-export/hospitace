@@ -15,7 +15,7 @@
       <td><%= parallel.last_hour %></td>
       <td><%= parallel.parity %></td>
       <td><%= parallel.type %></td>
-      <td><%= yield parallel %></td>
+      <td><%= yield parallel if block_given? %></td>
     </tr>
   <% end  %>
 </table>

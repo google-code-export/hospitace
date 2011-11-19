@@ -11,4 +11,18 @@ class Observation < ActiveRecord::Base
   validation_group :step3, :fields=>[:paraller,:week]
   validation_group :confirmation, :fields=>:all
   
+  has_one :evaluation
+  
+  
+  def self.search(search)  
+      scoped  
+  end 
+  
+  def find_course
+      Course.find_by_code(course)
+  end
+  
+  def find_parallel
+      Parallel.find(course,paraller)   
+  end
 end

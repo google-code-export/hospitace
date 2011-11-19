@@ -1,0 +1,7 @@
+$('#datagrid').html('<%= escape_javascript(
+  
+       render(:layout=>"datagrid",:locals => { :observations => @observations }) { |observation| 
+         link_to('Show', observation) + " "+ link_to('Edit', edit_observation_path(observation))+" "+link_to('Destroy', observation, confirm: 'Are you sure?', method: :delete)
+       }
+
+) %>');

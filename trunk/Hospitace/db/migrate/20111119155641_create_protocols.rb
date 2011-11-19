@@ -1,7 +1,7 @@
-class CreateEvaluations < ActiveRecord::Migration
+class CreateProtocols < ActiveRecord::Migration
   def change
-    create_table :evaluations do |t|
-      t.integer :preparation
+    create_table :protocols do |t|
+      t.integer :teacher_preparation
       t.integer :teacher_calrity_interpretation
       t.integer :teacher_quality_of_interpretation
       t.integer :teacher_communication
@@ -12,9 +12,8 @@ class CreateEvaluations < ActiveRecord::Migration
       t.integer :students_independence
       t.integer :students_active
       t.integer :students_teacher_satisfaction
+      t.text :documentation
 
-      t.text :comment
-      
       t.timestamps
     end
   end

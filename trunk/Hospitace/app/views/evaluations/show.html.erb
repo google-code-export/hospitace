@@ -1,0 +1,33 @@
+<% title "Hodnocení výuky" %>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Teacher:</b>
+  <%= @evaluation.teacher %>
+</p>
+
+<p>
+  <b>Room:</b>
+  <%= @evaluation.room %>
+</p>
+
+<p>
+  <b>Date time:</b>
+  <%= @evaluation.date_time %>
+</p>
+
+<p>
+  <b>Observation:</b>
+  <%= @evaluation.observation %>
+</p>
+
+
+<%= link_to 'Protokol', evaluation_protocol_path(@evaluation) %>
+<%= link_to 'Přílohy', evaluation_attachments_path(@evaluation) %>
+<%= link_to 'Stanoviko vyučujícího', evaluation_opinions_path(@evaluation) %>
+<%= link_to 'Slovní hodnocení', evaluation_verbal_evaluation_path(@evaluation) %>
+<%= link_to 'Finalní stanovisko', evaluation_final_report_path(@evaluation) %>
+
+<%= link_to 'Edit', edit_evaluation_path(@evaluation) %> |
+<%= link_to 'Back', evaluations_path %>
