@@ -1,0 +1,28 @@
+<% title "Příloha" %>
+
+<table>
+  <tr>
+    <th>Filename</th>
+    <th>Content type</th>
+    <th>Evaluation</th>
+    <th></th>
+    <th></th>
+  </tr>
+  <% @attachments.each do |attachment| %>
+    <tr>
+      <td><%= attachment.filename %></td>
+      <td><%= attachment.content_type %></td>
+      <td><%= attachment.evaluation %></td>
+      <td><%= link_to 'Show', attachment %></td>
+      <td><%= link_to 'Destroy', attachment, confirm: 'Are you sure?', method: :delete  %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= form_tag 'attachments',:method=>"post", :multipart => true do %>
+ 
+  <%= label_tag 'attachment', 'Přidat přílohu' %>
+  <%= hidden_field_tag 'evaluation_id', {:value=>params[:evaluation_id]}%>
+  <%= file_field_tag 'attachment' %>
+  <%= submit_tag "Send Attachment" %>
+<% end %>
