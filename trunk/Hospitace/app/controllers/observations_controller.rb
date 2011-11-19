@@ -1,4 +1,5 @@
 class ObservationsController < ApplicationController
+  
   # GET /observations
   # GET /observations.json
   def index
@@ -24,12 +25,7 @@ class ObservationsController < ApplicationController
   # GET /observations/new
   # GET /observations/new.json
   def new
-    @observation = Observation.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @observation }
-    end
+    redirect_to :controller => "observation_wizard", :action => "new"
   end
 
   # GET /observations/1/edit
@@ -80,4 +76,15 @@ class ObservationsController < ApplicationController
       format.json { head :ok }
     end
   end
+  
+  private 
+  
+  def load_courses
+    @courses = KOSapi::Course.all
+  end
+  
+  def load_parralers
+    @parallers = @course.instance
+  end
+  
 end

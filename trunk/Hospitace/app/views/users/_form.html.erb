@@ -1,0 +1,58 @@
+
+
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+
+  
+  <% if @user.persisted? %>
+    <p>
+      <b>Jméno:</b>
+      <%= @user.full_name %>
+    </p>
+
+    <p>
+      <b>Login:</b>
+      <%= @user.login %>
+    </p>
+
+    <p>
+      <b>Role:</b>
+      <%= @user.role %>
+    </p>
+
+    <p>
+      <b>Email:</b>
+      <%= @user.email %>
+    </p>
+
+  
+  <% else %>
+   
+
+    <%= render :layout=>'peoples/datagrid',:locals => { :peoples => @peoples } do |person|%>
+      <%= f.radio_button :login, person.username  %>
+    <% end %>
+
+  <% end %>
+
+  <div class="field">
+    <%= f.label :role %><br />
+    <%= f.select :role, {"Admin" => "admin", "Hospitatel" => "hospital"} %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

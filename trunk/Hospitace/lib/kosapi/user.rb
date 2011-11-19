@@ -3,7 +3,7 @@ module KOSapi
   class User < Resource
     RESOURCE = "#{API_URI}people/"
     
-    attr_reader :id, :email, :firstname, :lastname, :title_pre, :title_post
+    attr_reader :id, :email, :firstname, :lastname, :title_pre, :title_post,:username
 
     @@all = nil
 
@@ -64,5 +64,9 @@ module KOSapi
         true
       end
     end
-  end
+    
+    def full_name
+      "#{@title_pre} #{@firstname} #{@lastname} #{@title_post}"
+    end
+  end 
 end

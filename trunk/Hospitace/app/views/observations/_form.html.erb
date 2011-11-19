@@ -12,12 +12,24 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :announced %><br />
-    <%= f.text_field :announced %>
+    <%= f.label :user %><br />
+    <%= f.select :user, User.all.collect {|p| [ p.full_name, p.id ] } %>
   </div>
   <div class="field">
-    <%= f.label :day %><br />
-    <%= f.date_select :day %>
+    <%= f.label :week %><br />
+    <%= f.select :week, 1..14 %>
+  </div>
+
+  <div><div class="field">
+    <%= f.label 'Kurs' %><br />
+    <%= f.select :course, @courses.collect {|p| [ p.code, p.id ] },{:include_blank => "-- Select --"} %>
+  </div>
+  <div class="field" id=paraller">
+    <%=:course.eql? "course"%>
+    <%  unless :course.eql? "course" %>
+      <%= f.label :paraller %><br />
+      <%= f.number_field :paraller %>
+    <% end %>
   </div>
   <div class="actions">
     <%= f.submit %>

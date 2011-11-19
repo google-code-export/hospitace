@@ -1,9 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  announced: false
-  day: 2011-10-11
+  user: 
+  week: 1
+  paraller: 1
 
 two:
-  announced: true
-  day: 2011-10-11
+  user: 
+  week: 1
+  paraller: 1

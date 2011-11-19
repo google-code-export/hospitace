@@ -1,26 +1,43 @@
 Hospitace::Application.routes.draw do
-  get "home/index"
-  get 'courses/show'
+
+
+  #get "parallels/index"
+
+  #get "parallels/show"
+
+  root :to => 'home#index'
   
+  get "home/index"
+  
+  resources :courses,:constraints => {:id => /[0-9A-Z]+/i}, :only => [:index,:show,:search] do
+    get 'search', :on => :collection
+    resources :parallels, :only => [:index, :show]
+  end
+  
+  resources :parallels, :only => [:index, :show]
+  
+  resources :peoples, :only => [:index, :show,:search] do
+     get 'search', :on => :collection
+  end
+
+  resources :observations
+
+  resources :users do
+    resources :observations
+  end
   
   resources :final_reports
 
-  resources :observations
-  
-
-  #controller :courses do
-   # match 'blog'     => :index
-   # match 'blog/:id'   => :show, constraints => {
-   #  :id       => /[0-9A-Z]+/
-  #  }
- # end
-
-  controller 'courses' do
-    match 'courses' => :index
-    match 'courses/:id' => :show, :constraints => {
-      :id => /[0-9A-Z]+/i
-    }
+  resources :observation_wizard, :only=>[:new,:create,:reset] do
+    get 'reset', :on => :member
   end
+
+#  controller 'courses' do
+#    match 'courses' => :index
+#    match 'courses/:id' => :show, :constraints => {
+#      :id => /[0-9A-Z]+/i
+#    }
+#  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -71,7 +88,7 @@ Hospitace::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'home#index'
+
 
   # See how all your routes lay out with "rake routes"
 

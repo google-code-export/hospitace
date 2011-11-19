@@ -1,0 +1,21 @@
+<table class="pretty">
+  <tr>
+    <th><%= "login" %></th>
+    <th><%= "full_name" %></th>
+    <th><%= "role" %></th>
+    <th><%= "email" %></th>
+    <th></th>
+  </tr>
+  
+  <% parallels.each do |parallel| %>
+    <tr>
+      <td><%= parallel.parallel_number %></td>
+      <td><%= parallel.day %></td>
+      <td><%= parallel.first_hour %></td>
+      <td><%= parallel.last_hour %></td>
+      <td><%= parallel.parity %></td>
+      <td><%= parallel.type %></td>
+      <td><%= yield parallel %></td>
+    </tr>
+  <% end  %>
+</table>

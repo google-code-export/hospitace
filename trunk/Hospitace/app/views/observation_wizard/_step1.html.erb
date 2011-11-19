@@ -1,0 +1,6 @@
+<h2>Step1</h2>
+
+  <%= render :layout=>"users/datagrid" do |user| %>
+    <%= f.radio_button :user_id, user.id  %>
+  <%end%>
+ 

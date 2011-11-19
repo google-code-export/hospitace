@@ -7,3 +7,29 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+$(function () {    
+            
+    // Sorting and pagination links.  
+    $('#datagrid th a, #datagrid .pagination a').live('click',   
+        function () {  
+            $.getScript(this.href);  
+            return false;  
+        }  
+    );  
+    
+    // Search form.  
+    $('#datagrid_search').submit(function () {  
+        $.get($('#datagrid_search').attr('action'),  
+        $('#datagrid_search').serialize(), null, 'script');  
+        return false;  
+    }); 
+    
+    
+    
+    $('#observation_course').change(function(){
+        $.getScript(this.href);
+        return false;
+    }
+    );
+})  
