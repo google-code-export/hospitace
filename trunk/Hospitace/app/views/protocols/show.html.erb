@@ -1,2 +1,178 @@
-<h1>Protocols#show</h1>
-<p>Find me in app/views/protocols/show.html.erb</p>
+
+<% title "Formulář pro hodnocení výuky při hospitaci" %>
+
+<table>
+    <thead>
+      <tr>
+        <th>Hodnocení pedagoga</th>
+        <th>A</th>
+        <th>B</th>
+        <th>C</th>
+        <th>D</th>
+        <th>E</th>
+        <th>F</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Příprava výuky</td>
+        <% Protocol::RATING.each do |rating| %>
+          <td>
+            <% if rating.to_i == @protocol.teacher_preparation %>
+              X
+            <% end %>
+          </td>
+        <% end %>
+      </tr>
+      <tr>
+        <td>Srozumitelnost výkladu</td>
+        <% Protocol::RATING.each do |rating| %>
+          <td>
+            <% if rating.to_i == @protocol.teacher_calrity_interpretation %>
+              X
+            <% end %>
+          </td>
+        <% end %>
+      </tr>
+      <tr>
+        <td>Kvalita výkladu (chybovost, poutavost)</td>
+        <% Protocol::RATING.each do |rating| %>
+          <td>
+            <% if rating.to_i == @protocol.teacher_quality_of_interpretation %>
+              X
+            <% end %>
+          </td>
+        <% end %>
+      </tr>
+      <tr>
+        <td>Komunikace se studenty</td>
+        <% Protocol::RATING.each do |rating| %>
+          <td>
+            <% if rating.to_i == @protocol.teacher_communication %>
+              X
+            <% end %>
+          </td>
+        <% end %>
+      </tr>
+      <tr>
+        <td>Studenti jsou podporováni k aktivní účasti</td>
+        <% Protocol::RATING.each do |rating| %>
+          <td>
+            <% if rating.to_i == @protocol.teacher_active_participation %>
+              X
+            <% end %>
+          </td>
+        <% end %>
+      </tr>
+      <tr>
+        <td>Ochotně vysvětluje nejasnosti/doplňuje znalosti</td>
+        <% Protocol::RATING.each do |rating| %>
+          <td>
+            <% if rating.to_i == @protocol.teacher_willing_explains %>
+              X
+            <% end %>
+          </td>
+        <% end %>
+      </tr>
+      <tr>
+        <td>Spokojenost studentů s výukou</td>
+        <% Protocol::RATING.each do |rating| %>
+          <td>
+            <% if rating.to_i == @protocol.teacher_student_satisfaction %>
+              X
+            <% end %>
+          </td>
+        <% end %>
+      </tr>
+    </tbody>
+  </table> 
+
+
+  <%# *hodnocení studentů %>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Hodnocení studentů</th>
+        <th>A</th>
+        <th>B</th>
+        <th>C</th>
+        <th>D</th>
+        <th>E</th>
+        <th>F</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Připravenost (mají znalosti)</td>
+        <% Protocol::RATING.each do |rating| %>
+          <td>
+            <% if rating.to_i == @protocol.students_readiness %>
+              X
+            <% end %>
+          </td>
+        <% end %>
+      </tr>
+      <tr>
+        <td>Samostatná práce</td>
+        <% Protocol::RATING.each do |rating| %>
+          <td>
+            <% if rating.to_i == @protocol.students_independence %>
+              X
+            <% end %>
+          </td>
+        <% end %>
+      </tr>
+      <tr>
+        <td>Aktivní zapojení</td>
+        <% Protocol::RATING.each do |rating| %>
+          <td>
+            <% if rating.to_i == @protocol.students_active %>
+              X
+            <% end %>
+          </td>
+        <% end %>
+      </tr>
+      <tr>
+        <td>Spokojenost pedagoga s prací studentů</td>
+        <% Protocol::RATING.each do |rating| %>
+          <td>
+            <% if rating.to_i == @protocol.students_teacher_satisfaction %>
+              X
+            <% end %>
+          </td>
+        <% end %>
+      </tr>
+    </tbody>
+  </table> 
+
+  <table>
+    <thead>
+      <tr>
+        <th colspan="6">Hodnotící stupnice</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>A</td>
+        <td>B</td>
+        <td>C</td>
+        <td>D</td>
+        <td>E</td>
+        <td>F</td>
+      </tr>
+      <tr>
+        <td>výborně</td>
+        <td>velmi dobře</td>
+        <td>dobře</td>
+        <td>uspokojivě</td>
+        <td>dostatečně</td>
+        <td>nedostatečně</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="field">
+    <%= label_tag :documentation, "Komentář/Poznámky:" %><br />
+    <p><%= @protocol.documentation %></p>
+  </div>

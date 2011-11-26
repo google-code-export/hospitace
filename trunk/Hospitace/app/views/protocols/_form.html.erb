@@ -1,0 +1,173 @@
+<%= form_for(@protocol) do |f| %>
+  <% if @protocol.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@protocol.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @protocol.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+ <%= f.hidden_field :evaluation_id,{"value"=> params[:evaluation_id]} %>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Hodnocení pedagoga</th>
+        <th>A</th>
+        <th>B</th>
+        <th>C</th>
+        <th>D</th>
+        <th>E</th>
+        <th>F</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Příprava výuky</td>
+        <% Protocol::RATING.each do |rating| %>
+          <td>
+            <%= f.radio_button :teacher_preparation, rating %>
+          </td>
+        <% end %>
+      </tr>
+      <tr>
+        <td>Srozumitelnost výkladu</td>
+        <% Protocol::RATING.each do |rating| %>
+          <td>
+            <%= f.radio_button :teacher_calrity_interpretation, rating %>
+          </td>
+        <% end %>
+      </tr>
+      <tr>
+        <td>Kvalita výkladu (chybovost, poutavost)</td>
+        <% Protocol::RATING.each do |rating| %>
+          <td>
+            <%= f.radio_button :teacher_quality_of_interpretation, rating %>
+          </td>
+        <% end %>
+      </tr>
+      <tr>
+        <td>Komunikace se studenty</td>
+        <% Protocol::RATING.each do |rating| %>
+          <td>
+            <%= f.radio_button :teacher_communication, rating %>
+          </td>
+        <% end %>
+      </tr>
+      <tr>
+        <td>Studenti jsou podporováni k aktivní účasti</td>
+        <% Protocol::RATING.each do |rating| %>
+          <td>
+            <%= f.radio_button :teacher_active_participation, rating %>
+          </td>
+        <% end %>
+      </tr>
+      <tr>
+        <td>Ochotně vysvětluje nejasnosti/doplňuje znalosti</td>
+        <% Protocol::RATING.each do |rating| %>
+          <td>
+            <%= f.radio_button :teacher_willing_explains, rating %>
+          </td>
+        <% end %>
+      </tr>
+      <tr>
+        <td>Spokojenost studentů s výukou</td>
+        <% Protocol::RATING.each do |rating| %>
+          <td>
+            <%= f.radio_button :teacher_student_satisfaction, rating %>
+          </td>
+        <% end %>
+      </tr>
+    </tbody>
+  </table> 
+
+
+  <%# *hodnocení studentů %>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Hodnocení studentů</th>
+        <th>A</th>
+        <th>B</th>
+        <th>C</th>
+        <th>D</th>
+        <th>E</th>
+        <th>F</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Připravenost (mají znalosti)</td>
+        <% Protocol::RATING.each do |rating| %>
+          <td>
+            <%= f.radio_button :students_readiness, rating %>
+          </td>
+        <% end %>
+      </tr>
+      <tr>
+        <td>Samostatná práce</td>
+        <% Protocol::RATING.each do |rating| %>
+          <td>
+            <%= f.radio_button :students_independence, rating %>
+          </td>
+        <% end %>
+      </tr>
+      <tr>
+        <td>Aktivní zapojení</td>
+        <% Protocol::RATING.each do |rating| %>
+          <td>
+            <%= f.radio_button :students_active, rating %>
+          </td>
+        <% end %>
+      </tr>
+      <tr>
+        <td>Spokojenost pedagoga s prací studentů</td>
+        <% Protocol::RATING.each do |rating| %>
+          <td>
+            <%= f.radio_button :students_teacher_satisfaction, rating %>
+          </td>
+        <% end %>
+      </tr>
+    </tbody>
+  </table> 
+
+  <table>
+    <thead>
+      <tr>
+        <th colspan="6">Hodnotící stupnice</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>A</td>
+        <td>B</td>
+        <td>C</td>
+        <td>D</td>
+        <td>E</td>
+        <td>F</td>
+      </tr>
+      <tr>
+        <td>výborně</td>
+        <td>velmi dobře</td>
+        <td>dobře</td>
+        <td>uspokojivě</td>
+        <td>dostatečně</td>
+        <td>nedostatečně</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="field">
+    <%= f.label :documentation, "Komentář/Poznámky:" %><br />
+    <%= f.text_area :documentation, {"class" => "grid_16", "rows"=> "10"} %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

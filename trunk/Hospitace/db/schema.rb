@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111119154521) do
+ActiveRecord::Schema.define(:version => 20111126150201) do
 
   create_table "attachments", :force => true do |t|
     t.string   "filename"
@@ -90,6 +90,22 @@ ActiveRecord::Schema.define(:version => 20111119154521) do
   end
 
   add_index "opinions", ["evaluation_id"], :name => "index_opinions_on_evaluation_id"
+
+  create_table "protocols", :force => true do |t|
+    t.integer "teacher_preparation"
+    t.integer "teacher_calrity_interpretation"
+    t.integer "teacher_quality_of_interpretation"
+    t.integer "teacher_communication"
+    t.integer "teacher_active_participation"
+    t.integer "teacher_willing_explains"
+    t.integer "teacher_student_satisfaction"
+    t.integer "students_readiness"
+    t.integer "students_independence"
+    t.integer "students_active"
+    t.integer "students_teacher_satisfaction"
+    t.text    "documentation"
+    t.integer "evaluation_id"
+  end
 
   create_table "rooms", :force => true do |t|
     t.string   "name"

@@ -1,37 +1,10 @@
 Hospitace::Application.routes.draw do
 
-
-  get "verbal_evaluations/index"
-
-  get "verbal_evaluations/show"
-
-  get "verbal_evaluations/new"
-
-  get "protocols/index"
-
-  get "protocols/show"
-
-  get "protocols/new"
-
-  get "opinion/index"
-
-  get "opinion/show"
-
-  get "opinion/new"
-
-  get "final_reports/index"
-
-  get "final_reports/show"
-
-  get "final_reports/new"
-
-  get "attachments/index"
-
-  get "attachments/show"
-
-  get "attachments/new"
-
   resources :attachments
+  resources :protocols
+  resources :opinions
+  resources :verbal_evaluations
+  resources :final_reports
 
   resources :evaluations do
     resources :attachments

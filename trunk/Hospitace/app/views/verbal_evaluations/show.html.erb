@@ -1,2 +1,6 @@
-<h1>VerbalEvaluations#show</h1>
-<p>Find me in app/views/verbal_evaluations/show.html.erb</p>
+<% title "Slovní hodnocení hospitační návštěvy hospitujícím" %>
+
+<div class="field">
+    <%= label_tag :verbal, "Stanovisko:" %>
+    <p><%= @verbal_evaluation.verbal %></p>
+</div>
