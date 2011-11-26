@@ -1,0 +1,39 @@
+<%= form_for(@final_report) do |f| %>
+  <% if @final_report.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@final_report.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @final_report.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+ <%= f.hidden_field :evaluation_id,{"value"=> params[:evaluation_id]} %>
+
+  <div class="field">
+    <%= f.label :pros, "Klady" %><br />
+    <%= f.text_area :pros, {"class" => "grid_16", "rows"=> "5"} %>
+  </div>
+
+  <div class="field">
+    <%= f.label :cons, "Zápory" %><br />
+    <%= f.text_area :cons, {"class" => "grid_16", "rows"=> "5"} %>
+  </div>
+
+  <div class="field">
+    <%= f.label :measures, "Navržená opatření" %><br />
+    <%= f.text_area :measures, {"class" => "grid_16", "rows"=> "5"} %>
+  </div>
+
+  <div class="field">
+    <%= f.label :conclusion, "Závěr ke zveřejnění" %><br />
+    <%= f.text_area :conclusion, {"class" => "grid_16", "rows"=> "5"} %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
