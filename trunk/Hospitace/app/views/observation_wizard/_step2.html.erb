@@ -1,6 +1,4 @@
 
-<h2>Step2</h2>
-  
   <%= render :layout => 'courses/datagrid', :locals => { :courses => @courses } do |course| %>
       <%= f.radio_button :course, course.code  %>
   <% end  %>

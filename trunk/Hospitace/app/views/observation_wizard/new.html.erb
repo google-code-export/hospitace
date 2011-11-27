@@ -1,5 +1,6 @@
 
-<% title "New Observation" %>
+<% title "Naplánovat hospitaci" %>
+<% steps_init %w[Hospituící Předmět Paralelka Potvrzení], @step_selected %>
 
   
 <%= form_for @observation, :method=>"post",:url=>"/observation_wizard"  do |f| %>
@@ -15,18 +16,15 @@
     </div>
   <% end %>
 
-  <%= debug @observation %>
-
-  <%= session[:observation_params] %>
-  <%= @_controller.current_step %>
-  <%#= self.instance_variables %>  
   <%= render "#{@_controller.current_step}" , {:f=>f} %>
 
   <div class="actions">
     <%= f.submit "Back", :name => "back_button" unless @_controller.first_step? %>
     <%= f.submit "Continue", :name=>"next" unless @_controller.last_step? %>
     <%= f.submit "Create", :name=>"create" if @_controller.last_step? %>
-    <%= f.submit "Reset", :action=>"reset" %>
+    <%#= f.submit "Reset", :action=>"reset" %>
   </div>
+  
+  <%#= debug @observation %>
 <% end %>
 

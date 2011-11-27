@@ -1,9 +1,10 @@
 # To change this template, choose Tools | Templates
 # and open the template in the editor.
 
+require 'kosapi'
 
 class Course < KOSapi::Course
-  include KOSapi
+  #include KOSapi
   
     def self.search(search)  
       if search  

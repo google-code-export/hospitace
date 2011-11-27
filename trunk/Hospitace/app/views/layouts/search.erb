@@ -1,0 +1,6 @@
+    
+<% content_for :content do %>
+  <%= yield :search_form if content_for?(:search_form) %>
+  <%= content_for?(:news_content) ? yield(:news_content) : yield %>
+<% end %>
+<%= render :template => 'layouts/application' %>

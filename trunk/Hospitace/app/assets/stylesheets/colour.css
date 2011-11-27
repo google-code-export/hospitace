@@ -77,3 +77,14 @@ a.delete {
 	margin:0 0 11px 0;
 	position:relative;
 }
+
+tr.highlight td {
+	background:#eee;
+	color:#000
+}
+
+tr.market td {
+    background:#6DA827;
+    color:#fff;
+    font-weight: bold;
+}

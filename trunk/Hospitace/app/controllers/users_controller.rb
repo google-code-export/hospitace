@@ -6,12 +6,11 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    
     @users =  User.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:page => params[:page]) 
 
     respond_to do |format|
       format.js
-      format.html # index.html.erb
+      format.html { render :layout=>"search", :action=>:index}
       format.json { render json: @users }
     end
   end
@@ -23,7 +22,7 @@ class UsersController < ApplicationController
 
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html 
       format.json { render json: @user }
     end
   end
@@ -37,7 +36,7 @@ class UsersController < ApplicationController
     
     respond_to do |format|
       format.js
-      format.html # new.html.erb
+      format.html { render :layout=>"search", :action=>:new}
       format.json { render json: @user }
     end
   end

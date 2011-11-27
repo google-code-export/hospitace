@@ -39,7 +39,7 @@
 <% unless @evaluation.opinion.nil? %>
   <%= link_to 'Stanoviko vyučujícího', evaluation_opinions_path(@evaluation,@evaluation.opinion) %>
 <% else %>
-  <%= link_to '+Stanoviko vyučujícího', new_evaluation_opinions_path(@evaluation) %>
+  <%= link_to '+Stanoviko vyučujícího', new_evaluation_opinion_path(@evaluation) %>
 <% end %>
 
 <% unless @evaluation.final_report.nil? %>

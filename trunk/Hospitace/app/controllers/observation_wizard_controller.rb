@@ -1,6 +1,7 @@
 require 'will_paginate/array'
 
 class ObservationWizardController < ApplicationController
+  layout "steps"
   helper_method :sort_column, :sort_direction
   
   attr_writer :current_step
@@ -34,19 +35,22 @@ class ObservationWizardController < ApplicationController
   end
   
   def step1
+    @step_selected = 0;
     @users = User.search(params[:search]).paginate(:page => params[:page])
   end
   
   def step2
+    @step_selected = 1;
     @courses = Course.search(params[:search]).paginate(:page => params[:page])
   end
   
   def step3
+    @step_selected = 2;
     @parallels = Parallel.find_by_course(@observation.course).paginate(:page => params[:page])
   end
   
   def confirmation
-    
+    @step_selected = 3;
   end
   
   def new

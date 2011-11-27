@@ -18,8 +18,8 @@
   <div id="content" class="container_16 clearfix">
     <h2><%= @title %></h2>
     <%= @add_button %>
-    <%= yield :search_form %>
-    <%= yield %>
+    
+    <%= content_for?(:content) ? yield(:content) : yield %>
 
   </div>
   <div id="foot">

@@ -32,4 +32,23 @@ $(function () {
         return false;
     }
     );
+        
+    $('#datagrid tbody tr').live('click',function(){
+        $('#datagrid tbody tr').each(function(index){
+           $(this).removeClass("market");
+        });
+        
+            $(this).addClass("market");
+            $(this).find('input:radio').attr('checked', true);
+    }); 
+    
+    $('#datagrid tr').live('mouseover',function(){
+        $(this).addClass("highlight");
+    }
+    ); 
+        
+    $('#datagrid tr').live('mouseout',function(){
+         $(this).removeClass("highlight");
+    }
+    );       
 })  
