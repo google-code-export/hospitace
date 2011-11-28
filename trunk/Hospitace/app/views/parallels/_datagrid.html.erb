@@ -1,21 +1,24 @@
-<table class="pretty">
-  <tr>
-    <th><%= "login" %></th>
-    <th><%= "full_name" %></th>
-    <th><%= "role" %></th>
-    <th><%= "email" %></th>
-    <th></th>
-  </tr>
-  
-  <% parallels.each do |parallel| %>
+
+<div class="datagrid">
+  <table class="pretty">
     <tr>
-      <td><%= parallel.parallel_number %></td>
-      <td><%= parallel.day %></td>
-      <td><%= parallel.first_hour %></td>
-      <td><%= parallel.last_hour %></td>
-      <td><%= parallel.parity %></td>
-      <td><%= parallel.type %></td>
-      <td><%= yield parallel if block_given? %></td>
+      <th>Id</th>
+      <th>Den</th>
+      <th>Hodina</th>
+      <th>Parita</th>
+      <th>Typ</th>
+      <th></th>
     </tr>
-  <% end  %>
-</table>
+
+    <% parallels.each do |parallel| %>
+      <tr>
+        <td><%= parallel.parallel_number %></td>
+        <td><%= parallel.day %></td>
+        <td><%= parallel_time(parallel) %></td>
+        <td><%= parallel.parity %></td>
+        <td><%= parallel.type %></td>
+        <td><%= yield parallel if block_given? %></td>
+      </tr>
+    <% end  %>
+  </table>
+</div>

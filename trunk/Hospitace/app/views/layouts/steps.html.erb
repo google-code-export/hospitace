@@ -1,5 +1,6 @@
 
 <% @steps_data ||= [] %>
+
 <% @step_selected ||= 0 %>
     
 <% content_for :content do %>
@@ -11,7 +12,7 @@
     
         <% if i == @step_selected %>
           <div class="step-no"><%= i+1 %></div>
-          <div class="step-dark-left"><%= item %></div>
+          <div class="step-dark-left"><%= t item %></div>
           
           <% if i == max -1 %>
             <div class="step-dark-round">&nbsp;</div>
@@ -20,7 +21,7 @@
           <% end %>
         <% else %>
           <div class="step-no-off"><%= i+1 %></div>
-          <div class="step-light-left"><%= item %></div> 
+          <div class="step-light-left"><%= t item %></div> 
           
           <% if i == max -1 %>
             <div class="step-light-round">&nbsp;</div>

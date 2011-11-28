@@ -1,4 +1,6 @@
 <% title "Hodnocení výuky" %>
+<% steps_init Evaluation::STATES %>
+<%= Evaluation::STATES.index(@evaluation.state) %>
 
 <p id="notice"><%= notice %></p>
 
@@ -21,6 +23,14 @@
   <b>Observation:</b>
   <%= @evaluation.observation %>
 </p>
+
+<p>
+  <%= @evaluation.state %>
+</p>
+
+<% Evaluation::STATES.each do |step|  %>
+
+<% end %>
 
 <%= link_to 'Přílohy', evaluation_attachments_path(@evaluation) %>
 

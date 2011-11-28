@@ -18,4 +18,16 @@ module ApplicationHelper
     @steps_data = data ||= []
     @steps_selected = selected
   end   
+  
+  
+  
+  def parallel_time(parallel) 
+    start = AppConfig.start_time + AppConfig.lesson_lenght * (parallel.first_hour-1) + AppConfig.pause_lenght * (parallel.first_hour/2)
+    finish = start + AppConfig.lesson_lenght * (parallel.last_hour + 1 - parallel.first_hour) + AppConfig.pause_lenght * ((parallel.last_hour + 1 - parallel.first_hour)/2-1)
+    
+    start = "#{start/60}:#{"%02d" % (start%60)}"
+    finish = "#{finish/60}:#{"%02d" % (finish%60)}"
+    "#{start}-#{finish}"
+  end
+  
 end

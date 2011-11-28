@@ -35,6 +35,8 @@ GEM
       activesupport (= 3.1.1)
     activesupport (3.1.1)
       multi_json (~> 1.0)
+    app-config (0.1.2)
+      activerecord (~> 3.0)
     arel (2.2.1)
     builder (3.0.0)
     cancan (1.6.7)
@@ -135,6 +137,7 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord
+  app-config
   cancan (>= 1.5)
   coffee-rails (~> 3.1.1)
   execjs

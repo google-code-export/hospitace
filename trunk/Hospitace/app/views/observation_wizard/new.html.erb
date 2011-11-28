@@ -1,6 +1,6 @@
 
 <% title "Naplánovat hospitaci" %>
-<% steps_init %w[Hospituící Předmět Paralelka Potvrzení], @step_selected %>
+<% steps_init @_controller.steps, @step_selected %>
 
   
 <%= form_for @observation, :method=>"post",:url=>"/observation_wizard"  do |f| %>
@@ -25,6 +25,6 @@
     <%#= f.submit "Reset", :action=>"reset" %>
   </div>
   
-  <%#= debug @observation %>
+  <%= debug @observation %>
 <% end %>
 

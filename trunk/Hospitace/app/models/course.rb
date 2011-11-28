@@ -16,4 +16,6 @@ class Course < KOSapi::Course
         all
       end  
     end 
+    
+    
 end

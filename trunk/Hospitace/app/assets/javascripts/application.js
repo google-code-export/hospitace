@@ -37,9 +37,10 @@ $(function () {
         $('#datagrid tbody tr').each(function(index){
            $(this).removeClass("market");
         });
-        
+        if($(this).find('input:radio').length == 1){
             $(this).addClass("market");
             $(this).find('input:radio').attr('checked', true);
+        }
     }); 
     
     $('#datagrid tr').live('mouseover',function(){

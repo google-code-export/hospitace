@@ -5,7 +5,7 @@ require 'kosapi'
 
 class Parallel < KOSapi::Parallel
   
-  #include KOSapi
+  include KOSapi
   
   def self.find_by_course(code)
     instance = Course.find_by_code(code).instance

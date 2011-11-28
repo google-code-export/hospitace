@@ -11,7 +11,7 @@ class PeoplesController < ApplicationController
 
     respond_to do |format|
       format.js
-      format.html # index.html.erb
+      format.html { render :layout=>"search", :action=>:index}
       format.json { render json: @peoples }
     end
   end

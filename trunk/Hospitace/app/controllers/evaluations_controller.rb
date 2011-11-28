@@ -25,9 +25,10 @@ class EvaluationsController < ApplicationController
   # GET /evaluations/1.json
   def show
     @evaluation = Evaluation.find(params[:id])
-
+    @step_selected = Evaluation::STATES.index(@evaluation.state)
+    
     respond_to do |format|
-      format.html # show.html.erb
+      format.html { render :layout=>"steps", :action=>:show}
       format.json { render json: @evaluation }
     end
   end

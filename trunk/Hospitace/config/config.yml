@@ -1,3 +1,5 @@
 common:
-  download_items: 10
-  subscriptions_limit: 50
+  lesson_lenght: 45
+  start_time: 450
+  pause_lenght: 15
+  per_page: 15

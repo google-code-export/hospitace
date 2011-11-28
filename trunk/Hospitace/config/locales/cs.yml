@@ -3,3 +3,14 @@
 
 cs:
   hello: "Ahoj světe"
+  protocol: "Protokol"
+  verbal_evaluation: "Slovní hodnocení"
+  opinion: "Stanovisko vyučujícího"
+  final_report: "Finální report"
+  observation_wizard:
+    new:
+      step1: "Hospitující"
+      step2: "Předmět"
+      step3: "Paralelka"
+      confirmation: "Potvrzení"
+  
