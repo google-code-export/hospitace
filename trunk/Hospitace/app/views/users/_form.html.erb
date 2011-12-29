@@ -1,0 +1,26 @@
+<%= simple_form_for @user, :wrapper => :inline do |f| %>
+
+<%#= debug @user %>
+
+<% if f.error_notification %>
+<div class="alert-message warning fade in" data-alert="alert">
+	<a class="close" href="#">×</a>
+	<p>
+		<%= f.error_notification %>
+	</p>
+</div>
+<% end %>
+
+
+<%= f.input :email, :placeholder => 'user@fel.cvut.cz' %>
+<%= f.input :password, :hint => 'No special characters.' %>
+<%= f.input :password_confirmation, :hint => 'No special characters.' %>
+
+<%= f.input :roles, :collection =>User::ROLES,  :as => :check_boxes, :wrapper=>:label_wrapped %>
+
+
+<div class="actions">
+	<%= f.button :submit, :class => 'btn primary' %>
+	<%= button_tag 'Cancel', :type => :reset, :class => "btn" %>
+</div>
+<% end %> 

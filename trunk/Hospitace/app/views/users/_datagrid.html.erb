@@ -1,0 +1,44 @@
+
+<% content_for :secoundary_content do %>
+	
+	<div class="header">
+		<h3>Filter</h3>
+	</div>	
+	
+	<%= simple_form_for :search,:method=>:get,:wrapper => :inline do |f| %>
+	
+	<%= hidden_field_tag :direction, params[:direction] %>
+	<%= hidden_field_tag :sort, params[:sort] %>
+	
+	<%= f.input :email, :placeholder => 'user@fel.cvut.cz', :required => false %>
+	
+	<%= f.input :roles, :collection =>User::ROLES,  :as => :check_boxes, :wrapper=>:label_wrapped, :required => false %>
+	<div class="actions">
+		<%= f.submit :search, :class => 'btn primary' %>
+	</div>
+	<% end %>
+
+<% end %> 
+<div id="datagrid">
+<table class="zebra-striped">
+  <thead>
+  <tr>
+    <%= sortable :id, "#" %>
+    <%= sortable :email, :email %>
+    <th></th>
+  </tr>
+  </thead>
+  
+
+<% @users.each do |user| %>
+  <tr>
+    <td><%= user.id %></td>
+    <td><%= user.email %></td>
+    <td><%= yield user %></td>
+  </tr>
+<% end %>
+</tbody>
+</table>
+<%= will_paginate @users, :renderer=> WillPaginate::ActionView::BootstrapLinkRenderer %>
+  
+</div>
