@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Hospitace</title>
+		<%= stylesheet_link_tag    "application" %>
+		<%= javascript_include_tag "application" %>
+	
+		
+		<%= csrf_meta_tags %>
+	</head>
+	<body>
+		<div class="topbar">
+			<div class="fill">
+				<div class="container">
+					<%= link_to t("Hospitace"), root_path, :class=>"brand" %>
+					<ul class="nav">
+						<li class="active">
+							<%= link_to t(:home), root_path %>
+						</li>
+						<li>
+							<%= link_to t(:users), users_path %>
+						</li>
+						<li>
+							<a href="#contact">Contact</a>
+						</li>
+					</ul>
+					<p class="pull-right">
+						<% if !current_user %>
+						<%= link_to "Register", new_user_path %> |
+						<%= link_to "Log In", :login %> |
+						<% else %>
+						Logged in as <%= link_to "My Account", edit_user_path(current_user.id) %> |
+						<%= link_to "Logout", :logout %>
+						<% end %>
+					</p>
+				</div>
+			</div>
+		</div>
+		
+
+		<div class="container">
+			
+			<div class="content">
+				<div class="page-header">
+
+					<h1><%= t(@title) =%></h1>
+				</div>
+				<div class="row">
+					
+					<% if !flash[:alert].nil? %>
+					
+						<div class="alert-message error fade in" data-alert="alert">
+							<a class="close" href="#">×</a>
+							<p>
+								<strong>Holy guacamole!</strong> <%= flash[:alert] %>.
+							</p>
+						</div>
+						
+						
+					<% end %>
+					
+					<% if !flash[:warning].nil? %>
+					
+						<div class="alert-message info fade in" data-alert="info">
+							<a class="close" href="#">×</a>
+							<p>
+								<strong>Holy guacamole!</strong> <%= flash[:warning] %>.
+							</p>
+						</div>
+						
+						
+					<% end %>
+					
+					<% if !flash[:notice].nil? %>
+					
+						<div class="alert-message success fade in" data-alert="success">
+							<a class="close" href="#">×</a>
+							<p>
+								<strong>Holy guacamole!</strong> <%= flash[:notice] %>.
+							</p>
+						</div>
+						
+						success
+					<% end %>
+					
+					
+					<% if content_for?(:secoundary_content) %>
+					<div class="main_content">
+						<div class="data">
+							<%= content_for?(:content) ? yield(:content) : yield %>
+						</div>	
+					</div>
+					<div class="sidebar">
+						<%= yield(:secoundary_content)%>
+					</div>
+					<% else %>
+					<div class="main_content">
+						<%= content_for?(:content) ? yield(:content) : yield %>
+					</div>
+					<% end%>
+				</div>
+			</div>
+			<footer>
+				<p>
+					&copy; Company 2011
+				</p>
+			</footer>
+		</div>
+	</body>
+</html>
