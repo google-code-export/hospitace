@@ -1,0 +1,61 @@
+<% title "Hodnocení výuky" %>
+<% steps_init Evaluation::STATES %>
+<%= Evaluation::STATES.index(@evaluation.state) %>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Teacher:</b>
+  <%= @evaluation.teacher %>
+</p>
+
+<p>
+  <b>Room:</b>
+  <%= @evaluation.room %>
+</p>
+
+<p>
+  <b>Date time:</b>
+  <%= @evaluation.date_time %>
+</p>
+
+<p>
+  <b>Observation:</b>
+  <%= @evaluation.observation %>
+</p>
+
+<p>
+  <%= @evaluation.state %>
+</p>
+
+<% Evaluation::STATES.each do |step|  %>
+
+<% end %>
+
+<%= link_to 'Přílohy', evaluation_attachments_path(@evaluation) %>
+
+<% unless @evaluation.protocol.nil? %>
+  <%= link_to 'Protokol', evaluation_protocol_path(@evaluation,@evaluation.protocol) %>
+<% else %>
+  <%= link_to '+Protokol', new_evaluation_protocol_path(@evaluation) %>
+<% end %>
+
+<% unless @evaluation.verbal_evaluation.nil? %>
+  <%= link_to 'Slovní hodnocení', evaluation_verbal_evaluation_path(@evaluation,@evaluation.verbal_evaluation) %>
+<% else %>
+  <%= link_to '+Slovní hodnocení', new_evaluation_verbal_evaluation_path(@evaluation) %>
+<% end %>
+
+<% unless @evaluation.opinion.nil? %>
+  <%= link_to 'Stanoviko vyučujícího', evaluation_opinions_path(@evaluation,@evaluation.opinion) %>
+<% else %>
+  <%= link_to '+Stanoviko vyučujícího', new_evaluation_opinion_path(@evaluation) %>
+<% end %>
+
+<% unless @evaluation.final_report.nil? %>
+  <%= link_to 'Finalní stanovisko', evaluation_final_report_path(@evaluation,@evaluation.final_report) %>
+<% else %>
+  <%= link_to '+Finalní stanovisko', new_evaluation_final_report_path(@evaluation) %>
+<% end %>
+
+<%= link_to 'Back', evaluations_path %>

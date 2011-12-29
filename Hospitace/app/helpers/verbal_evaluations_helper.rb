@@ -1,0 +1,2 @@
+module VerbalEvaluationsHelper
+end

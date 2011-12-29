@@ -1,0 +1,55 @@
+source 'http://rubygems.org'
+
+gem 'rails', '3.1.1'
+
+# Bundle edge Rails instead:
+# gem 'rails',     :git => 'git://github.com/rails/rails.git'
+gem 'execjs'
+
+gem 'therubyracer'
+
+gem 'activerecord' 
+
+gem 'rails-i18n'
+gem 'sqlite3'
+gem "rake", "0.9.2.2"
+
+
+gem 'json'
+
+# Gems used only for assets and not required
+# in production environments by default.
+group :assets do
+  gem 'sass-rails',   '~> 3.1.4'
+  gem 'coffee-rails', '~> 3.1.1'
+  gem 'uglifier', '>= 1.0.3'
+end
+
+gem 'rails-i18n'
+gem 'app-config'
+gem 'cancan', '>=1.5'
+gem 'yard'
+gem 'yajl-ruby'
+gem 'jquery-rails'
+gem 'rest-client'
+gem 'rest-client-components'
+
+gem 'will_paginate', '~> 3.0'
+gem "validation_scopes", "~> 0.4.0"
+#gem "wizardly_gt"
+gem 'validation_group', :git=>'git://github.com/akira/validationgroup.git'
+
+
+# To use ActiveModel has_secure_password
+# gem 'bcrypt-ruby', '~> 3.0.0'
+
+# Use unicorn as the web server
+# gem 'unicorn'
+
+# Deploy with Capistrano
+# gem 'capistrano'
+
+# To use debugger
+# gem 'ruby-debug'
+
+gem "mocha", :group => :test

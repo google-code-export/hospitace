@@ -1,0 +1,30 @@
+
+<% title "Naplánovat hospitaci" %>
+<% steps_init @_controller.steps, @step_selected %>
+
+  
+<%= form_for @observation, :method=>"post",:url=>"/observation_wizard"  do |f| %>
+  <% if @observation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@observation.errors.count, "error") %> prohibited this observation from being saved:</h2>
+
+      <ul>
+      <% @observation.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= render "#{@_controller.current_step}" , {:f=>f} %>
+
+  <div class="actions">
+    <%= f.submit "Back", :name => "back_button" unless @_controller.first_step? %>
+    <%= f.submit "Continue", :name=>"next" unless @_controller.last_step? %>
+    <%= f.submit "Create", :name=>"create" if @_controller.last_step? %>
+    <%#= f.submit "Reset", :action=>"reset" %>
+  </div>
+  
+  <%= debug @observation %>
+<% end %>
+

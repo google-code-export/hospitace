@@ -1,0 +1,16 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+cs:
+  hello: "Ahoj světe"
+  protocol: "Protokol"
+  verbal_evaluation: "Slovní hodnocení"
+  opinion: "Stanovisko vyučujícího"
+  final_report: "Finální report"
+  observation_wizard:
+    new:
+      step1: "Hospitující"
+      step2: "Předmět"
+      step3: "Paralelka"
+      confirmation: "Potvrzení"
+  

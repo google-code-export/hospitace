@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  teacher: 1
+  room: MyString
+  date_time: 2011-11-19 15:50:16
+  observation: 
+
+two:
+  teacher: 1
+  room: MyString
+  date_time: 2011-11-19 15:50:16
+  observation: 

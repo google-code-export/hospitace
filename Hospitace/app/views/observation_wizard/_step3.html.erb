@@ -1,0 +1,12 @@
+  <p>
+    <%= f.label :week %><br />
+    <%= f.select :week,  1..14%>
+  </p>
+  <p>
+    <%= f.label :announced %><br />
+    <%= f.select :announced,  [true, false]%>
+  </p>
+    
+<%= render :layout => "parallels/datagrid", :locals => { :parallels => Parallel.find_by_course(@observation.course)  } do |parallel| %>
+  <%= f.radio_button :paraller, parallel.id  %>
+<% end %>

@@ -1,0 +1,54 @@
+<%= form_for(@evaluation) do |f| %>
+  <% if @evaluation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@evaluation.errors.count, "error") %> prohibited this evaluation from being saved:</h2>
+
+      <ul>
+      <% @evaluation.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= f.hidden_field :observation_id, {:value => @observation.id} %>
+
+  <div class="">
+    <p>
+    <%= f.label 'Course' %>
+    <%= "#{@course.code} - #{@course.name}" %>
+    </p>
+  </div>
+
+  <div class="">
+    <p>
+    <%= f.label :teacher %>
+    <%= f.select :teacher, @parallel.teachers.collect {|p| [ p.full_name, p.id ] } %>
+    select
+    </p>
+  </div>
+  <div class="">
+    <p>
+    <%= f.label :room %>
+    <%= @parallel.room.code %>
+    select
+    </p>
+  </div>
+  <div class="">
+    <p>
+    <%= f.label 'Garant' %>
+    <%= @course.instance.guarantors[0].full_name %>
+    </p>
+  </div>
+  <div class="">
+    <p>
+    <%= f.label :date_time %>
+    <%= f.datetime_select :date_time %>
+    </p>
+  </div>
+  <div class="grid_16">
+    <p class="submit">
+      <%= f.submit %>
+    </p>
+
+  </div>
+<% end %>

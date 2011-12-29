@@ -1,0 +1,24 @@
+<%= form_for(@verbal_evaluation) do |f| %>
+  <% if @verbal_evaluation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@verbal_evaluation.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @verbal_evaluation.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+ <%= f.hidden_field :evaluation_id,{"value"=> params[:evaluation_id]} %>
+
+  <div class="field">
+    <%= f.label :verbal, "Slovní hodnocení" %><br />
+    <%= f.text_area :verbal, {"class" => "grid_16", "rows"=> "10"} %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

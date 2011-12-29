@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  pros: MyText
+  cons: MyText
+  measures: MyText
+  conclusion: MyText
+  evaluation: 
+
+two:
+  pros: MyText
+  cons: MyText
+  measures: MyText
+  conclusion: MyText
+  evaluation: 

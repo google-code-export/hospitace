@@ -1,0 +1,6 @@
+<h1>Courses</h1>
+
+<%= render :layout => "datagrid", :locals => { :courses => @courses } do |course| %>
+  <%= link_to "Detail", url_for(:controller => "courses",:action=>:show ,:id => course.code) %>
+<% end %>
+<br />

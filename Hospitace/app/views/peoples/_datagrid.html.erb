@@ -1,0 +1,42 @@
+<% content_for :search_form do %>
+  <%= form_tag request.path, :method => 'get', :id => "datagrid_search" do %>  
+    <%= hidden_field_tag :direction, params[:direction] %>  
+    <%= hidden_field_tag :sort, params[:sort] %>
+    <p>  
+      <%= text_field_tag :search, params[:search] %>  
+      <%= submit_tag "Search", :name => nil %>  
+    </p> 
+
+  <% end %> 
+<% end %>
+
+<div id="datagrid">      
+    
+<%= hidden_field_tag :direction, params[:direction] %>  
+<%= hidden_field_tag :sort, params[:sort] %>  
+<table class="pretty">
+  <tr>
+    <th><%= "id" %></th>
+    <th><%= "login" %></th>
+    <th><%= "name" %></th>
+    <th><%= "is_teacher" %></th>
+    <th></th>
+  </tr>
+
+  <% peoples.each do |people| %>
+  
+  <tr>
+    <td><%= people.id %></td>
+    <td><%= people.username %></td>
+    <td><%= people.full_name %></td>
+    <td><%= people.teacher? %></td>
+    <td><%= yield people if block_given? %></td>
+  </tr>
+
+  <% end %>
+
+</table>
+
+<%= will_paginate peoples %>
+</div>
+
