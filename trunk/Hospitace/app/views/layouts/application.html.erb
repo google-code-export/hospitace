@@ -14,12 +14,10 @@
 				<div class="container">
 					<%= link_to t("Hospitace"), root_path, :class=>"brand" %>
 					<ul class="nav">
-						<li class="active">
-							<%= link_to t(:home), root_path %>
-						</li>
-						<li>
-							<%= link_to t(:users), users_path %>
-						</li>
+						<%= menu_item(:home,root_path) %>
+						<%= menu_item(:users,users_path,:read,User) %>
+						<%= menu_item(:peoples,peoples_path,:read,People) %>
+						
 						<li>
 							<a href="#contact">Contact</a>
 						</li>

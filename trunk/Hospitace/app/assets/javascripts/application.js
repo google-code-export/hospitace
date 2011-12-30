@@ -28,9 +28,9 @@ $(function () {
     );   
     
     // Search form.  
-    $('#datagrid_search').submit(function () {  
-        $.get($('#datagrid_search').attr('action'),  
-        $('#datagrid_search').serialize(), null, 'script');  
+    $('#search_form').submit(function () {  
+        $.get($('#search_form').attr('action'),  
+        $('#search_form').serialize(), null, 'script');  
         return false;  
     }); 
     
