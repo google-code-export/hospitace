@@ -25,7 +25,7 @@ class Ability
   
   def logged
     can [:destroy], UserSession
-    can [:edit], User, :id => current_user.id
+    can [:update,:show], User, :id => current_user.id
   end
   
   def observed
@@ -37,6 +37,7 @@ class Ability
   end
   
   def admin
+    can :assign_roles, User
     can :manage, :all
   end
 end

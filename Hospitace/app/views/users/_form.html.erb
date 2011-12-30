@@ -12,11 +12,11 @@
 <% end %>
 
 
-<%= f.input :email, :placeholder => 'user@fel.cvut.cz' %>
+<%= f.input :login, :placeholder => 'user' %>
 <%= f.input :password, :hint => 'No special characters.' %>
 <%= f.input :password_confirmation, :hint => 'No special characters.' %>
 
-<%= f.input :roles, :collection =>User::ROLES,  :as => :check_boxes, :wrapper=>:label_wrapped %>
+<%= f.input :roles, :collection =>User::ROLES,  :as => :check_boxes, :wrapper=>:label_wrapped if can? :assign_roles, @user %>
 
 
 <div class="actions">

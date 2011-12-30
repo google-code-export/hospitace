@@ -1,0 +1,9 @@
+
+<% title :peoples %>
+
+<%= render :layout=>'datagrid', :locals => { :peoples => @peoples } do |person| %>
+
+    <%= link_to :show , :controller=>"peoples", :action=>"show", :id=>person.id %>
+
+<%end%>
+

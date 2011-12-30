@@ -4,6 +4,11 @@ module ApplicationHelper
     @title = title
   end
 
+  def menu_item(title,path,*args)
+    return if !args.empty? and cannot? *args    
+    content_tag(:li,link_to(t(title),path), :class => ((current_page?(path) ? "active" : nil )))
+  end
+
 
   def sortable(column, title = nil)
     title ||= column.titleize  
