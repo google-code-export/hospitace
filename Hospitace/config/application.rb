@@ -47,8 +47,9 @@ module Hospitace
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
     
-    config.after_initialize do   
-      WillPaginate.per_page = 2
+    config.after_initialize do  
+      require 'app_config'
+      WillPaginate.per_page = AppConfig.per_page||= 15 
       #WillPaginate::ViewHelpers.pagination_options[:renderer] =  WillPaginate::ViewHelpers::BootstrapLinkRenderer
      
     end

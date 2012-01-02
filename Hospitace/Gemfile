@@ -25,6 +25,12 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+# for kosapi
+gem 'yard'
+gem 'yajl-ruby'
+gem 'rest-client'
+gem 'rest-client-components'
+
 gem 'jquery-rails'
 
 gem 'simple_form', :git => 'git://github.com/plataformatec/simple_form.git'
