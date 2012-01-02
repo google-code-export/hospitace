@@ -1,0 +1,1 @@
+{"@uri":"https://kosapi.fit.cvut.cz/api/2/people/id-355676000","@id":"355676000","email":"baraktom@fel.cvut.cz","firstName":"Tomáš","login":"baraktom","student":{"@uri":"https://kosapi.feld.cvut.cz/api/2/people/baraktom/student/"},"surname":"Barák","teacher":{"@uri":"https://kosapi.feld.cvut.cz/api/2/people/baraktom/teacher/","@id":"355676000"},"titlePre":"Bc."}

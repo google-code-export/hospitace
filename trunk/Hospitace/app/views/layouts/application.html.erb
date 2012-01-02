@@ -27,7 +27,7 @@
 						<%= link_to "Register", new_user_path %> |
 						<%= link_to "Log In", :login %> |
 						<% else %>
-						Logged in as <%= link_to "My Account", edit_user_path(current_user.id) %> |
+						Logged in as <%= link_to current_user.login, edit_user_path(current_user.id) %> |
 						<%= link_to "Logout", :logout %>
 						<% end %>
 					</p>

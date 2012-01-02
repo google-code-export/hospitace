@@ -7,6 +7,8 @@ Hospitace::Application.routes.draw do
 
   resources :users
 
+  resources :peoples, :only => [:index, :show]
+
   resources :user_sessions
   
   match 'login' => 'user_sessions#new', :as => :login

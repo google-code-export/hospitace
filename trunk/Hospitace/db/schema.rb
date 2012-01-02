@@ -11,7 +11,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111227180118) do
+ActiveRecord::Schema.define(:version => 20120102142920) do
+
+  create_table "observations", :force => true do |t|
+    t.string   "course"
+    t.string   "parallel"
+    t.date     "date"
+    t.string   "type"
+    t.integer  "created_by"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "observers", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "observation_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "user_sessions", :force => true do |t|
     t.datetime "created_at"
@@ -19,7 +36,7 @@ ActiveRecord::Schema.define(:version => 20111227180118) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "email"
+    t.string   "login"
     t.string   "crypted_password"
     t.string   "password_salt"
     t.string   "persistence_token"
