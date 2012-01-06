@@ -6,9 +6,16 @@ Hospitace::Application.routes.draw do
   get "home/index"
 
   resources :users
+  resources :observations
+
 
   resources :peoples, :only => [:index, :show]
+  resources :courses, :only => [:index, :show]
 
+  resources :courses,:constraints => {:id => /[0-9A-Z]+/i}, :only => [:index,:show] do
+    resources :parallels, :only => [:index, :show]
+  end
+  
   resources :user_sessions
   
   match 'login' => 'user_sessions#new', :as => :login

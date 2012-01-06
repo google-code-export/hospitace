@@ -1,7 +1,10 @@
 module ApplicationHelper
   
-  def title(title)
-    @title = title
+  def title(title,options={})
+    @title = content_tag(:span,t(title)<<" ")
+    @title << content_tag(:small,options[:small]) unless options[:small].nil?
+    @title << content_tag(:span,options[:action],:class=>"btn action") unless options[:action].nil?
+    
   end
 
   def menu_item(title,path,*args)
@@ -28,6 +31,16 @@ module ApplicationHelper
     end
     content_tag(:th,link_to( title, params.merge(:sort => column, :direction => direction, :page => nil)) ,:class=> css_class)
     
+  end
+  
+    
+  def parallel_time(parallel) 
+    start = AppConfig.start_time + AppConfig.lesson_lenght * (parallel.first_hour-1) + AppConfig.pause_lenght * (parallel.first_hour/2)
+    finish = start + AppConfig.lesson_lenght * (parallel.last_hour + 1 - parallel.first_hour) + AppConfig.pause_lenght * ((parallel.last_hour + 1 - parallel.first_hour)/2-1)
+    
+    start = "#{start/60}:#{"%02d" % (start%60)}"
+    finish = "#{finish/60}:#{"%02d" % (finish%60)}"
+    "#{start}-#{finish}"
   end
 
 end

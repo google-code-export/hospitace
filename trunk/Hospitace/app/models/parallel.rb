@@ -1,24 +1,21 @@
 # To change this template, choose Tools | Templates
 # and open the template in the editor.
 
-require 'kosapi'
+#require 'kosapi'
 
 class Parallel < KOSapi::Parallel
   
   include KOSapi
   
   
-  def parallel_time(parallel) 
-    start = AppConfig.start_time + AppConfig.lesson_lenght * (self.first_hour-1) + AppConfig.pause_lenght * (self.first_hour/2)
-    finish = start + AppConfig.lesson_lenght * (self.last_hour + 1 - self.first_hour) + AppConfig.pause_lenght * ((self.last_hour + 1 - self.first_hour)/2-1)
+  def parallel_time 
+    start = AppConfig.start_time + AppConfig.lesson_lenght * (first_hour-1) + AppConfig.pause_lenght * (first_hour/2)
+    finish = start + AppConfig.lesson_lenght * (last_hour + 1 - first_hour) + AppConfig.pause_lenght * ((last_hour + 1 - first_hour)/2-1)
     
     start = "#{start/60}:#{"%02d" % (start%60)}"
     finish = "#{finish/60}:#{"%02d" % (finish%60)}"
     "#{start}-#{finish}"
   end
-  
-  
-  
   
   def self.find_by_course(code)
     instance = Course.find_by_code(code).instance

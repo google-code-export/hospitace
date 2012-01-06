@@ -1,0 +1,57 @@
+<% content_for :secoundary_content do %>
+	
+	<div class="header">
+		<h3>Filter</h3>
+	</div>	
+	
+	<%= simple_form_for :search,:html=> {:id=>"search_form"},:method=>:get,:wrapper => :inline do |f| %>
+	
+	<%= hidden_field_tag :direction, params[:direction] %>
+	<%= hidden_field_tag :sort, params[:sort] %>
+	
+	<%= f.input :code, :required => false %>
+	<%= f.input :name, :required => false %>
+	<%= f.input :semester_season, :required => false %>
+	
+	<div class="actions">
+		<%= f.submit :search, :class => 'btn primary' %>
+	</div>
+	
+	<% end %>
+
+<% end %> 
+
+<%#= debug courses.first %>
+
+<div id="datagrid">      
+<table class="zebra-striped">
+  <tr>
+    <th>#</th>
+    <th>Kód</th>
+    <th>Název</th>
+    <th>Semester</th>
+    <th>Počet studentů</th>
+    <th></th>
+  </tr>
+
+  <% courses.each do |course| %>
+  
+  <tr>
+    <td><%= course.id %></td>
+    <td><%= course.code %></td>
+    <td><%= course.name %></td>
+    <td><%= course.semester_season %></td>
+    <td><%= course.instance.occupied unless course.instance.nil? %></td>
+    <td><%= yield course if block_given?  %></td>
+  </tr>
+
+  <% end %>
+
+</table>
+
+<%= will_paginate courses, :renderer=> WillPaginate::ActionView::BootstrapLinkRenderer %>
+</div>
+
+
+
+

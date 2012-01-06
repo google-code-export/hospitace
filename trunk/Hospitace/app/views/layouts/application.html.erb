@@ -15,6 +15,7 @@
 					<%= link_to t("Hospitace"), root_path, :class=>"brand" %>
 					<ul class="nav">
 						<%= menu_item(:home,root_path) %>
+                                                <%= menu_item(:observations,observations_path,:read,Observation) %>
 						<%= menu_item(:users,users_path,:read,User) %>
 						<%= menu_item(:peoples,peoples_path,:read,People) %>
 						
@@ -41,7 +42,7 @@
 			<div class="content">
 				<div class="page-header">
 
-					<h1><%= t(@title) =%></h1>
+					<h1><%= @title %></h1>
 				</div>
 				<div class="row">
 					

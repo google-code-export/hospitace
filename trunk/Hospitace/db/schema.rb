@@ -11,16 +11,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120102142920) do
+ActiveRecord::Schema.define(:version => 20120106165558) do
+
+  create_table "notes", :force => true do |t|
+    t.text     "note"
+    t.integer  "user_id"
+    t.integer  "observation_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "observations", :force => true do |t|
     t.string   "course"
     t.string   "parallel"
     t.date     "date"
-    t.string   "type"
+    t.integer  "type"
     t.integer  "created_by"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "semester"
   end
 
   create_table "observers", :force => true do |t|

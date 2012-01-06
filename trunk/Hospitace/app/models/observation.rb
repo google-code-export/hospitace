@@ -10,7 +10,22 @@ class Observation < ActiveRecord::Base
   
   has_many :observers
   has_many :users, :through => :observers
+  has_many :notes
 
-  validates_inclusion_of :type, :in => TYPES
+  validates :course, :presence => true
+  validates :semester, :presence => true
+  
+  
+  validates :type, :inclusion => {:in => TYPES} 
 
+  #puts TYPES.inspect
+  
+  def self.search(search)  
+    if search  
+      scoped
+    else  
+      scoped  
+    end  
+  end 
+  
 end
