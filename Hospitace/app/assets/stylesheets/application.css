@@ -8,31 +8,42 @@
 */
 
 
-      .main_content{
-        min-height: 500px;
-		width: 100%;   
-		float:left;   	
-      }
-      
-      .sidebar {
-      	float: right;
-      	width: 330px;
-      	margin-left: -370px;
-      	padding-left: 19px;
-      }
-      
-      .sidebar label{
-		width: 80px;
-      }
-      
-      .sidebar .input{
-      	margin-left:100px;
-      }
-      
-      .data{
-      	margin-right: 370px;
-      }
-      
-	  .row {
-	  	padding-left: 20px;
-	  }
+.main_content{
+    min-height: 500px;
+    width: 100%;   
+    float:left;   	
+}
+
+.sidebar {
+    float: right;
+    width: 330px;
+    margin-left: -370px;
+    padding-left: 19px;
+}
+
+.sidebar label{
+    width: 80px;
+}
+
+.sidebar .input{
+    margin-left:100px;
+}
+
+.data{
+    margin-right: 370px;
+}
+
+.row {
+    padding-left: 20px;
+}
+
+h1 .action {
+    float: right;
+    margin-right: 20px;
+    font-size: 18px;
+}
+
+h1 .action a {
+    color: #404040;
+    text-decoration: none;
+}

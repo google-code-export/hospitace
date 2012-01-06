@@ -1,0 +1,22 @@
+<%= simple_form_for(@observation,:wrapper => :inline) do |f| %>
+  <% if f.error_notification %>
+    <div class="alert-message warning fade in" data-alert="alert">
+      <a class="close" href="#">×</a>
+      <%= f.error_notification %>
+    </div>
+  <% end %>
+
+  <%= f.input :course %>
+  <%= f.input :parallel %>
+  <%= f.input :date %>
+
+  <%= f.input :semester, :collection =>Semester.find_current_and_next.collect {|p| [p.name, p.code]},:value =>:code, :as => :select %>
+
+  <%= f.input :type, :collection =>Observation::TYPES,  :as => :select %>
+
+
+  <div class="actions">
+	<%= f.button :submit, :class => 'btn primary' %>
+	<%= button_tag 'Cancel', :type => :reset, :class => "btn" %>
+  </div>
+<% end %>

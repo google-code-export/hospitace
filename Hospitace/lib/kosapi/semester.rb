@@ -3,6 +3,7 @@ require 'date'
 module KOSapi
   class Semester < Resource
     RESOURCE = "#{API_URI}semesters?level=2"
+    RESOURCE_CURRENT = "#{API_URI}semesters"
     
     attr_reader :id, :code, :name, :start, :end
     
@@ -42,13 +43,13 @@ module KOSapi
       end
     end
     
-    def self.current_semester
-      self.find_by_code "B102" # must be harcoded, KOSapi still returns previous semester
-    end 
+#    def self.current_semester
+#      self.find_by_code "B102" # must be harcoded, KOSapi still returns previous semester
+#    end 
     
-    def self.__current_semester
+    def self.current_semester
       return @@current_semester if not @@current_semester.nil?
-      pure_data = get("#{RESOURCE}/current")
+      pure_data = get("#{RESOURCE_CURRENT}/current")
       return if pure_data.nil?
       @@current_semester ||= self.new pure_data
     end

@@ -1,0 +1,12 @@
+<% title :observations, :small=>"naplánované hospitace v ZS 2011/2012", :action=>link_to('+ Vytvořit hospitaci', new_observation_path) %>
+
+<%= render :layout=>'datagrid' do |observation| %>
+
+    <%= link_to 'Show', observation %>
+    <%= link_to 'Edit', edit_observation_path(observation) %>
+    <%= link_to 'Destroy', observation, confirm: 'Are you sure?', method: :delete %> 
+
+<%end%>
+<br />
+
+<%= link_to 'New User', new_observation_path %>

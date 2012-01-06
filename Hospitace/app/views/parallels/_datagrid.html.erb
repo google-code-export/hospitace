@@ -1,0 +1,24 @@
+
+<div class="datagrid">
+  <table class="zebra-striped">
+    <tr>
+      <th>Id</th>
+      <th>Den</th>
+      <th>Hodina</th>
+      <th>Parita</th>
+      <th>Typ</th>
+      <th></th>
+    </tr>
+
+    <% parallels.each do |parallel| %>
+      <tr>
+        <td><%= parallel.parallel_number %></td>
+        <td><%= parallel.day %></td>
+        <td><%= parallel_time(parallel) %></td>
+        <td><%= parallel.parity %></td>
+        <td><%= parallel.type %></td>
+        <td><%= yield parallel if block_given? %></td>
+      </tr>
+    <% end  %>
+  </table>
+</div>

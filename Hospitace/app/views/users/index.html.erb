@@ -1,4 +1,4 @@
-<% title :users %>
+<% title :users, :small=>"správa uživatelů v systému", :action=>link_to('+ New User', new_user_path) %>
 
 <%= render :layout=>'datagrid' do |user| %>
 
@@ -7,6 +7,3 @@
     <%= link_to 'Destroy', user, confirm: 'Are you sure?', method: :delete %> 
 
 <%end%>
-<br />
-
-<%= link_to 'New User', new_user_path %>

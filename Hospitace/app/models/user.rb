@@ -3,6 +3,7 @@ require 'kosapi'
 class User < ActiveRecord::Base
   
   has_many :observations
+  has_many :notes
   
   attr_accessible :roles
   attr_accessible :login, :password, :password_confirmation
