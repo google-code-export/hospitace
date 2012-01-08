@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(:version => 20120106165558) do
     t.string   "course"
     t.string   "parallel"
     t.date     "date"
-    t.integer  "type"
+    t.string  "observation_type"
     t.integer  "created_by"
     t.datetime "created_at"
     t.datetime "updated_at"

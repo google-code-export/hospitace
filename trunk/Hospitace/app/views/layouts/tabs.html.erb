@@ -1,0 +1,13 @@
+<% title :observation %>   
+
+<% content_for :content do %>
+  <ul class="tabs">
+  <%= tab_item(:info,@observation) %> 
+  <%= tab_item(:observation_date,observation_date_path(@observation)) %> 
+  <%= tab_item(:observers,observation_observers_path(@observation)) %> 
+  <%= tab_item(:notes,observation_notes_path(@observation)) %> 
+  <li><%=  link_to :hodnoceni, @observation %></li>
+  </ul>
+  <%= content_for?(:news_content) ? yield(:news_content) : yield %>
+<% end %>
+<%= render :template => 'layouts/application' %>

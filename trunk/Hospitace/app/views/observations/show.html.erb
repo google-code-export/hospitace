@@ -1,7 +1,18 @@
-<% title :observation %>
+    <div class="alert-message block-message warning">
+    <a class="close" href="#">×</a>
+    <p><strong>Holy guacamole! This is a warning!</strong> Best check yo self, you’re not looking too good. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+    <div class="alert-actions">
+    <a class="btn small" href="#">Take this action</a> <a class="btn small" href="#">Or do this</a>
+    </div>
+    </div>
 
-<p id="notice"><%= notice %></p>
 
+<h3>Předmět</h3>
 
-<%= link_to 'Edit', edit_observation_path(@observation) %> |
-<%= link_to 'Back', observations_path %>
+<h3>Datum a místo hospitace</h3>
+
+<h3>Hospitující</h3>
+
+<h3>Stav</h3>
+Administrátor hospitace: <%= @observation.created_by.login %>
+<br/>

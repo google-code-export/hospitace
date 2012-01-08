@@ -3,6 +3,15 @@ class ObservationsController < ApplicationController
   
   helper_method :sort_column, :sort_direction
   
+  def date
+    @observation = Observation.find(params[:id])
+    session[:path] = observation_date_path(@observation)
+    respond_to do |format|
+      format.html { render :layout=>"tabs"}
+      format.json { render json: @observation }
+    end
+  end
+  
   # GET /observations
   # GET /observations.json
   def index
@@ -14,14 +23,14 @@ class ObservationsController < ApplicationController
       format.json { render json: @observations }
     end
   end
-
+  
   # GET /observations/1
   # GET /observations/1.json
   def show
     @observation = Observation.find(params[:id])
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html { render :layout=>"tabs" }
       format.json { render json: @observation }
     end
   end
@@ -29,9 +38,14 @@ class ObservationsController < ApplicationController
   # GET /observations/new
   # GET /observations/new.json
   def new
+    session[:path] = new_observation_path
     @observation = Observation.new
-
-    puts current_user
+    
+    session[:course] = flash[:course] unless flash[:course].nil?
+    session[:parallel] = flash[:parallel] unless flash[:parallel].nil?
+    
+    @observation.course ||= session[:course]
+    @observation.parallel ||= session[:parallel]
     
     respond_to do |format|
       format.html # new.html.erb
@@ -41,7 +55,11 @@ class ObservationsController < ApplicationController
 
   # GET /observations/1/edit
   def edit
+    session[:path] = edit_observation_path(@observation)
     @observation = Observation.find(params[:id])
+    @observation.course ||= flash[:course] unless flash[:course].nil?
+    @observation.parallel ||= flash[:parallel] unless flash[:parallel].nil?
+    
   end
 
   # POST /observations

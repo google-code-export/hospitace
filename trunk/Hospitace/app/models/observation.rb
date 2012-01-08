@@ -1,10 +1,12 @@
 class Observation < ActiveRecord::Base
   
-  TYPES = {
-    :reported => 1,
-    :floating => 2,
-    :unannounced => 3
-  }
+#  TYPES = {
+#    :reported => 1,
+#    :floating => 2,
+#    :unannounced => 3
+#  }
+  
+  TYPES = %w[reported floating unannounced]
   
   belongs_to :created_by, :class_name => "User", :foreign_key=>:created_by
   
@@ -15,11 +17,14 @@ class Observation < ActiveRecord::Base
   validates :course, :presence => true
   validates :semester, :presence => true
   
+  validates :observation_type,:presence => true, :inclusion => {:in => TYPES} 
   
-  validates :type, :inclusion => {:in => TYPES} 
-
-  #puts TYPES.inspect
-  
+  def find_course
+    c = Course.find(course)
+    return Course.new({}) if c.nil?
+    return c
+  end
+    
   def self.search(search)  
     if search  
       scoped

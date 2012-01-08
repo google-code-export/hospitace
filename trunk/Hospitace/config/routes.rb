@@ -6,14 +6,25 @@ Hospitace::Application.routes.draw do
   get "home/index"
 
   resources :users
-  resources :observations
+
+
+  match 'observations/:id/date' => 'observations#date', :via => [:get, :post], :as => :observation_date
+  
+  resources :observations do
+    match "courses" => 'courses#select', :via => [:get, :post], :on=>:collection, :as=>:observation_courses
+    #match "date" => 'observations#date', :via => [:get, :post], :on=>:member,:as => :date
+    resources :notes
+    resources :observers, :only=> [:index, :new, :create, :destroy]
+  end
 
 
   resources :peoples, :only => [:index, :show]
   resources :courses, :only => [:index, :show]
 
+  match "courses/:course_id/parallels/select" => 'parallels#select', :via => [:get, :post], :as=>:course_parallels_select
   resources :courses,:constraints => {:id => /[0-9A-Z]+/i}, :only => [:index,:show] do
-    resources :parallels, :only => [:index, :show]
+    match "courses", :via => [:get, :post], :on=>:collection
+    resources :parallels, :only => [:index, :show, :search]
   end
   
   resources :user_sessions
@@ -76,5 +87,5 @@ Hospitace::Application.routes.draw do
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
-  # match ':controller(/:action(/:id(.:format)))'
+  match ':controller(/:action(/:id(.:format)))'
 end

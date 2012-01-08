@@ -21,27 +21,25 @@
 
 <% end %> 
 
-<%#= debug courses.first %>
-
 <div id="datagrid">      
 <table class="zebra-striped">
   <tr>
     <th>#</th>
     <th>Kód</th>
     <th>Název</th>
-    <th>Semester</th>
+    <th>Přednášející</th>
     <th>Počet studentů</th>
     <th></th>
   </tr>
 
   <% courses.each do |course| %>
-  
+  <% instance = course.instance %>
   <tr>
     <td><%= course.id %></td>
     <td><%= course.code %></td>
     <td><%= course.name %></td>
-    <td><%= course.semester_season %></td>
-    <td><%= course.instance.occupied unless course.instance.nil? %></td>
+    <td><%= short_users(instance.lecturers) unless instance.nil? %></td>
+    <td><%= instance.occupied unless instance.nil? %></td>
     <td><%= yield course if block_given?  %></td>
   </tr>
 
