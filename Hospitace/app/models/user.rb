@@ -2,8 +2,13 @@ require 'kosapi'
 
 class User < ActiveRecord::Base
   
-  has_many :observations
   has_many :notes
+  
+  has_many :created_observations, :class_name => "Observation", :foreign_key=>:created_by
+  
+  has_many :observers
+  has_many :observations, :through => :observers
+  
   
   attr_accessible :roles
   attr_accessible :login, :password, :password_confirmation
@@ -29,6 +34,7 @@ class User < ActiveRecord::Base
   end
 
   ROLES = %w[admin observer observed]
+  
   acts_as_authentic
   def roles=(roles)
     self.roles_mask = self.class.roles(roles)#= (roles & ROLES).map { |r| 2**ROLES.index(r) }.sum

@@ -1,0 +1,14 @@
+<% title :parallel, :small=>"vyberte si paralelku"%>
+<%= debug session %>
+<%= simple_form_for :parallel do |f| %>
+
+  <%= render :layout => 'parallels/datagrid', :locals => { :parallels => @parallels } do |parallel| %>
+      <%= radio_button_tag :parallel, parallel.id  %>
+  <% end  %>
+
+  <div class="actions">
+	<%= f.submit "Vybrat", :class => 'btn primary' %>
+	<%= button_tag 'Cancel', :type => :reset, :class => "btn" %>
+  </div>
+
+<% end %>

@@ -3,12 +3,17 @@ module ApplicationHelper
   def title(title,options={})
     @title = content_tag(:span,t(title)<<" ")
     @title << content_tag(:small,options[:small]) unless options[:small].nil?
-    @title << content_tag(:span,options[:action],:class=>"btn action") unless options[:action].nil?
+    @title << content_tag(:span,link_to(options[:action_title],options[:action],:class=>"btn large"),:class=>"action") unless options[:action].nil?
     
   end
 
   def menu_item(title,path,*args)
     return if !args.empty? and cannot? *args    
+    content_tag(:li,link_to(t(title),path), :class => ((current_page?(path) ? "active" : nil )))
+  end
+  
+  def tab_item(title,path,*args)
+    return if !args.empty? and cannot? *args
     content_tag(:li,link_to(t(title),path), :class => ((current_page?(path) ? "active" : nil )))
   end
 

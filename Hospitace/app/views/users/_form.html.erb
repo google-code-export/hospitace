@@ -11,8 +11,8 @@
 
 
 <%= f.input :login, :placeholder => 'user' %>
-<%= f.input :password, :hint => 'No special characters.' %>
-<%= f.input :password_confirmation, :hint => 'No special characters.' %>
+<%= f.input :password %>
+<%= f.input :password_confirmation%>
 
 <%= f.input :roles, :collection =>User::ROLES,  :as => :check_boxes, :wrapper=>:label_wrapped if can? :assign_roles, @user %>
 

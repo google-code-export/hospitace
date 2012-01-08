@@ -1,24 +1,4 @@
 
-<% content_for :secoundary_content do %>
-	
-	<div class="header">
-		<h3>Filter</h3>
-	</div>	
-	
-	<%= simple_form_for :search,:html=> {:id=>"search_form"},:method=>:get,:wrapper => :inline do |f| %>
-	
-	<%= hidden_field_tag :direction, params[:direction] %>
-	<%= hidden_field_tag :sort, params[:sort] %>
-	
-	<%= f.input :login, :placeholder => 'user@fel.cvut.cz', :required => false %>
-	
-	<%= f.input :types, :collection =>Observation::TYPES,  :as => :check_boxes, :wrapper=>:label_wrapped, :required => false %>
-	<div class="actions">
-		<%= f.submit :search, :class => 'btn primary' %>
-	</div>
-	<% end %>
-
-<% end %> 
 <div id="datagrid">
 <table class="zebra-striped">
   <thead>
@@ -31,23 +11,29 @@
     <th>Hospitující</th>
     <th>Stav</th>
     <%= sortable :parallel, :parallel %>
-    <%= sortable :type, :type %>
+    <%= sortable :observation_type, :observation_type %>
     <th></th>
   </tr>
   </thead>
   
 
 <% @observations.each do |observation| %>
+  <% 
+    course = observation.find_course 
+    instance = course.instance 
+  %>
+  <%#= debug instance %>
+  <%#= debug course %>
   <tr>
     <td><%= observation.id %></td>
     <td><%= observation.course %></td>
+    <td><%= short_users(instance.lecturers) unless instance.nil? %></td>
     <td></td>
-    <td></td>
-    <td></td>
+    <td><%= instance.occupied unless instance.nil? %></td>
     <td></td>
     <td></td>
     <td><%= observation.parallel %></td>
-    <td><%= observation.type %></td>
+    <td><%= t(observation.observation_type) %></td>
     <td><%= yield observation %></td>
   </tr>
 <% end %>

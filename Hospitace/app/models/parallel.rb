@@ -7,7 +7,6 @@ class Parallel < KOSapi::Parallel
   
   include KOSapi
   
-  
   def parallel_time 
     start = AppConfig.start_time + AppConfig.lesson_lenght * (first_hour-1) + AppConfig.pause_lenght * (first_hour/2)
     finish = start + AppConfig.lesson_lenght * (last_hour + 1 - first_hour) + AppConfig.pause_lenght * ((last_hour + 1 - first_hour)/2-1)
@@ -23,11 +22,12 @@ class Parallel < KOSapi::Parallel
     
     return instance.parallels
   end
-  
-  def self.find(course_code,parallel_id)
+   
+  def self.find(course_code,parallel_id = nil)
     parallels = self.find_by_course(course_code)
+    
     parallels.each do |parallel| 
-      if parallel.id.to_i == parallel_id  
+      if parallel.id.to_i == parallel_id.to_i  
         return parallel
       end
     end

@@ -7,6 +7,11 @@ cs:
   users: "Uživatelé"
   peoples: "Lidé"
   observations: "Hospitace"
+  observation: "Hospitace"
+  
+  floating: "Plovoucí hospitace"
+  reported: "Ohlášená hospitace"
+  unannounced: "Neohlášená hospitace"
   
   activerecord:
     models:

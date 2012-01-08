@@ -1,0 +1,18 @@
+<%= simple_form_for @observation,:wrapper => :inline do |f| %>
+  <% if f.error_notification %>
+    <div class="alert-message warning fade in" data-alert="alert">
+      <a class="close" href="#">×</a>
+      <%= f.error_notification %>
+    </div>
+  <% end %>
+
+  <% unless @observation.parallel.empty? %>
+    <%= render :partial=>'parallels/parallel', :object => Parallel.find(@observation.course,@observation.parallel) %>
+  <% end %>
+  <%= f.input :parallel, :as=>:select, :hint => link_to("Najít paralelku", course_parallels_select_path(@observation.course)), :collection=>Parallel.find_by_course(@observation.course).collect {|p| ["\##{p.parallel_number} #{p.day}", p.id]} %>
+  <%= f.input :date %>
+
+  <div class="actions">
+    <%= f.button :submit, :class => 'btn primary' %>
+  </div>
+<% end %>

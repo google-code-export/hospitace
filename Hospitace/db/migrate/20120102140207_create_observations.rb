@@ -4,7 +4,7 @@ class CreateObservations < ActiveRecord::Migration
       t.string :course
       t.string :parallel
       t.date :date
-      t.string :type
+      t.string :observation_type
       t.integer :created_by
       t.timestamps
     end
