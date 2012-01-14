@@ -1,28 +1,10 @@
 <% title :observers, :small=>"seznam přidělených hospitujících" %>
+<%= render :layout=>'datagrid',:locals => { :observers => @observers } do |observer| %>
 
-<div id="datagrid">
-<table class="zebra-striped">
-  <thead>
-  <tr>
-    <th>#</th>
-    <th>Login</th>
-    <th>Name</th>
-    <th>Roles</th>
-    <th></th>
-  </tr>
-  </thead>
-  
+    <%= link_to 'Show', observer.user %>
+    <%= link_to 'Destroy', [@observation,observer], confirm: 'Are you sure?', method: :delete %> 
 
-<% @observers.each do |observer| %>
-  <% user = observer.user %>
-  <tr>
-    <td><%= user.id %></td>
-    <td><%= user.login %></td>
-    <td><%= user.full_name %></td>
-    <td><%= user.roles_mask %></td>
-    <td><%= yield observer %></td>
-  </tr>
-<% end %>
-</tbody>
-</table>
-</div>
+<%end%>
+<br />
+
+<%= link_to :add_observer, new_observation_observer_path(@observation), :class=>"btn primary" %>

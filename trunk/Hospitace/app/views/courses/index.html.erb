@@ -1,5 +1,5 @@
 <% title :courses %>
 
 <%= render :layout => "datagrid", :locals => { :courses => @courses } do |course| %>
-  <%= link_to :show, :controller => "courses",:action=>:show ,:id => course.code %>
+  <%= link_to t(:show), :controller => "courses",:action=>:show ,:id => course.code %>
 <% end %>

@@ -11,15 +11,15 @@
 	<%= hidden_field_tag :direction, params[:direction] %>
 	<%= hidden_field_tag :sort, params[:sort] %>
 	
-	<%= f.input :name, :placeholder => 'name', :required => false %>
-	<%= f.input :login, :placeholder => 'login', :required => false %>
-	<%= f.input :email, :placeholder => 'login@fel.cvut.cz', :required => false %>
+	<%= f.input t("people.name"), :placeholder => 'name', :required => false %>
+	<%= f.input t("people.username"), :placeholder => 'login', :required => false %>
+	<%= f.input t("people.email"), :placeholder => 'login@fel.cvut.cz', :required => false %>
 
-	<%= f.input :is_teacher, :wrapper=>:label_wrapped, :required => false,:as => :boolean %>
+	<%= f.input t("people.teacher"), :wrapper=>:label_wrapped, :required => false,:as => :boolean %>
 	
 	
 	<div class="actions">
-		<%= f.submit :search, :class => 'btn primary' %>
+		<%= f.submit t(:search), :class => 'btn primary' %>
 	</div>
 	
 	<% end %>
@@ -31,9 +31,9 @@
   <tr>	
     <tr>
     <th>#</th>
-    <th>Login</th>
-    <th>Name</th>
-    <th>Is teacher</th>	
+    <th><%= t("people.username") %></th>
+    <th><%= t("people.name") %></th>
+    <th><%= t("people.teacher") %></th>	
     <th></th>
   </tr>
   </thead>
@@ -46,7 +46,7 @@
     <td><%= people.id %></td>
     <td><%= people.username %></td>
     <td><%= people.full_name %></td>
-    <td><%= people.teacher? %></td>
+    <td><%= t people.teacher? %></td>
     <td><%= yield people if block_given? %></td>
   </tr>
 

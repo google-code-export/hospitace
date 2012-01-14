@@ -1,16 +1,15 @@
-<p>
-  <b>Jméno:</b>
-  <%= @people.full_name %>
-</p>
 
-<p>
-  <b>Login:</b>
-  <%= @people.username %>
-</p>
+<% title "#{@people.full_name}"%>
 
-<p>
-  <b>Email:</b>
-  <%= @people.email %>
-</p>
+<%= show_item(t("people.username"), @people.username) %>
 
-<%= link_to 'Back', peoples_path %>
+<%= show_item(t("people.name"), @people.full_name) %>
+
+<%= show_item(t("people.email"), @people.email) %>
+
+<%= show_item(t("people.teacher"), @people.teacher?) %>
+
+
+<div class="actions">
+	<%= link_to t(:back), peoples_path, :class=>"btn" %>
+</div>

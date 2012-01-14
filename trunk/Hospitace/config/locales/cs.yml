@@ -2,16 +2,39 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 cs:
-  hello: "Ahoj světe"
+  edit: "Upravit"
+  show: "Zobrazit"
+  destroy: "Smazat"
+  search: "Hledat"
+  
   home: "Domů"
-  users: "Uživatelé"
-  peoples: "Lidé"
+ 
+  
   observations: "Hospitace"
   observation: "Hospitace"
+  
+  users: "Uživatelé"
+  user:
+    new: "Nový uživatel"
+    create: "Vytvořit uživatele"
+    created: "Spravované"
+  
+  peoples: "Lidé"
+  people:
+    username: "Uživatelské jméno"
+    name: "Jméno"
+    teacher: "Učitel"
+    email: "Email"
+  
+  admin: "Administrátor"
+  observer: "Hospitující"
+  observed: "Hospitovaný"
   
   floating: "Plovoucí hospitace"
   reported: "Ohlášená hospitace"
   unannounced: "Neohlášená hospitace"
+  
+  
   
   activerecord:
     models:
@@ -19,4 +42,12 @@ cs:
       observation: "hospitace"
       observer: "hospitující"
       note: "poznámka"
+    attributes:
+      user:
+        login: "Uživatelské jméno"
+        password: "Heslo"
+        password_confirmation: "Potvrzení hesla"
+        name: "Jméno"
+        roles: "Role"
+        
      

@@ -1,0 +1,15 @@
+<%= simple_form_for([@observation, @observation.notes.build],:wrapper => :inline) do |f| %>
+  <% if f.error_notification %>
+    <div class="alert-message warning fade in" data-alert="alert">
+      <a class="close" href="#">×</a>
+      <%= f.error_notification %>
+    </div>
+  <% end %>
+
+  <%= f.input :note %>
+
+  <div class="actions">
+	<%= f.button :submit, :class => 'btn primary' %>
+	<%= button_tag 'Cancel', :type => :reset, :class => "btn" %>
+  </div>
+<% end %>

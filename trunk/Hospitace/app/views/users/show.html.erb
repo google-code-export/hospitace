@@ -1,34 +1,21 @@
-<p id="notice"><%= notice %></p>
+<% title User.model_name.human, :small=>"#{@user.full_name}", :action_title=>t(:edit),:action=>edit_user_path(@user) %>
 
-<p>
-  <b>Login:</b>
-  <%= @user.login %>
-</p>
+<%= show_item(User.human_attribute_name(:login), @user.login) %>
 
-<p>
-  <b>Crypted password:</b>
-  <%= @user.crypted_password %>
-</p>
+<%= show_item(User.human_attribute_name(:name), @user.full_name) %>
 
-<p>
-  <b>Password salt:</b>
-  <%= @user.password_salt %>
-</p>
+<%= show_item(User.human_attribute_name(:email), @user.email) %>
 
-<p>
-  <b>Persistence token:</b>
-  <%= @user.persistence_token %>
-</p>
+<%= show_item(User.human_attribute_name(:roles), @user.roles.collect{|i| t i}.join(", ")) %>
 
-<p>
-  <b>Roles:</b>
-  <%= @user.roles %>
-</p>
+<hr/>
 
-<p>
-  <b>Hospitace:</b>
-  <%= @user.created_observations %>
-</p>
+<h2><%= t "user.created" %> <small><%= t Observation.model_name.human %></small></h2>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= render @user.created_observations %>
+
+<hr/>
+
+<h2><%= t Observer.model_name.human %> <small><%= t Observation.model_name.human %></small></h2>
+
+<%= render @user.observations %>

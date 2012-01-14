@@ -1,5 +1,4 @@
 <% title :parallel, :small=>"vyberte si paralelku"%>
-<%= debug session %>
 <%= simple_form_for :parallel do |f| %>
 
   <%= render :layout => 'parallels/datagrid', :locals => { :parallels => @parallels } do |parallel| %>

@@ -1,4 +1,6 @@
-    <div class="alert-message block-message warning">
+<% title :observation, :small=>"#{@observation.find_course.name} (#{@observation.course})" %>
+
+<div class="alert-message block-message warning">
     <a class="close" href="#">×</a>
     <p><strong>Holy guacamole! This is a warning!</strong> Best check yo self, you’re not looking too good. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
     <div class="alert-actions">
@@ -7,12 +9,20 @@
     </div>
 
 
-<h3>Předmět</h3>
+<h2>Předmět</h2>
 
-<h3>Datum a místo hospitace</h3>
+<%= render :partial=>"courses/course", :locals => { :course => @course } %>
+<hr />
+<h2>Datum a místo hospitace</h2>
 
-<h3>Hospitující</h3>
-
-<h3>Stav</h3>
-Administrátor hospitace: <%= @observation.created_by.login %>
-<br/>
+<hr />
+<h2>Hospitující</h2>
+<div style="margin-left: 100px;">
+<%= render @observation.users do |u| %>
+   <%= show_item("ss",u); %>
+<% end %>
+</div>
+<hr />
+<h2>Stav</h2>
+<%= show_item(Observation.human_attribute_name(:created_by), render(@observation.created_by)) %>
+<hr />

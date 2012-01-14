@@ -1,24 +1,12 @@
-<p id="notice"><%= notice %></p>
 
-<%= debug @course.instance %>
+<%= render :partial=>"course", :locals => { :course => @course }  %>
 
-<p>
-  <b>Id:</b>
-  <%= @course.id %>
-</p>
+<hr />
 
-<p>
-  <b>Code:</b>
-  <%= @course.code %>
-</p>
-
-<p>
-  <b>Name:</b>
-  <%= @course.name %>
-</p>
-
+<h2><%= t :parallels%></h2>
 <%= render :layout => "parallels/datagrid", :locals => { :parallels => Parallel.find_by_course(@course.code) } do |parallel| %>
   <%= parallel.id %>
 <% end %>
+<%#= debug @course.instance %>
 
 <%= link_to 'Back', courses_path %>

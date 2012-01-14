@@ -6,7 +6,7 @@ Hospitace::Application.routes.draw do
   get "home/index"
 
   resources :users
-
+  resources :notes
 
   match 'observations/:id/date' => 'observations#date', :via => [:get, :post], :as => :observation_date
   

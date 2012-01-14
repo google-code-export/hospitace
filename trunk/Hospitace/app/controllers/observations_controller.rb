@@ -28,7 +28,8 @@ class ObservationsController < ApplicationController
   # GET /observations/1.json
   def show
     @observation = Observation.find(params[:id])
-
+    @course = @observation.find_course
+    
     respond_to do |format|
       format.html { render :layout=>"tabs" }
       format.json { render json: @observation }
