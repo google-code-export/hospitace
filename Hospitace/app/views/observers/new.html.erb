@@ -1,0 +1,22 @@
+<% title :observers, :small=>"seznam přidělených hospitujících" %>
+
+<% title :users, :small=>"vyberte u6ivatele"%>
+
+<%= simple_form_for [@observation,@observer] do |f| %>
+  <% if f.error_notification %>
+  <div class="alert-message warning fade in" data-alert="alert">
+          <a class="close" href="#">×</a>
+          <%= f.error_notification %>
+  </div>
+  <% end %>
+
+  <%= render :layout => 'users/datagrid', :locals => { :users => @users } do |user| %>
+      <%= radio_button :observer,:user_id, user.id  %>
+  <% end  %>
+
+  <div class="actions">
+	<%= f.submit "Vybrat", :class => 'btn primary' %>
+	<%= button_tag 'Cancel', :type => :reset, :class => "btn" %>
+  </div>
+
+<% end %>

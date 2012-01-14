@@ -1,5 +1,5 @@
 class NotesController < ApplicationController
-   load_and_authorize_resource
+  load_and_authorize_resource
 
   helper_method :sort_column, :sort_direction
 
@@ -45,13 +45,17 @@ class NotesController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    @note = Note.new(params[:user])
+    @observation = Observation.find(params[:observation_id])
+    @note = Note.new(params[:note])
+    @note.observation = @observation
+    @note.user = current_user
+    
     respond_to do |format|
       if @note.save
-        format.html { redirect_to @note, notice: 'User was successfully created.' }
+        format.html { redirect_to observation_notes_path(@observation), notice: 'Note was successfully created.' }
         format.json { render json: @note, status: :created, location: @note }
       else
-        format.html { render action: "new" }
+        format.html { render action: new_observations_note_path(@observation) }
         format.json { render json: @note.errors, status: :unprocessable_entity }
       end
     end
@@ -60,11 +64,12 @@ class NotesController < ApplicationController
   # PUT /users/1
   # PUT /users/1.json
   def update
+    @observation = Observation.find(params[:observation_id])
     @note = Note.find(params[:id])
 
     respond_to do |format|
       if @note.update_attributes(params[:user])
-        format.html { redirect_to @note, notice: 'User was successfully updated.' }
+        format.html { redirect_to observations_notes_path(@observation), notice: 'User was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }
@@ -76,11 +81,12 @@ class NotesController < ApplicationController
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
+    @observation = Observation.find(params[:observation_id])
     @note = Note.find(params[:id])
     @note.destroy
 
     respond_to do |format|
-      format.html { redirect_to users_url }
+      format.html { redirect_to observations_notes_path(@observation) }
       format.json { head :ok }
     end
   end

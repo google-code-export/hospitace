@@ -34,7 +34,12 @@ module KOSapi
       uri = "#{resource_uri}#{@id}/students/?#{PARAM}"
       @students ||= convert_users Parallel.get(uri)
     end
-  
+    
+    def self.find course,id
+      data_parallel = get("#{RESOURCE}#{course}#{RESOURCE_PART}#{Semester.current_semester.code}/parallels/#{id}?#{PARAM}")
+      self.new(data_parallel)
+    end
+     
     private
       def convert_lines line
         return Array[] if line.nil?

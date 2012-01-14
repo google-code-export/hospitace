@@ -6,7 +6,6 @@
     <%= sortable :id, "#" %>
     <%= sortable :course, :course %>
     <th>Přednášející</th>
-    <th>Ročník</th>
     <th>Počet studentů</th>
     <th>Hospitující</th>
     <th>Stav</th>
@@ -22,17 +21,15 @@
     course = observation.find_course 
     instance = course.instance 
   %>
-  <%#= debug instance %>
   <%#= debug course %>
   <tr>
     <td><%= observation.id %></td>
     <td><%= observation.course %></td>
     <td><%= short_users(instance.lecturers) unless instance.nil? %></td>
-    <td></td>
     <td><%= instance.occupied unless instance.nil? %></td>
-    <td></td>
-    <td></td>
-    <td><%= observation.parallel %></td>
+    <td><%= short_users(observation.users) %></td>
+    <td><%=  %></td>
+    <td><%= short_parallel(observation.find_parallel) %></td>
     <td><%= t(observation.observation_type) %></td>
     <td><%= yield observation %></td>
   </tr>

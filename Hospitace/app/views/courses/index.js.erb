@@ -1,7 +1,7 @@
 $('#datagrid').html('<%= escape_javascript(
   
        render(:layout=>"datagrid",:locals => { :courses => @courses }) { |course| 
-         link_to "Show", :controller=>"courses", :action=>"show", :id=>course.code
+         link_to t(:show), :controller=>"courses", :action=>"show", :id=>course.code
        }
 
 ) %>');

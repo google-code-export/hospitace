@@ -3,7 +3,7 @@
 
 <%= render :layout=>'datagrid', :locals => { :peoples => @peoples } do |person| %>
 
-    <%= link_to :show , :controller=>"peoples", :action=>"show", :id=>person.id %>
+    <%= link_to t(:show) , :controller=>"peoples", :action=>"show", :id=>person.id %>
 
 <%end%>
 

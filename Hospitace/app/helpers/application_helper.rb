@@ -17,6 +17,10 @@ module ApplicationHelper
     content_tag(:li,link_to(t(title),path), :class => ((current_page?(path) ? "active" : nil )))
   end
 
+  def show_item(title,value,*args)
+    return if !args.empty? and cannot? *args
+    content_tag :div,content_tag(:div,title+":",:class=>"layble")+content_tag(:div,value),:class=>"row show"
+  end
 
   def sortable(column, title = nil)
     title ||= column.titleize  

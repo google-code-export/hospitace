@@ -7,14 +7,19 @@ class Parallel < KOSapi::Parallel
   
   include KOSapi
   
-  def parallel_time 
-    start = AppConfig.start_time + AppConfig.lesson_lenght * (first_hour-1) + AppConfig.pause_lenght * (first_hour/2)
-    finish = start + AppConfig.lesson_lenght * (last_hour + 1 - first_hour) + AppConfig.pause_lenght * ((last_hour + 1 - first_hour)/2-1)
-    
-    start = "#{start/60}:#{"%02d" % (start%60)}"
-    finish = "#{finish/60}:#{"%02d" % (finish%60)}"
-    "#{start}-#{finish}"
-  end
+#  def parallel_time 
+#    "#{start}-#{finish}"
+#  end
+#  
+#  def start
+#    s = AppConfig.start_time + AppConfig.lesson_lenght * (first_hour-1) + AppConfig.pause_lenght * (first_hour/2)
+#    "#{s/60}:#{"%02d" % (s%60)}"
+#  end 
+#  
+#  def finish
+#    f = (AppConfig.start_time + AppConfig.lesson_lenght * (first_hour-1) + AppConfig.pause_lenght * (first_hour/2)) + AppConfig.lesson_lenght * (last_hour + 1 - first_hour) + AppConfig.pause_lenght * ((last_hour + 1 - first_hour)/2-1)
+#    "#{f/60}:#{"%02d" % (f%60)}"
+#  end
   
   def self.find_by_course(code)
     instance = Course.find_by_code(code).instance
@@ -31,7 +36,7 @@ class Parallel < KOSapi::Parallel
         return parallel
       end
     end
-    return []
+    return Parallel.new({})
   end
   
 end

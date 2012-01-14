@@ -1,5 +1,7 @@
+require 'kosapi'
+
 class Observation < ActiveRecord::Base
-  
+  #include KOSapi
 #  TYPES = {
 #    :reported => 1,
 #    :floating => 2,
@@ -23,6 +25,10 @@ class Observation < ActiveRecord::Base
     c = Course.find(course)
     return Course.new({}) if c.nil?
     return c
+  end
+  
+  def find_parallel
+    p = Parallel.find(course,parallel)
   end
     
   def self.search(search)  

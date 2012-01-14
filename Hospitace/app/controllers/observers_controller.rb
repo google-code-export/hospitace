@@ -1,6 +1,8 @@
 class ObserversController < ApplicationController
   load_and_authorize_resource
-
+  
+  helper_method :sort_column, :sort_direction
+  
   # GET /users
   # GET /users.json
   def index
@@ -16,10 +18,15 @@ class ObserversController < ApplicationController
   # GET /users/new
   # GET /users/new.json
   def new
+    @observation = Observation.find(params[:observation_id])
     @observer = Observer.new
 
+    @users = User.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:page => params[:page]);
+
+   
     respond_to do |format|
-      format.html # new.html.erb
+      format.js
+      format.html #{ render :layout=>"tabs"}
       format.json { render json: @observer }
     end
   end
@@ -27,13 +34,16 @@ class ObserversController < ApplicationController
   # POST /users
   # POST /users.json
   def create
+    @observation = Observation.find(params[:observation_id])
     @observer = Observer.new(params[:observer])
+    @observer.observation = @observation;
+
     respond_to do |format|
       if @observer.save
-        format.html { redirect_to @observer, notice: 'User was successfully created.' }
+        format.html { redirect_to observation_observers_path(@observation), notice: 'Observer was successfully created.' }
         format.json { render json: @observer, status: :created, location: @observer }
       else
-        format.html { render action: "new" }
+        format.html { redirect_to new_observation_observer_path(@observation)}
         format.json { render json: @observer.errors, status: :unprocessable_entity }
       end
     end
@@ -42,12 +52,21 @@ class ObserversController < ApplicationController
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
+    @observation = Observation.find(params[:observation_id])
     @observer = Observer.find(params[:id])
     @observer.destroy
 
     respond_to do |format|
-      format.html { redirect_to users_url }
+      format.html { redirect_to observation_observers_path(@observation), notice: 'Observer was successfully destroyed.' }
       format.json { head :ok }
     end
+  end
+  
+  def sort_column
+    User.column_names.include?(params[:sort]) ? params[:sort] : "id"
+  end
+  
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
   end
 end
