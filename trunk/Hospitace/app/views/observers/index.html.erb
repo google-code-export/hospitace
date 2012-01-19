@@ -1,10 +1,10 @@
 <% title :observers, :small=>"seznam přidělených hospitujících" %>
 <%= render :layout=>'datagrid',:locals => { :observers => @observers } do |observer| %>
 
-    <%= link_to 'Show', observer.user %>
-    <%= link_to 'Destroy', [@observation,observer], confirm: 'Are you sure?', method: :delete %> 
+    <%= link_to t(:show), observer.user %>
+    <%= link_to t(:destroy), [@observation,observer], confirm: 'Are you sure?', method: :delete %> 
 
 <%end%>
 <br />
 
-<%= link_to :add_observer, new_observation_observer_path(@observation), :class=>"btn primary" %>
+<%= link_to t(:add_observer), new_observation_observer_path(@observation), :class=>"btn primary" %>

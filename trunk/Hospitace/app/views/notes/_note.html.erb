@@ -1,6 +1,10 @@
 <p>
-  <%= note.note %>
+<%= render(note.user) %> | <%= l(note.updated_at, :format=>:long) %> 
+| <%= link_to t(:destroy), note ,method: :delete %>
+| <%= link_to t(:edit), edit_observation_note_path(@observation,note) %>
 </p>
 <p>
-  <%= link_to :destroy, note ,method: :delete %>
+  <%= note.note.html_safe %>  
 </p>
+
+<hr />

@@ -1,4 +1,4 @@
-<%= simple_form_for([@observation, @observation.notes.build],:wrapper => :inline) do |f| %>
+<%= simple_form_for(@note,:wrapper => :inline) do |f| %>
   <% if f.error_notification %>
     <div class="alert-message warning fade in" data-alert="alert">
       <a class="close" href="#">×</a>
@@ -6,7 +6,8 @@
     </div>
   <% end %>
 
-  <%= f.input :note %>
+  <%= f.association :observation,:as=>:hidden %>
+  <%= f.cktext_area :note, :toolbar => 'Note' %>
 
   <div class="actions">
 	<%= f.button :submit, :class => 'btn primary' %>

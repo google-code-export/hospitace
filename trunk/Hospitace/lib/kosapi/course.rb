@@ -62,9 +62,10 @@ module KOSapi
       @uri = course['@uri']
     end
     
-    def instance
+    def instance semester_code=nil
       return @instance if not @instance.nil?
-      data_instance = Course.get("#{RESOURCE}#{@code}/instances/#{Semester.current_semester.code}?level=2")
+      semester_code ||= Semester.current_semester.code
+      data_instance = Course.get("#{RESOURCE}#{@code}/instances/#{semester_code}?level=2")
       return if data_instance.nil?
       @instance ||= CourseInstance.new data_instance
     end

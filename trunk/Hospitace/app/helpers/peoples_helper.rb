@@ -8,6 +8,7 @@ module PeoplesHelper
   end
   
   def full_url_peoples(peoples)
+    return if peoples.nil?
     u = []
     peoples.each do |l|
       u << link_to(l.full_name, :controller=>"peoples", :action=>"show", :id=>l.id)

@@ -11,4 +11,17 @@ class Semester < KOSapi::Semester
     end
   end
   
+  def self.find_used_current_and_next
+    find = Observation.select("semester").group("semester").collect {|x| x.semester}
+    res = self.all.select do |x|
+      find.include?(x.code)
+    end
+    res | find_current_and_next
+  end
+      
+  def self.current_semester=semester_code
+    semester = Semester.find_by_code(semester_code)
+    @@current_semester = semester;
+  end
+  
 end

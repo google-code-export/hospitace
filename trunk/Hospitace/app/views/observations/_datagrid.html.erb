@@ -3,14 +3,14 @@
 <table class="zebra-striped">
   <thead>
   <tr>
-    <%= sortable :id, "#" %>
-    <%= sortable :course, :course %>
+    <th>#</th>
+    <th><%= t :course %></th>
     <th>Přednášející</th>
     <th>Počet studentů</th>
     <th>Hospitující</th>
     <th>Stav</th>
-    <%= sortable :parallel, :parallel %>
-    <%= sortable :observation_type, :observation_type %>
+    <th><%= t :parallel %></th>
+    <th><%= t :observation_type %></th>
     <th></th>
   </tr>
   </thead>
@@ -21,7 +21,6 @@
     course = observation.find_course 
     instance = course.instance 
   %>
-  <%#= debug course %>
   <tr>
     <td><%= observation.id %></td>
     <td><%= observation.course %></td>

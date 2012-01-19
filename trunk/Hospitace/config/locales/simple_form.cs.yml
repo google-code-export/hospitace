@@ -1,5 +1,13 @@
 cs:
   simple_form:
+    labels:
+      search:
+        username: 'Uživatelské jméno'
+        login: 'Uživatelské jméno'
+        roles: "Role"
+        email: 'Email'
+        teacher: "Učitel"
+        
     "yes": 'Ano'
     "no": 'Ne'
     required:

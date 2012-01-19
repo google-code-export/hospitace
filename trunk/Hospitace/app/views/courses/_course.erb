@@ -6,18 +6,18 @@
 
 <%= show_item(t("course.code"), course.code) %>
 
-<%= show_item(t("course.occupied"), instance.occupied) %>
+<%= show_item(t("course.occupied"), instance.occupied) unless instance.nil? %>
 
 <%= show_item(t("course.study_form"), course.study_form) %>
 
 <%= show_item(t("course.range"), course.range) %>
 
-<%= show_item(t("course.editors"), full_url_peoples(instance.editors)) %>
+<%= show_item(t("course.editors"), full_url_peoples(instance.editors))  unless instance.nil? %>
 
-<%= show_item(t("course.examiners"), full_url_peoples(instance.examiners)) %>
+<%= show_item(t("course.examiners"), full_url_peoples(instance.examiners))  unless instance.nil? %>
 
-<%= show_item(t("course.guarantors"), full_url_peoples(instance.guarantors)) %>
+<%= show_item(t("course.guarantors"), full_url_peoples(instance.guarantors))  unless instance.nil? %>
 
-<%= show_item(t("course.instructors"), full_url_peoples(instance.instructors)) %>
+<%= show_item(t("course.instructors"), full_url_peoples(instance.instructors))  unless instance.nil? %>
 
-<%= show_item(t("course.lecturers"), full_url_peoples(instance.lecturers)) %>
+<%= show_item(t("course.lecturers"), full_url_peoples(instance.lecturers))  unless instance.nil? %>

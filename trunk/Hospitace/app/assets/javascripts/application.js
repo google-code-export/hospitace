@@ -7,10 +7,16 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
+//= require ckeditor/ckeditor
 //= require_tree .
 
+
 $(function () {    
-            
+           
+    $('#selected_semester_code').change(function(){
+        $(window.location).attr('search',"semester="+this.value);
+    });       
+           
     // Sorting and pagination links.  
     $('#datagrid .pagination a').live('click',   
         function () {  
@@ -54,3 +60,4 @@ $(function () {
     
     
 })  
+

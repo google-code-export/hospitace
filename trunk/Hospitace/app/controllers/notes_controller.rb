@@ -8,7 +8,9 @@ class NotesController < ApplicationController
   def index
     @observation = Observation.find(params[:observation_id])
     @notes =  Note.find_all_by_observation_id(params[:observation_id])
-
+    @note = Note.new
+    @note.observation = @observation
+    
     respond_to do |format|
       format.html { render :layout=>"tabs"}
       format.json { render json: @notes }
@@ -30,7 +32,7 @@ class NotesController < ApplicationController
   # GET /users/new.json
   def new
     @note = Note.new
-
+    
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @note }
@@ -45,17 +47,15 @@ class NotesController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    @observation = Observation.find(params[:observation_id])
     @note = Note.new(params[:note])
-    @note.observation = @observation
     @note.user = current_user
     
     respond_to do |format|
       if @note.save
-        format.html { redirect_to observation_notes_path(@observation), notice: 'Note was successfully created.' }
+        format.html { redirect_to observation_notes_path(@note.observation), notice: 'Note was successfully created.' }
         format.json { render json: @note, status: :created, location: @note }
       else
-        format.html { render action: new_observations_note_path(@observation) }
+        format.html { render action: new_observations_note_path(@note.observation) }
         format.json { render json: @note.errors, status: :unprocessable_entity }
       end
     end
@@ -64,12 +64,12 @@ class NotesController < ApplicationController
   # PUT /users/1
   # PUT /users/1.json
   def update
-    @observation = Observation.find(params[:observation_id])
     @note = Note.find(params[:id])
-
+    @observation = @note.observation
+    
     respond_to do |format|
-      if @note.update_attributes(params[:user])
-        format.html { redirect_to observations_notes_path(@observation), notice: 'User was successfully updated.' }
+      if @note.update_attributes(params[:note])
+        format.html { redirect_to observation_notes_path(@observation), notice: 'User was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }
@@ -81,12 +81,13 @@ class NotesController < ApplicationController
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
-    @observation = Observation.find(params[:observation_id])
+    
     @note = Note.find(params[:id])
+    @observation = @note.observation
     @note.destroy
 
     respond_to do |format|
-      format.html { redirect_to observations_notes_path(@observation) }
+      format.html { redirect_to observation_notes_path(@observation) }
       format.json { head :ok }
     end
   end
