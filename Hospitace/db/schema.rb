@@ -11,7 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120106165558) do
+ActiveRecord::Schema.define(:version => 20120119213238) do
+
+  create_table "ckeditor_assets", :force => true do |t|
+    t.string   "data_file_name",                  :null => false
+    t.string   "data_content_type"
+    t.integer  "data_file_size"
+    t.integer  "assetable_id"
+    t.string   "assetable_type",    :limit => 30
+    t.string   "type",              :limit => 30
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "ckeditor_assets", ["assetable_type", "assetable_id"], :name => "idx_ckeditor_assetable"
+  add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], :name => "idx_ckeditor_assetable_type"
 
   create_table "notes", :force => true do |t|
     t.text     "note"
@@ -25,7 +39,7 @@ ActiveRecord::Schema.define(:version => 20120106165558) do
     t.string   "course"
     t.string   "parallel"
     t.date     "date"
-    t.string  "observation_type"
+    t.string   "observation_type"
     t.integer  "created_by"
     t.datetime "created_at"
     t.datetime "updated_at"

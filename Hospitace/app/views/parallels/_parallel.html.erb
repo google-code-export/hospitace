@@ -1,4 +1,4 @@
-<%#= debug parallel %>
+<% room = parallel.room %>
 
 
 <%= show_item(t("parallel.parallel_number"), parallel.parallel_number) %>
@@ -11,6 +11,6 @@
 
 <%= show_item(t("parallel.parity"), parallel.parity) %>
 
-<%= show_item(t("parallel.room"), parallel.room.code) %>
+<%= show_item(t("parallel.room"), room.code) unless room.nil? %>
 
 <%= show_item(t("parallel.type"), parallel.type) %>

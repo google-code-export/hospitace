@@ -4,6 +4,7 @@
 		<title>Hospitace</title>
 		<%= stylesheet_link_tag    "application" %>
 		<%= javascript_include_tag "application" %>
+                <%= javascript_include_tag  "config" %>
 	
 		
 		<%= csrf_meta_tags %>
@@ -43,7 +44,7 @@
 			<div class="content">
 				<div class="page-header">
 
-					<h1><%= @title %></h1>
+					<h1><%= @title.html_safe %></h1>
 				</div>
 				<div class="row">
 					

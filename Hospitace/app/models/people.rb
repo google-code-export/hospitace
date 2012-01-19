@@ -12,10 +12,10 @@ class People < KOSapi::User
       puts search[:is_teacher]
       data = all
       find = data.select do |x|         
-        ((!search[:login].empty?) ? x.username =~ /(?i)#{search[:login]}/ : true)  && 
+        ((!search[:username].empty?) ? x.username =~ /(?i)#{search[:username]}/ : true)  && 
         ((!search[:name].empty?) ?  x.full_name =~ /(?i)#{search[:name]}/ : true ) && 
         ((!search[:email].empty?) ? x.email =~ /(?i)#{search[:email]}/ : true ) && 
-        ((search[:is_teacher] != 0.to_s) ? x.teacher? : true)
+        ((search[:teacher] != 0.to_s) ? x.teacher? : true)
       end
     else  
       all  

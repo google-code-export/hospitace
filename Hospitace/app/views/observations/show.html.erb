@@ -7,22 +7,22 @@
     <a class="btn small" href="#">Take this action</a> <a class="btn small" href="#">Or do this</a>
     </div>
     </div>
-
+<h2>Info</h2>
+<%= show_item(Observation.human_attribute_name(:state), @observation.semester) %>
+<%= show_item(Observation.human_attribute_name(:semester), @observation.semester) %>
+<%= show_item(Observation.human_attribute_name(:created_by), render(@observation.created_by)) %>
+<hr />
 
 <h2>Předmět</h2>
 
-<%= render :partial=>"courses/course", :locals => { :course => @course } %>
+<%= render :partial=>"courses/course", :locals => { :course => @course } unless @course.nil? %>
 <hr />
 <h2>Datum a místo hospitace</h2>
-
+<%= render :partial=>"parallels/parallel", :locals => { :parallel => @parallel } unless @parallel.nil? %>
 <hr />
 <h2>Hospitující</h2>
 <div style="margin-left: 100px;">
-<%= render @observation.users do |u| %>
-   <%= show_item("ss",u); %>
-<% end %>
+<%= render @observation.users %>
 </div>
 <hr />
-<h2>Stav</h2>
-<%= show_item(Observation.human_attribute_name(:created_by), render(@observation.created_by)) %>
-<hr />
+

@@ -2,7 +2,17 @@
 # and open the template in the editor.
 
 class Week
-    def self.current_week current_semester
+  DAYS = [ 
+         "MONDAY",
+         "TUESDAY",
+         "WEDNESDAY",
+         "THURSDAY",
+         "FRYIDAY",
+         "SATURDAY",
+         "SUNDAY"
+         ]
+  
+  def self.current_week current_semester
     if Date.today.to_time.to_i < current_semester.start_date.to_time.to_i
       week = 1
     elsif Date.today.to_time.to_i > current_semester.end_date.to_time.to_i
@@ -24,5 +34,17 @@ class Week
   
   def initialize
     
+  end
+  
+  def self.dates parallel,current_semester
+    dates = []
+    return dates if parallel.nil?
+    date = current_semester.start.to_date
+    shift = Week::DAYS.index(parallel.day)
+    (0..13).each do |i| 
+      # todo: sudý lichý týden
+      dates << Date.jd(date.jd + shift + 7*i)
+    end
+    dates
   end
 end

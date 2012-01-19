@@ -10,15 +10,16 @@
 	<%= hidden_field_tag :direction, params[:direction] %>
 	<%= hidden_field_tag :sort, params[:sort] %>
 	
-	<%= f.input User.human_attribute_name(:login), :placeholder => 'user@fel.cvut.cz', :required => false %>
+	<%= f.input :login, :placeholder => 'user@fel.cvut.cz', :required => false %>
 	
-	<%= f.input User.human_attribute_name(:roles), :collection =>User::ROLES.collect{|i| [t(i), i]},  :as => :check_boxes, :wrapper=>:label_wrapped, :required => false %>
+	<%= f.input :roles, :collection =>User::ROLES.collect{|i| [t(i), i]},  :as => :check_boxes, :wrapper=>:label_wrapped, :required => false %>
 	<div class="actions">
-		<%= f.submit t(:search), :class => 'btn primary' %>
+		<%= f.submit :search, :class => 'btn primary' %>
 	</div>
 	<% end %>
 
 <% end %> 
+
 <div id="datagrid">
 <table class="zebra-striped">
   <thead>

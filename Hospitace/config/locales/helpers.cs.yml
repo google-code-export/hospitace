@@ -1,0 +1,6 @@
+cs:
+  helpers:
+    submit:
+      search: "Hledat"
+      create: "Add %{model}"
+      update: "Save Changes"

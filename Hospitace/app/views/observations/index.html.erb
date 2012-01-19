@@ -1,4 +1,6 @@
-<% title :observations, :small=>"naplánované hospitace v ZS 2011/2012", :action_title=>'+ Vytvořit hospitaci',:action=>new_observation_path %>
+<% title :observations, :small=>"naplánované hospitace v semestru "+select( "selected_semester", "code", Semester.find_used_current_and_next.collect {|p| [p.name, p.code]}, :selected=>semester.code).html_safe, :action_title=>'+ Vytvořit hospitaci',:action=>new_observation_path %>
+
+<%#= select( "selected_semester", "code", Semester.find_current_and_next.collect {|p| [p.name, p.code]}, :selected=>semester.code) %>
 
 <%= render :layout=>'datagrid' do |observation| %>
 

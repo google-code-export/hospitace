@@ -1,4 +1,6 @@
 Hospitace::Application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
+
   get "password_resets/edit"
 
   get "password_resets/new"
