@@ -20,6 +20,7 @@ Hospitace::Application.routes.draw do
   end
 
 
+  match "peoples/select" => 'peoples#select', :via => [:get, :post], :as=>:peoples_select
   resources :peoples, :only => [:index, :show]
   resources :courses, :only => [:index, :show]
 

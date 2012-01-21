@@ -9,8 +9,12 @@
 </div>
 <% end %>
 
+<%= f.input :people_id, :as=>:hidden %>
 
-<%= f.input :login, :placeholder => 'user' %>
+<% hind = link_to("Najít v kosu", peoples_select_path) unless @user.persisted? %>
+
+<%= f.input :login, :readonly => !@user.people_id.nil?, :placeholder => 'user', :hint => hind %>
+
 <%= f.input :password %>
 <%= f.input :password_confirmation%>
 

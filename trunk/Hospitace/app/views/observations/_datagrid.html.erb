@@ -29,9 +29,8 @@
     <td><%= short_users(observation.users) %></td>
     <td><%= short_parallel(observation.find_parallel) %></td>
     <td><%= t(observation.observation_type) %></td>
-    <td><%= debug  observation.state %></td>
+    <td><%= t observation.state.short_message %></td>
     <td><%= yield observation %></td>
-    <%= debug observation.state.ok? %>
   </tr>
 <% end %>
 </tbody>

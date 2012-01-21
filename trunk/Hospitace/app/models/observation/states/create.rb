@@ -10,21 +10,24 @@ class Observation::States::Create < Observation::State
   end
   
   def ok?
-    !(@observation.parallel.empty? || @observation.observers.empty? || @observation.date.nil?)
+    !(self.observation.parallel.nil? || self.observation.observers.empty? || self.observation.date.nil?)
   end
 
   def short_message
-    short = :planning
+    short = "observation.states.create.short" #planning
   end
 
   def long_message
     short = []
-    short << :observers if @observation.observers.empty?
-    short << :parallel if @observation.parallel.empty?
-    short << :date if @observation.date.nil?
+    short << "observation.states.create.observers" if @observation.observers.empty?
+    short << "observation.states.create.parallel" if @observation.parallel.nil?
+    short << "observation.states.create.date" if @observation.date.nil?
   end
 
   def actions
-    nil?
+    actions = []
+    actions << { :title=>"observation.states.create.actions.observers",:href=>"/observations/#{@observation.id}/observers" }if @observation.observers.empty?
+    actions << { :title=>"observation.states.create.actions.observers",:href=>"/observations/#{@observation.id}/date"} if @observation.parallel.nil?
+    actions << { :title=>"observation.states.create.actions.observers",:href=>"/observations/#{@observation.id}/date"} if @observation.date.nil?
   end
 end

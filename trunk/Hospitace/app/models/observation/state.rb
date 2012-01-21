@@ -6,9 +6,7 @@ class Observation::State
   
   attr_accessor :observation
   class << self; attr_accessor :next_state, :back_state end
-  
-  @next_state = nil
-  
+    
   def initialize(observation)
     @observation = observation
   end
@@ -18,12 +16,12 @@ class Observation::State
   end
   
   def next?
-    !@next_state.nil? && ok?
+    !self.class.next_state.nil? && self.ok?
   end
   
-  def next
+  def next_s
     return unless next?
-    @observation.state = @next_state.new @observation
+    @observation.state = self.class.next_state.new @observation
   end
     
   def short_message
@@ -35,10 +33,10 @@ class Observation::State
   end
     
   def actions
-    nil
+    []
   end
 end
-#  
+  
 #  module Was
 #   
 #    def self.state_short

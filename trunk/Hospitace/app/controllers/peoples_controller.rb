@@ -18,6 +18,23 @@ class PeoplesController < ApplicationController
     end
   end
 
+  def select
+    session[:path] ||= peoples_path
+    
+    unless params[:people_id].nil?
+      redirect_to session[:path], :flash => { :people_id=>params[:people_id]}
+      return
+    end
+    
+    @peoples = People.search(params[:search]).paginate(:page=>params[:page])
+    
+    respond_to do |format|
+      format.js
+      format.html 
+      format.json { render json: @peoples }
+    end
+  end
+  
   # GET /peoples/1
   # GET /peoples/1.json
   def show

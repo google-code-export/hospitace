@@ -12,7 +12,7 @@ class Semester < KOSapi::Semester
   end
   
   def self.find_used_current_and_next
-    find = Observation.select("semester").group("semester").collect {|x| x.semester}
+    find = Observation.group("semester").collect {|x| x.semester}
     res = self.all.select do |x|
       find.include?(x.code)
     end
