@@ -10,6 +10,9 @@ class Observation < ActiveRecord::Base
   
   TYPES = %w[reported floating unannounced]
   
+  attr_accessor :state 
+  after_initialize :init_state
+  
   belongs_to :created_by, :class_name => "User", :foreign_key=>:created_by
   
   has_many :observers, :dependent => :destroy
@@ -38,7 +41,7 @@ class Observation < ActiveRecord::Base
     return if semester.empty?
     s = Semester.find_by_code(semester)
   end
-  
+    
   def self.search(search)  
     if search  
       scoped
@@ -46,5 +49,15 @@ class Observation < ActiveRecord::Base
       scoped  
     end  
   end 
+  
+  
+  protected
+  
+  def init_state
+    @state = Observation::States::Create.new(self)
+    while (@state.next?) 
+      @state.next
+    end
+  end
   
 end
