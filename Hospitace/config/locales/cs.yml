@@ -10,9 +10,26 @@ cs:
   username: "Uživatelské jméno"
   home: "Domů"
  
+  observation:
+    warning: "Je potřeba vyřešit:"
+    states:
+      create:
+        short: "Plánování"
+        observers: "K hospitaci není přidělen žádný hospitující."
+        parallel: "Není nastavená paralelka."
+        date: "Není nastaven datum hospitace."
+      scheduled:
+        short: "Naplánovaná"
+      was:
+        short: "Proběhla"
+      finished:
+        short: "Ukončená"
   
+      
+          
   observations: "Hospitace"
-  observation: "Hospitace"
+  
+  
   
   users: "Uživatelé"
   user:

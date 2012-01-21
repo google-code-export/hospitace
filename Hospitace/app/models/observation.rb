@@ -32,8 +32,7 @@ class Observation < ActiveRecord::Base
   end
   
   def find_parallel
-    return if parallel.empty?
-    puts parallel.inspect
+    return if parallel.nil?
     p = Parallel.find(course,parallel)
   end
   
@@ -55,8 +54,9 @@ class Observation < ActiveRecord::Base
   
   def init_state
     @state = Observation::States::Create.new(self)
+    
     while (@state.next?) 
-      @state.next
+      @state.next_s
     end
   end
   

@@ -1,16 +1,16 @@
-require 'will_paginate/array'
+#require 'will_paginate/array'
 class ObservationsController < ApplicationController
   load_and_authorize_resource
   
   helper_method :sort_column, :sort_direction
   
   def date
-    @observation = Observation.find(params[:id])
+    @observation = Observation.includes(:created_by,:users).find(params[:id])
     @parallel = @observation.find_parallel
     
     session[:path] = observation_date_path(@observation)
     session[:parallel] = flash[:parallel] unless flash[:parallel].nil?
-    @observation.parallel = session[:parallel] if @observation.parallel.empty?
+    @observation.parallel = session[:parallel] if @observation.parallel.nil?
     
     respond_to do |format|
       format.html { render :layout=>"tabs"}
@@ -21,7 +21,7 @@ class ObservationsController < ApplicationController
   # GET /observations
   # GET /observations.json
   def index
-    @observations = Observation.find_all_by_semester(semester.code).paginate(:page => params[:page]) 
+    @observations = Observation.includes(:created_by,:users).find_all_by_semester(semester.code).paginate(:page => params[:page]) 
     
     respond_to do |format|
       format.js
@@ -33,7 +33,7 @@ class ObservationsController < ApplicationController
   # GET /observations/1
   # GET /observations/1.json
   def show
-    @observation = Observation.find(params[:id])
+    @observation = Observation.includes(:created_by,:users).find(params[:id])
     @course = @observation.find_course
     @parallel = @observation.find_parallel
     respond_to do |format|

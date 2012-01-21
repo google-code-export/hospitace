@@ -1,14 +1,7 @@
-<% title :observation, :small=>"#{@observation.find_course.name} (#{@observation.course})" %>
+<% title :observations, :small=>"#{@observation.find_course.name} (#{@observation.course})" %>
 
-<div class="alert-message block-message warning">
-    <a class="close" href="#">×</a>
-    <p><strong>Holy guacamole! This is a warning!</strong> Best check yo self, you’re not looking too good. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
-    <div class="alert-actions">
-    <a class="btn small" href="#">Take this action</a> <a class="btn small" href="#">Or do this</a>
-    </div>
-    </div>
 <h2>Info</h2>
-<%= show_item(Observation.human_attribute_name(:state), @observation.semester) %>
+<%= show_item(Observation.human_attribute_name(:state), t(@observation.state.short_message) ) %>
 <%= show_item(Observation.human_attribute_name(:semester), @observation.semester) %>
 <%= show_item(Observation.human_attribute_name(:created_by), render(@observation.created_by)) %>
 <hr />

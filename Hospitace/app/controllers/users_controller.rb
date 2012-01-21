@@ -19,7 +19,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    @user = User.find(params[:id])
+    @user = User.includes(:observers,:created_observations).find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -31,7 +31,12 @@ class UsersController < ApplicationController
   # GET /users/new.json
   def new
     @user = User.new
-
+    
+    session[:path] = new_user_path
+    @user.people_id = flash[:people_id] unless flash[:people_id].nil?
+    @user.load_people
+    @user.login ||= @user.username unless @user.username == "id-"
+    
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @user }
@@ -47,6 +52,7 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(params[:user])
+    puts params[:user].inspect
     respond_to do |format|
       if @user.save
         format.html { redirect_to @user, notice: 'User was successfully created.' }

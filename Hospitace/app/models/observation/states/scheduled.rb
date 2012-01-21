@@ -10,20 +10,16 @@ class Observation::States::Scheduled < Observation::State
   end
   
   def ok?
-    false
+    true
   end
 
   def short_message
-    short = :scheduled
+    short = "observation.states.scheduled.short"
   end
 
   def long_message
     long = []
-    long << :scheduled_long
-  end
-
-  def actions
-    nil?
+    long << "observation.states.scheduled.long"
   end
 end
   

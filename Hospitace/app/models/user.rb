@@ -2,6 +2,8 @@ require 'kosapi'
 
 class User < ActiveRecord::Base
   
+  #scope :observ, joins(:observers).sum(:observation_id).group(:user_id)
+  
   has_many :notes
   
   has_many :created_observations, :class_name => "Observation", :foreign_key=>:created_by
@@ -11,17 +13,19 @@ class User < ActiveRecord::Base
   
   
   attr_accessible :roles
-  attr_accessible :login, :password, :password_confirmation
+  attr_accessible :login, :password, :password_confirmation, :people_id
   
-  attr_reader :email, :firstname, :lastname, :title_pre, :title_post
+  attr_reader :username,:email, :firstname, :lastname, :title_pre, :title_post
   
-  
+  validates :people_id, :uniqueness => true
   validates :login, :uniqueness => true
 
-  after_find :load_user
+  after_find :load_people
+  after_find :load_rules
 
-  def load_user
-    user = People.find_by_username(self.login)
+  def load_people
+    user = People.find(self.people_id)
+    @username = user.username
     @email = user.email
     @firstname = user.firstname
     @lastname = user.lastname
@@ -36,8 +40,16 @@ class User < ActiveRecord::Base
   ROLES = %w[admin observer observed]
   
   acts_as_authentic
+  def load_rules
+    self.role="observer" unless observers.empty?
+  end
+  
   def roles=(roles)
-    self.roles_mask = self.class.roles(roles)#= (roles & ROLES).map { |r| 2**ROLES.index(r) }.sum
+    self.roles_mask = self.class.roles(roles)
+  end
+  
+  def role=(role)
+    self.roles_mask = roles_mask | 2**ROLES.index(role)
   end
 
   def roles
