@@ -8,9 +8,9 @@
     <th>Přednášející</th>
     <th>Počet studentů</th>
     <th>Hospitující</th>
-    <th>Stav</th>
     <th><%= t :parallel %></th>
     <th><%= t :observation_type %></th>
+    <th>Stav</th>
     <th></th>
   </tr>
   </thead>
@@ -27,10 +27,11 @@
     <td><%= short_users(instance.lecturers) unless instance.nil? %></td>
     <td><%= instance.occupied unless instance.nil? %></td>
     <td><%= short_users(observation.users) %></td>
-    <td><%=  %></td>
     <td><%= short_parallel(observation.find_parallel) %></td>
     <td><%= t(observation.observation_type) %></td>
+    <td><%= debug  observation.state %></td>
     <td><%= yield observation %></td>
+    <%= debug observation.state.ok? %>
   </tr>
 <% end %>
 </tbody>
