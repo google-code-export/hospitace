@@ -1,9 +1,9 @@
-<% title :users, :small=>"správa uživatelů v systému",  :action_title=>"+ #{t "user.create"}",:action=>new_user_path %>
+<% title :users, :small=>t(:users,:scope=>"title.small"), :action_title=>:new_user,:action=>new_user_path %>
 
 <%= render :layout=>'datagrid' do |user| %>
 
     <%= link_to t(:show), user %>
     <%= link_to t(:edit), edit_user_path(user) %>
-    <%= link_to t(:destroy), user, confirm: 'Chcete odstranit záznam?', method: :delete %> 
+    <%= link_to t(:destroy), user, confirm: t(:confirm), method: :delete %> 
 
 <%end%>

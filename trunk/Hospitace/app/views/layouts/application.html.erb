@@ -14,23 +14,20 @@
 				<div class="container">
 					<%= link_to t("Hospitace"), root_path, :class=>"brand" %>
 					<ul class="nav">
-						<%= menu_item(:home,root_path) %>
+						<%#= menu_item(:home,root_path) %>
                                                 <%= menu_item(:observations,observations_path,:read,Observation) %>
 						<%= menu_item(:users,users_path,:read,User) %>
 						<%= menu_item(:peoples,peoples_path,:read,People) %>
                                                 <%= menu_item(:courses,courses_path,:read,Course) %>
-						
-						<li>
-							<a href="#contact">Contact</a>
-						</li>
+                                                <%= menu_item(:contact,"#") %>
 					</ul>
 					<p class="pull-right">
 						<% if !current_user %>
-						<%= link_to "Register", new_user_path %> |
-						<%= link_to "Log In", :login %> |
+						<%#= link_to t(:register,:scope=>"menu"), new_user_path %> |
+						<%= link_to t(:login,:scope=>"menu.user_session"), :login %> |
 						<% else %>
-						Logged in as <%= link_to current_user.login, edit_user_path(current_user.id) %> |
-						<%= link_to "Logout", :logout %>
+						<%= t(:logged_in_as,:scope=>"menu.user_session") %> <%= link_to current_user.login, edit_user_path(current_user.id) %> |
+						<%= link_to t(:logout,:scope=>"menu.user_session"), :logout %>
 						<% end %>
 					</p>
 				</div>
@@ -46,43 +43,11 @@
 					<h1><%= @title.html_safe %></h1>
 				</div>
 				<div class="row">
-					
-					<% if !flash[:alert].nil? %>
-					
-						<div class="alert-message error fade in" data-alert="alert">
-							<a class="close" href="#">×</a>
-							<p>
-								<strong>Holy guacamole!</strong> <%= flash[:alert] %>.
-							</p>
-						</div>
-						
-						
-					<% end %>
-					
-					<% if !flash[:warning].nil? %>
-					
-						<div class="alert-message info fade in" data-alert="info">
-							<a class="close" href="#">×</a>
-							<p>
-								<strong>Holy guacamole!</strong> <%= flash[:warning] %>.
-							</p>
-						</div>
-						
-						
-					<% end %>
-					
-					<% if !flash[:notice].nil? %>
-					
-						<div class="alert-message success fade in" data-alert="success">
-							<a class="close" href="#">×</a>
-							<p>
-								<strong>Holy guacamole!</strong> <%= flash[:notice] %>.
-							</p>
-						</div>
-						
-						success
-					<% end %>
-					
+                                        
+                                    
+					<%= alert_message(flash[:alert],:error) if !flash[:alert].nil? %>
+                                        <%= alert_message(flash[:warning],:warning) if !flash[:warning].nil? %>
+                                        <%= alert_message(flash[:notice],:success) if !flash[:notice].nil? %>		
 					
 					<% if content_for?(:secoundary_content) %>
 					<div class="main_content">
@@ -101,9 +66,6 @@
 				</div>
 			</div>
 			<footer>
-				<p>
-					&copy; Company 2011
-				</p>
 			</footer>
 		</div>
 	</body>

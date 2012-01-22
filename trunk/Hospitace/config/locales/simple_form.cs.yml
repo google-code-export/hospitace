@@ -2,11 +2,12 @@ cs:
   simple_form:
     labels:
       search:
+        name: Jméno
         username: 'Uživatelské jméno'
         login: 'Uživatelské jméno'
         roles: "Role"
         email: 'Email'
-        teacher: "Učitel"
+        teacher: "Učitel" 
         
     "yes": 'Ano'
     "no": 'Ne'
@@ -17,7 +18,7 @@ cs:
       # When using html, text and mark won't be used.
       # html: '<abbr title="required">*</abbr>'
     error_notification:
-      default_message: "Některé chyby byly nalezeny, prosím, podívejte se:"
+      default_message: "Některé chyby byly nalezeny:"
     # Labels and hints examples
     # labels:
     #   password: 'Password'

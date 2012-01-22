@@ -3,19 +3,33 @@
 <h2>Obecně, pravidla, návody</h2>
 
 <ul>
-  <li>Postupy pro kontrolu kvality výuky pdf TEX_zdroj</li>
-  <li>Návod pro hospitující pdf, docx.</li>
+  <li>Postupy pro kontrolu kvality výuky <%= link_to "pdf", "/documents/2011-04-05kontrolakvalityvyuky_verze_5.pdf" %> <%= link_to "TEX_zdroj", "/documents/2010-04-05kontrolakvalityvyuky_verze_5_tex.txt" %></li>
+  <li>Návod pro hospitující <%= link_to "pdf", "/documents/navodprohospitujiciver02.pdf" %>, <%= link_to "docx", "/documents/navodprohospitujiciver02.docx" %>.</li>
   <li>Formuláře pro hospitující i hospitované</li>
   <ul>
-    <li>Formulář A (pro hodnocení výuky při hospitaci) pdf Je záměrně jen v pdf, protože se má vyplňovat ručně na přednášce, hned ukázat přednášejícímu a potom skenovat.</li>
-    <li>Formulář B (slovní hodnocení hospitační návštěvy hospitujícím(mi)) pdf, doc, odt.</li>
-    <li>Formulář C (stanovisko hodnoceného učitele k názorům hospitujícího) pdf,doc, odt.</li>
-    <li>Formulář D (závěrečné shrnutí hospitujícím) pdf, doc, odt.</li>
+    <li>Formulář A (pro hodnocení výuky při hospitaci) pdf Je záměrně jen v <%= link_to "pdf", "/documents/a_formular_zaznamzhospitace.pdf" %>, protože se má vyplňovat ručně na přednášce, hned ukázat přednášejícímu a potom skenovat.</li>
+    <li>Formulář B (slovní hodnocení hospitační návštěvy hospitujícím(mi)) <%= link_to "pdf", "/documents/b-formularslovnihodnocenhospitujicim.pdf" %>, <%= link_to "doc", "/documents/b-formularslovnihodnocenhospitujicim.doc" %>, <%= link_to "odt", "/documents/b_formularslovnihodnocenhospitujicim.odt" %>.</li>
+    <li>Formulář C (stanovisko hodnoceného učitele k názorům hospitujícího) <%= link_to "pdf", "/documents/c-formularstanoviskohospitovaneho.pdf" %>,<%= link_to "doc", "/documents/c_formular_stanovisko_hospitovaneho.doc" %>, <%= link_to "odt", "/documents/c_formularstanoviskohospitovaneho.odt" %>.</li>
+    <li>Formulář D (závěrečné shrnutí hospitujícím) <%= link_to "pdf", "/documents/d-formularzaverecnehodnocenihospitace.pdf" %>, <%= link_to "doc", "/documents/d_formularzaverecnehodnocenihospitace.doc" %>, <%= link_to "odt", "/documents/d_formularzaverecnehodnocenihospitace.odt" %>.</li>
   </ul>
 </ul>
 
-<h2>Hospitace v ZS 2011/2012</h2>
-<p>Závěry z hospitací budou zveřejněny, až hospitace proběhnou.</p>
+<hr />
 
-<h3>Ohlášené hospitace, které jsou naplánované na konkrétní datum </h3>
+
+<% @observations.each do |item| %>
+  <h2><%= "Hospitace v #{item[:semester].name}" %> <small>Ohlášené a plovoucí hospitace</small></h2>
+
+  <%= render :layout=>'observations/datagrid', :locals => { :observations => item[:observations] } do |observation| %>
+
+    <%= link_to t(:show), observation %>
+
+  <%end%>
+  <hr />
+<% end %>
+  
+<p>
+  * Ohlášené hospitace - jsou naplánované na konkrétní datum <br />
+  * Plovoucí hospitace - ohlášené hospitace, ale nenaplánované na konkrétní datum
+</p> 
 

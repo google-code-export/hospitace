@@ -13,6 +13,7 @@ module KOSapi
   API_VERSION = '2'
   API_URI     = "https://#{USERNAME}:#{PASSWORD}@kosapi.feld.cvut.cz/api/#{API_VERSION}/"
 
+  require File.dirname(__FILE__) + '/kosapi/i18n'
   require File.dirname(__FILE__) + '/kosapi/resource'
 
   require File.dirname(__FILE__) + '/kosapi/room'

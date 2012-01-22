@@ -7,7 +7,6 @@ require 'will_paginate/view_helpers/link_renderer'
 require 'will_paginate/view_helpers/action_view'
 
 
-
 class WillPaginate::ActionView::BootstrapLinkRenderer < WillPaginate::ActionView::LinkRenderer
   protected
   def html_container(html)

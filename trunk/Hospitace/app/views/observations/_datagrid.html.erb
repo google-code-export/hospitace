@@ -1,22 +1,24 @@
-
+<% scope = "activerecord.attributes.observation" %>
+<% observations ||= @observations %>
 <div id="datagrid">
 <table class="zebra-striped">
   <thead>
   <tr>
-    <th>#</th>
-    <th><%= t :course %></th>
-    <th>Přednášející</th>
-    <th>Počet studentů</th>
-    <th>Hospitující</th>
-    <th><%= t :parallel %></th>
-    <th><%= t :observation_type %></th>
-    <th>Stav</th>
+    <%= th :id, scope %>
+    <%= th :course, scope %>
+    <%= th :teachers, scope %>
+    <%= th :students, scope %>
+    <%= th :observers, scope %>
+    <%= th :parallel, scope %>
+    <%= th :date, scope %>
+    <%= th :observation_type, scope %>
+    <%= th :state, scope %>
     <th></th>
   </tr>
   </thead>
   
 
-<% @observations.each do |observation| %>
+<% observations.each do |observation| %>
   <% 
     course = observation.find_course 
     instance = course.instance 
@@ -28,13 +30,14 @@
     <td><%= instance.occupied unless instance.nil? %></td>
     <td><%= short_users(observation.users) %></td>
     <td><%= short_parallel(observation.find_parallel) %></td>
+    <td><%= l(observation.date, :format => :long) unless observation.date.nil?  %></td>
     <td><%= t(observation.observation_type) %></td>
-    <td><%= t observation.state.short_message %></td>
+    <td><%= label_span(t(observation.state.short_message),(observation.state.ok? ? :success: :warning)) %></td>
     <td><%= yield observation %></td>
   </tr>
 <% end %>
 </tbody>
 </table>
-<%= will_paginate @users, :renderer=> WillPaginate::ActionView::BootstrapLinkRenderer %>
+<%#= will_paginate @observations, :renderer=> WillPaginate::ActionView::BootstrapLinkRenderer %>
   
 </div>

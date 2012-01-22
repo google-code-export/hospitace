@@ -22,12 +22,14 @@ class Observation::States::Create < Observation::State
     short << "observation.states.create.observers" if @observation.observers.empty?
     short << "observation.states.create.parallel" if @observation.parallel.nil?
     short << "observation.states.create.date" if @observation.date.nil?
+    return short
   end
 
   def actions
     actions = []
     actions << { :title=>"observation.states.create.actions.observers",:href=>"/observations/#{@observation.id}/observers" }if @observation.observers.empty?
-    actions << { :title=>"observation.states.create.actions.observers",:href=>"/observations/#{@observation.id}/date"} if @observation.parallel.nil?
-    actions << { :title=>"observation.states.create.actions.observers",:href=>"/observations/#{@observation.id}/date"} if @observation.date.nil?
+    actions << { :title=>"observation.states.create.actions.parallel",:href=>"/observations/#{@observation.id}/date"} if @observation.parallel.nil?
+    actions << { :title=>"observation.states.create.actions.date",:href=>"/observations/#{@observation.id}/date"} if @observation.date.nil?
+    return actions
   end
 end

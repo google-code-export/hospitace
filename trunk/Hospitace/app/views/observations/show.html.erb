@@ -1,7 +1,7 @@
 <% title :observations, :small=>"#{@observation.find_course.name} (#{@observation.course})" %>
 
 <h2>Info</h2>
-<%= show_item(Observation.human_attribute_name(:state), t(@observation.state.short_message) ) %>
+<%= show_item(Observation.human_attribute_name(:state), label_span(t(@observation.state.short_message),(@observation.state.ok? ? :success : :warning)) ) %>
 <%= show_item(Observation.human_attribute_name(:semester), @observation.semester) %>
 <%= show_item(Observation.human_attribute_name(:created_by), render(@observation.created_by)) %>
 <hr />

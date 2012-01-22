@@ -4,16 +4,17 @@ module KOSapi
   class Course < Resource
     RESOURCE = "#{API_URI}courses/"
     
+    attrs_with_translate :classes_type,:completion, :status, :study_form, :semester_season
+    
     attr_reader :allowed_enrollment_count # povolený počet zapsání
     attr_reader :approval_date # Datum schválení předmětu.
     attr_reader :classes_lang # výukový jazyk
-    attr_reader :classes_type # Např.: přednáška, cvičení atd.
     attr_reader :lecture_syllabus # osnova přednášek
     attr_reader :practise_syllabus # osnova cvičeních 
     attr_reader :objectives # Cíle výuky podle ECTS 
     attr_reader :range # rozsah výuky
-    attr_reader :semester_season, :status, :study_form, :note
-    attr_reader :id, :code, :completion, :credits, :description, :keywords, :literature, :name, :requirements
+    attr_reader :note
+    attr_reader :id, :code, :credits, :description, :keywords, :literature, :name, :requirements
     
     @@all = nil
 

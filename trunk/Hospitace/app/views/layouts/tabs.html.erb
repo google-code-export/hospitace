@@ -6,10 +6,9 @@
   <%= tab_item(:observation_date,observation_date_path(@observation)) %> 
   <%= tab_item(:observers,observation_observers_path(@observation)) %> 
   <%= tab_item(:notes,observation_notes_path(@observation)) %> 
-  <li><%=  link_to :hodnoceni, @observation %></li>
   </ul>
 
-  <%= message( t("observation.warning"),t(@observation.state.long_message).join(" "),@observation.state.actions) unless @observation.state.ok? %>
+  <%= message( t("observation.warning"),@observation.state.long_message,@observation.state.actions) unless @observation.state.ok? %>
   <%= content_for?(:news_content) ? yield(:news_content) : yield %>
 <% end %>
 <%= render :template => 'layouts/application' %>

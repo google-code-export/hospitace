@@ -1,11 +1,12 @@
+<div class="twipsies well">
 <p>
-<%= render(note.user) %> | <%= l(note.updated_at, :format=>:long) %> 
-| <%= link_to t(:edit), edit_observation_note_path(@observation,note) %>
+  <strong>Autor:</strong> <%= render(note.user) %> | <%= l(note.updated_at, :format=>:long) %> 
+  <span style="float:right;">
+  <%= link_to t(:edit), edit_observation_note_path(@observation,note) %>
 | <%= link_to t(:destroy), note ,method: :delete %>
-
+  </span>
 </p>
 <p>
   <%= note.note.html_safe %>  
 </p>
-
-<hr />
+</div>

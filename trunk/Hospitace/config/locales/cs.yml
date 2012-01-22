@@ -2,14 +2,70 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 cs:
+  title:
+    small:  
+      observations: naplánované v semestru
+      users: správa uživatelů v systému
+      peoples: v kosu
+      courses: "vypsané v semestru %{semester.name}"
+      select:
+        person: "vyberte člověka"
+    main:
+      log_in: Přihlásit se
+      observations: Hospitace
+      new_observation: Nová hospitace
+      users: Uživatelé
+      user: Uživatel
+      edit_user: Upravit uživatele
+      new_user: Nový uživatel
+      peoples: Lidé
+      courses: Předměty
+      course: Předmět
+      observers: Hospitující
+    action:
+      new_observation: Vytvořit hospitaci
+      new_user: Vytvořit uživatele
+      edit: Upravit
+      
+  menu:
+    home: "Domů"
+    log_in: Přihlásit se
+    contact: "Kontakt"
+    observations: "Hospitace"
+    peoples: "Lidé"
+    users: "Uživatelé"
+    courses: "Předměty"
+    user_session:
+      login: "Přihlásit se"
+      logout: "Odhlásit"
+      logged: "Přihlášen"
+      logged_in_as: "Přihlášen jako"
+  
+  tabs:
+    info: Detail
+    observation_date: Naplánování
+    observers: Hospitující
+    notes: Poznámky
+    
+  message:
+    type:
+      error: Problém!
+      warning: Varování!
+      info: Info
+      success: Úspěch
+  
+  tables:
+    th:
+    
+  confirm: "Opravdu chcete smazat záznam?"
   edit: "Upravit"
   show: "Zobrazit"
   destroy: "Smazat"
   search: "Hledat"
   
   username: "Uživatelské jméno"
-  home: "Domů"
  
+    
   observation:
     warning: "Je potřeba vyřešit:"
     states:
@@ -18,6 +74,10 @@ cs:
         observers: "K hospitaci není přidělen žádný hospitující."
         parallel: "Není nastavená paralelka."
         date: "Není nastaven datum hospitace."
+        actions:
+          observers: "Přidat hospitujícího"
+          parallel: "Nastavit paralelku"
+          date: "Nastavit datum"
       scheduled:
         short: "Naplánovaná"
       was:
@@ -27,30 +87,38 @@ cs:
   
       
           
-  observations: "Hospitace"
   
   
+  add_observer: Přidat hospitujícího 
   
-  users: "Uživatelé"
+
   user:
     new: "Nový uživatel"
     create: "Vytvořit uživatele"
     created: "Spravované"
   
-  peoples: "Lidé"
   people:
     username: "Uživatelské jméno"
     name: "Jméno"
     teacher: "Učitel"
     email: "Email"
   
-  admin: "Administrátor"
-  observer: "Hospitující"
-  observed: "Hospitovaný"
+  parallel:
+    teachers: Vyučující
+    day: Den
+    time: Hodina
+    parity: Parita
+    room: Místnost
+    type: Typ
   
-  floating: "Plovoucí hospitace"
-  reported: "Ohlášená hospitace"
-  unannounced: "Neohlášená hospitace"
+  roles:
+    admin: "Administrátor"
+    observer: "Hospitující"
+    observed: "Hospitovaný"
+  
+  floating: "Plovoucí"
+  reported: "Ohlášená"
+  unannounced: "Neohlášená"
   
   
   
@@ -60,6 +128,7 @@ cs:
       observation: "hospitace"
       observer: "hospitující"
       note: "poznámka"
+      user_session: UserSession 
     attributes:
       user:
         login: "Uživatelské jméno"
@@ -67,5 +136,13 @@ cs:
         password_confirmation: "Potvrzení hesla"
         name: "Jméno"
         roles: "Role"
-        
-     
+      observation:
+        course: Předmět
+        teachers: Přednášející
+        students: Studentů
+        observers: Hospitující
+        parallel: Paralelka
+        observation_type: Typ
+        state: Stav
+        date: Datum
+        created_by: Spravuje
