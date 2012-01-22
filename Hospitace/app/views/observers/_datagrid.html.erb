@@ -1,11 +1,11 @@
+<% scope = "activerecord.attributes.user" %>
 <div id="datagrid">
 <table class="zebra-striped">
   <thead>
   <tr>
-    <th>#</th>
-    <th>Login</th>
-    <th>Name</th>
-    <th>Roles</th>
+    <%= th :login, scope %>
+    <%= th :name, scope %>
+    <%= th :email, scope %>
     <th></th>
   </tr>
   </thead>
@@ -16,10 +16,9 @@
   user = observer.user %>
   <%#= debug user %>
   <tr>
-    <td><%= user.object_id %></td>
     <td><%= user.login %></td>
     <td><%= user.full_name %></td>
-    <td><%= user.roles_mask %></td>
+    <td><%= user.email %></td>
     <td><%= yield observer %></td>
   </tr>
 <% end %>

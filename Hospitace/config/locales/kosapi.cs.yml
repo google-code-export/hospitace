@@ -1,0 +1,65 @@
+cs:
+  kosapi:
+    course:
+      completition:
+        CREDIT: Zápočet
+        CLFD_CREDIT: Klasifikovaný zápočet
+        EXAM: Zkouška
+        CREDIT_EXAM: Zápočet a zkouška
+        DEFENSE: Obhajoba
+        NOTHING: Bez zkoušky i zápočtu
+        UNKNOWN: Nezadáno
+      status:
+        PROPOSED:	Navržen
+        APPROVED: Schválen	
+        DISCONTINUED:	Uzavřen
+        SCHEDULED: Vypsán  
+      study_form:
+        DISTANCE:	Distanční
+        ENGLISH: Anglicky pro samoplátce
+        FULLTIME: Prezenční
+        PARTTIME:	Kombinované
+        UNKNOWN: Nezapisované závěrečné práce 
+      semester_season:
+        BOTH: Zimní i letní 	
+        SUMMER: Letní
+        WINTER: Zimní 
+        
+    parallel:    
+      type:
+        LABORATORY: Laboratoř
+        LECTURE: Přednáška 
+        PROJECT: Projekt 
+        PT_COURSE: TV Kurz 
+        SEMINAR: Seminář
+        TUTORIAL: Cvičení 
+      day:
+        UNKNOWN:	Neznámý
+        MONDAY:	Pondělí
+        TUESDAY: Úterý
+        WEDNESDAY: Středa
+        THURSDAY:	Čtvrtek
+        FRIDAY:	Pátek
+        SATURDAY:	Sobota
+        SUNDAY:	Neděle 
+      parity:
+        BOTH: Sudý i lichý 
+        EVEN: Sudý
+        ODD: Lichý  
+       
+    department:
+      type:
+        RECTORATE: Rektorát
+        FACULTY: Fakulta
+        DEPARTMENT:	Katedra
+        UNKNOWN: Neznámý 
+    others:    
+      permission:
+        ALLOWED: Povoleno
+        DENIED:	Nepovoleno 
+      teacher_role:
+        EDITOR:	Editor
+        EXAMINER:	Zkoušející
+        GUARANTOR: Garant
+        INSTRUCTOR:	Cvičící
+        LECTURER:	Přednášející 

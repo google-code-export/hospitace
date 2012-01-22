@@ -1,7 +1,7 @@
 module ParallelsHelper
   
   def short_parallel(parallel)
-    "#{parallel.day}, #{start(parallel)} #{parallel.room.code}" unless parallel.nil?
+    "#{parallel.day_t}, #{start(parallel)} #{parallel.room.code}" unless parallel.nil?
   end
   
   def parallel_time (parallel)

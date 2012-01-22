@@ -1,4 +1,4 @@
-<% title User.model_name.human, :small=>"#{@user.full_name}", :action_title=>t(:edit),:action=>edit_user_path(@user) %>
+<% title :user, :small=>"#{@user.full_name}", :action_title=>:edit,:action=>edit_user_path(@user) %>
 
 <%= show_item(User.human_attribute_name(:login), @user.login) %>
 
@@ -6,16 +6,16 @@
 
 <%= show_item(User.human_attribute_name(:email), @user.email) %>
 
-<%= show_item(User.human_attribute_name(:roles), @user.roles.collect{|i| t i}.join(", ")) %>
+<%= show_item(User.human_attribute_name(:roles), roles(@user)) %>
 
 <hr/>
 
-<h2><%= t "user.created" %> <small><%= t Observation.model_name.human %></small></h2>
+<h2>Správa hospitací</h2>
 
 <%= render @user.created_observations %>
 
 <hr/>
 
-<h2><%= t Observer.model_name.human %> <small><%= t Observation.model_name.human %></small></h2>
+<h2><%= t Observer.model_name.human %></h2>
 
 <%= render @user.observations %>

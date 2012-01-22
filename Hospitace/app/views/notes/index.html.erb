@@ -1,6 +1,6 @@
-<% title :observers, :small=>"poznámky" %>
+<% title :observations, :small=>"poznámky pro #{@observation.find_course.name} (#{@observation.course})" %>
 
 <%= render @observation.notes %>
 
-<h2><%= t "note.new" %></h2>
+<h2>Nová poznámka</h2>
 <%= render 'form' %>

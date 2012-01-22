@@ -1,5 +1,5 @@
-<% title :peoples, :small=>"vyberte člověka"%>
-<%#= debug session %>
+<% title :peoples, :small=>t(:person,:scope=>"title.small.select")%>
+
 <%= simple_form_for :people do |f| %>
 
   <%= render :layout => 'datagrid', :locals => { :peoples => @peoples } do |person| %>

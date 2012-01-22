@@ -1,4 +1,6 @@
 
+<% scope = "activerecord.attributes.user" %>
+
 <% content_for :secoundary_content do %>
 	
 	<div class="header">
@@ -12,7 +14,7 @@
 	
 	<%= f.input :login, :placeholder => 'user@fel.cvut.cz', :required => false %>
 	
-	<%= f.input :roles, :collection =>User::ROLES.collect{|i| [t(i), i]},  :as => :check_boxes, :wrapper=>:label_wrapped, :required => false %>
+	<%= f.input :roles, :collection =>input_roles,  :as => :check_boxes, :wrapper=>:label_wrapped, :required => false %>
 	<div class="actions">
 		<%= f.submit :search, :class => 'btn primary' %>
 	</div>
@@ -24,10 +26,10 @@
 <table class="zebra-striped">
   <thead>
   <tr>
-    <%= sortable :id, "#" %>
-    <%= sortable :login, User.human_attribute_name(:login) %>
-    <th><%= User.human_attribute_name(:name) %></th>
-    <th><%= User.human_attribute_name(:roles) %></th>
+    <%= th :id, scope, true %>
+    <%= th :login, scope, true %>
+    <%= th :name, scope %>
+    <%= th :roles, scope %>
     <th></th>
   </tr>
   </thead>
@@ -38,7 +40,7 @@
     <td><%= user.id %></td>
     <td><%= user.login %></td>
     <td><%= user.full_name %></td>
-    <td><%= user.roles.collect{|i| t i}.join(", ") %></td>
+    <td><%= roles(user) %></td>
     <td><%= yield user %></td>
   </tr>
 <% end %>

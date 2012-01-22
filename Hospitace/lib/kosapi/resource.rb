@@ -1,6 +1,19 @@
 
 module KOSapi
   class Resource
+    def self.attrs_with_translate(*args)
+      attr_reader *args 
+      
+      args.each do |attribute|
+        define_method "#{attribute}_t" do
+          value = self.send(attribute)
+          value = value.first if value.is_a?(Array)
+          scope = self.class.name.demodulize.downcase
+          I18n.t value, :scope=>".#{scope}.#{attribute}", :default=>value
+        end
+      end
+    end
+    
     private
       def valid? data
         if data.nil? or data['@id'].nil? or data['@uri'].nil? then

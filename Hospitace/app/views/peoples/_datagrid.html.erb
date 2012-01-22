@@ -1,5 +1,5 @@
 
-
+<% scope = 'people' %>
 <% content_for :secoundary_content do %>
 	
 	<div class="header">
@@ -30,10 +30,10 @@
   <thead>
   <tr>	
     <tr>
-    <th>#</th>
-    <th><%= t("people.username") %></th>
-    <th><%= t("people.name") %></th>
-    <th><%= t("people.teacher") %></th>	
+    <%= th :id, scope  %>
+    <%= th :username, scope  %>
+    <%= th :name, scope  %>
+    <%= th :teacher, scope  %>
     <th></th>
   </tr>
   </thead>

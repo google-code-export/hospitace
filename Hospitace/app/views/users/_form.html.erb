@@ -1,13 +1,6 @@
 <%= simple_form_for @user, :wrapper => :inline do |f| %>
 
-<%#= debug @user %>
-
-<% if f.error_notification %>
-<div class="alert-message warning fade in" data-alert="alert">
-	<a class="close" href="#">×</a>
-	<%= f.error_notification %>
-</div>
-<% end %>
+<%= alert_message(f.error_notification, :warning) if f.error_notification %>
 
 <%= f.input :people_id, :as=>:hidden %>
 
@@ -18,11 +11,11 @@
 <%= f.input :password %>
 <%= f.input :password_confirmation%>
 
-<%= f.input :roles, :collection =>User::ROLES,  :as => :check_boxes, :wrapper=>:label_wrapped if can? :assign_roles, @user %>
+<%= f.input :roles, :collection =>input_roles,  :as => :check_boxes, :wrapper=>:label_wrapped if can? :assign_roles, @user %>
 
 
 <div class="actions">
 	<%= f.button :submit, :class => 'btn primary' %>
-	<%= button_tag 'Cancel', :type => :reset, :class => "btn" %>
+	<%#= button_tag 'Cancel', :type => :reset, :class => "btn" %>
 </div>
 <% end %> 

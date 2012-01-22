@@ -1,10 +1,6 @@
 Hospitace::Application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
 
-  get "password_resets/edit"
-
-  get "password_resets/new"
-
   get "home/index"
 
   resources :users
@@ -12,7 +8,7 @@ Hospitace::Application.routes.draw do
 
   match 'observations/:id/date' => 'observations#date', :via => [:get, :post], :as => :observation_date
   
-  resources :observations do
+  resources :observations, :except=> [:edit] do
     match "courses" => 'courses#select', :via => [:get, :post], :on=>:collection, :as=>:observation_courses
     #match "date" => 'observations#date', :via => [:get, :post], :on=>:member,:as => :date
     resources :notes

@@ -1,5 +1,5 @@
 
-<% title :peoples %>
+<% title :peoples, :small=>t(:peoples,:scope=>"title.small") %>
 
 <%= render :layout=>'datagrid', :locals => { :peoples => @peoples } do |person| %>
 

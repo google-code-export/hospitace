@@ -21,6 +21,10 @@ class Observation::States::Scheduled < Observation::State
     long = []
     long << "observation.states.scheduled.long"
   end
+  
+  def actions
+    actions = []
+  end
 end
   
 #  
