@@ -1,7 +1,7 @@
 $('#datagrid').html('<%= escape_javascript(
   
        render(:layout=>"datagrid") { |observation| 
-         link_to(  t(:show), observation)+" "+link_to(t(:destroy), observation, confirm:  t(:confirm), method: :delete );
+         link_to_if(can?(:show, observation),t(:show), observation)+" "+link_to_if(can?(:destroy, observation),t(:destroy), observation, confirm:  t(:confirm), method: :delete );
        }
 
 ) %>');  

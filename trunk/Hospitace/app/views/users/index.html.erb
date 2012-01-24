@@ -2,8 +2,8 @@
 
 <%= render :layout=>'datagrid' do |user| %>
 
-    <%= link_to t(:show), user %>
-    <%= link_to t(:edit), edit_user_path(user) %>
-    <%= link_to t(:destroy), user, confirm: t(:confirm), method: :delete %> 
+    <%= link_to_if can?(:show,user), t(:show), user %>
+    <%= link_to_if can?(:update,user), t(:edit), edit_user_path(user) %>
+    <%= link_to_if can?(:destroy,user), t(:destroy), user, confirm: t(:confirm), method: :delete %> 
 
 <%end%>

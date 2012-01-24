@@ -11,6 +11,16 @@ module ApplicationHelper
     content_tag(:li,link_to(t(title,:scope=>"menu"),path), :class => ((current_page?(path) ? "active" : nil )))
   end
   
+  def sub_menu(title,*args,&block)
+    return if !args.empty? and cannot? *args
+    content_tag(:li,:class=>"dropdown","data-dropdown"=>"dropdown") do
+      link_to(title, "#",:class=>"dropdown-toggle") +
+      content_tag(:ul,:class=>"dropdown-menu") do 
+        yield if block_given?
+      end
+    end
+  end
+  
   def tab_item(title,path,*args)
     return if !args.empty? and cannot? *args
     content_tag(:li,link_to(t(title,:scope=>"tabs"),path), :class => ((current_page?(path) ? "active" : nil )))

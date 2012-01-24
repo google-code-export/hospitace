@@ -1,8 +1,14 @@
 Hospitace::Application.routes.draw do
+
   mount Ckeditor::Engine => '/ckeditor'
 
   get "home/index"
 
+  
+  get "observed" => 'my_observations#observed', :as=> :my_observations_observed
+  get "manage" => 'my_observations#manage', :as=> :my_observations_manage
+  get "observing" => 'my_observations#observing', :as=> :my_observations_observing
+  
   resources :users
   resources :notes
 

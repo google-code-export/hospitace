@@ -22,6 +22,9 @@ cs:
       courses: Předměty
       course: Předmět
       observers: Hospitující
+      observing_observations: Hospituji hospitace
+      manage_observations: Spravované hospitace
+      observed_observations: Hospitován
     action:
       new_observation: Vytvořit hospitaci
       new_user: Vytvořit uživatele
@@ -35,6 +38,8 @@ cs:
     peoples: "Lidé"
     users: "Uživatelé"
     courses: "Předměty"
+    manage: Spravované
+    observing: Hospituji
     user_session:
       login: "Přihlásit se"
       logout: "Odhlásit"
@@ -111,8 +116,18 @@ cs:
     room: Místnost
     type: Typ
   
+  course:
+    name: Název
+    code: Kód
+    occupied: Studenů
+    study_form: Forma studia
+    range: Rozsah
+    guarantors: Garant
+    lecturers: Přednášející
+  
   roles:
-    admin: "Administrátor"
+    root: "Admin"
+    admin: "Administrátor hospitací"
     observer: "Hospitující"
     observed: "Hospitovaný"
   
@@ -146,3 +161,5 @@ cs:
         state: Stav
         date: Datum
         created_by: Spravuje
+        observed: Hospitovaný
+        date_and_time: Datum a čas

@@ -21,7 +21,7 @@ class ObservationsController < ApplicationController
   # GET /observations
   # GET /observations.json
   def index
-    @observations = Observation.includes(:created_by,:users).where(:semester=>semester.code).paginate(:page => params[:page]) 
+    @observations = Observation.includes(:created_by,:users).where(:semester=>semester.code).where("(`observations`.`observation_type` = 'unannounced' AND `observations`.`created_by` = ?) || `observations`.`observation_type` !='unannounced'",current_user.id).paginate(:page => params[:page]) 
     
     respond_to do |format|
       format.js

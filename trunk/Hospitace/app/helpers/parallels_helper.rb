@@ -5,7 +5,7 @@ module ParallelsHelper
   end
   
   def parallel_time (parallel)
-    "#{start(parallel)}-#{finish(parallel)}"
+    "#{start(parallel)} - #{finish(parallel)}"
   end
   
   def start(parallel)
