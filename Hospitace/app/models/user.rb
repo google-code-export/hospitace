@@ -37,7 +37,7 @@ class User < ActiveRecord::Base
     "#{@title_pre} #{@firstname} #{@lastname} #{@title_post}"
   end
 
-  ROLES = %w[admin observer observed]
+  ROLES = %w[admin observer observed root]
   
   acts_as_authentic
   def load_rules

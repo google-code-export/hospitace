@@ -1,0 +1,15 @@
+<%
+action = {}
+action = { :action_title=>:new_observation, :action=>new_observation_path } if can? :create, Observation %>
+<% options = {:small=>(t(:observations,:scope=>"title.small")+" "+select( "selected_semester", "code", Semester.find_used_current_and_next.collect {|p| [p.name, p.code]}, :selected=>semester.code))} %>
+<% options.merge!(action)  %>
+
+<% title :observing_observations, options %>
+
+<%= render :layout=>'observations/datagrid' do |observation| %>
+
+    <%= link_to_if can?(:show,observation) ,t(:show), observation if can? :show, observation %>
+    <%= link_to_if can?(:destroy,observation) ,t(:destroy), observation, confirm: t(:confirm), method: :delete if can? :destroy, observation %> 
+
+<%end%>
+<br />

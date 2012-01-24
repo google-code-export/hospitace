@@ -22,7 +22,7 @@
 
   <%= render :layout=>'observations/datagrid', :locals => { :observations => item[:observations] } do |observation| %>
 
-    <%= link_to t(:show), observation %>
+    <%= link_to t(:show), observation if can? :show, observation %>
 
   <%end%>
   <hr />

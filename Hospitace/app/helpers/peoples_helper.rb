@@ -2,6 +2,7 @@ module PeoplesHelper
   def short_users(users)
     u = []
     users.each do |l|
+      (next u << l.login) if l.lastname.nil?
       u << "#{l.firstname} #{l.lastname}"
     end
     u.join(", ")
@@ -11,7 +12,9 @@ module PeoplesHelper
     return if peoples.nil?
     u = []
     peoples.each do |l|
-      u << link_to(l.full_name, :controller=>"peoples", :action=>"show", :id=>l.id)
+      name = "#{l.firstname} #{l.lastname}"
+      name = l.login if l.lastname.nil?
+      u << link_to_if(can?(:show,People),name, :controller=>"peoples", :action=>"show", :id=>l.id)
     end
     u.join(", ").html_safe
   end

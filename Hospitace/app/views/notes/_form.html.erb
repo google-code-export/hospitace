@@ -1,10 +1,6 @@
 <%= simple_form_for(@note,:wrapper => :inline) do |f| %>
-  <% if f.error_notification %>
-    <div class="alert-message warning fade in" data-alert="alert">
-      <a class="close" href="#">×</a>
-      <%= f.error_notification %>
-    </div>
-  <% end %>
+  <%= alert_message(f.error_notification, :warning) if f.error_notification %>
+
 
   <%= f.association :observation,:as=>:hidden %>
   <%= f.cktext_area :note, :toolbar => 'Note' %>
