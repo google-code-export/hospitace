@@ -15,8 +15,8 @@ development:
   encoding: utf8
   database: hospitace_development
   pool: 5
-  username: rails
-  password: rails
+  username: hospitace
+  password: QqNJAHg4
   host: localhost
 
 # Warning: The database defined as "test" will be erased and
@@ -29,7 +29,10 @@ test:
   timeout: 5000
 
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
+  adapter: mysql2
+  encoding: utf8
+  database: hospitace_production
   pool: 5
-  timeout: 5000
+  username: hospitace
+  password: QqNJAHg4
+  host: localhost
