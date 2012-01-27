@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 module MessageHelper
   def message(title,text = [],actions = [],type = "warning")
     content_tag(:div,:class => "alert-message block-message #{type}") do 
