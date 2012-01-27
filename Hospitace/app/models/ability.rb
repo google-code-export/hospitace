@@ -63,7 +63,7 @@ class Ability
     cannot :manage, Observation do |ob|
       !(ob.created_by.id==current_user.id)
     end
-    
+    can :create, Observation
     can :observing, Observation
     can :m_ob, Observation
     
