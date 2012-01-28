@@ -1,4 +1,6 @@
 
+require 'kosapi'
+
 class People < KOSapi::User
   include KOSapi
   
