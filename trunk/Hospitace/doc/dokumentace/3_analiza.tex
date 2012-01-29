@@ -1,0 +1,71 @@
+\chapter{Analýza a návrh řešení}
+Cílem této kapitoly je vyhodnotit funkční a nefunkční požadavky na aplikaci. Definuji zde doménový model a případy užití s business procesy pro vytvoření hospitace. 
+
+\section{Požadavky}
+Požadavky na systém se dělí na dvě sekce funkčních a nefunkčních požadavky. Pro definování těchto požadavků vycházejí ze zadání práce. Tyto požadavky definují návrh a pozdější implementaci systému a definují meze systému.
+\subsection{Obecné požadavky}
+Obecné požadavky jsou požadavky, které se netýkají funkčnosti ale celkového návrhu a použitých technologií.
+\begin{enumerate}
+\item Systém bude postaven na webovém frameworku Ruby on Rails.
+\item Systém bude používat databázi MySQL.
+\item Systém bude webovou aplikací.
+\item Serverová část systému poběží na aplikačním serveru Apache2.
+\item Systém bude používat webovou službou KOSapi.
+\item Systém bude pro autentizaci používat FELid.
+\end{enumerate}
+
+\subsection{Funkční požadavky}
+Tato sekce se zabývá požadavky na funkčnost systému. Systém umožní:
+\begin{enumerate}
+\item Systém umožní spravovat uživatele.
+\item Systém umožní průběžné plánování hospitaci.
+\item Systém umožní přiřazení hospitujícího k hospitaci.
+\item Systém umožní vyhledávat předměty z KOSapi.
+\item Systém umožní vyhledávat osoby z KOSapi.
+\end{enumerate}
+
+\section{Uživatelské role}
+Uživatelské role v aplikaci jsou odvozený z modelu aktérů systému u každého uživatele je diagram případu užití. Rozložení rolí v systému je takové, že uživatel systému se může nacházet v několika rolích. V systému jsou následující role:
+\subsection{Nepřihlášený uživatel}
+Nepřihlášený uživatel Nepřihlášený uživatel je host naší aplikace, má nejmenší pravomoc v systému. V tomto stavu je každý uživatel, který se doposud nepřihlásil do. Tento uživatel má právo pouze si prohlížet veřejné naplánované hospitace.
+\subsection{Přihlášený uživatel}
+Přihlášený uživatel je uživatel systému, který se již přihlásil do systému. Tento uživatel se umí pouze na rozdíl od nepřihlášeného uživatele pouze odhlásit do systému.
+\subsection{Hospitovaný}
+Hospitovaný je role pro přihlášeného uživatel v systému. Tento uživatel je vyučující, který vyučuje předmět na němž je naplánovaná hospitace. Tato role přidává možnost přístupu k naplánované hospitaci. U těchto hospitací má právo na zobrazení informací, zobrazení hodnocení a sepsat stanovisko k názorům hospitujícího.
+\subsection{Hospitující}
+Hospitující je role pro přihlášeného uživatele v systému. Je uživatel přidělený k vykonání hospitace. U přidělených hospitací má uživatel právo na zobrazení informací a možnost vytvořit hodnocení z vykonané hospitace.
+\subsection{Administrátor hospitací}
+Administrátor hospitací je přihlášený uživatel, který má právo spravovat hospitace a k nim přidělovat hospitující. Dále má právo přidělovat uživatelům role administrátor hospitací a hospitující.
+\subsection{Administrátor}
+Administrátor je uživatel který má nejvyšší pravomoc v systému. Má pravomoc spravovat všechny části aplikace. 
+
+\section{Doménový model}
+Doménový model reprezentuje klíčové domény systému a jejich vztahy mezi sebou. V diagramu je vidět propojení domén s doménami v KOSapi.
+\subsection{Domény v KOSapi}
+\begin{itemize}
+\item Osoba uživatelé v kosu
+\item Semestr semestry 
+\item Předmět pře
+\item Instance předmětu in
+\item Paralelka par
+\item Místnost místnost
+\end{itemize}
+
+\subsection{Domény aplikace}
+\begin{itemize}
+\item Uživatel
+\item Hospitace
+\item Poznámka
+\item Příloha
+\item Formulář
+\item Hodnota
+\item Typ formuláře
+\item Položka
+\end{itemize}
+
+\section{Životní cyklus hospitace}
+
+\section{Technologie}
+
+
+
