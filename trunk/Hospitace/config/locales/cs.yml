@@ -11,6 +11,7 @@ cs:
       select:
         person: "vyberte člověka"
     main:
+      home: "Kontrola kvality výuky"
       log_in: Přihlásit se
       observations: Hospitace
       new_observation: Nová hospitace
@@ -54,10 +55,10 @@ cs:
     
   message:
     type:
-      error: Problém!
+      error: Chyba!
       warning: Varování!
-      info: Info
-      success: Úspěch
+      info: Informace
+      success: Ok
   
   tables:
     th:
