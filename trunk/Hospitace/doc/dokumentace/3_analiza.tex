@@ -1,8 +1,8 @@
 \chapter{Analýza a návrh řešení}
-Cílem této kapitoly je vyhodnotit funkční a nefunkční požadavky na aplikaci. Definuji zde doménový model a případy užití s business procesy pro vytvoření hospitace. 
+Tato kapitola pojednává o analýze a návrhu vhodného řešení aplikace. Výstupem této analýzy jsou funkční a nefunkční požadavky. Dále návrh a popis domén a nejhlavnější případy užití. 
 
 \section{Požadavky}
-Požadavky na systém se dělí na dvě sekce funkčních a nefunkčních požadavky. Pro definování těchto požadavků vycházejí ze zadání práce. Tyto požadavky definují návrh a pozdější implementaci systému a definují meze systému.
+Požadavky na systém se dělí na dvě sekce funkčních a nefunkčních požadavky. Pro definování těchto požadavků vycházejí ze zadání práce. Tyto požadavky mi definují návrh aplikace a později ve fázi implementace i potřebné technologie pro implementaci systému.
 \subsection{Obecné požadavky}
 Obecné požadavky jsou požadavky, které se netýkají funkčnosti ale celkového návrhu a použitých technologií.
 \begin{enumerate}
@@ -19,53 +19,140 @@ Tato sekce se zabývá požadavky na funkčnost systému. Systém umožní:
 \begin{enumerate}
 \item Systém umožní spravovat uživatele.
 \item Systém umožní průběžné plánování hospitaci.
-\item Systém umožní přiřazení hospitujícího k hospitaci.
+\item Systém umožní hospitujícímu i hospitovanému prohlížet hospitace.
+\item Systém umožní vystavit závěrečné hodnocení na veřejné části aplikace. 
+\item Hospitovaný bude moct sepsat stanoviska k názorům hospitujícího.
+\item Systém umožní hospitujícímu nahrát document hodnocení výuky.
+\item Systém umožní hospitujícímu napsat slovní hodnocení z výuky.
+\item Systém umožní hospitujícímu napsat závěrečné shrnutí hospitace.
+\item Systém bude odesílat emailem zprávy o naplánování hospitací a jednotlivé hodnocení a stanoviska příslušným osobám.
 \item Systém umožní vyhledávat předměty z KOSapi.
 \item Systém umožní vyhledávat osoby z KOSapi.
 \end{enumerate}
 
 \section{Uživatelské role}
-Uživatelské role v aplikaci jsou odvozený z modelu aktérů systému u každého uživatele je diagram případu užití. Rozložení rolí v systému je takové, že uživatel systému se může nacházet v několika rolích. V systému jsou následující role:
+V systému je celkem 6 uživatelských rolí ty jsou odvozený z modelu aktérů na obrázku \ref{fig:actors}. Máme tři základní globální uživatelské role, které jsou základem systému přihlášený uživatel, nepřihlášený uživatel a administrátor hospitací. Další role jako hospitovaný a hospitující uživatel jsou role přiděleny k příslušným osobám zainteresovaných pro určitou hospitacím.
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=16cm]{figures/Actors}
+\caption{Aktéři}
+\label{fig:actors}
+\end{center}
+\end{figure}
+
+V systému jsou následující role:
+
 \subsection{Nepřihlášený uživatel}
-Nepřihlášený uživatel Nepřihlášený uživatel je host naší aplikace, má nejmenší pravomoc v systému. V tomto stavu je každý uživatel, který se doposud nepřihlásil do. Tento uživatel má právo pouze si prohlížet veřejné naplánované hospitace.
+Nepřihlášený uživatel je role pro hosty naší aplikace. V systému má ze všech rolí nejmenší pravomoc. V tomto stavu je každý uživatel, který se doposud nepřihlásil do systému. Tato role umožní vykonat následující akce. Přihlásit se, zobrazit seznam naplánovaných veřejné hospitace na aktuální a následující semestr. Má také přístup k závěrečným shrnutím hospitací.
+
 \subsection{Přihlášený uživatel}
-Přihlášený uživatel je uživatel systému, který se již přihlásil do systému. Tento uživatel se umí pouze na rozdíl od nepřihlášeného uživatele pouze odhlásit do systému.
+Přihlášený uživatel je zděděná z role nepřihlášený. Je to uživatel, který má vytvořený účet v systému a již se přihlásil. Tato role přidává možnost odhlásit se a procházet veškeré ohlášené hospitace. Tato role je základní pro všechny další role a z ní taky dědí.
+
 \subsection{Hospitovaný}
-Hospitovaný je role pro přihlášeného uživatel v systému. Tento uživatel je vyučující, který vyučuje předmět na němž je naplánovaná hospitace. Tato role přidává možnost přístupu k naplánované hospitaci. U těchto hospitací má právo na zobrazení informací, zobrazení hodnocení a sepsat stanovisko k názorům hospitujícího.
+Hospitovaný je role pro přihlášeného uživatel v systému. Je přidělená pro každého vyučujícího, který vyučuje předmět na němž byla naplánovaná hospitace. Tato role přidává možnost přístupu k naplánovaným hospitacím, kde figuruje jako hospitovaný. U těchto hospitací má právo na zobrazení všech hodnotících dokumentů a umožní mu sepsat dokument stanovisko k názorům hospitujícího.
+
 \subsection{Hospitující}
-Hospitující je role pro přihlášeného uživatele v systému. Je uživatel přidělený k vykonání hospitace. U přidělených hospitací má uživatel právo na zobrazení informací a možnost vytvořit hodnocení z vykonané hospitace.
+Hospitující je role pro přihlášeného uživatele v systému. Přiděluje ji administrátor hospitací k osobám, které mají za úkol vykonat hospitaci. U přidělených hospitací má uživatel právo na zobrazení informací o jeho hospitaci a povinnost sepsat hodnotící dokumenty z vykonané hospitace.
+
 \subsection{Administrátor hospitací}
-Administrátor hospitací je přihlášený uživatel, který má právo spravovat hospitace a k nim přidělovat hospitující. Dále má právo přidělovat uživatelům role administrátor hospitací a hospitující.
+Tato role patří mezi nejdůležitější role v systému, protože spravuje hospitace a přiděluje uživatelům nové role. Hlavním účelem této role je plánovat hospitace na předměty a posléze je spravovat.   
+
 \subsection{Administrátor}
-Administrátor je uživatel který má nejvyšší pravomoc v systému. Má pravomoc spravovat všechny části aplikace. 
+Administrátor je super uživatel, který má nejvyšší pravomoc v systému. Má přístup ke všem zdrojům aplikace a může nastavovat aplikaci.
 
 \section{Doménový model}
-Doménový model reprezentuje klíčové domény systému a jejich vztahy mezi sebou. V diagramu je vidět propojení domén s doménami v KOSapi.
+Doménový model na obrázku \ref{fig:domainmodel} reprezentuje klíčové domény systému a jejich vztahy mezi sebou. 
+
+Popis domény pro přehlednost jsem rozdělil podle zdroje na dvě základní skupiny. Prvními jsou domény v KOSapi a druhou skupinou jsou domény specifické pro moji aplikaci. 
+
 \subsection{Domény v KOSapi}
 \begin{itemize}
-\item Osoba uživatelé v kosu
-\item Semestr semestry 
-\item Předmět pře
-\item Instance předmětu in
-\item Paralelka par
-\item Místnost místnost
+\item Osoba - informace o osobě nacházející se na FEL. Každá osoba být učitelem a studentem.
+\item Semestr - informace o jednotlivých semestrech. 
+\item Předmět - popis jednotlivých předmětů vyučovaných na FEL.
+\item Instance předmětu - jsou instance předmětu vypsané v konkrétním semestru.
+\item Paralelka - je vypsaná rozvrhová paralelka.
+\item Místnost
 \end{itemize}
 
 \subsection{Domény aplikace}
 \begin{itemize}
-\item Uživatel
-\item Hospitace
-\item Poznámka
-\item Příloha
-\item Formulář
-\item Hodnota
-\item Typ formuláře
-\item Položka
+\item Uživatel - obsahuje dodatečné informace a role pro osobu v aplikaci.
+\item Hospitace - obsahuje informace o naplánování hospitace. 
+\item Poznámka - je textová zpráva pro hospitaci napsaná uživatelem.
+\item Příloha - je připnutý datový soubor pro hodnocení hospitace.
+\item Formulář - je vyplněný formulář pro hospitaci.
+\item Hodnota - je hodnota jedné formulářové položky.
+\item Typ formuláře - je typ formuláře, který se používá pro dokumenty z hospitace. 
+\item Položka - je šablona jedné položky ve formuláři.
 \end{itemize}
 
+\begin{figure}[p]
+\begin{center}
+\includegraphics[width=16cm]{figures/DomainModel}
+\caption{Doménový model}
+\label{fig:domainmodel}
+\end{center}
+\end{figure}
+
 \section{Životní cyklus hospitace}
+Cílem této části analýzy je popsat životní cyklus, kterým hospitace prochází. 
 
+\subsection{Vytvoření}
+Životní cyklus hospitace začíná jejím vytváření a o to se stará administrátor hospitací. Ten založí hospitaci na semestr, kdy se má hospitace uskutečnit, a předmět vyučovaný na fakultě. Při vytváření hospitace se určí typ hospitace a tím i její způsob zviditelnění, pro ostatní aktéry v aplikaci.
+
+\subsection{Naplánování}
+V této fázi je také hlavním aktérem administrátor hospitace. V této části životního cyklu administrátor určí hospitovanou paralelku předmětu a datum  kdy se hospitace uskuteční.  
+
+Administrátor také v této fázi přidělí hospitující z řad pedagogů určených k vykonání hospitace.  
+ 
+\subsection{Hodnocení}
+Poté co proběhla hospitace začíná fáze kde se hodnotí vyučování. Do této fáze už nezasahuje aktér administrátor hospitace. Za to přicházejí na scénu dva aktéři hospitovaný a hospitující.
+
+V první fázi musí hospitující vyplnit, nebo nahrát naskenovaný formulář pro hodnocení výuky při hospitaci. Tento formulář slouží k dokumentaci průběhu hospitace.
+
+V druhé fázi jeden z hospitujících sepíše slovní hodnocení hospitační návštěvy.
+
+Ve třetí fázi může hospitovaný do dvou dnů vyplnit stanovisko hodnoceného k názorům hospitujícího.  
+
+V poslední fázi jeden z hospitujících sepíše poslední formulář závěrečné shrnutí. Po vyplnění tohoto formuláře se hospitace stává ukončenou a tím končí její životní cyklu.
+ 
 \section{Technologie}
+Tato část popisuje jednotlivé technologie použité při implementaci aplikace.
 
+\subsection{Ruby on Rails}
+Ruby on Rails, zkráceně Rails, je jedno z implementačních omezení mé práce , které se nachází přímo v zadání práce. Je to framework postavený na jazyce Ruby a je primárně určen pro tvorbu webových aplikací napojených na databázi. Rails je postaven na návrhovém vzoru model-view-controller. Tento framework je postaven dvou hlavních principech. Prvním principem je Convention over Configuration a druhým je Don’t Repeat Yourself.
 
+\subsection{KOSapi}
+KOSapi je webová služba poskytující aplikační rozhraní v podobě RESTful webové služby. Tato služba je určená pro vznik školních aplikací, které potřebují mít přístup k datům souvisejícím s výukou. Tato služba čerpá data z KOSu pro instance FEL a FIT.
 
+Z této služby čerpám hlavně data předmětů a osob v KOSu. Pro připojení ke KOSapi jsem rozšířil již existující knihovnu napsanou v Ruby pány Tomáš Linhart a Tomáš Jukín ve školním projektu VyVy. 
+
+\subsection{FELid}
+FELid je globální autentizační a autorizační systém pro webovské aplikace na síti FEL. Poskytuje jednotný a bezpečný způsob přihlášení uživatelů a přenos jejich údajů do různých aplikací na webu. Zároveň podporuje jednorázové přihlášení (tzv. single sign-on). Znamená to, že se uživatel přihlašuje pouze do první použité aplikaci a u dalších aplikací už nemusí zadávat svoje přihlašovací údaje.
+
+Tuto službu používám pro autentizaci uživatelů do systému. Abych mohl používat v aplikaci FELid je nutné splnit technické požadavky, které jsou napsány na stránkách FELid.
+
+\subsection{Aplikační server}
+Pro zprovoznění aplikace do reálného provozu jsem použil webový server Apache HTTP server ve verzi 2. Tato verze webového serveru totiž umožňuje instalaci zásuvného modulů Passenger. Ten umožňuje nasazení rails aplikací na serveru. A druhý modulem je Shibboleth ten zprostředkovává single sign-on autentizaci mezi aplikací a službou FELid.
+
+\subsection{Databáze}
+Ruby on Rails poskytuje možnost připojení k různým databázovým systémům prostřednictvím adaptérů. Díky tomu není aplikace závislá na použitém databázovém systému a díky tomu můžu používat pro vývoj a testování aplikace jednoduchý databázový systém SQLite, který pro tyto účely bohatě postačuje a není potřeba jej složitě konfigurovat. Pro samotné nasazení aplikace do provozu už používám databázový systém MySQL.
+
+\section{Architectura}
+V této části popíšu architektonické vzory a konvence používané pro vývoj aplikace. 
+
+\subsection{MVC}
+Model-view-controller (MVC) je softwarová architektura, která rozděluje datový model aplikace, uživatelské rozhraní a řídicí logiku do tří nezávislých komponent tak, že modifikace některé z nich má minimální vliv na ostatní. 
+
+Ruby on Rails obsahuje ve svém jádru tuto architekturu proto je její implementace automatická.
+
+\subsection{DRY}
+DRY (Don’t repeat yourself) je princip vývoje softwaru zaměřený na snížení opakování psaní stejného kódu a tím zvyšuje čitelnost a znovupoužitelnost kódu. To znamená že informace se nacházejí na jednoznačném místě. Pro příklad Ruby on Rails získává definici sloupců pro třídu modelu přímo z databáze.  
+
+\subsection{CoC}
+CoC (Convention over Configuration) je další princip používaný v Rails pro zlepšení čitelnosti a znovu použitelnosti kódu. Tento princip znamená že konvence má přednost před konfigurací a to tak že Rails předpokládájí to co chcete udělat, místo toho aby vás nutily specifikovat každou drobnost v konfiguraci. 
+
+\subsection{REST}
+REST (Representational State Transfer) je architektonický vzor pro webové aplikace. Je založen na HTTP protokolu a hlavní myšlenkou je poskytování přístupu ke zdrojům dat. Všechny zdroje jsou identifikovány přes URI a REST definuje čtyři základní metody pro přístup k nim, jde o metody POST,GET, PUT a DELETE, které zprostředkovávají základní operace create, read, update a delete.
