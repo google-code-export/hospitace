@@ -10,8 +10,8 @@
 	<%= hidden_field_tag :sort, params[:sort] %>
 	
 	<%= f.input :code, :required => false %>
-	<%= f.input :name, :required => false %>
-	<%= f.input :semester_season, :required => false %>
+	<%= f.input :name, :required => false, :label=>"Název" %>
+	<%#= f.input :semester_season, :required => false %>
 	
 	<div class="actions">
 		<%= f.submit :search, :class => 'btn primary' %>

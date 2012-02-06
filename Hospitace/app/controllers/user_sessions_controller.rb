@@ -18,7 +18,7 @@ class UserSessionsController < ApplicationController
 
     respond_to do |format|
       if @user_session.save
-        format.html { redirect_to root_path, notice: 'User session was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Úspěšně jste se přihlášil.' }
         format.json { render json: @user_session, status: :created, location: @user_session }
       else
         format.html { render action: "new" }

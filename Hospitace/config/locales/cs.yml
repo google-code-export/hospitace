@@ -26,6 +26,7 @@ cs:
       observing_observations: Hospituji hospitace
       manage_observations: Spravované hospitace
       observed_observations: Hospitován
+      contact: Kontakt
     action:
       new_observation: Vytvořit hospitaci
       new_user: Vytvořit uživatele
@@ -110,6 +111,7 @@ cs:
     email: "Email"
   
   parallel:
+    parallel_number: Číslo paralelky
     teachers: Vyučující
     day: Den
     time: Hodina
@@ -142,7 +144,7 @@ cs:
     models:
       user: "uživatel"
       observation: "hospitace"
-      observer: "hospitující"
+      observer: "Hospitující"
       note: "poznámka"
       user_session: UserSession 
     attributes:
@@ -164,3 +166,4 @@ cs:
         created_by: Spravuje
         observed: Hospitovaný
         date_and_time: Datum a čas
+        semester: Semestr

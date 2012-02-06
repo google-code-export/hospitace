@@ -40,7 +40,7 @@ class ObserversController < ApplicationController
 
     respond_to do |format|
       if @observer.save
-        format.html { redirect_to observation_observers_path(@observation), notice: 'Observer was successfully created.' }
+        format.html { redirect_to observation_observers_path(@observation), notice: 'Hospitující byl přídán k hospitaci.' }
         format.json { render json: @observer, status: :created, location: @observer }
       else
         format.html { redirect_to new_observation_observer_path(@observation)}
@@ -57,7 +57,7 @@ class ObserversController < ApplicationController
     @observer.destroy
 
     respond_to do |format|
-      format.html { redirect_to observation_observers_path(@observation), notice: 'Observer was successfully destroyed.' }
+      format.html { redirect_to observation_observers_path(@observation), notice: 'Hospitující byl odebrán z hospitace.' }
       format.json { head :ok }
     end
   end

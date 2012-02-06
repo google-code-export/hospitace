@@ -48,6 +48,8 @@ module Hospitace
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
     
+    config.force_ssl = true
+    
     config.after_initialize do  
       require 'app_config'
       WillPaginate.per_page = AppConfig.per_page||= 15 
