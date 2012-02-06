@@ -1,0 +1,63 @@
+
+<% scope = 'people' %>
+<% content_for :secoundary_content do %>
+	
+	<div class="header">
+		<h3>Filter</h3>
+	</div>	
+	
+	<%= simple_form_for :search,:html=> {:id=>"search_form"},:method=>:get,:wrapper => :inline do |f| %>
+	
+	<%= hidden_field_tag :direction, params[:direction] %>
+	<%= hidden_field_tag :sort, params[:sort] %>
+	
+	<%= f.input :name, :placeholder => 'name', :required => false %>
+	<%= f.input :username, :placeholder => 'login', :required => false %>
+	<%= f.input :email, :placeholder => 'login@fel.cvut.cz', :required => false %>
+
+	<%= f.input :teacher, :wrapper=>:label_wrapped, :required => false,:as => :boolean %>
+	
+	
+	<div class="actions">
+		<%= f.submit :search, :class => 'btn primary' %>
+	</div>
+	
+	<% end %>
+
+<% end %> 
+<div id="datagrid">
+<table class="zebra-striped">
+  <thead>
+  <tr>	
+    <tr>
+    <%= th :id, scope  %>
+    <%= th :username, scope  %>
+    <%= th :name, scope  %>
+    <%= th :teacher, scope  %>
+    <th></th>
+  </tr>
+  </thead>
+  
+
+
+  <% peoples.each do |people| %>
+  
+  <tr>
+    <td><%= people.id %></td>
+    <td><%= people.username %></td>
+    <td><%= people.full_name %></td>
+    <td><%= t people.teacher? %></td>
+    <td><%= yield people if block_given? %></td>
+  </tr>
+
+  <% end %>
+</tbody>
+</table>
+<%= will_paginate peoples, :renderer=> WillPaginate::ActionView::BootstrapLinkRenderer %>
+  
+</div>
+
+
+
+
+

@@ -1,0 +1,21 @@
+<%= simple_form_for @user, :wrapper => :inline do |f| %>
+
+<%= alert_message(f.error_notification, :warning) if f.error_notification %>
+
+<%= f.input :people_id, :as=>:hidden %>
+
+<% hind = link_to("Najít v kosu", peoples_select_path) unless @user.persisted? %>
+
+<%= f.input :login, :readonly => !@user.people_id.nil?, :placeholder => 'user', :hint => hind %>
+
+<%= f.input :password %>
+<%= f.input :password_confirmation%>
+
+<%= f.input :roles, :collection =>input_roles,  :as => :check_boxes, :wrapper=>:label_wrapped if can? :assign_roles, @user %>
+
+
+<div class="actions">
+	<%= f.button :submit, :class => 'btn primary' %>
+	<%#= button_tag 'Cancel', :type => :reset, :class => "btn" %>
+</div>
+<% end %> 

@@ -1,0 +1,35 @@
+<% name = "#{@observation.find_course.name} (#{@observation.course})" %>
+<% title :observations, :small=>name %>
+
+<%
+  time = parallel_time(@parallel) unless @parallel.nil?
+  date = @observation.date && l(@observation.date) 
+  room = @parallel.room.code unless @parallel.nil? || @parallel.room.nil?
+  teachers = full_url_peoples(@parallel.teachers) unless @parallel.nil?
+%>
+
+<h2>Informace o hospitaci</h2>
+<%= show_item(Observation.human_attribute_name(:state), label_span(t(@observation.state.short_message),(@observation.state.ok? ? :success : :warning)) ) %>
+<%= show_item(Observation.human_attribute_name(:course), name) %>
+<%= show_item(Observation.human_attribute_name(:semester), @observation.semester) %>
+<%= show_item(Observation.human_attribute_name(:observation_type), t(@observation.observation_type)) %>
+<%= show_item(Observation.human_attribute_name(:observed), teachers) %>
+<%= show_item(Observer.model_name.human, full_url_user(@observation.users)) %>
+
+<%= show_item(Observation.human_attribute_name(:date_and_time), "#{date}, #{time} #{room}") %>
+<%= show_item(Observation.human_attribute_name(:created_by), render(@observation.created_by)) %>
+<hr />
+
+<h2>Předmět</h2>
+
+<%= render :partial=>"courses/course", :locals => { :course => @course } unless @course.nil? %>
+<hr />
+<h2>Paralelka</h2>
+<%= render :partial=>"parallels/parallel", :locals => { :parallel => @parallel } unless @parallel.nil? %>
+<hr />
+<h2>Hospitující</h2>
+<div style="margin-left: 100px;">
+<%= render @observation.users %>
+</div>
+<hr />
+

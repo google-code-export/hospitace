@@ -1,0 +1,12 @@
+<%= simple_form_for @user_session, :wrapper => :inline do |f| %>
+
+<%= alert_message(f.error_notification, :warning) if f.error_notification %>
+
+
+<%= f.input :login, :placeholder => 'user' %>
+<%= f.input :password %>
+
+<div class="actions">
+	<%= f.button :submit, :class => 'btn primary' %>
+</div>
+<% end %> 

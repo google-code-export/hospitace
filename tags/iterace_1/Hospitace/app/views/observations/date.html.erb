@@ -1,0 +1,17 @@
+<% title :observations, :small=>"nastavení paralelky a datumu pro #{@observation.find_course.name} (#{@observation.course})" %>
+
+<h2>Datum a parallelka</h2>
+<%= render :partial=>'parallels/parallel', :object => @parallel unless @parallel.nil? %>
+<hr />
+<% if can? :edit, @observation %>
+  <%= simple_form_for @observation,:wrapper => :inline do |f| %>
+    <%= alert_message(f.error_notification, :warning) if f.error_notification %>
+
+    <%= f.input :parallel, :as=>:select, :hint => link_to("Najít paralelku", course_parallels_select_path(@observation.course)), :collection=>Parallel.find_by_course(@observation.course).collect {|p| ["#{p.type_t} #{p.day_t} #{parallel_time(p)}", p.id]} %>
+
+    <%= f.input :date, :disabled => @parallel.nil? , :as=>:select, :collection=>Week.dates(@parallel,@observation.find_semester).collect {|p| [ l(p, :format => :long), p]}%>
+    <div class="actions">
+      <%= f.button :submit, :class => 'btn primary' %>
+    </div>
+  <% end %>
+<% end %>
