@@ -64,7 +64,7 @@ class Ability
       !(ob.created_by.id==current_user.id)
     end
     can :create, Observation
-    can :observing, Observation
+    can [:read,:observing], Observation
     can :m_ob, Observation
     
 #    cannot :read, Observation do |ob|
