@@ -77,7 +77,7 @@ class ObservationsController < ApplicationController
     
     respond_to do |format|
       if @observation.save
-        format.html { redirect_to @observation, notice: 'Observation was successfully created.' }
+        format.html { redirect_to @observation, notice: 'Hospitace byla úspěšně vytvořená.' }
         format.json { render json: @observation, status: :created, location: @observation }
       else
         format.html { render action: "new" }
@@ -93,7 +93,7 @@ class ObservationsController < ApplicationController
 
     respond_to do |format|
       if @observation.update_attributes(params[:observation])
-        format.html { redirect_to @observation, notice: 'Observation was successfully updated.' }
+        format.html { redirect_to @observation, notice: 'Hospitace byla úspěšně upravená.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }
@@ -109,7 +109,7 @@ class ObservationsController < ApplicationController
     @observation.destroy
 
     respond_to do |format|
-      format.html { redirect_to observations_url }
+      format.html { redirect_to observations_url, notice: 'Hospitace byla smazána.' }
       format.json { head :ok }
     end
   end

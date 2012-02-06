@@ -1,9 +1,11 @@
 Hospitace::Application.routes.draw do
 
+
+
   mount Ckeditor::Engine => '/ckeditor'
 
   get "home/index"
-
+  get "contact" => 'contact#contact'
   
   get "observed" => 'my_observations#observed', :as=> :my_observations_observed
   get "manage" => 'my_observations#manage', :as=> :my_observations_manage

@@ -2,6 +2,7 @@ cs:
   simple_form:
     labels:
       search:
+        code: Kód předmětu
         name: Jméno
         username: 'Uživatelské jméno'
         login: 'Uživatelské jméno'

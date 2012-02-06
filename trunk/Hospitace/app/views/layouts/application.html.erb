@@ -22,11 +22,8 @@
             <%= menu_item(:users,users_path,:read,User) %>
             <%= menu_item(:peoples,peoples_path,:read,People) %>
             <%= menu_item(:courses,courses_path,:read,Course) %>
-            <%= menu_item(:contact,"#") %>
-<%#= sub_menu("test") do
-menu_item("tt","#")
-end
-%>
+            <%#= menu_item(:contact,'contact') %>
+
           </ul>
           <p class="pull-right">
             <% if !current_user %>

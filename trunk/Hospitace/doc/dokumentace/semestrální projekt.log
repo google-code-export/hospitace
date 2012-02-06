@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.12.22)  6 FEB 2012 13:28
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.12.22)  6 FEB 2012 18:47
 entering extended mode
  %&-line parsing enabled.
 **"semestrÃ¡lnÃ­ projekt.tex"
@@ -571,6 +571,12 @@ Kapitola 1.
 
 ]
 Kapitola 2.
+
+Overfull \hbox (1.06859pt too wide) in paragraph at lines 10--11
+\T1/cmr/m/n/10.95 se bude pos-tupn¥ demon-strovat její funk£nost na re-al-i-zo-
+vaných hos-pi-tacích v daném semestru.
+ []
+
 [3]
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 22.
  (/usr/share/texmf-texlive/tex/latex/base/omscmr.fd
@@ -604,11 +610,6 @@ Overfull \hbox (2.8858pt too wide) in paragraph at lines 53--54
  []
 
 [6] [7 <./figures/Actors.png (PNG copy)>]
-Overfull \hbox (0.34355pt too wide) in paragraph at lines 67--68
-[]\T1/cmr/m/n/10.95 Popis domény pro p°ehled-nost jsem rozd¥lil po-dle zdroje n
-a dv¥ zák-ladní skupiny. Prvními
- []
-
 <figures/DomainModel.PNG, id=384, 1488.56125pt x 1497.595pt>
 File: figures/DomainModel.PNG Graphic file (type png)
 
@@ -655,7 +656,7 @@ Here is how much of TeX's memory you used:
  9669 multiletter control sequences out of 15000+50000
  16389 words of font info for 36 fonts, out of 3000000 for 9000
  32 hyphenation exceptions out of 8191
- 38i,6n,38p,559b,423s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 38i,6n,38p,625b,423s stack positions out of 5000i,500n,10000p,200000b,50000s
  </home/osman/.texmf-
 var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/osman/.texmf-var/fonts/p
 k/ljfour/jknappen/ec/ecsl1095.600pk> </home/osman/.texmf-var/fonts/pk/ljfour/jk
@@ -667,7 +668,7 @@ f-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/osman/.texmf-var/fonts
 /pk/ljfour/jknappen/ec/ecrm1095.600pk> </home/osman/.texmf-var/fonts/pk/ljfour/
 jknappen/ec/ecbx2488.600pk></usr/share/texmf-texlive/fonts/type1/public/amsfont
 s/cm/cmsy10.pfb>
-Output written on "semestrÃ¡lnÃ­ projekt.pdf" (33 pages, 338806 bytes).
+Output written on "semestrÃ¡lnÃ­ projekt.pdf" (33 pages, 338846 bytes).
 PDF statistics:
  877 PDF objects out of 1000 (max. 8388607)
  106 named destinations out of 1000 (max. 500000)

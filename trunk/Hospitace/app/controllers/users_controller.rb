@@ -55,7 +55,7 @@ class UsersController < ApplicationController
     puts params[:user].inspect
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        format.html { redirect_to @user, notice: 'Uživatel byl úspěšně vytvořen.' }
         format.json { render json: @user, status: :created, location: @user }
       else
         format.html { render action: "new" }
@@ -71,7 +71,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+        format.html { redirect_to @user, notice: 'Uživatel byl úspěšně upraven.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }
@@ -87,7 +87,7 @@ class UsersController < ApplicationController
     @user.destroy
 
     respond_to do |format|
-      format.html { redirect_to users_url }
+      format.html { redirect_to users_url, notice: 'Uživatel byl smazán.' }
       format.json { head :ok }
     end
   end

@@ -52,7 +52,7 @@ class NotesController < ApplicationController
     
     respond_to do |format|
       if @note.save
-        format.html { redirect_to observation_notes_path(@note.observation), notice: 'Note was successfully created.' }
+        format.html { redirect_to observation_notes_path(@note.observation), notice: 'Poznámka byla úspěšně vytvořená.' }
         format.json { render json: @note, status: :created, location: @note }
       else
         format.html { render action: new_observations_note_path(@note.observation) }
@@ -69,7 +69,7 @@ class NotesController < ApplicationController
     
     respond_to do |format|
       if @note.update_attributes(params[:note])
-        format.html { redirect_to observation_notes_path(@observation), notice: 'User was successfully updated.' }
+        format.html { redirect_to observation_notes_path(@observation), notice: 'Poznámka byla úspěšně upravená.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }
@@ -87,7 +87,7 @@ class NotesController < ApplicationController
     @note.destroy
 
     respond_to do |format|
-      format.html { redirect_to observation_notes_path(@observation) }
+      format.html { redirect_to observation_notes_path(@observation), notice: 'Poznámka byla smazána.' }
       format.json { head :ok }
     end
   end
