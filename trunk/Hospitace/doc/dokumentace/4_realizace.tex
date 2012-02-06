@@ -1,5 +1,5 @@
 \chapter{Realizace}
-Kvůli postupnému nasazování aplikace pro letní semestr 2011/2012 byl zvolený iterační vývoj aplikace. V této kapitole budu popisovat cil, postup a výstup jednotlivých iterací.
+Kvůli postupnému nasazování aplikace pro letní semestr 2011/2012 byl zvolený iterační vývoj aplikace. V této kapitole popisuji cíl, postup a výstup jednotlivých iterací.
 
 \section{První iterace}
 \subsection{Cíl}
@@ -15,9 +15,9 @@ Pro autentizaci v této fázi vývoje jsem zatím neimplementoval autentizaci pr
 Pro autorizaci používám modul CanCan. CanCan je modul pro Ruby on Rails, které omezuje, k jakým zdrojům má daný uživatel povolený přístup. Všechna oprávnění jsou definovány v jednom místě (třída Ability). Umí filtrovat controllery, views i databázové dotazy.
 
 \subsubsection{Uživatelské prostředí}
-Pro vytvoření uživatelského prostředí jsem použil již existující knihovnu Bootstrap od Twitteru. Použil jsem tuto knihovnu protože obsahuje jak kompletní CSS tak i Javascript a je open-source. Další výhodou je popularita uživatelského prostředí.
+Pro vytvoření uživatelského prostředí jsem použil již existující knihovnu Bootstrap od Twitteru. Použil jsem tuto knihovnu, protože obsahuje jak kompletní CSS tak i Javascript a je open-source. Další výhodou je popularita uživatelského prostředí.
 
 Pro usnadnění implementace Bootstrapu do aplikace jsem zprovoznil dva moduly. Prvním je SimpleForm ten zjednoduší vytváření formulářů, tak že si předem nadefinujeme jejich styl pro Bootstrap. A druhý modul WillPaginate ten slouží k implementaci stránkování dat.
 
 \subsection{Výstup} 
-Po ukončení této iterace jsem měl nasaditelnou část aplikace pro plánování hospitací.
+Po ukončení této iterace jsem měl nastavitelnou část aplikace pro plánování hospitací.

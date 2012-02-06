@@ -31,7 +31,7 @@ Tato sekce se zabývá požadavky na funkčnost systému. Systém umožní:
 \end{enumerate}
 
 \section{Uživatelské role}
-V systému je celkem 6 uživatelských rolí, ty jsou odvozený z modelu aktérů na obrázku \ref{fig:actors}. Máme tři základní uživatelské role, které jsou základem systému přihlášený uživatel, nepřihlášený uživatel a administrátor hospitací. Další role jako hospitovaný a hospitující uživatel jsou role přiděleny k příslušným osobám zainteresovaných pro určitou hospitacím.
+V systému je celkem 6 uživatelských rolí, ty jsou odvozený z modelu aktérů na obrázku \ref{fig:actors}. Máme tři základní uživatelské role, které jsou základem systému přihlášený uživatel, nepřihlášený uživatel a administrátor hospitací. Další role jako hospitovaný a hospitující uživatel jsou role přiděleny k příslušným osobám zainteresovaných k jednotlivým hospitacím.
 
 \begin{figure}[h]
 \begin{center}
@@ -50,7 +50,7 @@ Nepřihlášený uživatel je role pro hosty naší aplikace. V systému má ze 
 Přihlášený uživatel je zděděná z role nepřihlášený. Je to uživatel, který má vytvořený účet v systému a již se přihlásil. Tato role přidává možnost odhlásit se a procházet veškeré ohlášené hospitace. Tato role je základní pro všechny další role a z ní taky dědí.
 
 \subsection{Hospitovaný}
-Hospitovaný je role pro přihlášeného uživatel v systému. Je přidělená pro každého vyučujícího, který vyučuje předmět na němž byla naplánovaná hospitace. Tato role přidává možnost přístupu k naplánovaným hospitacím, kde figuruje jako hospitovaný. U těchto hospitací má právo na zobrazení všech hodnotících dokumentů a umožní mu sepsat dokument se stanovisky k názorům hospitujícího.
+Hospitovaný je role pro přihlášeného uživatel v systému. Je přidělená pro každého vyučujícího, který vyučuje předmět, na němž byla naplánovaná hospitace. Tato role přidává možnost přístupu k naplánovaným hospitacím, kde figuruje jako hospitovaný. U těchto hospitací má právo na zobrazení všech hodnotících dokumentů a umožní mu sepsat dokument se stanovisky k názorům hospitujícího.
 
 \subsection{Hospitující}
 Hospitující je role pro přihlášeného uživatele v systému. Přiděluje ji administrátor hospitací k osobám, které mají za úkol vykonat hospitaci. U přidělených hospitací má uživatel právo na zobrazení informací o jeho hospitaci a povinnost sepsat hodnotící dokumenty z vykonané hospitace.
@@ -64,7 +64,7 @@ Administrátor je super uživatel, který má nejvyšší pravomoc v systému. M
 \section{Doménový model}
 Doménový model na obrázku \ref{fig:domainmodel} reprezentuje klíčové domény systému a jejich vztahy mezi sebou. 
 
-Popis domény pro přehlednost jsem rozdělil podle zdroje na dvě základní skupiny. Prvními jsou domény které používám z KOSapi a druhou skupinou jsou domény specifické pro moji aplikaci. 
+Popis domény pro přehlednost jsem rozdělil podle zdroje na dvě základní skupiny. Prvními jsou domény, které používám z KOSapi a druhou skupinou jsou domény specifické pro moji aplikaci. 
 
 \subsection{Domény z KOSapi}
 \begin{itemize}
@@ -103,12 +103,12 @@ Cílem této části analýzy je popsat životní cyklus, kterým hospitace proc
 Životní cyklus hospitace začíná jejím vytváření a o to se stará administrátor hospitací. Ten založí hospitaci na určitý semestr kdy se má hospitace uskutečnit, a předmět vyučovaný na fakultě. Při vytváření hospitace se určí typ hospitace a tím i její způsob zviditelnění, pro ostatní aktéry v aplikaci.
 
 \subsection{Naplánování}
-V této fázi je také hlavním aktérem administrátor hospitace. V této části životního cyklu administrátor určí hospitovanou paralelku předmětu a datum  kdy se hospitace uskuteční.  
+V této fázi je také hlavním aktérem administrátor hospitace. V této části životního cyklu administrátor určí hospitovanou paralelku předmětu a datum,  kdy se hospitace uskuteční.  
 
 Administrátor také v této fázi přidělí hospitující z řad pedagogů určených k vykonání hospitace.  
  
 \subsection{Hodnocení}
-Poté co proběhla hospitace začíná fáze kde se hodnotí vyučování. Do této fáze už nezasahuje aktér administrátor hospitace. Za to přicházejí na scénu dva aktéři hospitovaný a hospitující.
+Poté co proběhla kontrola hospitace začíná nová fáze. Ve které se hodnotí vyučování. Do této fáze už nezasahuje aktér administrátor hospitace. Za to přicházejí na scénu dva aktéři hospitovaný a hospitující.
 
 V první fázi musí hospitující vyplnit, nebo nahrát naskenovaný formulář pro hodnocení výuky při hospitaci. Tento formulář slouží k dokumentaci průběhu hospitace.
 
@@ -122,7 +122,7 @@ V poslední fázi jeden z hospitujících sepíše poslední formulář závěre
 Tato část popisuje jednotlivé technologie potřebné pro implementaci aplikace.
 
 \subsection{Ruby on Rails}
-Ruby on Rails, zkráceně Rails, je jedno z implementačních omezení mé práce , které se nachází přímo v zadání práce. Je to framework postavený na jazyce Ruby a je primárně určen pro tvorbu webových aplikací napojených na databázi. Rails je postaven na návrhovém vzoru model-view-controller. Tento framework používá dva hlavních principy. Prvním principem je Convention over Configuration a druhým je Don’t Repeat Yourself.
+Ruby on Rails, zkráceně Rails, je jedno z implementačních omezení mé práce, které se nachází přímo v zadání práce. Je to framework postavený na jazyce Ruby a je primárně určen pro tvorbu webových aplikací napojených na databázi. Rails je postaven na návrhovém vzoru model-view-controller. Tento framework používá dva hlavní principy. Prvním principem je Convention over Configuration a druhým je Don’t Repeat Yourself.
 
 \subsection{KOSapi}
 KOSapi je webová služba poskytující aplikační rozhraní v podobě RESTful webové služby. Tato služba je určená pro vznik školních aplikací, které potřebují mít přístup k datům souvisejícím s výukou. Tato služba čerpá data z KOSu pro instance FEL a FIT.
@@ -149,10 +149,10 @@ MVC (Model-view-controller) je softwarová architektura, která rozděluje datov
 Ruby on Rails obsahuje ve svém jádru tuto architekturu proto je její implementace automatická.
 
 \subsection{DRY}
-DRY (Don’t repeat yourself) je princip vývoje softwaru zaměřený na snížení opakování psaní stejného kódu a tím zvyšuje čitelnost a znovupoužitelnost kódu. To znamená že informace se nacházejí na jednoznačném místě. Pro příklad Ruby on Rails získává definici sloupců pro třídu modelu přímo z databáze.  
+DRY (Don’t repeat yourself) je princip vývoje softwaru zaměřený na snížení opakování psaní stejného kódu a tím zvyšuje čitelnost a znovupoužitelnost kódu. To znamená, že informace se nacházejí na jednoznačném místě. Pro příklad Ruby on Rails získává definici sloupců pro třídu modelu přímo z databáze.  
 
 \subsection{CoC}
-CoC (Convention over Configuration) je další princip používaný v Rails pro zlepšení čitelnosti a znovu použitelnosti kódu. Tento princip znamená že konvence má přednost před konfigurací a to tak že Rails předpokládá to co chcete udělat, místo toho aby vás nutil specifikovat každou drobnost v konfiguraci. 
+CoC (Convention over Configuration) je další princip používaný v Rails pro zlepšení čitelnosti a znovu použitelnosti kódu. Tento princip znamená, že konvence má přednost před konfigurací a to tak že Rails předpokládá to, co chcete udělat, místo toho aby vás nutil specifikovat každou drobnost v konfiguraci. 
 
 \subsection{REST}
-REST (Representational State Transfer) je architektonický vzor pro webové aplikace. Je založen na HTTP protokolu a hlavní myšlenkou je poskytovat přístup ke zdrojům dat. Všechny zdroje jsou identifikovány přes URI a REST definuje čtyři základní metody pro přístup k nim, jde o metody POST,GET, PUT a DELETE, které zprostředkovávají základní operace create, read, update a delete.
+REST (Representational State Transfer) je architektonický vzor pro webové aplikace. Je založen na HTTP protokolu a hlavní myšlenkou je poskytovat přístup ke zdrojům dat. Všechny zdroje jsou identifikovány přes URI a REST definuje čtyři základní metody pro přístup k nim, jde o metody POST, GET, PUT a DELETE, které zprostředkovávají základní operace create, read, update a delete.

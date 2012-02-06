@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.12.22)  5 FEB 2012 22:25
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.12.22)  6 FEB 2012 13:28
 entering extended mode
  %&-line parsing enabled.
 **"semestr√°ln√≠ projekt.tex"
@@ -437,7 +437,7 @@ LaTeX Info: Redefining \cite on input line 694.
 \c@NAT@ctr=\count98
 )
 (./semestr√°ln√≠ projekt.aux (./1_uvod.aux) (./2_teorie.aux) (./3_analiza.aux)
-(./4_realizace.aux) (./5_testovani.aux) (./6_zaver.aux) (./appendix.aux))
+(./4_realizace.aux) (./5_testovani.aux) (./6_zaver.aux))
 \openout1 = `"semestr√°ln√≠ projekt.aux"'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 134.
@@ -513,7 +513,7 @@ Vedouci prace: Ing. Martin Kom\IeC {\'a}rek
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2
 
 ]
-<figures/LogoCVUT.pdf, id=271, 93.34875pt x 70.2625pt>
+<figures/LogoCVUT.pdf, id=207, 93.34875pt x 70.2625pt>
 File: figures/LogoCVUT.pdf Graphic file (type pdf)
 
 <use figures/LogoCVUT.pdf> [3 <./figures/LogoCVUT.pdf>] [4
@@ -587,7 +587,7 @@ Kapitola 3.
 
 
 
-] <figures/Actors.png, id=451, 562.1pt x 345.29pt>
+] <figures/Actors.png, id=365, 562.1pt x 345.29pt>
 File: figures/Actors.png Graphic file (type png)
  <use figures/Actors.png>
 Overfull \hbox (19.72894pt too wide) in paragraph at lines 38--39
@@ -597,13 +597,19 @@ Overfull \hbox (19.72894pt too wide) in paragraph at lines 38--39
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
+
+Overfull \hbox (2.8858pt too wide) in paragraph at lines 53--54
+\T1/cmr/m/n/10.95 jÌcÌho, kter˝ vyu£uje p∞ed-m•t, na n•m∫ byla napl·no-van· hos
+-pi-tace. Tato role p∞id·v· mo∫nost
+ []
+
 [6] [7 <./figures/Actors.png (PNG copy)>]
 Overfull \hbox (0.34355pt too wide) in paragraph at lines 67--68
 []\T1/cmr/m/n/10.95 Popis domÈny pro p∞ehled-nost jsem rozd•lil po-dle zdroje n
 a dv• z·k-ladnÌ skupiny. PrvnÌmi
  []
 
-<figures/DomainModel.PNG, id=470, 1488.56125pt x 1497.595pt>
+<figures/DomainModel.PNG, id=384, 1488.56125pt x 1497.595pt>
 File: figures/DomainModel.PNG Graphic file (type png)
 
 <use figures/DomainModel.PNG>
@@ -643,84 +649,27 @@ No file "semestr√°ln√≠ projekt".bbl.
 (./semestr√°ln√≠ projekt.aux (./1_uvod.aux) (./2_teorie.aux) (./3_analiza.aux)
 (./4_realizace.aux) (./5_testovani.aux) (./6_zaver.aux)) ) 
 Here is how much of TeX's memory you used:
- 6793 strings out of 495061
- 89921 string characters out of 1182620
- 166486 words of memory out of 3000000
- 9689 multiletter control sequences out of 15000+50000
+ 6752 strings out of 495061
+ 89419 string characters out of 1182620
+ 166021 words of memory out of 3000000
+ 9669 multiletter control sequences out of 15000+50000
  16389 words of font info for 36 fonts, out of 3000000 for 9000
  32 hyphenation exceptions out of 8191
- 38i,6n,38p,558b,423s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest)
-: name{table.B.1} has been referenced but does not exist, replaced by a fixed o
-ne
-
-pdfTeX warning (dest): name{figure.F.1} has been referenced but does not exist,
- replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.B.1} has been referenced but does not exist,
- replaced by a fixed one
-
-pdfTeX warning (dest): name{appendix.F} has been referenced but does not exist,
- replaced by a fixed one
-
-pdfTeX warning (dest): name{appendix.E} has been referenced but does not exist,
- replaced by a fixed one
-
-pdfTeX warning (dest): name{appendix.D} has been referenced but does not exist,
- replaced by a fixed one
-
-pdfTeX warning (dest): name{appendix.C} has been referenced but does not exist,
- replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.B.7.1} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.B.7} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.B.6} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.B.5} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.B.4.2} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.B.4.1} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.B.4} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.B.3} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.B.2} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.B.1} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{appendix.B} has been referenced but does not exist,
- replaced by a fixed one
-
-pdfTeX warning (dest): name{appendix.A} has been referenced but does not exist,
- replaced by a fixed one
-
- </home/osman/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/osm
-an/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecsl1095.600pk> </home/osman/.texmf-v
-ar/fonts/pk/ljfour/jknappen/ec/ecbx1095.600pk> </home/osman/.texmf-var/fonts/pk
-/ljfour/jknappen/ec/ecrm0600.600pk> </home/osman/.texmf-var/fonts/pk/ljfour/jkn
-appen/ec/ecbx2074.600pk> </home/osman/.texmf-var/fonts/pk/ljfour/jknappen/ec/ec
-ti1440.600pk> </home/osman/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600p
-k> </home/osman/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/o
-sman/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1095.600pk> </home/osman/.texmf
--var/fonts/pk/ljfour/jknappen/ec/ecbx2488.600pk></usr/share/texmf-texlive/fonts
-/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on "semestr√°ln√≠ projekt.pdf" (33 pages, 356337 bytes).
+ 38i,6n,38p,559b,423s stack positions out of 5000i,500n,10000p,200000b,50000s
+ </home/osman/.texmf-
+var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/osman/.texmf-var/fonts/p
+k/ljfour/jknappen/ec/ecsl1095.600pk> </home/osman/.texmf-var/fonts/pk/ljfour/jk
+nappen/ec/ecbx1095.600pk> </home/osman/.texmf-var/fonts/pk/ljfour/jknappen/ec/e
+crm0600.600pk> </home/osman/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2074.600
+pk> </home/osman/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1440.600pk> </home/
+osman/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/osman/.texm
+f-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/osman/.texmf-var/fonts
+/pk/ljfour/jknappen/ec/ecrm1095.600pk> </home/osman/.texmf-var/fonts/pk/ljfour/
+jknappen/ec/ecbx2488.600pk></usr/share/texmf-texlive/fonts/type1/public/amsfont
+s/cm/cmsy10.pfb>
+Output written on "semestr√°ln√≠ projekt.pdf" (33 pages, 338806 bytes).
 PDF statistics:
- 984 PDF objects out of 1000 (max. 8388607)
- 125 named destinations out of 1000 (max. 500000)
- 528 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 877 PDF objects out of 1000 (max. 8388607)
+ 106 named destinations out of 1000 (max. 500000)
+ 400 words of extra memory for PDF output out of 10000 (max. 10000000)
 
