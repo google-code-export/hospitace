@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class ObserversController < ApplicationController
   load_and_authorize_resource
   

@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 #require 'will_paginate/array'
 class ObservationsController < ApplicationController
   load_and_authorize_resource
