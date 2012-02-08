@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class UserSessionsController < ApplicationController
   load_and_authorize_resource
   # GET /user_sessions/new
