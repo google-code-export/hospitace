@@ -8,7 +8,9 @@
     <%= alert_message(f.error_notification, :warning) if f.error_notification %>
 
     <%= f.input :parallel, :as=>:select, :hint => link_to("Najít paralelku", course_parallels_select_path(@observation.course)), :collection=>Parallel.find_by_course(@observation.course).collect {|p| ["#{p.type_t} #{p.day_t} #{parallel_time(p)}", p.id]} %>
-
+    
+    <%= f.input :date %>
+    
     <%= f.input :date, :disabled => @parallel.nil? , :as=>:select, :collection=>Week.dates(@parallel,@observation.find_semester).collect {|p| [ l(p, :format => :long), p]}%>
     <div class="actions">
       <%= f.button :submit, :class => 'btn primary' %>

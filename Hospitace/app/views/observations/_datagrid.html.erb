@@ -30,7 +30,7 @@
     <td><%= instance.occupied unless instance.nil? %></td>
     <td><%= short_users(observation.users) %></td>
     <td><%= short_parallel(observation.find_parallel) %></td>
-    <td><%= l(observation.date, :format => :long) unless observation.date.nil?  %></td>
+    <td><%= l(observation.date, :format=>"%d. %m. %Y, %R") unless observation.date.nil?  %></td>
     <td><%= t(observation.observation_type) %></td>
     <td><%= label_span(t(observation.state.short_message),(observation.state.ok? ? :success: :warning)) %></td>
     <td><%= yield observation %></td>
