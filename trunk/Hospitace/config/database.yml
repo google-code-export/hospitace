@@ -15,8 +15,8 @@ development:
   encoding: utf8
   database: hospitace_development
   pool: 5
-  username: hospitace
-  password: QqNJAHg4
+  username: root
+  password: koliko
   host: localhost
 
 # Warning: The database defined as "test" will be erased and

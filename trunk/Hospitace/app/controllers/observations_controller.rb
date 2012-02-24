@@ -7,7 +7,7 @@ class ObservationsController < ApplicationController
   helper_method :sort_column, :sort_direction
   
   def date
-    @observation = Observation.includes(:created_by,:users).find(params[:id])
+    @observation = Observation.includes(:created_by,:users,:course).find(params[:id])
     @parallel = @observation.find_parallel
     
     session[:path] = observation_date_path(@observation)
@@ -23,7 +23,7 @@ class ObservationsController < ApplicationController
   # GET /observations
   # GET /observations.json
   def index
-    @observations = Observation.includes(:created_by,:users).where(:semester=>semester.code).where("(`observations`.`observation_type` = 'unannounced' AND `observations`.`created_by` = ?) || `observations`.`observation_type` !='unannounced'",current_user.id).paginate(:page => params[:page]) 
+    @observations = Observation.includes(:created_by,:users,:course).where(:semester_id=>semester.id).where("(`observations`.`observation_type` = 'unannounced' AND `observations`.`created_by` = ?) || `observations`.`observation_type` !='unannounced'",current_user.id).paginate(:page => params[:page]) 
     
     respond_to do |format|
       format.js
@@ -35,8 +35,8 @@ class ObservationsController < ApplicationController
   # GET /observations/1
   # GET /observations/1.json
   def show
-    @observation = Observation.includes(:created_by,:users).find(params[:id])
-    @course = @observation.find_course
+    @observation = Observation.includes(:created_by,:users,:course).find(params[:id])
+    @course = @observation.course
     @parallel = @observation.find_parallel
     respond_to do |format|
       format.html { render :layout=>"tabs" }
@@ -50,10 +50,10 @@ class ObservationsController < ApplicationController
     session[:path] = new_observation_path
     @observation = Observation.new
     
-    session[:course] = flash[:course] unless flash[:course].nil?
+    session[:course_id] = flash[:course_id] unless flash[:course_id].nil?
     session[:parallel] = flash[:parallel] unless flash[:parallel].nil?
     
-    @observation.course ||= session[:course]
+    @observation.course_id ||= session[:course_id]
     @observation.parallel ||= session[:parallel]
     
     respond_to do |format|

@@ -14,6 +14,11 @@ module KOSapi
       end
     end
     
+    def to_hash
+      Hash[instance_variables.map { |var| [var[1..-1].to_sym, instance_variable_get(var)] }]
+    end
+
+    
     private
       def valid? data
         if data.nil? or data['@id'].nil? or data['@uri'].nil? then

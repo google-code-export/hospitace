@@ -4,7 +4,7 @@ class ParallelsController < ApplicationController
   load_and_authorize_resource
   
   def index
-    @parallels = Parallel.find_by_course(params[:course_id])
+    @parallels = Parallel.find_by_course_id_and_semester_id(params[:course_id])
     
     respond_to do |format|
       format.html # index.html.erb
@@ -20,7 +20,7 @@ class ParallelsController < ApplicationController
       return
     end
     
-    @parallels = Parallel.find_by_course(params[:course_id])
+    @parallels = Parallel.find_by_course_id_and_semester_id(params[:course_id])
     puts @parallels
     respond_to do |format|
       format.html 

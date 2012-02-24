@@ -1,4 +1,4 @@
-<% title :observations, :small=>"nastavení paralelky a datumu pro #{@observation.find_course.name} (#{@observation.course})" %>
+<% title :observations, :small=>"nastavení paralelky a datumu pro #{@observation.course.name} (#{@observation.course})" %>
 
 <h2>Datum a parallelka</h2>
 <%= render :partial=>'parallels/parallel', :object => @parallel unless @parallel.nil? %>

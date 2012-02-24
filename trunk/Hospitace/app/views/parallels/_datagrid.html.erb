@@ -13,15 +13,16 @@
       <th></th>
     </tr>
 
+
     <% parallels.each do |parallel| %>
       <tr>
-        <td><%= parallel.parallel_number %></td>
+        <td><%= parallel.number %></td>
         <td><%= short_users(parallel.teachers) %></td>
-        <td><%= parallel.day_t %></td>
+        <td><%= parallel.day %></td>
         <td><%= parallel_time(parallel) %></td>
-        <td><%= parallel.parity_t %></td>
+        <td><%= parallel.parity %></td>
         <td><%= parallel.room.code %></td>
-        <td><%= parallel.type_t %></td>
+        <td><%= parallel.parallel_type %></td>
         <td><%= yield parallel if block_given? %></td>
       </tr>
     <% end  %>

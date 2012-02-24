@@ -1,7 +1,7 @@
 class CreateSemesters < ActiveRecord::Migration
   def change
     create_table :semesters do |t|
-      t.string :code, :unique
+      t.string :code
       t.string :name
       t.date :start
       t.date :end     

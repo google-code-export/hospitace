@@ -1,26 +1,32 @@
-
-require 'kosapi'
-
-class People < KOSapi::User
-  include KOSapi
+class People < ActiveRecord::Base 
+  has_one :user
+  has_many :peoples_relateds
   
-  def self.find(id)
-    self.find_by_id(id)
+  validates :username, :uniqueness => true
+  
+  def full_name
+      "#{title_pre} #{firstname} #{lastname} #{title_post}"
   end
   
   def self.search(search)  
-    
     if search  
-      puts search[:is_teacher]
-      data = all
-      find = data.select do |x|         
-        ((!search[:username].empty?) ? x.username =~ /(?i)#{search[:username]}/ : true)  && 
-        ((!search[:name].empty?) ?  x.full_name =~ /(?i)#{search[:name]}/ : true ) && 
-        ((!search[:email].empty?) ? x.email =~ /(?i)#{search[:email]}/ : true ) && 
-        ((search[:teacher] != 0.to_s) ? x.teacher? : true)
-      end
+      query,data = [],[]
+      
+      search.each do |key,value|  
+        next if key == "teacher" and value == 0.to_s
+        next if value == "" or value == 0 
+        
+        if key == "name"
+          query << "concat(firstname, ' ' , lastname) LIKE ?"
+          data << "%#{value}%"
+        else
+          query <<  " #{key} LIKE ?"
+          data << "%#{value}%"
+        end
+      end 
+      where(query.join(' AND'),*data)
     else  
-      all  
-    end  
+      scoped  
+    end
   end 
 end
