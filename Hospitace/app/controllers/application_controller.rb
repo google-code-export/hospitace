@@ -12,9 +12,9 @@ class ApplicationController < ActionController::Base
   end
   
   def semester
-    return @semester if defined?(@semester)
+    #return @semester if defined?(@semester)
     return Semester.find_by_code(params[:semester]) unless params[:semester].nil?
-    @semester = Semester.current_semester 
+    @semester = Semester.current
   end
   
   private

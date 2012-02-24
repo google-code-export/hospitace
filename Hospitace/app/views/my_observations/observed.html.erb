@@ -1,7 +1,7 @@
 <%
 action = {}
 action = { :action_title=>:new_observation, :action=>new_observation_path } if can? :create, Observation %>
-<% options = {:small=>(t(:observations,:scope=>"title.small")+" "+select( "selected_semester", "code", Semester.find_used_current_and_next.collect {|p| [p.name, p.code]}, :selected=>semester.code))} %>
+<% options = {:small=>(t(:observations,:scope=>"title.small")+" "+select( "selected_semester", "code", Semester.used_current_and_next.collect {|p| [p.name, p.code]}, :selected=>semester.code))} %>
 <% options.merge!(action)  %>
 
 <% title :observed, options %>

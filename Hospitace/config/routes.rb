@@ -26,10 +26,10 @@ Hospitace::Application.routes.draw do
 
   match "peoples/select" => 'peoples#select', :via => [:get, :post], :as=>:peoples_select
   resources :peoples, :only => [:index, :show]
-  resources :courses, :only => [:index, :show]
+  #resources :courses, :only => [:index, :show]
 
   match "courses/:course_id/parallels/select" => 'parallels#select', :via => [:get, :post], :as=>:course_parallels_select
-  resources :courses,:constraints => {:id => /[0-9A-Z]+/i}, :only => [:index,:show] do
+  resources :courses, :only => [:index,:show] do
     match "courses", :via => [:get, :post], :on=>:collection
     resources :parallels, :only => [:index, :show, :search]
   end

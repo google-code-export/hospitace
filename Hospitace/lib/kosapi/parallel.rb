@@ -20,7 +20,7 @@ module KOSapi
       @parallel_code = parallel['parallelCode']
       @parallel_name = parallel['parallelName']
       @parallel_number = parallel['parallelNumber'].to_i
-      @parity = parallel['parity'],
+      @parity = parallel['parity']
       @related_laboratory = parallel['relatedLaboratory'].to_i
       @related_lecture = parallel['relatedLecture'].to_i
       @related_practise = parallel['relatedTutorial'].to_i

@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   
   #scope :observ, joins(:observers).sum(:observation_id).group(:user_id)
   
+  belongs_to :people
+  
   has_many :notes
   
   has_many :created_observations, :class_name => "Observation", :foreign_key=>:created_by
@@ -20,21 +22,19 @@ class User < ActiveRecord::Base
   validates :people_id, :uniqueness => true
   validates :login, :uniqueness => true
 
-  after_find :load_people
+  #after_find :load_people
   after_find :load_rules
 
-  def load_people
-    user = People.find(self.people_id)
-    @username = user.username
-    @email = user.email
-    @firstname = user.firstname
-    @lastname = user.lastname
-    @title_pre = user.title_pre
-    @title_post = user.title_post
+  def email
+    return people.email unless people.nil?
   end
   
   def full_name
-    "#{@title_pre} #{@firstname} #{@lastname} #{@title_post}"
+    return people.full_name unless people.nil?
+  end
+  
+  def username
+    return people.username unless people.nil?
   end
 
   ROLES = %w[admin observer observed root]

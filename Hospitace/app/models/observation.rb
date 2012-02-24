@@ -1,19 +1,15 @@
 require 'kosapi'
 
 class Observation < ActiveRecord::Base
-  #include KOSapi
-#  TYPES = {
-#    :reported => 1,
-#    :floating => 2,
-#    :unannounced => 3
-#  }
-  
+ 
   TYPES = %w[reported floating unannounced]
   
   attr_accessor :state 
   after_initialize :init_state
   
   belongs_to :created_by, :class_name => "User", :foreign_key=>:created_by
+  belongs_to :course
+  belongs_to :semester
   
   has_many :observers, :dependent => :destroy
   has_many :users, :through => :observers
@@ -23,12 +19,9 @@ class Observation < ActiveRecord::Base
   validates :semester, :presence => true
   
   validates :observation_type,:presence => true, :inclusion => {:in => TYPES} 
-  
-  def find_course
-    c = Course.find(course)
-    return Course.new({}) if c.nil?
-    c.instance(semester)
-    return c
+    
+  def instance
+    CourseInstance.find_by_course_id_and_semester_id(course_id,semester_id)
   end
   
   def find_parallel

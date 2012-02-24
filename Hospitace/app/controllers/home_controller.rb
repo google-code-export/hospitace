@@ -4,13 +4,15 @@ class HomeController < ApplicationController
   skip_authorization_check
   
   def index
-    @semesters = Semester.find_current_and_next
+    @semesters = Semester.current_and_next
+    
+    puts @semesters.inspect
     @observations = []
     
     @semesters.each do |s|
       @observations << {
         :semester=>s,
-        :observations=> Observation.includes(:created_by,:users).where(:semester=>s.code,:observation_type=>[:reported,:floating])
+        :observations=> Observation.includes(:created_by,:users,:course).where(:semester_id=>s.id,:observation_type=>[:reported,:floating])
         }
     end
 

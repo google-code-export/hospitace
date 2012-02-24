@@ -1,28 +1,37 @@
 # To change this template, choose Tools | Templates
 # and open the template in the editor.
 
-require 'kosapi'
+#require 'kosapi'
 
-class Course < KOSapi::Course
-  include KOSapi
+class Course < ActiveRecord::Base
+  has_many :observations
+  has_many :course_instances, :as=>:instances
   
-  def self.find(code)
-    self.find_by_code(code)
+  validates :code, :uniqueness => true
+  
+  def instance(s=nil)
+    s ||= Semester.current
+    CourseInstance.find_by_course_id_and_semester_id(id,s);
+  end
+  
+  def parallels(s=nil)
+    instance.parallels
   end
   
   def self.search(search)  
-    
     if search  
-      data = all
-      find = data.select do |x|         
-        ((!search[:code].empty?) ? x.code =~ /(?i)#{search[:code]}/ : true)  && 
-          ((!search[:name].empty?) ?  x.name =~ /(?i)#{search[:name]}/ : true )# && 
-          #((!search[:semester_season].empty?) ? x.semester_season =~ /(?i)#{search[:semester_season]}/ : true )
-      end
+      query,data = [],[]
+      
+      search.each do |key,value|  
+        next if value == "" or value == 0 
+
+        query <<  " #{key} LIKE ?"
+        data << "%#{value}%"
+      end 
+      where(query.join(' AND'),*data)
     else  
-      all  
-    end 
-  end
-    
+      scoped  
+    end
+  end 
 end
   

@@ -1,12 +1,12 @@
 <%= simple_form_for(@observation,:wrapper => :inline) do |f| %>
   <%= alert_message(f.error_notification, :warning) if f.error_notification %>
 
-  <%= f.input :semester, :collection =>Semester.find_current_and_next.collect {|p| [p.name, p.code]},:value =>:code, :as => :select, :selected=>Semester.current_semester %>
-  <%= f.input :course,:placeholder => 'Kód předmětu' , :hint => link_to("Najít kód předmětu", "/observations/courses") %>
+  <%= f.input :semester, :collection =>Semester.current_and_next.collect {|p| [p.name, p.code]},:value =>:code, :as => :select, :selected=>Semester.current %>
+  <%= f.input :course_id,:placeholder => 'Kód předmětu' , :hint => link_to("Nastavit kód předmětu", "/observations/courses") %>
   <% if @observation.course.nil?  %>
     <%= f.input :parallel, :as=>:select, :disabled => true %>
   <% else %>
-    <%= f.input :parallel, :as=>:select, :hint => link_to("Najít paralelku", course_parallels_select_path(@observation.course)), :collection=>Parallel.find_by_course(@observation.course).collect {|p| ["#{p.type_t} #{p.day_t} #{parallel_time(p)}", p.id]} %>
+    <%= f.input :parallel, :as=>:select, :hint => link_to("Najít paralelku", course_parallels_select_path(@observation.course)), :collection=>@observation.course.parallels(@observation.semester_id).collect {|p| ["#{p.parallel_type} #{p.day} #{parallel_time(p)}", p.id]} %>
   <% end %>
 
   <%= f.input :observation_type, :collection =>Observation::TYPES.collect {|i| [t(i),i]},  :as => :select, :selected=>Observation::TYPES[1], :required=>true %>

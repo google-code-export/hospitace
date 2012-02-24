@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users =  User.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:page => params[:page]) 
+    @users =  User.includes(:people).search(params[:search]).order(sort_column + " " + sort_direction).paginate(:page => params[:page]) 
 
 
     respond_to do |format|
@@ -21,7 +21,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    @user = User.includes(:observers,:created_observations).find(params[:id])
+    @user = User.includes(:observers,:created_observations,:people).find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -36,7 +36,6 @@ class UsersController < ApplicationController
     
     session[:path] = new_user_path
     @user.people_id = flash[:people_id] unless flash[:people_id].nil?
-    @user.load_people
     @user.login ||= @user.username unless @user.username == "id-"
     
     respond_to do |format|

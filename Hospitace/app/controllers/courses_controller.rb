@@ -21,8 +21,8 @@ class CoursesController < ApplicationController
   def select
     session[:path] ||= courses_path
     
-    unless params[:course].nil?
-      redirect_to session[:path], :flash => { :course=>params[:course]}
+    unless params[:course_id].nil?
+      redirect_to session[:path], :flash => { :course_id=>params[:course_id]}
       return
     end
     
@@ -36,7 +36,7 @@ class CoursesController < ApplicationController
   end
   
   def show
-    @course = Course.find_by_code(params[:id])
+    @course = Course.find(params[:id])
     
     respond_to do |format|
       format.js
