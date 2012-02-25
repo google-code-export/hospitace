@@ -1,5 +1,11 @@
 @import "twitter/bootstrap";
 
+// import responsive layout
+@import "twitter/bootstrap/responsive";
+
+// Your custom stylesheets goes here (override Less here)
+
+
 // Baseline grid
 @basefont:          13px;
 @baseline:          18px;
@@ -54,27 +60,27 @@
         border: 0;
       }
 
-.zebra-striped tr.market td {
+.table-striped tr.market td {
     background:#A2C6EC;
     font-weight: bold;
 }
 
-.zebra-striped tr:nth-child(2n+1).market td {
+.table-striped tr:nth-child(2n+1).market td {
     background:#A2C6EC;
     font-weight: bold;
 }
 
 
-.zebra-striped tr:hover.market td {
+.table-striped tr:hover.market td {
     background:#94BFEC;
     font-weight: bold;
 }
 
-.zebra-striped tr:nth-child(2n+1):hover.market td {
+.table-striped tr:nth-child(2n+1):hover.market td {
     background:#94BFEC;
     font-weight: bold;
 }
 
-select.datetime  {
+select.date  {
     width: auto;
 }

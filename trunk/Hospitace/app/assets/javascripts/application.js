@@ -49,6 +49,7 @@ $(function () {
     );
         
     $('#datagrid tbody tr').live('click',function(){
+        console.log("sssss");
         $('#datagrid tbody tr').each(function(index){
            $(this).removeClass("market");
         });
@@ -58,6 +59,6 @@ $(function () {
         }
     }); 
     
-    $('#dropdown').dropdown();
+    $('.dropdown-toggle').dropdown()
 })  
 

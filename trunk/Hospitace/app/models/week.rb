@@ -7,7 +7,7 @@ class Week
          "TUESDAY",
          "WEDNESDAY",
          "THURSDAY",
-         "FRYIDAY",
+         "FRIDAY",
          "SATURDAY",
          "SUNDAY"
          ]
@@ -36,10 +36,11 @@ class Week
     
   end
   
-  def self.dates parallel,current_semester
+  def self.dates parallel,semester
+
     dates = []
     return dates if parallel.nil?
-    date = current_semester.start.to_date
+    date = semester.start
     shift = Week::DAYS.index(parallel.day)
     (0..13).each do |i| 
       # todo: sudý lichý týden

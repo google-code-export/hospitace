@@ -8,11 +8,13 @@ class ObservationsController < ApplicationController
   
   def date
     @observation = Observation.includes(:created_by,:users,:course).find(params[:id])
-    @parallel = @observation.find_parallel
+    @parallel = @observation.parallel
     
     session[:path] = observation_date_path(@observation)
     session[:parallel] = flash[:parallel] unless flash[:parallel].nil?
     @observation.parallel = session[:parallel] if @observation.parallel.nil?
+    
+    #@observation.date = @parallel.start
     
     respond_to do |format|
       format.html { render :layout=>"tabs"}
@@ -37,7 +39,7 @@ class ObservationsController < ApplicationController
   def show
     @observation = Observation.includes(:created_by,:users,:course).find(params[:id])
     @course = @observation.course
-    @parallel = @observation.find_parallel
+    @parallel = @observation.parallel
     respond_to do |format|
       format.html { render :layout=>"tabs" }
       format.json { render json: @observation }
@@ -51,10 +53,10 @@ class ObservationsController < ApplicationController
     @observation = Observation.new
     
     session[:course_id] = flash[:course_id] unless flash[:course_id].nil?
-    session[:parallel] = flash[:parallel] unless flash[:parallel].nil?
+    session[:parallel_id] = flash[:parallel_id] unless flash[:parallel_id].nil?
     
     @observation.course_id ||= session[:course_id]
-    @observation.parallel ||= session[:parallel]
+    @observation.parallel_id ||= session[:parallel_id]
     
     respond_to do |format|
       format.html # new.html.erb
@@ -66,8 +68,8 @@ class ObservationsController < ApplicationController
   def edit
     session[:path] = edit_observation_path(@observation)
     @observation = Observation.find(params[:id])
-    @observation.course ||= flash[:course] unless flash[:course].nil?
-    @observation.parallel ||= flash[:parallel] unless flash[:parallel].nil?
+    @observation.course_id ||= flash[:course_id] unless flash[:course_id].nil?
+    @observation.parallel_id ||= flash[:parallel_id] unless flash[:parallel_id].nil?
     
   end
 
@@ -92,7 +94,7 @@ class ObservationsController < ApplicationController
   # PUT /observations/1.json
   def update
     @observation = Observation.find(params[:id])
-
+    puts params[:observation].inspect
     respond_to do |format|
       if @observation.update_attributes(params[:observation])
         format.html { redirect_to @observation, notice: 'Hospitace byla úspěšně upravená.' }

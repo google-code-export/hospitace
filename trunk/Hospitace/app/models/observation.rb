@@ -10,6 +10,7 @@ class Observation < ActiveRecord::Base
   belongs_to :created_by, :class_name => "User", :foreign_key=>:created_by
   belongs_to :course
   belongs_to :semester
+  belongs_to :parallel
   
   has_many :observers, :dependent => :destroy
   has_many :users, :through => :observers
@@ -24,15 +25,15 @@ class Observation < ActiveRecord::Base
     CourseInstance.find_by_course_id_and_semester_id(course_id,semester_id)
   end
   
-  def find_parallel
-    return if parallel.nil?
-    p = Parallel.find(course,parallel)
-  end
+#  def find_parallel
+#    return if parallel.nil?
+#    p = Parallel.find(course,parallel)
+#  end
   
-  def find_semester
-    return if semester.empty?
-    s = Semester.find_by_code(semester)
-  end
+#  def find_semester
+#    return if semester.empty?
+#    s = Semester.find_by_code(semester)
+#  end
     
   def self.search(search)  
     if search  

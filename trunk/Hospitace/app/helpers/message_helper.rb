@@ -2,8 +2,8 @@
 
 module MessageHelper
   def message(title,text = [],actions = [],type = "warning")
-    content_tag(:div,:class => "alert-message block-message #{type}") do 
-      content_tag(:a,"x", :class=>"close", :href=>"#")+
+    content_tag(:div,:class => "alert alert-block alert-#{type} fade in") do 
+      content_tag(:a,"x", :class=>"close", :href=>"#","data-dismiss"=>"alert")+
       
       content_tag(:p) do
         content_tag(:strong,title)+" "+text_content(text)
@@ -33,16 +33,14 @@ module MessageHelper
   
   
   def alert_message(text,type="alert")
-    "<div class=\"alert-message #{type} fade in\">
-							<a class=\"close\" href=\"#\">×</a>
-							<p>
+    "<div class=\"alert alert-#{type} in\">
+							<a class=\"close\" href=\"#\" data-dismiss=\"alert\">×</a>
 								<strong>#{t(type,:scope=>"message.type")}</strong> #{text} 
-							</p>
 		 </div>".html_safe
   end
   
   def label_span(text, type=nil)
-    content_tag(:span,text,:class=>"label #{type}")
+    content_tag(:span,text,:class=>"label label-#{type}")
   end
 
 end

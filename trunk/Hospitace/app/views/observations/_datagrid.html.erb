@@ -1,7 +1,7 @@
 <% scope = "activerecord.attributes.observation" %>
 <% observations ||= @observations %>
 <div id="datagrid">
-<table class="zebra-striped">
+<table class="table table-striped">
   <thead>
   <tr>
     <%= th :id, scope %>
@@ -29,8 +29,8 @@
     <td><%= short_users(instance.lecturers) unless instance.nil? %></td>
     <td><%= instance.occupied unless instance.nil? %></td>
     <td><%= short_users(observation.users) %></td>
-    <td><%#= short_parallel(observation.find_parallel) %></td>
-    <td><%= l(observation.date, :format=>"%d. %m. %Y, %R") unless observation.date.nil?  %></td>
+    <td><%= short_parallel(observation.parallel) %></td>
+    <td><%= l(observation.date, :format=>"%d. %m. %Y") unless observation.date.nil?  %></td>
     <td><%= t(observation.observation_type) %></td>
     <td><%= label_span(t(observation.state.short_message),(observation.state.ok? ? :success: :warning)) %></td>
     <td><%= yield observation %></td>

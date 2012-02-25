@@ -1,13 +1,18 @@
 # To change this template, choose Tools | Templates
 # and open the template in the editor.
 
-#require 'kosapi'
+require 'kosapi'
 
 class Course < ActiveRecord::Base
+  include KOSapi::ModelHelpers
+  
   has_many :observations
-  has_many :course_instances, :as=>:instances
+  has_many :course_instances
+  has_many :parallels, :through => :course_instances
   
   validates :code, :uniqueness => true
+  
+  
   
   def instance(s=nil)
     s ||= Semester.current
@@ -33,5 +38,7 @@ class Course < ActiveRecord::Base
       scoped  
     end
   end 
+  
+  attrs_translate :classes_type,:completion, :status, :study_form, :semester_season
 end
   

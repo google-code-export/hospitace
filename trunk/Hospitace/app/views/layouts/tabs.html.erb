@@ -1,7 +1,7 @@
 <%# title :observation %>   
 
 <% content_for :content do %>
-  <ul class="tabs">
+  <ul class="nav nav-tabs">
   <%= tab_item(:info,@observation) if can? :show, @observation %> 
   <%= tab_item(:observation_date,observation_date_path(@observation)) if can? :manage, @observation %> 
   <%= tab_item(:observers,observation_observers_path(@observation)) if can? :manage, @observation %> 

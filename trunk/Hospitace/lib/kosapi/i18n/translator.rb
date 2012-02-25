@@ -2,7 +2,7 @@
 # and open the template in the editor.
 
 module KOSapi
-  module I18n
+  module I18n        
     class Translator
       # If the I18n gem is present, calls +I18n.translate+ passing all
       # arguments, else returns +options[:default]+.
