@@ -1,9 +1,0 @@
-
-<% title :peoples, :small=>t(:peoples,:scope=>"title.small") %>
-
-<%= render :layout=>'datagrid', :locals => { :peoples => @peoples } do |person| %>
-
-    <%= link_to_if can?(:show,person), t(:show) , :controller=>"peoples", :action=>"show", :id=>person.id %>
-
-<%end%>
-

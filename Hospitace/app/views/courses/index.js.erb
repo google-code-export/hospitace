@@ -1,7 +1,0 @@
-$('#datagrid').html('<%= escape_javascript(
-  
-       render(:layout=>"datagrid",:locals => { :courses => @courses }) { |course| 
-         link_to_if can?(:show, course), t(:show), course
-       }
-
-) %>');

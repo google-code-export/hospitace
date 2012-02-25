@@ -1,7 +1,0 @@
-$('#datagrid').html('<%= escape_javascript(
-  
-       render(:layout=>"datagrid") { |user| 
-         link_to_if(can?(:show,user),t(:show), user)+" "+link_to_if(can?(:edit,user),t(:edit), edit_user_path(user))+" "+link_to_if(can?(:destroy,user),t(:destroy), user, confirm: t(:confirm), method: :delete );
-       }
-
-) %>');  

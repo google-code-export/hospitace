@@ -1,9 +1,0 @@
-<% title :users, :small=>t(:users,:scope=>"title.small"), :action_title=>:new_user,:action=>new_user_path %>
-
-<%= render :layout=>'datagrid' do |user| %>
-
-    <%= link_to_if can?(:show,user), t(:show), user %>
-    <%= link_to_if can?(:update,user), t(:edit), edit_user_path(user) %>
-    <%= link_to_if can?(:destroy,user), t(:destroy), user, confirm: t(:confirm), method: :delete %> 
-
-<%end%>
