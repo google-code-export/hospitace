@@ -13,8 +13,8 @@
 	<%= f.input :name, :required => false, :label=>"Název" %>
 	<%#= f.input :semester_season, :required => false %>
 	
-	<div class="actions">
-		<%= f.submit :search, :class => 'btn primary' %>
+	<div class="form-actions">
+		<%= f.submit :search, :class => 'btn btn-primary' %>
 	</div>
 	
 	<% end %>
@@ -22,7 +22,7 @@
 <% end %> 
 
 <div id="datagrid">      
-<table class="zebra-striped">
+<table class="table table-striped">
   <tr>
     <th>#</th>
     <th>Kód</th>

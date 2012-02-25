@@ -1,7 +1,7 @@
 <% room = parallel.room %>
 
 
-<%= show_item(t("parallel.parallel_number"), parallel.parallel_number) %>
+<%= show_item(t("parallel.parallel_number"), parallel.number) %>
 
 <%= show_item(t("parallel.teachers"), full_url_peoples(parallel.teachers)) %>
 
@@ -13,4 +13,4 @@
 
 <%= show_item(t("parallel.room"), room.code) unless room.nil? %>
 
-<%= show_item(t("parallel.type"), parallel.type_t) %>
+<%= show_item(t("parallel.type"), parallel.parallel_type_t) %>

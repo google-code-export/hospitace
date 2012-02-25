@@ -3,7 +3,7 @@ module ApplicationHelper
   def title(title,options={})
     @title = content_tag(:span,t(title,:scope=>"title.main")<<" ")   
     @title << content_tag(:small,options[:small],nil,false) unless options[:small].nil?
-    @title << content_tag(:span,link_to(t(options[:action_title],:scope=>"title.action"),options[:action],:class=>"btn large"),:class=>"action") unless options[:action].nil?
+    @title << content_tag(:span,link_to(t(options[:action_title],:scope=>"title.action"),options[:action],:class=>"btn btn-large"),:class=>"action") unless options[:action].nil?
   end
 
   def menu_item(title,path,*args)

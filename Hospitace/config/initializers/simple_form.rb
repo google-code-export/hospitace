@@ -4,31 +4,31 @@ SimpleForm.setup do |config|
   # You can remove any component from the wrapper, change the order or even
   # add your own to the stack. The options given to the wrappers method
   # are used to wrap the whole input.
-  config.wrappers :inline, :class => 'clearfix', :error_class => :error do |b|
+  config.wrappers :inline, :class => 'control-group', :error_class => :error do |b|
     b.use :placeholder
-    b.use :label
-    b.use :tag => 'div', :class => 'input' do |ba|
+    b.use :label, :class => 'control-label'
+    b.use :tag => 'div', :class => 'controls' do |ba|
       ba.use :input
       ba.use :error, :tag => :span, :class => :'help-inline'
-      ba.use :hint, :tag => :span, :class => :'help-block'
+      ba.use :hint, :tag => :p, :class => :'help-block'
     end
   end
 
-  config.wrappers :stacked, :class => "clearfix", :error_class => :error do |b|
+  config.wrappers :stacked, :class => "control-group", :error_class => :error do |b|
     b.use :placeholder
-    b.use :label
-    b.use :hint, :tag => :span, :class => :'help-block'
-    b.use :tag => 'div', :class => 'input' do |input|
+    b.use :label, :class => 'control-label'
+    b.use :hint, :tag => :p, :class => :'help-block'
+    b.use :tag => 'div', :class => 'controls' do |input|
       input.use :input
       input.use :error, :tag => :span, :class => :'help-inline'
     end
   end
 
-  config.wrappers :prepend, :class => "clearfix", :error_class => :error do |b|
+  config.wrappers :prepend, :class => "control-group", :error_class => :error do |b|
     b.use :placeholder
-    b.use :label
-    b.use :hint, :tag => :span, :class => :'help-block'
-    b.use :tag => 'div', :class => 'input' do |input|
+    b.use :label, :class => 'control-label'
+    b.use :hint, :tag => :p, :class => :'help-block'
+    b.use :tag => 'div', :class => 'controls' do |input|
       input.use :tag => 'div', :class => 'input-prepend' do |prepend|
         prepend.use :input
       end
@@ -36,11 +36,11 @@ SimpleForm.setup do |config|
     end
   end
 
-  config.wrappers :append, :class => "clearfix", :error_class => :error do |b|
+  config.wrappers :append, :class => "control-group", :error_class => :error do |b|
     b.use :placeholder
-    b.use :label
-    b.use :hint, :tag => :span, :class => :'help-block'
-    b.use :tag => 'div', :class => 'input' do |input|
+    b.use :label, :class => 'control-label'
+    b.use :hint, :tag => :p, :class => :'help-block'
+    b.use :tag => 'div', :class => 'controls' do |input|
       input.use :tag => 'div', :class => 'input-append' do |append|
         append.use :input
       end
@@ -48,11 +48,11 @@ SimpleForm.setup do |config|
     end
   end
   
- config.wrappers :label_wrapped, :class => "clearfix", :error_class => :error do |b|
+ config.wrappers :label_wrapped, :class => "control-group", :error_class => :error do |b|
     b.use :placeholder
-    b.use :label
-    b.use :tag => 'div', :class => 'input inputs-list' do |div|
-      div.use :tag => 'div', :class => 'inputs-list' do |item|
+    b.use :label, :class => 'control-label'
+    b.use :tag => 'div', :class => 'controls' do |div|
+      div.use :tag => 'label', :class => 'checkbox' do |item|
         item.use :input
         item.use :error, :tag => :span, :class => :'help-inline'
         
@@ -94,7 +94,7 @@ SimpleForm.setup do |config|
   # config.label_class = nil
 
   # You can define the class to use on all forms. Default is simple_form.
-  # config.form_class = :simple_form
+  config.form_class = "form-horizontal"
 
   # Whether attributes are required by default (or not). Default is true.
   # config.required_by_default = true

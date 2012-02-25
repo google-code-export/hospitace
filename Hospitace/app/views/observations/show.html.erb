@@ -1,4 +1,4 @@
-<% name = "#{@observation.course.name} (#{@observation.course})" %>
+<% name = "#{@observation.course.name} (#{@observation.course.code})" %>
 <% title :observations, :small=>name %>
 
 <%
@@ -11,7 +11,7 @@
 <h2>Informace o hospitaci</h2>
 <%= show_item(Observation.human_attribute_name(:state), label_span(t(@observation.state.short_message),(@observation.state.ok? ? :success : :warning)) ) %>
 <%= show_item(Observation.human_attribute_name(:course), name) %>
-<%= show_item(Observation.human_attribute_name(:semester), @observation.semester) %>
+<%= show_item(Observation.human_attribute_name(:semester), @observation.semester.name) %>
 <%= show_item(Observation.human_attribute_name(:observation_type), t(@observation.observation_type)) %>
 <%= show_item(Observation.human_attribute_name(:observed), teachers) %>
 <%= show_item(Observer.model_name.human, full_url_user(@observation.users)) %>

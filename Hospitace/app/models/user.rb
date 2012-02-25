@@ -33,6 +33,14 @@ class User < ActiveRecord::Base
     return people.full_name unless people.nil?
   end
   
+  def firstname
+    return people.firstname unless people.nil?
+  end
+  
+  def lastname
+    return people.lastname unless people.nil?
+  end
+  
   def username
     return people.username unless people.nil?
   end

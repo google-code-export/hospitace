@@ -1,4 +1,4 @@
-<% title :observations, :small=>"nastavení paralelky a datumu pro #{@observation.course.name} (#{@observation.course})" %>
+<% title :observations, :small=>"nastavení paralelky a datumu pro #{@observation.course.name} (#{@observation.course.code})" %>
 
 <h2>Datum a parallelka</h2>
 <%= render :partial=>'parallels/parallel', :object => @parallel unless @parallel.nil? %>
@@ -7,11 +7,11 @@
   <%= simple_form_for @observation,:wrapper => :inline do |f| %>
     <%= alert_message(f.error_notification, :warning) if f.error_notification %>
 
-    <%= f.input :parallel, :as=>:select, :hint => link_to("Najít paralelku", course_parallels_select_path(@observation.course)), :collection=>Parallel.find_by_course(@observation.course).collect {|p| ["#{p.type_t} #{p.day_t} #{parallel_time(p)}", p.id]} %>
-    
-    <%= f.input :date %>
-    
-    <%= f.input :date, :disabled => @parallel.nil? , :as=>:select, :collection=>Week.dates(@parallel,@observation.find_semester).collect {|p| [ l(p, :format => :long), p]}%>
+    <%= f.association :parallel, :as=>:select, :hint => link_to("Detail paralelek", course_parallels_select_path(@observation.course)), :collection=>@observation.course.parallels(@observation.semester_id).collect {|p| [short_parallel_with_time(p), p.id]} %>
+   
+    <%= f.input :date%>
+    <%# , :disabled => true, :input_html=>{:class=>"hidden"} %>
+    <%#= f.input :date, :disabled => @parallel.nil? , :hint=>link_to("Ručně nastavit","#"), :as=>:select, :collection=>Week.dates(@parallel,@observation.semester).collect {|p| [ l(p, :format => :long), p]}%>
     <div class="actions">
       <%= f.button :submit, :class => 'btn primary' %>
     </div>

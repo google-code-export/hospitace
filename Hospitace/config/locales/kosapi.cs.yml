@@ -26,7 +26,7 @@ cs:
         WINTER: Zimní 
         
     parallel:    
-      type:
+      parallel_type:
         LABORATORY: Laboratoř
         LECTURE: Přednáška 
         PROJECT: Projekt 

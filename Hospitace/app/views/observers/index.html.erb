@@ -1,4 +1,4 @@
-<% title :observations, :small=>"seznam přidělených hospitujících pro #{@observation.course.name} (#{@observation.course})" %>
+<% title :observations, :small=>"seznam přidělených hospitujících pro #{@observation.course.name} (#{@observation.course.name})" %>
 <%= render :layout=>'datagrid',:locals => { :observers => @observers } do |observer| %>
 
   <%= link_to t(:show), observer.user if can?(:show,observer.user)%>

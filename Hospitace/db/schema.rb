@@ -62,8 +62,8 @@ ActiveRecord::Schema.define(:version => 20120219124236) do
   create_table "observations", :force => true do |t|
     t.integer  "course_id"
     t.integer  "semester_id"
-    t.integer  "parallel"
-    t.datetime "date"
+    t.integer  "parallel_id"
+    t.date     "date"
     t.string   "observation_type"
     t.integer  "created_by"
     t.datetime "created_at"

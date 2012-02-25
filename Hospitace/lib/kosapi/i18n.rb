@@ -42,5 +42,6 @@ module KOSapi
       end
       alias :t :translate
     end
+    
   end
 end

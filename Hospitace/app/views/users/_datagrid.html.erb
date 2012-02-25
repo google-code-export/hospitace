@@ -15,15 +15,15 @@
 	<%= f.input :login, :placeholder => 'user@fel.cvut.cz', :required => false %>
 	
 	<%= f.input :roles, :collection =>input_roles,  :as => :check_boxes, :wrapper=>:label_wrapped, :required => false %>
-	<div class="actions">
-		<%= f.submit :search, :class => 'btn primary' %>
+	<div class="form-actions">
+		<%= f.submit :search, :class => 'btn btn-primary' %>
 	</div>
 	<% end %>
 
 <% end %> 
 
 <div id="datagrid">
-<table class="zebra-striped">
+<table class="table table-striped">
   <thead>
   <tr>
     <%= th :id, scope, true %>
