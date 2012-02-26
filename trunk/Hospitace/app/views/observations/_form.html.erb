@@ -1,4 +1,4 @@
-<%= simple_form_for(@observation,:wrapper => :inline) do |f| %>
+<%= simple_form_for(@observation,  :html => { :class => 'form-horizontal' }) do |f| %>
   <%= alert_message(f.error_notification, :warning) if f.error_notification %>
 
 
@@ -15,6 +15,6 @@
 
   <div class="form-actions">
 	<%= f.button :submit, :class => 'btn btn-primary' %>
-	<%= button_tag 'Cancel', :type => :reset, :class => "btn" %>
+	<%= submit_tag 'Cancel', :type => :reset, :class => "btn btn-danger" %>
   </div>
 <% end %>

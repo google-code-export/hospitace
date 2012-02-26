@@ -4,7 +4,6 @@
 <table class="table table-striped">
   <thead>
   <tr>
-    <%= th :id, scope %>
     <%= th :course, scope %>
     <%= th :teachers, scope %>
     <%= th :students, scope %>
@@ -24,7 +23,6 @@
     instance = observation.instance
   %>
   <tr>
-    <td><%= observation.id %></td>
     <td><%= course.code %></td>
     <td><%= short_users(instance.lecturers) unless instance.nil? %></td>
     <td><%= instance.occupied unless instance.nil? %></td>
