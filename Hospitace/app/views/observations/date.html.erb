@@ -9,7 +9,24 @@
 
     <%= f.input :parallel, :as=>:select, :hint => link_to("Najít paralelku", course_parallels_select_path(@observation.course)), :collection=>Parallel.find_by_course(@observation.course).collect {|p| ["#{p.type_t} #{p.day_t} #{parallel_time(p)}", p.id]} %>
 
-    <%= f.input :date, :disabled => @parallel.nil? , :as=>:select, :collection=>Week.dates(@parallel,@observation.find_semester).collect {|p| [ l(p, :format => :long), p]}%>
+
+    <%= 
+    f.input :date, :wrapper => :prepend do
+    %>
+
+      <%=  f.input_field :date, :disabled=>@observation.date.nil? %>
+      <%=  content_tag :label, :class => "add-on #{@observation.date.nil? ? "" : "active"}" do
+        if @observation.date.nil?
+          check_box_tag :active, 'true'
+        else
+          check_box_tag :active, 'true', :checked=>true
+        end
+      end %>
+    <%
+    end
+  %>
+
+    <%#= f.input :date, :disabled => @parallel.nil? , :as=>:select, :collection=>Week.dates(@parallel,@observation.find_semester).collect {|p| [ l(p, :format => :long), p]}%>
     <div class="actions">
       <%= f.button :submit, :class => 'btn primary' %>
     </div>

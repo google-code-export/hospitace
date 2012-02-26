@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class HomeController < ApplicationController
   skip_authorization_check
   
