@@ -1,12 +1,13 @@
-<%= simple_form_for @user_session, :wrapper => :inline do |f| %>
+<%= simple_form_for @user_session,  :html => { :class => 'form-horizontal' } do |f| %>
 
-<%= alert_message(f.error_notification, :warning) if f.error_notification %>
+  <%= alert_message(f.error_notification, :warning) if f.error_notification %>
 
 
-<%= f.input :login, :placeholder => 'user' %>
-<%= f.input :password %>
+  <%= f.input :login, :placeholder => 'user' %>
+  <%= f.input :password %>
 
-<div class="form-actions">
-	<%= f.button :submit, :class => 'btn btn-primary' %>
-</div>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= submit_tag 'Cancel', :type => :reset, :class => "btn btn-danger" %>
+  </div>
 <% end %> 

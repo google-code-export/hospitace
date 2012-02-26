@@ -9,8 +9,8 @@
     <%= csrf_meta_tags %>
   </head>
 
-  <body>   
-    <div class="navbar navbar-fixed-top">
+  <body data-spy="scroll">   
+    <header class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
           <%= link_to t("Hospitace"), root_path, :class=>"brand" %>
@@ -42,7 +42,7 @@
           </p>
         </div>
       </div>
-    </div>
+    </header>
 
     <script type="text/javascript">
       $('.dropdown-toggle').dropdown();
@@ -53,7 +53,7 @@
 
       <div class="content">
         <div class="page-header">
-
+          
           <h1><%= @title.html_safe %></h1>
         </div>
         <div class="row">
