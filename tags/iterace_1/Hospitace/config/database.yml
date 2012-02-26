@@ -16,7 +16,7 @@ development:
   database: hospitace_development_2
   pool: 5
   username: root
-  password: koliko
+  password: root
   host: localhost
 
 # Warning: The database defined as "test" will be erased and
