@@ -13,10 +13,10 @@
 development:
   adapter: mysql2
   encoding: utf8
-  database: hospitace_development
+  database: hospitace_development_2
   pool: 5
-  username: hospitace
-  password: QqNJAHg4
+  username: root
+  password: koliko
   host: localhost
 
 # Warning: The database defined as "test" will be erased and

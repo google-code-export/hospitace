@@ -59,5 +59,19 @@ $(function () {
     }); 
     
     $('#dropdown').dropdown();
+       
+    $('input[name$="active"]').change(function(){
+        var s = $(this).parent().parent().find('select');
+        if($(this).attr('checked')){
+            $(this).parent().addClass("active");
+            s.removeAttr('disabled');
+            s.removeClass('disabled');
+        }else{
+            $(this).parent().removeClass("active");
+            s.attr('disabled', 'disabled');
+            s.addClass("disabled");
+        }
+    })
+    
 })  
 

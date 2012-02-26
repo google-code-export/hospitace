@@ -7,7 +7,7 @@ class Week
          "TUESDAY",
          "WEDNESDAY",
          "THURSDAY",
-         "FRYIDAY",
+         "FRIDAY",
          "SATURDAY",
          "SUNDAY"
          ]

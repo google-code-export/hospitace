@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 #require 'will_paginate/array'
 class ObservationsController < ApplicationController
   load_and_authorize_resource
@@ -90,7 +92,8 @@ class ObservationsController < ApplicationController
   # PUT /observations/1.json
   def update
     @observation = Observation.find(params[:id])
-
+    @observation.date = nil# if params[:observation].has_key?(:date)
+    puts params[:observation].inspect
     respond_to do |format|
       if @observation.update_attributes(params[:observation])
         format.html { redirect_to @observation, notice: 'Hospitace byla úspěšně upravená.' }
