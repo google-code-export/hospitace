@@ -4,7 +4,7 @@
 		<h3>Filter</h3>
 	</div>	
 	
-	<%= simple_form_for :search,:html=> {:id=>"search_form", :class => 'form-horizontal' },:method=>:get do |f| %>
+	<%= simple_form_for :search,:html=> {:id=>"search_form", :class => 'form-horizontal form-search' },:method=>:get do |f| %>
 	
 	<%= hidden_field_tag :direction, params[:direction] %>
 	<%= hidden_field_tag :sort, params[:sort] %>

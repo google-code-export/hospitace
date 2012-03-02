@@ -8,13 +8,13 @@ module ApplicationHelper
 
   def menu_item(title,path,*args)
     return if !args.empty? and cannot? *args    
-    content_tag(:li,link_to(t(title,:scope=>"menu"),path), :class => ((current_page?(path) ? "active" : nil )))
+    content_tag(:li,link_to(t(title,:scope=>"menu").html_safe,path), :class => ((current_page?(path) ? "active" : nil )))
   end
   
   def sub_menu(title,*args,&block)
     return if !args.empty? and cannot? *args
     content_tag(:li,:class=>"dropdown","data-dropdown"=>"dropdown") do
-      link_to(title, "#",:class=>"dropdown-toggle") +
+      link_to("#{t(title,:scope=>"menu")} <b class=\"caret\"></b>".html_safe, "#",:class=>"dropdown-toggle","data-toggle"=>"dropdown") +
       content_tag(:ul,:class=>"dropdown-menu") do 
         yield if block_given?
       end

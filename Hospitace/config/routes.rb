@@ -2,6 +2,8 @@ Hospitace::Application.routes.draw do
 
 
 
+  get "test/index"
+
   mount Ckeditor::Engine => '/ckeditor'
 
   get "home/index"

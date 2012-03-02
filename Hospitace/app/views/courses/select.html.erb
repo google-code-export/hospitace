@@ -1,14 +1,14 @@
 <% title :courses, :small=>"vyberte si předmět"%>
 
-<%= simple_form_for :course do |f| %>
+<%= simple_form_for :course, :html => { :class => 'form-horizontal' } do |f| %>
 
   <%= render :layout => 'courses/datagrid', :locals => { :courses => @courses } do |course| %>
       <%= radio_button_tag :course_id, course.id  %>
   <% end  %>
 
   <div class="form-actions">
-	<%= f.submit "Vybrat", :class => 'btn btn-primary' %>
-	<%= button_tag 'Cancel', :type => :reset, :class => "btn" %>
+	<%= f.submit "Vybrat", :class => 'btn-primary' %>
+	<%#= button_tag 'Cancel', :type => :reset, :class => "btn" %>
   </div>
 
 <% end %>

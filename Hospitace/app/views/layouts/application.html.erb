@@ -13,33 +13,31 @@
     <header class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
-          <%= link_to t("Hospitace"), root_path, :class=>"brand" %>
+          <%= link_to "Hospitace", root_path, :class=>"brand" %>
           <ul class="nav">
-            <%= menu_item(:manage,my_observations_manage_path,:m_ob,Observation) %>
-            <%= menu_item(:observing,my_observations_observing_path,:observing,Observation) %>
-            <%= menu_item(:observations,observations_path,:index,Observation) %>
-
-            <%= menu_item(:users,users_path,:read,User) %>
+            <%= sub_menu(:observations,:index,Observation) do %>
+              <%= menu_item(:all,observations_path,:index,Observation) %>
+              <%= menu_item(:manage,my_observations_manage_path,:m_ob,Observation) %>
+              <%= menu_item(:observing,my_observations_observing_path,:observing,Observation) %>
+              <li class="divider"></li>
+              <%= menu_item(:create,new_observation_path,:create,Observation) %>
+            <% end %>
+            <%= sub_menu(:setting) do %>
+              <%= menu_item(:users,users_path,:read,User) %>
+              <%= menu_item(:forms,"#") %>
+            <% end %>
+            
             <%= menu_item(:peoples,peoples_path,:read,People) %>
             <%= menu_item(:courses,courses_path,:read,Course) %>
-            <%#= menu_item(:contact,'contact') %>
-            <li class="dropdown" id="test-menu">
-              <a data-toggle="dropdown" class="dropdown-toggle" href="#">Dropdown <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-              </ul>
-            </li>
           </ul>
-          <p class="pull-right">
-              <% if !current_user %>
-                <%= link_to t(:login,:scope=>"menu.user_session"), :login %>
-              <% else %>
-                <%= t(:logged_in_as,:scope=>"menu.user_session") %> <%= link_to current_user.login, edit_user_path(current_user.id) %> |
-                <%= link_to t(:logout,:scope=>"menu.user_session"), :logout %>
-              <% end %>
-          </p>
+          <div class="login pull-right">
+            <% if !current_user %>
+              <%= link_to t(:login,:scope=>"menu.user_session"), :login %>
+            <% else %>
+              <%= t(:logged_in_as,:scope=>"menu.user_session") %> <%= link_to current_user.login, edit_user_path(current_user.id) %> |
+              <%= link_to t(:logout,:scope=>"menu.user_session"), :logout %>
+            <% end %>
+          </div>
         </div>
       </div>
     </header>
@@ -53,7 +51,7 @@
 
       <div class="content">
         <div class="page-header">
-          
+
           <h1><%= @title.html_safe %></h1>
         </div>
         <div class="row">

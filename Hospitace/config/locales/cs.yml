@@ -33,12 +33,16 @@ cs:
       edit: Upravit
       
   menu:
+    forms: <i class="icon-list-alt"></i> Formuláře
+    create: "<i class=\"icon-plus\"></i> Vytvořit"
+    setting: "Nastavení"
+    all: "Přehled"
     home: "Domů"
     log_in: Přihlásit se
     contact: "Kontakt"
     observations: "Hospitace"
     peoples: "Lidé"
-    users: "Uživatelé"
+    users: "<i class=\"icon-user\"></i> Uživatelé"
     courses: "Předměty"
     manage: Spravované
     observing: Hospituji

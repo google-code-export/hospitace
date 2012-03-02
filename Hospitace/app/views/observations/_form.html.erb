@@ -1,10 +1,8 @@
 <%= simple_form_for(@observation,  :html => { :class => 'form-horizontal' }) do |f| %>
   <%= alert_message(f.error_notification, :warning) if f.error_notification %>
 
-
-  <%#= f.association :semester, :collection =>Semester.current_and_next.collect {|p| [p.name, p.id]},:value =>:code, :as => :select, :selected=>Semester.current %>
   <%= f.association :semester, :as=>:select, :collection=> Semester.current_and_next, :selected=>Semester.current %>
-  <%= f.association :course,:placeholder => 'Kód předmětu' , :hint => link_to("Nastavit předmět", "/observations/courses") %>
+  <%= f.association :course,:placeholder => 'Kód předmětu' , :hint => link_to("Najít předmět", "/observations/courses") %>
   <% if @observation.course.nil?  %>
     <%= f.association :parallel, :as=>:select, :disabled => true %>
   <% else %>
@@ -14,7 +12,7 @@
   <%= f.input :observation_type, :collection =>Observation::TYPES.collect {|i| [t(i),i]},  :as => :select, :selected=>Observation::TYPES[1], :required=>true %>
 
   <div class="form-actions">
-	<%= f.button :submit, :class => 'btn btn-primary' %>
-	<%= submit_tag 'Cancel', :type => :reset, :class => "btn btn-danger" %>
+	<%= f.button :submit, :class => 'btn-primary' %>
+	<%= submit_tag 'Cancel', :type => :reset, :class => "btn-danger" %>
   </div>
 <% end %>

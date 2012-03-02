@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120219124236) do
+ActiveRecord::Schema.define(:version => 20120225202345) do
 
   create_table "ckeditor_assets", :force => true do |t|
     t.string   "data_file_name",                  :null => false
@@ -51,6 +51,50 @@ ActiveRecord::Schema.define(:version => 20120219124236) do
     t.datetime "updated_at"
   end
 
+  create_table "entries", :force => true do |t|
+    t.text     "value"
+    t.integer  "entry_id"
+    t.integer  "form_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "entries", ["entry_id"], :name => "index_entries_on_entry_id"
+  add_index "entries", ["form_id"], :name => "index_entries_on_form_id"
+
+  create_table "entry_templates", :force => true do |t|
+    t.integer  "form_template_id"
+    t.boolean  "required"
+    t.string   "label"
+    t.string   "default"
+    t.string   "item_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "entry_templates", ["form_template_id"], :name => "index_entry_templates_on_form_template_id"
+
+  create_table "form_templates", :force => true do |t|
+    t.string   "code"
+    t.string   "name"
+    t.text     "description"
+    t.boolean  "required"
+    t.string   "count"
+    t.integer  "roles"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "forms", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "form_template_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "forms", ["form_template_id"], :name => "index_forms_on_form_template_id"
+  add_index "forms", ["user_id"], :name => "index_forms_on_user_id"
+
   create_table "notes", :force => true do |t|
     t.text     "note"
     t.integer  "user_id"
@@ -79,13 +123,11 @@ ActiveRecord::Schema.define(:version => 20120219124236) do
 
   create_table "parallels", :force => true do |t|
     t.string   "day"
-    t.time     "first_hour"
-    t.time     "last_hour"
-    t.string   "code"
-    t.string   "name"
+    t.integer  "first_hour"
+    t.integer  "last_hour"
     t.string   "number"
     t.string   "parity"
-    t.string   "type"
+    t.string   "parallel_type"
     t.integer  "room_id"
     t.integer  "course_instance_id"
     t.datetime "created_at"
