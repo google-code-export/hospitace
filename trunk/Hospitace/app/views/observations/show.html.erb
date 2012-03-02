@@ -3,7 +3,7 @@
 
 <%
   time = parallel_time(@parallel) unless @parallel.nil?
-  date = @observation.date && l(@observation.date,:format=>"%d. %m. %Y, %R") 
+  date = @observation.date && l(@observation.date,:format=>"%d. %m. %Y") 
   room = @parallel.room.code unless @parallel.nil? || @parallel.room.nil?
   teachers = full_url_peoples(@parallel.teachers) unless @parallel.nil?
 %>

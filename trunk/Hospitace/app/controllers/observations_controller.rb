@@ -94,7 +94,7 @@ class ObservationsController < ApplicationController
   # PUT /observations/1.json
   def update
     @observation = Observation.find(params[:id])
-    puts params[:observation].inspect
+    @observation.date = nil
     respond_to do |format|
       if @observation.update_attributes(params[:observation])
         format.html { redirect_to @observation, notice: 'Hospitace byla úspěšně upravená.' }

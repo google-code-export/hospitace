@@ -1,1 +1,221 @@
-$.QueryString=function(a){if(a=="")return{};var b={};for(var c=0;c<a.length;++c){var d=a[c].split("=");if(d.length!=2)continue;b[d[0]]=decodeURIComponent(d[1].replace(/\+/g," "))}return b}(window.location.search.substr(1).split("&")),$(document).ready(function(){$("div.gal-item div.gal-inner-holder").live("mouseover",function(a){$(this).addClass("hover")}).live("mouseout",function(a){$(this).removeClass("hover")}).live("click",function(a){var b=$(this).parents("div.gal-item").data("url");CKEDITOR.tools.callFunction(CKEditorFuncNum,b),window.close()}),$("div.gal-item a.gal-del").live("ajax:complete",function(a,b){$(this).parents("div.gal-item").remove()})}),qq.FileUploader.instances=new Object,qq.FileUploaderInput=function(a){qq.FileUploaderBasic.apply(this,arguments),qq.extend(this._options,{element:null,listElement:null,template_id:"#fileupload_tmpl",classes:{button:"fileupload-button",drop:"fileupload-drop-area",dropActive:"fileupload-drop-area-active",list:"fileupload-list",preview:"fileupload-preview",file:"fileupload-file",spinner:"fileupload-spinner",size:"fileupload-size",cancel:"fileupload-cancel",success:"fileupload-success",fail:"fileupload-fail"}}),qq.extend(this._options,a),this._element=document.getElementById(this._options.element),this._listElement=this._options.listElement||this._find(this._element,"list"),this._classes=this._options.classes,this._button=this._createUploadButton(this._find(this._element,"button")),this._path=$('meta[name="ckeditor-path"]').attr("content"),qq.FileUploader.instances[this._element.id]=this},qq.extend(qq.FileUploaderInput.prototype,qq.FileUploaderBasic.prototype),qq.extend(qq.FileUploaderInput.prototype,{_find:function(a,b){var c=qq.getByClass(a,this._options.classes[b])[0];if(!c)throw alert(b),new Error("element not found "+b);return c},_setupDragDrop:function(){var a=this,b=this._find(this._element,"drop"),c=new qq.UploadDropZone({element:b,onEnter:function(c){qq.addClass(b,a._classes.dropActive),c.stopPropagation()},onLeave:function(a){a.stopPropagation()},onLeaveNotDescendants:function(c){qq.removeClass(b,a._classes.dropActive)},onDrop:function(c){b.style.display="none",qq.removeClass(b,a._classes.dropActive),a._uploadFileList(c.dataTransfer.files)}});b.style.display="none",qq.attach(document,"dragenter",function(a){if(!c._isValidFileDrag(a))return;b.style.display="block"}),qq.attach(document,"dragleave",function(a){if(!c._isValidFileDrag(a))return;var d=document.elementFromPoint(a.clientX,a.clientY);if(!d||d.nodeName=="HTML")b.style.display="none"})},_onSubmit:function(a,b){qq.FileUploaderBasic.prototype._onSubmit.apply(this,arguments),this._addToList(a,b)},_onProgress:function(a,b,c,d){qq.FileUploaderBasic.prototype._onProgress.apply(this,arguments);var e=this._getItemByFileId(a),f=this._find(e,"size"),g;c!=d?g=Math.round(c/d*100)+"% from "+this._formatSize(d):g=this._formatSize(d),qq.setText(f,g)},_onComplete:function(a,b,c){qq.FileUploaderBasic.prototype._onComplete.apply(this,arguments);var d=this._getItemByFileId(a),e=c.asset?c.asset:c;e&&e.id?(qq.addClass(d,this._classes.success),e.size=this._formatSize(e.size),e.controller=e.type.toLowerCase()=="ckeditor::picture"?"pictures":"attachment_files",$(d).replaceWith($(this._options.template_id).tmpl(e))):qq.addClass(d,this._classes.fail)},_addToList:function(a,b){if(this._listElement){this._options.multiple===!1&&$(this._listElement).empty();var c={id:0,filename:this._formatFileName(b),size:0,format_created_at:"",url_content:"#",controller:"assets",url_thumb:this._path+"/filebrowser/images/preloader.gif"},d=$(this._options.template_id).tmpl(c).attr("qqfileid",a).prependTo(this._listElement);d.find("div.img").addClass("preloader"),this._bindCancelEvent(d)}},_getItemByFileId:function(a){return $(this._listElement).find("div[qqfileid="+a+"]").get(0)},_bindCancelEvent:function(a){var b=this,c=$(a);c.find("a."+this._classes.cancel).bind("click",function(a){return b._handler.cancel(c.attr("qqfileid")),c.remove(),qq.preventDefault(a),!1})}})
+$.QueryString = (function(a) {
+  if (a == "") return {};
+  var b = {};
+  for (var i = 0; i < a.length; ++i)
+  {
+    var p=a[i].split('=');
+    if (p.length != 2) continue;
+    b[p[0]] = decodeURIComponent(p[1].replace(/\+/g, " "));
+  }
+  return b;
+})(window.location.search.substr(1).split('&'))
+
+$(document).ready(function(){
+  $("div.gal-item div.gal-inner-holder")
+    .live('mouseover', function(e){
+      $(this).addClass('hover');
+    })
+    .live('mouseout', function(e){
+      $(this).removeClass('hover');
+    })
+    .live('click', function(e){
+      var url = $(this).parents('div.gal-item').data('url');
+      CKEDITOR.tools.callFunction(CKEditorFuncNum, url);
+      window.close();
+    });
+  
+  $("div.gal-item a.gal-del").live('ajax:complete', function(xhr, status){
+    $(this).parents('div.gal-item').remove();
+  });
+});
+
+// Collection of all instances on page
+qq.FileUploader.instances = new Object();
+
+/**
+ * Class that creates upload widget with drag-and-drop and file list
+ * @inherits qq.FileUploaderBasic
+ */
+qq.FileUploaderInput = function(o){
+    // call parent constructor
+    qq.FileUploaderBasic.apply(this, arguments);
+    
+    // additional options    
+    qq.extend(this._options, {
+        element: null,
+        // if set, will be used instead of qq-upload-list in template
+        listElement: null,
+        
+        template_id: '#fileupload_tmpl',       
+        
+        classes: {
+            // used to get elements from templates
+            button: 'fileupload-button',
+            drop: 'fileupload-drop-area',
+            dropActive: 'fileupload-drop-area-active',
+            list: 'fileupload-list',
+            preview: 'fileupload-preview',
+                        
+            file: 'fileupload-file',
+            spinner: 'fileupload-spinner',
+            size: 'fileupload-size',
+            cancel: 'fileupload-cancel',
+
+            // added to list item when upload completes
+            // used in css to hide progress spinner
+            success: 'fileupload-success',
+            fail: 'fileupload-fail'
+        }
+    });
+    // overwrite options with user supplied    
+    qq.extend(this._options, o);       
+
+    this._element = document.getElementById(this._options.element);
+    this._listElement = this._options.listElement || this._find(this._element, 'list');
+    
+    this._classes = this._options.classes;
+        
+    this._button = this._createUploadButton(this._find(this._element, 'button'));  
+    this._path = $('meta[name="ckeditor-path"]').attr('content');
+    
+    //this._setupDragDrop();
+    
+    qq.FileUploader.instances[this._element.id] = this;
+};
+
+// inherit from Basic Uploader
+qq.extend(qq.FileUploaderInput.prototype, qq.FileUploaderBasic.prototype);
+
+qq.extend(qq.FileUploaderInput.prototype, {
+    /**
+     * Gets one of the elements listed in this._options.classes
+     **/
+    _find: function(parent, type){                                
+        var element = qq.getByClass(parent, this._options.classes[type])[0];        
+        if (!element){
+          alert(type);
+            throw new Error('element not found ' + type);
+        }
+        
+        return element;
+    },
+    _setupDragDrop: function(){
+        var self = this,
+            dropArea = this._find(this._element, 'drop');                        
+
+        var dz = new qq.UploadDropZone({
+            element: dropArea,
+            onEnter: function(e){
+                qq.addClass(dropArea, self._classes.dropActive);
+                e.stopPropagation();
+            },
+            onLeave: function(e){
+                e.stopPropagation();
+            },
+            onLeaveNotDescendants: function(e){
+                qq.removeClass(dropArea, self._classes.dropActive);  
+            },
+            onDrop: function(e){
+                dropArea.style.display = 'none';
+                qq.removeClass(dropArea, self._classes.dropActive);
+                self._uploadFileList(e.dataTransfer.files);    
+            }
+        });
+                
+        dropArea.style.display = 'none';
+
+        qq.attach(document, 'dragenter', function(e){     
+            if (!dz._isValidFileDrag(e)) return; 
+            
+            dropArea.style.display = 'block';            
+        });                 
+        qq.attach(document, 'dragleave', function(e){
+            if (!dz._isValidFileDrag(e)) return;            
+            
+            var relatedTarget = document.elementFromPoint(e.clientX, e.clientY);
+            // only fire when leaving document out
+            if ( ! relatedTarget || relatedTarget.nodeName == "HTML"){               
+                dropArea.style.display = 'none';                                            
+            }
+        });                
+    },
+    _onSubmit: function(id, fileName){
+        qq.FileUploaderBasic.prototype._onSubmit.apply(this, arguments);
+        this._addToList(id, fileName);  
+    },
+    _onProgress: function(id, fileName, loaded, total){
+        qq.FileUploaderBasic.prototype._onProgress.apply(this, arguments);
+
+        var item = this._getItemByFileId(id);
+        var size = this._find(item, 'size');
+        
+        var text; 
+        if (loaded != total){
+            text = Math.round(loaded / total * 100) + '% from ' + this._formatSize(total);
+        } else {                                   
+            text = this._formatSize(total);
+        }          
+        
+        qq.setText(size, text);
+    },
+    _onComplete: function(id, fileName, result){
+        qq.FileUploaderBasic.prototype._onComplete.apply(this, arguments);
+
+        var item = this._getItemByFileId(id);
+        var asset = result.asset ? result.asset : result;
+        
+        if (asset && asset.id){
+            qq.addClass(item, this._classes.success);
+            
+            asset.size = this._formatSize(asset.size);
+            asset.controller = (asset.type.toLowerCase() == "ckeditor::picture" ? "pictures" : "attachment_files");
+            
+            $(item).replaceWith($(this._options.template_id).tmpl(asset));
+        } else {
+            qq.addClass(item, this._classes.fail);
+        }
+    },
+    _addToList: function(id, fileName){
+        if (this._listElement) {
+          if (this._options.multiple === false) {
+            $(this._listElement).empty();
+          }
+          
+          var asset = {
+            id: 0, 
+            filename: this._formatFileName(fileName), 
+            size: 0,
+            format_created_at: '',
+            url_content: "#",
+            controller: "assets",
+            url_thumb: this._path + "/filebrowser/images/preloader.gif"
+          };
+          
+          var item = $(this._options.template_id)
+            .tmpl(asset)
+            .attr('qqfileid', id)
+            .prependTo( this._listElement );
+          
+          item.find('div.img').addClass('preloader');
+          
+          this._bindCancelEvent(item);
+        }
+    },
+    _getItemByFileId: function(id){
+        return $(this._listElement).find('div[qqfileid=' + id  +']').get(0); 
+    },
+    /**
+     * delegate click event for cancel link 
+     **/
+    _bindCancelEvent: function(element){
+        var self = this,
+            item = $(element);        
+        
+        item.find('a.' + this._classes.cancel).bind('click', function(e){
+          self._handler.cancel( item.attr('qqfileid') );
+          item.remove();
+          qq.preventDefault(e);
+          return false;
+        });
+    }
+});

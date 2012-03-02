@@ -8,7 +8,7 @@
 <br />
 
 <% if can?(:update,@observation) %>
-  <div class="actions">
-    <%= link_to t(:add_observer), new_observation_observer_path(@observation), :class=>"btn primary" %>
+  <div class="form-actions">
+    <%= link_to t(:add_observer), new_observation_observer_path(@observation), :class=>"btn btn-primary" %>
   </div>
 <% end %>

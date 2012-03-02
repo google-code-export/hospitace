@@ -2,6 +2,9 @@
 # and open the template in the editor.
 
 module KOSapi
+  
+  require File.dirname(__FILE__) + '/i18n/translator'
+  
   module ModelHelpers  
     
     def self.included(base)

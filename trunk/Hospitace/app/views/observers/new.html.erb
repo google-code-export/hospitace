@@ -2,16 +2,16 @@
 
 <% title :users, :small=>"vyberte uživatele"%>
 
-<%= simple_form_for [@observation,@observer] do |f| %>
+<%= simple_form_for [@observation,@observer],:html => { :class => 'form-horizontal' } do |f| %>
   <%= alert_message(f.error_notification, :warning) if f.error_notification %>
 
   <%= render :layout => 'users/datagrid', :locals => { :users => @users } do |user| %>
       <%= radio_button :observer,:user_id, user.id  %>
   <% end  %>
 
-  <div class="actions">
-	<%= f.submit "Vybrat", :class => 'btn primary' %>
-	<%= button_tag 'Cancel', :type => :reset, :class => "btn" %>
+  <div class="form-actions">
+	<%= f.submit "Vybrat", :class => 'btn btn-primary' %>
+	<%#= button_tag 'Cancel', :type => :reset, :class => "btn" %>
   </div>
 
 <% end %>

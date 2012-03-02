@@ -20,23 +20,23 @@ $(function () {
     // Sorting and pagination links.  
     $('#datagrid .pagination a').live('click',   
         function () {  
-        	console.log($.getScript(this.href));
+            console.log($.getScript(this.href));
             $.getScript(this.href);  
             return false;  
         }  
-    ); 
+        ); 
     
     $('#datagrid th').live('click',   
         function () {  
             $.getScript($(this).find("a")[0].href)  
             return false;  
         }  
-    );   
+        );   
     
     // Search form.  
     $('#search_form').submit(function () {  
         $.get($('#search_form').attr('action'),  
-        $('#search_form').serialize(), null, 'script');  
+            $('#search_form').serialize(), null, 'script');  
         return false;  
     }); 
     
@@ -49,9 +49,8 @@ $(function () {
     );
         
     $('#datagrid tbody tr').live('click',function(){
-        console.log("sssss");
         $('#datagrid tbody tr').each(function(index){
-           $(this).removeClass("market");
+            $(this).removeClass("market");
         });
         if($(this).find('input:radio').length == 1){
             $(this).addClass("market");
@@ -60,5 +59,18 @@ $(function () {
     }); 
     
     $('.dropdown-toggle').dropdown()
+    
+    $('input[name$="active"]').change(function(){
+        var s = $(this).parent().parent().find('select');
+        if($(this).attr('checked')){
+            $(this).parent().addClass("active");
+            s.removeAttr('disabled');
+            s.removeClass('disabled');
+        }else{
+            $(this).parent().removeClass("active");
+            s.attr('disabled', 'disabled');
+            s.addClass("disabled");
+        }
+    })
 })  
 

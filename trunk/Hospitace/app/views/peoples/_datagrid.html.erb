@@ -6,7 +6,7 @@
 		<h3>Filter</h3>
 	</div>	
 	
-	<%= simple_form_for :search,:html=> {:id=>"search_form"},:method=>:get,:wrapper => :inline do |f| %>
+	<%= simple_form_for :search,:html=> {:id=>"search_form", :class => 'form-horizontal form-search'},:method=>:get do |f| %>
 	
 	<%= hidden_field_tag :direction, params[:direction] %>
 	<%= hidden_field_tag :sort, params[:sort] %>
@@ -15,7 +15,7 @@
 	<%= f.input :username, :placeholder => 'login', :required => false %>
 	<%= f.input :email, :placeholder => 'login@fel.cvut.cz', :required => false %>
 
-	<%= f.input :teacher, :wrapper=>:label_wrapped, :required => false,:as => :boolean %>
+	<%= f.input :teacher, :required => false,:as => :boolean %>
 	
 	
 	<div class="form-actions">
