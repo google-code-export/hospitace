@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  teacher: MyString
+  course: MyString
+  guarant: MyString
+  room: MyString
+  datetime_observation: 2012-03-03 15:30:14
+
+two:
+  teacher: MyString
+  course: MyString
+  guarant: MyString
+  room: MyString
+  datetime_observation: 2012-03-03 15:30:14

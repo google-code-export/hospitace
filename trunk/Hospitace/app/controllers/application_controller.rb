@@ -17,14 +17,50 @@ class ApplicationController < ActionController::Base
     @semester = Semester.current
   end
   
-  private
-    def current_user_session
-      return @current_user_session if defined?(@current_user_session)
-      @current_user_session = UserSession.find
+  def save_dynamic_form(params)
+    form = Form.new
+    form.user = current_user
+    
+    entries = []
+    
+    params[:form].each do |key,value|
+      case key
+        when "form_template_id"
+            form.form_template_id = value
+
+        when "evaluation_id"
+            form.evaluation_id = value
+            
+        else
+          entry = Entry.new
+          entry.form = form
+          entry.entry_template_id = key.to_i
+          entry.value = value
+          entries.push(entry)
+      end  
     end
     
-    def current_user
-      return @current_user if defined?(@current_user)
-      @current_user = current_user_session && current_user_session.record
+    
+    begin
+      ActiveRecord::Base.transaction do
+        form.save!
+        entries.each { |item| item.save!  }
+      end
+    rescue ActiveRecord::RecordInvalid => invalid
+      return false
     end
+    true
+  end
+  
+  
+  private
+  def current_user_session
+    return @current_user_session if defined?(@current_user_session)
+    @current_user_session = UserSession.find
+  end
+    
+  def current_user
+    return @current_user if defined?(@current_user)
+    @current_user = current_user_session && current_user_session.record
+  end
 end

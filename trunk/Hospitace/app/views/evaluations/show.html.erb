@@ -1,0 +1,13 @@
+<% title :evaluation, :small=>"z výuky #{@observation.course.name} (#{@observation.course.code})" %>
+
+<%= show_item(Evaluation.human_attribute_name(:teacher), @evaluation.teacher) %>
+
+<%= show_item(Evaluation.human_attribute_name(:guarant), @evaluation.guarant) %>
+
+<%= show_item(Evaluation.human_attribute_name(:course), @evaluation.course) %>
+
+<%= show_item(Evaluation.human_attribute_name(:room), @evaluation.room) %>
+
+<%= show_item(Evaluation.human_attribute_name(:datetime_observation), l(@evaluation.datetime_observation,:format=>:long)) %>
+
+<%= show_item(Evaluation.human_attribute_name(:created_at), l(@evaluation.created_at,:format=>:long)) %>

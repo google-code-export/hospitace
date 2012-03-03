@@ -3,7 +3,7 @@ class CreateForms < ActiveRecord::Migration
     create_table :forms do |t|
       t.references :user
       t.references :form_template
-
+      
       t.timestamps
     end
     add_index :forms, :user_id

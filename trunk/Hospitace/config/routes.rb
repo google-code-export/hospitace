@@ -1,13 +1,19 @@
 Hospitace::Application.routes.draw do
 
+  get "documents/a"
 
+  get "documents/b"
+
+  get "documents/c"
+
+  get "documents/d"
 
   get "test/index"
 
   mount Ckeditor::Engine => '/ckeditor'
 
   get "home/index"
-  get "contact" => 'contact#contact'
+  #get "contact" => 'contact#contact'
   
   get "observed" => 'my_observations#observed', :as=> :my_observations_observed
   get "manage" => 'my_observations#manage', :as=> :my_observations_manage
@@ -15,6 +21,16 @@ Hospitace::Application.routes.draw do
   
   resources :users
   resources :notes
+  resources :attachments
+  resources :documents
+  
+  resources :evaluations do
+    match "a" => 'documents#a', :as=>:a
+    match "b" => 'documents#b',:as=>:b
+    match "c" => 'documents#c',:as=>:c
+    match "d" => 'documents#d',:as=>:d
+    resources :attachments
+  end
 
   match 'observations/:id/date' => 'observations#date', :via => [:get, :post], :as => :observation_date
   
@@ -23,6 +39,7 @@ Hospitace::Application.routes.draw do
     #match "date" => 'observations#date', :via => [:get, :post], :on=>:member,:as => :date
     resources :notes
     resources :observers, :only=> [:index, :new, :create, :destroy]
+    resources :evaluations
   end
 
 
