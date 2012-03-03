@@ -53,7 +53,6 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(params[:user])
-    puts params[:user].inspect
     respond_to do |format|
       if @user.save
         format.html { redirect_to @user, notice: 'Uživatel byl úspěšně vytvořen.' }

@@ -13,7 +13,7 @@
     <header class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
-          <%= link_to "Hospitace", root_path, :class=>"brand" %>
+          <%= link_to "Kontrola kvality výuky", root_path, :class=>"brand" %>
           <ul class="nav">
             <%= sub_menu(:observations,:index,Observation) do %>
               <%= menu_item(:all,observations_path,:index,Observation) %>
@@ -21,6 +21,10 @@
               <%= menu_item(:observing,my_observations_observing_path,:observing,Observation) %>
               <li class="divider"></li>
               <%= menu_item(:create,new_observation_path,:create,Observation) %>
+            <% end %>
+            <%= sub_menu(:evaluations) do %>
+              <%= menu_item(:all,"#") %>
+              <%= menu_item("napsat","#") %>
             <% end %>
             <%= sub_menu(:setting) do %>
               <%= menu_item(:users,users_path,:read,User) %>

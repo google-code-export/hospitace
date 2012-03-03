@@ -11,7 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120225202345) do
+ActiveRecord::Schema.define(:version => 20120303200426) do
+
+  create_table "attachments", :force => true do |t|
+    t.string   "filename"
+    t.string   "content_type"
+    t.binary   "data"
+    t.integer  "evaluation_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "attachments", ["evaluation_id"], :name => "index_attachments_on_evaluation_id"
 
   create_table "ckeditor_assets", :force => true do |t|
     t.string   "data_file_name",                  :null => false
@@ -57,9 +68,11 @@ ActiveRecord::Schema.define(:version => 20120225202345) do
     t.integer  "form_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "entry_template_id"
   end
 
   add_index "entries", ["entry_id"], :name => "index_entries_on_entry_id"
+  add_index "entries", ["entry_template_id"], :name => "index_entries_on_entry_template_id"
   add_index "entries", ["form_id"], :name => "index_entries_on_form_id"
 
   create_table "entry_templates", :force => true do |t|
@@ -70,9 +83,23 @@ ActiveRecord::Schema.define(:version => 20120225202345) do
     t.string   "item_type"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "template_order"
+    t.integer  "entry_template_id"
   end
 
+  add_index "entry_templates", ["entry_template_id"], :name => "index_entry_templates_on_entry_template_id"
   add_index "entry_templates", ["form_template_id"], :name => "index_entry_templates_on_form_template_id"
+
+  create_table "evaluations", :force => true do |t|
+    t.integer  "observation_id"
+    t.string   "teacher"
+    t.string   "course"
+    t.string   "guarant"
+    t.string   "room"
+    t.datetime "datetime_observation"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "form_templates", :force => true do |t|
     t.string   "code"
@@ -90,8 +117,10 @@ ActiveRecord::Schema.define(:version => 20120225202345) do
     t.integer  "form_template_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "evaluation_id"
   end
 
+  add_index "forms", ["evaluation_id"], :name => "index_forms_on_evaluation_id"
   add_index "forms", ["form_template_id"], :name => "index_forms_on_form_template_id"
   add_index "forms", ["user_id"], :name => "index_forms_on_user_id"
 

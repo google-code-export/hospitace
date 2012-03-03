@@ -2,10 +2,21 @@
 
 <% content_for :content do %>
   <ul class="nav nav-tabs">
-  <%= tab_item(:info,@observation) if can? :show, @observation %> 
-  <%= tab_item(:observation_date,observation_date_path(@observation)) if can? :manage, @observation %> 
-  <%= tab_item(:observers,observation_observers_path(@observation)) if can? :manage, @observation %> 
-  <%= tab_item(:notes,observation_notes_path(@observation)) if can? :show, @observation %> 
+    <%= tab_item(:info,@observation) if can? :show, @observation %> 
+    <%= tab_item(:observation_date,observation_date_path(@observation)) if can? :manage, @observation %> 
+    <%= tab_item(:observers,observation_observers_path(@observation)) if can? :manage, @observation %> 
+    <%= tab_item(:notes,observation_notes_path(@observation)) if can? :show, @observation %> 
+    <% if @observation.evaluation.nil? %>
+      <%= tab_item(:start_evaluation,new_observation_evaluation_path(@observation)) if can? :create, Evaluation %> 
+    <% else %>
+      <%= sub_menu(:evaluation) do  %> 
+        <%#= menu_item(:evaluation,observation_evaluation_path(@observation,@observation.evaluation)) %>
+        <%= menu_item(:protocol,evaluation_a_path(@observation.evaluation)) %>
+        <%= menu_item(:verbal_evaluation,evaluation_b_path(@observation.evaluation)) %>
+        <%= menu_item(:opinion,evaluation_c_path(@observation.evaluation)) %>
+        <%= menu_item(:final_report,evaluation_d_path(@observation.evaluation),:read,User) %>
+      <% end %>
+    <% end %> 
   </ul>
   <%= message( t("observation.warning"),@observation.state.long_message,@observation.state.actions) if !@observation.state.ok? && can?(:update,@observation) %>
   <%= content_for?(:news_content) ? yield(:news_content) : yield %>

@@ -27,6 +27,7 @@ cs:
       manage_observations: Spravované hospitace
       observed_observations: Hospitován
       contact: Kontakt
+      evaluation: Hodnocení
     action:
       new_observation: Vytvořit hospitaci
       new_user: Vytvořit uživatele
@@ -43,9 +44,12 @@ cs:
     observations: "Hospitace"
     peoples: "Lidé"
     users: "<i class=\"icon-user\"></i> Uživatelé"
+    evaluation: <i class="icon-file"></i> Hodnocení
     courses: "Předměty"
     manage: Spravované
     observing: Hospituji
+    evaluations: Hodnocení
+    
     user_session:
       login: "Přihlásit se"
       logout: "Odhlásit"
@@ -53,10 +57,17 @@ cs:
       logged_in_as: "Přihlášen jako"
   
   tabs:
-    info: Detail
-    observation_date: Naplánování
-    observers: Hospitující
-    notes: Poznámky
+    info: <i class="icon-info-sign"></i> Detail
+    observation_date: <i class="icon-calendar"></i> Naplánování
+    observers: <i class="icon-user"></i> Hospitující
+    notes: <i class="icon-comment"></i> Poznámky
+    evaluation: <i class="icon-file"></i> Hodnocení
+    start_evaluation: <i class="icon-plus-sign"></i> Zahájit hodnocení
+    protocol: <i class="icon-file"></i> Protokol z hospitace
+    verbal_evaluation: <i class="icon-file"></i> Slovní hodnocení
+    opinion: <i class="icon-file"></i> Stanovisko učitele
+    final_report: <i class="icon-file"></i> Závěrečné shrnutí
+    attachments: <i class="icon-folder-open"></i> Přílohy
     
   message:
     type:
@@ -151,6 +162,7 @@ cs:
       observer: "Hospitující"
       note: "poznámka"
       user_session: UserSession 
+      evaluation: "Hodnocení"
     attributes:
       user:
         login: "Uživatelské jméno"
@@ -171,3 +183,11 @@ cs:
         observed: Hospitovaný
         date_and_time: Datum a čas
         semester: Semestr
+      evaluation:
+        teacher: Jméno vyučujícího
+        course: Předmět
+        datetime_observation: Datum a čas výuky
+        create_at: Datum, čas vyplnění
+        guarant: Zodpovědný za předmět
+        room: Učebna
+        

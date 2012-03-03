@@ -23,7 +23,7 @@ module ApplicationHelper
   
   def tab_item(title,path,*args)
     return if !args.empty? and cannot? *args
-    content_tag(:li,link_to(t(title,:scope=>"tabs"),path), :class => ((current_page?(path) ? "active" : nil )))
+    content_tag(:li,link_to(t(title,:scope=>"tabs").html_safe,path), :class => ((current_page?(path) ? "active" : nil )))
   end
 
   def show_item(title,value,*args)
