@@ -1,7 +1,0 @@
-<% title :evaluation, :small=>"z výuky #{@observation.course.name} (#{@observation.course.code})" %>
-
-<% unless Form.find_by_form_template_id(4,@evaluation.id).nil? %>
-  <%= draw_dynamic_form(4,@evaluation.id) %>
-<% else %>
-  <%= dynamic_form(4,@evaluation.id,  :html => { :class => 'form-vertical' }) %>
-<% end %>
