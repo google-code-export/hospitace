@@ -107,7 +107,7 @@ ActiveRecord::Schema.define(:version => 20120303200426) do
     t.text     "description"
     t.boolean  "required"
     t.string   "count"
-    t.integer  "roles"
+    t.integer  "roles_mask"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

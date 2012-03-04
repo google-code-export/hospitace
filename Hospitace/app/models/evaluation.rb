@@ -1,7 +1,6 @@
 class Evaluation < ActiveRecord::Base
-  belongs_to :observation
-  has_many :evaluation
-  
+  belongs_to :observation 
+  has_many :forms, :dependent => :destroy
   
   validates :observation, :presence => true
   validates :teacher, :presence => true

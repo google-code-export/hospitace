@@ -6,7 +6,7 @@ class CreateFormTemplates < ActiveRecord::Migration
       t.text :description
       t.boolean :required
       t.string :count
-      t.integer :roles
+      t.integer :roles_mask
 
       t.timestamps
     end

@@ -63,11 +63,13 @@ cs:
     notes: <i class="icon-comment"></i> Poznámky
     evaluation: <i class="icon-file"></i> Hodnocení
     start_evaluation: <i class="icon-plus-sign"></i> Zahájit hodnocení
-    protocol: <i class="icon-file"></i> Protokol z hospitace
+    protocol: <i class="icon-file"></i> Protokoly z hospitace
+    protocol_new: <i class="icon-plus-sign"></i> Protokoly z hospitace
     verbal_evaluation: <i class="icon-file"></i> Slovní hodnocení
     opinion: <i class="icon-file"></i> Stanovisko učitele
     final_report: <i class="icon-file"></i> Závěrečné shrnutí
     attachments: <i class="icon-folder-open"></i> Přílohy
+    observation: <i class="icon-info-sign"></i> Hospitace
     
   message:
     type:
@@ -187,7 +189,7 @@ cs:
         teacher: Jméno vyučujícího
         course: Předmět
         datetime_observation: Datum a čas výuky
-        create_at: Datum, čas vyplnění
+        created_at: Datum, čas vyplnění
         guarant: Zodpovědný za předmět
         room: Učebna
         

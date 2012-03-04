@@ -15,7 +15,7 @@ class Observation < ActiveRecord::Base
   has_many :observers, :dependent => :destroy
   has_many :users, :through => :observers
   has_many :notes, :dependent => :destroy
-  has_one  :evaluation
+  has_one  :evaluation, :dependent => :destroy
 
   validates :course, :presence => true
   validates :semester, :presence => true

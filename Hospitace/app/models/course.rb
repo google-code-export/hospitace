@@ -20,6 +20,7 @@ class Course < ActiveRecord::Base
   end
   
   def parallels(s=nil)
+    return [] if instance.nil?
     instance.parallels
   end
   

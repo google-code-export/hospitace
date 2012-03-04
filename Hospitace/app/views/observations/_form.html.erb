@@ -1,5 +1,5 @@
 <%= simple_form_for(@observation,  :html => { :class => 'form-horizontal' }) do |f| %>
-  <%= alert_message(f.error_notification, :warning) if f.error_notification %>
+  <%= f.error_notification %>
 
   <%= f.association :semester, :as=>:select, :collection=> Semester.current_and_next, :selected=>Semester.current %>
   <%= f.association :course,:placeholder => 'Kód předmětu' , :hint => link_to("Najít předmět", "/observations/courses") %>

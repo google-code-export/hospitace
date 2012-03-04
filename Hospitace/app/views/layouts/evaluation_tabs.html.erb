@@ -1,13 +1,22 @@
 
 <% content_for :content do %>
   <ul class="nav nav-tabs">
-        <%= tab_item(:info,@evaluation) if can? :show, @observation %> 
-        <%= tab_item(:attachments,evaluation_attachments_path(@evaluation)) if can? :show, @observation %> 
-          
-        <%= tab_item(:protocol,evaluation_a_path(@evaluation)) %>
-        <%= tab_item(:verbal_evaluation,evaluation_b_path(@evaluation)) %>
-        <%= tab_item(:opinion,evaluation_c_path(@evaluation)) %>
-        <%= tab_item(:final_report,evaluation_d_path(@evaluation),:read,User) %>
+        <%= tab_item(:observation,@evaluation) if can? :show, @evaluation %> 
+        <%#= tab_item(:attachments,evaluation_attachments_path(@evaluation)) if can? :show, @observation %> 
+        
+        <% FormTemplate.all.each do |template| %>
+          <% if template.forms.where(:evaluation_id => @evaluation.id).any? %>
+            <% form = template.forms.create({:evaluation_id=>@evaluation.id}) %>
+            <%= tab_item(:protocol_new,new_evaluation_form_path(@evaluation,template.code))%>
+          <% else %>
+            <%= tab_item(:protocol,evaluation_form_path(@evaluation,template.code))%>
+          <% end %>
+  
+        <% end %>
+    
+        <%#= tab_item(:verbal_evaluation,evaluation_b_path(@evaluation)) if can? :verbal_evaluation, "Document" %>
+        <%#= tab_item(:opinion,evaluation_c_path(@evaluation)) if can? :opinion, "Document" %>
+        <%#= tab_item(:final_report,evaluation_d_path(@evaluation),:read,User) if can? :final_report, "Document" %>
   </ul>
   <%= message( t("observation.warning"),@observation.state.long_message,@observation.state.actions) if !@observation.state.ok? && can?(:update,@observation) %>
   <%= content_for?(:news_content) ? yield(:news_content) : yield %>
