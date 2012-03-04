@@ -19,20 +19,23 @@
               <%= menu_item(:all,observations_path,:index,Observation) %>
               <%= menu_item(:manage,my_observations_manage_path,:m_ob,Observation) %>
               <%= menu_item(:observing,my_observations_observing_path,:observing,Observation) %>
-              <li class="divider"></li>
+              
               <%= menu_item(:create,new_observation_path,:create,Observation) %>
             <% end %>
             <%= sub_menu(:evaluations) do %>
               <%= menu_item(:all,"#") %>
               <%= menu_item("napsat","#") %>
             <% end %>
-            <%= sub_menu(:setting) do %>
-              <%= menu_item(:users,users_path,:read,User) %>
-              <%= menu_item(:forms,"#") %>
+            <%= sub_menu(:setting,:setting,"Setting") do %>
+              <%= menu_item(:users,users_path,:manage,User) %>
+              <%= menu_item(:forms,"#",:manage,FormTemplate) %>
+              <li class="divider"></li>
+              <%#*<li class="nav-header">Data z kosu</li>%>
+              <%= menu_item(:peoples,peoples_path,:read,People) %>
+              <%= menu_item(:courses,courses_path,:read,Course) %>
             <% end %>
             
-            <%= menu_item(:peoples,peoples_path,:read,People) %>
-            <%= menu_item(:courses,courses_path,:read,Course) %>
+            
           </ul>
           <div class="login pull-right">
             <% if !current_user %>

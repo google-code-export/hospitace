@@ -2,7 +2,7 @@
 
 class EvaluationsController < ApplicationController
   load_and_authorize_resource
-  
+
   # GET /users/1
   # GET /users/1.json
   def show
@@ -20,15 +20,15 @@ class EvaluationsController < ApplicationController
     @observation = Observation.find params[:observation_id]
     @evaluation = Evaluation.new({
         :observation_id => params[:observation_id],
-        :teacher => @observation.parallel.teachers.first.full_name,
-        :guarant => @observation.instance.guarantors.first.full_name,
-        :course  => @observation.course.code,
-        :room  => @observation.parallel.room.code ,
+        :teacher => teacher,
+        :guarant => guarantor,
+        :course  => course,
+        :room  => room,
         :datetime_observation => @observation.date
-    })
+      })
     
     respond_to do |format|
-      format.html { render :layout=>"evaluation_tabs"}
+      format.html { render :layout=>"tabs"}
       format.json { render json: @evaluation }
     end
   end
@@ -50,7 +50,7 @@ class EvaluationsController < ApplicationController
         format.html { redirect_to observation_evaluation_path(@observation,@evaluation), notice: 'Hodnocení bylo úspěšně vytvořeno.' }
         format.json { render json: @evaluation, status: :created, location: @evaluation }
       else
-        format.html { render action: "new" }
+        format.html { render action: "new", :layout => "tabs" }
         format.json { render json: @evaluation.errors, status: :unprocessable_entity }
       end
     end
@@ -66,9 +66,32 @@ class EvaluationsController < ApplicationController
         format.html { redirect_to observation_evaluation_path(@evaluation.observation,@evaluation), notice: 'Hodnocení bylo úspěšně upraveno.' }
         format.json { head :ok }
       else
-        format.html { render action: "edit" }
+        format.html { render action: "edit", :layout => "tabs" }
         format.json { render json: @evaluation.errors, status: :unprocessable_entity }
       end
     end
   end
+  
+  private
+    
+  def teacher
+    return nil if @observation.parallel.nil?   
+    @observation.parallel.teachers.first.full_name if @observation.parallel.teachers.any?
+  end
+  
+  def guarantor
+    return nil if @observation.instance.nil? 
+    @observation.instance.guarantors.first.full_name if @observation.instance.guarantors.any?
+  end
+  
+  def course
+    @observation.course.code unless @observation.course.nil?
+  end
+  
+  def room
+    return nil if @observation.parallel.nil?  
+    @observation.parallel.room.code if @observation.parallel.room.any?
+
+  end
+  
 end

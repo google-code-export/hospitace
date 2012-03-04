@@ -16,7 +16,9 @@ class Parallel < ActiveRecord::Base
 
   def self.find_by_course_id_and_semester_id(c_id, s_id = nil)
     s_id ||= Semester.current
-    CourseInstance.find_by_course_id_and_semester_id(c_id,s_id).parallels
+    i = CourseInstance.find_by_course_id_and_semester_id(c_id,s_id)
+    return [] if i.nil?
+    i.parallels
   end
   
   def start

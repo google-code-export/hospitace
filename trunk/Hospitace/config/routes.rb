@@ -1,15 +1,5 @@
 Hospitace::Application.routes.draw do
 
-  get "documents/a"
-
-  get "documents/b"
-
-  get "documents/c"
-
-  get "documents/d"
-
-  get "test/index"
-
   mount Ckeditor::Engine => '/ckeditor'
 
   get "home/index"
@@ -22,14 +12,12 @@ Hospitace::Application.routes.draw do
   resources :users
   resources :notes
   resources :attachments
-  resources :documents
+  
   
   resources :evaluations do
-    match "a" => 'documents#a', :as=>:a
-    match "b" => 'documents#b',:as=>:b
-    match "c" => 'documents#c',:as=>:c
-    match "d" => 'documents#d',:as=>:d
-    resources :attachments
+    resources :forms
+    match 'forms/new/:form_template_code' => 'forms#new', :as => :new_evaluation_form
+    #resources :attachments
   end
 
   match 'observations/:id/date' => 'observations#date', :via => [:get, :post], :as => :observation_date

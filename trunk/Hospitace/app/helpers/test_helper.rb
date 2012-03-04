@@ -1,24 +1,29 @@
 module TestHelper
-  def dynamic_form(template_id,evaluation_id,options = {})
-    template = FormTemplate.find template_id
+  def dynamic_form(form,options = {})
+    template = form.form_template
     entries = template.entry_templates.root
     
-    contents = simple_form_for("form",({
+    simple_form_for("form",({
           :url=>"/documents"
-        }.merge(options))) do |f|
+        }.merge(options))
+    ) do |f|
       content_tag(:filedset) do
         concat(
           f.input(:form_template_id,:as=>:hidden,:input_html => { :value => template.id })
         )
         concat(
-          f.input(:evaluation_id,:as=>:hidden,:input_html => { :value => evaluation_id })
+          f.input(:evaluation_id,:as=>:hidden,:input_html => { :value => form.evaluation_id })
         )
         
         concat(content_tag(:legend,"#{template.code}) #{template.name}"))            
         
         concat(content_tag(:p,template.description))
         
-        concat(dynamic_entries(entries,f))
+        concat(
+          f.simple_fields_for(:entries) do |c|
+            dynamic_entries(entries,c)
+          end
+        )
         
         concat(
           content_tag(:div,:class=>"form-actions"){
@@ -121,10 +126,9 @@ module TestHelper
     end 
   end
   
-  def draw_dynamic_form(template_id,evaluation_id,options = {})
-    form = Form.find_by_form_template_id_and_evaluation_id(template_id, evaluation_id)
-    template = FormTemplate.find template_id
+  def draw_dynamic_form(form,options = {})
     
+    template = form.form_template
     entries = template.entry_templates.root
     
     content_tag(:filedset) do
