@@ -46,12 +46,12 @@ class FormsController < ApplicationController
   end
   
   def create
-    @form = Form.new({:form_template_id=>1})
+    @form = Form.new({:form_template_id=>params[:form][:form_template_id]})#{:form_template_id=>params[:form][:form_template_id]}
     authorize! :create, @form
-    
+
     respond_to do |format|
-      if save_dynamic_form(params)
-        format.html { redirect_to @form, notice: 'Formulář byl úspěšně vytvořen.' }
+      if save_dynamic_form(@form,params[:form])
+        format.html { redirect_to evaluation_form_path(@form.evaluation,@form.id), notice: 'Formulář byl úspěšně vytvořen.' }
         format.json { render json: @form, status: :created, location: @form }
       else
         format.html { render action: "new", :layout=>"evaluation_tabs" }

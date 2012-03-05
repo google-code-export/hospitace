@@ -41,6 +41,8 @@ class Ability
   
   def observed
     logged
+    can [:read,:observed], Observation
+    
     can [:read], Form
     can [:manage], Form do |form|
       form.form_template.is?("observed") unless form.form_template.nil?
@@ -114,7 +116,9 @@ class Ability
       end  
     end
     # documents
-    can [:read], Form
+    can [:read], Form do |form|
+      form.observation.observers.where(:user_id=>current_user.id).any?
+    end
     can [:manage], Form do |form|
       form.form_template.is?("admin") unless form.form_template.nil?
       false

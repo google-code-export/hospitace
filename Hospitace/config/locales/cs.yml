@@ -63,11 +63,14 @@ cs:
     notes: <i class="icon-comment"></i> Poznámky
     evaluation: <i class="icon-file"></i> Hodnocení
     start_evaluation: <i class="icon-plus-sign"></i> Zahájit hodnocení
-    protocol: <i class="icon-file"></i> Protokoly z hospitace
-    protocol_new: <i class="icon-plus-sign"></i> Protokoly z hospitace
-    verbal_evaluation: <i class="icon-file"></i> Slovní hodnocení
-    opinion: <i class="icon-file"></i> Stanovisko učitele
-    final_report: <i class="icon-file"></i> Závěrečné shrnutí
+    A: <i class="icon-file"></i> Protokoly z hospitace
+    A_new: <i class="icon-plus-sign"></i> Protokoly z hospitace
+    B: <i class="icon-file"></i> Slovní hodnocení
+    B_new: <i class="icon-plus-sign"></i> Slovní hodnocení
+    C: <i class="icon-file"></i> Stanovisko učitele
+    C_new: <i class="icon-plus-sign"></i> Stanovisko učitele
+    D: <i class="icon-file"></i> Závěrečné shrnutí
+    D_new: <i class="icon-plus-sign"></i> Závěrečné shrnutí
     attachments: <i class="icon-folder-open"></i> Přílohy
     observation: <i class="icon-info-sign"></i> Hospitace
     

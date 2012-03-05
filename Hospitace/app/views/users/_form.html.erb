@@ -6,7 +6,7 @@
 
 <% hind = link_to("Napojit na účet z kosu", peoples_select_path) unless @user.persisted? %>
 
-<%= f.input :login, :readonly => (!@user.people_id.nil? && cannot?(:change_login,User)), :placeholder => 'user', :hint => hind %>
+<%= f.input :login, :readonly => (!@user.people_id.nil?), :placeholder => 'user', :hint => hind %>
 
 <%= f.input :password %>
 <%= f.input :password_confirmation%>

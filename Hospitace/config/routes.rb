@@ -12,11 +12,11 @@ Hospitace::Application.routes.draw do
   resources :users
   resources :notes
   resources :attachments
-  
+  resources :forms
   
   resources :evaluations do
     resources :forms
-    match 'forms/new/:form_template_code' => 'forms#new', :as => :new_evaluation_form
+    match 'forms/new/:form_template_code' => 'forms#new', :id => /[0-9a-zA-Z]./, :as => :new_evaluation_form
     #resources :attachments
   end
 
