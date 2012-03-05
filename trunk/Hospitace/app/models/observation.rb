@@ -16,14 +16,21 @@ class Observation < ActiveRecord::Base
   has_many :users, :through => :observers
   has_many :notes, :dependent => :destroy
   has_one  :evaluation, :dependent => :destroy
-
+  has_many :forms, :through => :evaluation
+  
+  has_many :teachers, :through => :parallel
+  
   validates :course, :presence => true
   validates :semester, :presence => true
   
   validates :observation_type,:presence => true, :inclusion => {:in => TYPES} 
     
+  def observed
+    teachers.merge(instance.lecturers)
+  end
+  
   def instance
-    CourseInstance.find_by_course_id_and_semester_id(course_id,semester_id)
+    CourseInstance.find_by_course_id_and_semester_id(course_id,semester_id) || CourseInstance.new
   end
   
 #  def find_parallel

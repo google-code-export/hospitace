@@ -12,5 +12,7 @@ class CourseInstance < ActiveRecord::Base
   has_many :instructors, :through => :peoples_relateds, :source => :instructor, :conditions => "peoples_relateds.relation = 'instructors'" #:as => :related, :class_name => "PeoplesRelated"
   has_many :lecturers, :through => :peoples_relateds, :source => :lecturer, :conditions => "peoples_relateds.relation = 'lecturers'" #:as => :related, :class_name => "PeoplesRelated"
   
+  #select * from people inner join peoples_relateds on (people.id = peoples_relateds.people_id and peoples_relateds.relation="teachers" and peoples_relateds.related_type="Parallel") inner join observations on (peoples_relateds.related_id = observations.course_id) where users.id = 33976000
+  
   has_many :parallels
 end

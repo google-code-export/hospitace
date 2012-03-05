@@ -3,8 +3,8 @@ module TestHelper
     template = form.form_template
     entries = template.entry_templates.root
     
-    simple_form_for("form",({
-          :url=>"/documents"
+    simple_form_for(form,({
+          :url=>"/evaluations/#{form.evaluation.id}/forms"
         }.merge(options))
     ) do |f|
       content_tag(:filedset) do

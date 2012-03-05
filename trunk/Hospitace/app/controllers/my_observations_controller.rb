@@ -7,7 +7,11 @@ class MyObservationsController < ApplicationController
   
   def observed
     authorize! :observed, Observation
-    @observations = Observation.includes(:created_by,:users,:course).where(:semester_id=>semester.id).paginate(:page => params[:page]) 
+    unless current_user.people.nil?
+      @observations = current_user.people.observed
+    else 
+      @observations = []
+    end
     
     respond_to do |format|
       format.js

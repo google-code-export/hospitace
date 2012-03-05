@@ -1,4 +1,6 @@
 class FormTemplate < ActiveRecord::Base
+  default_scope :order => 'code ASC'
+  
   has_many :entry_templates, :dependent => :destroy
   has_many :forms, :dependent => :destroy
   

@@ -13,7 +13,6 @@ class User < ActiveRecord::Base
   has_many :observers
   has_many :observations, :through => :observers
   
-  
   attr_accessible :roles
   attr_accessible :login, :password, :password_confirmation, :people_id
   
@@ -50,6 +49,9 @@ class User < ActiveRecord::Base
   acts_as_authentic
   def load_rules
     self.role="observer" unless observers.empty?
+    unless people.nil?
+      self.role="observed" if people.observed.any?
+    end    
   end
   
   def roles=(roles)

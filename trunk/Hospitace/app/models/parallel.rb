@@ -9,11 +9,13 @@ class Parallel < ActiveRecord::Base
   belongs_to :course_instance
   belongs_to :room
   
+  has_many :observations
+  
   has_one :course, :through => :course_instance
   has_one :semester, :through => :course_instance
   has_many :peoples_relateds, :as => :related, :class_name => "PeoplesRelated"
   has_many :teachers, :through => :peoples_relateds,:conditions => "peoples_relateds.relation = 'teachers'"
-
+  
   def self.find_by_course_id_and_semester_id(c_id, s_id = nil)
     s_id ||= Semester.current
     i = CourseInstance.find_by_course_id_and_semester_id(c_id,s_id)
