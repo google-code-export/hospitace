@@ -18,11 +18,11 @@ class Observation::States::Create < Observation::State
   end
 
   def long_message
-    short = []
-    short << "observation.states.create.observers" if @observation.observers.empty?
-    short << "observation.states.create.parallel" if @observation.parallel.nil?
-    short << "observation.states.create.date" if @observation.date.nil?
-    return short
+    long = []
+    long << "observation.states.create.observers" if @observation.observers.empty?
+    long << "observation.states.create.parallel" if @observation.parallel.nil?
+    long << "observation.states.create.date" if @observation.date.nil?
+    return long
   end
 
   def actions

@@ -90,7 +90,7 @@ class EvaluationsController < ApplicationController
   
   def room
     return nil if @observation.parallel.nil?  
-    @observation.parallel.room.code if @observation.parallel.room.any?
+    @observation.parallel.room.code unless @observation.parallel.room.nil?
 
   end
   

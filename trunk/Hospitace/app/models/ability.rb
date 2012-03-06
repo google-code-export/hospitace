@@ -56,7 +56,8 @@ class Ability
     
     can [:manage], Evaluation do |e|
       unless(e.observation.nil?)
-        current_user.observations.where(:id=>e.observation.id).any?
+        current_user.observations.where(:id=>e.observation.id).any? and
+          e.observation.state.is_a?(Observation::States::Scheduled) 
       else
         true
       end  
@@ -64,7 +65,8 @@ class Ability
     
     can [:read], Form
     can [:manage], Form do |form|
-      form.form_template.is?("observer") unless form.form_template.nil?
+      form.form_template.is?("observer") and 
+        form.evaluation.observers.where(:user_id=>current_user.id).exists?
     end
     
   end
@@ -110,7 +112,8 @@ class Ability
     # evaluation
     can [:manage], Evaluation do |e|
       unless(e.observation.nil?)
-        current_user.created_observations.where(:id=>e.observation.id).any?
+        current_user.created_observations.where(:id=>e.observation.id).any? and
+          e.observation.state.is_a?(Observation::States::Scheduled)
       else
         false
       end  
@@ -120,8 +123,8 @@ class Ability
       form.observation.observers.where(:user_id=>current_user.id).any?
     end
     can [:manage], Form do |form|
-      form.form_template.is?("admin") unless form.form_template.nil?
-      false
+      form.form_template.is?("admin") and 
+        form.evaluation.observation.created_by == current_user
     end
   end
   

@@ -93,12 +93,12 @@ module TestHelper
       <td>F</td>
     </tr>
     <tr>
-      <td>výborně</td>
-      <td>velmi dobře</td>
-      <td>dobře</td>
-      <td>uspokojivě</td>
-      <td>dostatečně</td>
-      <td>nedostatečně</td>
+      <td>vysoce nad průměrná</td>
+      <td>mírně nad průměrná</td>
+      <td>průměrná</td>
+      <td>mírně pod průměrná</td>
+      <td>velmi pod průměrná</td>
+      <td>zcela nedostatečná</td>
     </tr>
   </tbody>
 </table>".html_safe
@@ -186,12 +186,12 @@ module TestHelper
                 <td>F</td>
               </tr>
               <tr>
-                <td>výborně</td>
-                <td>velmi dobře</td>
-                <td>dobře</td>
-                <td>uspokojivě</td>
-                <td>dostatečně</td>
-                <td>nedostatečně</td>
+                <td>vysoce nad průměrná</td>
+                <td>mírně nad průměrná</td>
+                <td>průměrná</td>
+                <td>mírně pod průměrná</td>
+                <td>velmi pod průměrná</td>
+                <td>zcela nedostatečná</td>
               </tr>
             </tbody>
           </table>".html_safe

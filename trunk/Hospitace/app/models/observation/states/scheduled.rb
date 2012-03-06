@@ -3,14 +3,14 @@
 
 class Observation::States::Scheduled < Observation::State
 
-  @next_state = nil
+  @next_state = Observation::States::Evaluation
   
   def initialize(observation)
     super observation
   end
   
   def ok?
-    true
+    (!self.observation.evaluation.nil?)
   end
 
   def short_message
@@ -27,23 +27,6 @@ class Observation::States::Scheduled < Observation::State
   end
 end
   
-#  
-#  module Scheduled
-#    
-#    def self.state_short
-#      :scheduled_short
-#    end
-#    
-#    def self.state_long
-#      :scheduled_long
-#    end
-#    
-#    def self.state_action
-#      nil?
-#    end
-#    
-#  end
-#  
 #  module Was
 #   
 #    def self.state_short

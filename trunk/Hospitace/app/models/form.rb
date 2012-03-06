@@ -6,7 +6,11 @@ class Form < ActiveRecord::Base
   
   has_one :observation, :through => :evaluation
   
-  def self.exist_form(evaluation,template_id)
-    
+  validates :form_template, :presence => true 
+  validates :user, :presence => true 
+  validates :evaluation, :presence => true 
+  
+  def can_create?(observation)
+    return false if observation.nil? or form_template.nil? 
   end
 end

@@ -37,32 +37,3 @@ class Observation::State
   end
 end
   
-#  module Was
-#   
-#    def self.state_short
-#      :date_short
-#    end
-#    
-#    def self.state_long
-#      :date_long
-#    end
-#    
-#    def self.state_action
-#      nil?
-#    end
-#  end
-#  
-#  module Finished
-#    
-#    def self.state_short
-#      :observer_short
-#    end
-#    
-#    def self.state_long
-#      :observer_long
-#    end
-#    
-#    def self.state_action
-#      nil?
-#    end
-#  end

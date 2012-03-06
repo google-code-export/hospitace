@@ -72,5 +72,7 @@ $(function () {
             s.addClass("disabled");
         }
     })
+    
+    $('#popover').popover('toggle')
 })  
 
