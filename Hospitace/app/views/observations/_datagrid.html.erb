@@ -31,7 +31,10 @@
     <td><%= l(observation.date, :format=>"%d. %m. %Y") unless observation.date.nil?  %></td>
     <td><%= t(observation.observation_type) %></td>
     <td><%= label_span(t(observation.state.short_message),(observation.state.ok? ? :success: :warning)) %></td>
-    <td><%= yield observation %></td>
+    <td>      
+        <%= yield observation %>
+      <%#*<i class="icon-comment" data-content="And here's some amazing content. It's very engaging. right?" rel="popover" data-original-title="A Title"></i>%>
+    </td>
   </tr>
 <% end %>
 </tbody>
