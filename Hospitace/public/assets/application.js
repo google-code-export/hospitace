@@ -11543,13 +11543,19 @@ o.elementMode==1&&q.show();delete o.element;}}};})());a.editor.prototype.getThem
     $(".carousel").carousel();
     $(".collapse").collapse();
     $(".dropdown-toggle").dropdown();
-    $(".modal").modal();
+    $(".modal").modal('hide');
     $("a[rel=popover]").popover();
     $(".tab").tab("show");
     $(".tooltip").tooltip();
     $(".typeahead").typeahead();
     return $("a[rel=tooltip]").tooltip();
   });
+
+
+
+
+
+
 
 
 
@@ -11589,7 +11595,6 @@ $(function () {
     // Sorting and pagination links.  
     $('#datagrid .pagination a').live('click',   
         function () {  
-            console.log($.getScript(this.href));
             $.getScript(this.href);  
             return false;  
         }  
@@ -11641,6 +11646,11 @@ $(function () {
             s.addClass("disabled");
         }
     })
+    
+    $('#popover').popover('toggle');
+    
+
+
 })  
 
 ;

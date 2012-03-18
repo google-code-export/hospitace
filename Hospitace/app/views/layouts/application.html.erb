@@ -9,7 +9,8 @@
     <%= csrf_meta_tags %>
   </head>
 
-  <body data-spy="scroll">   
+  <body data-spy="scroll">  
+
     <header class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
@@ -20,23 +21,23 @@
               <%= menu_item(:manage,my_observations_manage_path,:m_ob,Observation) %>
               <%= menu_item(:observing,my_observations_observing_path,:observing,Observation) %>
               <%= menu_item(:observed,my_observations_observed_path,:observed,Observation) %>
-              
+
               <%= menu_item(:create,new_observation_path,:create,Observation) %>
             <% end %>
-            <%#= sub_menu(:evaluations) do %>
-              <%#= menu_item(:all,"#") %>
-              <%#= menu_item("napsat","#") %>
-            <%# end %>
+<%#= sub_menu(:evaluations) do %>
+<%#= menu_item(:all,"#") %>
+<%#= menu_item("napsat","#") %>
+<%# end %>
             <%= sub_menu(:setting,:setting,"Setting") do %>
               <%= menu_item(:users,users_path,:manage,User) %>
               <%= menu_item(:forms,"#",:manage,FormTemplate) %>
               <li class="divider"></li>
-              <%#*<li class="nav-header">Data z kosu</li>%>
+  <%#*<li class="nav-header">Data z kosu</li>%>
               <%= menu_item(:peoples,peoples_path,:read,People) %>
               <%= menu_item(:courses,courses_path,:read,Course) %>
             <% end %>
-            
-            
+
+
           </ul>
           <div class="login pull-right">
             <% if !current_user %>
@@ -55,6 +56,8 @@
       $(".alert").alert()
     </script>
 
+
+
     <div class="container">
 
       <div class="content">
@@ -63,7 +66,6 @@
           <h1><%= @title.html_safe %></h1>
         </div>
         <div class="row">
-
 
           <%= alert_message(flash[:alert],:error) if !flash[:alert].nil? %>
           <%= alert_message(flash[:warning],:warning) if !flash[:warning].nil? %>
@@ -84,6 +86,11 @@
             </div>
           <% end%>
         </div>
+      </div>
+      <div id="modal">
+        <% if content_for?(:modal) %>
+          <%= yield(:modal) %>
+        <% end %>
       </div>
       <footer>
       </footer>

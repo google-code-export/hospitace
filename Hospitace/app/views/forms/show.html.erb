@@ -1,7 +1,7 @@
 <% title :evaluation, :small=>"z výuky #{@observation.course.name} (#{@observation.course.code})" %>
 
 <p>
-  <%= @form.user.full_name %>
+  <strong>Vyplnil:</strong><%= @form.user.full_name %>
 </p>
 
 <%= draw_dynamic_form(@form) %>

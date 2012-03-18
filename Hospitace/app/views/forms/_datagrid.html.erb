@@ -1,0 +1,36 @@
+<% scope = "activerecord.attributes.form" %>
+<% forms ||= @forms %>
+<div id="datagrid">
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <%= th :code, scope %>
+    <%= th :name, scope %>
+    <%= th :user, scope %>
+    <%= th :created_at, scope %>
+    <%= th :updated_at, scope %>
+    <th></th>
+  </tr>
+  </thead>
+  
+
+<% forms.each do |form| %>
+  <% 
+    template = form.form_template 
+  %>
+  <tr>
+    <td><%= template.code %></td>
+    <td><%= template.name %></td>
+    <td><%= form.user.full_name %></td>
+    <td><%= l(form.created_at,:format=>:short) %></td>
+    <td><%= l(form.updated_at,:format=>:short) %></td>
+    <td>      
+        <%= yield form %>
+    </td>
+  </tr>
+<% end %>
+</tbody>
+</table>
+<%#= will_paginate @observations, :renderer=> WillPaginate::ActionView::BootstrapLinkRenderer %>
+  
+</div>

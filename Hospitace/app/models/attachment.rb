@@ -1,10 +1,34 @@
 class Attachment < ActiveRecord::Base
   belongs_to :evaluation
+  belongs_to :user
+  belongs_to :form
+  
+  TYPES = %w[application\/pdf image\/.+]
+  
+  validate :validate_data
+  validate :validate_type
+  validate :data, :presence => true
+  validate :user, :presence => true 
+  
+  def validate_data
+    return if data.nil?
+    errors[:data] << "should be less than 4MB" if data.size > 4.megabytes
+  end
+  
+  def validate_type
+    TYPES.each { |item| 
+      return unless /#{item}/.match(content_type).nil?
+    }
+    errors[:data] << "nepodporovaný typ souboru"
+  end
   
   def uploaded_file=(incoming_file)
-    self.filename = incoming_file.original_filename
-    self.content_type = incoming_file.content_type
-    self.data = incoming_file.read
+    puts incoming_file.inspect
+    data = incoming_file[:data]
+    return if data.nil?
+    self.filename = data.original_filename
+    self.content_type = data.content_type
+    self.data = data.read
   end
   
   def filename=(new_filename)

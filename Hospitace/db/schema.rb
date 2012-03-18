@@ -11,18 +11,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120303200426) do
+ActiveRecord::Schema.define(:version => 20120317190624) do
 
   create_table "attachments", :force => true do |t|
     t.string   "filename"
     t.string   "content_type"
-    t.binary   "data"
+    t.binary   "data",          :limit => 16777215
     t.integer  "evaluation_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
+    t.integer  "form_id"
   end
 
   add_index "attachments", ["evaluation_id"], :name => "index_attachments_on_evaluation_id"
+  add_index "attachments", ["form_id"], :name => "index_attachments_on_form_id"
+  add_index "attachments", ["user_id"], :name => "index_attachments_on_user_id"
 
   create_table "ckeditor_assets", :force => true do |t|
     t.string   "data_file_name",                  :null => false

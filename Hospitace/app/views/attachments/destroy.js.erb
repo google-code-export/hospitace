@@ -1,0 +1,6 @@
+
+$('#attachment_modal.in').modal('hide'); 
+$('#modal').html('<%= escape_javascript(
+       render(:partial=>"modal", :evaluation=>@evaluation)
+) %>');  
+$('#attachment_modal').modal('show');

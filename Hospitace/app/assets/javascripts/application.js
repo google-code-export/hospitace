@@ -20,7 +20,6 @@ $(function () {
     // Sorting and pagination links.  
     $('#datagrid .pagination a').live('click',   
         function () {  
-            console.log($.getScript(this.href));
             $.getScript(this.href);  
             return false;  
         }  
@@ -73,6 +72,9 @@ $(function () {
         }
     })
     
-    $('#popover').popover('toggle')
+    $('#popover').popover('toggle');
+    
+
+
 })  
 

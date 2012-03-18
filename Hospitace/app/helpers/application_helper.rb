@@ -28,7 +28,12 @@ module ApplicationHelper
 
   def show_item(title,value,*args)
     return if !args.empty? and cannot? *args
-    content_tag :div,content_tag(:div,title+":",:class=>"layble")+content_tag(:div,value),:class=>"row show"
+    content_tag( :dt, title) +  content_tag( :dd, value)
+    
+#    <dt>Description lists</dt>
+#<dd>A description list is perfect for defining terms.</dd>
+#    
+#    content_tag :div,content_tag(:div,title+":",:class=>"layble")+content_tag(:div,value),:class=>"row show"
   end
   
 end
