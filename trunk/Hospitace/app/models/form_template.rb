@@ -2,7 +2,11 @@ class FormTemplate < ActiveRecord::Base
   default_scope :order => 'code ASC'
   
   has_many :entry_templates, :dependent => :destroy
+  has_many :root_entry_templates, :class_name => "EntryTemplate", :conditions => {:entry_template_id => nil}, :order => 'template_order ASC'
+  
+  
   has_many :forms, :dependent => :destroy
+  has_many :entries, :through => :form
   
   def roles=(roles)
     self.roles_mask = self.class.roles(roles)

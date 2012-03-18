@@ -3,9 +3,9 @@
 <table class="table table-striped">
   <thead>
   <tr>
-    <th>Filename</th>
-    <th>Content type</th>
-    <th>Evaluation</th>
+    <th>Název souboru</th>
+    <th>Typ</th>
+    <th>Autor</th>
     <th></th>
     <th></th>
   </tr>
@@ -15,7 +15,7 @@
     <tr>
       <td><%= attachment.filename %></td>
       <td><%= attachment.content_type %></td>
-      <td><%= attachment.evaluation %></td>
+      <td><%= attachment.user.full_name %></td>
       <td><%= link_to 'Show', attachment %></td>
       <td><%= link_to 'Destroy', attachment, confirm: 'Are you sure?', method: :delete  %></td>
     </tr>
@@ -23,28 +23,4 @@
   </tbody>
 </table>
 
-<%= form_tag 'attachments',:method=>"post", :multipart => true do %>
- 
-  <%= label_tag 'attachment', 'Přidat přílohu' %>
-  <%= hidden_field_tag 'evaluation_id', {:value=>params[:evaluation_id]}%>
-  <%= file_field_tag 'attachment' %>
-  
-  <div class="form-actions">
-    <%= submit_tag :submit,:class => 'btn-primary btn'  %>
-  </div>
-<% end %>
-
-
-<%#= simple_form_for @attachment, :html => { :class => 'form-horizontal' },:method=>"post", :multipart => true do |f| %>
- <%#= file_field_tag 'attachment' %>
-  <%#= f.file "attachment", :as=>:file %>
- <%#= f.association :evaluation, :as=>:hidden %>
-  <%#= label_tag 'attachment', 'Přidat přílohu' %>
-  <%#= hidden_field_tag 'evaluation_id', {:value=>params[:evaluation_id]}%>
-  <%#= file_field_tag 'attachment' %>
-  <%#= submit_tag "Send Attachment" %>
-
-  <%#*<div class="form-actions">%>
-          <%#= f.button :submit, :class => 'btn-primary' %>
-  <%#*</div>%>
-<%# end %>
+<%= render 'form'  %>

@@ -15,9 +15,12 @@ Hospitace::Application.routes.draw do
   resources :forms
   
   resources :evaluations do
-    resources :forms
-    match 'forms/new/:form_template_code' => 'forms#new', :id => /[0-9a-zA-Z]./, :as => :new_evaluation_form
-    #resources :attachments
+    resources :forms do
+      match 'code/:form_template_code' => 'forms#code', :on=>:collection, :as => :code_evaluation_forms
+      match 'new/:form_template_code' => 'forms#new', :id => /[0-9a-zA-Z]./,:on=>:collection, :as => :new_evaluation_form
+    end
+    
+    resources :attachments
   end
 
   match 'observations/:id/date' => 'observations#date', :via => [:get, :post], :as => :observation_date

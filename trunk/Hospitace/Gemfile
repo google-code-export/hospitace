@@ -39,6 +39,7 @@ gem 'jquery-rails'
 
 gem 'simple_form'#, :git => 'git://github.com/plataformatec/simple_form.git'
 gem 'twitter-bootstrap-rails'
+#gem "jquery-fileupload-rails"
 
 gem "paperclip"
 gem "ckeditor", "3.7.0.rc2"

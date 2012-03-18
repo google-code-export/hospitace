@@ -10049,7 +10049,13 @@ body {
   background: #94BFEC;
   font-weight: bold;
 }
-select.date {
+select.date,
+.datetime {
+  width: auto;
+}
+.table input,
+textarea,
+select {
   width: auto;
 }
 .navbar .login {

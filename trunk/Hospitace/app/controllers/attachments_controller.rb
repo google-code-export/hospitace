@@ -12,8 +12,10 @@ class AttachmentsController < ApplicationController
       @attachments = Attachment.all
     end  
     
+    @evaluation = Evaluation.find params[:evaluation_id] ||= params[:attachment][:evaluation_id]
+    
     respond_to do |format|
-      format.html # index.html.erb
+      format.html { render "index", :layout=>"evaluation_tabs" }
       format.json { render json: @attachments }
     end
   end
@@ -22,7 +24,6 @@ class AttachmentsController < ApplicationController
   # GET /attachments/1.json
   def show
     @attachment = Attachment.find(params[:id])
-
     send_data @attachment.data, :filename => @attachment.filename, :type=>@attachment.content_type
   end
 
@@ -30,39 +31,49 @@ class AttachmentsController < ApplicationController
   # POST /attachments.json
   def create
     return if params[:attachment].blank?
-    
-    @attachment = Attachment.new
-    @attachment.evaluation_id = params[:evaluation_id]
+    @attachment = Attachment.new({
+        :evaluation_id => params[:attachment][:evaluation_id],
+        :user_id => current_user.id,
+        :form_id => params[:attachment][:form_id]
+      })
     @attachment.uploaded_file = params[:attachment]
     
-    if @attachment.save
-      flash[:notice] = "Thank you for your submission..."
-      redirect_to :action => "index"
+    unless params[:evaluation_id].nil?
+      @attachments = Attachment.find_all_by_evaluation_id(params[:evaluation_id])
     else
-      flash[:error] = "There was a problem submitting your attachment."
-      render :action => "new"
-    end
+      @attachments = Attachment.all
+    end  
     
-#    respond_to do |format|
-#      if @attachment.save
-#        format.html { redirect_to @attachment, notice: 'Attachment was successfully created.' }
-#        format.json { render json: @attachment, status: :created, location: @attachment }
-#      else
-#        format.html { render action: "new" }
-#        format.json { render json: @attachment.errors, status: :unprocessable_entity }
-#      end
-#    end
+    @evaluation = @attachment.evaluation
+    
+    red = @attachment.evaluation.nil? ? attachments_path : evaluation_attachments_path(@attachment.evaluation)
+    respond_to do |format|
+      if @attachment.save
+        format.js
+        format.html { redirect_to red, notice: 'Attachment was successfully created.', :layout=>"evaluation_tabs" }
+        format.json { render json: @attachment, status: :created, location: @attachment }
+      else
+        format.js   
+        format.html { render action: "index", :layout=>"evaluation_tabs" }
+        format.json { render json: @attachment.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   # DELETE /attachments/1
   # DELETE /attachments/1.json
   def destroy
     @attachment = Attachment.find(params[:id])
+    clone = Attachment.new( @attachment.attributes )
+    evaluation = @attachment.evaluation
     @attachment.destroy
 
+    @attachment = clone
+    
     respond_to do |format|
-      format.html { redirect_to attachments_url }
+      format.html { redirect_to evaluation.nil? ? {:action => "index"} : evaluation_attachments_path(evaluation) }
       format.json { head :ok }
+      format.js
     end
   end
 end

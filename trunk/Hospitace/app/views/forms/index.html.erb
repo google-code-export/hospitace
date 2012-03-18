@@ -1,0 +1,11 @@
+<% title :form %>
+
+<%= render :layout=>'datagrid' do |form| %>
+
+    <%= link_to_if can?(:show,form) ,t(:show), evaluation_form_path(form.evaluation,form) if can? :show, form %>
+    <%= link_to_if can?(:update,form) ,t(:edit), edit_evaluation_form_path(form.evaluation,form) if can? :update, form %>
+    <%= link_to_if can?(:destroy,form) ,t(:destroy), form, confirm: t(:confirm), method: :delete if can? :destroy, form %> 
+
+<%end%>
+<br />
+

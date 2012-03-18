@@ -1,5 +1,6 @@
 module PeoplesHelper
   def short_users(users)
+    return if users.nil?
     u = []
     users.each do |l|
       (next u << l.login) if l.lastname.nil?

@@ -3,7 +3,8 @@ class CreateAttachments < ActiveRecord::Migration
     create_table :attachments do |t|
       t.string :filename
       t.string :content_type
-      t.binary :data
+      t.binary :data, :limit => 10.megabyte
+
       t.references :evaluation
 
       t.timestamps

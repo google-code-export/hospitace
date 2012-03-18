@@ -93,7 +93,7 @@ class Ability
     # observation
     can :manage, Observation
     cannot :manage, Observation do |ob|
-      !(ob.created_by.id==current_user.id)
+      !(ob.created_by==current_user)
     end
     can :create, Observation
     can [:read,:observing], Observation
@@ -106,7 +106,7 @@ class Ability
     can [:create, :new], Note
     cannot [:update], Note
     can [:destroy], Note do |n|
-      n.observation.created_by == current_user.id
+      n.observation.created_by == current_user
     end
     
     # evaluation
@@ -118,14 +118,20 @@ class Ability
         false
       end  
     end
+    
     # documents
     can [:read], Form do |form|
-      form.observation.observers.where(:user_id=>current_user.id).any?
+      form.observation.created_by == current_user #.where(:user_id=>current_user.id).any?
     end
     can [:manage], Form do |form|
       form.form_template.is?("admin") and 
         form.evaluation.observation.created_by == current_user
     end
+    can [:update], Form
+    
+    #attachmets
+    can [:manage], Attachment
+    
   end
   
   def root
