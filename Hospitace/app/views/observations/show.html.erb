@@ -7,7 +7,7 @@
   room = @parallel.room.code unless @parallel.nil? || @parallel.room.nil?
   teachers = full_url_peoples(@parallel.teachers) unless @parallel.nil?
 %>
-
+<div class="observation">
 <div class="span4">
 <h2>Informace o hospitaci</h2>
   <dl class="dl-horizontal">
@@ -32,12 +32,10 @@
   <h2>Paralelka</h2>
 <%= render :partial=>"parallels/parallel", :locals => { :parallel => @parallel } unless @parallel.nil? %>
 </div>
-<div style="margin-left: 100px;">
-
 <div class="span4">
   <h2>Hospitující</h2>
   
 
   <%= render @observation.users %>
 </div>
-
+</div>

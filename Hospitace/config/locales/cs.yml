@@ -73,6 +73,9 @@ cs:
     D_new: <i class="icon-plus-sign"></i> Závěrečné shrnutí
     attachments: <i class="icon-folder-open"></i> Přílohy
     observation: <i class="icon-info-sign"></i> Hospitace
+    setting: <i class="icon-cog"></i> Nastavení
+    forms: <i class="icon-list-alt"></i> Formuláře
+    information: Informace o výuce
     
   message:
     type:

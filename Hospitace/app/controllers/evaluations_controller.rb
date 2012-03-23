@@ -3,6 +3,19 @@
 class EvaluationsController < ApplicationController
   load_and_authorize_resource
 
+  helper_method :sort_column, :sort_direction
+  
+  def index
+    @evaluations =  Evaluation.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:page => params[:page]) 
+
+
+    respond_to do |format|
+      format.js
+      format.html # index.html.erb
+      format.json { render json: @users }
+    end
+  end
+  
   # GET /users/1
   # GET /users/1.json
   def show
@@ -37,6 +50,11 @@ class EvaluationsController < ApplicationController
   def edit
     @evaluation = Evaluation.find(params[:id])
     @observation = @evaluation.observation
+    
+    respond_to do |format|
+      format.html { render :layout=>"evaluation_tabs"}
+      format.json { render json: @evaluation }
+    end
   end
 
   # POST /users
@@ -72,6 +90,24 @@ class EvaluationsController < ApplicationController
     end
   end
   
+  def destroy
+    @evaluation = Evaluation.find(params[:id])
+    @evaluation.destroy
+
+    respond_to do |format|
+      format.html { redirect_to evaluations_url, notice: 'Hodnocení bylo smazáno.' }
+      format.json { head :ok }
+    end
+  end
+  
+  def sort_column
+    Evaluation.column_names.include?(params[:sort]) ? params[:sort] : "id"
+  end
+    
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+  end
+  
   private
     
   def teacher
@@ -93,5 +129,7 @@ class EvaluationsController < ApplicationController
     @observation.parallel.room.code unless @observation.parallel.room.nil?
 
   end
+  
+
   
 end

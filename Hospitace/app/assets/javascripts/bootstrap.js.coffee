@@ -10,3 +10,4 @@ jQuery ->
   $(".tooltip").tooltip()
   $(".typeahead").typeahead()
   $("a[rel=tooltip]").tooltip()
+  $("li[rel=tooltip]").tooltip()

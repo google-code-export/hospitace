@@ -2,10 +2,9 @@
 
 <%= render :layout=>'datagrid' do |form| %>
 
-    <%= link_to_if can?(:show,form) ,t(:show), evaluation_form_path(form.evaluation,form) if can? :show, form %>
-    <%= link_to_if can?(:update,form) ,t(:edit), edit_evaluation_form_path(form.evaluation,form) if can? :update, form %>
-    <%= link_to_if can?(:destroy,form) ,t(:destroy), form, confirm: t(:confirm), method: :delete if can? :destroy, form %> 
+    <%= action_icon :show,"icon-info-sign",evaluation_form_path(form.evaluation,form),{},:show,form %>
+    <%= action_icon :edit,"icon-pencil",edit_evaluation_form_path(form.evaluation,form),{},:update,form %>
+    <%= action_icon :destroy,"icon-remove",form,{confirm: t(:confirm), method: :delete},:destroy,form %>
 
 <%end%>
-<br />
 

@@ -25,6 +25,16 @@ module ApplicationHelper
     return if !args.empty? and cannot? *args
     content_tag(:li,link_to(t(title,:scope=>"tabs").html_safe,path), :class => ((current_page?(path) ? "active" : nil )))
   end
+  
+  def sub_tab(title,*args,&block)
+    return if !args.empty? and cannot? *args
+    content_tag(:li,:class=>"dropdown","data-dropdown"=>"dropdown") do
+      link_to("#{t(title,:scope=>"tabs")} <b class=\"caret\"></b>".html_safe, "#",:class=>"dropdown-toggle","data-toggle"=>"dropdown") +
+      content_tag(:ul,:class=>"dropdown-menu") do 
+        yield if block_given?
+      end
+    end
+  end
 
   def show_item(title,value,*args)
     return if !args.empty? and cannot? *args

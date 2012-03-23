@@ -1,0 +1,6 @@
+<% title :evaluation, :small=>t(:evaluation,:scope=>"title.small")%>
+
+<%= render :layout=>'datagrid' do |evaluation| %>
+    <%= action_icon :show,"icon-info-sign",evaluation,{},:show,evaluation %>
+    <%= action_icon :destroy,"icon-remove",evaluation,{confirm: t(:confirm), method: :delete},:destroy,evaluation %>
+<%end%>

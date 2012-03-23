@@ -47,7 +47,7 @@
     <td><%= people.username %></td>
     <td><%= people.full_name %></td>
     <td><%= t people.teacher? %></td>
-    <td><%= yield people if block_given? %></td>
+    <td><%= actions do yield people if block_given? end%>
   </tr>
 
   <% end %>

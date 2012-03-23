@@ -8,7 +8,7 @@
 <% template = @form.form_template %>
 <label>
 <legend><%= "#{template.code}) #{template.name}" %></legend>
-  <%= simple_form_for @form do |m| %>
+  <%= simple_form_for @form, :html=>{ :class => 'form-inline'} do |m| %>
 
       <%= m.error_notification %>
       <%= m.input :form_template_id, :as=>:hidden %>

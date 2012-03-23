@@ -1,32 +1,36 @@
 module FormsHelper  
   def dynamic_entries(entries,form)
     entries.collect do |en|
-      dynamic_entry(en,form) 
+      dynamic_entry(en,form) do |e,f,o|
+        dynamic_entries(e,f) if e.is_a?(Array)
+      end
     end.join.html_safe
   end
   
-  def dynamic_entry(entry,form)
-    template = entry.entry_template
-    
-    case template.item_type
-    
-    when "text/file"
-      "<h3>#{template.label}</h3>
-      <p>
+  
+  def d_text_file(entry,form,options={})
+    d_text(entry,form,options) do |e,f,o|
+      "<p>
         Můžete nahrát naskenovanou část formuláře, nebo vyplnit formulář.
       </p>".html_safe <<
-      if entry.persisted?
+        if entry.persisted?
         "<p><a class=\"btn btn-primary\" href=\"#attachment_modal\" data-toggle=\"modal\"><i class=\"icon-upload icon-white\"></i> Nahrát naskenovaný formulář</a><span id=\"attachment_files\"></span></p>".html_safe
       else
         "<p><a class=\"btn btn-primary disabled\"><i class=\"icon-upload icon-white\"></i> Nahrát naskenovaný formulář</a> Nejprve musíte uložit formulář potom se zpřístupní možnost nahrání souboru.<span id=\"attachment_files\"></span></p>".html_safe
-      end <<
-        form.cktext_area(template.id, :toolbar => 'Note', :input_html => { :value => entry.value }) 
-      
-    when "text"
-      "<h3>#{template.label}</h3>".html_safe <<
-        form.cktext_area(template.id, :toolbar => 'Note', :input_html => { :value => entry.value })
-    when "ranking"
-      "<tr>
+      end
+    end
+  end
+  
+  def d_text(entry,form,options={})
+    template = entry.entry_template
+    out = "<h3>#{template.label}</h3>".html_safe 
+    out << yield(entry,form,options) if block_given?
+    out << form.cktext_area(template.id, :toolbar => 'Note', :input_html => { :value => entry.value })
+  end 
+  
+  def d_ranking(entry,form,options={})
+    template = entry.entry_template
+    "<tr>
         <td>#{template.label}</td>
         <td></td>
         <td>#{form.radio_button template.id, "A", :checked => (entry.value == "A" ? true : false)}</td>
@@ -35,9 +39,30 @@ module FormsHelper
         <td>#{form.radio_button template.id, "D", :checked => (entry.value == "D" ? true : false)}</td>
         <td>#{form.radio_button template.id, "E", :checked => (entry.value == "E" ? true : false)}</td>
         <td>#{form.radio_button template.id, "F", :checked => (entry.value == "F" ? true : false)}</td>
+        <td>#{yield entry.get_entries,form,options if block_given?}</td>
        </tr>"
-    when "ranking_table"
-      "<table class=\"table table-bordered table-condensed table-striped\">
+  end
+  
+  def d_note(entry,form,options={})
+    template = entry.entry_template
+    form.text_field( template.id, :value => entry.value,:style=>((entry.value.nil? or entry.value == "") ? "display:none" : ""))<<
+    " <a class=\"field_note open #{((entry.value.nil? or entry.value == "") ? "" : "hide")}\" href=\"#\"><i class=\"icon-pencil\"></i></a> 
+      <a class=\"field_note dis #{((entry.value.nil? or entry.value == "") ? "hide" : "")}\" href=\"#\"><i class=\"icon-ban-circle\"></i></a>".html_safe
+  end
+  
+  def d_ranking_table(entry,form,options={})
+    template = entry.entry_template
+    "<table class=\"table table-bordered table-condensed table-striped\">
+          <colgroup>
+                <col width=\"40%\" />
+                <col width=\"1%\" />
+                <col width=\"5%\" />
+                <col width=\"5%\" />
+                <col width=\"5%\" />
+                <col width=\"5%\" />
+                <col width=\"5%\" />
+                <col width=\"5%\" />
+            </colgroup>
           <thead>
             <tr>
               <th>#{template.label}</th>
@@ -48,112 +73,149 @@ module FormsHelper
               <th>D</th>
               <th>E</th>
               <th>F</th>
+              <th>Poznámky</th>
             </tr>
           </thead>
           <tbody>
-            #{dynamic_entries(entry.get_entries,form)}
+            #{yield entry.get_entries,form,options if block_given?}
           </tbody>
         </table>".html_safe
-    when "label"
-      content_tag(:h3,template.label)
-    when "rating_scale"
-      "  <table class=\"table table-bordered\">
-            <thead>
-              <tr>
-                <th colspan=\"6\">Hodnotící stupnice</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>A</td>
-                <td>B</td>
-                <td>C</td>
-                <td>D</td>
-                <td>E</td>
-                <td>F</td>
-              </tr>
-              <tr>
-                <td>vysoce nad průměrná</td>
-                <td>mírně nad průměrná</td>
-                <td>průměrná</td>
-                <td>mírně pod průměrná</td>
-                <td>velmi pod průměrná</td>
-                <td>zcela nedostatečná</td>
-              </tr>
-            </tbody>
-          </table>".html_safe
-    when "column_table"
-      ens = entry.get_entries
-      "<table class=\"table table-bordered table-striped\">
+  end
+  
+  def d_label(entry,form,options={})
+    template = entry.entry_template
+    content_tag(:h3,template.label)
+  end
+  
+  def d_rating_scale(entry,form,options={})
+    "<table class=\"table table-bordered\">
+        <thead>
+          <tr>
+            <th colspan=\"6\">Hodnotící stupnice</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>A</td>
+            <td>B</td>
+            <td>C</td>
+            <td>D</td>
+            <td>E</td>
+            <td>F</td>
+          </tr>
+          <tr>
+            <td>vysoce nad průměrná</td>
+            <td>mírně nad průměrná</td>
+            <td>průměrná</td>
+            <td>mírně pod průměrná</td>
+            <td>velmi pod průměrná</td>
+            <td>zcela nedostatečná</td>
+          </tr>
+        </tbody>
+      </table>".html_safe
+  end
+  
+  def d_column_table(entry,form,options={})
+    template = entry.entry_template
+    ens = entry.get_entries
+    "<table class=\"table table-bordered table-striped\">
           <thead>
             <tr><th colspan=\"#{ens.count}\">#{template.label}</th></tr>
           </thead>
           <tbody>
             <tr>
               #{
-                ens.collect do |e|
-                "<td>#{e.entry_template.label}</td>"
-                end.join.html_safe
+    ens.collect do |e|
+    "<td>#{e.entry_template.label}</td>"
+    end.join.html_safe
               }
             </tr>
             <tr>
               #{
-                ens.collect do |e|
-                "<td>#{dynamic_entry(e,form)}</td>"
-                end.join.html_safe
+    ens.collect do |e|
+    "<td>#{dynamic_entry(e,form)}</td>"
+    end.join.html_safe
               }
             </tr>
           </tbody>
         </table>".html_safe
-    when "integer"  
-      form.input template.id, :as=>:integer, :label => false, :input_html => { :value => entry.value }
-    end 
   end
   
-  def draw_dynamic_form(form,options = {})
-    
-    template = form.form_template
-    entries = template.entry_templates.root
-    
-    content_tag(:filedset) do
-        
-      concat(content_tag(:legend,"#{template.code}) #{template.name}"))            
-        
-      concat(content_tag(:p,template.description))
-        
-      concat(draw_dynamic_entries(entries,form))
-        
+  def d_integer(entry,form,options={})
+    template = entry.entry_template
+    form.input template.id, :as=>:integer, :label => false, :input_html => { :value => entry.value }
+  end
+  
+  def dynamic_entry(entry,form)
+    template = entry.entry_template
+    case template.item_type
+    when "text/file"
+      d_text_file(entry,form) { |e,f,o| yield e,f,o}
+    when "text"
+      d_text(entry,form) { |e,f,o| yield e,f,o}
+    when "ranking"
+      d_ranking(entry,form) { |e,f,o| yield e,f,o}
+    when "ranking_table"
+      d_ranking_table(entry,form) { |e,f,o| yield e,f,o}
+    when "label"
+      d_label(entry,form) { |e,f,o| yield e,f,o}
+    when "rating_scale"
+      d_rating_scale(entry,form) { |e,f,o| yield e,f,o}
+    when "column_table"
+      d_column_table(entry,form) { |e,f,o| yield e,f,o}
+    when "integer"
+      d_integer(entry,form) { |e,f,o| yield e,f,o}
+    when "note"
+      d_note(entry,form) { |e,f,o| yield e,f,o}
+    end  
+  end
+  
+  def d_draw_text_file(entry,form,options={})
+    d_draw_text(entry,form,options) do |e,f,o|
+      "<p>
+          #{link_to("Stáhnout naskenovaný formulář", @attachment, :class=>"btn btn-primary")unless @attachment.nil?}
+        </p>"
     end
   end
   
-  def draw_dynamic_entry(entry,form)
-    en = Entry.find_by_entry_template_id_and_form_id(entry.id,form.id)
-    en ||= Entry.new
-    case entry.item_type
-    when "text/file"
-      "<h3>#{entry.label}</h3>
-        <p>
-          #{link_to("Stáhnout naskenovaný formulář", @attachment, :class=>"btn btn-primary")unless @attachment.nil?}
-        </p>
-        <div class=\"twipsies well\">#{en.value}</div>".html_safe
-    when "text"
-      "<h3>#{entry.label}</h3><div class=\"twipsies well\">#{en.value}</div>".html_safe
-    when "ranking"
-      "<tr>
-          <td>#{entry.label}</td>
+  def d_draw_text(entry,form,options={})
+    template = entry.entry_template
+    "<h3>#{template.label}</h3>#{yield(entry,form,options) if block_given?}<div class=\"twipsies well\">#{entry.value}</div>".html_safe
+  end 
+  
+  def d_draw_note(entry,form,options={})
+    entry.value
+  end
+  
+  def d_draw_ranking(entry,form,options={})
+    "<tr>
+          <td>#{entry.entry_template.label}</td>
           <td></td>
-          <td>#{en.value == "A" ? "X" : ""}</td>
-          <td>#{en.value == "B" ? "X" : ""}</td>
-          <td>#{en.value == "C" ? "X" : ""}</td>
-          <td>#{en.value == "D" ? "X" : ""}</td>
-          <td>#{en.value == "E" ? "X" : ""}</td>
-          <td>#{en.value == "F" ? "X" : ""}</td>
+          <td>#{entry.value == "A" ? "X" : ""}</td>
+          <td>#{entry.value == "B" ? "X" : ""}</td>
+          <td>#{entry.value == "C" ? "X" : ""}</td>
+          <td>#{entry.value == "D" ? "X" : ""}</td>
+          <td>#{entry.value == "E" ? "X" : ""}</td>
+          <td>#{entry.value == "F" ? "X" : ""}</td>
+          <td>#{yield entry.get_entries,form,options if block_given?}</td>
          </tr>"
-    when "ranking_table"
-      "<table class=\"table table-bordered table-condensed table-striped\">
+  end
+  
+  def d_draw_ranking_table(entry,form,options={})
+    "<table class=\"table table-bordered table-condensed table-striped\">
+            <colgroup>
+                <col width=\"40%\" />
+                <col width=\"1%\" />
+                <col width=\"5%\" />
+                <col width=\"5%\" />
+                <col width=\"5%\" />
+                <col width=\"5%\" />
+                <col width=\"5%\" />
+                <col width=\"5%\" />
+            </colgroup>
             <thead>
               <tr>
-                <th>#{entry.label}</th>
+                <th>#{entry.entry_template.label}</th>
                 <th></th>
                 <th>A</th>
                 <th>B</th>
@@ -161,71 +223,74 @@ module FormsHelper
                 <th>D</th>
                 <th>E</th>
                 <th>F</th>
+                <th>Poznámky</th>
               </tr>
             </thead>
             <tbody>
-              #{draw_dynamic_entries(entry.children,form)}
+              #{yield entry.get_entries,form,options if block_given?}
         </tbody>
           </table>".html_safe
-    when "label"
-      content_tag(:h3,entry.label)
-    when "rating_scale"
-      "  <table class=\"table table-bordered\">
-            <thead>
-              <tr>
-                <th colspan=\"6\">Hodnotící stupnice</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>A</td>
-                <td>B</td>
-                <td>C</td>
-                <td>D</td>
-                <td>E</td>
-                <td>F</td>
-              </tr>
-              <tr>
-                <td>vysoce nad průměrná</td>
-                <td>mírně nad průměrná</td>
-                <td>průměrná</td>
-                <td>mírně pod průměrná</td>
-                <td>velmi pod průměrná</td>
-                <td>zcela nedostatečná</td>
-              </tr>
-            </tbody>
-          </table>".html_safe
-    when "column_table"
-      ens = entry.children
-      "<table class=\"table table-bordered table-striped\">
+  end
+   
+  alias :d_draw_label :d_label
+  alias :d_draw_rating_scale :d_rating_scale
+  
+  def d_draw_column_table(entry,form,options={})
+    template = entry.entry_template
+    ens = entry.get_entries
+    "<table class=\"table table-bordered table-striped\">
           <thead>
-            <tr><th colspan=\"#{ens.count}\">#{entry.label}</th></tr>
+            <tr><th colspan=\"#{ens.count}\">#{template.label}</th></tr>
           </thead>
           <tbody>
             <tr>
               #{ens.collect do |e|
-      "<td>#{e.label}</td>"
-      end.join.html_safe}
+    "<td>#{e.entry_template.label}</td>"
+    end.join.html_safe}
             </tr>
             <tr>
               #{ens.collect do |e|
-      "<td>#{draw_dynamic_entry(e,form)}</td>"
-      end.join.html_safe
+    "<td>#{draw_dynamic_entry(e,form)}</td>"
+    end.join.html_safe
                }
             </tr>
           </tbody>
         </table>".html_safe
-    when "integer"  
-      en.value
-    end 
-    
-    
-    
+  end
+  
+  def d_draw_integer(entry,form,options={}) 
+    entry.value
+  end
+  
+  def draw_dynamic_entry(entry,form)   
+    template = entry.entry_template
+    case template.item_type
+    when "text/file"
+      d_draw_text_file(entry,form) { |e,f,o| yield e,f,o}
+    when "text"
+      d_draw_text(entry,form) { |e,f,o| yield e,f,o}
+    when "ranking"
+      d_draw_ranking(entry,form) { |e,f,o| yield e,f,o}
+    when "ranking_table"
+      d_draw_ranking_table(entry,form) { |e,f,o| yield e,f,o}
+    when "label"
+      d_draw_label(entry,form) { |e,f,o| yield e,f,o}
+    when "rating_scale"
+      d_draw_rating_scale(entry,form) { |e,f,o| yield e,f,o}
+    when "column_table"
+      d_draw_column_table(entry,form) { |e,f,o| yield e,f,o}
+    when "integer"
+      d_draw_integer(entry,form) { |e,f,o| yield e,f,o}
+    when "note"
+      d_draw_note(entry,form) { |e,f,o| yield e,f,o}
+    end  
   end
   
   def draw_dynamic_entries(entries,form)
     entries.collect do |en|
-      draw_dynamic_entry(en,form) 
+      draw_dynamic_entry(en,form) do |e,f,o|
+        draw_dynamic_entries(e,f) if e.is_a?(Array)
+      end
     end.join.html_safe
   end
   

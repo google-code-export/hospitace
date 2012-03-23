@@ -24,10 +24,7 @@
 
               <%= menu_item(:create,new_observation_path,:create,Observation) %>
             <% end %>
-<%#= sub_menu(:evaluations) do %>
-<%#= menu_item(:all,"#") %>
-<%#= menu_item("napsat","#") %>
-<%# end %>
+            <%= menu_item(:evaluations,evaluations_path,:read,Evaluation) %>
             <%= sub_menu(:setting,:setting,"Setting") do %>
               <%= menu_item(:users,users_path,:manage,User) %>
               <%= menu_item(:forms,"#",:manage,FormTemplate) %>
