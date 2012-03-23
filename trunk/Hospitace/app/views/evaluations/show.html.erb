@@ -12,4 +12,6 @@
 <%= show_item(Evaluation.human_attribute_name(:datetime_observation), l(@evaluation.datetime_observation,:format=>:long)) %>
 
 <%= show_item(Evaluation.human_attribute_name(:created_at), l(@evaluation.created_at,:format=>:long)) %>
+  
+<%= show_item(Observer.model_name.human, full_url_user(@evaluation.users)) %>
 </dl>

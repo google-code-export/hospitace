@@ -74,7 +74,20 @@ $(function () {
     
     $('#popover').popover('toggle');
     
-
+    $('.field_note.open').click(function(){
+        $(this).siblings('input').css('display','');
+        $(this).addClass("hide");
+        $(this).siblings("a.dis").removeClass("hide");
+        return false;
+    })
+    
+    $('.field_note.dis').click(function(){
+        $(this).siblings('input').css('display','none');
+        $(this).siblings('input').attr('value','');
+        $(this).addClass("hide");
+        $(this).siblings("a.open").removeClass("hide");
+        return false;
+    })
 
 })  
 

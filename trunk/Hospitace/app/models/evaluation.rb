@@ -1,6 +1,7 @@
 class Evaluation < ActiveRecord::Base
   belongs_to :observation 
   has_many :observers, :through=> :observation
+  has_many :users, :through=> :observation
   has_many :forms, :dependent => :destroy
   
   validates :observation, :presence => true
@@ -29,5 +30,9 @@ class Evaluation < ActiveRecord::Base
   def observed
     observation.observed
   end
+  
+  def self.search(search)  
+    scoped    
+  end 
   
 end

@@ -1,7 +1,11 @@
 $('#datagrid').html('<%= escape_javascript(
-  
-       render(:layout=>"datagrid") { |user| 
-         link_to_if(can?(:show,user),t(:show), user)+" "+link_to_if(can?(:edit,user),t(:edit), edit_user_path(user))+" "+link_to_if(can?(:destroy,user),t(:destroy), user, confirm: t(:confirm), method: :delete );
-       }
+
+  render(:layout=>"datagrid") { |user| 
+
+    action_icon( :show,"icon-info-sign",user,{},:show,user) + " " +
+      action_icon( :edit,"icon-pencil",edit_user_path(user),{},:update,user) + " " +
+      action_icon( :destroy,"icon-remove",user,{confirm: t(:confirm), method: :delete},:destroy,user) 
+  }
 
 ) %>');  
+$("li[rel=tooltip]").tooltip()

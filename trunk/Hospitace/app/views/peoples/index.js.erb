@@ -1,7 +1,8 @@
 $('#datagrid').html('<%= escape_javascript(
   
        render(:layout=>"datagrid",:locals => { :peoples => @peoples }) { |person| 
-         link_to_if can?(:show,person), t(:show), :controller=>"peoples", :action=>"show", :id=>person.id
+         action_icon :show,"icon-info-sign",{:controller=>"peoples", :action=>"show", :id=>person.id},{},:show,person
        }
 
 ) %>');  
+$("li[rel=tooltip]").tooltip()

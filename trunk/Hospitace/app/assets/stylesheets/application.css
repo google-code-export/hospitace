@@ -59,3 +59,7 @@ h1 .action a {
     text-align: right;
     padding-right: 50px;
 }
+
+.observation div.span4 {
+min-height:250px;
+}

@@ -3602,6 +3602,10 @@ h1 .action a {
     text-align: right;
     padding-right: 50px;
 }
+
+.observation div.span4 {
+min-height:250px;
+}
 /*!
  * Bootstrap v2.0.0
  *
@@ -10079,6 +10083,15 @@ select,
 }
 .form-search.form-horizontal .control-group > label {
   width: 100px;
+}
+.dl-horizontal dt {
+  clear: left;
+  float: left;
+  text-align: right;
+  width: 120px;
+}
+.dl-horizontal dd {
+  margin-left: 130px;
 }
 /*body {
   background-color: #fff;

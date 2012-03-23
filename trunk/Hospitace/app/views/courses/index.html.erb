@@ -1,5 +1,5 @@
 <% title :courses %>
 
 <%= render :layout => "datagrid", :locals => { :courses => @courses } do |course| %>
-  <%= link_to_if can?(:show, course), t(:show), course %>
+ <%= action_icon :show,"icon-info-sign",course,{},:show,course %>
 <% end %>

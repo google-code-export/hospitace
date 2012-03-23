@@ -6,9 +6,12 @@
 
 <% content_for :content do %>
   <ul class="nav nav-tabs">
-    <%= tab_item(:observation,@evaluation) if can? :show, @evaluation %> 
-  <%= tab_item(:attachments,evaluation_attachments_path(@evaluation)) if can? :show, @observation %> 
-
+    <%= tab_item(:observation,@evaluation) if can? :show, @evaluation %>  
+    <%= sub_tab(:setting,:setting,"Setting") do %>
+                  <%= tab_item(:information,edit_evaluation_path(@evaluation),:manage,User) %>
+                  <%= tab_item(:attachments,evaluation_attachments_path(@evaluation)) if can? :show, @observation %> 
+                  <%= tab_item(:forms,evaluation_forms_path(@evaluation),:manage,Form) %>
+    <% end %>
     <% FormTemplate.all.each do |template| %>
       <% 
       forms = template.forms.where(:evaluation_id => @evaluation.id)

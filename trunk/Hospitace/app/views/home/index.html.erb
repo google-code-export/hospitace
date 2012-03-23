@@ -30,3 +30,16 @@
   Ohlášené hospitace - jsou naplánované na konkrétní datum <br />
   Plovoucí hospitace - ohlášené hospitace, ale nenaplánované na konkrétní datum
 </p> 
+
+
+<script>
+  
+$('.field_note').click(function(){
+    console.log($(this).attr("data-id"));
+$(this).prev('input').css('display','');
+    $(this).addClass("hide")
+  })
+  
+</script>
+  
+  

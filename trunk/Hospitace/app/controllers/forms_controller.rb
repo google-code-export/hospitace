@@ -45,8 +45,6 @@ class FormsController < ApplicationController
     @form = Form.find params[:id]
     authorize! :show, @form
     
-    @forms = Form.all
-    
     @attachment = @form.attachments.first;
     @evaluation = Evaluation.find params[:evaluation_id]
     @observation = @evaluation.observation
@@ -130,6 +128,21 @@ class FormsController < ApplicationController
         format.html { render action: "new", :layout=>"evaluation_tabs" }
         format.json { render json: @form.errors, status: :unprocessable_entity }
       end
+    end
+  end
+  
+  def destroy
+    @form = Form.find params[:id]
+    
+    authorize! :destroy, @form
+    
+    @form.destroy
+    
+    evaluation = @form.evaluation
+    
+    respond_to do |format|
+      format.html { redirect_to evaluation_forms_path(evaluation), notice: 'Formulář byl smazán.' }
+      format.json { head :ok }
     end
   end
   
