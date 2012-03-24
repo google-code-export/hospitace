@@ -41,7 +41,7 @@
     <td><%= course.name %></td>
     <td><%= short_users(instance.lecturers) unless instance.nil? %></td>
     <td><%= instance.occupied unless instance.nil? %></td>
-    <td><%= actions do yield course if block_given? end%>
+    <td><%= actions do yield course if block_given? end%></td>
   </tr>
 
   <% end %>

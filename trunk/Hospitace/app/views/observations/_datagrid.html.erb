@@ -1,5 +1,12 @@
 <% scope = "activerecord.attributes.observation" %>
 <% observations ||= @observations %>
+
+<% content_for :modal do %>
+  <% observations.each do |observation| %>
+    <%= render("notes/modal", :notes=>observation.notes,:id=>"modal_observation_#{observation.id}") if can? :show,observation.notes %>
+  <% end %> 
+<% end %>
+
 <div id="datagrid">
 <table class="table table-striped">
   <thead>
@@ -31,11 +38,11 @@
     <td><%= l(observation.date, :format=>"%d. %m. %Y") unless observation.date.nil?  %></td>
     <td><%= t(observation.observation_type) %></td>
     <td><%= label_span(t(observation.state.short_message),(observation.state.ok? ? :success: :warning)) %></td>
-    <td><%= actions do yield observation if block_given? end%>
+    <td><%= actions do yield observation if block_given? end%></td>
   </tr>
 <% end %>
 </tbody>
 </table>
-<%= will_paginate @observations, :renderer=> WillPaginate::ActionView::BootstrapLinkRenderer %>
+<%#= will_paginate @observations, :renderer=> WillPaginate::ActionView::BootstrapLinkRenderer %>
   
 </div>

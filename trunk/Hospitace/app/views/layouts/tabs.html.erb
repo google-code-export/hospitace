@@ -1,4 +1,3 @@
-<%# title :observation %>   
 
 <% content_for :content do %>
   <ul class="nav nav-tabs">
@@ -10,13 +9,6 @@
       <%= tab_item(:start_evaluation,new_observation_evaluation_path(@observation)) if can? :create, Evaluation.create(:observation=>@observation) %> 
     <% else %>
       <%= menu_item(:evaluation,evaluation_path(@observation.evaluation)) if can? :read, Evaluation %>
-      <%#= sub_menu(:evaluation) do  %> 
-        <%#= menu_item(:evaluation,observation_evaluation_path(@observation,@observation.evaluation)) %>
-        <%#= menu_item(:protocol,evaluation_a_path(@observation.evaluation)) %>
-        <%#= menu_item(:verbal_evaluation,evaluation_b_path(@observation.evaluation)) %>
-        <%#= menu_item(:opinion,evaluation_c_path(@observation.evaluation)) %>
-        <%#= menu_item(:final_report,evaluation_d_path(@observation.evaluation),:read,User) %>
-      <%# end %>
     <% end %> 
   </ul>
   <%= message( t("observation.warning"),@observation.state.long_message,@observation.state.actions) if !@observation.state.ok? && can?(:update,@observation) %>

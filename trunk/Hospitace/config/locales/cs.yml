@@ -92,6 +92,7 @@ cs:
   show: "Zobrazit"
   destroy: "Smazat"
   search: "Hledat"
+  notes: "Poznámek %{count}"
   
   username: "Uživatelské jméno"
  

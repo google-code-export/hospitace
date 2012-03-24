@@ -19,9 +19,8 @@
   <h2><%= "Hospitace v #{item[:semester].name}" %> <small>Ohlášené a plovoucí hospitace</small></h2>
 
   <%= render :layout=>'observations/datagrid', :locals => { :observations => item[:observations] } do |observation| %>
-
-    <%= link_to t(:show), observation if can? :show, observation %>
-
+    <%= action_notes observation.notes,"#modal_observation_#{observation.id}",{"data-toggle"=>"modal"},:show,observation.notes %>
+    <%= action_icon :show,"icon-info-sign",observation,{},:show,observation %>
   <%end%>
   <hr />
 <% end %>
@@ -29,17 +28,4 @@
 <p>
   Ohlášené hospitace - jsou naplánované na konkrétní datum <br />
   Plovoucí hospitace - ohlášené hospitace, ale nenaplánované na konkrétní datum
-</p> 
-
-
-<script>
-  
-$('.field_note').click(function(){
-    console.log($(this).attr("data-id"));
-$(this).prev('input').css('display','');
-    $(this).addClass("hide")
-  })
-  
-</script>
-  
-  
+</p>

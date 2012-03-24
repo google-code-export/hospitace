@@ -24,13 +24,21 @@ module TableHelper
   end
   
   def actions
-    "<ul class=\"unstyled inline\">#{yield if block_given?}</ul>".html_safe
+    "<ul class=\"unstyled inline pull-right\">#{yield if block_given?}</ul>".html_safe
   end
   
   def action_icon(title,icon,path,options={},*args)
     return if !args.empty? and cannot? *args    
-    "<li rel=\"tooltip\" data-original-title=\"#{t(title)}\">
+    "<li rel=\"tooltip\" data-original-title=\"#{t(title,:count => 2)}\">
       #{link_to("<i class=\"#{icon}\"></i>".html_safe,path,options) }
+    </li>".html_safe
+  end
+  
+  def action_notes(notes,path,options={},*args)
+    return if !args.empty? and cannot? *args    
+    return unless notes.count > 0
+    "<li rel=\"tooltip\" data-original-title=\"#{t(:notes,:count => notes.count)}\">
+      #{link_to("<i class=\"icon-comment\"></i>".html_safe,path,options) }
     </li>".html_safe
   end
   

@@ -24,7 +24,7 @@
     <td><%= form.user.full_name %></td>
     <td><%= l(form.created_at,:format=>:short) %></td>
     <td><%= l(form.updated_at,:format=>:short) %></td>
-    <td><%= actions do yield form if block_given? end%>
+    <td><%= actions do yield form if block_given? end%></td>
   </tr>
 <% end %>
 </tbody>
