@@ -5,18 +5,21 @@ require 'kosapi'
 namespace :import do
   task :semester => :environment do
     beginning = Time.now
-        
+    
+    added = 0
+    updated = 0
+    
     KOSapi::Semester.all.each do |semester|
       s = Semester.find_by_code semester.code
-      puts "Processing semester with code: #{semester.code}"
       if s.nil? then
         s = Semester.create(
           :code         => semester.code,
           :name         => semester.name,
           :start   => semester.start,
           :end     => semester.end)
+        
+        added += 1
       else
-        puts "Updating a semester with code: #{semester.code}"
         if s.name != semester.name then
           s.name = semester.name
           s.save!
@@ -31,8 +34,14 @@ namespace :import do
           s.end = semester.end
           s.save!
         end
+        
+        updated+=1
       end
     end
+    
+    puts "Created semesters #{added}"
+    puts "Updated semesters #{updated}"
+    puts "Total rooms #{KOSapi::Semester.all.size}"
     
     final = Time.now - beginning
   end

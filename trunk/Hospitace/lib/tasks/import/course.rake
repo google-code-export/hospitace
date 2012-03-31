@@ -5,23 +5,19 @@ require 'kosapi'
 namespace :import do
   task :course => :environment do
     
-    added_courses = 0;
-    updated_courses = 0;
+    added = 0;
+    updated = 0;
       
     beginning = Time.now
     
-    course_count = KOSapi::Course.all.size
-    
     item = 0
+    count = KOSapi::Course.all.size
     KOSapi::Course.all.each do |course|
       begin
       
         item += 1
-        puts "Course #{item}/#{course_count}"
-
-
         c = Course.find_by_code(course.code);
-        puts "Processing course with code: #{course.code}"
+        puts "Processing course with code: #{course.code} #{item}/#{count}"
         if c.nil? then
           c = Course.create({
               :classes_type => course.classes_type,
@@ -35,12 +31,59 @@ namespace :import do
               :description => course.description,
               :name => course.name
             })
-          c.save!
-          added_courses+=1
+          added+=1 if c.save!
         else
-          puts "Updating course with code: #{course.code}"
-          #TODO
-          updated_courses+=1
+          if c.classes_type != course.classes_type then
+            c.classes_type = course.classes_type
+            c.save!
+          end
+        
+          if c.range != course.range then
+            c.range = course.range
+            c.save!
+          end
+          
+          if c.semester_season != course.semester_season then
+            c.semester_season = course.semester_season
+            c.save!
+          end
+          
+          if c.study_form != course.study_form then
+            c.study_form = course.study_form
+            c.save!
+          end
+         
+          if c.code != course.code then
+            c.code = course.code
+            c.save!
+          end
+        
+          if c.status != course.status then
+            c.status = course.status
+            c.save!
+          end
+          
+          if c.completion != course.completion then
+            c.completion = course.completion
+            c.save!
+          end
+          
+          if c.credits != course.credits then
+            c.credits = course.credits
+            c.save!
+          end
+          
+          if c.description != course.description then
+            c.description = course.description
+            c.save!
+          end
+          
+          if c.name != course.name then
+            c.name = course.name
+            c.save!
+          end
+          
+          updated+=1
         end
         
       rescue
@@ -49,9 +92,9 @@ namespace :import do
       ensure
       end
     end
-    puts "Created courses #{added_courses}"
-    puts "Updated courses #{updated_courses}"
-    puts "Total courses #{course_count}"
+    puts "Created courses #{added}"
+    puts "Updated courses #{updated}"
+    puts "Total courses #{KOSapi::Course.all.size}"
     final = Time.now - beginning
   end
 

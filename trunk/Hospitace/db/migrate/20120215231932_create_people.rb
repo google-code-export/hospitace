@@ -1,7 +1,6 @@
 class CreatePeople < ActiveRecord::Migration
   def change
     create_table :people do |t|
-      t.primary_key :id
       t.string :email
       t.string :firstname
       t.string :lastname
