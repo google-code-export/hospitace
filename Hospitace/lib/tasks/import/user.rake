@@ -5,9 +5,15 @@ namespace :import do
   task :user => :environment do
     beginning = Time.now
     
+    added = 0
+    updated = 0
+    
+    count = KOSapi::User.all.size
+    value = 0
     KOSapi::User.all.each do |user|
-      u = People.find_by_username(user.username) #|| People.find(user.id)
-      puts "Processing user with username: #{user.username}"
+      value+=1 
+      u = People.find_by_id(user.id) #|| People.find(user.id)
+      #puts "#{user.username} #{value}/#{count}"
       if u.nil? then
           u = People.new(
           :email        => user.email,
@@ -20,9 +26,13 @@ namespace :import do
           :username     => user.username
           )
         u.id = user.id
-        u.save!
+        added += 1 if u.save!
       else
-        puts "Updating an user with username: #{user.username}"
+        if u.username != user.username then
+          u.username = user.username
+          u.save!
+        end
+        
         if u.firstname != user.firstname then
           u.firstname = user.firstname
           u.save!
@@ -57,9 +67,13 @@ namespace :import do
           u.teacher = user.teacher?
           u.save!
         end
-        
+        updated+=1
       end
     end
+    
+    puts "Created users #{added}"
+    puts "Updated users #{updated}"
+    puts "Total users #{KOSapi::User.all.size}"
     
     final = Time.now - beginning
   end

@@ -21,7 +21,7 @@
         <td><%= parallel.day_t %></td>
         <td><%= parallel_time(parallel) %></td>
         <td><%= parallel.parity_t %></td>
-        <td><%= parallel.room.code %></td>
+        <td><%= parallel.room.code unless parallel.room.nil? %></td>
         <td><%= parallel.parallel_type_t %></td>
         <td><%= actions do yield parallel if block_given? end%></td>
       </tr>
