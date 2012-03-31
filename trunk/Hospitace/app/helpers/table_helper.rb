@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 module TableHelper
   
   def th(column,scope=nil,sortable=false)

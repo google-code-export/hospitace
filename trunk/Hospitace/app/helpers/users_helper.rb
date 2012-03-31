@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 module UsersHelper
   
   def full_url_user(peoples)
