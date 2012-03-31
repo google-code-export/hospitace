@@ -1,0 +1,10 @@
+<%= simple_form_for @attachment, :html => { :class => 'form-horizontal', :multipart => true  } do |f| %>
+  <%= f.error_notification %>
+  
+  <%= f.input :data, :as=>:file %>
+  <%= f.input :evaluation_id,:as=>:hidden %>
+
+  <div class="form-actions">
+          <%= f.button :submit, :class => 'btn-primary' %>
+  </div>
+<% end %>

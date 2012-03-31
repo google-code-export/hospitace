@@ -1,0 +1,31 @@
+<% title :home %>
+
+<div class="alert alert-block alert-warning fade in">
+  <a href="#" class="close" data-dismiss="alert">x</a>
+  <p><strong>Aplikace je ve vývoji</strong></p>
+  <p>Pokud narazíte na chybu nebo chybějící funkčnost, tak prosím napište report do <%= link_to 'issue trackeru', 'http://code.google.com/p/hospitace/issues/entry?template=Defect%20report%20from%20user' %> .</p>
+</div>
+
+<h2>Obecně, pravidla, návody</h2>
+
+<p>
+  Podrobné informace o hospittacích naleznete na stránkách rady programu. <%= link_to "link", "https://wiki.feld.cvut.cz/rada_stm/kontrolavyukyverejne" %>
+</p>  
+
+<hr />
+
+
+<% @observations.each do |item| %>
+  <h2><%= "Hospitace v #{item[:semester].name}" %> <small>Ohlášené a plovoucí hospitace</small></h2>
+
+  <%= render :layout=>'observations/datagrid', :locals => { :observations => item[:observations] } do |observation| %>
+    <%= action_notes observation.notes,"#modal_observation_#{observation.id}",{"data-toggle"=>"modal"},:show,observation.notes %>
+    <%= action_icon :show,"icon-info-sign",observation,{},:show,observation %>
+  <%end%>
+  <hr />
+<% end %>
+  
+<p>
+  Ohlášené hospitace - jsou naplánované na konkrétní datum <br />
+  Plovoucí hospitace - ohlášené hospitace, ale nenaplánované na konkrétní datum
+</p>

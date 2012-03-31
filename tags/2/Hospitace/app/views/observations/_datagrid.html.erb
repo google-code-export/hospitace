@@ -1,0 +1,48 @@
+<% scope = "activerecord.attributes.observation" %>
+<% observations ||= @observations %>
+
+<% content_for :modal do %>
+  <% observations.each do |observation| %>
+    <%= render("notes/modal", :notes=>observation.notes,:id=>"modal_observation_#{observation.id}") if can? :show,observation.notes %>
+  <% end %> 
+<% end %>
+
+<div id="datagrid">
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <%= th :course, scope %>
+    <%= th :teachers, scope %>
+    <%= th :students, scope %>
+    <%= th :observers, scope %>
+    <%= th :parallel, scope %>
+    <%= th :date, scope %>
+    <%= th :observation_type, scope %>
+    <%= th :state, scope %>
+    <th></th>
+  </tr>
+  </thead>
+  
+
+<% observations.each do |observation| %>
+  <% 
+    course = observation.course 
+    instance = observation.instance
+  %>
+  <tr>
+    <td><%= course.code %></td>
+    <td><%= short_users(instance.lecturers) unless instance.nil? %></td>
+    <td><%= instance.occupied unless instance.nil? %></td>
+    <td><%= short_users(observation.users) %></td>
+    <td><%= short_parallel(observation.parallel) %></td>
+    <td><%= l(observation.date, :format=>"%d. %m. %Y") unless observation.date.nil?  %></td>
+    <td><%= t(observation.observation_type) %></td>
+    <td><%= label_span(t(observation.state.short_message),(observation.state.ok? ? :success: :warning)) %></td>
+    <td><%= actions do yield observation if block_given? end%></td>
+  </tr>
+<% end %>
+</tbody>
+</table>
+<%#= will_paginate @observations, :renderer=> WillPaginate::ActionView::BootstrapLinkRenderer %>
+  
+</div>

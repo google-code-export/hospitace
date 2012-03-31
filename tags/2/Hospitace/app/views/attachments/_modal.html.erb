@@ -1,0 +1,77 @@
+<% evaluation ||= Evaluation.new %>
+<div id="attachment_modal" class="modal hide fade" style="display: none;">
+  <div class="modal-header">
+    <a class="close" data-dismiss="modal">×</a>
+    <h3><%= t :attachments %></h3>
+  </div>
+
+  <% unless @attachment.persisted? %>
+    <%= simple_form_for @attachment, :html => { :class => 'form-horizontal', :multipart => true  } do |f| %>
+      <div class="modal-body">
+
+        <%= f.error_notification %>
+
+        <%= f.input :data, :as=>:file,  :hint => "Podporované typy souborů: pdf, obrázky " %>
+        <%= f.input :evaluation_id,:as=>:hidden %>
+        <%= f.input :form_id,:as=>:hidden %>
+
+
+      </div>
+      <div class="modal-footer">
+        <%= f.button :submit, :class => 'btn-primary' %>
+        <a class="btn" data-dismiss="modal" href="#">Zavřít</a>
+      </div>
+    <% end %>
+  <% else %>
+    <div class="modal-body">
+      <%= @attachment.filename %>
+      <%= @attachment.content_type %>
+      <%= link_to t(:download), @attachment %>
+      <%= link_to t(:destroy), @attachment, method: :delete, confirm: t(:confirm), remote: true %></td>
+    </div>
+    <div class="modal-footer">
+      <a class="btn" data-dismiss="modal" href="#">Zavřít</a>
+    </div>
+  <% end %>
+</div>
+
+<script>
+  $(function () {
+    $('#attachment_modal form').submit(function(){  
+      var newData = new FormData();
+
+      $.each($('#attachment_modal form input'), function(i, value) {
+        console.log(value);
+        newData.append(value.name, value.value);
+      });
+
+      var uploadData = $("#attachment_data").prop("files")[0];
+      newData.append("attachment[data]", uploadData);
+
+      $.ajax({
+        type: 'POST',
+        url: $('#attachment_modal form').attr('action'),
+        data: newData,
+        dataType: "script",
+        cache: false,
+        contentType: false,
+        processData: false
+
+
+      });
+      return false;
+    });       
+    
+    $(function(){
+      $('#attachment_files').html('<%= escape_javascript(
+        if @attachment.persisted? 
+          " #{@attachment.filename} #{@attachment.content_type} #{link_to t(:download), @attachment}".html_safe 
+        end
+      ) %>');  
+    })
+    
+    $('#attachment_modal a[data-method="delete"]').live('ajax:success', function(){});
+    $('#attachment_modal a[data-method="delete"]').live('ajax:loading', function(){return false;});
+    
+  })
+</script>

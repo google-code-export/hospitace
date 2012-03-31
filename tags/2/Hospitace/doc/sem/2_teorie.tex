@@ -1,0 +1,36 @@
+\chapter{Popis problému, specifikace cíle}
+\section{Cíle práce}
+Hlavním cílem semestrální práce je rozšířit prototyp aplikace pro evidenci hospitací na platformě Ruby on Rails, tak aby bylo možné nasadit částečně do reálného provozu v letním semestru 2011/2012 pro program STM. Proto je vývoj veden pomocí iterativního způsobu. Součástí semestrální práce je nultá a první iterace.
+
+Momentální stav plánování hospitací na FEL ČVUT je založena na komunikací pomocí systému wiki stránek. Tento způsob evidence je příliš náročný na administrativu a v současné době nevyhovuje. Proto je potřeba vytvořit informační systém, který zautomatizuje vnitřní procesy plánování hospitací. 
+
+\subsection{Nultá iterace}
+Součástí nulté iterace bylo seznámení se s procesy plánování hospitací a vytvoření prototypu aplikace, který dokáže komunikovat s webovou službou KOSapi. Pro komunikaci slouží modul převzatý ze školního projektu VyVy. 
+Analytickou část semestrálního projektu vycházím z rozpracované bakalářské práce Daniela Krężeloka Návrh a implementace systému pro správu hospitací.
+ 
+\subsection{První iterace}
+Součástí první iterace je návrh a implementace procesu naplánování hospitací. 
+
+\section{Rešerše}
+Pro zjištění fungování hospitací 
+
+\section{Požadavky}
+\subsection{Obecné požadavky}
+Obecné požadavky jsou požadavky, které se netýkají funkčnosti ale celkového návrhu a použitých technologií.
+\begin{enumerate}
+\item Aplikace bude postavena na webovém frameworku Ruby on Rails.
+\item Aplikace bude používat databázi MySQL.
+\item Serverová část aplikace poběží na aplikačním serveru Apache2
+\item Aplikace bude propojená s webovou službou KOSapi.
+\item Autentizace do systému pomocí FELid.
+\end{enumerate}
+
+\subsection{Funkční požadavky}
+Tato sekce se zabývá požadavky na funkčnost systému. Systém umožní:
+\begin{enumerate}
+\item spravovat uživatele
+\item průběžné plánování hospitaci
+\item přiřazení hospitujícího k hospitaci
+\item vypsat naplánované hospitace
+\item najít předmět z KOSapi
+\end{enumerate}

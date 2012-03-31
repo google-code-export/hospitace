@@ -1,0 +1,21 @@
+<%= simple_form_for @user,  :html => { :class => 'form-horizontal' } do |f| %>
+
+<%= f.error_notification %>
+
+<%= f.input :people_id, :as=>:hidden %>
+
+<% hind = link_to("Napojit na účet z kosu", peoples_select_path) unless @user.persisted? %>
+
+<%= f.input :login, :readonly => (!@user.people_id.nil?), :placeholder => 'user', :hint => hind %>
+
+<%= f.input :password %>
+<%= f.input :password_confirmation%>
+
+<%= f.input :roles, :collection =>input_roles,  :as => :check_boxes if can? :assign_roles, @user %>
+
+
+<div class="form-actions">
+	<%= f.button :submit, :class => 'btn-primary' %>
+	<%= submit_tag 'Cancel', :type => :reset, :class => "btn btn-danger" %>
+</div>
+<% end %> 

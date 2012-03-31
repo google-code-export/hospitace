@@ -1,0 +1,9 @@
+<% title :course, :small=>"#{@course.name} (#{@course.code})" %>
+
+<%= render :partial=>"course", :locals => { :course => @course }  %>
+
+<hr />
+
+<h2><%= t :parallels%></h2>
+<%= render :layout => "parallels/datagrid", :locals => { :parallels => @course.parallels } do |parallel| %>
+<% end %>

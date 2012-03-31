@@ -1,0 +1,21 @@
+<%= simple_form_for @evaluation,  :html => { :class => 'form-horizontal' } do |f| %>
+
+<%= f.error_notification %>
+
+<%= f.association :observation,:as=>:hidden %>
+
+<%= f.input :teacher %>
+
+<%= f.input :guarant %>
+
+<%= f.input :course %>
+
+<%= f.input :room %>
+
+<%= f.input :datetime_observation %>
+
+<div class="form-actions">
+	<%= f.button :submit, :class => 'btn-primary' %>
+	<%= submit_tag 'Cancel', :type => :reset, :class => "btn btn-danger" %>
+</div>
+<% end %> 

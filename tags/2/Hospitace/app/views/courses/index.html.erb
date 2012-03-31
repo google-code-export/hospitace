@@ -1,0 +1,5 @@
+<% title :courses %>
+
+<%= render :layout => "datagrid", :locals => { :courses => @courses } do |course| %>
+ <%= action_icon :show,"icon-info-sign",course,{},:show,course %>
+<% end %>

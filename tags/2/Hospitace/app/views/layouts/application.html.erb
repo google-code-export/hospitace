@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hospitace</title>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application" %>
+
+
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body data-spy="scroll">  
+
+    <header class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <%= link_to "Kontrola kvality výuky", root_path, :class=>"brand" %>
+          <ul class="nav">
+            <%= sub_menu(:observations,:index,Observation) do %>
+              <%= menu_item(:all,observations_path,:index,Observation) %>
+              <%= menu_item(:manage,my_observations_manage_path,:m_ob,Observation) %>
+              <%= menu_item(:observing,my_observations_observing_path,:observing,Observation) %>
+              <%= menu_item(:observed,my_observations_observed_path,:observed,Observation) %>
+
+              <%= menu_item(:create,new_observation_path,:create,Observation) %>
+            <% end %>
+            <%= menu_item(:evaluations,evaluations_path,:read,Evaluation) %>
+            <%= sub_menu(:setting,:setting,"Setting") do %>
+              <%= menu_item(:users,users_path,:manage,User) %>
+              <%= menu_item(:forms,"#",:manage,FormTemplate) %>
+              <li class="divider"></li>
+  <%#*<li class="nav-header">Data z kosu</li>%>
+              <%= menu_item(:peoples,peoples_path,:read,People) %>
+              <%= menu_item(:courses,courses_path,:read,Course) %>
+            <% end %>
+
+
+          </ul>
+          <div class="login pull-right">
+            <% if !current_user %>
+              <%= link_to t(:login,:scope=>"menu.user_session"), :login %>
+            <% else %>
+              <%= t(:logged_in_as,:scope=>"menu.user_session") %> <%= link_to current_user.login, edit_user_path(current_user.id) %> |
+              <%= link_to t(:logout,:scope=>"menu.user_session"), :logout %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <script type="text/javascript">
+      $('.dropdown-toggle').dropdown();
+      $(".alert").alert()
+    </script>
+
+
+
+    <div class="container">
+
+      <div class="content">
+        <div class="page-header">
+
+          <h1><%= @title.html_safe %></h1>
+        </div>
+        <div class="row">
+
+          <%= alert_message(flash[:alert],:error) if !flash[:alert].nil? %>
+          <%= alert_message(flash[:warning],:warning) if !flash[:warning].nil? %>
+          <%= alert_message(flash[:notice],:success) if !flash[:notice].nil? %>		
+
+          <% if content_for?(:secoundary_content) %>
+            <div class="main_content">
+              <div class="data">
+                <%= content_for?(:content) ? yield(:content) : yield %>
+              </div>	
+            </div>
+            <div class="sidebar">
+              <%= yield(:secoundary_content)%>
+            </div>
+          <% else %>
+            <div class="main_content">
+              <%= content_for?(:content) ? yield(:content) : yield %>
+            </div>
+          <% end%>
+        </div>
+      </div>
+      <div id="modal">
+        <% if content_for?(:modal) %>
+          <%= yield(:modal) %>
+        <% end %>
+      </div>
+      <footer>
+      </footer>
+    </div>
+  </body>
+</html>

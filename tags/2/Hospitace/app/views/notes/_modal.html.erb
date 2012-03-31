@@ -1,0 +1,23 @@
+<% notes ||= [Note.new] %>
+<% id ||= "notes_modal" %>
+<div id="<%="#{id}"%>" class="modal hide fade" style="display: none;">
+  <div class="modal-header">
+    <a class="close" data-dismiss="modal">×</a>
+    <h3><%= t :notes,:scope=>"modal" %></h3>
+  </div>
+      <div class="modal-body">
+
+        <% notes.each do |note| %>
+          <p>
+            <strong>Autor:</strong> <%= render(note.user) %> | <%= l(note.updated_at, :format=>:long) %> 
+          </p>
+          <p>
+            <%= note.note.html_safe %>  
+          </p>
+          <hr>
+        <% end %>
+      </div>
+      <div class="modal-footer">
+        <a class="btn" data-dismiss="modal" href="#">Zavřít</a>
+      </div>
+</div>

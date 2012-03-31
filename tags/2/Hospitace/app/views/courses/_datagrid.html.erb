@@ -1,0 +1,56 @@
+<% content_for :secoundary_content do %>
+	
+	<div class="header">
+		<h3>Filter</h3>
+	</div>	
+	
+	<%= simple_form_for :search,:html=> {:id=>"search_form", :class => 'form-horizontal form-search' },:method=>:get do |f| %>
+	
+	<%= hidden_field_tag :direction, params[:direction] %>
+	<%= hidden_field_tag :sort, params[:sort] %>
+	
+	<%= f.input :code, :required => false %>
+	<%= f.input :name, :required => false, :label=>"Název" %>
+	<%#= f.input :semester_season, :required => false %>
+	
+	<div class="form-actions">
+		<%= f.submit :search, :class => 'btn btn-primary' %>
+	</div>
+	
+	<% end %>
+
+<% end %> 
+
+<div id="datagrid">      
+<table class="table table-striped">
+  <tr>
+    <th>#</th>
+    <th>Kód</th>
+    <th>Název</th>
+    <th>Přednášející</th>
+    <th>Počet studentů</th>
+    <th></th>
+  </tr>
+
+  <% courses.each do |course| %>
+  <%#TODO %> 
+  <% instance = course.instance %>
+  <tr>
+    <td><%= course.id %></td>
+    <td><%= course.code %></td>
+    <td><%= course.name %></td>
+    <td><%= short_users(instance.lecturers) unless instance.nil? %></td>
+    <td><%= instance.occupied unless instance.nil? %></td>
+    <td><%= actions do yield course if block_given? end%></td>
+  </tr>
+
+  <% end %>
+
+</table>
+
+<%= will_paginate courses, :renderer=> WillPaginate::ActionView::BootstrapLinkRenderer %>
+</div>
+
+
+
+

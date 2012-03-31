@@ -1,0 +1,44 @@
+
+<%
+  @evaluation ||= Evaluation.find params[:evaluation_id] unless params[:evaluation_id].nil?
+  @observation = @evaluation.observation  
+%>
+
+<% content_for :content do %>
+  <ul class="nav nav-tabs">
+    <%= tab_item(:observation,@evaluation) if can? :show, @evaluation %>  
+    <%= sub_tab(:setting,:setting,"Setting") do %>
+                  <%= tab_item(:information,edit_evaluation_path(@evaluation),:manage,User) %>
+                  <%= tab_item(:attachments,evaluation_attachments_path(@evaluation)) if can? :show, @observation %> 
+                  <%= tab_item(:forms,evaluation_forms_path(@evaluation),:manage,Form) %>
+    <% end %>
+    <% FormTemplate.all.each do |template| %>
+      <% 
+      forms = template.forms.where(:evaluation_id => @evaluation.id)
+      unless forms.any? %>
+        <% form = Form.new({
+            :form_template_id=>template.id,
+            :evaluation_id=>@evaluation.id
+          }) %>
+
+         <%  %>
+    
+        <%= tab_item("#{template.code}_new","/evaluations/#{@evaluation.id}/forms/new/#{template.code}") if can? :create, form %>
+      <% else %>
+        <% form = template.forms.where({:evaluation_id=>@evaluation.id}).first %>
+    
+        <%= 
+        if @evaluation.form?(template.code) and can?(:create, form)
+          tab_item("#{template.code}","/evaluations/#{@evaluation.id}/forms/code/#{template.code}") if can? :show, form 
+        else 
+          tab_item("#{template.code}_new","/evaluations/#{@evaluation.id}/forms/new/#{template.code}") if can? :create, form 
+        end
+        %>
+      <% end %>
+    <% end %>
+
+  </ul>
+  <%= message( t("observation.warning"),@observation.state.long_message,@observation.state.actions) if !@observation.state.ok? && can?(:update,@observation) %>
+  <%= content_for?(:news_content) ? yield(:news_content) : yield %>
+<% end %>
+<%= render :template => 'layouts/application' %>
