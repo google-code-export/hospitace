@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 module CoursesHelper
   def short_users(users)
     return if users.nil?

@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 module PeoplesHelper
   def short_users(users)
     return if users.nil?

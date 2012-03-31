@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 module FormsHelper  
   def dynamic_entries(entries,form)
     entries.collect do |en|
