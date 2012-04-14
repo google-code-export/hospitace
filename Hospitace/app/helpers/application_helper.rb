@@ -40,7 +40,8 @@ module ApplicationHelper
 
   def show_item(title,value,*args)
     return if !args.empty? and cannot? *args
-    content_tag( :dt, title) +  content_tag( :dd, value)
+    content_tag( :dt, title,:class=>"label label-white name_field string_type") +  content_tag( :dd, content_tag(:pre,value,:class=>"prettyprint"
+      ))
     
 #    <dt>Description lists</dt>
 #<dd>A description list is perfect for defining terms.</dd>

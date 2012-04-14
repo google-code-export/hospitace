@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120303173128) do
+ActiveRecord::Schema.define(:version => 20120412151008) do
 
   create_table "attachments", :force => true do |t|
     t.string   "filename"
@@ -66,6 +66,14 @@ ActiveRecord::Schema.define(:version => 20120303173128) do
     t.datetime "updated_at"
   end
 
+  create_table "email_templates", :force => true do |t|
+    t.string   "subject"
+    t.text     "text"
+    t.string   "form_code"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "entries", :force => true do |t|
     t.text     "value"
     t.integer  "entry_id"
@@ -85,10 +93,10 @@ ActiveRecord::Schema.define(:version => 20120303173128) do
     t.string   "label"
     t.string   "default"
     t.string   "item_type"
-    t.integer  "template_order"
-    t.integer  "entry_template_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "template_order"
+    t.integer  "entry_template_id"
   end
 
   add_index "entry_templates", ["entry_template_id"], :name => "index_entry_templates_on_entry_template_id"

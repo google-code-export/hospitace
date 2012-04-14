@@ -11,3 +11,7 @@ jQuery ->
   $(".typeahead").typeahead()
   $("a[rel=tooltip]").tooltip()
   $("li[rel=tooltip]").tooltip()
+  $("input[ref=datepicker]").datepicker({
+    format: 'dd. mm. yyyy'
+    });
+

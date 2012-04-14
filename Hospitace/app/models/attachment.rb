@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class Attachment < ActiveRecord::Base
   belongs_to :evaluation
   belongs_to :user

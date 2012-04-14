@@ -4,9 +4,7 @@
     <title>Hospitace</title>
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application" %>
-
-
-    <%= csrf_meta_tags %>
+    <%= csrf_meta_tag %>
   </head>
 
   <body data-spy="scroll">  
@@ -27,6 +25,7 @@
             <%= menu_item(:evaluations,evaluations_path,:read,Evaluation) %>
             <%= sub_menu(:setting,:setting,"Setting") do %>
               <%= menu_item(:users,users_path,:manage,User) %>
+              <%= menu_item(:emails,email_templates_path,:manage,EmailTemplate) %>
               <%= menu_item(:forms,"#",:manage,FormTemplate) %>
               <li class="divider"></li>
   <%#*<li class="nav-header">Data z kosu</li>%>

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.12.22)  29 JAN 2012 11:24
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2012.2.11)  1 APR 2012 13:22
 entering extended mode
  %&-line parsing enabled.
 **"semestrální projekt.tex"
@@ -292,11 +292,10 @@ Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 (/etc/texmf/tex/latex/config/graphics.cfg
 File: graphics.cfg 2009/08/28 v1.8 graphics configuration of TeX Live
 )
-Package graphics Info: Driver file: pdftex.def on input line 91.
+Package graphics Info: Driver file: dvips.def on input line 91.
 
-(/usr/share/texmf-texlive/tex/latex/pdftex-def/pdftex.def
-File: pdftex.def 2010/03/12 v0.04p Graphics/color for pdfTeX
-\Gread@gobject=\count90
+(/usr/share/texmf-texlive/tex/latex/graphics/dvips.def
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
 ))
 \Gin@req@height=\dimen104
 \Gin@req@width=\dimen105
@@ -310,7 +309,7 @@ Package: hyperref 2009/10/09 v6.79a Hypertext links for LaTeX
 
 (/usr/share/texmf-texlive/tex/generic/oberdiek/ifpdf.sty
 Package: ifpdf 2009/04/10 v2.0 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in pdf mode detected.
+Package ifpdf Info: pdfTeX in pdf mode not detected.
 )
 (/usr/share/texmf-texlive/tex/generic/oberdiek/ifvtex.sty
 Package: ifvtex 2008/11/04 v1.4 Switches for detecting VTeX and its modes (HO)
@@ -327,8 +326,8 @@ O)
 Package: xcolor-patch 2009/10/02 xcolor patch
 ))
 \@linkdim=\dimen106
-\Hy@linkcounter=\count91
-\Hy@pagecounter=\count92
+\Hy@linkcounter=\count90
+\Hy@pagecounter=\count91
 
 (/usr/share/texmf-texlive/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2009/10/09 v6.79a Hyperref: PDFDocEncoding definition (HO)
@@ -405,7 +404,7 @@ Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 )))
-\Fld@menulength=\count93
+\Fld@menulength=\count92
 \Field@Width=\dimen107
 \Fld@charsize=\dimen108
 \Field@toks=\toks17
@@ -420,21 +419,33 @@ Package hyperref Info: PDF/A mode OFF on input line 4407.
 (/usr/share/texmf-texlive/tex/generic/oberdiek/atbegshi.sty
 Package: atbegshi 2008/07/31 v1.9 At begin shipout hook (HO)
 )
-\Hy@abspage=\count94
-\c@Item=\count95
-\c@Hfootnote=\count96
+\Hy@abspage=\count93
+\c@Item=\count94
+\c@Hfootnote=\count95
 )
-*hyperref using default driver hpdftex*
-(/usr/share/texmf-texlive/tex/latex/hyperref/hpdftex.def
-File: hpdftex.def 2009/10/09 v6.79a Hyperref driver for pdfTeX
-\Fld@listcount=\count97
-)
-(/usr/share/texmf-texlive/tex/latex/natbib/natbib.sty
+*hyperref using default driver hdvips*
+(/usr/share/texmf-texlive/tex/latex/hyperref/hdvips.def
+File: hdvips.def 2009/10/09 v6.79a Hyperref driver for dvips
+
+(/usr/share/texmf-texlive/tex/latex/hyperref/pdfmark.def
+File: pdfmark.def 2009/10/09 v6.79a Hyperref definitions for pdfmark specials
+
+
+Package hyperref Warning: You have enabled option `breaklinks'.
+(hyperref)                But driver `hdvips.def' does not suppport this.
+(hyperref)                Expect trouble with the link areas of broken links.
+
+\pdf@docset=\toks18
+\pdf@box=\box26
+\pdf@toks=\toks19
+\pdf@defaulttoks=\toks20
+\Fld@listcount=\count96
+)) (/usr/share/texmf-texlive/tex/latex/natbib/natbib.sty
 Package: natbib 2009/07/16 8.31 (PWD, AO)
 \bibhang=\skip43
 \bibsep=\skip44
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count98
+\c@NAT@ctr=\count97
 )
 (./semestrální projekt.aux (./1_uvod.aux) (./2_teorie.aux) (./3_analiza.aux)
 (./4_realizace.aux) (./5_testovani.aux) (./6_zaver.aux))
@@ -457,26 +468,17 @@ LaTeX Font Info:    ... okay on input line 134.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 134.
 LaTeX Font Info:    ... okay on input line 134.
 
-(/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
-[Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count99
-\scratchdimen=\dimen109
-\scratchbox=\box26
-\nofMPsegments=\count100
-\nofMParguments=\count101
-\everyMPshowfont=\toks18
-\MPscratchCnt=\count102
-\MPscratchDim=\dimen110
-\MPnumerator=\count103
-\everyMPtoPDFconversion=\toks19
-) (/usr/share/texmf-texlive/tex/latex/graphics/color.sty
+(/usr/share/texmf-texlive/tex/latex/graphics/color.sty
 Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
 
 (/etc/texmf/tex/latex/config/color.cfg
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
-Package color Info: Driver file: pdftex.def on input line 130.
-)
+Package color Info: Driver file: dvips.def on input line 130.
+
+(/usr/share/texmf-texlive/tex/latex/graphics/dvipsnam.def
+File: dvipsnam.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+))
 Package hyperref Info: Link coloring ON on input line 134.
 
 (/usr/share/texmf-texlive/tex/latex/hyperref/nameref.sty
@@ -485,7 +487,7 @@ Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
 (/usr/share/texmf-texlive/tex/latex/oberdiek/refcount.sty
 Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
 )
-\c@section@level=\count104
+\c@section@level=\count98
 )
 LaTeX Info: Redefining \ref on input line 134.
 LaTeX Info: Redefining \pageref on input line 134.
@@ -517,24 +519,23 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 
 
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2
+] [2
 
 ]
-<figures/LogoCVUT.pdf, id=132, 93.34875pt x 70.2625pt>
-File: figures/LogoCVUT.pdf Graphic file (type pdf)
+File: figures/LogoCVUT.eps Graphic file (type eps)
 
-<use figures/LogoCVUT.pdf> [3 <./figures/LogoCVUT.pdf>] [4
+<figures/LogoCVUT.eps> [3] [4
 
 ] [5] [6
 
-] [7]
-[8
+] [7] [8
 
 ] [9
 
 ] [10
 
-] (./semestrální projekt.toc
+]
+(./semestrální projekt.toc
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <12> on input line 5.
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -545,21 +546,20 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 \tf@toc=\write4
 \openout4 = `"semestrální projekt.toc"'.
 
- [12]
-(./semestrální projekt.lof)
+ [12] (./semestrální projekt.lof)
 \tf@lof=\write5
 \openout5 = `"semestrální projekt.lof"'.
 
  [13
 
-] [14
+]
+[14
 
 ] (./semestrální projekt.lot)
 \tf@lot=\write6
 \openout6 = `"semestrální projekt.lot"'.
 
- [15]
-[16
+ [15] [16
 
 ]
 \openout2 = `1_uvod.aux'.
@@ -614,126 +614,115 @@ Kapitola 5.
 
 ]
 Kapitola 6.
-) [11]
-No file "semestrální projekt".bbl.
-[12
+) [11] (./semestrální projekt.bbl [12
 
 
 ]
+
+Package natbib Warning: Empty `thebibliography' environment on input line 8.
+
+) [13] [14
+
+]
 P\v {r}\'{\i }loha A.
-[13] [14] [15] [16]
+File: figures/LogoCVUT.eps Graphic file (type eps)
+<figures/LogoCVUT.eps>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[15] [16] [17] [18] [19] [20
+
+]
 P\v {r}\'{\i }loha B.
 
-Package natbib Warning: Citation `CSTUG' on page 17 undefined on input line 374
+Package natbib Warning: Citation `CSTUG' on page 21 undefined on input line 383
 .
 
 
-Package natbib Warning: Citation `latexdocweb' on page 17 undefined on input li
-ne 374.
+Package natbib Warning: Citation `latexdocweb' on page 21 undefined on input li
+ne 383.
 
 
-Package natbib Warning: Citation `latexwiki' on page 17 undefined on input line
- 374.
+Package natbib Warning: Citation `latexwiki' on page 21 undefined on input line
+ 383.
 
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 380.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 389.
 
 (/usr/share/texmf-texlive/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 382.
+(Font)              <7> on input line 391.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 382.
-File: figures/LogoCVUT.pdf Graphic file (type pdf)
- <use figures/LogoCVUT.pdf>
-[17
+(Font)              <5> on input line 391.
+File: figures/LogoCVUT.eps Graphic file (type eps)
+ <figures/LogoCVUT.eps>
+[21]
 
-]
+Package natbib Warning: Citation `ipe' on page 22 undefined on input line 415.
 
-Package natbib Warning: Citation `ipe' on page 18 undefined on input line 406.
+[22] [23] [24]
 
-[18] [19] [20]
-
-Package natbib Warning: Citation `kniha' on page 21 undefined on input line 553
+Package natbib Warning: Citation `kniha' on page 25 undefined on input line 562
 .
 
 
-Package natbib Warning: Citation `clanek' on page 21 undefined on input line 55
-3.
+Package natbib Warning: Citation `clanek' on page 25 undefined on input line 56
+2.
 
 
-Package natbib Warning: Citation `sbornik' on page 21 undefined on input line 5
-53.
+Package natbib Warning: Citation `sbornik' on page 25 undefined on input line 5
+62.
 
 
-Package natbib Warning: Citation `www' on page 21 undefined on input line 553.
+Package natbib Warning: Citation `www' on page 25 undefined on input line 562.
 
 
-Package natbib Warning: Citation `wiki:framework' on page 21 undefined on input
- line 555.
+Package natbib Warning: Citation `wiki:framework' on page 25 undefined on input
+ line 564.
 
 
-Package natbib Warning: Citation `wiki:orm' on page 21 undefined on input line 
-555.
+Package natbib Warning: Citation `wiki:orm' on page 25 undefined on input line 
+564.
 
-[21] [22]
+[25] [26]
 P\v {r}\'{\i }loha C.
-[23
+[27
 
-] [24
+] [28
 
 ]
 P\v {r}\'{\i }loha D.
-[25] [26
+[29] [30
 
 ]
 P\v {r}\'{\i }loha E.
-[27] [28
+[31] [32
 
 ]
 P\v {r}\'{\i }loha F.
 
-Package natbib Warning: Citation `infodp' on page 29 undefined on input line 64
-8.
+Package natbib Warning: Citation `infodp' on page 33 undefined on input line 65
+7.
 
-<figures/seznamcd.pdf, id=389, 793.96625pt x 539.01375pt>
-File: figures/seznamcd.pdf Graphic file (type pdf)
-
-<use figures/seznamcd.pdf> [29 <./figures/seznamcd.pdf>] [30]
+File: figures/seznamcd.eps Graphic file (type eps)
+<figures/seznamcd.eps> [33]
 
 Package natbib Warning: There were undefined citations.
 
-(./semestrální projekt.aux (./1_uvod.aux) (./2_teorie.aux) (./3_analiza.aux)
-(./4_realizace.aux) (./5_testovani.aux) (./6_zaver.aux)) ) 
+[34] (./semestrální projekt.aux (./1_uvod.aux) (./2_teorie.aux)
+(./3_analiza.aux) (./4_realizace.aux) (./5_testovani.aux) (./6_zaver.aux))
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 6769 strings out of 495061
- 89578 string characters out of 1182620
- 164094 words of memory out of 3000000
- 9688 multiletter control sequences out of 15000+50000
+ 6489 strings out of 495062
+ 86702 string characters out of 1182644
+ 160485 words of memory out of 3000000
+ 9508 multiletter control sequences out of 15000+50000
  18828 words of font info for 41 fonts, out of 3000000 for 9000
  32 hyphenation exceptions out of 8191
  38i,9n,38p,974b,468s stack positions out of 5000i,500n,10000p,200000b,50000s
- </home/osman/.texmf-
-var/fonts/pk/ljfour/jknappen/ec/ectt1000.600pk> </home/osman/.texmf-var/fonts/p
-k/ljfour/jknappen/ec/ectt1095.600pk> </home/osman/.texmf-var/fonts/pk/ljfour/jk
-nappen/ec/ecrm1000.600pk> </home/osman/.texmf-var/fonts/pk/ljfour/jknappen/ec/e
-crm0700.600pk> </home/osman/.texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1200.600
-pk> </home/osman/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0800.600pk> </home/
-osman/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/osman/.texm
-f-var/fonts/pk/ljfour/jknappen/ec/ecsl1200.600pk> </home/osman/.texmf-var/fonts
-/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/osman/.texmf-var/fonts/pk/ljfour/
-jknappen/ec/ecrm0600.600pk> </home/osman/.texmf-var/fonts/pk/ljfour/jknappen/ec
-/ecti1728.600pk> </home/osman/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1728.6
-00pk> </home/osman/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1440.600pk> </hom
-e/osman/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/osman/.te
-xmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2488.600pk></usr/share/texmf-texlive/fo
-nts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-texlive/fonts/type1/p
-ublic/amsfonts/cm/cmr12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfon
-ts/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.
-pfb>
-Output written on "semestrální projekt.pdf" (46 pages, 454761 bytes).
-PDF statistics:
- 1146 PDF objects out of 1200 (max. 8388607)
- 101 named destinations out of 1000 (max. 500000)
- 243 words of extra memory for PDF output out of 10000 (max. 10000000)
 
+Output written on "semestrální projekt.dvi" (50 pages, 109832 bytes).

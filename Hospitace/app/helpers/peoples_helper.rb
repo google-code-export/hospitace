@@ -1,18 +1,20 @@
 # encoding: utf-8
 
 module PeoplesHelper
-  def short_users(users)
-    return if users.nil?
+  def short_peoples(peoples)
+    return if peoples.nil?
+    return unless peoples.is_a? Array
     u = []
-    users.each do |l|
+    peoples.each do |l|
       (next u << l.login) if l.lastname.nil?
-      u << "#{l.firstname} #{l.lastname}"
+      u << "#{l.firstname[0]}. #{l.lastname}"
     end
     u.join(", ")
   end
-  
+   
   def full_url_peoples(peoples)
     return if peoples.nil?
+    return unless peoples.is_a? Array
     u = []
     peoples.each do |l|
       name = "#{l.firstname} #{l.lastname}"

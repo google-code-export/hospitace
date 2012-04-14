@@ -1,0 +1,47 @@
+\chapter{Návrh}
+
+\section{Technologie}
+Tato část popisuje jednotlivé technologie potřebné pro implementaci aplikace.
+
+\subsection{Ruby on Rails}
+Ruby on Rails \cite{rubyonrails}, zkráceně Rails, je jedno z implementačních omezení, které se nachází přímo v zadání práce. Je to framework postavený na jazyce Ruby \cite{ruby} a je primárně určen pro tvorbu webových aplikací napojených na databázi. Rails je postaven na návrhovém vzoru model-view-controller \ref{mvc}. Tento framework používá dva hlavní principy. Prvním principem je Convention over Configuration \ref{coc} a druhým je Don’t Repeat Yourself \ref{dry}.
+
+\subsection{KOSapi}
+\label{kosapi}
+KOSapi je webová služba poskytující aplikační rozhraní v podobě RESTful webové služby \ref{rest}. Je určená pro vznik školních aplikací, které potřebují mít přístup k datům souvisejících s výukou. Pro instance FEL a FIT čerpá služba data z KOSu.
+
+Z této služby čerpám hlavně data předmětů a osob v KOSu. Pro připojení ke KOSapi používám již existující knihovnu napsanou v Ruby pány Tomášem Linhartem a Tomášem Jukínem ve školním projektu VyVy \cite{vyvy_project}. 
+
+\subsection{FELid}
+\label{felid}
+FELid \cite{felid} je globální autentizační a autorizační systém pro webovské aplikace na síti FEL. Poskytuje jednotný a bezpečný způsob přihlášení uživatelů a přenos jejich údajů do různých aplikací na webu. Zároveň podporuje jednorázové přihlášení (tzv. single sign-on). Znamená to, že se uživatel přihlašuje pouze do první použité aplikaci a u dalších aplikací už nemusí zadávat svoje přihlašovací údaje.
+
+Tuto službu používám pro autentizaci uživatelů do systému. Abych mohl používat v aplikaci FELid je nutné splnit technické požadavky, které jsou napsány na stránkách FELid \cite{felid_pozadavky}.
+
+\subsection{Aplikační server}
+\label{apache}
+Pro zprovoznění aplikace do reálného provozu jsem použil webový server Apache HTTP server \cite{apache} ve verzi 2. Tento aplikační server jsem zvolil kvůli obecným požadavkům aplikace pro využití FELid a pažadavku aby aplikace byla napsaná v Ruby on Rails. Tato verze webového serveru totiž umožňuje instalaci zásuvných modulů Passenger \cite{passenger} a Shibboleth \cite{shibboleth}. Passenger umožňuje nasazení rails aplikací na aplikačním serveru. Druhý modul Shibboleth zprostředkovává single sign-on autentizaci mezi aplikačním serverem a službou FELid.
+
+\subsection{Databáze}
+Ruby on Rails poskytuje možnost připojení k různým databázovým systémům prostřednictvím adaptérů. Díky tomu není aplikace závislá na použitém databázovém systému a díky tomu mohu používat pro vývoj a testování aplikace jednoduchý databázový systém SQLite \cite{sqlite}, který pro tyto účely bohatě postačuje a není potřeba jej složitě konfigurovat. Pro samotné nasazení aplikace do provozu už používám databázový systém MySQL \cite{mysql}.
+
+\section{Architektura}
+V této části popisuji architektonické vzory a konvence používané pro vývoj aplikace. 
+
+\subsection{MVC}
+\label{mvc}
+MVC (Model-view-controller) \cite{mvc} je softwarová architektura, která rozděluje datový model aplikace, uživatelské rozhraní a řídicí logiku do tří nezávislých komponent tak, že modifikace některé z nich má minimální vliv na ostatní. 
+
+Ruby on Rails obsahuje ve svém jádru tuto architekturu, proto je její implementace automatická.
+
+\subsection{DRY}
+\label{dry}
+DRY (Don’t repeat yourself) \cite{dry} je princip vývoje softwaru zaměřený na snížení opakování psaní stejného kódu a tím zvyšuje čitelnost a znovupoužitelnost kódu. To znamená, že informace se nacházejí na jednoznačném místě. Pro příklad Ruby on Rails získává definici sloupců pro třídu modelu přímo z databáze.  
+
+\subsection{CoC}
+\label{coc}
+CoC (Convention over Configuration) \cite{coc} je další princip používaný v Rails pro zlepšení čitelnosti a znovupoužitelnosti kódu. Tento princip znamená, že konvence má přednost před konfigurací a to tak, že Rails předpokládá to, co chcete udělat, místo toho, aby vás nutil specifikovat každou drobnost v konfiguraci. 
+
+\subsection{REST}
+\label{rest}
+REST (Representational State Transfer) \cite{rest} je architektonický vzor pro webové aplikace. Je založen na HTTP protokolu a hlavní myšlenkou je poskytovat přístup ke zdrojům dat. Všechny zdroje jsou identifikovány přes URI. REST definuje čtyři základní metody pro přístup ke zdrojům. Jde o metody POST, GET, PUT a DELETE, které zprostředkovávají základní operace create, read, update a delete.

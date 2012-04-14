@@ -1,0 +1,80 @@
+This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
+The top-level auxiliary file: semestrální projekt.aux
+A level-1 auxiliary file: 1_uvod.aux
+A level-1 auxiliary file: 2_teorie.aux
+A level-1 auxiliary file: 3_analiza.aux
+A level-1 auxiliary file: 3_navrh.aux
+A level-1 auxiliary file: 4_realizace.aux
+A level-1 auxiliary file: 5_testovani.aux
+A level-1 auxiliary file: 6_zaver.aux
+The style file: csplainnat.bst
+A level-1 auxiliary file: zkratky.aux
+Database file #1: reference.bib
+Repeated entry---line 82 of file reference.bib
+ : @online{kosapi
+ :               ,
+I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "authlogic"
+Warning--I didn't find a database entry for "simpleform"
+Warning--I didn't find a database entry for "guide_pa"
+Warning--to sort, need author or key in kosapi
+Warning--to sort, need author or key in felid
+Warning--to sort, need author or key in rubyonrails
+Warning--to sort, need author or key in ruby
+Warning--to sort, need author or key in vyvy_project
+Warning--to sort, need author or key in felid_pozadavky
+Warning--to sort, need author or key in mvc
+Warning--to sort, need author or key in dry
+Warning--to sort, need author or key in coc
+Warning--to sort, need author or key in rest
+Warning--to sort, need author or key in vyvy
+Warning--to sort, need author or key in cancan
+Warning--to sort, need author or key in bootstrap
+Warning--to sort, need author or key in willpaginate
+`address' is a missing field, not a string, for entry postupy
+while executing---line 1510 of file csplainnat.bst
+`publisher' is a missing field, not a string, for entry postupy
+while executing---line 1510 of file csplainnat.bst
+Warning--empty publisher in postupy
+You've used 22 entries,
+            2954 wiz_defined-function locations,
+            722 strings with 7270 characters,
+and the built_in function-call counts, 5433 in all, are:
+= -- 699
+> -- 79
+< -- 9
++ -- 46
+- -- 22
+* -- 383
+:= -- 716
+add.period$ -- 69
+call.type$ -- 22
+change.case$ -- 40
+chr.to.int$ -- 20
+cite$ -- 73
+duplicate$ -- 281
+empty$ -- 471
+format.name$ -- 36
+if$ -- 1269
+int.to.chr$ -- 3
+int.to.str$ -- 1
+missing$ -- 47
+newline$ -- 105
+num.names$ -- 30
+pop$ -- 140
+preamble$ -- 1
+purify$ -- 31
+quote$ -- 0
+skip$ -- 231
+stack$ -- 0
+substring$ -- 58
+swap$ -- 27
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 237
+warning$ -- 15
+while$ -- 19
+width$ -- 0
+write$ -- 252
+(There were 3 error messages)

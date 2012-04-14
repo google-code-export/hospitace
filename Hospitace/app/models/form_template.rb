@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class FormTemplate < ActiveRecord::Base
   default_scope :order => 'code ASC'
   
@@ -7,6 +9,8 @@ class FormTemplate < ActiveRecord::Base
   
   has_many :forms, :dependent => :destroy
   has_many :entries, :through => :form
+  
+  has_one :email_template, :class_name => "EmailTemplate", :foreign_key => :form_code, :primary_key => :code
   
   def roles=(roles)
     self.roles_mask = self.class.roles(roles)

@@ -1,17 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  code: MyString
-  name: MyString
+  code: A
+  name: Form A
   description: MyText
   required: false
-  count: MyString
-  roles: 1
+  count: observers
+  roles_mask: 1
 
 two:
-  code: MyString
-  name: MyString
+  code: B
+  name: Form B
   description: MyText
-  required: false
-  count: MyString
-  roles: 1
+  required: true
+  count: 1
+  roles_mask: 1

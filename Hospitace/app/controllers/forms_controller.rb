@@ -124,6 +124,9 @@ class FormsController < ApplicationController
       if save_form(@form,params[:form])
         redirect = edit_evaluation_form_path(@form.evaluation,@form) unless params[:save].nil?
         redirect ||= evaluation_form_path(@form.evaluation,@form.id)
+        
+        EvaluationMailer.email_template(People.new(:email=>"osmman@gmail.com"),@form.email_template,:evaluation=>@form.evaluation).deliver
+        
         format.html { redirect_to redirect, notice: 'Formulář byl úspěšně vytvořen.' }
         format.json { render json: @form, status: :created, location: @form }
       else

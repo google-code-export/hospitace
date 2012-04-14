@@ -2,7 +2,7 @@
 
 class TestController < ApplicationController
   def index
-     
+    @email = EvaluationMailer.email_template([People.new(:email=>"h312161@rppkn.com"),People.new(:email=>"osman@localhost")],EmailTemplate.first).deliver
     
     authorize! :index, Observation
     
