@@ -27,7 +27,7 @@ module FormsHelper
     template = entry.entry_template
     out = "<h3>#{template.label}</h3>".html_safe 
     out << yield(entry,form,options) if block_given?
-    out << form.cktext_area(template.id, :toolbar => 'Note', :input_html => { :value => entry.value })
+    out << form.cktext_area(template.id, :toolbar => 'Note',:namespace=>"test", :input_html => { :value => entry.value })
   end 
   
   def d_ranking(entry,form,options={})

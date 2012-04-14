@@ -1,16 +1,14 @@
-\chapter{Analýza a návrh řešení}
-Tato kapitola pojednává o analýze a návrhu vhodného řešení aplikace. Výstupem této analýzy jsou funkční a nefunkční požadavky. Dále návrh a popis domén a nejdůležitější případy užití s aktéry. 
+\chapter{Analýza}
+Tato kapitola pojednává o analýze a návrhu vhodného řešení aplikace. Výstupem této analýzy jsou funkční a obecné požadavky. Dále návrh a popis domén a nejdůležitější případy užití s aktéry. 
 
 \section{Požadavky}
-Požadavky na systém se dělí na dvě sekce: obecné a funkční požadavky. Pro definování těchto požadavků jsem vycházel z oficiálního zadání práce, protože mi přesně definuje návrh aplikace a pro implementaci systému i potřebné technologie.
+Požadavky na systém se dělí na dvě sekce: obecné a funkční požadavky. Pro definování těchto požadavků jsem vycházel z oficiálního zadání práce tak i z prototypu aplikace, protože mi přesně definuje návrh aplikace a pro implementaci systému i potřebné technologie.
 
 \subsection{Obecné požadavky}
 Obecné požadavky se netýkají funkčnosti, ale celkového návrhu a použitých technologií.
 \begin{enumerate}
 \item Systém bude postaven na webovém frameworku Ruby on Rails.
-\item Systém bude používat databázi MySQL.
 \item Systém bude webovou aplikací.
-\item Serverová část systému poběží na aplikačním serveru Apache HTTP server.
 \item Systém bude používat webovou službu KOSapi.
 \item Systém bude pro autentizaci používat FELid.
 \end{enumerate}
@@ -20,15 +18,16 @@ Tato sekce se zabývá požadavky na funkčnost systému.
 \begin{enumerate}
 \item Systém umožní spravovat uživatele.
 \item Systém umožní průběžné plánování hospitaci.
-\item Systém umožní hospitujícímu i hospitovanému prohlížet hospitace.
-\item Systém umožní vystavit závěrečné hodnocení na veřejné části aplikace. 
-\item Systém umožní hospitovanému sepsat stanoviska k názorům hospitujícího.
-\item Systém umožní hospitujícímu nahrát naskenovaný dokument hodnocení výuky.
-\item Systém umožní hospitujícímu napsat slovní hodnocení z výuky.
-\item Systém umožní hospitujícímu napsat závěrečné shrnutí hospitace.
-\item Systém bude odesílat emailem zprávy o naplánování hospitací a jednotlivé hodnocení a stanoviska příslušným osobám.
+\item Systém umožní hospitujícímu i hospitovanému prohlížet hospitace \cite{prototyp_documentace}.
+\item Systém umožní vystavit závěrečné hodnocení na veřejné části aplikace \cite{prototyp_documentace}. 
+\item Systém umožní hospitovanému sepsat stanoviska k názorům hospitujícího \cite{prototyp_documentace}.
+\item Systém umožní hospitujícímu nahrát naskenovaný dokument hodnocení výuky \cite{prototyp_documentace}.
+\item Systém umožní hospitujícímu napsat slovní hodnocení z výuky \cite{prototyp_documentace}.
+\item Systém umožní hospitujícímu napsat závěrečné shrnutí hospitace \cite{prototyp_documentace}.
+\item Systém bude odesílat emailem zprávy o naplánování hospitací a jednotlivé hodnocení a stanoviska příslušným osobám \cite{prototyp_documentace}.
 \item Systém umožní vyhledávat předměty z KOSapi.
 \item Systém umožní vyhledávat osoby z KOSapi.
+\item Systém umožní upravovat strukturu hodnotících dokumentů.
 \end{enumerate}
 
 \section{Uživatelské role}
@@ -36,7 +35,7 @@ V systému je celkem 6 uživatelských rolí, ty jsou odvozeny z modelu aktérů
 
 \begin{figure}[h]
 \begin{center}
-\includegraphics[width=16cm]{figures/Actors}
+\includegraphics[width=14cm]{figures/Actors}
 \caption{Aktéři}
 \label{fig:actors}
 \end{center}
@@ -63,7 +62,7 @@ Tato role patří mezi nejdůležitější role v systému, protože spravuje ho
 Administrátor je super uživatel, který má nejvyšší pravomoc v systému. Má přístup ke všem zdrojům aplikace a může nastavovat aplikaci.
 
 \section{Doménový model}
-Doménový model na obrázku \ref{fig:domainmodel} reprezentuje klíčové domény systému a jejich vzájemné vztahy. 
+Doménový model na obrázku \ref{fig:domainmodel} reprezentuje entity v systému a jejich vzájemné vztahy. 
 
 Popis domény jsem pro přehlednost rozdělil podle zdroje na dvě základní skupiny. V první skupině jsou domény, které používám z KOSapi a druhou skupinou jsou domény specifické pro moji aplikaci. 
 
@@ -71,7 +70,7 @@ Popis domény jsem pro přehlednost rozdělil podle zdroje na dvě základní sk
 \begin{itemize}
 \item Osoba - informace o osobě nacházející se na FEL. Každá osoba může být učitelem a studentem.
 \item Semestr - informace o jednotlivých semestrech. 
-\item Předmět - popis jednotlivých předmětů vyučovaných na FEL.
+\item Předmět - jednotlivé předměty vyučované na FEL.
 \item Instance předmětu - jsou instance předmětu vypsané v konkrétním semestru.
 \item Paralelka - je vypsaná rozvrhová paralelka pro instanci předmětu.
 \item Místnost - informace o místech, kde probíhá výuka předmětů
@@ -89,9 +88,9 @@ Popis domény jsem pro přehlednost rozdělil podle zdroje na dvě základní sk
 \item Položka - je šablona jedné položky ve formuláři.
 \end{itemize}
 
-\begin{figure}[p]
+\begin{figure}[h]
 \begin{center}
-\includegraphics[width=16cm]{figures/DomainModel}
+\includegraphics[width=14cm]{figures/DomainModel}
 \caption{Doménový model}
 \label{fig:domainmodel}
 \end{center}
@@ -119,41 +118,3 @@ Ve třetí fázi může hospitovaný do dvou dnů vyplnit stanovisko hodnocenéh
 
 V poslední fázi jeden z hospitujících sepíše poslední formulář Závěrečné shrnutí. Po vyplnění tohoto formuláře se hospitace stává ukončenou a tím končí její životní cyklu.
  
-\section{Technologie}
-Tato část popisuje jednotlivé technologie potřebné pro implementaci aplikace.
-
-\subsection{Ruby on Rails}
-Ruby on Rails, zkráceně Rails, je jedno z implementačních omezení, které se nachází přímo v zadání práce. Je to framework postavený na jazyce Ruby a je primárně určen pro tvorbu webových aplikací napojených na databázi. Rails je postaven na návrhovém vzoru model-view-controller. Tento framework používá dva hlavní principy. Prvním principem je Convention over Configuration a druhým je Don’t Repeat Yourself.
-
-\subsection{KOSapi}
-KOSapi je webová služba poskytující aplikační rozhraní v podobě RESTful webové služby. Je určená pro vznik školních aplikací, které potřebují mít přístup k datům souvisejících s výukou. Pro instance FEL a FIT čerpá služba data z KOSu.
-
-Z této služby čerpám hlavně data předmětů a osob v KOSu. Pro připojení ke KOSapi jsem rozšířil již existující knihovnu napsanou v Ruby pány Tomášem Linhartem a Tomášem Jukínem ve školním projektu VyVy. 
-
-\subsection{FELid}
-FELid je globální autentizační a autorizační systém pro webovské aplikace na síti FEL. Poskytuje jednotný a bezpečný způsob přihlášení uživatelů a přenos jejich údajů do různých aplikací na webu. Zároveň podporuje jednorázové přihlášení (tzv. single sign-on). Znamená to, že se uživatel přihlašuje pouze do první použité aplikaci a u dalších aplikací už nemusí zadávat svoje přihlašovací údaje.
-
-Tuto službu používám pro autentizaci uživatelů do systému. Abych mohl používat v aplikaci FELid je nutné splnit technické požadavky, které jsou napsány na stránkách FELid.
-
-\subsection{Aplikační server}
-Pro zprovoznění aplikace do reálného provozu jsem použil webový server Apache HTTP server ve verzi 2. Tato verze webového serveru totiž umožňuje instalaci zásuvných modulů Passenger a Shibboleth. Passenger umožňuje nasazení rails aplikací na serveru. Druhý modul Shibboleth zprostředkovává single sign-on autentizaci mezi aplikací a službou FELid.
-
-\subsection{Databáze}
-Ruby on Rails poskytuje možnost připojení k různým databázovým systémům prostřednictvím adaptérů. Díky tomu není aplikace závislá na použitém databázovém systému a díky tomu mohu používat pro vývoj a testování aplikace jednoduchý databázový systém SQLite, který pro tyto účely bohatě postačuje a není potřeba jej složitě konfigurovat. Pro samotné nasazení aplikace do provozu už používám databázový systém MySQL.
-
-\section{Architektura}
-V této části popisuji architektonické vzory a konvence používané pro vývoj aplikace. 
-
-\subsection{MVC}
-MVC (Model-view-controller) je softwarová architektura, která rozděluje datový model aplikace, uživatelské rozhraní a řídicí logiku do tří nezávislých komponent tak, že modifikace některé z nich má minimální vliv na ostatní. 
-
-Ruby on Rails obsahuje ve svém jádru tuto architekturu, proto je její implementace automatická.
-
-\subsection{DRY}
-DRY (Don’t repeat yourself) je princip vývoje softwaru zaměřený na snížení opakování psaní stejného kódu a tím zvyšuje čitelnost a znovupoužitelnost kódu. To znamená, že informace se nacházejí na jednoznačném místě. Pro příklad Ruby on Rails získává definici sloupců pro třídu modelu přímo z databáze.  
-
-\subsection{CoC}
-CoC (Convention over Configuration) je další princip používaný v Rails pro zlepšení čitelnosti a znovupoužitelnosti kódu. Tento princip znamená, že konvence má přednost před konfigurací a to tak, že Rails předpokládá to, co chcete udělat, místo toho, aby vás nutil specifikovat každou drobnost v konfiguraci. 
-
-\subsection{REST}
-REST (Representational State Transfer) je architektonický vzor pro webové aplikace. Je založen na HTTP protokolu a hlavní myšlenkou je poskytovat přístup ke zdrojům dat. Všechny zdroje jsou identifikovány přes URI. REST definuje čtyři základní metody pro přístup ke zdrojům. Jde o metody POST, GET, PUT a DELETE, které zprostředkovávají základní operace create, read, update a delete.

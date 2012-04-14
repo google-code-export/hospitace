@@ -11,7 +11,6 @@
 @baseline:          18px;
 
 
-
 	  html, body {
         background-color: #eee;
       }
@@ -105,9 +104,26 @@ select.date,.datetime  {
       margin-left: 110px;
 }
 
+
+input.datetime_picker{
+    width: 98px;
+}
+input.date_picker{
+    width: 90px;
+}
+
 .form-search .controls input, textarea, select, .uneditable-input{
     width: 190px;
 }
+
+.form-search .controls input.datetime_picker{
+    width: 90px;
+}
+.form-search .controls input.date_picker{
+    width: 90px;
+}
+
+
 
 .sidebar label{
     width: 190px;
@@ -133,4 +149,43 @@ select.date,.datetime  {
 
 .table td ul.inline li{
     display: inline-block;
+}
+
+.label-white{
+    /*background-color: @white;*/
+    /*color: @black;*/
+    font-size: 11px;
+    text-transform: none;
+}
+
+
+.observation div.span4 {
+min-height:550px;
+}
+
+pre {
+    background-color: @white;
+}
+
+.well {
+    background-color: @white;
+}
+
+.action.inline li{
+    display: inline-block;
+}
+
+.info{
+    background-color: @white;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 4px 4px 4px 4px;
+    display: block;
+    font-size: 12px;
+    line-height: 18px;
+    margin: 0 0 9px;
+    padding: 8.5px;
+}
+
+.width_100{
+    width: 100%;
 }

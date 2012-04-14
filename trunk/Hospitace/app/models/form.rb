@@ -1,11 +1,14 @@
+# encoding: utf-8
+
 class Form < ActiveRecord::Base
   belongs_to :evaluation
   belongs_to :user
   belongs_to :form_template
   
+  has_one :email_template, :through => :form_template
+  
   has_many :entries, :dependent => :destroy
   has_many :attachments, :dependent => :destroy
-  
   
   has_many :root_entries, :class_name => "Entry", :finder_sql => proc { 
       "SELECT e.*

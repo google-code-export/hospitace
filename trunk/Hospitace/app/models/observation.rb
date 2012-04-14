@@ -51,6 +51,17 @@ class Observation < ActiveRecord::Base
     end  
   end 
   
+  def start
+    if(self.parallel) 
+      self.parallel.start
+    end
+  end
+  
+  def finish
+    if(self.parallel) 
+      self.parallel.finish
+    end
+  end
   
   protected
   

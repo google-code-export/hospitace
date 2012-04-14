@@ -1,0 +1,127 @@
+\begin{thebibliography}{22}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[boo(2012)]{bootstrap}
+Apache HTTP server, 2012.
+\newblock \verb|http://httpd.apache.org/|.
+
+\bibitem[can(2012)]{cancan}
+Apache HTTP server, 2012.
+\newblock \verb|http://httpd.apache.org/|.
+
+\bibitem[coc(20.9.2007, last modified on 10.12.2011)]{coc}
+\emph{Convention over configuration. In: Wikipedia: the free encyclopedia}
+  [online]. St. Petersburg (Florida): Wikipedia Foundation, 20.9.2007, last
+  modified on 10.12.2011. [cit.~2012-03-05].
+\newblock Dostupn{\'{e}} z:
+  \url{http://en.wikipedia.org/wiki/Convention_over_configuration}.
+
+\bibitem[dry(1.12.2005, last modified on 9.2.2012)]{dry}
+\emph{Don't repeat yourself. In: Wikipedia: the free encyclopedia} [online].
+  St. Petersburg (Florida): Wikipedia Foundation, 1.12.2005, last modified on
+  9.2.2012. [cit.~2012-03-05].
+\newblock Dostupn{\'{e}} z:
+  \url{http://en.wikipedia.org/wiki/Don't_repeat_yourself}.
+
+\bibitem[fel()]{felid}
+\emph{O systému FELid} [online]. [cit.~2012-02-15].
+\newblock Dostupn{\'{e}} z: \url{http://wiki.feld.cvut.cz/net/felid/about}.
+
+\bibitem[fel(2012-02-15)]{felid_pozadavky}
+\emph{Požadavky. FELid} [online]. 2012-02-15.
+\newblock Dostupn{\'{e}} z:
+  \url{http://wiki.feld.cvut.cz/net/admin/aai/provoz/pozadavky}.
+
+\bibitem[kos(17.8.2004, last modified on 3.4.2011)]{kosapi}
+\emph{Representational state transfer. In: Wikipedia: the free encyclopedia}
+  [online]. St. Petersburg (Florida): Wikipedia Foundation, 17.8.2004, last
+  modified on 3.4.2011. [cit.~2012-03-05].
+\newblock Dostupn{\'{e}} z:
+  \url{http://en.wikipedia.org/wiki/Representational_state_transfer}.
+
+\bibitem[mvc(5.11.2003, last modified on 5.4.2012)]{mvc}
+\emph{Model–view–controller. In: Wikipedia: the free encyclopedia}
+  [online]. St. Petersburg (Florida): Wikipedia Foundation, 5.11.2003, last
+  modified on 5.4.2012. [cit.~2012-04-06].
+\newblock Dostupn{\'{e}} z:
+  \url{http://cs.wikipedia.org/wiki/Model-view-controller}.
+
+\bibitem[res(17.8.2004, last modified on 3.4.2011)]{rest}
+\emph{Representational state transfer. In: Wikipedia: the free encyclopedia}
+  [online]. St. Petersburg (Florida): Wikipedia Foundation, 17.8.2004, last
+  modified on 3.4.2011. [cit.~2012-03-05].
+\newblock Dostupn{\'{e}} z:
+  \url{http://en.wikipedia.org/wiki/Representational_state_transfer}.
+
+\bibitem[rub({\natexlab{a}})]{ruby}
+\emph{Ruby} [online].
+\newblock Dostupn{\'{e}} z: \url{http://www.ruby-lang.org/en/}.
+
+\bibitem[rub({\natexlab{b}})]{rubyonrails}
+\emph{Ruby on Rails} [online]. [cit.~2011-12-15].
+\newblock Dostupn{\'{e}} z: \url{http://rubyonrails.org/}.
+
+\bibitem[vyv(2012{\natexlab{a}})]{vyvy}
+Aplikace Vykazování výuky, 2012{\natexlab{a}}.
+\newblock \verb|https://vyvy.felk.cvut.cz/|.
+
+\bibitem[vyv(2012{\natexlab{b}})]{vyvy_project}
+Stránky projektu VyVy, 2012{\natexlab{b}}.
+\newblock \verb|http://code.google.com/p/vykazovani-vyuky-cvut/|.
+
+\bibitem[wil(2012)]{willpaginate}
+Apache HTTP server, 2012.
+\newblock \verb|http://httpd.apache.org/|.
+
+\bibitem[aPACHE SOFTWARE~FOUNDATION()]{apache}
+APACHE SOFTWARE FOUNDATION.
+\newblock \emph{Apache HTTP server 2.4} [software]. [přístup 2012-04-07].
+\newblock Dostupn{\'{e}} z: \url{http://httpd.apache.org/download.cgi}.
+
+\bibitem[Corporation()]{mysql}
+ORACLE CORPORATION.
+\newblock \emph{MySQL 5.5} [software].
+\newblock Dostupn{\'{e}} z: \url{http://dev.mysql.com/downloads/mysql/}.
+
+\bibitem[Hipp()]{sqlite}
+D. RICHARD HIPP.
+\newblock \emph{SQLite} [software].
+\newblock Dostupn{\'{e}} z: \url{http://www.sqlite.org/download.html}.
+
+\bibitem[HlavÁc -- KostlivÁ(2010)HlavÁc, KostlivÁ]{postupy}
+HLAVÁC, V. -- KOSTLIVÁ, J.
+\newblock \emph{Postupy pro kontrolu kvality výuky: nejen pro studijní
+  program STM}.
+\newblock  verze 04. 19. listopadu 2010.
+\newblock Dostupn{\'{e}} z:
+  \url{https://wiki.feld.cvut.cz/_media/rada_stm/2011-04-05kontrolakvalityvyuk%
+y_verze_5.pdf}.
+
+\bibitem[Internet2()]{shibboleth}
+INTERNET2.
+\newblock \emph{Shibboleth SP 2.4} [software].
+\newblock Dostupn{\'{e}} z:
+  \url{http://shibboleth.internet2.edu/downloads.html}.
+
+\bibitem[KomÁrek()]{kvalitavyukyweb}
+KOMÁREK, M.
+\newblock \emph{Kontrola kvality výuky} [online]. [cit.~2012-01-17].
+\newblock Dostupn{\'{e}} z:
+  \url{https://wiki.feld.cvut.cz/rada_stm/kontrolavyukyverejne}.
+
+\bibitem[KrĘŻelok(2010)]{prototyp_documentace}
+KRĘŻELOK, D.
+\newblock Návrh a implementace systému pro správu hospitací.
+\newblock Bakalářská práce, České vysoké učení technické v Praze,
+  Fakulta elektrotechnická, Praha, 2010.
+
+\bibitem[Phusion()]{passenger}
+PHUSION.
+\newblock \emph{Passenger} [software].
+\newblock Dostupn{\'{e}} z: \url{http://www.modrails.com/install.html}.
+
+\end{thebibliography}

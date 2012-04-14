@@ -36,8 +36,7 @@ class EvaluationsController < ApplicationController
         :teacher => teacher,
         :guarant => guarantor,
         :course  => course,
-        :room  => room,
-        :datetime_observation => @observation.date
+        :room  => room
       })
     
     respond_to do |format|
@@ -78,13 +77,14 @@ class EvaluationsController < ApplicationController
   # PUT /users/1.json
   def update
     @evaluation = Evaluation.find(params[:id])
-
+    @observation = @evaluation.observation
+    
     respond_to do |format|
       if @evaluation.update_attributes(params[:evaluation])
-        format.html { redirect_to observation_evaluation_path(@evaluation.observation,@evaluation), notice: 'Hodnocení bylo úspěšně upraveno.' }
+        format.html { redirect_to evaluation_path(@evaluation), notice: 'Hodnocení bylo úspěšně upraveno.' }
         format.json { head :ok }
       else
-        format.html { render action: "edit", :layout => "tabs" }
+        format.html { render action: "edit", :layout => "evaluation_tabs" }
         format.json { render json: @evaluation.errors, status: :unprocessable_entity }
       end
     end

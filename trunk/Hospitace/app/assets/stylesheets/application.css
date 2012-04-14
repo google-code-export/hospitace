@@ -5,6 +5,8 @@
  *= require twitter/bootstrap
  *= require_self
  *= require_tree .
+
+ *= require datepicker
 */
 
 
@@ -58,8 +60,4 @@ h1 .action a {
     width: 160px;
     text-align: right;
     padding-right: 50px;
-}
-
-.observation div.span4 {
-min-height:250px;
 }

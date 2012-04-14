@@ -59,7 +59,7 @@ namespace :import do
     
     item = 0
     Course.all.each do |course|
-#      begin
+      begin
       
         item += 1
         puts "Course #{item}/#{course_count}"
@@ -162,11 +162,11 @@ namespace :import do
           end
         end
         
-#      rescue
-#        @error_message="#{$!}"
-#        puts @error_message
-#      ensure
-#      end
+      rescue
+        @error_message="#{$!}"
+        puts @error_message
+      ensure
+      end
     end
     puts "Created instances #{added_instances}"
     puts "Updated instances #{updated_instances}"

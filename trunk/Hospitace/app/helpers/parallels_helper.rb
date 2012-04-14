@@ -14,6 +14,10 @@ module ParallelsHelper
     "#{l(parallel.start, :format => "%R")} - #{l(parallel.finish, :format => "%R")}"
   end
   
+  def parallel_time_start (parallel)
+    "#{l(parallel.start, :format => "%R")}"
+  end
+  
 #  def start(parallel)
 #    s = AppConfig.start_time + AppConfig.lesson_lenght * (parallel.first_hour-1) + AppConfig.pause_lenght * (parallel.first_hour/2)
 #    DateTime.now.change({:hour => s/60 , :min =>(s%60) , :sec => 0 })

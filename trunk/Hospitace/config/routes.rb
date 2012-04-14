@@ -13,6 +13,7 @@ Hospitace::Application.routes.draw do
   resources :notes
   resources :attachments
   resources :forms
+  resources :email_templates
   
   resources :evaluations do
     resources :forms do

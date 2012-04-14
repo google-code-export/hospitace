@@ -26,3 +26,7 @@ end
 every 1.day, :at => '3:00 pm' do
   command "backup perform --trigger backup"
 end
+
+
+#30 3 * * * /bin/bash -l -c 'cd /home/osman/NetBeansProjects/Hospitace && RAILS_ENV=production bundle exec rake import --silent'
+#0 20 * * * /bin/bash -l -c 'backup perform --trigger backup'

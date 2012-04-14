@@ -1,0 +1,29 @@
+<% scope = "activerecord.attributes.email_templates" %>
+
+<div id="datagrid">
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <%= th :form_code, scope, true %>
+    <%= th :subject, scope, true %>
+    <%= th :text, scope, true %>
+    <th></th>
+  </tr>
+  </thead>
+  
+
+<% @email_templates.each do |email_template| %>
+  <tr>
+    <td><%= email_template.form_code %></td>
+    <td><%= email_template.subject %></td>
+    <td><%= email_template.text %></td>
+    <td><%= 
+          actions do
+              yield email_template 
+          end%>
+    </td>
+  </tr>
+<% end %>
+</tbody>
+</table>
+</div>

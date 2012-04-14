@@ -7,6 +7,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
+//= require bootstrap-datepicker
 //= require ckeditor/ckeditor
 //= require_tree .
 
@@ -60,7 +61,7 @@ $(function () {
     $('.dropdown-toggle').dropdown()
     
     $('input[name$="active"]').change(function(){
-        var s = $(this).parent().parent().find('select');
+        var s = $(this).parent().parent().find('input[name!="active"]');
         if($(this).attr('checked')){
             $(this).parent().addClass("active");
             s.removeAttr('disabled');
@@ -90,4 +91,13 @@ $(function () {
     })
 
 })  
+
+
+$.fn.datepicker.dates.en = {
+    days: ["Neděle", "Pondělí", "Úterý", "Středa", "Čtvrtek", "Friday", "Pátek", "Sobota"],
+    daysShort: ['Ne', 'Po', 'Út', 'St', 'Čt', 'Pá', 'So'],
+    daysMin: ['Ne', 'Po', 'Út', 'St', 'Čt', 'Pá', 'So'],
+    months: ['Leden','Únor','Březen','Duben','Květen','Červen','Červenec','Srpen','Září','Říjen','Listopad','Prosinec'],
+    monthsShort: ['Led','Úno','Bře','Dub','Kvě','Čer','Čvc','Srp','Zář','Říj','Lis','Pro']
+};
 

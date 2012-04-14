@@ -6,7 +6,7 @@ action = { :action_title=>:edit, :action=>edit_user_path(@user) } if can? :updat
 
 
 <% title :user, options %>
-
+<dl class="dl-horizontal">
 <%= show_item(User.human_attribute_name(:login), @user.login) %>
 
 <%= show_item(User.human_attribute_name(:name), @user.full_name) %>
@@ -14,7 +14,7 @@ action = { :action_title=>:edit, :action=>edit_user_path(@user) } if can? :updat
 <%= show_item(User.human_attribute_name(:email), @user.email) %>
 
 <%= show_item(User.human_attribute_name(:roles), roles(@user)) %>
-
+</dl>
 <hr/>
 
 <h2>Správa hospitací</h2>

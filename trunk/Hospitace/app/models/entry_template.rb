@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class EntryTemplate < ActiveRecord::Base
   default_scope :order => 'template_order ASC'
   scope :root, :conditions => {:entry_template_id => nil}

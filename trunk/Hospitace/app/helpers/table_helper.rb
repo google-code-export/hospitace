@@ -25,8 +25,9 @@ module TableHelper
     end
   end
   
-  def actions
-    "<ul class=\"unstyled inline pull-right\">#{yield if block_given?}</ul>".html_safe
+  def actions(options ={})
+    options[:class] ||= "unstyled inline pull-right"
+    "<ul class=\"#{options[:class]}\">#{yield if block_given?}</ul>".html_safe
   end
   
   def action_icon(title,icon,path,options={},*args)

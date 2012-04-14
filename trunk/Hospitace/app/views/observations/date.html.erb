@@ -24,7 +24,7 @@
         end
       end
     %>
-      <%= f.input_field :date %>
+      <%= f.input_field :date,:as=>:date_picker,:disabled=>@observation.date.nil? %>
     <%
     end
   %>

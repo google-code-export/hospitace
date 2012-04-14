@@ -2,6 +2,11 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 cs:
+  
+  date:
+    formats:
+      default: "%d.%m.%Y"
+
   title:
     small:  
       observations: naplánované v semestru
