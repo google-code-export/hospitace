@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120412151008) do
+ActiveRecord::Schema.define(:version => 20120414140000) do
 
   create_table "attachments", :force => true do |t|
     t.string   "filename"
@@ -104,9 +104,9 @@ ActiveRecord::Schema.define(:version => 20120412151008) do
 
   create_table "evaluations", :force => true do |t|
     t.integer  "observation_id"
-    t.string   "teacher"
+    t.integer  "teacher_id",           :limit => 8
     t.string   "course"
-    t.string   "guarant"
+    t.integer  "guarant_id",           :limit => 8
     t.string   "room"
     t.datetime "datetime_observation"
     t.datetime "created_at"
@@ -145,7 +145,7 @@ ActiveRecord::Schema.define(:version => 20120412151008) do
   end
 
   create_table "observations", :force => true do |t|
-    t.integer  "created_by",       :limit => 8
+    t.integer  "created_by",            :limit => 8
     t.integer  "course_id"
     t.integer  "semester_id"
     t.integer  "parallel_id"
@@ -153,6 +153,7 @@ ActiveRecord::Schema.define(:version => 20120412151008) do
     t.string   "observation_type"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "head_of_department_id", :limit => 8
   end
 
   create_table "observers", :force => true do |t|

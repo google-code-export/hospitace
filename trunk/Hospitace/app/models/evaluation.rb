@@ -1,18 +1,31 @@
 # encoding: utf-8
 
 class Evaluation < ActiveRecord::Base
+  include EmailTemplatesHelper::Tagged::ModelHelpers
+  
   belongs_to :observation 
+  belongs_to :teacher, :class_name=>"People"
+  belongs_to :guarant, :class_name=>"People"
   has_many :observers, :through=> :observation
   has_many :users, :through=> :observation
   has_many :forms, :dependent => :destroy
+  has_one :head_of_department, :through=> :observation
+  has_one :created_by, :through=> :observation
   
   validates :observation, :presence => true
   validates :teacher, :presence => true
   validates :course, :presence => true
   validates :guarant, :presence => true
   validates :room, :presence => true
-  #validates :datetime_observation, :presence => true
   
+  alias_method :administrator, :created_by
+  
+  def email_for
+    res = [teacher,guarant]
+    res += users
+    res.push head_of_department
+    res.compact
+  end
   
   def forms?
     :observation
@@ -82,6 +95,4 @@ class Evaluation < ActiveRecord::Base
   def merge_and_set_datetime
     self.datetime_observation = Time.zone.parse(@datetime_str) if errors.empty?
   end
-
-  
 end

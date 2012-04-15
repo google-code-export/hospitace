@@ -1,7 +1,7 @@
 require 'kosapi'
 
 class User < ActiveRecord::Base
-  
+  include EmailTemplatesHelper::Tagged::ModelHelpers
   #scope :observ, joins(:observers).sum(:observation_id).group(:user_id)
   
   belongs_to :people
@@ -30,6 +30,7 @@ class User < ActiveRecord::Base
   
   def full_name
     return people.full_name unless people.nil?
+    login
   end
   
   def firstname
@@ -92,4 +93,8 @@ class User < ActiveRecord::Base
       scoped  
     end  
   end 
+  
+  alias_method :name,:full_name 
+  alias_method :to_lable,:name
+  attrs_tagged :name
 end

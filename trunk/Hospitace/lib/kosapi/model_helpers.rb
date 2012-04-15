@@ -25,6 +25,14 @@ module KOSapi
           end    
         end
       end
+      
+      def attrs_tagged(*args)
+        @@tagged = args
+      end
+      
+      def tagged
+        return @@taged || []
+      end
     end
     module InstanceMethods
     end

@@ -54,9 +54,11 @@ class ObservationsController < ApplicationController
     
     session[:course_id] = flash[:course_id] unless flash[:course_id].nil?
     session[:parallel_id] = flash[:parallel_id] unless flash[:parallel_id].nil?
+    session[:people_id] = flash[:people_id] unless flash[:people_id].nil?
     
     @observation.course_id ||= session[:course_id]
     @observation.parallel_id ||= session[:parallel_id]
+    @observation.head_of_department_id ||= session[:people_id]
     
     respond_to do |format|
       format.html # new.html.erb
@@ -70,6 +72,7 @@ class ObservationsController < ApplicationController
     @observation = Observation.find(params[:id])
     @observation.course_id ||= flash[:course_id] unless flash[:course_id].nil?
     @observation.parallel_id ||= flash[:parallel_id] unless flash[:parallel_id].nil?
+    @observation.people_id ||= flash[:people_id] unless flash[:people_id].nil?
     
   end
 

@@ -16,6 +16,7 @@ Hospitace::Application.routes.draw do
   resources :email_templates
   
   resources :evaluations do
+    match "select/peoples/:type" => 'peoples#select', :via => [:get, :post], :on=>:collection
     resources :forms do
       match 'code/:form_template_code' => 'forms#code', :on=>:collection, :as => :code_evaluation_forms
       match 'new/:form_template_code' => 'forms#new', :id => /[0-9a-zA-Z]./,:on=>:collection, :as => :new_evaluation_form
@@ -28,6 +29,7 @@ Hospitace::Application.routes.draw do
   
   resources :observations, :except=> [:edit] do
     match "courses" => 'courses#select', :via => [:get, :post], :on=>:collection, :as=>:observation_courses
+    match "peoples" => 'peoples#select', :via => [:get, :post], :on=>:collection, :as=>:observation_courses
     #match "date" => 'observations#date', :via => [:get, :post], :on=>:member,:as => :date
     resources :notes
     resources :observers, :only=> [:index, :new, :create, :destroy]

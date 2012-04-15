@@ -1,6 +1,5 @@
 class DatetimePickerInput < SimpleForm::Inputs::Base
       def input
-        puts attribute_name.inspect
         @builder.text_field(:date, input_html_options.merge(datepicker_options(object.send(:date)))) + " " +
           @builder.text_field(:time, input_html_options.merge(timepicker_options(object.send(:time))))
       end
