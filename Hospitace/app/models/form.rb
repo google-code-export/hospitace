@@ -1,6 +1,8 @@
 # encoding: utf-8
 
 class Form < ActiveRecord::Base
+  include EmailTemplatesHelper::Tagged::ModelHelpers
+  
   belongs_to :evaluation
   belongs_to :user
   belongs_to :form_template
@@ -44,4 +46,15 @@ class Form < ActiveRecord::Base
   def can_create?(observation)
     return false if observation.nil? or form_template.nil? 
   end
+  
+  def code
+    form_template.code
+  end
+  
+  def name
+    form_template.name
+  end
+  
+  alias_method :author,:user
+  attrs_tagged :code, :name, :author, :created_at
 end

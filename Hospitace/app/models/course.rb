@@ -4,6 +4,7 @@ require 'kosapi'
 
 class Course < ActiveRecord::Base
   include KOSapi::ModelHelpers
+  include EmailTemplatesHelper::Tagged::ModelHelpers
   
   has_many :observations
   has_many :course_instances
@@ -39,6 +40,12 @@ class Course < ActiveRecord::Base
     end
   end 
   
+  def to_label
+    "#{code} - #{name}"
+  end
+
+  
   attrs_translate :classes_type,:completion, :status, :study_form, :semester_season
+  attrs_tagged :code, :name
 end
   

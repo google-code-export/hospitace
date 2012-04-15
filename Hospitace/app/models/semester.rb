@@ -3,6 +3,8 @@
 
 
 class Semester < ActiveRecord::Base 
+  include EmailTemplatesHelper::Tagged::ModelHelpers
+  
   scope :current_and_next, where("start > DATE(?) or DATE(?) BETWEEN start AND end",Time.zone.now,Time.zone.now)
   
   validates :code, :uniqueness => true
@@ -17,4 +19,5 @@ class Semester < ActiveRecord::Base
   end
   
   has_many :observations
+  attrs_tagged :code, :name
 end

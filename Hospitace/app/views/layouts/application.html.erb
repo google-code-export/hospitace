@@ -66,7 +66,8 @@
           <%= alert_message(flash[:alert],:error) if !flash[:alert].nil? %>
           <%= alert_message(flash[:warning],:warning) if !flash[:warning].nil? %>
           <%= alert_message(flash[:notice],:success) if !flash[:notice].nil? %>		
-
+          <%= content_for?(:tab) ? yield(:tab) : nil %>
+            
           <% if content_for?(:secoundary_content) %>
             <div class="main_content">
               <div class="data">

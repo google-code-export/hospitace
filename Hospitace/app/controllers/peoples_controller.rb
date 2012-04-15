@@ -18,12 +18,13 @@ class PeoplesController < ApplicationController
       format.json { render json: @peoples }
     end
   end
-
+  
   def select
     session[:path] ||= peoples_path
     
     unless params[:people_id].nil?
-      redirect_to session[:path], :flash => { :people_id=>params[:people_id]}
+      flash_name = params[:type].nil? ? :people_id : "#{params[:type]}_id" 
+      redirect_to session[:path], :flash => { flash_name=>params[:people_id]}
       return
     end
     

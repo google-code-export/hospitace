@@ -1,7 +1,7 @@
 require 'kosapi'
 
 class Observation < ActiveRecord::Base
- 
+  include EmailTemplatesHelper::Tagged::ModelHelpers
   TYPES = %w[reported floating unannounced]
   
   attr_accessor :state 
@@ -11,6 +11,7 @@ class Observation < ActiveRecord::Base
   belongs_to :course
   belongs_to :semester
   belongs_to :parallel
+  belongs_to :head_of_department, :class_name => "People", :foreign_key=>:head_of_department_id
   
   has_many :observers, :dependent => :destroy
   has_many :users, :through => :observers
@@ -25,6 +26,9 @@ class Observation < ActiveRecord::Base
   
   validates :observation_type,:presence => true, :inclusion => {:in => TYPES} 
     
+  accepts_nested_attributes_for :head_of_department
+  
+  
   def observed
     teachers.merge(instance.lecturers)
   end
@@ -32,17 +36,7 @@ class Observation < ActiveRecord::Base
   def instance
     CourseInstance.find_by_course_id_and_semester_id(course_id,semester_id) || CourseInstance.new
   end
-  
-#  def find_parallel
-#    return if parallel.nil?
-#    p = Parallel.find(course,parallel)
-#  end
-  
-#  def find_semester
-#    return if semester.empty?
-#    s = Semester.find_by_code(semester)
-#  end
-    
+
   def self.search(search)  
     if search  
       scoped

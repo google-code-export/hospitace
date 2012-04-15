@@ -3,16 +3,19 @@
 
   <%= f.association :semester, :as=>:select, :collection=> Semester.current_and_next, :selected=>Semester.current %>
   <%= f.association :course,:placeholder => 'Kód předmětu' , :hint => link_to("Najít předmět", "/observations/courses") %>
-  <% if @observation.course.nil?  %>
-    <%= f.association :parallel, :as=>:select, :disabled => true %>
-  <% else %>
-    <%= f.association :parallel, :as=>:select, :hint => link_to("Detail paralelek", course_parallels_select_path(@observation.course)), :collection=>@observation.course.parallels(@observation.semester_id).collect {|p| [short_parallel_with_time(p), p.id]}, :selected=>session[:parallel_id] %>
-  <% end %>
+  <%= f.input :head_of_department, :as=>:people, :hint => link_to("Nastavit osobu", "/observations/peoples") %>
 
   <%= f.input :observation_type, :collection =>Observation::TYPES.collect {|i| [t(i),i]},  :as => :select, :selected=>Observation::TYPES[1], :required=>true %>
 
+  <% if @observation.course.nil?  %>
+    <%= f.association :parallel, :as=>:select, :disabled => true %>
+  <% else %>
+    <%= f.association :parallel, :include_blank => true, :as=>:select, :hint => link_to("Detail paralelek", course_parallels_select_path(@observation.course)), :collection=>@observation.course.parallels(@observation.semester_id).collect {|p| [short_parallel_with_time(p), p.id]}, :selected=>session[:parallel_id] %>
+  <% end %>
+
+  <%= f.input :date, :as=>:date_picker%>
   <div class="form-actions">
-	<%= f.button :submit, :class => 'btn-primary' %>
-	<%= submit_tag 'Cancel', :type => :reset, :class => "btn-danger" %>
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= submit_tag 'Cancel', :type => :reset, :class => "btn-danger" %>
   </div>
 <% end %>

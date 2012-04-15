@@ -30,15 +30,25 @@ class EvaluationsController < ApplicationController
   # GET /users/new
   # GET /users/new.json
   def new
+    
     @observation = Observation.find params[:observation_id]
+    
+    session[:path] = new_observation_evaluation_path(@observation);
+
+    puts flash.inspect
+    
+    session[:teacher_id] = flash["teacher_id"] unless flash["teacher_id"].nil?
+    session[:guarant_id] = flash["guarant_id"] unless flash["guarant_id"].nil?
+    
     @evaluation = Evaluation.new({
         :observation_id => params[:observation_id],
+        :course  => course,
         :teacher => teacher,
         :guarant => guarantor,
-        :course  => course,
         :room  => room
       })
     
+
     respond_to do |format|
       format.html { render :layout=>"tabs"}
       format.json { render json: @evaluation }
@@ -50,6 +60,14 @@ class EvaluationsController < ApplicationController
     @evaluation = Evaluation.find(params[:id])
     @observation = @evaluation.observation
     
+    session[:path] = edit_evaluation_path(@evaluation)
+
+    session[:teacher_id] = flash["teacher_id"] unless flash["teacher_id"].nil?
+    session[:guarant_id] = flash["guarant_id"] unless flash["guarant_id"].nil?
+       
+    @evaluation.teacher = teacher
+    @evaluation.guarant = guarantor
+    
     respond_to do |format|
       format.html { render :layout=>"evaluation_tabs"}
       format.json { render json: @evaluation }
@@ -59,6 +77,10 @@ class EvaluationsController < ApplicationController
   # POST /users
   # POST /users.json
   def create
+    session.delete(:teacher_id)
+    session.delete(:guarant_id)
+    session.delete(:path)
+    
     #@observation = Observation.find params[:observation_id]
     @evaluation = Evaluation.new(params[:evaluation])
     @observation = @evaluation.observation
@@ -76,6 +98,10 @@ class EvaluationsController < ApplicationController
   # PUT /users/1
   # PUT /users/1.json
   def update
+    session.delete(:teacher_id)
+    session.delete(:guarant_id)
+    session.delete(:path)
+    
     @evaluation = Evaluation.find(params[:id])
     @observation = @evaluation.observation
     
@@ -112,12 +138,12 @@ class EvaluationsController < ApplicationController
     
   def teacher
     return nil if @observation.parallel.nil?   
-    @observation.parallel.teachers.first.full_name if @observation.parallel.teachers.any?
+    People.find_by_id(session[:teacher_id]) || @observation.parallel.teachers.first
   end
   
   def guarantor
     return nil if @observation.instance.nil? 
-    @observation.instance.guarantors.first.full_name if @observation.instance.guarantors.any?
+    People.find_by_id(session[:guarant_id]) || @observation.instance.guarantors.first
   end
   
   def course

@@ -1,7 +1,9 @@
-class People < ActiveRecord::Base 
+class People < ActiveRecord::Base
+  include EmailTemplatesHelper::Tagged::ModelHelpers
+  
   has_one :user
   has_many :peoples_relateds
-    
+
   validates :username, :uniqueness => true
   
   def observed
@@ -15,6 +17,7 @@ class People < ActiveRecord::Base
   def full_name
       "#{title_pre} #{firstname} #{lastname} #{title_post}"
   end
+  
   
   def self.search(search)  
     if search  
@@ -37,4 +40,8 @@ class People < ActiveRecord::Base
       scoped  
     end
   end 
+  
+  alias_method :name,:full_name 
+  alias_method :to_lable,:full_name 
+  attrs_tagged :name, :email, :username
 end

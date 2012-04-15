@@ -22,6 +22,7 @@ class EmailTemplatesController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @email_template }
+      format.text { render 'evaluation_mailer/email_template'}
     end
   end
 
