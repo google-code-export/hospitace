@@ -1,7 +1,17 @@
 class People < ActiveRecord::Base
   include EmailTemplatesHelper::Tagged::ModelHelpers
   
-  has_one :user
+  
+  has_many :notes
+  
+  has_many :created_observations, :class_name => "Observation", :foreign_key=>:created_by
+  
+  has_many :observers
+  has_many :observations, :through => :observers
+  
+  
+  
+  has_one :role
   has_many :peoples_relateds
 
   validates :username, :uniqueness => true
@@ -10,7 +20,7 @@ class People < ActiveRecord::Base
     Observation.find(:all,
             :joins => "inner join peoples_relateds on observations.parallel_id = peoples_relateds.related_id and peoples_relateds.relation='teachers' and peoples_relateds.related_type='Parallel' inner join people on people.id = peoples_relateds.people_id",
             :conditions => ["people_id = ?", id],
-            :include => [:created_by,:users,:course]
+            :include => [:created_by,:roles,:course]
     )
   end
   

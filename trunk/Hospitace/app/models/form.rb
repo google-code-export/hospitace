@@ -4,7 +4,7 @@ class Form < ActiveRecord::Base
   include EmailTemplatesHelper::Tagged::ModelHelpers
   
   belongs_to :evaluation
-  belongs_to :user
+  belongs_to :people
   belongs_to :form_template
   
   has_one :email_template, :through => :form_template
@@ -30,7 +30,7 @@ class Form < ActiveRecord::Base
   has_many :observers, :through => :observation
   
   validates :form_template, :presence => true 
-  validates :user, :presence => true 
+  validates :people, :presence => true 
   validates :evaluation, :presence => true 
   
   
@@ -55,6 +55,6 @@ class Form < ActiveRecord::Base
     form_template.name
   end
   
-  alias_method :author,:user
+  alias_method :author,:people
   attrs_tagged :code, :name, :author, :created_at
 end

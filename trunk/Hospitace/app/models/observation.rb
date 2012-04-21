@@ -7,14 +7,14 @@ class Observation < ActiveRecord::Base
   attr_accessor :state 
   after_initialize :init_state
   
-  belongs_to :created_by, :class_name => "User", :foreign_key=>:created_by
+  belongs_to :created_by, :class_name => "People", :foreign_key=>:created_by
   belongs_to :course
   belongs_to :semester
   belongs_to :parallel
   belongs_to :head_of_department, :class_name => "People", :foreign_key=>:head_of_department_id
   
   has_many :observers, :dependent => :destroy
-  has_many :users, :through => :observers
+  has_many :peoples, :through => :observers
   has_many :notes, :dependent => :destroy
   has_one  :evaluation, :dependent => :destroy
   has_many :forms, :through => :evaluation

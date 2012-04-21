@@ -2,7 +2,7 @@
 
 class Attachment < ActiveRecord::Base
   belongs_to :evaluation
-  belongs_to :user
+  belongs_to :people
   belongs_to :form
   
   TYPES = %w[application\/pdf image\/.+]
@@ -10,7 +10,7 @@ class Attachment < ActiveRecord::Base
   validate :validate_data
   validate :validate_type
   validate :data, :presence => true
-  validate :user, :presence => true 
+  validate :people, :presence => true 
   
   def validate_data
     return if data.nil?
