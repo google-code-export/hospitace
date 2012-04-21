@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.2.11)  10 APR 2012 13:28
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.2.11)  18 APR 2012 19:26
 entering extended mode
  %&-line parsing enabled.
 **"semestrální projekt.tex"
@@ -701,7 +701,7 @@ Here is how much of TeX's memory you used:
  9788 multiletter control sequences out of 15000+50000
  19833 words of font info for 43 fonts, out of 3000000 for 9000
  32 hyphenation exceptions out of 8191
- 38i,8n,38p,671b,442s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 38i,8n,38p,802b,442s stack positions out of 5000i,500n,10000p,200000b,50000s
  </home/osman/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1095
 .600pk> </home/osman/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0900.600pk> </h
 ome/osman/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0800.600pk> </home/osman/.
@@ -716,9 +716,9 @@ n/ec/ecbx1095.600pk> </home/osman/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm06
 jfour/jknappen/ec/ecrm1095.600pk> </home/osman/.texmf-var/fonts/pk/ljfour/jknap
 pen/ec/ecbx2488.600pk></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/
 cmsy10.pfb>
-Output written on "semestrální projekt.pdf" (43 pages, 432934 bytes).
+Output written on "semestrální projekt.pdf" (43 pages, 434294 bytes).
 PDF statistics:
- 1228 PDF objects out of 1440 (max. 8388607)
+ 1229 PDF objects out of 1440 (max. 8388607)
  149 named destinations out of 1000 (max. 500000)
  477 words of extra memory for PDF output out of 10000 (max. 10000000)
 

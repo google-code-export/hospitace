@@ -33,10 +33,14 @@ cs:
       observed_observations: Hospitován
       contact: Kontakt
       evaluation: Hodnocení
+      email_templates: Šablony e-mailu
+      new_email_template: Nová šablona e-mailu
+      edit_email_template: Upravit šablonu e-mailu
     action:
       new_observation: Vytvořit hospitaci
       new_user: Vytvořit uživatele
       edit: Upravit
+      new_email_template: Vytvořit šablonu
       
   menu:
     forms: <i class="icon-list-alt"></i> Formuláře
@@ -54,6 +58,7 @@ cs:
     manage: Spravované
     observing: Hospituji
     evaluations: Hodnocení
+    email_templates: <i class="icon-envelope"></i> Šablony e-mailu
     
     user_session:
       login: "Přihlásit se"
@@ -177,6 +182,7 @@ cs:
       note: "poznámka"
       user_session: UserSession 
       evaluation: "Hodnocení"
+      email_template: šablonu e-mailu
     attributes:
       user:
         login: "Uživatelské jméno"
@@ -204,4 +210,8 @@ cs:
         created_at: Datum, čas vyplnění
         guarant: Zodpovědný za předmět
         room: Učebna
+      email_template:
+        subject: Předmět
+        text: Zpráva
+        form_code: Kód kormuláře
         

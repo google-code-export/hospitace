@@ -1,22 +1,19 @@
 <% title :email_template %>
 
-<p id="notice"><%= notice %></p>
+<% 
 
-<p>
-  <b>Subject:</b>
-  <%= @email_template.subject %>
-</p>
+form = Form.first
+evaluation = form.evaluation
 
-<p>
-  <b>Text:</b>
-  <%= @email_template.text %>
-</p>
+object ||= {:form=>form,:evaluation=>evaluation} 
+email_template = @email_template
+%>
+<% EmailBuilder.path="#{request.protocol}#{request.env['HTTP_HOST']}" %>
 
-<p>
-  <b>form code:</b>
-  <%= @email_template.form_code %>
-</p>
+<dl class="dl-horizontal">
 
+  <%= show_item(EmailTemplate.human_attribute_name(:subject),@email_template.subject ) %>
+  <%= show_item(EmailTemplate.human_attribute_name(:form_code), @email_template.form_code ) %>
+  <%= show_item(EmailTemplate.human_attribute_name(:text), EmailBuilder.build(email_template,object) ) %>
 
-<%= link_to 'Edit', edit_email_template_path(@email_template) %> |
-<%= link_to 'Back', email_templates_path %>
+</dl>

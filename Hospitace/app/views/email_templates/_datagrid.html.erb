@@ -1,4 +1,4 @@
-<% scope = "activerecord.attributes.email_templates" %>
+<% scope = "activerecord.attributes.email_template" %>
 
 <div id="datagrid">
 <table class="table table-striped">
@@ -6,7 +6,6 @@
   <tr>
     <%= th :form_code, scope, true %>
     <%= th :subject, scope, true %>
-    <%= th :text, scope, true %>
     <th></th>
   </tr>
   </thead>
@@ -16,7 +15,6 @@
   <tr>
     <td><%= email_template.form_code %></td>
     <td><%= email_template.subject %></td>
-    <td><%= email_template.text %></td>
     <td><%= 
           actions do
               yield email_template 

@@ -1,6 +1,7 @@
 <% title :email_templates, :action_title=>:new_email_template,:action=>new_email_template_path %>
 
 <%= render :layout=>'datagrid' do |email_template| %>
+    <%= action_icon :show,"icon-info-sign",email_template,{},:show,email_template %>
     <%= action_icon :edit,"icon-edit",edit_email_template_path(email_template),{},:show,email_template %>
     <%= action_icon :destroy,"icon-remove",email_template,{confirm: t(:confirm), method: :delete},:destroy,email_template %>
 <%end%>
