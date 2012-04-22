@@ -1,6 +1,6 @@
 <% content_for :modal do %>
   <% 
-  @attachment = Attachment.find_by_user_id_and_form_id(current_user.id,@form.id)
+  @attachment = Attachment.find_by_people_id_and_form_id(current_user.id,@form.id)
   @attachment ||= @form.attachments.build(:evaluation_id=>@form.evaluation.id)
   %>
   <%= render("attachments/modal", :evaluation=>@form.evaluation) %>
@@ -13,7 +13,7 @@
       <%= m.error_notification %>
       <%= m.input :form_template_id, :as=>:hidden %>
       <%= m.input :evaluation_id ,:as=>:hidden %>
-      <%= m.input :user_id, :as=>:hidden %>
+      <%= m.input :people_id, :as=>:hidden %>
 
       <p><%= "#{template.description}" %></p>
       

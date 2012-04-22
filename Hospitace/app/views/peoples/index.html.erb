@@ -1,9 +1,0 @@
-
-<% title :peoples, :small=>t(:peoples,:scope=>"title.small") %>
-
-<%= render :layout=>'datagrid', :locals => { :peoples => @peoples } do |person| %>
-
-  <%= action_icon :show,"icon-info-sign",{:controller=>"peoples", :action=>"show", :id=>person.id},{},:show,person %>
-
-<%end%>
-

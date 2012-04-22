@@ -1,0 +1,12 @@
+<%= simple_form_for @people,  :html => { :class => 'form-horizontal' } do |f| %>
+
+<%= f.error_notification %>
+
+<%= f.input :roles, :collection =>input_roles,  :as => :check_boxes if can? :assign_roles, @people %>
+
+
+<div class="form-actions">
+	<%= f.button :submit, :class => 'btn-primary' %>
+	<%= submit_tag 'Cancel', :type => :reset, :class => "btn btn-danger" %>
+</div>
+<% end %> 

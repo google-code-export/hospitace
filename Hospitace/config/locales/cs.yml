@@ -51,7 +51,7 @@ cs:
     log_in: Přihlásit se
     contact: "Kontakt"
     observations: "Hospitace"
-    peoples: "Lidé"
+    peoples: "<i class=\"icon-user\"></i> Lidé"
     users: "<i class=\"icon-user\"></i> Uživatelé"
     evaluation: <i class="icon-file"></i> Hodnocení
     courses: "Předměty"
@@ -100,6 +100,7 @@ cs:
   confirm: "Opravdu chcete smazat záznam?"
   edit: "Upravit"
   show: "Zobrazit"
+  roles: "Role"
   destroy: "Smazat"
   search: "Hledat"
   notes: "Poznámek %{count}"

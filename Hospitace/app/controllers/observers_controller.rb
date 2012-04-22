@@ -23,7 +23,7 @@ class ObserversController < ApplicationController
     @observation = Observation.find(params[:observation_id])
     @observer = Observer.new
 
-    @users = User.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:page => params[:page]);
+    @peoples = People.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:page => params[:page]);
 
    
     respond_to do |format|
@@ -65,7 +65,7 @@ class ObserversController < ApplicationController
   end
   
   def sort_column
-    User.column_names.include?(params[:sort]) ? params[:sort] : "id"
+    Observation.column_names.include?(params[:sort]) ? params[:sort] : "id"
   end
   
   def sort_direction

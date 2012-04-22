@@ -50,7 +50,7 @@ class NotesController < ApplicationController
   # POST /users.json
   def create
     @note = Note.new(params[:note])
-    @note.user = current_user
+    @note.people = current_user
     
     respond_to do |format|
       if @note.save

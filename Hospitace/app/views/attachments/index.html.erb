@@ -15,7 +15,7 @@
     <tr>
       <td><%= attachment.filename %></td>
       <td><%= attachment.content_type %></td>
-      <td><%= attachment.user.full_name %></td>
+      <td><%= attachment.people.full_name %></td>
       <td><%=
             actions do 
               action_icon( :download,"icon-download-alt",attachment,{},:show,attachment) + " "+

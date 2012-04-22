@@ -22,31 +22,29 @@
 
               <%= menu_item(:create,new_observation_path,:create,Observation) %>
             <% end %>
-            <%= menu_item(:evaluations,evaluations_path,:read,Evaluation) %>
+            <%= menu_item(:evaluations,evaluations_path,:read,Evaluation) %> 
             <%= sub_menu(:setting,:setting,"Setting") do %>
-              <%= menu_item(:users,users_path,:manage,User) %>
+              <%= menu_item(:peoples,people_path,:manage,People) %>
+              <%= menu_item(:courses,courses_path,:read,Course) %>
+              <li class="divider"></li>
               <%= menu_item(:email_templates,email_templates_path,:manage,EmailTemplate) %>
               <%= menu_item(:forms,"#",:manage,FormTemplate) %>
-              <li class="divider"></li>
-  <%#*<li class="nav-header">Data z kosu</li>%>
-              <%= menu_item(:peoples,peoples_path,:read,People) %>
-              <%= menu_item(:courses,courses_path,:read,Course) %>
             <% end %>
 
 
           </ul>
           <div class="login pull-right">
             <% if !current_user %>
-              <%= link_to t(:login,:scope=>"menu.user_session"), :login %>
+              <%= link_to t(:login,:scope=>"menu.user_session"), login_path %>
             <% else %>
-              <%= t(:logged_in_as,:scope=>"menu.user_session") %> <%= link_to current_user.login, edit_user_path(current_user.id) %> |
-              <%= link_to t(:logout,:scope=>"menu.user_session"), :logout %>
+              <%= t(:logged_in_as,:scope=>"menu.user_session") %> <%= link_to current_user.username, people_path(current_user.id) %> |
+              <%= link_to t(:logout,:scope=>"menu.user_session"), logout_path %>
             <% end %>
           </div>
         </div>
       </div>
     </header>
-
+    
     <script type="text/javascript">
       $('.dropdown-toggle').dropdown();
       $(".alert").alert()

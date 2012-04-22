@@ -1,8 +1,0 @@
-$('#datagrid').html('<%= escape_javascript(
-  
-       render(:layout=>"datagrid",:locals => { :peoples => @peoples }) { |person| 
-         action_icon :show,"icon-info-sign",{:controller=>"peoples", :action=>"show", :id=>person.id},{},:show,person
-       }
-
-) %>');  
-$("li[rel=tooltip]").tooltip()

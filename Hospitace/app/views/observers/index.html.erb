@@ -1,7 +1,7 @@
 <% title :observations, :small=>"seznam přidělených hospitujících pro #{@observation.course.name} (#{@observation.course.code})" %>
 <%= render :layout=>'datagrid',:locals => { :observers => @observers } do |observer| %>
 
-  <%= action_icon :show,"icon-info-sign",observer.user,{},:show,observer.user %>
+  <%= action_icon :show,"icon-info-sign",observer.people,{},:show,observer.people %>
   <%= action_icon :destroy,"icon-remove",[@observation,observer],{confirm: t(:confirm), method: :delete},:update,@observation %>
 
 <%end%>

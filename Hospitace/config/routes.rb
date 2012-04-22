@@ -9,14 +9,13 @@ Hospitace::Application.routes.draw do
   get "manage" => 'my_observations#manage', :as=> :my_observations_manage
   get "observing" => 'my_observations#observing', :as=> :my_observations_observing
   
-  resources :users
   resources :notes
   resources :attachments
   resources :forms
   resources :email_templates
   
   resources :evaluations do
-    match "select/peoples/:type" => 'peoples#select', :via => [:get, :post], :on=>:collection
+    match "select/people/:type" => 'people#select', :via => [:get, :post], :on=>:collection
     resources :forms do
       match 'code/:form_template_code' => 'forms#code', :on=>:collection, :as => :code_evaluation_forms
       match 'new/:form_template_code' => 'forms#new', :id => /[0-9a-zA-Z]./,:on=>:collection, :as => :new_evaluation_form
@@ -29,7 +28,7 @@ Hospitace::Application.routes.draw do
   
   resources :observations, :except=> [:edit] do
     match "courses" => 'courses#select', :via => [:get, :post], :on=>:collection, :as=>:observation_courses
-    match "peoples" => 'peoples#select', :via => [:get, :post], :on=>:collection, :as=>:observation_courses
+    match "people" => 'people#select', :via => [:get, :post], :on=>:collection, :as=>:observation_courses
     #match "date" => 'observations#date', :via => [:get, :post], :on=>:member,:as => :date
     resources :notes
     resources :observers, :only=> [:index, :new, :create, :destroy]
@@ -37,8 +36,8 @@ Hospitace::Application.routes.draw do
   end
 
 
-  match "peoples/select" => 'peoples#select', :via => [:get, :post], :as=>:peoples_select
-  resources :peoples, :only => [:index, :show]
+  match "people/select" => 'people#select', :via => [:get, :post], :as=>:peoples_select
+  resources :people, :only => [:index, :show,:edit,:update]
   #resources :courses, :only => [:index, :show]
 
   match "courses/:course_id/parallels/select" => 'parallels#select', :via => [:get, :post], :as=>:course_parallels_select
@@ -49,9 +48,9 @@ Hospitace::Application.routes.draw do
   
   resources :user_sessions
   
-  match 'login' => 'user_sessions#new', :as => :login
-  match 'logout' => 'user_sessions#destroy', :as => :logout
-
+  match 'Shibboleth.sso/Login', :as => :login
+  match 'logout' => redirect("https://login.feld.cvut.cz/felid/logout"), :as => :logout
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

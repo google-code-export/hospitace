@@ -5,11 +5,11 @@
 # below each fixture, per the syntax in the comments below
 #
 one: 
-  user: 1
+  people: 1
   observation: 1
 # column: value
 #
 two: 
-  user: 2
+  people: 2
   observation: 2
 #  column: value

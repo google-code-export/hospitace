@@ -2,12 +2,13 @@ class Role < ActiveRecord::Base
   ROLES = %w[admin observer observed root]
   
   belongs_to :people
+  has_many :observers, :through => :people
   
-  attr_accessible :roles
+  validates :people, :uniqueness => true
+  #attr_accessible :roles,:people,:people_id,:roles_mask
   
   after_find :load_rules
   
-  acts_as_authentic
   def load_rules
     self.role="observer" unless observers.empty?
     unless people.nil?

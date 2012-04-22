@@ -13,5 +13,5 @@
 
 <%= show_item(Evaluation.human_attribute_name(:created_at), l(@evaluation.created_at,:format=>:long)) %>
   
-<%= show_item(Observer.model_name.human, render(@evaluation.users)) %>
+<%= show_item(Observer.model_name.human, render(@evaluation.peoples)) %>
 </dl>

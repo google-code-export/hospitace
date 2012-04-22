@@ -9,7 +9,7 @@
 
         <% notes.each do |note| %>
           <p>
-            <strong>Autor:</strong> <%= render(note.user) %> | <%= l(note.updated_at, :format=>:long) %> 
+            <strong>Autor:</strong> <%= render(note.people) %> | <%= l(note.updated_at, :format=>:long) %> 
           </p>
           <p>
             <%= note.note.html_safe %>  

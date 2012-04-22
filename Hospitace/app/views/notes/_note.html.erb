@@ -1,6 +1,6 @@
 <div class="twipsies well">
 <span>
-  <strong>Autor:</strong> <%= render(note.user) %> | <%= l(note.updated_at, :format=>:long) %> 
+  <strong>Autor:</strong> <%= render(note.people) %> | <%= l(note.updated_at, :format=>:long) %> 
   <span class="pull-right">
     <%= actions(:class=>"unstyled inline action") do 
       action_icon(:edit,"icon-pencil",edit_observation_note_path(@observation,note),{}, :update,note) +

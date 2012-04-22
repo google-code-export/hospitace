@@ -4,7 +4,7 @@ class FormsController < ApplicationController
   
   def index
     @evaluation = Evaluation.find params[:evaluation_id]
-    @forms = Form.includes(:evaluation,:form_template,:user).
+    @forms = Form.includes(:evaluation,:form_template,:people).
       where(:evaluation_id=>@evaluation.id).
       order("form_template_id ASC");
     
@@ -22,7 +22,7 @@ class FormsController < ApplicationController
     @evaluation = Evaluation.find params[:evaluation_id]
     @form_template = FormTemplate.find_by_code(params[:form_template_code])
     
-    @forms = Form.joins(:form_template).includes(:evaluation,:form_template,:user).where(
+    @forms = Form.joins(:form_template).includes(:evaluation,:form_template,:people).where(
       :evaluation_id=>@evaluation.id,
       "form_templates.code"=>params[:form_template_code]
     )
@@ -63,7 +63,7 @@ class FormsController < ApplicationController
     @form = Form.new({
         :form_template_id=> template.nil? ? nil : template.id , 
         :evaluation_id=>params[:evaluation_id],
-        :user_id=>current_user.id
+        :people_id=>current_user.id
       })
     authorize! :new, @form
     
@@ -105,7 +105,7 @@ class FormsController < ApplicationController
         format.json { head :ok }
       else
         format.html { render action: "edit", :layout=>"evaluation_tabs" }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+        format.json { render json: @form.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -157,7 +157,7 @@ class FormsController < ApplicationController
   
   def save_form(form,params)
     
-    form.user = current_user
+    form.people = current_user
     form.form_template_id = params[:form_template_id]
     form.evaluation_id = params[:evaluation_id]
     
@@ -183,7 +183,7 @@ class FormsController < ApplicationController
   end
   
   def update_form(form,params)
-    form.user = current_user
+    form.people = current_user
     entries = []
     
     params[:entries].each do |key,value|

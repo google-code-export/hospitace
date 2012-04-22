@@ -2,7 +2,7 @@
 
 require 'will_paginate/array'
 
-class PeoplesController < ApplicationController
+class PeopleController < ApplicationController
   load_and_authorize_resource
   helper_method :sort_column, :sort_direction
   
@@ -10,7 +10,7 @@ class PeoplesController < ApplicationController
   # GET /peoples.json
   def index
     
-    @peoples = People.search(params[:search]).paginate(:page=>params[:page])
+    @peoples = People.includes(:role).search(params[:search]).paginate(:page=>params[:page])
 
     respond_to do |format|
       format.js
@@ -45,6 +45,27 @@ class PeoplesController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @people }
+    end
+  end
+  
+   # GET /users/1/edit
+  def edit
+    @people = People.find(params[:id])
+  end
+
+  # PUT /users/1
+  # PUT /users/1.json
+  def update
+    @people = People.find(params[:id])
+
+    respond_to do |format|
+      if @people.update_attributes(params[:people])
+        format.html { redirect_to @user, notice: 'Uživatel byl úspěšně upraven.' }
+        format.json { head :ok }
+      else
+        format.html { render action: "edit" }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
     end
   end
   

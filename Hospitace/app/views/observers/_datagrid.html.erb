@@ -1,9 +1,9 @@
-<% scope = "activerecord.attributes.user" %>
+<% scope = "activerecord.attributes.people" %>
 <div id="datagrid">
 <table class="table table-striped">
   <thead>
   <tr>
-    <%= th :login, scope %>
+    <%= th :username, scope %>
     <%= th :name, scope %>
     <%= th :email, scope %>
     <th></th>
@@ -13,11 +13,11 @@
 
 <% @observers.each do |observer| %>
   <%
-  user = observer.user %>
+  people = observer.people %>
   <tr>
-    <td><%= user.login %></td>
-    <td><%= user.full_name %></td>
-    <td><%= user.email %></td>
+    <td><%= people.login %></td>
+    <td><%= people.full_name %></td>
+    <td><%= people.email %></td>
     <td><%= actions do yield observer if block_given? end%></td>
   </tr>
 <% end %>

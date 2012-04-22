@@ -7,36 +7,44 @@ class Ability
 
   def initialize(user)
     
-    @current_user = user || User.new # for guest
-
-    if @current_user.roles.size == 0
+    @current_user = user || People.new # for guest
+    
+    Role.new(:people=>@current_user,:roles_mask=>0) unless @current_user.role
+    role = @current_user.role
+   
+    
+    if role.nil?
       guest
-    end
+    else
+      if role.roles.size == 0
+        guest
+      end
+    end  
     
     if @current_user.persisted?
       logged
     end
     
-    @current_user.roles.each { |role| send(role) }
+
+    role.roles.each { |r| send(r) } unless role.nil?
 
     
   end
   
   def guest
     can [:new, :create], UserSession
-    can [:new, :create], User
+    can [:new, :create], People
     can [:read], Evaluation
   end
   
   def logged
     can [:show], People
-    can [:show], User
     can [:destroy], UserSession
     can [:read], Observation
-    can [:update,:show], User, :id => current_user.id
+    can [:update,:show], People, :id => current_user.id
     
     can [:read], Note
-    can [:update], Note, :user_id => current_user.id
+    can [:update], Note, :people_id => current_user.id
     
     can [:read], Evaluation
   end
@@ -68,14 +76,14 @@ class Ability
     can [:read], Form
     can [:manage], Form do |form|
       form.form_template.is?("observer") and 
-        form.evaluation.observers.where(:user_id=>current_user.id).exists?
+        form.evaluation.observers.where(:people_id=>current_user.id).exists?
     end
     
   end
   
   def admin
     logged
-    can :assign_roles, User
+    can :assign_roles, People
     
     # kos
     can :manage, People
@@ -86,9 +94,9 @@ class Ability
     can :setting, "Setting"
     
     # users
-    can [:manage,:change_login], User
-    cannot [:root], User
-    cannot [:update,:edit,:destroy], User do |user|
+    can [:manage,:change_login], People
+    cannot [:root], People
+    cannot [:update,:edit,:destroy], People do |user|
       user.is?("root")
     end
     

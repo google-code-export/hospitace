@@ -35,7 +35,7 @@ class AttachmentsController < ApplicationController
     return if params[:attachment].blank?
     @attachment = Attachment.new({
         :evaluation_id => params[:attachment][:evaluation_id],
-        :user_id => current_user.id,
+        :people_id => current_user.id,
         :form_id => params[:attachment][:form_id]
       })
     @attachment.uploaded_file = params[:attachment]

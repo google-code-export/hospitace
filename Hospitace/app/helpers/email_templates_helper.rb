@@ -45,7 +45,6 @@ module EmailTemplatesHelper
         def source(model,relation,*args)
           @@path = args
           @@relation = relation
-          puts model.tagged
           model.tagged.each do |attribute|
             @@attribute = attribute
             self.tagged=("#{relation}_#{attribute}")
@@ -53,9 +52,7 @@ module EmailTemplatesHelper
               attribute = @@attribute
               relation = @@relation
               path = @@path
-              puts " #{relation} #{attribute}"
               define_method "#{relation}_#{attribute}" do |parametr|
-                puts relation
                 object = get_relation_by_path(parametr,*path)
                 return get_string_value(object,attribute) unless object.is_a? Array
                 return object.collect { |item| 
@@ -130,7 +127,7 @@ class EmailBuilder
   source People, :guarant, :evaluation, :guarant
   source People, :teacher, :evaluation, :teacher
   source People, :administrator, :evaluation, :administrator
-  source User, :observers, :evaluation, :observation, :users
+  source People, :observers, :evaluation, :observation, :peoples
   source People, :head_of_department, :evaluation, :head_of_department
   source Course, :course, :evaluation, :observation, :course
   source Form, :form, :form

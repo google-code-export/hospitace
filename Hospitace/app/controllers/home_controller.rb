@@ -12,7 +12,7 @@ class HomeController < ApplicationController
     @semesters.each do |s|
       @observations << {
         :semester=>s,
-        :observations=> Observation.includes(:created_by,:users,:course).where(:semester_id=>s.id,:observation_type=>[:reported,:floating])
+        :observations=> Observation.includes(:created_by,:peoples,:course).where(:semester_id=>s.id,:observation_type=>[:reported,:floating])
         }
     end
 
