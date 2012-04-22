@@ -1,0 +1,6 @@
+  <% 
+      name = "#{people.firstname} #{people.lastname}"
+      name = people.login if people.lastname.nil?
+  %>
+  <%=  link_to(name,people) if can? :show, people %>
+  <%=  ", #{people.email}"  %>

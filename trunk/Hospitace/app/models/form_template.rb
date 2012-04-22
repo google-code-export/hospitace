@@ -17,12 +17,12 @@ class FormTemplate < ActiveRecord::Base
   end
   
   def role=(role)
-    self.roles_mask = roles_mask | 2**User::ROLES.index(role)
+    self.roles_mask = roles_mask | 2**Role::ROLES.index(role)
   end
 
   def roles
-    User::ROLES.reject do |r|
-    ((roles_mask || 0) & 2**User::ROLES.index(r)).zero?
+    Pole::ROLES.reject do |r|
+    ((roles_mask || 0) & 2**Role::ROLES.index(r)).zero?
     end
   end
 

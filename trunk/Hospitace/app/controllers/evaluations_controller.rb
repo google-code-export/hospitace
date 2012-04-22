@@ -12,12 +12,12 @@ class EvaluationsController < ApplicationController
     respond_to do |format|
       format.js
       format.html # index.html.erb
-      format.json { render json: @users }
+      format.json { render json: @evaluations }
     end
   end
   
-  # GET /users/1
-  # GET /users/1.json
+  # GET /evaluations/1
+  # GET /evaluations/1.json
   def show
     @evaluation = Evaluation.find(params[:id])
     @observation = @evaluation.observation
@@ -27,8 +27,8 @@ class EvaluationsController < ApplicationController
     end
   end
 
-  # GET /users/new
-  # GET /users/new.json
+  # GET /evaluations/new
+  # GET /evaluations/new.json
   def new
     
     @observation = Observation.find params[:observation_id]
@@ -55,7 +55,7 @@ class EvaluationsController < ApplicationController
     end
   end
 
-  # GET /users/1/edit
+  # GET /evaluations/1/edit
   def edit
     @evaluation = Evaluation.find(params[:id])
     @observation = @evaluation.observation
@@ -74,8 +74,8 @@ class EvaluationsController < ApplicationController
     end
   end
 
-  # POST /users
-  # POST /users.json
+  # POST /evaluations
+  # POST /evaluations.json
   def create
     session.delete(:teacher_id)
     session.delete(:guarant_id)
@@ -95,8 +95,8 @@ class EvaluationsController < ApplicationController
     end
   end
 
-  # PUT /users/1
-  # PUT /users/1.json
+  # PUT /evaluations/1
+  # PUT /evaluations/1.json
   def update
     session.delete(:teacher_id)
     session.delete(:guarant_id)

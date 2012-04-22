@@ -6,7 +6,7 @@
   <tr>
     <%= th :code, scope %>
     <%= th :name, scope %>
-    <%= th :user, scope %>
+    <%= th :people, scope %>
     <%= th :created_at, scope %>
     <%= th :updated_at, scope %>
     <th></th>
@@ -21,7 +21,7 @@
   <tr>
     <td><%= template.code %></td>
     <td><%= template.name %></td>
-    <td><%= form.user.full_name %></td>
+    <td><%= form.people.full_name %></td>
     <td><%= l(form.created_at,:format=>:short) %></td>
     <td><%= l(form.updated_at,:format=>:short) %></td>
     <td><%= actions do yield form if block_given? end%></td>

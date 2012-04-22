@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  user: 
+  people: 
   form_template: 
 
 two:
-  user: 
+  people: 
   form_template: 

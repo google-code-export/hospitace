@@ -12,11 +12,11 @@
 	<%= hidden_field_tag :sort, params[:sort] %>
 	
 	<%= f.input :name, :placeholder => 'name', :required => false %>
-	<%= f.input :username, :placeholder => 'login', :required => false %>
+	<%= f.input :username, :required => false %>
 	<%= f.input :email, :placeholder => 'login@fel.cvut.cz', :required => false %>
 
 	<%= f.input :teacher, :required => false,:as => :boolean %>
-	
+	<%= f.input :roles, :collection =>input_all_roles,  :as => :check_boxes, :required => false %>
 	
 	<div class="form-actions">
 		<%= f.submit :search, :class => 'btn btn-primary' %>
@@ -34,6 +34,7 @@
     <%= th :username, scope  %>
     <%= th :name, scope  %>
     <%= th :teacher, scope  %>
+    <%= th :role, scope  %>
     <th></th>
   </tr>
   </thead>
@@ -47,6 +48,7 @@
     <td><%= people.username %></td>
     <td><%= people.full_name %></td>
     <td><%= t people.teacher? %></td>
+    <td><%= roles(people) %></td>
     <td><%= actions do yield people if block_given? end%></td>
   </tr>
 

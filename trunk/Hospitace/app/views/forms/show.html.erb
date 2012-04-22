@@ -1,5 +1,5 @@
 <% title :evaluation, :small=>"z výuky #{@observation.course.name} (#{@observation.course.code})" %>
-<div class="info"><strong>Vyplnil: </strong><%= render @form.user %> <strong>Vytvořen: </strong><%= l(@observation.created_at, :format=>:long) %> <strong>Upraven: </strong><%= l(@observation.updated_at, :format=>:long) %></div>
+<div class="info"><strong>Vyplnil: </strong><%= render @form.people %> <strong>Vytvořen: </strong><%= l(@observation.created_at, :format=>:long) %> <strong>Upraven: </strong><%= l(@observation.updated_at, :format=>:long) %></div>
 
 <% 
   template = @form.form_template 

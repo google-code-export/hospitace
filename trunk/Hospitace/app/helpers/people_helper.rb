@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-module PeoplesHelper
+module PeopleHelper
   def short_peoples(peoples)
     return if peoples.nil?
     return unless peoples.is_a? Array
@@ -25,5 +25,24 @@ module PeoplesHelper
     name = "#{people.firstname} #{people.lastname}"
     name = people.login if people.lastname.nil?
     link_to_if(can?(:show,People),name, :controller=>"peoples", :action=>"show", :id=>people.id)
+  end
+  
+  def roles(user)
+    user.roles.collect{|i| t(i,:scope=>"roles")}.join(", ")
+  end
+  
+  def input_roles
+    input_all_roles do |roles|
+      roles.delete("root") if cannot?(:root,Role)
+    end
+  end
+  
+  def input_all_roles
+    roles = Role::ROLES.clone
+    yield(roles) if block_given?
+
+    return roles.collect{|item| 
+      [t(item, :scope=>"roles"),item]
+    }
   end
 end
