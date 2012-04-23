@@ -49,6 +49,7 @@ class PeopleController < ApplicationController
    # GET /users/1/edit
   def edit
     @people = People.find(params[:id])
+    @people.role ||= Role.new() 
   end
 
   # PUT /users/1

@@ -13,18 +13,18 @@
 </dl>
 
 
-<hr/>
+<%#*<hr/>%>
 
-<h2>Spravované hospitace</h2>
+<%#*<h2>Spravované hospitace</h2>%>
 
-<%= render @people.created_observations.where("(`observations`.`observation_type` = 'unannounced' AND `observations`.`created_by` = ?) || `observations`.`observation_type` !='unannounced'",current_user.id) %>
+<%#= render @people.created_observations.where("(`observations`.`observation_type` = 'unannounced' AND `observations`.`created_by` = ?) || `observations`.`observation_type` !='unannounced'",current_user.id) %>
 
-<hr/>
+<%#*<hr/>%>
 
-<h2><%= t Observer.model_name.human %></h2>
+<%#*<h2><%= t Observer.model_name.human </h2>%>
 
-<%= render @people.observations.where("(`observations`.`observation_type` = 'unannounced' AND `observations`.`created_by` = ?) || `observations`.`observation_type` !='unannounced'",current_user.id) %>
+<%#= render @people.observations.where("(`observations`.`observation_type` = 'unannounced' AND `observations`.`created_by` = ?) || `observations`.`observation_type` !='unannounced'",current_user.id) %>
 
-<div class="form-actions">
-	<%= link_to t(:back), people_path, :class=>"btn" %>
-</div>
+<%#*<div class="form-actions">%>
+	<%#= link_to t(:back), people_path, :class=>"btn" %>
+<%#*</div>%>

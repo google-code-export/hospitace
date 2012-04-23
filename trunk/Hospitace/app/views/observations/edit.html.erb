@@ -1,3 +1,30 @@
-<% title :observation %>
+<%= simple_form_for @observation,  :html => { :class => 'form-horizontal' } do |f| %>
+  <%= alert_message(f.error_notification, :warning) if f.error_notification %>
 
-<%= render 'form' %>
+  <%= f.input :head_of_department, :as=>:people, :hint => link_to("Nastavit osobu", "/observations/people") %>
+
+  <%= f.input :observation_type, :collection =>Observation::TYPES.collect {|i| [t(i),i]},  :as => :select, :selected=>Observation::TYPES[1], :required=>true %>
+
+  <%= f.association :parallel, :as=>:select, :hint => link_to("Detail paralelek", course_parallels_select_path(@observation.course)), :collection=>@observation.course.parallels(@observation.semester_id).collect {|p| [short_parallel_with_time(p), p.id]} %>
+
+
+  <%= f.input :date, :wrapper => :prepend do %>
+
+    <%=
+    content_tag :label, :class => "add-on #{@observation.date.nil? ? "" : "active"}" do
+      if @observation.date.nil?
+        check_box_tag :active, 'true'
+      else
+        check_box_tag :active, 'true', :checked=>true
+      end
+    end
+  %>
+    <%= f.input_field :date,:as=>:date_picker,:disabled=>@observation.date.nil? %>
+  <%
+  end
+%>
+
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+  </div>
+<% end %>

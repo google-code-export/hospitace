@@ -8,7 +8,7 @@ class FormsController < ApplicationController
       where(:evaluation_id=>@evaluation.id).
       order("form_template_id ASC");
     
-    authorize! :index, @forms
+    authorize! :index, Form
     
     @observation = @evaluation.observation
     
@@ -32,7 +32,7 @@ class FormsController < ApplicationController
       :evaluation=>@evaluation,
       :form_template=>@form_template
     )
-    authorize! :read, @form
+    authorize! :show, @form
       
     
     @observation = @evaluation.observation
@@ -49,7 +49,7 @@ class FormsController < ApplicationController
   
   def show   
     @form = Form.find params[:id]
-    authorize! :read, @form
+    authorize! :show, @form
     
     @attachment = @form.attachments.first;
     @evaluation = Evaluation.find params[:evaluation_id]
@@ -187,7 +187,7 @@ class FormsController < ApplicationController
   end
   
   def update_form(form,params)
-    form.people = current_user
+    form.people ||= current_user
     entries = []
     
     params[:entries].each do |key,value|

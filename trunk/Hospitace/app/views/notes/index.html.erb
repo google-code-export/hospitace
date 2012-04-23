@@ -2,7 +2,7 @@
 
 <%= render @observation.notes %>
 
-<% if can? :create, Note %>
+<% if can? :create, @note %>
   <h2>Nová poznámka</h2>
   <%= render 'form' %>
 <% end %>

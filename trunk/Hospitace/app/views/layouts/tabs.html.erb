@@ -1,7 +1,9 @@
+<% title :observations, :small=>"#{@observation.course.code} (#{@observation.course.name})" %>
+
 <% content_for :tab do %>
   <ul class="nav nav-tabs">
     <%= tab_item(:info,@observation) if can? :show, @observation %> 
-    <%= tab_item(:observation_date,observation_date_path(@observation)) if can? :manage, @observation %> 
+    <%= tab_item(:observation_date,edit_observation_path(@observation)) if can? :manage, @observation %> 
     <%= tab_item(:observers,observation_observers_path(@observation)) if can? :manage, @observation %> 
     <%= tab_item(:notes,observation_notes_path(@observation)) if can? :index, Note %> 
     <% if @observation.state.is_a? Observation::States::Scheduled %>

@@ -10,8 +10,19 @@ class Evaluation < ActiveRecord::Base
   has_many :observers_people, :through=> :observation
   has_many :forms, :dependent => :destroy
   has_one :head_of_department, :through=> :observation
-  has_one :created_by, :through=> :observation
+  has_one :created_by, :through=> :observation 
   
+#  has_many :observed, :class_name => "People"
+#:finder_sql => proc { 
+#  
+#     "SELECT * FROM people INNER JOIN evaluations ON evaluations.teacher_id = people.id"
+#  }
+#  Observation.find(:all,
+#            :joins => "inner join peoples_relateds on observations.parallel_id = peoples_relateds.related_id and peoples_relateds.relation='teachers' and peoples_relateds.related_type='Parallel' inner join people on people.id = peoples_relateds.people_id",
+#            :conditions => ["people_id = ?", id],
+#            :include => [:created_by,:course]
+#    )
+#  
   validates :observation, :presence => true
   validates :teacher, :presence => true
   validates :course, :presence => true
@@ -25,7 +36,7 @@ class Evaluation < ActiveRecord::Base
     res += observers_people
     res.push head_of_department
     res.compact
-    return People.find_all_by_username('turekto5@gmail.com')
+    return People.find_all_by_username('turekto5')
   end
   
   def forms?
@@ -44,7 +55,7 @@ class Evaluation < ActiveRecord::Base
   end
   
   def observed
-    observation.observed
+     People.joins("inner join evaluations ON evaluations.teacher_id = people.id or evaluations.guarant_id = people.id").where("evaluations.id = ?", id)
   end
   
   def self.search(search)  
@@ -92,6 +103,14 @@ class Evaluation < ActiveRecord::Base
   # callback method takes constituent strings for date and 
   # time, joins them and parses them into a datetime, then
   # writes this datetime to the object
+  def user_role(user)
+    res = []
+    res << "observer" if observers_people.where(:id=>user.id).exists?
+    res << "admin" if administrator == user
+    res << "observed" if observed.where(:id=>user.id).exists? or head_of_department == user
+    res
+  end
+  
   private
   def merge_and_set_datetime
     self.datetime_observation = Time.zone.parse(@datetime_str) if errors.empty?

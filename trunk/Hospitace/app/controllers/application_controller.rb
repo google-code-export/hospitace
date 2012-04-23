@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to root_url, :alert => exception.message
   end
-  
+    
   private
   def semester
     return Semester.find_by_code(params[:semester]) unless params[:semester].nil?
@@ -19,9 +19,15 @@ class ApplicationController < ActionController::Base
   
   def current_user_session
     return @current_user_session if defined?(@current_user_session)
-    @current_user_session = People.find_by_username('komarem') #UserSession.find
+    if not request.local? and not request.env["felid-uid"].nil? and session[:user].nil? then
+      session[:user] = request.env["felid-uid"]
+    end
+    @current_user_session = People.find_by_id session[:user]
+    #@current_user_session = People.find_by_username('komarem') #UserSession.find
     #@current_user_session = People.find_by_username('turekto5') #UserSession.find
     #@current_user_session = People.find_by_username('cernyvi2') #UserSession.find
+    #@current_user_session = People.find_by_username('jinocvla') #UserSession.find
+    #@current_user_session = People.find_by_username('necasma2') #UserSession.find
     return @current_user_session
   end
     

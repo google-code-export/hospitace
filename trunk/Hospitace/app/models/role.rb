@@ -11,10 +11,8 @@ class Role < ActiveRecord::Base
   
   def load_rules
     self.role="observer" unless observers.empty?
-    puts roles.inspect
-#    unless people.nil?
-#      self.role="observed" if people.observed.any?
-#    end    
+    self.role="observed" if people.observed.any?    
+    save
   end
   
   def roles=(roles)
