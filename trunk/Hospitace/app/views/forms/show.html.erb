@@ -1,5 +1,12 @@
 <% title :evaluation, :small=>"z výuky #{@observation.course.name} (#{@observation.course.code})" %>
-<div class="info"><strong>Vyplnil: </strong><%= render @form.people %> <strong>Vytvořen: </strong><%= l(@observation.created_at, :format=>:long) %> <strong>Upraven: </strong><%= l(@observation.updated_at, :format=>:long) %></div>
+<div class="info">
+  <strong>Vyplnil: </strong><%= render @form.people %> <strong>Vytvořen: </strong><%= l(@observation.created_at, :format=>:long) %> <strong>Upraven: </strong><%= l(@observation.updated_at, :format=>:long) %>
+  <span class="pull-right">
+    <%= actions(:class=>"unstyled inline action") do 
+      action_icon :edit,"icon-pencil",edit_evaluation_form_path(@form.evaluation,@form),{},:update,@form 
+   end %>
+  </span>
+</div>
 
 <% 
   template = @form.form_template 

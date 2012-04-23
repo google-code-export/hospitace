@@ -14,7 +14,8 @@ class Observation < ActiveRecord::Base
   belongs_to :head_of_department, :class_name => "People", :foreign_key=>:head_of_department_id
   
   has_many :observers, :dependent => :destroy
-  has_many :peoples, :through => :observers
+  has_many :observers_people, :through => :observers, :source => :people
+  
   has_many :notes, :dependent => :destroy
   has_one  :evaluation, :dependent => :destroy
   has_many :forms, :through => :evaluation

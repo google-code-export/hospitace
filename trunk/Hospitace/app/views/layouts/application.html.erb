@@ -37,7 +37,7 @@
             <% if !current_user %>
               <%= link_to t(:login,:scope=>"menu.user_session"), login_path %>
             <% else %>
-              <%= t(:logged_in_as,:scope=>"menu.user_session") %> <%= link_to current_user.username, people_path(current_user.id) %> |
+              <%= t(:logged_in_as,:scope=>"menu.user_session") %> <%= link_to current_user.username, current_user %> |
               <%= link_to t(:logout,:scope=>"menu.user_session"), logout_path %>
             <% end %>
           </div>

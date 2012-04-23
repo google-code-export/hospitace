@@ -5,7 +5,7 @@
 <%= simple_form_for [@observation,@observer],:html => { :class => 'form-horizontal' } do |f| %>
   <%= alert_message(f.error_notification, :warning) if f.error_notification %>
 
-  <%= render :layout => 'peoples/datagrid', :locals => { :peoples => @peoples } do |people| %>
+  <%= render :layout => 'people/datagrid', :locals => { :peoples => @peoples } do |people| %>
       <%= radio_button :observer,:people_id, people.id  %>
   <% end  %>
 

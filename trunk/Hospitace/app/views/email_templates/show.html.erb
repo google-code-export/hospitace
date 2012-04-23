@@ -2,13 +2,20 @@
 
 <% 
 
-form = Form.first
+form = Form.new(
+  :form_template=>FormTemplate.find_by_code(@email_template.form_code),
+  :evaluation=>Evaluation.new(
+    :observation=>Observation.new(
+      :parallel => Parallel.first,
+      :course => Course.first,
+      :created_by => current_user
+    )
+  ))
 evaluation = form.evaluation
 
 object ||= {:form=>form,:evaluation=>evaluation} 
 email_template = @email_template
 %>
-<% EmailBuilder.path="#{request.protocol}#{request.env['HTTP_HOST']}" %>
 
 <dl class="dl-horizontal">
 

@@ -27,9 +27,13 @@ class FormsController < ApplicationController
       "form_templates.code"=>params[:form_template_code]
     )
     
-    @form = @forms.first if @form_template.count == "1"
-    
-    authorize! :index, @forms
+    @form = @forms.first 
+    @form ||= Form.new(
+      :evaluation=>@evaluation,
+      :form_template=>@form_template
+    )
+    authorize! :read, @form
+      
     
     @observation = @evaluation.observation
     
@@ -45,7 +49,7 @@ class FormsController < ApplicationController
   
   def show   
     @form = Form.find params[:id]
-    authorize! :show, @form
+    authorize! :read, @form
     
     @attachment = @form.attachments.first;
     @evaluation = Evaluation.find params[:evaluation_id]

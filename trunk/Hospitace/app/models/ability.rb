@@ -9,17 +9,15 @@ class Ability
     
     @current_user = user || People.new # for guest
     
-    Role.new(:people=>@current_user,:roles_mask=>0) unless @current_user.role
+    Role.create(:people=>@current_user,:roles_mask=>0) unless @current_user.role
     role = @current_user.role
-   
-    
+
     if role.nil?
       guest
-    else
-      if role.roles.size == 0
-        guest
-      end
-    end  
+    elsif role.roles.size == 0
+      guest
+    end
+      
     
     if @current_user.persisted?
       logged
@@ -32,18 +30,20 @@ class Ability
   end
   
   def guest
-    can [:new, :create], UserSession
-    can [:new, :create], People
     can [:read], Evaluation
+    can [:read], Form do |form|
+      form.form_template.read_mask == 0 unless form.form_template.nil?
+    end
   end
   
   def logged
-    can [:show], People
+    guest
+    can [:show, :show_email], People
     can [:destroy], UserSession
     can [:read], Observation
     can [:update,:show], People, :id => current_user.id
     
-    can [:read], Note
+    can [:read, :show], Note
     can [:update], Note, :people_id => current_user.id
     
     can [:read], Evaluation
@@ -53,14 +53,17 @@ class Ability
     logged
     can [:read,:observed], Observation
     
-    can [:read], Form
+    can [:read], Form do |form|
+      form.form_template.read?("observed")
+    end
     can [:manage], Form do |form|
-      form.form_template.is?("observed") unless form.form_template.nil?
+      form.form_template.create?("observed") unless form.form_template.nil?
     end
   end
   
   def observer
     logged
+    can [:select], People
     can [:read,:observing], Observation
     can [:read],Observer
     
@@ -73,12 +76,25 @@ class Ability
       end  
     end
     
-    can [:read], Form
-    can [:manage], Form do |form|
-      form.form_template.is?("observer") and 
-        form.evaluation.observers.where(:people_id=>current_user.id).exists?
+    can [:read], Form do |form|
+      puts form.inspect
+      form.form_template.read?("observer") and 
+        form.observers.where(:people_id=>current_user.id).exists?
+    end
+  
+    can [:update], Form do |form|
+      form.form_template.create?("observer") and 
+        form.people == current_user
     end
     
+    can [:create,:new], Form do |form|
+      form.form_template.user_create?(current_user,form.evaluation)  
+    end
+    
+    can [:create,:read], Attachment
+    can [:destroy], Attachment do |a|
+      a.people == current_user
+    end
   end
   
   def admin
@@ -134,7 +150,7 @@ class Ability
       form.observation.created_by == current_user #.where(:user_id=>current_user.id).any?
     end
     can [:manage], Form do |form|
-      form.form_template.is?("admin") and 
+      form.form_template.create?("admin") and 
         form.evaluation.observation.created_by == current_user
     end
     can [:update], Form

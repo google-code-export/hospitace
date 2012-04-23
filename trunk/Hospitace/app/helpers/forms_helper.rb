@@ -48,7 +48,7 @@ module FormsHelper
   def d_note(entry,form,options={})
     template = entry.entry_template
     form.text_field( template.id, :value => entry.value,:style=>((entry.value.nil? or entry.value == "") ? "display:none" : ""))<<
-    " <a class=\"field_note open #{((entry.value.nil? or entry.value == "") ? "" : "hide")}\" href=\"#\"><i class=\"icon-pencil\"></i></a> 
+      " <a class=\"field_note open #{((entry.value.nil? or entry.value == "") ? "" : "hide")}\" href=\"#\"><i class=\"icon-pencil\"></i></a> 
       <a class=\"field_note dis #{((entry.value.nil? or entry.value == "") ? "hide" : "")}\" href=\"#\"><i class=\"icon-ban-circle\"></i></a>".html_safe
   end
   
@@ -296,4 +296,47 @@ module FormsHelper
     end.join.html_safe
   end
   
+  
+  def form_tab(template,evaluation,*args,&block)
+    form = template.forms.where(:evaluation_id => evaluation).first
+    if template.user_create?(current_user, evaluation)
+      form ||= Form.new({
+          :form_template=>template,
+          :evaluation=>evaluation
+        })
+      
+      return tab_item("#{template.code}_new","/evaluations/#{evaluation.id}/forms/new/#{template.code}",:create,form)
+    elsif !form.nil?
+      return tab_item("#{template.code}","/evaluations/#{evaluation.id}/forms/code/#{template.code}",:read, form)
+    end  
+        
+  end
 end
+
+
+
+
+#<% FormTemplate.all.each do |template| %>
+#      <% 
+#      forms = template.forms.where(:evaluation_id =#> @evaluation.id)
+#
+#      unless forms.any? 
+#        form = Form.new({
+#            :form_template=>template,
+#            :evaluation=>@evaluation
+#          }) 
+#      %>
+#
+#        <%= tab_item("#{template.code}_new","/evaluations/#{@evaluation.id}/forms/new/#{template.code}") if can? :create, form %#>
+#      <% else %>
+#        <% form = template.forms.where({:evaluation_id=>@evaluation.id}).first %>
+#
+#        <%= 
+#        if @evaluation.form?(template.code) and can?(:create, form)
+#          tab_item("#{template.code}","/evaluations/#{@evaluation.id}/forms/code/#{template.code}") if can? :read, form 
+#        else 
+#          tab_item("#{template.code}_new","/evaluations/#{@evaluation.id}/forms/new/#{template.code}") if can? :create, form 
+#        end
+#      %#>
+#      <% end %>
+#    <% end %>

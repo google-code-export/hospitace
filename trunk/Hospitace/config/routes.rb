@@ -29,15 +29,15 @@ Hospitace::Application.routes.draw do
   resources :observations, :except=> [:edit] do
     match "courses" => 'courses#select', :via => [:get, :post], :on=>:collection, :as=>:observation_courses
     match "people" => 'people#select', :via => [:get, :post], :on=>:collection, :as=>:observation_courses
-    #match "date" => 'observations#date', :via => [:get, :post], :on=>:member,:as => :date
     resources :notes
     resources :observers, :only=> [:index, :new, :create, :destroy]
     resources :evaluations
   end
 
 
-  match "people/select" => 'people#select', :via => [:get, :post], :as=>:peoples_select
+  match "people/select" => 'people#select', :via => [:get, :post], :as=>:person_select
   resources :people, :only => [:index, :show,:edit,:update]
+  resources :persons, :only => [:index, :show,:edit,:update]
   #resources :courses, :only => [:index, :show]
 
   match "courses/:course_id/parallels/select" => 'parallels#select', :via => [:get, :post], :as=>:course_parallels_select

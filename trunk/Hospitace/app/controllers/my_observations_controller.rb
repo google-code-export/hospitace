@@ -6,8 +6,8 @@ class MyObservationsController < ApplicationController
   
   def observed
     authorize! :observed, Observation
-    unless current_user.people.nil?
-      @observations = current_user.people.observed
+    unless current_user.nil?
+      @observations = current_user.observed.includes(:created_by,:observers_people,:course)
     else 
       @observations = []
     end
@@ -21,7 +21,7 @@ class MyObservationsController < ApplicationController
   
   def observing
     authorize! :observing, Observation
-    @observations = current_user.observations.where(:semester_id=>semester.id).paginate(:page => params[:page]) # Observation.includes(:created_by,:users).where(:semester=>semester.code).paginate(:page => params[:page]) 
+    @observations = current_user.observations.includes(:created_by,:observers_people,:course).where(:semester_id=>semester.id).paginate(:page => params[:page]) # Observation.includes(:created_by,:users).where(:semester=>semester.code).paginate(:page => params[:page]) 
     
     respond_to do |format|
       format.js
@@ -32,7 +32,7 @@ class MyObservationsController < ApplicationController
   
   def manage
     authorize! :m_ob, Observation
-    @observations = current_user.created_observations.where(:semester_id=>semester.id).paginate(:page => params[:page])
+    @observations = current_user.created_observations.includes(:created_by,:observers_people,:course).where(:semester_id=>semester.id).paginate(:page => params[:page])
     
     respond_to do |format|
       format.js

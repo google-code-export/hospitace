@@ -4,16 +4,17 @@ class Role < ActiveRecord::Base
   belongs_to :people
   has_many :observers, :through => :people
   
-  validates :people, :uniqueness => true
+  validates :people_id, :uniqueness => true
   #attr_accessible :roles,:people,:people_id,:roles_mask
   
   after_find :load_rules
   
   def load_rules
     self.role="observer" unless observers.empty?
-    unless people.nil?
-      self.role="observed" if people.observed.any?
-    end    
+    puts roles.inspect
+#    unless people.nil?
+#      self.role="observed" if people.observed.any?
+#    end    
   end
   
   def roles=(roles)

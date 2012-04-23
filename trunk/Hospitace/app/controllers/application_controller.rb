@@ -3,7 +3,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   check_authorization
-  
+   
   helper :all
   helper_method :current_user_session, :current_user, :semester
 
@@ -19,7 +19,9 @@ class ApplicationController < ActionController::Base
   
   def current_user_session
     return @current_user_session if defined?(@current_user_session)
-    @current_user_session = People.find_by_username('turekto5') #UserSession.find
+    @current_user_session = People.find_by_username('komarem') #UserSession.find
+    #@current_user_session = People.find_by_username('turekto5') #UserSession.find
+    #@current_user_session = People.find_by_username('cernyvi2') #UserSession.find
     return @current_user_session
   end
     

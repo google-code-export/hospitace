@@ -24,7 +24,7 @@ module PeopleHelper
     return if people.nil?
     name = "#{people.firstname} #{people.lastname}"
     name = people.login if people.lastname.nil?
-    link_to_if(can?(:show,People),name, :controller=>"peoples", :action=>"show", :id=>people.id)
+    link_to_if(can?(:show,People),name, people)
   end
   
   def roles(user)
@@ -40,7 +40,6 @@ module PeopleHelper
   def input_all_roles
     roles = Role::ROLES.clone
     yield(roles) if block_given?
-
     return roles.collect{|item| 
       [t(item, :scope=>"roles"),item]
     }

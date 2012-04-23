@@ -2,7 +2,7 @@ $('#datagrid').html('<%= escape_javascript(
   
        render(:layout=>"datagrid",:locals => { :peoples => @peoples }) { |person| 
          action_icon(:show,"icon-info-sign",{:controller=>"peoples", :action=>"show", :id=>person.id},{},:show,person) + " " +
-         action_icon(:edit,"icon-edit",edit_people_path(person),{},:roles,person) 
+         action_icon(:edit,"icon-edit",edit_person_path(person),{},:roles,person) 
        }
 
 ) %>');  

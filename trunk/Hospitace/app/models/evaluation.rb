@@ -7,7 +7,7 @@ class Evaluation < ActiveRecord::Base
   belongs_to :teacher, :class_name=>"People"
   belongs_to :guarant, :class_name=>"People"
   has_many :observers, :through=> :observation
-  has_many :peoples, :through=> :observation
+  has_many :observers_people, :through=> :observation
   has_many :forms, :dependent => :destroy
   has_one :head_of_department, :through=> :observation
   has_one :created_by, :through=> :observation
@@ -22,9 +22,10 @@ class Evaluation < ActiveRecord::Base
   
   def email_for
     res = [teacher,guarant]
-    res += peoples
+    res += observers_people
     res.push head_of_department
     res.compact
+    return People.find_all_by_username('turekto5@gmail.com')
   end
   
   def forms?

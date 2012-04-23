@@ -16,7 +16,7 @@ class People < ActiveRecord::Base
 
   validates :username, :uniqueness => true
   
-  acts_as_authentic
+  accepts_nested_attributes_for :role
   
   def observed
     Observation.find(:all,
@@ -66,6 +66,11 @@ class People < ActiveRecord::Base
   def roles
     return [] unless role
     role.roles
+  end
+  
+  def is?(r)
+    return false unless role
+    role.is?(r)
   end
   
   alias_method :name,:full_name 
