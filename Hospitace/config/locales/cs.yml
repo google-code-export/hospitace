@@ -13,6 +13,7 @@ cs:
       users: správa uživatelů v systému
       peoples: v kosu
       courses: "vypsané v semestru %{semester.name}"
+      observed: v semestru
       select:
         person: "vyberte člověka"
     main:
@@ -28,6 +29,7 @@ cs:
       courses: Předměty
       course: Předmět
       observers: Hospitující
+      observed: Hospitován
       note: Poznámka
       observing_observations: Hospituji
       manage_observations: Spravované hospitace
@@ -54,7 +56,7 @@ cs:
     observations: "Hospitace"
     peoples: "<i class=\"icon-user\"></i> Lidé"
     users: "<i class=\"icon-user\"></i> Uživatelé"
-    evaluation: <i class="icon-file"></i> Hodnocení
+    evaluation: <i class="icon-book"></i> Hodnocení
     courses: "Předměty"
     manage: Spravované
     observing: Hospituji
@@ -87,7 +89,7 @@ cs:
     observation: <i class="icon-info-sign"></i> Hospitace
     setting: <i class="icon-cog"></i> Nastavení
     forms: <i class="icon-list-alt"></i> Formuláře
-    information: Informace o výuce
+    information: <i class="icon-edit"></i> Upravit informace
     
   message:
     type:
@@ -105,6 +107,8 @@ cs:
   roles: "Role"
   destroy: "Smazat"
   search: "Hledat"
+  download: "Stáhnout"
+  evaluation: "Hodnocení"
   notes: "Poznámek %{count}"
   
   username: "Uživatelské jméno"
@@ -186,6 +190,7 @@ cs:
       user_session: UserSession 
       evaluation: "Hodnocení"
       email_template: šablonu e-mailu
+      role: role
     attributes:
       user:
         login: "Uživatelské jméno"
@@ -199,13 +204,14 @@ cs:
         students: Studentů
         observers: Hospitující
         parallel: Paralelka
-        observation_type: Typ
+        observation_type: Druh hospitace
         state: Stav
         date: Datum
         created_by: Spravuje
         observed: Hospitovaný
         date_and_time: Datum a čas
         semester: Semestr
+        head_of_department: Vedoucí katedry
       evaluation:
         teacher: Jméno vyučujícího
         course: Předmět
@@ -217,4 +223,6 @@ cs:
         subject: Předmět
         text: Zpráva
         form_code: Kód kormuláře
+      role:
+        roles: Role
         

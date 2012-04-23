@@ -1,16 +1,16 @@
-
 <%
 @evaluation ||= Evaluation.find params[:evaluation_id] unless params[:evaluation_id].nil?
 @observation = @evaluation.observation  
 %>
+<% title :evaluation, :small=>"z výuky #{@observation.course.code} (#{@observation.course.name})" %>
 
 <% content_for :tab do %>
   <ul class="nav nav-tabs">
     <%= tab_item(:observation,@evaluation) if can? :show, @evaluation %>  
-    <%= sub_tab(:setting,:setting,"Setting") do %>
+    <%= sub_tab(:setting,:setting,@evaluation) do %>
       <%= tab_item(:information,edit_evaluation_path(@evaluation),:manage,@evaluation) %>
-      <%= tab_item(:attachments,evaluation_attachments_path(@evaluation),:show, @observation) %> 
-      <%= tab_item(:forms,evaluation_forms_path(@evaluation),:manage,Form) %>
+      <%= tab_item(:attachments,evaluation_attachments_path(@evaluation),:manage, @evaluation) %> 
+      <%= tab_item(:forms,evaluation_forms_path(@evaluation),:manage,@evaluation) %>
     <% end %>
 
     <% FormTemplate.all.each do |template| %>

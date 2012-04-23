@@ -3,7 +3,7 @@
 module ParallelsHelper
   
   def short_parallel(parallel)
-    "#{parallel.parallel_type_t}, #{parallel.day_t}, #{l(parallel.start, :format => "%R")} #{parallel.room.code}" unless parallel.nil?
+    "#{parallel.parallel_type_t}, #{parallel.day_t}, #{l(parallel.start, :format => "%R")} #{parallel.room.code if parallel.room}" unless parallel.nil?
   end
   
   def short_parallel_with_time(parallel)

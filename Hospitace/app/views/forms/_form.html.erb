@@ -2,33 +2,33 @@
   <% 
   @attachment = Attachment.find_by_people_id_and_form_id(current_user.id,@form.id)
   @attachment ||= @form.attachments.build(:evaluation_id=>@form.evaluation.id)
-  %>
+%>
   <%= render("attachments/modal", :evaluation=>@form.evaluation) %>
 <% end %>
 <% template = @form.form_template %>
 <label>
-<legend><%= "#{template.code}) #{template.name}" %></legend>
+  <legend><%= "#{template.code}) #{template.name}" %></legend>
   <%= simple_form_for @form, :html=>{ :class => 'form-inline'} do |m| %>
 
-      <%= m.error_notification %>
-      <%= m.input :form_template_id, :as=>:hidden %>
-      <%= m.input :evaluation_id ,:as=>:hidden %>
-      <%= m.input :people_id, :as=>:hidden %>
+    <%= m.error_notification %>
+    <%= m.input :form_template_id, :as=>:hidden %>
+    <%= m.input :evaluation_id ,:as=>:hidden %>
+    <%= m.input :people_id, :as=>:hidden %>
 
+    <% if template.description %>
       <p><%= "#{template.description}" %></p>
-      
-      <%= m.simple_fields_for :entries do |p| %>
-        <%= dynamic_entries(@form.get_root_entries,p) %>
-      <% end %>
-      
-      <div class="form-actions">
-        <%= submit_tag 'Uložit', :type => :submit, :class => "btn btn-primary", :name => "save" %>
-        <%= submit_tag 'Uložit a zobrazit', :type => :submit, :class => "btn" %>
-        <%= submit_tag 'Cancel', :type => :reset, :class => "btn btn-danger" %>
-      </div>
+    <% end %>
+    <%= m.simple_fields_for :entries do |p| %>
+      <%= dynamic_entries(@form.get_root_entries,p) %>
+    <% end %>
+
+    <div class="form-actions">
+      <%= submit_tag 'Uložit', :type => :submit, :class => "btn btn-primary", :name => "save" %>
+      <%= submit_tag 'Uložit a zobrazit', :type => :submit, :class => "btn" %>
+      <%= submit_tag 'Cancel', :type => :reset, :class => "btn btn-danger" %>
+    </div>
   <% end %>
-      
+
 </label>
 
 
-    

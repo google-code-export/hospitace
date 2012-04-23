@@ -75,15 +75,14 @@ class EvaluationsController < ApplicationController
   # POST /evaluations
   # POST /evaluations.json
   def create
-    session.delete(:teacher_id)
-    session.delete(:guarant_id)
-    session.delete(:path)
-    
     #@observation = Observation.find params[:observation_id]
     @evaluation = Evaluation.new(params[:evaluation])
     @observation = @evaluation.observation
     respond_to do |format|
       if @evaluation.save
+        session.delete(:teacher_id)
+        session.delete(:guarant_id)
+        session.delete(:path)
         format.html { redirect_to observation_evaluation_path(@observation,@evaluation), notice: 'Hodnocení bylo úspěšně vytvořeno.' }
         format.json { render json: @evaluation, status: :created, location: @evaluation }
       else
@@ -96,15 +95,14 @@ class EvaluationsController < ApplicationController
   # PUT /evaluations/1
   # PUT /evaluations/1.json
   def update
-    session.delete(:teacher_id)
-    session.delete(:guarant_id)
-    session.delete(:path)
-    
     @evaluation = Evaluation.find(params[:id])
     @observation = @evaluation.observation
     
     respond_to do |format|
       if @evaluation.update_attributes(params[:evaluation])
+        session.delete(:teacher_id)
+        session.delete(:guarant_id)
+        session.delete(:path)
         format.html { redirect_to evaluation_path(@evaluation), notice: 'Hodnocení bylo úspěšně upraveno.' }
         format.json { head :ok }
       else

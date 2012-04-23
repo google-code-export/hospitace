@@ -6,13 +6,16 @@ class ObservationsController < ApplicationController
   
   helper_method :sort_column, :sort_direction
   
-  def date
+  def edit
     @observation = Observation.includes(:created_by,:observers_people,:course,:notes).find(params[:id])
     @parallel = @observation.parallel
     
-    session[:path] = observation_date_path(@observation)
-    session[:parallel] = flash[:parallel] unless flash[:parallel].nil?
-    @observation.parallel = session[:parallel] if @observation.parallel.nil?
+    session[:path] = edit_observation_path(@observation)
+    session[:parallel_id] = flash[:parallel_id] unless flash[:parallel_id].nil?
+    session[:head_of_department_id] = flash[:people_id] unless flash[:people_id].nil?
+    
+    @observation.head_of_department_id = session[:head_of_department_id] if session[:head_of_department_id]
+    @observation.parallel_id = session[:parallel_id] if session[:parallel_id]
     
     #@observation.date = @parallel.start
     
@@ -54,11 +57,11 @@ class ObservationsController < ApplicationController
     
     session[:course_id] = flash[:course_id] unless flash[:course_id].nil?
     session[:parallel_id] = flash[:parallel_id] unless flash[:parallel_id].nil?
-    session[:people_id] = flash[:people_id] unless flash[:people_id].nil?
+    session[:head_of_department_id] = flash[:people_id] unless flash[:people_id].nil?
     
     @observation.course_id ||= session[:course_id]
     @observation.parallel_id ||= session[:parallel_id]
-    @observation.head_of_department_id ||= session[:people_id]
+    @observation.head_of_department_id ||= session[:head_of_department_id]
     
     respond_to do |format|
       format.html # new.html.erb
@@ -66,15 +69,15 @@ class ObservationsController < ApplicationController
     end
   end
 
-  # GET /observations/1/edit
-  def edit
-    session[:path] = edit_observation_path(@observation)
-    @observation = Observation.find(params[:id])
-    @observation.course_id ||= flash[:course_id] unless flash[:course_id].nil?
-    @observation.parallel_id ||= flash[:parallel_id] unless flash[:parallel_id].nil?
-    @observation.people_id ||= flash[:people_id] unless flash[:people_id].nil?
-    
-  end
+#  # GET /observations/1/edit
+#  def edit
+#    session[:path] = edit_observation_path(@observation)
+#    @observation = Observation.find(params[:id])
+#    @observation.course_id ||= flash[:course_id] unless flash[:course_id].nil?
+#    @observation.parallel_id ||= flash[:parallel_id] unless flash[:parallel_id].nil?
+#    @observation.people_id ||= flash[:people_id] unless flash[:people_id].nil?
+#    
+#  end
 
   # POST /observations
   # POST /observations.json
@@ -84,6 +87,10 @@ class ObservationsController < ApplicationController
     
     respond_to do |format|
       if @observation.save
+        session.delete(:head_of_department_id)
+        session.delete(:parallel_id)
+        session.delete(:course_id)
+        session.delete(:path)
         format.html { redirect_to @observation, notice: 'Hospitace byla úspěšně vytvořená.' }
         format.json { render json: @observation, status: :created, location: @observation }
       else
@@ -100,6 +107,10 @@ class ObservationsController < ApplicationController
     @observation.date = nil
     respond_to do |format|
       if @observation.update_attributes(params[:observation])
+        session.delete(:head_of_department_id)
+        session.delete(:parallel_id)
+        session.delete(:course_id)
+        session.delete(:path)
         format.html { redirect_to @observation, notice: 'Hospitace byla úspěšně upravená.' }
         format.json { head :ok }
       else

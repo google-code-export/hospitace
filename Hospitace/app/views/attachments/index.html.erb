@@ -1,11 +1,10 @@
-<% title :attachment %>
-
 <table class="table table-striped">
   <thead>
   <tr>
     <th>Název souboru</th>
     <th>Typ</th>
     <th>Autor</th>
+    <th>Formulář</th>
     <th></th>
     <th></th>
   </tr>
@@ -16,6 +15,7 @@
       <td><%= attachment.filename %></td>
       <td><%= attachment.content_type %></td>
       <td><%= attachment.people.full_name %></td>
+      <td><%= attachment.form.code if attachment.form %></td>
       <td><%=
             actions do 
               action_icon( :download,"icon-download-alt",attachment,{},:show,attachment) + " "+

@@ -28,6 +28,11 @@ module ApplicationHelper
     content_tag(:li,link_to(t(title,:scope=>"tabs").html_safe,path), :class => ((current_page?(path) ? "active" : nil )))
   end
   
+  def disabled_tab_item(title,*args)
+    return if !args.empty? and cannot? *args
+    content_tag(:li,content_tag(:a,t(title,:scope=>"tabs").html_safe),:class =>"disabled")
+  end
+  
   def sub_tab(title,*args,&block)
     return if !args.empty? and cannot? *args
     content_tag(:li,:class=>"dropdown","data-dropdown"=>"dropdown") do

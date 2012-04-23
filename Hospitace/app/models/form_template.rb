@@ -36,10 +36,10 @@ class FormTemplate < ActiveRecord::Base
   end
   
   def user_create?(user,evaluation)
-    return false if user.roles.index {|r| create?(r)}.nil?
+    return false if evaluation.user_role(user).index {|r| create?(r)}.nil?
     return false if count?(evaluation)
     return true if count =~ /^[\d]+$/
-    return (evaluation.send(count).where(:people_id=>user.id).exists? and !evaluation.forms.where(:form_template_id=>id,:people_id=>user.id).exists?)
+    return (evaluation.send(count).where(:id=>user.id).exists? and !evaluation.forms.where(:form_template_id=>id,:people_id=>user.id).exists?)
   end
   
   def readers=(roles)
@@ -58,5 +58,11 @@ class FormTemplate < ActiveRecord::Base
 
   def read?(role)
     readers.include?(role.to_s)
+  end
+  
+  def user_read?(user,evaluation)
+    return true if read_mask == 0
+    return false if evaluation.user_role(user).index {|r| read?(r)}.nil?
+    return true
   end
 end

@@ -27,11 +27,11 @@ class Observation < ActiveRecord::Base
   
   validates :observation_type,:presence => true, :inclusion => {:in => TYPES} 
     
-  accepts_nested_attributes_for :head_of_department
+  #accepts_nested_attributes_for :head_of_department
   
   
   def observed
-    teachers.merge(instance.lecturers)
+    return (teachers + [head_of_department]) if evaluation.nil?
   end
   
   def instance

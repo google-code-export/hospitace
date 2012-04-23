@@ -15,7 +15,6 @@ class AttachmentsController < ApplicationController
     end  
     
     @evaluation = Evaluation.find params[:evaluation_id] ||= params[:attachment][:evaluation_id]
-    
     respond_to do |format|
       format.html { render "index", :layout=>"evaluation_tabs" }
       format.json { render json: @attachments }

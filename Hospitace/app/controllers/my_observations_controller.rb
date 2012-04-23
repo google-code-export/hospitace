@@ -7,7 +7,7 @@ class MyObservationsController < ApplicationController
   def observed
     authorize! :observed, Observation
     unless current_user.nil?
-      @observations = current_user.observed.includes(:created_by,:observers_people,:course)
+      @observations = current_user.observed
     else 
       @observations = []
     end

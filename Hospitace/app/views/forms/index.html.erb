@@ -1,10 +1,22 @@
-<% title :form %>
-
 <%= render :layout=>'datagrid' do |form| %>
 
-    <%= action_icon :show,"icon-info-sign",evaluation_form_path(form.evaluation,form),{},:show,form %>
-    <%= action_icon :edit,"icon-pencil",edit_evaluation_form_path(form.evaluation,form),{},:update,form %>
-    <%= action_icon :destroy,"icon-remove",form,{confirm: t(:confirm), method: :delete},:destroy,form %>
+  <%= action_icon :show,"icon-info-sign",evaluation_form_path(form.evaluation,form),{},:show,form %>
+  <%= action_icon :edit,"icon-pencil",edit_evaluation_form_path(form.evaluation,form),{},:update,form %>
+  <%= action_icon :destroy,"icon-remove",form,{confirm: t(:confirm), method: :delete},:destroy,form %>
 
 <%end%>
 
+<% if can? :manage, @evaluation %>
+<hr/>
+  <h2>Přidat formulář</h2>
+  <p>
+    <% FormTemplate.all.each do |template| %>
+      <%  form = Form.new({
+          :form_template=>template,
+          :evaluation=>@evaluation
+        }) %>
+      <%= link_to(t("#{template.code}_new",:scope=>:tabs).html_safe,"/evaluations/#{@evaluation.id}/forms/new/#{template.code}") if can? :create,form %><br/>
+
+    <% end %>
+  </p>
+<% end %>

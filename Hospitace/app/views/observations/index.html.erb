@@ -7,7 +7,9 @@ action = { :action_title=>:new_observation, :action=>new_observation_path } if c
 <% title :observations, options %>
 <%= render :layout=>'datagrid' do |observation| %>
     <%= action_notes observation.notes,"#modal_observation_#{observation.id}",{"data-toggle"=>"modal"},:show,Note %>
-    <%= action_icon :show,"icon-edit",observation,{},:show,observation %>
+    <%= action_icon :show,"icon-info-sign",observation,{},:show,observation %>
+    <%= action_icon :evaluation,"icon-book",observation.evaluation,{},:read,observation.evaluation unless observation.evaluation.nil? %>
+    <%= action_icon :edit,"icon-edit",edit_observation_path(observation),{},:update,observation %>
     <%= action_icon :destroy,"icon-remove",observation,{confirm: t(:confirm), method: :delete},:destroy,observation %>
 
 <%end%>

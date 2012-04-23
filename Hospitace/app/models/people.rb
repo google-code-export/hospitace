@@ -19,11 +19,14 @@ class People < ActiveRecord::Base
   accepts_nested_attributes_for :role
   
   def observed
-    Observation.find(:all,
-            :joins => "inner join peoples_relateds on observations.parallel_id = peoples_relateds.related_id and peoples_relateds.relation='teachers' and peoples_relateds.related_type='Parallel' inner join people on people.id = peoples_relateds.people_id",
-            :conditions => ["people_id = ?", id],
-            :include => [:created_by,:roles,:course]
-    )
+    Observation.joins(:evaluation).joins("inner join people ON evaluations.teacher_id = people.id or evaluations.guarant_id = people.id").where("people.id = ?", id)
+    
+#    Observation.find(:all,
+#            :joins => "inner join peoples_relateds on observations.parallel_id = peoples_relateds.related_id and peoples_relateds.relation='teachers' and peoples_relateds.related_type='Parallel' inner join people on people.id = peoples_relateds.people_id",
+#            :conditions => ["people_id = ?", id],
+#            :include => [:created_by,:course]
+#    )
+    
   end
   
   def full_name

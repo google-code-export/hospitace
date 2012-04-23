@@ -1,6 +1,3 @@
-<% name = "#{@observation.course.name} (#{@observation.course.code})" %>
-<% title :observations, :small=>name %>
-
 <%
 time = parallel_time_start(@parallel) unless @parallel.nil?
 date = @observation.date && l(@observation.date,:format=>"%d. %m. %Y") 
@@ -13,7 +10,6 @@ teachers = full_url_peoples(@parallel.teachers) unless @parallel.nil?
     <dl class="dl-horizontal">
 
       <%= show_item(Observation.human_attribute_name(:state), label_span(t(@observation.state.short_message),(@observation.state.ok? ? :success : :warning)) ) %>
-      <%= show_item(Observation.human_attribute_name(:course), name) %>
       <%= show_item(Observation.human_attribute_name(:semester), @observation.semester.name) %>
       <%= show_item(Observation.human_attribute_name(:observation_type), t(@observation.observation_type)) %>
       <%= show_item(Observation.human_attribute_name(:head_of_department), full_url_people(@observation.head_of_department)) %>

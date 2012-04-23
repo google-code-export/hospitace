@@ -299,44 +299,22 @@ module FormsHelper
   
   def form_tab(template,evaluation,*args,&block)
     form = template.forms.where(:evaluation_id => evaluation).first
-    if template.user_create?(current_user, evaluation)
-      form ||= Form.new({
-          :form_template=>template,
-          :evaluation=>evaluation
-        })
-      
+
+    if current_user and template.user_create?(current_user, evaluation) 
+          form ||= Form.new({
+        :form_template=>template,
+        :evaluation=>evaluation
+      })
       return tab_item("#{template.code}_new","/evaluations/#{evaluation.id}/forms/new/#{template.code}",:create,form)
     elsif !form.nil?
-      return tab_item("#{template.code}","/evaluations/#{evaluation.id}/forms/code/#{template.code}",:read, form)
+      return tab_item("#{template.code}","/evaluations/#{evaluation.id}/forms/code/#{template.code}",:show, form)
+    else
+          form ||= Form.new({
+        :form_template=>template,
+        :evaluation=>evaluation
+      })
+      return disabled_tab_item("#{template.code}",:show, form)
     end  
         
   end
 end
-
-
-
-
-#<% FormTemplate.all.each do |template| %>
-#      <% 
-#      forms = template.forms.where(:evaluation_id =#> @evaluation.id)
-#
-#      unless forms.any? 
-#        form = Form.new({
-#            :form_template=>template,
-#            :evaluation=>@evaluation
-#          }) 
-#      %>
-#
-#        <%= tab_item("#{template.code}_new","/evaluations/#{@evaluation.id}/forms/new/#{template.code}") if can? :create, form %#>
-#      <% else %>
-#        <% form = template.forms.where({:evaluation_id=>@evaluation.id}).first %>
-#
-#        <%= 
-#        if @evaluation.form?(template.code) and can?(:create, form)
-#          tab_item("#{template.code}","/evaluations/#{@evaluation.id}/forms/code/#{template.code}") if can? :read, form 
-#        else 
-#          tab_item("#{template.code}_new","/evaluations/#{@evaluation.id}/forms/new/#{template.code}") if can? :create, form 
-#        end
-#      %#>
-#      <% end %>
-#    <% end %>

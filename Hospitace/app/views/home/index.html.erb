@@ -19,11 +19,12 @@
 
   <%= render :layout=>'observations/datagrid', :locals => { :observations => item[:observations] } do |observation| %>
     <%= action_notes observation.notes,"#modal_observation_#{observation.id}",{"data-toggle"=>"modal"},:show,observation.notes %>
-    <%= action_icon :show,"icon-edit",observation,{},:show,observation %>
+    <%= action_icon :evaluation,"icon-book",observation.evaluation,{},:read,observation.evaluation unless observation.evaluation.nil? %>
+    <%= action_icon :show,"icon-info-sign",observation,{},:show,observation %>
   <%end%>
   <hr />
 <% end %>
-  
+
 <p>
   Ohlášené hospitace - jsou naplánované na konkrétní datum <br />
   Plovoucí hospitace - ohlášené hospitace, ale nenaplánované na konkrétní datum
