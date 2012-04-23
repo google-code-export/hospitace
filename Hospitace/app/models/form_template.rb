@@ -12,8 +12,13 @@ class FormTemplate < ActiveRecord::Base
   
   has_one :email_template, :class_name => "EmailTemplate", :foreign_key => :form_code, :primary_key => :code
   
+  def count?(evaluation)
+    return count == evaluation.forms.where(:form_template_id=>id).size.to_s if count =~ /^[\d]+$/
+    evaluation.send(count).size <= evaluation.forms.where(:form_template_id=>id).size
+  end
+  
   def roles=(roles)
-    self.roles_mask = self.class.roles(roles)
+    self.roles_mask = Role.roles(roles)
   end
   
   def role=(role)
@@ -21,12 +26,37 @@ class FormTemplate < ActiveRecord::Base
   end
 
   def roles
-    Pole::ROLES.reject do |r|
+    Role::ROLES.reject do |r|
     ((roles_mask || 0) & 2**Role::ROLES.index(r)).zero?
     end
   end
 
-  def is?(role)
+  def create?(role)
     roles.include?(role.to_s)
+  end
+  
+  def user_create?(user,evaluation)
+    return false if user.roles.index {|r| create?(r)}.nil?
+    return false if count?(evaluation)
+    return true if count =~ /^[\d]+$/
+    return (evaluation.send(count).where(:people_id=>user.id).exists? and !evaluation.forms.where(:form_template_id=>id,:people_id=>user.id).exists?)
+  end
+  
+  def readers=(roles)
+    self.roles_mask = Role.roles(roles)
+  end
+  
+  def read=(role)
+    self.read_mask = read_mask | 2**Role::ROLES.index(role)
+  end
+
+  def readers
+    Role::ROLES.reject do |r|
+    ((read_mask || 0) & 2**Role::ROLES.index(r)).zero?
+    end
+  end
+
+  def read?(role)
+    readers.include?(role.to_s)
   end
 end

@@ -23,7 +23,7 @@ class ObserversController < ApplicationController
     @observation = Observation.find(params[:observation_id])
     @observer = Observer.new
 
-    @peoples = People.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:page => params[:page]);
+    @peoples = People.includes(:role).search(params[:search]).paginate(:page => params[:page]);
 
    
     respond_to do |format|

@@ -7,7 +7,7 @@ class ObservationsController < ApplicationController
   helper_method :sort_column, :sort_direction
   
   def date
-    @observation = Observation.includes(:created_by,:peoples,:course).find(params[:id])
+    @observation = Observation.includes(:created_by,:observers_people,:course,:notes).find(params[:id])
     @parallel = @observation.parallel
     
     session[:path] = observation_date_path(@observation)
@@ -25,7 +25,7 @@ class ObservationsController < ApplicationController
   # GET /observations
   # GET /observations.json
   def index
-    @observations = Observation.includes(:created_by,:peoples,:course).where(:semester_id=>semester.id).where("(`observations`.`observation_type` = 'unannounced' AND `observations`.`created_by` = ?) || `observations`.`observation_type` !='unannounced'",current_user.id).paginate(:page => params[:page]) 
+    @observations = Observation.includes(:created_by,:observers_people,:course).where(:semester_id=>semester.id).where("(`observations`.`observation_type` = 'unannounced' AND `observations`.`created_by` = ?) || `observations`.`observation_type` !='unannounced'",current_user.id).paginate(:page => params[:page]) 
     
     respond_to do |format|
       format.js
@@ -37,7 +37,7 @@ class ObservationsController < ApplicationController
   # GET /observations/1
   # GET /observations/1.json
   def show
-    @observation = Observation.includes(:created_by,:peoples,:course).find(params[:id])
+    @observation = Observation.includes(:created_by,:observers_people,:course).find(params[:id])
     @course = @observation.course
     @parallel = @observation.parallel
     respond_to do |format|

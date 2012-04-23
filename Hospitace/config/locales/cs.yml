@@ -28,7 +28,8 @@ cs:
       courses: Předměty
       course: Předmět
       observers: Hospitující
-      observing_observations: Hospituji hospitace
+      note: Poznámka
+      observing_observations: Hospituji
       manage_observations: Spravované hospitace
       observed_observations: Hospitován
       contact: Kontakt
@@ -57,6 +58,7 @@ cs:
     courses: "Předměty"
     manage: Spravované
     observing: Hospituji
+    observed: Hospitován
     evaluations: Hodnocení
     email_templates: <i class="icon-envelope"></i> Šablony e-mailu
     

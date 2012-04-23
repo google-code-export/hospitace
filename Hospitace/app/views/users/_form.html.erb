@@ -4,7 +4,7 @@
 
 <%= f.input :people_id, :as=>:hidden %>
 
-<% hind = link_to("Napojit na účet z kosu", peoples_select_path) unless @user.persisted? %>
+<% hind = link_to("Napojit na účet z kosu", person_select_path) unless @user.persisted? %>
 
 <%= f.input :login, :readonly => (!@user.people_id.nil?), :placeholder => 'user', :hint => hind %>
 

@@ -3,7 +3,7 @@
 
   <%= f.association :semester, :as=>:select, :collection=> Semester.current_and_next, :selected=>Semester.current %>
   <%= f.association :course,:placeholder => 'Kód předmětu' , :hint => link_to("Najít předmět", "/observations/courses") %>
-  <%= f.input :head_of_department, :as=>:people, :hint => link_to("Nastavit osobu", "/observations/peoples") %>
+  <%= f.input :head_of_department, :as=>:people, :hint => link_to("Nastavit osobu", "/observations/people") %>
 
   <%= f.input :observation_type, :collection =>Observation::TYPES.collect {|i| [t(i),i]},  :as => :select, :selected=>Observation::TYPES[1], :required=>true %>
 

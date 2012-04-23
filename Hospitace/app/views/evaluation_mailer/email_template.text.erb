@@ -7,5 +7,6 @@ object ||= {:form=>form,:evaluation=>evaluation}
 to ||= [People.first]
 email_template ||= form.email_template
 %>
-<% EmailBuilder.path="#{request.protocol}#{request.env['HTTP_HOST']}" %>
+  
 <%= EmailBuilder.build(email_template,object) %>
+

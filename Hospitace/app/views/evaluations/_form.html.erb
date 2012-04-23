@@ -4,9 +4,9 @@
 
 <%= f.association :observation,:as=>:hidden %>
 
-<%= f.input :teacher, :as=>:people, :hint => link_to("Nastavit učitele", "/evaluations/select/peoples/teacher")%>
+<%= f.input :teacher, :as=>:people, :hint => link_to("Nastavit učitele", "/evaluations/select/people/teacher")%>
 
-<%= f.input :guarant, :as=>:people, :hint => link_to("Nastavit garanta", "/evaluations/select/peoples/guarant") %>
+<%= f.input :guarant, :as=>:people, :hint => link_to("Nastavit garanta", "/evaluations/select/people/guarant") %>
 
 <%= f.input :course %>
 
@@ -19,5 +19,3 @@
 	<%= submit_tag 'Cancel', :type => :reset, :class => "btn btn-danger" %>
 </div>
 <% end %> 
-
-<%= debug session %>

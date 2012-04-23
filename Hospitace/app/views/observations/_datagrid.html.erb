@@ -3,9 +3,9 @@
 
 <% content_for :modal do %>
   <% observations.each do |observation| %>
-    <%= render("notes/modal", :notes=>observation.notes,:id=>"modal_observation_#{observation.id}") if can? :show,observation.notes %>
+    <%= render("notes/modal", :notes=>observation.notes,:id=>"modal_observation_#{observation.id}") if can? :show,Note %>
   <% end %> 
-<% end %>
+<%  end %>
 
 <div id="datagrid">
 <table class="table table-striped">
@@ -33,7 +33,7 @@
     <td><%= course.code %></td>
     <td><%= short_peoples(instance.lecturers) unless instance.nil? %></td>
     <td><%= instance.occupied unless instance.nil? %></td>
-    <td><%= short_peoples(observation.peoples) %></td>
+    <td><%= short_peoples(observation.observers_people) %></td>
     <td><%= short_parallel(observation.parallel) %></td>
     <td><%= l(observation.date, :format=>"%d. %m. %Y") unless observation.date.nil?  %></td>
     <td><%= t(observation.observation_type) %></td>

@@ -1,10 +1,11 @@
+require 'app_config'
+
 class EvaluationMailer < ActionMailer::Base
   default from: "noreply@kvalitavyuky.felk.cvut.cz"
 
   def email_template(peoples,email_template,objects = {})
     return nil if email_template.nil?
-    emails = ["osmman@gmail.com"]
-    #emails = users.uniq.collect { |item| item.email }.compact
+    emails = peoples.uniq.collect { |item| item.email }.compact
     mail(
       :to => emails,
       :subject => email_template.subject

@@ -39,7 +39,7 @@
 <% @evaluations.each do |evaluation| %>
   <tr>
     <td><%= evaluation.course %></td>
-    <td><%= evaluation.teacher %></td>
+    <td><%= evaluation.teacher.full_name %></td>
     <td><%= l(evaluation.datetime_observation,:format=>:long) %></td>
     <td><%= "" %></td>
     <td><%= 

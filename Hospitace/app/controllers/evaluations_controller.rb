@@ -34,8 +34,6 @@ class EvaluationsController < ApplicationController
     @observation = Observation.find params[:observation_id]
     
     session[:path] = new_observation_evaluation_path(@observation);
-
-    puts flash.inspect
     
     session[:teacher_id] = flash["teacher_id"] unless flash["teacher_id"].nil?
     session[:guarant_id] = flash["guarant_id"] unless flash["guarant_id"].nil?
@@ -44,7 +42,7 @@ class EvaluationsController < ApplicationController
         :observation_id => params[:observation_id],
         :course  => course,
         :teacher => teacher,
-        :guarant => guarantor,
+        :guarant => guarant,
         :room  => room
       })
     
@@ -65,8 +63,8 @@ class EvaluationsController < ApplicationController
     session[:teacher_id] = flash["teacher_id"] unless flash["teacher_id"].nil?
     session[:guarant_id] = flash["guarant_id"] unless flash["guarant_id"].nil?
        
-    @evaluation.teacher = teacher
-    @evaluation.guarant = guarantor
+    @evaluation.teacher = People.find_by_id(session[:teacher_id]) || @evaluation.teacher
+    @evaluation.guarant = People.find_by_id(session[:guarant_id]) || @evaluation.guarant
     
     respond_to do |format|
       format.html { render :layout=>"evaluation_tabs"}
@@ -141,7 +139,7 @@ class EvaluationsController < ApplicationController
     People.find_by_id(session[:teacher_id]) || @observation.parallel.teachers.first
   end
   
-  def guarantor
+  def guarant
     return nil if @observation.instance.nil? 
     People.find_by_id(session[:guarant_id]) || @observation.instance.guarantors.first
   end

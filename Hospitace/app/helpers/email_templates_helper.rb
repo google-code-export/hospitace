@@ -113,7 +113,7 @@ end
 class EmailBuilder
   include EmailTemplatesHelper::Tagged::EmailBuilder
 
-  @@path = ""
+  @@path = AppConfig.email_base_url
   
   def self.path
     @@path
@@ -127,7 +127,7 @@ class EmailBuilder
   source People, :guarant, :evaluation, :guarant
   source People, :teacher, :evaluation, :teacher
   source People, :administrator, :evaluation, :administrator
-  source People, :observers, :evaluation, :observation, :peoples
+  source People, :observers, :evaluation, :observation, :observers_people
   source People, :head_of_department, :evaluation, :head_of_department
   source Course, :course, :evaluation, :observation, :course
   source Form, :form, :form

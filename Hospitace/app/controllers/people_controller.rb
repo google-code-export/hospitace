@@ -1,7 +1,5 @@
 # encoding: utf-8
 
-require 'will_paginate/array'
-
 class PeopleController < ApplicationController
   load_and_authorize_resource
   helper_method :sort_column, :sort_direction
@@ -20,7 +18,7 @@ class PeopleController < ApplicationController
   end
   
   def select
-    session[:path] ||= peoples_path
+    session[:path] ||= people_path
     
     unless params[:people_id].nil?
       flash_name = params[:type].nil? ? :people_id : "#{params[:type]}_id" 
@@ -28,7 +26,7 @@ class PeopleController < ApplicationController
       return
     end
     
-    @peoples = People.search(params[:search]).paginate(:page=>params[:page])
+    @peoples = People.includes(:role).search(params[:search]).paginate(:page=>params[:page])
     
     respond_to do |format|
       format.js
@@ -60,11 +58,11 @@ class PeopleController < ApplicationController
 
     respond_to do |format|
       if @people.update_attributes(params[:people])
-        format.html { redirect_to @user, notice: 'Uživatel byl úspěšně upraven.' }
+        format.html { redirect_to @people, notice: 'Uživatel byl úspěšně upraven.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+        format.json { render json: @people.errors, status: :unprocessable_entity }
       end
     end
   end

@@ -8,33 +8,15 @@
   <ul class="nav nav-tabs">
     <%= tab_item(:observation,@evaluation) if can? :show, @evaluation %>  
     <%= sub_tab(:setting,:setting,"Setting") do %>
-      <%= tab_item(:information,edit_evaluation_path(@evaluation),:manage,People) %>
-      <%= tab_item(:attachments,evaluation_attachments_path(@evaluation)) if can? :show, @observation %> 
+      <%= tab_item(:information,edit_evaluation_path(@evaluation),:manage,@evaluation) %>
+      <%= tab_item(:attachments,evaluation_attachments_path(@evaluation),:show, @observation) %> 
       <%= tab_item(:forms,evaluation_forms_path(@evaluation),:manage,Form) %>
     <% end %>
+
     <% FormTemplate.all.each do |template| %>
-      <% 
-      forms = template.forms.where(:evaluation_id => @evaluation.id)
-      unless forms.any? %>
-        <% form = Form.new({
-            :form_template_id=>template.id,
-            :evaluation_id=>@evaluation.id
-          }) %>
-
-        <%  %>
-
-        <%= tab_item("#{template.code}_new","/evaluations/#{@evaluation.id}/forms/new/#{template.code}") if can? :create, form %>
-      <% else %>
-        <% form = template.forms.where({:evaluation_id=>@evaluation.id}).first %>
-
-        <%= 
-        if @evaluation.form?(template.code) and can?(:create, form)
-          tab_item("#{template.code}","/evaluations/#{@evaluation.id}/forms/code/#{template.code}") if can? :show, form 
-        else 
-          tab_item("#{template.code}_new","/evaluations/#{@evaluation.id}/forms/new/#{template.code}") if can? :create, form 
-        end
-      %>
-      <% end %>
+      <%= form_tab(template,@evaluation) %>
+      <% break if !template.count?(@evaluation) and template.required %>
+      
     <% end %>
 
   </ul>
