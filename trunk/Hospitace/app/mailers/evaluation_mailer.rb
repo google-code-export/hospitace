@@ -1,7 +1,8 @@
 require 'app_config'
 
 class EvaluationMailer < ActionMailer::Base
-  default from: "noreply@kvalitavyuky.felk.cvut.cz"
+  default from: "noreply@kvalitavyuky.felk.cvut.cz",
+          reply_to: "noreply@kvalitavyuky.felk.cvut.cz"
 
   def email_template(peoples,email_template,objects = {})
     return nil if email_template.nil?
