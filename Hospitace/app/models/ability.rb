@@ -27,6 +27,7 @@ class Ability
   end
   
   def guest
+    can [:show], People 
     can [:read], Evaluation
     can [:read], Form do |form|
       form.form_template.read_mask == 0 unless form.form_template.nil?

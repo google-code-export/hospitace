@@ -24,7 +24,7 @@ class ApplicationController < ActionController::Base
     end
     @current_user_session = People.find_by_id session[:user]
     #@current_user_session = People.find_by_username('komarem') #UserSession.find
-    #@current_user_session = People.find_by_username('turekto5') #UserSession.find
+    @current_user_session = People.find_by_username('turekto5') #UserSession.find
     #@current_user_session = People.find_by_username('cernyvi2') #UserSession.find
     #@current_user_session = People.find_by_username('jinocvla') #UserSession.find
     #@current_user_session = People.find_by_username('necasma2') #UserSession.find

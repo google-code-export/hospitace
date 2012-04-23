@@ -4,5 +4,13 @@ require File.expand_path('../application', __FILE__)
 # Initialize the rails application
 Hospitace::Application.initialize!
 
-#TODO odstranit!!!!!!!!!!! docasne 
+ActionMailer::Base.raise_delivery_errors = true
+ActionMailer::Base.delivery_method = :sendmail
+#ActionMailer::Base.perform_deliveries = true
 
+ActionMailer::Base.sendmail_settings = {
+
+  :location => "/usr/sbin/sendmail",
+  :arguments => "-i -t"
+
+}
