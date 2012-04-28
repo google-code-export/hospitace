@@ -1,0 +1,26 @@
+<% scope = "activerecord.attributes.people" %>
+<div id="datagrid">
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <%= th :username, scope %>
+    <%= th :name, scope %>
+    <%= th :email, scope %>
+    <th></th>
+  </tr>
+  </thead>
+  
+
+<% @observers.each do |observer| %>
+  <%
+  people = observer.people %>
+  <tr>
+    <td><%= people.login %></td>
+    <td><%= people.full_name %></td>
+    <td><%= people.email %></td>
+    <td><%= actions do yield observer if block_given? end%></td>
+  </tr>
+<% end %>
+</tbody>
+</table>
+</div>

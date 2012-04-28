@@ -1,0 +1,12 @@
+<% 
+
+form = Form.first
+evaluation = form.evaluation
+
+object ||= {:form=>form,:evaluation=>evaluation} 
+to ||= [People.first]
+email_template ||= form.email_template
+%>
+  
+<%= EmailBuilder.build(email_template,object) %>
+

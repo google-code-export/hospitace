@@ -1,0 +1,28 @@
+<%
+action = {}
+action = { :action_title=>:edit, :action=>edit_user_path(@user) } if can? :update, @user %>
+<% options = {:small=>"#{@user.full_name}"} %>
+<% options.merge!(action)  %>
+
+
+<% title :user, options %>
+<dl class="dl-horizontal">
+<%= show_item(User.human_attribute_name(:login), @user.login) %>
+
+<%= show_item(User.human_attribute_name(:name), @user.full_name) %>
+
+<%= show_item(User.human_attribute_name(:email), @user.email) %>
+
+<%= show_item(User.human_attribute_name(:roles), roles(@user)) %>
+</dl>
+<hr/>
+
+<h2>Správa hospitací</h2>
+
+<%= render @user.created_observations.where("(`observations`.`observation_type` = 'unannounced' AND `observations`.`created_by` = ?) || `observations`.`observation_type` !='unannounced'",current_user.id) %>
+
+<hr/>
+
+<h2><%= t Observer.model_name.human %></h2>
+
+<%= render @user.observations.where("(`observations`.`observation_type` = 'unannounced' AND `observations`.`created_by` = ?) || `observations`.`observation_type` !='unannounced'",current_user.id) %>

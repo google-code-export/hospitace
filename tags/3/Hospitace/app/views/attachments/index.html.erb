@@ -1,0 +1,31 @@
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Název souboru</th>
+    <th>Typ</th>
+    <th>Autor</th>
+    <th>Formulář</th>
+    <th></th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @attachments.each do |attachment| %>
+    <tr>
+      <td><%= attachment.filename %></td>
+      <td><%= attachment.content_type %></td>
+      <td><%= attachment.people.full_name %></td>
+      <td><%= attachment.form.code if attachment.form %></td>
+      <td><%=
+            actions do 
+              action_icon( :download,"icon-download-alt",attachment,{},:show,attachment) + " "+
+              action_icon( :destroy,"icon-remove",attachment,{confirm: t(:confirm), method: :delete},:destroy,attachment)
+            end
+          %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<%= render 'form'  %>

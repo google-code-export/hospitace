@@ -1,0 +1,228 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+cs:
+  
+  date:
+    formats:
+      default: "%d.%m.%Y"
+
+  title:
+    small:  
+      observations: naplánované v semestru
+      users: správa uživatelů v systému
+      peoples: v kosu
+      courses: "vypsané v semestru %{semester.name}"
+      observed: v semestru
+      select:
+        person: "vyberte člověka"
+    main:
+      home: "Kontrola kvality výuky"
+      log_in: Přihlásit se
+      observations: Hospitace
+      new_observation: Nová hospitace
+      users: Uživatelé
+      user: Uživatel
+      edit_user: Upravit uživatele
+      new_user: Nový uživatel
+      peoples: Lidé
+      courses: Předměty
+      course: Předmět
+      observers: Hospitující
+      observed: Hospitován
+      note: Poznámka
+      observing_observations: Hospituji
+      manage_observations: Spravované hospitace
+      observed_observations: Hospitován
+      contact: Kontakt
+      evaluation: Hodnocení
+      email_templates: Šablony e-mailu
+      new_email_template: Nová šablona e-mailu
+      edit_email_template: Upravit šablonu e-mailu
+    action:
+      new_observation: Vytvořit hospitaci
+      new_user: Vytvořit uživatele
+      edit: Upravit
+      new_email_template: Vytvořit šablonu
+      
+  menu:
+    forms: <i class="icon-list-alt"></i> Formuláře
+    create: "<i class=\"icon-plus\"></i> Vytvořit"
+    setting: "Nastavení"
+    all: "Přehled"
+    home: "Domů"
+    log_in: Přihlásit se
+    contact: "Kontakt"
+    observations: "Hospitace"
+    peoples: "<i class=\"icon-user\"></i> Lidé"
+    users: "<i class=\"icon-user\"></i> Uživatelé"
+    evaluation: <i class="icon-book"></i> Hodnocení
+    courses: "Předměty"
+    manage: Spravované
+    observing: Hospituji
+    observed: Hospitován
+    evaluations: Hodnocení
+    email_templates: <i class="icon-envelope"></i> Šablony e-mailu
+    
+    user_session:
+      login: "Přihlásit se"
+      logout: "Odhlásit"
+      logged: "Přihlášen"
+      logged_in_as: "Přihlášen jako"
+  
+  tabs:
+    info: <i class="icon-info-sign"></i> Detail
+    observation_date: <i class="icon-calendar"></i> Naplánování
+    observers: <i class="icon-user"></i> Hospitující
+    notes: <i class="icon-comment"></i> Poznámky
+    evaluation: <i class="icon-file"></i> Hodnocení
+    start_evaluation: <i class="icon-plus-sign"></i> Zahájit hodnocení
+    A: <i class="icon-file"></i> Protokoly z hospitace
+    A_new: <i class="icon-plus-sign"></i> Protokoly z hospitace
+    B: <i class="icon-file"></i> Slovní hodnocení
+    B_new: <i class="icon-plus-sign"></i> Slovní hodnocení
+    C: <i class="icon-file"></i> Stanovisko učitele
+    C_new: <i class="icon-plus-sign"></i> Stanovisko učitele
+    D: <i class="icon-file"></i> Závěrečné shrnutí
+    D_new: <i class="icon-plus-sign"></i> Závěrečné shrnutí
+    attachments: <i class="icon-folder-open"></i> Přílohy
+    observation: <i class="icon-info-sign"></i> Hospitace
+    setting: <i class="icon-cog"></i> Nastavení
+    forms: <i class="icon-list-alt"></i> Formuláře
+    information: <i class="icon-edit"></i> Upravit informace
+    
+  message:
+    type:
+      error: Chyba!
+      warning: Varování!
+      info: Informace
+      success: Ok
+  
+  tables:
+    th:
+    
+  confirm: "Opravdu chcete smazat záznam?"
+  edit: "Upravit"
+  show: "Zobrazit"
+  roles: "Role"
+  destroy: "Smazat"
+  search: "Hledat"
+  download: "Stáhnout"
+  evaluation: "Hodnocení"
+  notes: "Poznámek %{count}"
+  
+  username: "Uživatelské jméno"
+ 
+    
+  observation:
+    warning: "Je potřeba vyřešit:"
+    states:
+      create:
+        short: "Plánování"
+        observers: "K hospitaci není přidělen žádný hospitující."
+        parallel: "Není nastavená paralelka."
+        date: "Není nastaven datum hospitace."
+        actions:
+          observers: "Přidat hospitujícího"
+          parallel: "Nastavit paralelku"
+          date: "Nastavit datum"
+      scheduled:
+        short: "Naplánovaná"
+      was:
+        short: "Proběhla"
+      finished:
+        short: "Ukončená"
+  
+      
+          
+  
+  
+  add_observer: Přidat hospitujícího 
+  
+
+  user:
+    new: "Nový uživatel"
+    create: "Vytvořit uživatele"
+    created: "Spravované"
+  
+  people:
+    username: "Uživatelské jméno"
+    name: "Jméno"
+    teacher: "Učitel"
+    email: "Email"
+  
+  parallel:
+    parallel_number: Číslo paralelky
+    teachers: Vyučující
+    day: Den
+    time: Hodina
+    parity: Parita
+    room: Místnost
+    type: Typ
+  
+  course:
+    name: Název
+    code: Kód
+    occupied: Studenů
+    study_form: Forma studia
+    range: Rozsah
+    guarantors: Garant
+    lecturers: Přednášející
+  
+  roles:
+    root: "Admin"
+    admin: "Administrátor hospitací"
+    observer: "Hospitující"
+    observed: "Hospitovaný"
+  
+  floating: "Plovoucí"
+  reported: "Ohlášená"
+  unannounced: "Neohlášená"
+  
+  
+  
+  activerecord:
+    models:
+      user: "uživatel"
+      observation: "hospitace"
+      observer: "Hospitující"
+      note: "poznámka"
+      user_session: UserSession 
+      evaluation: "Hodnocení"
+      email_template: šablonu e-mailu
+      role: role
+    attributes:
+      user:
+        login: "Uživatelské jméno"
+        password: "Heslo"
+        password_confirmation: "Potvrzení hesla"
+        name: "Jméno"
+        roles: "Role"
+      observation:
+        course: Předmět
+        teachers: Přednášející
+        students: Studentů
+        observers: Hospitující
+        parallel: Paralelka
+        observation_type: Druh hospitace
+        state: Stav
+        date: Datum
+        created_by: Spravuje
+        observed: Hospitovaný
+        date_and_time: Datum a čas
+        semester: Semestr
+        head_of_department: Vedoucí katedry
+      evaluation:
+        teacher: Jméno vyučujícího
+        course: Předmět
+        datetime_observation: Datum a čas výuky
+        created_at: Datum, čas vyplnění
+        guarant: Zodpovědný za předmět
+        room: Učebna
+      email_template:
+        subject: Předmět
+        text: Zpráva
+        form_code: Kód kormuláře
+      role:
+        roles: Role
+        

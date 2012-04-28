@@ -1,0 +1,30 @@
+<% title "#{@people.full_name}"%>
+
+<dl class="dl-horizontal">
+<%= show_item(People.human_attribute_name(:username), @people.username) %>
+
+<%= show_item(People.human_attribute_name(:name), @people.full_name) %>
+
+<%= show_item(People.human_attribute_name(:email), @people.email) %>
+
+<%= show_item(People.human_attribute_name(:teacher), @people.teacher?) %>
+
+<%= show_item(People.human_attribute_name(:roles), roles(@people)) %>
+</dl>
+
+
+<%#*<hr/>%>
+
+<%#*<h2>Spravované hospitace</h2>%>
+
+<%#= render @people.created_observations.where("(`observations`.`observation_type` = 'unannounced' AND `observations`.`created_by` = ?) || `observations`.`observation_type` !='unannounced'",current_user.id) %>
+
+<%#*<hr/>%>
+
+<%#*<h2><%= t Observer.model_name.human </h2>%>
+
+<%#= render @people.observations.where("(`observations`.`observation_type` = 'unannounced' AND `observations`.`created_by` = ?) || `observations`.`observation_type` !='unannounced'",current_user.id) %>
+
+<%#*<div class="form-actions">%>
+	<%#= link_to t(:back), people_path, :class=>"btn" %>
+<%#*</div>%>

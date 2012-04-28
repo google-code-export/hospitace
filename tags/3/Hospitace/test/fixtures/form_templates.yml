@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  code: A
+  name: Form A
+  description: MyText
+  required: false
+  count: observers
+  roles_mask: 1
+
+two:
+  code: B
+  name: Form B
+  description: MyText
+  required: true
+  count: 1
+  roles_mask: 1

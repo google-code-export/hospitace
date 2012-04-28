@@ -1,0 +1,105 @@
+<% content_for :secoundary_content do %>
+	
+	<div class="header">
+		<h2>Nápověda</h2>
+	</div>
+<p>
+  Pro vložení generovaných dat je potřeba vložit značku do textu zprávy ve tvaru %značka%.
+</p>
+<h3>Seznam značek:</h3>	
+<br/>
+<h4>Formulář</h4>	
+<dl class="dl-horizontal">
+  <dt>Kód formuláře</dt>
+  <dd>%form_code%</dd>
+  <dt>Jméno formuláře</dt>
+  <dd>%form_name%</dd>
+  <dt>Vytvořil</dt>
+  <dd>%form_author%</dd>
+  <dt>Datum vytvoření</dt>
+  <dd>%form_created_at%</dd>
+  <dt>Adresa na formulář</dt>
+  <dd>%form_url%</dd>
+</dl>
+
+<h4>Osoby</h4>	
+<p>Značka pro vložení osoby se skládá ze vztahu osoby k hospitaci a z připony. Přípona definuje druh informace, kterou chcete zobrazit.</p>
+<p>Př.: %administrator_name%</p>
+<h5>Vztahy:</h5>
+<dl class="dl-horizontal">
+  <dt>Administrátor</dt>
+  <dd>administrator</dd>
+  <dt>Garant předmětu</dt>
+  <dd>guarant</dd>
+  <dt>Vedoucí katedry</dt>
+  <dd>head_of_department</dd>
+  <dt>Hospitovaný</dt>
+  <dd>teacher</dd>
+  <dt>Hospitující</dt>
+  <dd>observers</dd>
+</dl>
+<h5>Přípony:</h5>
+<dl class="dl-horizontal">
+  <dt>Jméno</dt>
+  <dd>_name</dd>
+  <dt>Email</dt>
+  <dd>_email</dd>
+  <dt>Login</dt>
+  <dd>_username</dd>
+</dl>
+
+<h4>Předmět</h4>	
+<dl class="dl-horizontal">
+  <dt>Kód předmětu</dt>
+  <dd>%course_code%</dd>
+  <dt>Název předmětu</dt>
+  <dd>%course_name%</dd>
+</dl>
+
+<h4>Paralelka</h4>	
+<dl class="dl-horizontal">
+  <dt>Číslo paralelky</dt>
+  <dd>%parallel_number%</dd>
+  <dt>Začátek vyučování</dt>
+  <dd>%parallel_start%</dd>
+  <dt>Konec vyučování</dt>
+  <dd>%parallel_finish%</dd>
+  <dt>Den vyučování</dt>
+  <dd>%parallel_day_t%</dd>
+  <dt>Typ paralelky</dt>
+  <dd>%parallel_parallel_type_t%</dd>
+</dl>
+
+<h4>Semestr</h4>	
+<dl class="dl-horizontal">
+  <dt>Kód</dt>
+  <dd>%semester_code%</dd>
+  <dt>Název</dt>
+  <dd>%semester_name%</dd>
+</dl>
+
+<h4>URL adresy</h4>	
+<dl class="dl-horizontal">
+  <dt>Formuláře</dt>
+  <dd>%form_url%</dd>
+  <dt>Hospitace</dt>
+  <dd>%observation_url%</dd>
+  <dt>Hodnocení</dt>
+  <dd>%evaluation_url%</dd>
+</dl>
+<% end %> 
+
+<%= simple_form_for(@email_template) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :subject, :input_html=>{:class=>:width_100} %>
+    <%= f.input :text , :input_html=>{:class=>:width_100, :rows=>10}%>
+    <%= f.input :form_code, :as=>:select, :collection=>EmailTemplate.events.collect{|i| [t(i[2]),i[2]]} %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= submit_tag 'Cancel', :type => :reset, :class => "btn-danger" %>
+  </div>
+<% end %>

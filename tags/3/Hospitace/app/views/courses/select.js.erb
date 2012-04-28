@@ -1,0 +1,7 @@
+  $('#datagrid').html('<%= escape_javascript(
+
+         render(:layout=>"courses/datagrid",:locals => { :courses => @courses }) { |course| 
+           radio_button_tag :course_id, course.id  
+         }
+
+  ) %>');

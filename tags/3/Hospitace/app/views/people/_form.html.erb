@@ -1,0 +1,27 @@
+<%= simple_form_for @people,  :html => { :class => 'form-horizontal' } do |f| %>
+
+<dl class="dl-horizontal">
+<%= show_item(People.human_attribute_name(:username), @people.username) %>
+
+<%= show_item(People.human_attribute_name(:name), @people.full_name) %>
+
+<%= show_item(People.human_attribute_name(:email), @people.email) %>
+
+<%= show_item(People.human_attribute_name(:teacher), @people.teacher?) %>
+
+</dl>
+
+<hr/>
+
+<%= f.error_notification %>
+
+<%= f.simple_fields_for :role do |p| %>
+      <%= p.input :roles, :collection =>input_roles,  :as => :check_boxes, :checked => @people.roles if can? :assign_roles, @people %>
+<% end %>
+
+
+<div class="form-actions">
+	<%= f.button :submit, :class => 'btn-primary' %>
+	<%= submit_tag 'Cancel', :type => :reset, :class => "btn btn-danger" %>
+</div>
+<% end %> 

@@ -1,0 +1,21 @@
+<%= simple_form_for @evaluation,  :html => { :class => 'form-horizontal' } do |f| %>
+
+<%= f.error_notification %>
+
+<%= f.association :observation,:as=>:hidden %>
+
+<%= f.input :teacher, :as=>:people, :hint => link_to("Nastavit učitele", "/evaluations/select/people/teacher")%>
+
+<%= f.input :guarant, :as=>:people, :hint => link_to("Nastavit garanta", "/evaluations/select/people/guarant") %>
+
+<%= f.input :course %>
+
+<%= f.input :room %>
+
+<%= f.input :datetime_observation, :as=>:datetime_picker %>
+
+<div class="form-actions">
+	<%= f.button :submit, :class => 'btn-primary' %>
+	<%= submit_tag 'Cancel', :type => :reset, :class => "btn btn-danger" %>
+</div>
+<% end %> 

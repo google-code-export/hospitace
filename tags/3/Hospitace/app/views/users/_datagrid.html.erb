@@ -1,0 +1,51 @@
+
+<% scope = "activerecord.attributes.user" %>
+
+<% content_for :secoundary_content do %>
+	
+	<div class="header">
+		<h3>Filtr</h3>
+	</div>	
+	
+	<%= simple_form_for :search,:html=> {:id=>"search_form", :class => 'form-horizontal form-search' },:method=>:get do |f| %>
+	
+	<%= hidden_field_tag :direction, params[:direction] %>
+	<%= hidden_field_tag :sort, params[:sort] %>
+	
+	<%= f.input :login, :placeholder => 'user@fel.cvut.cz', :required => false %>
+	
+	<%= f.input :roles, :collection =>input_roles,  :as => :check_boxes, :required => false %>
+	<div class="form-actions">
+		<%= f.submit :search, :class => 'btn btn-primary' %>
+	</div>
+	<% end %>
+
+<% end %> 
+
+<div id="datagrid">
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <%= th :id, scope, true %>
+    <%= th :login, scope, true %>
+    <%= th :name, scope %>
+    <%= th :roles, scope %>
+    <th></th>
+  </tr>
+  </thead>
+  
+
+<% @users.each do |user| %>
+  <tr>
+    <td><%= user.id %></td>
+    <td><%= user.login %></td>
+    <td><%= user.full_name %></td>
+    <td><%= roles(user) %></td>
+    <td><%= actions do yield user if block_given? end%></td>
+  </tr>
+<% end %>
+</tbody>
+</table>
+<%= will_paginate @users, :renderer=> WillPaginate::ActionView::BootstrapLinkRenderer %>
+  
+</div>

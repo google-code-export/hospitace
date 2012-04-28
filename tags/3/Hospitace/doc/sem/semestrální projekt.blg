@@ -1,0 +1,63 @@
+This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
+The top-level auxiliary file: semestrální projekt.aux
+A level-1 auxiliary file: 1_uvod.aux
+A level-1 auxiliary file: 2_teorie.aux
+A level-1 auxiliary file: 3_analiza.aux
+A level-1 auxiliary file: 4_realizace.aux
+A level-1 auxiliary file: 5_testovani.aux
+A level-1 auxiliary file: 6_zaver.aux
+The style file: csplainnat.bst
+Database file #1: reference.bib
+Warning--I didn't find a database entry for "CSTUG"
+Warning--I didn't find a database entry for "latexdocweb"
+Warning--I didn't find a database entry for "latexwiki"
+Warning--I didn't find a database entry for "ipe"
+Warning--I didn't find a database entry for "kniha"
+Warning--I didn't find a database entry for "clanek"
+Warning--I didn't find a database entry for "sbornik"
+Warning--I didn't find a database entry for "www"
+Warning--I didn't find a database entry for "wiki:framework"
+Warning--I didn't find a database entry for "wiki:orm"
+Warning--I didn't find a database entry for "infodp"
+You've used 0 entries,
+            2899 wiz_defined-function locations,
+            638 strings with 5176 characters,
+and the built_in function-call counts, 33 in all, are:
+= -- 0
+> -- 0
+< -- 0
++ -- 0
+- -- 0
+* -- 2
+:= -- 10
+add.period$ -- 0
+call.type$ -- 0
+change.case$ -- 0
+chr.to.int$ -- 0
+cite$ -- 0
+duplicate$ -- 0
+empty$ -- 1
+format.name$ -- 0
+if$ -- 1
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 0
+newline$ -- 8
+num.names$ -- 0
+pop$ -- 0
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 1
+stack$ -- 0
+substring$ -- 0
+swap$ -- 0
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 0
+width$ -- 0
+write$ -- 7
+(There were 11 warnings)

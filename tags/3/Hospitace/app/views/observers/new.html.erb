@@ -1,0 +1,17 @@
+<% title :observers, :small=>"seznam přidělených hospitujících" %>
+
+<% title :peoples, :small=>"vyberte uživatele"%>
+
+<%= simple_form_for [@observation,@observer],:html => { :class => 'form-horizontal' } do |f| %>
+  <%= alert_message(f.error_notification, :warning) if f.error_notification %>
+
+  <%= render :layout => 'people/datagrid', :locals => { :peoples => @peoples } do |people| %>
+      <%= radio_button :observer,:people_id, people.id  %>
+  <% end  %>
+
+  <div class="form-actions">
+	<%= f.submit "Vybrat", :class => 'btn btn-primary' %>
+	<%#= button_tag 'Cancel', :type => :reset, :class => "btn" %>
+  </div>
+
+<% end %>

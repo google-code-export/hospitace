@@ -1,0 +1,5 @@
+<% 
+      name = "#{user.firstname} #{user.lastname}"
+      name = user.username || user.login unless user.lastname 
+%>
+<%= link_to_if(can?(:show, user),name,user) %><%= ", #{user.email}" if user.email %>

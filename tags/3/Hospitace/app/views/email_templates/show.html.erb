@@ -1,0 +1,26 @@
+<% title :email_template %>
+
+<% 
+
+form = Form.new(
+  :form_template=>FormTemplate.find_by_code(@email_template.form_code),
+  :evaluation=>Evaluation.new(
+    :observation=>Observation.new(
+      :parallel => Parallel.first,
+      :course => Course.first,
+      :created_by => current_user
+    )
+  ))
+evaluation = form.evaluation
+
+object ||= {:form=>form,:evaluation=>evaluation} 
+email_template = @email_template
+%>
+
+<dl class="dl-horizontal">
+
+  <%= show_item(EmailTemplate.human_attribute_name(:subject),@email_template.subject ) %>
+  <%= show_item(EmailTemplate.human_attribute_name(:form_code), @email_template.form_code ) %>
+  <%= show_item(EmailTemplate.human_attribute_name(:text), EmailBuilder.build(email_template,object) ) %>
+
+</dl>

@@ -1,0 +1,4 @@
+<% 
+      name = "#{people.firstname} #{people.lastname}"
+%>
+<%= link_to_if(can?(:show, people),name,people) %><%= ", #{people.email}" if can? :show_email, People %>
