@@ -19,10 +19,11 @@ class ApplicationController < ActionController::Base
   
   def current_user_session
     return @current_user_session if defined?(@current_user_session)
-    if not request.local? and not request.env["felid-uid"].nil? and session[:user].nil? then
-      session[:user] = request.env["felid-uid"]
+    if not request.local? and not request.env["felid-uid"].nil? and @current_user_session.nil? then
+      #session[:user] = request.env["felid-uid"]
+      @current_user_session = People.find_by_username request.env["felid-uid"]
     end
-    #@current_user_session = People.find_by_id session[:user]
+    #@current_user_session = People.find_by_username request.env["felid-uid"]
     #@current_user_session = People.find_by_username('komarem') #UserSession.find
     #@current_user_session = People.find_by_username('turekto5') #UserSession.find
     #@current_user_session = People.find_by_username('cernyvi2') #UserSession.find

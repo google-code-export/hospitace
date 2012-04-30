@@ -49,7 +49,7 @@ Hospitace::Application.routes.draw do
   resources :user_sessions
   
   match 'Shibboleth.sso/Login', :as => :login
-  match 'logout' => redirect("https://login.feld.cvut.cz/felid/logout"), :as => :logout
+  match 'logout' => redirect("https://login.feld.cvut.cz/felid/logout?return=https://kvalitavyuky.felk.cvut.cz"), :as => :logout
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

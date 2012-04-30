@@ -782,3 +782,960 @@ Compiled ckeditor/filebrowser/javascripts/rails.js  (0ms)  (pid 17527)
 Compiled ckeditor/filebrowser/javascripts/application.js  (0ms)  (pid 17527)
 Compiled ckeditor/application.css  (18ms)  (pid 17527)
 Compiled ckeditor/filebrowser/stylesheets/uploader.css  (5ms)  (pid 17527)
+Migrating to CreateUserSessions (20111227141236)
+Migrating to CreateObservations (20120102140207)
+Migrating to CreateObservers (20120102142920)
+Migrating to CreateNotes (20120105142306)
+Migrating to CreateCkeditorAssets (20120119213238)
+Migrating to CreateParallels (20120215231748)
+Migrating to CreateCourses (20120215231836)
+Migrating to CreateRooms (20120215231847)
+Migrating to CreatePeople (20120215231932)
+Migrating to CreateSemesters (20120215231948)
+Migrating to CreateCourseInstances (20120215232026)
+Migrating to CreatePeoplesRelateds (20120217180658)
+Migrating to AddDefaultUsers (20120219124236)
+Migrating to CreateFormTemplates (20120225201055)
+Migrating to CreateEntryTemplates (20120225201659)
+Migrating to CreateForms (20120225202331)
+Migrating to CreateEntries (20120225202345)
+Migrating to CreateEvaluations (20120303143014)
+Migrating to CreateAttachments (20120303173128)
+Migrating to CreateEmailTemplates (20120412151008)
+Migrating to AddHeadOfDepartment (20120414122915)
+Migrating to ChangeEvaluation (20120414140000)
+Migrating to CreateRole (20120421195516)
+Migrating to AddColumnReadMask (20120422190523)
+
+
+Started GET "/" for 92.240.168.108 at 2012-04-28 17:04:44 +0200
+Processing by HomeController#index as HTML
+  Rendered observations/_datagrid.html.erb (7.0ms)
+  Rendered home/index.html.erb within layouts/application (864.3ms)
+Completed 200 OK in 1150ms (Views: 1098.8ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/" for 92.240.168.108 at 2012-04-28 17:07:48 +0200
+Processing by HomeController#index as HTML
+  Rendered observations/_datagrid.html.erb (2.6ms)
+  Rendered home/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 29ms (Views: 24.0ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/people" for 92.240.168.108 at 2012-04-28 17:07:51 +0200
+Processing by PeopleController#index as HTML
+  Rendered people/_datagrid.html.erb (127.8ms)
+  Rendered people/index.html.erb within layouts/application (129.7ms)
+Completed 200 OK in 162ms (Views: 134.3ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/people?page=3&_=1335625729890" for 92.240.168.108 at 2012-04-28 17:07:58 +0200
+Processing by PeopleController#index as JS
+  Parameters: {"page"=>"3", "_"=>"1335625729890"}
+  Rendered people/_datagrid.html.erb (106.1ms)
+  Rendered people/index.js.erb (111.4ms)
+Completed 200 OK in 135ms (Views: 113.0ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/people?_=1335625731048&page=7" for 92.240.168.108 at 2012-04-28 17:07:59 +0200
+Processing by PeopleController#index as JS
+  Parameters: {"_"=>"1335625731048", "page"=>"7"}
+  Rendered people/_datagrid.html.erb (63.5ms)
+  Rendered people/index.js.erb (67.6ms)
+Completed 200 OK in 88ms (Views: 67.1ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/people?_=1335625733835&page=1" for 92.240.168.108 at 2012-04-28 17:08:02 +0200
+Processing by PeopleController#index as JS
+  Parameters: {"_"=>"1335625733835", "page"=>"1"}
+  Rendered people/_datagrid.html.erb (106.3ms)
+  Rendered people/index.js.erb (110.4ms)
+Completed 200 OK in 130ms (Views: 110.5ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/observations" for 92.240.168.108 at 2012-04-28 17:08:04 +0200
+Processing by ObservationsController#index as HTML
+  Rendered observations/_datagrid.html.erb (4.5ms)
+  Rendered observations/index.html.erb within layouts/application (13.4ms)
+Completed 200 OK in 48ms (Views: 21.8ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/courses" for 92.240.168.108 at 2012-04-28 17:08:07 +0200
+Processing by CoursesController#index as HTML
+  Rendered courses/_datagrid.html.erb (188.4ms)
+  Rendered courses/index.html.erb within layouts/application (222.8ms)
+Completed 200 OK in 253ms (Views: 190.4ms | ActiveRecord: 43.5ms)
+
+
+Started GET "/evaluations" for 92.240.168.108 at 2012-04-28 17:08:14 +0200
+Processing by EvaluationsController#index as HTML
+  Rendered evaluations/_datagrid.html.erb (10.3ms)
+  Rendered evaluations/index.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 45ms (Views: 22.2ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/" for 92.240.168.108 at 2012-04-28 17:08:42 +0200
+Processing by HomeController#index as HTML
+  Rendered observations/_datagrid.html.erb (2.4ms)
+  Rendered home/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 25ms (Views: 21.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/email_templates" for 92.240.168.108 at 2012-04-28 17:08:58 +0200
+Processing by EmailTemplatesController#index as HTML
+  Rendered email_templates/_datagrid.html.erb (8.6ms)
+  Rendered email_templates/index.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 56ms (Views: 20.7ms | ActiveRecord: 2.6ms)
+
+
+Started DELETE "/email_templates/1" for 92.240.168.108 at 2012-04-28 17:09:06 +0200
+Processing by EmailTemplatesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"xeKzKlRY1CKAfZfViHkru7ctH5PuoDSzvv5Uvqe8JSI=", "id"=>"1"}
+Redirected to https://kvalitavyuky.felk.cvut.cz/email_templates
+Completed 302 Found in 38ms (ActiveRecord: 16.7ms)
+
+
+Started GET "/email_templates" for 92.240.168.108 at 2012-04-28 17:09:06 +0200
+Processing by EmailTemplatesController#index as HTML
+  Rendered email_templates/_datagrid.html.erb (3.6ms)
+  Rendered email_templates/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 34ms (Views: 13.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/observations/new" for 92.240.168.108 at 2012-04-28 17:09:11 +0200
+Processing by ObservationsController#new as HTML
+  Rendered observations/_form.html.erb (1405.5ms)
+  Rendered observations/new.html.erb within layouts/application (1407.1ms)
+Completed 200 OK in 1453ms (Views: 1389.0ms | ActiveRecord: 25.8ms)
+
+
+Started GET "/observations/courses" for 92.240.168.108 at 2012-04-28 17:09:24 +0200
+Processing by CoursesController#select as HTML
+  Rendered courses/_datagrid.html.erb (123.2ms)
+  Rendered courses/select.html.erb within layouts/application (125.8ms)
+Completed 200 OK in 158ms (Views: 129.8ms | ActiveRecord: 7.1ms)
+
+
+Started GET "/observations/courses?utf8=%E2%9C%93&direction=&sort=&search%5Bcode%5D=xml&search%5Bname%5D=&_=1335625821942" for 92.240.168.108 at 2012-04-28 17:09:30 +0200
+Processing by CoursesController#select as JS
+  Parameters: {"utf8"=>"✓", "direction"=>"", "sort"=>"", "search"=>{"code"=>"xml", "name"=>""}, "_"=>"1335625821942"}
+  Rendered courses/_datagrid.html.erb (179.4ms)
+  Rendered courses/select.js.erb (181.3ms)
+Completed 200 OK in 203ms (Views: 42.9ms | ActiveRecord: 141.4ms)
+
+
+Started POST "/observations/courses" for 92.240.168.108 at 2012-04-28 17:09:33 +0200
+Processing by CoursesController#select as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xeKzKlRY1CKAfZfViHkru7ctH5PuoDSzvv5Uvqe8JSI=", "course_id"=>"3329", "commit"=>"Vybrat"}
+Redirected to https://kvalitavyuky.felk.cvut.cz/observations/new
+Completed 302 Found in 20ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/observations/new" for 92.240.168.108 at 2012-04-28 17:09:33 +0200
+Processing by ObservationsController#new as HTML
+  Rendered observations/_form.html.erb (1156.4ms)
+  Rendered observations/new.html.erb within layouts/application (1157.0ms)
+Completed 200 OK in 1180ms (Views: 1143.0ms | ActiveRecord: 21.3ms)
+
+
+Started GET "/observations/people" for 92.240.168.108 at 2012-04-28 17:09:36 +0200
+Processing by PeopleController#select as HTML
+  Rendered people/_datagrid.html.erb (36.8ms)
+  Rendered people/select.html.erb within layouts/application (39.4ms)
+Completed 200 OK in 68ms (Views: 47.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/observations/new" for 92.240.168.108 at 2012-04-28 17:09:42 +0200
+Processing by ObservationsController#new as HTML
+  Rendered observations/_form.html.erb (1048.2ms)
+  Rendered observations/new.html.erb within layouts/application (1048.9ms)
+Completed 200 OK in 1074ms (Views: 1032.2ms | ActiveRecord: 23.7ms)
+
+
+Started GET "/observations/people" for 92.240.168.108 at 2012-04-28 17:10:27 +0200
+Processing by PeopleController#select as HTML
+  Rendered people/_datagrid.html.erb (36.8ms)
+  Rendered people/select.html.erb within layouts/application (38.6ms)
+Completed 200 OK in 67ms (Views: 46.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/observations/people?utf8=%E2%9C%93&direction=&sort=&search%5Bname%5D=Miroslav+%C5%A0norek&search%5Busername%5D=&search%5Bemail%5D=&search%5Bteacher%5D=0&search%5Broles%5D%5B%5D=&_=1335625886213" for 92.240.168.108 at 2012-04-28 17:10:34 +0200
+Processing by PeopleController#select as JS
+  Parameters: {"utf8"=>"✓", "direction"=>"", "sort"=>"", "search"=>{"name"=>"Miroslav Šnorek", "username"=>"", "email"=>"", "teacher"=>"0", "roles"=>[""]}, "_"=>"1335625886213"}
+  Rendered people/_datagrid.html.erb (98.8ms)
+  Rendered people/select.js.erb (100.3ms)
+Completed 200 OK in 121ms (Views: 74.7ms | ActiveRecord: 28.9ms)
+
+
+Started POST "/observations/people" for 92.240.168.108 at 2012-04-28 17:10:37 +0200
+Processing by PeopleController#select as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xeKzKlRY1CKAfZfViHkru7ctH5PuoDSzvv5Uvqe8JSI=", "people_id"=>"30896000", "commit"=>"Vybrat"}
+Redirected to https://kvalitavyuky.felk.cvut.cz/observations/new
+Completed 302 Found in 20ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/observations/new" for 92.240.168.108 at 2012-04-28 17:10:37 +0200
+Processing by ObservationsController#new as HTML
+  Rendered observations/_form.html.erb (1004.5ms)
+  Rendered observations/new.html.erb within layouts/application (1005.0ms)
+Completed 200 OK in 1028ms (Views: 992.1ms | ActiveRecord: 20.4ms)
+
+
+Started POST "/observations" for 92.240.168.108 at 2012-04-28 17:10:55 +0200
+Processing by ObservationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xeKzKlRY1CKAfZfViHkru7ctH5PuoDSzvv5Uvqe8JSI=", "observation"=>{"semester_id"=>"50", "course_id"=>"3329", "head_of_department_id"=>"30896000", "observation_type"=>"unannounced", "parallel_id"=>"1387", "date"=>""}, "commit"=>"Vytvořit hospitace"}
+Redirected to https://kvalitavyuky.felk.cvut.cz/observations/1
+Completed 302 Found in 53ms (ActiveRecord: 17.2ms)
+
+
+Started GET "/observations/1" for 92.240.168.108 at 2012-04-28 17:10:55 +0200
+Processing by ObservationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendered people/_people.erb (1.5ms)
+  Rendered courses/_course.erb (42.5ms)
+  Rendered parallels/_parallel.html.erb (4.3ms)
+  Rendered observations/show.html.erb within layouts/tabs (109.7ms)
+  Rendered layouts/application.html.erb (7.4ms)
+Completed 200 OK in 223ms (Views: 60.6ms | ActiveRecord: 68.4ms)
+
+
+Started GET "/manage" for 92.240.168.108 at 2012-04-28 17:11:38 +0200
+Processing by MyObservationsController#manage as HTML
+  Rendered notes/_modal.html.erb (5.1ms)
+  Rendered observations/_datagrid.html.erb (21.3ms)
+  Rendered my_observations/manage.html.erb within layouts/application (30.0ms)
+Completed 200 OK in 101ms (Views: 81.4ms | ActiveRecord: 4.8ms)
+
+
+Started DELETE "/observations/1" for 92.240.168.108 at 2012-04-28 17:11:41 +0200
+Processing by ObservationsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"xeKzKlRY1CKAfZfViHkru7ctH5PuoDSzvv5Uvqe8JSI=", "id"=>"1"}
+Redirected to https://kvalitavyuky.felk.cvut.cz/observations
+Completed 302 Found in 54ms (ActiveRecord: 27.9ms)
+
+
+Started GET "/observations" for 92.240.168.108 at 2012-04-28 17:11:41 +0200
+Processing by ObservationsController#index as HTML
+  Rendered observations/_datagrid.html.erb (2.5ms)
+  Rendered observations/index.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 37ms (Views: 15.4ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/observations/new" for 92.240.168.108 at 2012-04-28 17:11:43 +0200
+Processing by ObservationsController#new as HTML
+  Rendered observations/_form.html.erb (1287.6ms)
+  Rendered observations/new.html.erb within layouts/application (1288.2ms)
+Completed 200 OK in 1348ms (Views: 1311.1ms | ActiveRecord: 20.2ms)
+
+
+Started GET "/observations/courses" for 92.240.168.108 at 2012-04-28 17:12:01 +0200
+Processing by CoursesController#select as HTML
+  Rendered courses/_datagrid.html.erb (64.9ms)
+  Rendered courses/select.html.erb within layouts/application (66.6ms)
+Completed 200 OK in 97ms (Views: 70.1ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/observations/courses?utf8=%E2%9C%93&direction=&sort=&search%5Bcode%5D=A7B14BP1&search%5Bname%5D=&_=1335625981540" for 92.240.168.108 at 2012-04-28 17:12:09 +0200
+Processing by CoursesController#select as JS
+  Parameters: {"utf8"=>"✓", "direction"=>"", "sort"=>"", "search"=>{"code"=>"A7B14BP1", "name"=>""}, "_"=>"1335625981540"}
+  Rendered courses/_datagrid.html.erb (53.4ms)
+  Rendered courses/select.js.erb (54.0ms)
+Completed 200 OK in 75ms (Views: 11.6ms | ActiveRecord: 45.0ms)
+
+
+Started POST "/observations/courses" for 92.240.168.108 at 2012-04-28 17:12:12 +0200
+Processing by CoursesController#select as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xeKzKlRY1CKAfZfViHkru7ctH5PuoDSzvv5Uvqe8JSI=", "course_id"=>"3258", "commit"=>"Vybrat"}
+Redirected to https://kvalitavyuky.felk.cvut.cz/observations/new
+Completed 302 Found in 19ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/observations/new" for 92.240.168.108 at 2012-04-28 17:12:12 +0200
+Processing by ObservationsController#new as HTML
+  Rendered observations/_form.html.erb (1019.4ms)
+  Rendered observations/new.html.erb within layouts/application (1020.0ms)
+Completed 200 OK in 1043ms (Views: 1005.8ms | ActiveRecord: 21.7ms)
+
+
+Started GET "/observations/people" for 92.240.168.108 at 2012-04-28 17:13:28 +0200
+Processing by PeopleController#select as HTML
+  Rendered people/_datagrid.html.erb (100.5ms)
+  Rendered people/select.html.erb within layouts/application (102.4ms)
+Completed 200 OK in 132ms (Views: 110.2ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/observations/people?utf8=%E2%9C%93&direction=&sort=&search%5Bname%5D=+Ji%C5%99%C3%AD+Lettl&search%5Busername%5D=&search%5Bemail%5D=&search%5Bteacher%5D=0&search%5Broles%5D%5B%5D=&_=1335626063679" for 92.240.168.108 at 2012-04-28 17:13:31 +0200
+Processing by PeopleController#select as JS
+  Parameters: {"utf8"=>"✓", "direction"=>"", "sort"=>"", "search"=>{"name"=>" Jiří Lettl", "username"=>"", "email"=>"", "teacher"=>"0", "roles"=>[""]}, "_"=>"1335626063679"}
+  Rendered people/_datagrid.html.erb (35.9ms)
+  Rendered people/select.js.erb (36.4ms)
+Completed 200 OK in 58ms (Views: 13.9ms | ActiveRecord: 25.2ms)
+
+
+Started GET "/observations/people?utf8=%E2%9C%93&direction=&sort=&search%5Bname%5D=Ji%C5%99%C3%AD+Lettl&search%5Busername%5D=&search%5Bemail%5D=&search%5Bteacher%5D=0&search%5Broles%5D%5B%5D=&_=1335626066346" for 92.240.168.108 at 2012-04-28 17:13:34 +0200
+Processing by PeopleController#select as JS
+  Parameters: {"utf8"=>"✓", "direction"=>"", "sort"=>"", "search"=>{"name"=>"Jiří Lettl", "username"=>"", "email"=>"", "teacher"=>"0", "roles"=>[""]}, "_"=>"1335626066346"}
+  Rendered people/_datagrid.html.erb (37.1ms)
+  Rendered people/select.js.erb (37.7ms)
+Completed 200 OK in 57ms (Views: 15.5ms | ActiveRecord: 24.3ms)
+
+
+Started POST "/observations/people" for 92.240.168.108 at 2012-04-28 17:13:37 +0200
+Processing by PeopleController#select as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xeKzKlRY1CKAfZfViHkru7ctH5PuoDSzvv5Uvqe8JSI=", "people_id"=>"33730000", "commit"=>"Vybrat"}
+Redirected to https://kvalitavyuky.felk.cvut.cz/observations/new
+Completed 302 Found in 18ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/observations/new" for 92.240.168.108 at 2012-04-28 17:13:37 +0200
+Processing by ObservationsController#new as HTML
+  Rendered observations/_form.html.erb (1080.6ms)
+  Rendered observations/new.html.erb within layouts/application (1081.1ms)
+Completed 200 OK in 1103ms (Views: 1063.5ms | ActiveRecord: 24.7ms)
+
+
+Started POST "/observations" for 92.240.168.108 at 2012-04-28 17:14:15 +0200
+Processing by ObservationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xeKzKlRY1CKAfZfViHkru7ctH5PuoDSzvv5Uvqe8JSI=", "observation"=>{"semester_id"=>"50", "course_id"=>"3258", "head_of_department_id"=>"33730000", "observation_type"=>"unannounced", "parallel_id"=>"1313", "date"=>"17.02.2012"}, "commit"=>"Vytvořit hospitace"}
+Redirected to https://kvalitavyuky.felk.cvut.cz/observations/2
+Completed 302 Found in 54ms (ActiveRecord: 21.8ms)
+
+
+Started GET "/observations/2" for 92.240.168.108 at 2012-04-28 17:14:15 +0200
+Processing by ObservationsController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendered people/_people.erb (0.6ms)
+  Rendered courses/_course.erb (39.5ms)
+  Rendered parallels/_parallel.html.erb (2.4ms)
+  Rendered observations/show.html.erb within layouts/tabs (84.2ms)
+  Rendered layouts/application.html.erb (6.9ms)
+Completed 200 OK in 120ms (Views: 32.4ms | ActiveRecord: 66.9ms)
+
+
+Started GET "/observations/2/observers" for 92.240.168.108 at 2012-04-28 17:14:17 +0200
+Processing by ObserversController#index as HTML
+  Parameters: {"observation_id"=>"2"}
+  Rendered observers/_datagrid.html.erb (1.7ms)
+  Rendered observers/index.html.erb within layouts/tabs (5.9ms)
+  Rendered layouts/application.html.erb (7.7ms)
+Completed 200 OK in 45ms (Views: 20.3ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/observations/2/observers/new" for 92.240.168.108 at 2012-04-28 17:14:24 +0200
+Processing by ObserversController#new as HTML
+  Parameters: {"observation_id"=>"2"}
+  Rendered people/_datagrid.html.erb (99.7ms)
+  Rendered observers/new.html.erb within layouts/application (112.8ms)
+Completed 200 OK in 154ms (Views: 121.8ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/observations/2/observers/new?utf8=%E2%9C%93&direction=&sort=&search%5Bname%5D=Ji%C5%99%C3%AD+%C5%BD%C3%A1ra&search%5Busername%5D=&search%5Bemail%5D=&search%5Bteacher%5D=0&search%5Broles%5D%5B%5D=&_=1335626118152" for 92.240.168.108 at 2012-04-28 17:14:26 +0200
+
+
+Started GET "/" for 92.240.168.108 at 2012-04-29 15:12:41 +0200
+Processing by HomeController#index as HTML
+  Rendered observations/_datagrid.html.erb (13.6ms)
+  Rendered home/index.html.erb within layouts/application (854.2ms)
+Completed 200 OK in 1015ms (Views: 961.4ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/" for 92.240.168.108 at 2012-04-29 15:12:47 +0200
+Processing by HomeController#index as HTML
+  Rendered observations/_datagrid.html.erb (2.3ms)
+  Rendered home/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 11ms (Views: 8.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 92.240.168.108 at 2012-04-29 15:12:53 +0200
+Processing by HomeController#index as HTML
+  Rendered observations/_datagrid.html.erb (2.2ms)
+  Rendered home/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 198ms (Views: 191.8ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/logout" for 92.240.168.108 at 2012-04-29 15:13:00 +0200
+
+
+Started GET "/people" for 92.240.168.108 at 2012-04-29 15:15:52 +0200
+Processing by PeopleController#index as HTML
+  Rendered people/_datagrid.html.erb (126.5ms)
+  Rendered people/index.html.erb within layouts/application (128.4ms)
+Completed 200 OK in 161ms (Views: 137.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/people?utf8=%E2%9C%93&direction=&sort=&search%5Bname%5D=&search%5Busername%5D=&search%5Bemail%5D=&search%5Bteacher%5D=0&search%5Broles%5D%5B%5D=admin&search%5Broles%5D%5B%5D=&_=1335705419386" for 92.240.168.108 at 2012-04-29 15:16:05 +0200
+Processing by PeopleController#index as JS
+  Parameters: {"utf8"=>"✓", "direction"=>"", "sort"=>"", "search"=>{"name"=>"", "username"=>"", "email"=>"", "teacher"=>"0", "roles"=>["admin", ""]}, "_"=>"1335705419386"}
+  Rendered people/_datagrid.html.erb (56.6ms)
+  Rendered people/index.js.erb (58.3ms)
+Completed 200 OK in 80ms (Views: 60.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/people?utf8=%E2%9C%93&direction=&sort=&search%5Bname%5D=&search%5Busername%5D=&search%5Bemail%5D=&search%5Bteacher%5D=0&search%5Broles%5D%5B%5D=root&search%5Broles%5D%5B%5D=&_=1335705423229" for 92.240.168.108 at 2012-04-29 15:16:09 +0200
+Processing by PeopleController#index as JS
+  Parameters: {"utf8"=>"✓", "direction"=>"", "sort"=>"", "search"=>{"name"=>"", "username"=>"", "email"=>"", "teacher"=>"0", "roles"=>["root", ""]}, "_"=>"1335705423229"}
+  Rendered people/_datagrid.html.erb (22.0ms)
+  Rendered people/index.js.erb (22.6ms)
+Completed 200 OK in 42ms (Views: 22.8ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/people?utf8=%E2%9C%93&direction=&sort=&search%5Bname%5D=&search%5Busername%5D=&search%5Bemail%5D=&search%5Bteacher%5D=0&search%5Broles%5D%5B%5D=observed&search%5Broles%5D%5B%5D=&_=1335705426417" for 92.240.168.108 at 2012-04-29 15:16:12 +0200
+Processing by PeopleController#index as JS
+  Parameters: {"utf8"=>"✓", "direction"=>"", "sort"=>"", "search"=>{"name"=>"", "username"=>"", "email"=>"", "teacher"=>"0", "roles"=>["observed", ""]}, "_"=>"1335705426417"}
+  Rendered people/_datagrid.html.erb (14.0ms)
+  Rendered people/index.js.erb (14.6ms)
+Completed 200 OK in 33ms (Views: 14.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/people?utf8=%E2%9C%93&direction=&sort=&search%5Bname%5D=&search%5Busername%5D=&search%5Bemail%5D=&search%5Bteacher%5D=0&search%5Broles%5D%5B%5D=observer&search%5Broles%5D%5B%5D=&_=1335705428603" for 92.240.168.108 at 2012-04-29 15:16:14 +0200
+Processing by PeopleController#index as JS
+  Parameters: {"utf8"=>"✓", "direction"=>"", "sort"=>"", "search"=>{"name"=>"", "username"=>"", "email"=>"", "teacher"=>"0", "roles"=>["observer", ""]}, "_"=>"1335705428603"}
+  Rendered people/_datagrid.html.erb (14.1ms)
+  Rendered people/index.js.erb (14.7ms)
+Completed 200 OK in 34ms (Views: 15.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/people?utf8=%E2%9C%93&direction=&sort=&search%5Bname%5D=&search%5Busername%5D=&search%5Bemail%5D=&search%5Bteacher%5D=0&search%5Broles%5D%5B%5D=observer&search%5Broles%5D%5B%5D=&_=1335705429162" for 92.240.168.108 at 2012-04-29 15:16:15 +0200
+Processing by PeopleController#index as JS
+  Parameters: {"utf8"=>"✓", "direction"=>"", "sort"=>"", "search"=>{"name"=>"", "username"=>"", "email"=>"", "teacher"=>"0", "roles"=>["observer", ""]}, "_"=>"1335705429162"}
+  Rendered people/_datagrid.html.erb (13.5ms)
+  Rendered people/index.js.erb (14.0ms)
+Completed 200 OK in 33ms (Views: 14.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/people?utf8=%E2%9C%93&direction=&sort=&search%5Bname%5D=&search%5Busername%5D=&search%5Bemail%5D=&search%5Bteacher%5D=0&search%5Broles%5D%5B%5D=observer&search%5Broles%5D%5B%5D=&_=1335705430087" for 92.240.168.108 at 2012-04-29 15:16:16 +0200
+Processing by PeopleController#index as JS
+  Parameters: {"utf8"=>"✓", "direction"=>"", "sort"=>"", "search"=>{"name"=>"", "username"=>"", "email"=>"", "teacher"=>"0", "roles"=>["observer", ""]}, "_"=>"1335705430087"}
+  Rendered people/_datagrid.html.erb (13.6ms)
+  Rendered people/index.js.erb (14.1ms)
+Completed 200 OK in 33ms (Views: 14.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/people?utf8=%E2%9C%93&direction=&sort=&search%5Bname%5D=&search%5Busername%5D=&search%5Bemail%5D=&search%5Bteacher%5D=0&search%5Broles%5D%5B%5D=observer&search%5Broles%5D%5B%5D=&_=1335705430257" for 92.240.168.108 at 2012-04-29 15:16:16 +0200
+Processing by PeopleController#index as JS
+  Parameters: {"utf8"=>"✓", "direction"=>"", "sort"=>"", "search"=>{"name"=>"", "username"=>"", "email"=>"", "teacher"=>"0", "roles"=>["observer", ""]}, "_"=>"1335705430257"}
+  Rendered people/_datagrid.html.erb (13.6ms)
+  Rendered people/index.js.erb (14.1ms)
+Completed 200 OK in 78ms (Views: 14.8ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/people?utf8=%E2%9C%93&direction=&sort=&search%5Bname%5D=&search%5Busername%5D=&search%5Bemail%5D=&search%5Bteacher%5D=0&search%5Broles%5D%5B%5D=observer&search%5Broles%5D%5B%5D=&_=1335705430446" for 92.240.168.108 at 2012-04-29 15:16:16 +0200
+Processing by PeopleController#index as JS
+  Parameters: {"utf8"=>"✓", "direction"=>"", "sort"=>"", "search"=>{"name"=>"", "username"=>"", "email"=>"", "teacher"=>"0", "roles"=>["observer", ""]}, "_"=>"1335705430446"}
+  Rendered people/_datagrid.html.erb (13.6ms)
+  Rendered people/index.js.erb (14.1ms)
+Completed 200 OK in 33ms (Views: 14.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/people?utf8=%E2%9C%93&direction=&sort=&search%5Bname%5D=&search%5Busername%5D=&search%5Bemail%5D=&search%5Bteacher%5D=0&search%5Broles%5D%5B%5D=observer&search%5Broles%5D%5B%5D=&_=1335705430841" for 92.240.168.108 at 2012-04-29 15:16:17 +0200
+Processing by PeopleController#index as JS
+  Parameters: {"utf8"=>"✓", "direction"=>"", "sort"=>"", "search"=>{"name"=>"", "username"=>"", "email"=>"", "teacher"=>"0", "roles"=>["observer", ""]}, "_"=>"1335705430841"}
+  Rendered people/_datagrid.html.erb (13.5ms)
+  Rendered people/index.js.erb (14.0ms)
+Completed 200 OK in 33ms (Views: 14.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/people?utf8=%E2%9C%93&direction=&sort=&search%5Bname%5D=&search%5Busername%5D=&search%5Bemail%5D=&search%5Bteacher%5D=0&search%5Broles%5D%5B%5D=observer&search%5Broles%5D%5B%5D=observed&search%5Broles%5D%5B%5D=&_=1335705433068" for 92.240.168.108 at 2012-04-29 15:16:19 +0200
+Processing by PeopleController#index as JS
+  Parameters: {"utf8"=>"✓", "direction"=>"", "sort"=>"", "search"=>{"name"=>"", "username"=>"", "email"=>"", "teacher"=>"0", "roles"=>["observer", "observed", ""]}, "_"=>"1335705433068"}
+  Rendered people/_datagrid.html.erb (13.9ms)
+  Rendered people/index.js.erb (14.5ms)
+Completed 200 OK in 34ms (Views: 14.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/people?utf8=%E2%9C%93&direction=&sort=&search%5Bname%5D=&search%5Busername%5D=&search%5Bemail%5D=&search%5Bteacher%5D=0&search%5Broles%5D%5B%5D=&_=1335705434816" for 92.240.168.108 at 2012-04-29 15:16:21 +0200
+Processing by PeopleController#index as JS
+  Parameters: {"utf8"=>"✓", "direction"=>"", "sort"=>"", "search"=>{"name"=>"", "username"=>"", "email"=>"", "teacher"=>"0", "roles"=>[""]}, "_"=>"1335705434816"}
+  Rendered people/_datagrid.html.erb (114.0ms)
+  Rendered people/index.js.erb (118.1ms)
+Completed 200 OK in 137ms (Views: 118.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/people?utf8=%E2%9C%93&direction=&sort=&search%5Bname%5D=&search%5Busername%5D=&search%5Bemail%5D=&search%5Bteacher%5D=0&search%5Broles%5D%5B%5D=&_=1335705435190" for 92.240.168.108 at 2012-04-29 15:16:21 +0200
+Processing by PeopleController#index as JS
+  Parameters: {"utf8"=>"✓", "direction"=>"", "sort"=>"", "search"=>{"name"=>"", "username"=>"", "email"=>"", "teacher"=>"0", "roles"=>[""]}, "_"=>"1335705435190"}
+  Rendered people/_datagrid.html.erb (68.4ms)
+  Rendered people/index.js.erb (72.5ms)
+Completed 200 OK in 92ms (Views: 72.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/people?utf8=%E2%9C%93&direction=&sort=&search%5Bname%5D=kom%C3%A1rek&search%5Busername%5D=&search%5Bemail%5D=&search%5Bteacher%5D=0&search%5Broles%5D%5B%5D=&_=1335705442785" for 92.240.168.108 at 2012-04-29 15:16:29 +0200
+Processing by PeopleController#index as JS
+  Parameters: {"utf8"=>"✓", "direction"=>"", "sort"=>"", "search"=>{"name"=>"komárek", "username"=>"", "email"=>"", "teacher"=>"0", "roles"=>[""]}, "_"=>"1335705442785"}
+  Rendered people/_datagrid.html.erb (51.1ms)
+  Rendered people/index.js.erb (52.8ms)
+Completed 200 OK in 72ms (Views: 29.6ms | ActiveRecord: 25.2ms)
+
+
+Started GET "/people/326300000/edit" for 92.240.168.108 at 2012-04-29 15:16:47 +0200
+Processing by PeopleController#edit as HTML
+  Parameters: {"id"=>"326300000"}
+  Rendered people/_form.html.erb (16.3ms)
+  Rendered people/edit.html.erb within layouts/application (23.9ms)
+Completed 200 OK in 144ms (Views: 35.5ms | ActiveRecord: 19.3ms)
+
+
+Started PUT "/people/326300000" for 92.240.168.108 at 2012-04-29 15:17:03 +0200
+Processing by PeopleController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"amFrF9EH4o5P3Wlp1NkCwGCmwMjpsYTcxQ3h/2mY/0U=", "people"=>{"role_attributes"=>{"roles"=>["root", ""], "id"=>"3"}}, "commit"=>"Uložit změny", "id"=>"326300000"}
+Redirected to https://kvalitavyuky.felk.cvut.cz/people/326300000
+Completed 302 Found in 70ms (ActiveRecord: 39.6ms)
+
+
+Started GET "/people/326300000" for 92.240.168.108 at 2012-04-29 15:17:03 +0200
+Processing by PeopleController#show as HTML
+  Parameters: {"id"=>"326300000"}
+  Rendered people/show.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 87ms (Views: 66.6ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/people" for 92.240.168.108 at 2012-04-29 15:17:10 +0200
+Processing by PeopleController#index as HTML
+  Rendered people/_datagrid.html.erb (61.8ms)
+  Rendered people/index.html.erb within layouts/application (62.5ms)
+Completed 200 OK in 90ms (Views: 70.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/people?utf8=%E2%9C%93&direction=&sort=&search%5Bname%5D=&search%5Busername%5D=&search%5Bemail%5D=&search%5Bteacher%5D=0&search%5Broles%5D%5B%5D=root&search%5Broles%5D%5B%5D=&_=1335705488342" for 92.240.168.108 at 2012-04-29 15:17:14 +0200
+Processing by PeopleController#index as JS
+  Parameters: {"utf8"=>"✓", "direction"=>"", "sort"=>"", "search"=>{"name"=>"", "username"=>"", "email"=>"", "teacher"=>"0", "roles"=>["root", ""]}, "_"=>"1335705488342"}
+  Rendered people/_datagrid.html.erb (28.5ms)
+  Rendered people/index.js.erb (29.2ms)
+Completed 200 OK in 49ms (Views: 28.8ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/people/326300000/edit" for 92.240.168.108 at 2012-04-29 15:17:18 +0200
+Processing by PeopleController#edit as HTML
+  Parameters: {"id"=>"326300000"}
+  Rendered people/_form.html.erb (9.5ms)
+  Rendered people/edit.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 42ms (Views: 18.1ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/courses" for 92.240.168.108 at 2012-04-29 15:17:57 +0200
+Processing by CoursesController#index as HTML
+  Rendered courses/_datagrid.html.erb (108.0ms)
+  Rendered courses/index.html.erb within layouts/application (109.6ms)
+Completed 200 OK in 188ms (Views: 111.3ms | ActiveRecord: 9.6ms)
+
+
+Started GET "/courses?utf8=%E2%9C%93&direction=&sort=&search%5Bcode%5D=dsa&search%5Bname%5D=&_=1335705536900" for 92.240.168.108 at 2012-04-29 15:18:03 +0200
+Processing by CoursesController#index as JS
+  Parameters: {"utf8"=>"✓", "direction"=>"", "sort"=>"", "search"=>{"code"=>"dsa", "name"=>""}, "_"=>"1335705536900"}
+  Rendered courses/_datagrid.html.erb (92.7ms)
+  Rendered courses/index.js.erb (94.7ms)
+Completed 200 OK in 124ms (Views: 51.8ms | ActiveRecord: 53.0ms)
+
+
+Started GET "/courses/2139" for 92.240.168.108 at 2012-04-29 15:18:06 +0200
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"2139"}
+  Rendered courses/_course.erb (40.3ms)
+  Rendered parallels/_datagrid.html.erb (9.7ms)
+  Rendered courses/show.html.erb within layouts/application (57.5ms)
+Completed 200 OK in 92ms (Views: 36.7ms | ActiveRecord: 36.9ms)
+
+
+Started GET "/courses?utf8=%E2%9C%93&direction=&sort=&search%5Bcode%5D=kma&search%5Bname%5D=&_=1335705556549" for 92.240.168.108 at 2012-04-29 15:18:22 +0200
+Processing by CoursesController#index as JS
+  Parameters: {"utf8"=>"✓", "direction"=>"", "sort"=>"", "search"=>{"code"=>"kma", "name"=>""}, "_"=>"1335705556549"}
+  Rendered courses/_datagrid.html.erb (94.6ms)
+  Rendered courses/index.js.erb (95.4ms)
+Completed 200 OK in 117ms (Views: 19.9ms | ActiveRecord: 77.5ms)
+
+
+Started GET "/courses?utf8=%E2%9C%93&direction=&sort=&search%5Bcode%5D=be1&search%5Bname%5D=&_=1335705564695" for 92.240.168.108 at 2012-04-29 15:18:30 +0200
+Processing by CoursesController#index as JS
+  Parameters: {"utf8"=>"✓", "direction"=>"", "sort"=>"", "search"=>{"code"=>"be1", "name"=>""}, "_"=>"1335705564695"}
+  Rendered courses/_datagrid.html.erb (15.6ms)
+  Rendered courses/index.js.erb (16.0ms)
+Completed 200 OK in 35ms (Views: 7.1ms | ActiveRecord: 10.9ms)
+
+
+Started GET "/courses?utf8=%E2%9C%93&direction=&sort=&search%5Bcode%5D=&search%5Bname%5D=bezpe%C4%8Dnost&_=1335705574622" for 92.240.168.108 at 2012-04-29 15:18:40 +0200
+Processing by CoursesController#index as JS
+  Parameters: {"utf8"=>"✓", "direction"=>"", "sort"=>"", "search"=>{"code"=>"", "name"=>"bezpečnost"}, "_"=>"1335705574622"}
+  Rendered courses/_datagrid.html.erb (375.2ms)
+  Rendered courses/index.js.erb (377.9ms)
+Completed 200 OK in 399ms (Views: 87.1ms | ActiveRecord: 292.9ms)
+
+
+Started GET "/courses?utf8=%E2%9C%93&direction=&sort=&search%5Bcode%5D=BP1&search%5Bname%5D=&_=1335705583895" for 92.240.168.108 at 2012-04-29 15:18:50 +0200
+Processing by CoursesController#index as JS
+  Parameters: {"utf8"=>"✓", "direction"=>"", "sort"=>"", "search"=>{"code"=>"BP1", "name"=>""}, "_"=>"1335705583895"}
+  Rendered courses/_datagrid.html.erb (198.7ms)
+  Rendered courses/index.js.erb (200.4ms)
+Completed 200 OK in 219ms (Views: 52.4ms | ActiveRecord: 149.8ms)
+
+
+Started GET "/courses/3258" for 92.240.168.108 at 2012-04-29 15:19:02 +0200
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"3258"}
+  Rendered courses/_course.erb (8.5ms)
+  Rendered parallels/_datagrid.html.erb (559.2ms)
+  Rendered courses/show.html.erb within layouts/application (571.1ms)
+Completed 200 OK in 597ms (Views: 147.2ms | ActiveRecord: 432.9ms)
+
+
+Started GET "/evaluations" for 92.240.168.108 at 2012-04-29 15:19:35 +0200
+Processing by EvaluationsController#index as HTML
+  Rendered evaluations/_datagrid.html.erb (10.4ms)
+  Rendered evaluations/index.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 45ms (Views: 22.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/observations" for 92.240.168.108 at 2012-04-29 15:20:01 +0200
+Processing by ObservationsController#index as HTML
+  Rendered notes/_modal.html.erb (5.2ms)
+  Rendered observations/_datagrid.html.erb (101.0ms)
+  Rendered observations/index.html.erb within layouts/application (133.7ms)
+Completed 200 OK in 166ms (Views: 140.4ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/email_templates" for 92.240.168.108 at 2012-04-29 15:20:08 +0200
+Processing by EmailTemplatesController#index as HTML
+  Rendered email_templates/_datagrid.html.erb (48.6ms)
+  Rendered email_templates/index.html.erb within layouts/application (51.1ms)
+Completed 200 OK in 96ms (Views: 60.8ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/email_templates/2/edit" for 92.240.168.108 at 2012-04-29 15:20:12 +0200
+Processing by EmailTemplatesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  Rendered email_templates/_form.html.erb (50.5ms)
+  Rendered email_templates/edit.html.erb within layouts/application (52.3ms)
+Completed 200 OK in 86ms (Views: 49.8ms | ActiveRecord: 16.7ms)
+
+
+Started GET "/" for 92.240.168.108 at 2012-04-29 15:20:57 +0200
+
+
+Started GET "/" for 92.240.168.108 at 2012-04-29 15:24:24 +0200
+Processing by HomeController#index as HTML
+  Rendered observations/_datagrid.html.erb (7.0ms)
+  Rendered home/index.html.erb within layouts/application (852.1ms)
+Completed 200 OK in 1134ms (Views: 1086.4ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/logout" for 92.240.168.108 at 2012-04-29 15:24:32 +0200
+
+
+Started GET "/" for 92.240.168.108 at 2012-04-29 15:24:34 +0200
+Processing by HomeController#index as HTML
+  Rendered observations/_datagrid.html.erb (2.4ms)
+  Rendered home/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 24ms (Views: 21.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/logout" for 92.240.168.108 at 2012-04-29 15:24:40 +0200
+
+
+Started GET "/" for 92.240.168.108 at 2012-04-29 15:24:58 +0200
+Processing by HomeController#index as HTML
+  Rendered observations/_datagrid.html.erb (2.2ms)
+  Rendered home/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 23ms (Views: 20.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/evaluations" for 92.240.168.108 at 2012-04-29 15:25:02 +0200
+Processing by EvaluationsController#index as HTML
+  Rendered evaluations/_datagrid.html.erb (15.4ms)
+  Rendered evaluations/index.html.erb within layouts/application (17.3ms)
+Completed 200 OK in 50ms (Views: 27.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 92.240.168.108 at 2012-04-29 15:25:04 +0200
+Processing by HomeController#index as HTML
+  Rendered observations/_datagrid.html.erb (45.6ms)
+  Rendered home/index.html.erb within layouts/application (46.4ms)
+Completed 200 OK in 69ms (Views: 65.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/evaluations" for 92.240.168.108 at 2012-04-29 15:25:06 +0200
+Processing by EvaluationsController#index as HTML
+  Rendered evaluations/_datagrid.html.erb (8.4ms)
+  Rendered evaluations/index.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 37ms (Views: 17.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 92.240.168.108 at 2012-04-29 15:25:07 +0200
+Processing by HomeController#index as HTML
+  Rendered observations/_datagrid.html.erb (2.3ms)
+  Rendered home/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 25ms (Views: 21.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/logout" for 92.240.168.108 at 2012-04-29 15:25:08 +0200
+
+
+Started GET "/" for 92.240.168.108 at 2012-04-29 15:25:09 +0200
+Processing by HomeController#index as HTML
+  Rendered observations/_datagrid.html.erb (2.1ms)
+  Rendered home/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 22ms (Views: 19.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 92.240.168.108 at 2012-04-29 15:25:13 +0200
+Processing by HomeController#index as HTML
+  Rendered observations/_datagrid.html.erb (2.1ms)
+  Rendered home/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 23ms (Views: 19.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/logout" for 92.240.168.108 at 2012-04-29 15:25:22 +0200
+
+
+Started GET "/" for 92.240.168.108 at 2012-04-29 16:20:09 +0200
+Processing by HomeController#index as HTML
+  Rendered observations/_datagrid.html.erb (2.4ms)
+  Rendered home/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 27ms (Views: 22.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/translators.html" for 78.4.234.101 at 2012-04-29 17:42:41 +0200
+
+ActionController::RoutingError (No route matches [GET] "/translators.html"):
+  actionpack (3.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.1) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.1) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.1) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.1) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.1) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.1) lib/rails/engine.rb:479:in `call'
+  railties (3.2.1) lib/rails/application.rb:220:in `call'
+  railties (3.2.1) lib/rails/railtie/configurable.rb:30:in `method_missing'
+  passenger (3.0.11) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+  passenger (3.0.11) lib/phusion_passenger/abstract_request_handler.rb:513:in `accept_and_process_next_request'
+  passenger (3.0.11) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+  passenger (3.0.11) lib/phusion_passenger/rack/application_spawner.rb:206:in `start_request_handler'
+  passenger (3.0.11) lib/phusion_passenger/rack/application_spawner.rb:171:in `block in handle_spawn_application'
+  passenger (3.0.11) lib/phusion_passenger/utils.rb:479:in `safe_fork'
+  passenger (3.0.11) lib/phusion_passenger/rack/application_spawner.rb:166:in `handle_spawn_application'
+  passenger (3.0.11) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.11) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.11) lib/phusion_passenger/abstract_server.rb:180:in `start'
+  passenger (3.0.11) lib/phusion_passenger/rack/application_spawner.rb:129:in `start'
+  passenger (3.0.11) lib/phusion_passenger/spawn_manager.rb:253:in `block (2 levels) in spawn_rack_application'
+  passenger (3.0.11) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+  passenger (3.0.11) lib/phusion_passenger/spawn_manager.rb:246:in `block in spawn_rack_application'
+  passenger (3.0.11) lib/phusion_passenger/abstract_server_collection.rb:82:in `block in synchronize'
+  <internal:prelude>:10:in `synchronize'
+  passenger (3.0.11) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (3.0.11) lib/phusion_passenger/spawn_manager.rb:244:in `spawn_rack_application'
+  passenger (3.0.11) lib/phusion_passenger/spawn_manager.rb:137:in `spawn_application'
+  passenger (3.0.11) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+  passenger (3.0.11) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.11) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.11) helper-scripts/passenger-spawn-server:99:in `<main>'
+
+
+
+
+Started GET "/email_templates/2/edit" for 92.240.168.108 at 2012-04-29 19:35:35 +0200
+Processing by EmailTemplatesController#edit as HTML
+  Parameters: {"id"=>"2"}
+Redirected to https://kvalitavyuky.felk.cvut.cz/
+Completed 302 Found in 29ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/" for 92.240.168.108 at 2012-04-29 19:35:35 +0200
+Processing by HomeController#index as HTML
+  Rendered observations/_datagrid.html.erb (2.5ms)
+  Rendered home/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 12ms (Views: 9.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/phpmyadmin/translators.html" for 78.4.234.101 at 2012-04-29 20:20:00 +0200
+
+ActionController::RoutingError (No route matches [GET] "/phpmyadmin/translators.html"):
+  actionpack (3.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.1) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.1) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.1) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.1) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.1) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.1) lib/rails/engine.rb:479:in `call'
+  railties (3.2.1) lib/rails/application.rb:220:in `call'
+  railties (3.2.1) lib/rails/railtie/configurable.rb:30:in `method_missing'
+  passenger (3.0.11) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+  passenger (3.0.11) lib/phusion_passenger/abstract_request_handler.rb:513:in `accept_and_process_next_request'
+  passenger (3.0.11) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+  passenger (3.0.11) lib/phusion_passenger/rack/application_spawner.rb:206:in `start_request_handler'
+  passenger (3.0.11) lib/phusion_passenger/rack/application_spawner.rb:171:in `block in handle_spawn_application'
+  passenger (3.0.11) lib/phusion_passenger/utils.rb:479:in `safe_fork'
+  passenger (3.0.11) lib/phusion_passenger/rack/application_spawner.rb:166:in `handle_spawn_application'
+  passenger (3.0.11) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.11) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.11) lib/phusion_passenger/abstract_server.rb:180:in `start'
+  passenger (3.0.11) lib/phusion_passenger/rack/application_spawner.rb:129:in `start'
+  passenger (3.0.11) lib/phusion_passenger/spawn_manager.rb:253:in `block (2 levels) in spawn_rack_application'
+  passenger (3.0.11) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+  passenger (3.0.11) lib/phusion_passenger/spawn_manager.rb:246:in `block in spawn_rack_application'
+  passenger (3.0.11) lib/phusion_passenger/abstract_server_collection.rb:82:in `block in synchronize'
+  <internal:prelude>:10:in `synchronize'
+  passenger (3.0.11) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (3.0.11) lib/phusion_passenger/spawn_manager.rb:244:in `spawn_rack_application'
+  passenger (3.0.11) lib/phusion_passenger/spawn_manager.rb:137:in `spawn_application'
+  passenger (3.0.11) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+  passenger (3.0.11) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.11) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.11) helper-scripts/passenger-spawn-server:99:in `<main>'
+
+
+
+
+Started GET "/phpMyAdmin/translators.html" for 78.4.234.101 at 2012-04-29 22:58:26 +0200
+
+ActionController::RoutingError (No route matches [GET] "/phpMyAdmin/translators.html"):
+  actionpack (3.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.1) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.1) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.1) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.1) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.1) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.1) lib/rails/engine.rb:479:in `call'
+  railties (3.2.1) lib/rails/application.rb:220:in `call'
+  railties (3.2.1) lib/rails/railtie/configurable.rb:30:in `method_missing'
+  passenger (3.0.11) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+  passenger (3.0.11) lib/phusion_passenger/abstract_request_handler.rb:513:in `accept_and_process_next_request'
+  passenger (3.0.11) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+  passenger (3.0.11) lib/phusion_passenger/rack/application_spawner.rb:206:in `start_request_handler'
+  passenger (3.0.11) lib/phusion_passenger/rack/application_spawner.rb:171:in `block in handle_spawn_application'
+  passenger (3.0.11) lib/phusion_passenger/utils.rb:479:in `safe_fork'
+  passenger (3.0.11) lib/phusion_passenger/rack/application_spawner.rb:166:in `handle_spawn_application'
+  passenger (3.0.11) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.11) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.11) lib/phusion_passenger/abstract_server.rb:180:in `start'
+  passenger (3.0.11) lib/phusion_passenger/rack/application_spawner.rb:129:in `start'
+  passenger (3.0.11) lib/phusion_passenger/spawn_manager.rb:253:in `block (2 levels) in spawn_rack_application'
+  passenger (3.0.11) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+  passenger (3.0.11) lib/phusion_passenger/spawn_manager.rb:246:in `block in spawn_rack_application'
+  passenger (3.0.11) lib/phusion_passenger/abstract_server_collection.rb:82:in `block in synchronize'
+  <internal:prelude>:10:in `synchronize'
+  passenger (3.0.11) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (3.0.11) lib/phusion_passenger/spawn_manager.rb:244:in `spawn_rack_application'
+  passenger (3.0.11) lib/phusion_passenger/spawn_manager.rb:137:in `spawn_application'
+  passenger (3.0.11) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+  passenger (3.0.11) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.11) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.11) helper-scripts/passenger-spawn-server:99:in `<main>'
+
+
+
+
+Started GET "/pma/translators.html" for 78.4.234.101 at 2012-04-30 01:41:27 +0200
+
+ActionController::RoutingError (No route matches [GET] "/pma/translators.html"):
+  actionpack (3.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.1) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.1) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.1) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.1) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.1) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.1) lib/rails/engine.rb:479:in `call'
+  railties (3.2.1) lib/rails/application.rb:220:in `call'
+  railties (3.2.1) lib/rails/railtie/configurable.rb:30:in `method_missing'
+  passenger (3.0.11) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+  passenger (3.0.11) lib/phusion_passenger/abstract_request_handler.rb:513:in `accept_and_process_next_request'
+  passenger (3.0.11) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+  passenger (3.0.11) lib/phusion_passenger/rack/application_spawner.rb:206:in `start_request_handler'
+  passenger (3.0.11) lib/phusion_passenger/rack/application_spawner.rb:171:in `block in handle_spawn_application'
+  passenger (3.0.11) lib/phusion_passenger/utils.rb:479:in `safe_fork'
+  passenger (3.0.11) lib/phusion_passenger/rack/application_spawner.rb:166:in `handle_spawn_application'
+  passenger (3.0.11) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.11) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.11) lib/phusion_passenger/abstract_server.rb:180:in `start'
+  passenger (3.0.11) lib/phusion_passenger/rack/application_spawner.rb:129:in `start'
+  passenger (3.0.11) lib/phusion_passenger/spawn_manager.rb:253:in `block (2 levels) in spawn_rack_application'
+  passenger (3.0.11) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+  passenger (3.0.11) lib/phusion_passenger/spawn_manager.rb:246:in `block in spawn_rack_application'
+  passenger (3.0.11) lib/phusion_passenger/abstract_server_collection.rb:82:in `block in synchronize'
+  <internal:prelude>:10:in `synchronize'
+  passenger (3.0.11) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (3.0.11) lib/phusion_passenger/spawn_manager.rb:244:in `spawn_rack_application'
+  passenger (3.0.11) lib/phusion_passenger/spawn_manager.rb:137:in `spawn_application'
+  passenger (3.0.11) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+  passenger (3.0.11) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.11) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.11) helper-scripts/passenger-spawn-server:99:in `<main>'
+
+
+
+
+Started GET "/mysql/translators.html" for 78.4.234.101 at 2012-04-30 04:16:45 +0200
+
+ActionController::RoutingError (No route matches [GET] "/mysql/translators.html"):
+  actionpack (3.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.1) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.1) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.1) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.1) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.1) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.1) lib/rails/engine.rb:479:in `call'
+  railties (3.2.1) lib/rails/application.rb:220:in `call'
+  railties (3.2.1) lib/rails/railtie/configurable.rb:30:in `method_missing'
+  passenger (3.0.11) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+  passenger (3.0.11) lib/phusion_passenger/abstract_request_handler.rb:513:in `accept_and_process_next_request'
+  passenger (3.0.11) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+  passenger (3.0.11) lib/phusion_passenger/rack/application_spawner.rb:206:in `start_request_handler'
+  passenger (3.0.11) lib/phusion_passenger/rack/application_spawner.rb:171:in `block in handle_spawn_application'
+  passenger (3.0.11) lib/phusion_passenger/utils.rb:479:in `safe_fork'
+  passenger (3.0.11) lib/phusion_passenger/rack/application_spawner.rb:166:in `handle_spawn_application'
+  passenger (3.0.11) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.11) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.11) lib/phusion_passenger/abstract_server.rb:180:in `start'
+  passenger (3.0.11) lib/phusion_passenger/rack/application_spawner.rb:129:in `start'
+  passenger (3.0.11) lib/phusion_passenger/spawn_manager.rb:253:in `block (2 levels) in spawn_rack_application'
+  passenger (3.0.11) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+  passenger (3.0.11) lib/phusion_passenger/spawn_manager.rb:246:in `block in spawn_rack_application'
+  passenger (3.0.11) lib/phusion_passenger/abstract_server_collection.rb:82:in `block in synchronize'
+  <internal:prelude>:10:in `synchronize'
+  passenger (3.0.11) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (3.0.11) lib/phusion_passenger/spawn_manager.rb:244:in `spawn_rack_application'
+  passenger (3.0.11) lib/phusion_passenger/spawn_manager.rb:137:in `spawn_application'
+  passenger (3.0.11) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+  passenger (3.0.11) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.11) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.11) helper-scripts/passenger-spawn-server:99:in `<main>'
+
+
