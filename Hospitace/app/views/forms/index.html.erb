@@ -7,16 +7,23 @@
 <%end%>
 
 <% if can? :manage, @evaluation %>
-<hr/>
-  <h2>Přidat formulář</h2>
-  <p>
-    <% FormTemplate.all.each do |template| %>
-      <%  form = Form.new({
-          :form_template=>template,
-          :evaluation=>@evaluation
-        }) %>
-      <%= link_to(t("#{template.code}_new",:scope=>:tabs).html_safe,"/evaluations/#{@evaluation.id}/forms/new/#{template.code}") if can? :create,form %><br/>
 
-    <% end %>
-  </p>
-<% end %>
+  <% content_for :secoundary_content do %>
+
+    <div class="header">
+      <h3>Přidat formulář</h3>
+    </div>	
+
+    <ul style="list-style: none;">
+      <% FormTemplate.all.each do |template| %>
+        <%  form = Form.new({
+            :form_template=>template,
+            :evaluation=>@evaluation
+          }) %>
+        <li><%= link_to(t("#{template.code}_new",:scope=>:tabs).html_safe,"/evaluations/#{@evaluation.id}/forms/new/#{template.code}") if can? :create,form %></li>
+
+      <% end %>
+    </ul>
+  <% end %>
+
+<% end %> 

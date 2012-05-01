@@ -37,8 +37,8 @@
     <td><%= short_parallel(observation.parallel) %></td>
     <td><%= l(observation.date, :format=>"%d. %m. %Y") unless observation.date.nil?  %></td>
     <td><%= t(observation.observation_type) %></td>
-    <td><%= label_span(t(observation.state.short_message),(observation.state.ok? ? :success: :warning)) %></td>
-    <td><%= actions do yield observation if block_given? end%></td>
+    <td><%= label_span(t(observation.state.short_message),observation.state.label) %></td>
+    <td><%= actions do yield observation if block_given? end %></td>
   </tr>
 <% end %>
 </tbody>

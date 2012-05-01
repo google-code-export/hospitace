@@ -32,7 +32,7 @@ module TableHelper
   
   def action_icon(title,icon,path,options={},*args)
     return "" if !args.empty? and cannot? *args    
-    "<li rel=\"tooltip\" data-original-title=\"#{t(title,:count => 2)}\">
+    "<li rel=\"tooltip\" data-original-title=\"#{t(title)}\">
       #{link_to("<i class=\"#{icon}\"></i>".html_safe,path,options) }
     </li>".html_safe
   end

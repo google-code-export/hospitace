@@ -1,6 +1,6 @@
 
 <p>
 <%= "##{observation.id}, #{Observation.human_attribute_name(:course)}: #{observation.course.name} (#{observation.course.code}), #{Observation.human_attribute_name(:state)}: "%>
-<%= label_span(t(observation.state.short_message),(observation.state.ok? ? :success: :warning)) %>
+<%= label_span(t(observation.state.short_message),observation.state.label %>
 <%= link_to_if can?(:show,observation),t(:show) ,observation %>  
 </p>

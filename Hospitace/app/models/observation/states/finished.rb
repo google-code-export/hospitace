@@ -7,16 +7,20 @@ class Observation::States::Finished < Observation::State
   end
   
   def ok?
-    true
+    @observation.forms.order("created_at DESC").first.created_at - DateTime.now < -86400*4
   end
 
+  def label
+    "success"
+  end
+    
   def short_message
     short = "observation.states.finished.short" #planning
   end
 
   def long_message
     long = []
-    long << "observation.states.finished.long"
+    #long << "observation.states.finished.long"
   end
 
   def actions

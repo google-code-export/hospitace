@@ -16,6 +16,10 @@ class Observation::States::Create < Observation::State
   def short_message
     short = "observation.states.create.short" #planning
   end
+  
+  def label
+    "warning"
+  end
 
   def long_message
     long = []

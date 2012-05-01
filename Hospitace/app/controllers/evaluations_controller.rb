@@ -6,7 +6,7 @@ class EvaluationsController < ApplicationController
   helper_method :sort_column, :sort_direction
   
   def index
-    @evaluations =  Evaluation.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:page => params[:page]) 
+    @evaluations =  Evaluation.includes(:observation,:semester,:teacher,:guarant,:forms).search(params[:search]).order("evaluations."+sort_column + " " + sort_direction).paginate(:page => params[:page]) 
 
 
     respond_to do |format|

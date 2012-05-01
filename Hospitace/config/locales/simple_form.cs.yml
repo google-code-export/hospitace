@@ -9,6 +9,7 @@ cs:
         roles: "Role"
         email: 'Email'
         teacher: "Učitel" 
+        course: Předmět
         
     "yes": 'Ano'
     "no": 'Ne'

@@ -15,6 +15,10 @@ class Observation::State
     false;
   end
   
+  def label
+    "default"
+  end
+  
   def next?
     !self.class.next_state.nil? && self.ok?
   end

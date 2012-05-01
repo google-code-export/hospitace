@@ -7,6 +7,8 @@ class Observation < ActiveRecord::Base
   attr_accessor :state 
   after_initialize :init_state
   
+  default_scope :include => :evaluation
+  
   belongs_to :created_by, :class_name => "People", :foreign_key=>:created_by
   belongs_to :course
   belongs_to :semester

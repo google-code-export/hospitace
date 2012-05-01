@@ -1,2 +1,7 @@
 <% title :observations, :small=>"vytvořit hodnocení z výuky #{@observation.course.name} (#{@observation.course.name})" %>
+
+<%= message "Informace:",[
+  "evaluations.info.new"
+],actions = [],type = "info" %>
+
 <%= render 'form' %>

@@ -78,6 +78,7 @@ class People < ActiveRecord::Base
   
   alias_method :name,:full_name 
   alias_method :to_lable,:full_name 
+  alias_method :to_s,:full_name 
   attrs_tagged :name, :email, :username
 end
 
