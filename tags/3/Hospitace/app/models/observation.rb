@@ -1,7 +1,7 @@
 require 'kosapi'
 
 class Observation < ActiveRecord::Base
-  include EmailTemplatesHelper::Tagged::ModelHelpers
+  include EmailTemplates::Tagged::ModelHelpers
   TYPES = %w[reported floating unannounced]
   
   attr_accessor :state 

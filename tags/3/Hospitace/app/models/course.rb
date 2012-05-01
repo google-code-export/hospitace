@@ -4,7 +4,7 @@ require 'kosapi'
 
 class Course < ActiveRecord::Base
   include KOSapi::ModelHelpers
-  include EmailTemplatesHelper::Tagged::ModelHelpers
+  include EmailTemplates::Tagged::ModelHelpers
   
   has_many :observations
   has_many :course_instances

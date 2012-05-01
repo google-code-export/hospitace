@@ -5,7 +5,7 @@ require 'kosapi'
 
 class Parallel < ActiveRecord::Base
   include KOSapi::ModelHelpers
-  include EmailTemplatesHelper::Tagged::ModelHelpers
+  include EmailTemplates::Tagged::ModelHelpers
   
   belongs_to :course_instance
   belongs_to :room

@@ -33,6 +33,6 @@ production:
   encoding: utf8
   database: hospitace_production
   pool: 5
-  username: hospitace
-  password: QqNJAHg4
+  username: root
+  password: koliko
   host: localhost
