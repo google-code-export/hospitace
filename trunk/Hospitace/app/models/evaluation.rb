@@ -1,7 +1,7 @@
 # encoding: utf-8
 
 class Evaluation < ActiveRecord::Base
-  include EmailTemplatesHelper::Tagged::ModelHelpers
+  include EmailTemplates::Tagged::ModelHelpers
   
   belongs_to :observation 
   belongs_to :teacher, :class_name=>"People"

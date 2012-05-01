@@ -8,5 +8,5 @@ to ||= [People.first]
 email_template ||= form.email_template
 %>
   
-<%= EmailBuilder.build(email_template,object) %>
+<%= EmailTemplates::EmailBuilder.build(email_template,object) %>
 
