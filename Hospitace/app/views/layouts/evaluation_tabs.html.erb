@@ -16,14 +16,14 @@
     <% FormTemplate.all.each do |template| %>
       <%= form_tab(template,@evaluation) %>
       <% break if !template.count?(@evaluation) and template.required %>
-      
+
     <% end %>
 
   </ul>
 <% end %>
 
 <% content_for :content do %>
-  <%= message( t("observation.warning"),@observation.state.long_message,@observation.state.actions) if !@observation.state.ok? && can?(:update,@observation) %>
+  <%= message( t("observation.warning"),@observation.state.long_message,@observation.state.actions) if !@observation.state.ok? && can?(:read,@observation.state) && !@observation.state.long_message.nil? %>
   <%= content_for?(:news_content) ? yield(:news_content) : yield %>
 <% end %>
 <%= render :template => 'layouts/application' %>
