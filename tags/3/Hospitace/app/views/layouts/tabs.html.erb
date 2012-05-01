@@ -15,7 +15,7 @@
 <% end %>
 <% content_for :content do %>
 
-  <%= message( t("observation.warning"),@observation.state.long_message,@observation.state.actions) if !@observation.state.ok? && can?(:update,@observation) %>
+  <%= message( t("observation.warning"),@observation.state.long_message,@observation.state.actions) if !@observation.state.ok? && can?(:read,@observation.state) && !@observation.state.long_message.nil? %>
   <%= content_for?(:news_content) ? yield(:news_content) : yield %>
 
 <% end %>

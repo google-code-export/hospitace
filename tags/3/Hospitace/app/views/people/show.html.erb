@@ -1,4 +1,4 @@
-<% title "#{@people.full_name}"%>
+<% title "#{@people.full_name}",:translate=>false%>
 
 <dl class="dl-horizontal">
 <%= show_item(People.human_attribute_name(:username), @people.username) %>

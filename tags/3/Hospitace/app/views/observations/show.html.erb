@@ -9,7 +9,7 @@ teachers = full_url_peoples(@parallel.teachers) unless @parallel.nil?
     <h2>Informace o hospitaci</h2>
     <dl class="dl-horizontal">
 
-      <%= show_item(Observation.human_attribute_name(:state), label_span(t(@observation.state.short_message),(@observation.state.ok? ? :success : :warning)) ) %>
+      <%= show_item(Observation.human_attribute_name(:state), label_span(t(@observation.state.short_message),@observation.state.label) ) %>
       <%= show_item(Observation.human_attribute_name(:semester), @observation.semester.name) %>
       <%= show_item(Observation.human_attribute_name(:observation_type), t(@observation.observation_type)) %>
       <%= show_item(Observation.human_attribute_name(:head_of_department), full_url_people(@observation.head_of_department)) %>

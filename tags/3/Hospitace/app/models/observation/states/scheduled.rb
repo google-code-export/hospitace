@@ -13,16 +13,26 @@ class Observation::States::Scheduled < Observation::State
     (!self.observation.evaluation.nil?)
   end
 
+  def date?
+    !(@observation.date > DateTime.now)
+  end
+  
+  def label
+    date? ? "warning" : "default"
+  end
+  
   def short_message
-    short = "observation.states.scheduled.short"
+    date? ? "observation.states.scheduled.short" : "observation.states.scheduled.short_wait" 
   end
 
   def long_message
     long = []
-    long << "observation.states.scheduled.long"
+    long << "observation.states.scheduled.long" if date?
   end
   
   def actions
     actions = []
+    actions << { :title=>"observation.states.scheduled.actions.evaluation",:href=>"/observations/#{@observation.id}/evaluations/new" } if date?
+    return actions
   end
 end
