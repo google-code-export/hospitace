@@ -1,7 +1,7 @@
 # encoding: utf-8
 
 class Form < ActiveRecord::Base
-  include EmailTemplatesHelper::Tagged::ModelHelpers
+  include EmailTemplates::Tagged::ModelHelpers
   
   belongs_to :evaluation
   belongs_to :people

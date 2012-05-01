@@ -1,5 +1,5 @@
 class People < ActiveRecord::Base
-  include EmailTemplatesHelper::Tagged::ModelHelpers
+  include EmailTemplates::Tagged::ModelHelpers
   
   
   has_many :notes

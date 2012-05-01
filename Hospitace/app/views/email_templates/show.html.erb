@@ -21,6 +21,6 @@ email_template = @email_template
 
   <%= show_item(EmailTemplate.human_attribute_name(:subject),@email_template.subject ) %>
   <%= show_item(EmailTemplate.human_attribute_name(:form_code), @email_template.form_code ) %>
-  <%= show_item(EmailTemplate.human_attribute_name(:text), EmailBuilder.build(email_template,object) ) %>
+  <%= show_item(EmailTemplate.human_attribute_name(:text), EmailTemplates::EmailBuilder.build(email_template,object) ) %>
 
 </dl>
