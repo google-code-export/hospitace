@@ -18,6 +18,10 @@ class Semester < ActiveRecord::Base
     where(:id => find) | current_and_next
   end
   
+  def to_s
+    "#{name}"
+  end
+  
   has_many :observations
   attrs_tagged :code, :name
 end

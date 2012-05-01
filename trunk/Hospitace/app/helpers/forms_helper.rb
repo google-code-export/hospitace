@@ -13,12 +13,12 @@ module FormsHelper
   def d_text_file(entry,form,options={})
     d_text(entry,form,options) do |e,f,o|
       "<p>
-        Můžete nahrát naskenovanou část formuláře, nebo vyplnit formulář.
+        Můžete nahrát naskenovanou část formuláře, nebo vyplnit formulář:
       </p>".html_safe <<
         if entry.persisted?
         "<p><a class=\"btn btn-primary\" href=\"#attachment_modal\" data-toggle=\"modal\"><i class=\"icon-upload icon-white\"></i> Nahrát naskenovaný formulář</a><span id=\"attachment_files\"></span></p>".html_safe
       else
-        "<p><a class=\"btn btn-primary disabled\"><i class=\"icon-upload icon-white\"></i> Nahrát naskenovaný formulář</a> Nejprve musíte uložit formulář potom se zpřístupní možnost nahrání souboru.<span id=\"attachment_files\"></span></p>".html_safe
+        "<div class=\"alert alert-error\"><i class=\"icon-warning-sign\"></i> Nejprve musíte uložit formulář potom se zpřístupní možnost nahrání souboru.</div><p><a class=\"btn btn-primary disabled\"><i class=\"icon-upload icon-white\"></i> Nahrát naskenovaný formulář</a> <span id=\"attachment_files\"></span></p>".html_safe
       end
     end
   end

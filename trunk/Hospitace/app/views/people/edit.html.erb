@@ -1,2 +1,2 @@
-<% title "#{@people.full_name}", :small=>:edit_user%>
+<% title "#{@people.full_name}",:translate=>false, :small=>t(:edit_user,:scope=>"title.small")%>
 <%= render 'form' %>

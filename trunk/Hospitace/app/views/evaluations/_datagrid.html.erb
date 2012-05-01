@@ -2,55 +2,61 @@
 <% scope = "activerecord.attributes.evaluation" %>
 
 <% content_for :secoundary_content do %>
-	
-	<div class="header">
-		<h3>Filtr</h3>
-	</div>	
-	
-	<%= simple_form_for :search,:html=> {:id=>"search_form", :class => 'form-horizontal form-search' },:method=>:get do |f| %>
-	
-	<%= hidden_field_tag :direction, params[:direction] %>
-	<%= hidden_field_tag :sort, params[:sort] %>
-	
-	<%= f.input :course, :required => false %>
-	<%#= f.input :date,:as=>:date_picker %> 
-	<%= f.input :observed, :required => false %>
-	
-	<div class="form-actions">
-		<%= f.submit :search, :class => 'btn btn-primary' %>
-	</div>
-	<% end %>
+
+  <div class="header">
+    <h3>Filtr</h3>
+  </div>	
+
+  <%= simple_form_for :search,:html=> {:id=>"search_form", :class => 'form-horizontal form-search' },:method=>:get do |f| %>
+
+    <%= hidden_field_tag :direction, params[:direction] %>
+    <%= hidden_field_tag :sort, params[:sort] %>
+
+    <%= f.input :course, :required => false %>
+    <%= f.input :teacher, :required => false %>
+    <%= f.input :guarant, :required => false %>
+    <%= f.input :semester,:as=>:select,:collection=>Semester.used_current_and_next,:required=>false %> 
+
+    <div class="form-actions">
+      <%= f.submit t(:search), :class => 'btn btn-primary' %>
+    </div>
+  <% end %>
 
 <% end %> 
 
 <div id="datagrid">
-<table class="table table-striped">
-  <thead>
-  <tr>
-    <%= th :course, scope, true %>
-    <%= th :teacher, scope, true %>
-    <%= th :datetime_observation, scope, true %>
-    <%= th :form, scope %>
-    <th></th>
-  </tr>
-  </thead>
-  
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <%= th :course, scope, true %>
+        <%= th :teacher, scope %>
+        <%= th :guarant, scope %>
+        <%= th :semester, scope %>
+        <%= th :datetime_observation, scope, true %>
+        <%= th :forms, scope %>
+        <th></th>
 
-<% @evaluations.each do |evaluation| %>
-  <tr>
-    <td><%= evaluation.course %></td>
-    <td><%= evaluation.teacher.full_name %></td>
-    <td><%= l(evaluation.datetime_observation,:format=>:long) %></td>
-    <td><%= "" %></td>
-    <td><%= 
+      </tr>
+    </thead>
+
+
+    <% @evaluations.each do |evaluation| %>
+      <tr>
+        <td><%= evaluation.course %></td>
+        <td><%= evaluation.teacher %></td>
+        <td><%= evaluation.guarant %></td>
+        <td><%= evaluation.semester %></td>
+        <td><%= l(evaluation.datetime_observation,:format=>:long) %></td>
+        <td><%= evaluation.forms.collect{|i| i.code}.uniq.join(", ") %></td>
+        <td><%= 
           actions do
-              yield evaluation 
+            yield evaluation 
           end%>
-    </td>
-  </tr>
-<% end %>
-</tbody>
-</table>
-<%= will_paginate @evaluations, :renderer=> WillPaginate::ActionView::BootstrapLinkRenderer %>
-  
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+  <%= will_paginate @evaluations, :renderer=> WillPaginate::ActionView::BootstrapLinkRenderer %>
+
 </div>

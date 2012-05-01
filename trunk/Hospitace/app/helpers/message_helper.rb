@@ -24,7 +24,13 @@ module MessageHelper
   def text_content(data)
     if data.is_a?(Array)
       text_content = content_tag(:ul) do
-        data.collect { |i| content_tag(:li,t(i)) }.join("").html_safe
+        data.collect { |i| 
+          if i.is_a? Hash
+            content_tag(:li,t(i[:text],:content=>i[:content])) 
+          else
+            content_tag(:li,t(i)) 
+          end
+        }.join("").html_safe
       end
     else
       text_content = t(data)

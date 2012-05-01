@@ -11,6 +11,7 @@ cs:
     small:  
       observations: naplánované v semestru
       users: správa uživatelů v systému
+      edit_user: upravit role
       peoples: v kosu
       courses: "vypsané v semestru %{semester.name}"
       observed: v semestru
@@ -47,7 +48,7 @@ cs:
       
   menu:
     forms: <i class="icon-list-alt"></i> Formuláře
-    create: "<i class=\"icon-plus\"></i> Vytvořit"
+    create: "<i class=\"icon-plus-sign\"></i> Vytvořit"
     setting: "Nastavení"
     all: "Přehled"
     home: "Domů"
@@ -110,6 +111,7 @@ cs:
   download: "Stáhnout"
   evaluation: "Hodnocení"
   notes: "Poznámek %{count}"
+  start_evaluation: "Zahájit hodnocení"
   
   username: "Uživatelské jméno"
  
@@ -127,13 +129,20 @@ cs:
           parallel: "Nastavit paralelku"
           date: "Nastavit datum"
       scheduled:
-        short: "Naplánovaná"
-      was:
         short: "Proběhla"
+        short_wait: "Naplánovaná"
+        long: "Vyplnit formulář pro hodnocení výuky."
+        actions:
+          evaluation: "Zahájit hodnocení"
+      evaluation:
+        short: "Hodnocení"
+        long: "Vyplnit formulář: %{content}"
       finished:
         short: "Ukončená"
   
-      
+  evaluations:
+    info:
+      new: "Fomulář prosím vylňte až po samotném vykonání hospitace."
           
   
   
@@ -191,6 +200,7 @@ cs:
       evaluation: "Hodnocení"
       email_template: šablonu e-mailu
       role: role
+      form: formulář
     attributes:
       user:
         login: "Uživatelské jméno"
@@ -219,10 +229,14 @@ cs:
         created_at: Datum, čas vyplnění
         guarant: Zodpovědný za předmět
         room: Učebna
+        forms: Formuláře
       email_template:
         subject: Předmět
         text: Zpráva
         form_code: Kód kormuláře
       role:
         roles: Role
+      form:
+        created_at: Vytvořen
+        updated_at: Upraven
         

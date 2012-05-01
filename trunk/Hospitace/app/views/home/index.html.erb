@@ -19,6 +19,9 @@
 
   <%= render :layout=>'observations/datagrid', :locals => { :observations => item[:observations] } do |observation| %>
     <%= action_notes observation.notes,"#modal_observation_#{observation.id}",{"data-toggle"=>"modal"},:show,observation.notes %>
+    <% if observation.state.is_a? Observation::States::Scheduled and observation.evaluation.nil? %>
+      <%= action_icon(:start_evaluation,"icon-book",new_observation_evaluation_path(observation),{},:create,Evaluation.new(:observation=>observation)) %> 
+    <% end %> 
     <%= action_icon :evaluation,"icon-book",observation.evaluation,{},:read,observation.evaluation unless observation.evaluation.nil? %>
     <%= action_icon :show,"icon-info-sign",observation,{},:show,observation %>
   <%end%>

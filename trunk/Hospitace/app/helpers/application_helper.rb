@@ -3,7 +3,13 @@
 module ApplicationHelper
   
   def title(title,options={})
-    @title = content_tag(:span,t(title,:scope=>"title.main")<<" ")   
+    options = {:translate=>true}.merge(options)
+    
+    if options[:translate] 
+      @title = content_tag(:span,t(title,:scope=>"title.main")<<" ")  
+    else
+      @title = content_tag(:span,title<<" ")
+    end  
     @title << content_tag(:small,options[:small],nil,false) unless options[:small].nil?
     @title << content_tag(:span,link_to(t(options[:action_title],:scope=>"title.action"),options[:action],:class=>"btn btn-large"),:class=>"action") unless options[:action].nil?
   end

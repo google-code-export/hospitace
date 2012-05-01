@@ -54,6 +54,7 @@ class Ability
     form
     
     can [:read,:observed], Observation
+    can [:read], Observation::States::Evaluation
   end
   
   def observer
@@ -72,7 +73,9 @@ class Ability
         true
       end  
     end
-  
+    
+    can [:read], Observation::States::Evaluation
+    can [:read], Observation::States::Scheduled
   end
   
   def admin
@@ -110,6 +113,10 @@ class Ability
       a.evaluation.administrator == current_user if a.evaluation
     end
     
+    can [:read], Observation::States::Create
+    can [:read], Observation::States::Scheduled
+    can [:read], Observation::States::Evaluation
+    can [:read], Observation::States::Finished
   end
   
   def root
@@ -130,18 +137,23 @@ class Ability
     end
     
     can [:create,:new], Form do |form|
-      form.form_template.user_create?(current_user,form.evaluation)
+      form.form_template.user_create?(current_user,form.evaluation) && !form.observation.state.ok?
     end
     
     can [:update], Form do |form|
-      form.people == current_user
+      form.people == current_user && !form.observation.state.ok?
     end
     
-    can [:create,:read], Attachment do |a|
+    can [:read], Attachment do |a|
       !a.evaluation.user_role(current_user).empty?
     end
+    
+    can [:create], Attachment do |a|
+      !a.evaluation.user_role(current_user).empty? && !a.observation.state.ok?
+    end
+    
     can [:destroy], Attachment do |a|
-      a.people == current_user
+      a.people == current_user && !a.observation.state.ok?
     end
   end
   

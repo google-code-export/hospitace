@@ -7,19 +7,24 @@ class Observation::States::Evaluation < Observation::State
   end
   
   def ok?
-    (self.observation.evaluation.forms.joins(:form_template).where("form_templates.code = 'A'").any?) and
-    (self.observation.evaluation.forms.joins(:form_template).where("form_templates.code = 'B'").any?) and 
-    (self.observation.evaluation.forms.joins(:form_template).where("form_templates.code = 'C'").any?) and 
-    (self.observation.evaluation.forms.joins(:form_template).where("form_templates.code = 'D'").any?)  
+    check_forms === true
   end
 
+  def check_forms
+    self.observation.evaluation.created_all_forms?
+  end
+  
+  def label
+    "warning"
+  end
+  
   def short_message
-    short = "observation.states.evaluation.short" #planning
+    short = "observation.states.evaluation.short"
   end
 
   def long_message
     long = []
-    long << "observation.states.evaluation.long"
+    long << {:text=>"observation.states.evaluation.long",:content=>"#{check_forms.name} (#{check_forms.code})"}
   end
 
   def actions
