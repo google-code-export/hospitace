@@ -18,7 +18,7 @@ class Evaluation < ActiveRecord::Base
   validates :course, :presence => true
   validates :guarant, :presence => true
   validates :room, :presence => true
-  
+
   alias_method :administrator, :created_by
   
   def email_for

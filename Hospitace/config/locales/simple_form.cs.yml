@@ -10,6 +10,8 @@ cs:
         email: 'Email'
         teacher: "Učitel" 
         course: Předmět
+        guarant: Garant
+        semester: Semestr
         
     "yes": 'Ano'
     "no": 'Ne'

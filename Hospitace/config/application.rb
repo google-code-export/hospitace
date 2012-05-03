@@ -50,9 +50,7 @@ module Hospitace
     
     config.after_initialize do  
       require 'app_config'
-      WillPaginate.per_page = AppConfig.per_page||= 15 
-      #WillPaginate::ViewHelpers.pagination_options[:renderer] =  WillPaginate::ViewHelpers::BootstrapLinkRenderer
-      #require 'dynamic_form'
+      WillPaginate.per_page = AppConfig.per_page || 15 
       require 'kosapi'
     end
   end
