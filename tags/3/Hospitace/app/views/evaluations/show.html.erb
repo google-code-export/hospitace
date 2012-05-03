@@ -1,11 +1,11 @@
 <% title :evaluation, :small=>"z výuky #{@observation.course.code} (#{@observation.course.name})" %>
 <h3>Informace o výuce</h3>
 <dl class="dl-horizontal">
-<%= show_item(Evaluation.human_attribute_name(:teacher), full_url_people(@evaluation.teacher)) %>
+<%= show_item(Evaluation.human_attribute_name(:teacher), full_url_person(@evaluation.teacher)) %>
 
-<%= show_item(Evaluation.human_attribute_name(:guarant), full_url_people(@evaluation.guarant)) %>
+<%= show_item(Evaluation.human_attribute_name(:guarant), full_url_person(@evaluation.guarant)) %>
 
-  <%= show_item(Observation.human_attribute_name(:head_of_department), full_url_people(@evaluation.observation.head_of_department)) %>
+  <%= show_item(Observation.human_attribute_name(:head_of_department), full_url_person(@evaluation.observation.head_of_department)) %>
 
 <%= show_item(Evaluation.human_attribute_name(:course), @evaluation.course) %>
 

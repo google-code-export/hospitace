@@ -19,7 +19,6 @@ class Observation::States::Finished < Observation::State
   end
 
   def long_message
-    long = []
     #long << "observation.states.finished.long"
   end
 
