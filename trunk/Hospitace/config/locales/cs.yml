@@ -2,6 +2,8 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 cs:
+  "true": Ano
+  "false": Ne
   
   date:
     formats:
@@ -12,7 +14,7 @@ cs:
       observations: naplánované v semestru
       users: správa uživatelů v systému
       edit_user: upravit role
-      peoples: v kosu
+      peoples: v KOSu
       courses: "vypsané v semestru %{semester.name}"
       observed: v semestru
       select:
@@ -82,8 +84,8 @@ cs:
     A_new: <i class="icon-plus-sign"></i> Protokoly z hospitace
     B: <i class="icon-file"></i> Slovní hodnocení
     B_new: <i class="icon-plus-sign"></i> Slovní hodnocení
-    C: <i class="icon-file"></i> Stanovisko učitele
-    C_new: <i class="icon-plus-sign"></i> Stanovisko učitele
+    C: <i class="icon-file"></i> Stanoviska učitelů
+    C_new: <i class="icon-plus-sign"></i> Stanoviska učitelů
     D: <i class="icon-file"></i> Závěrečné shrnutí
     D_new: <i class="icon-plus-sign"></i> Závěrečné shrnutí
     attachments: <i class="icon-folder-open"></i> Přílohy
@@ -201,13 +203,16 @@ cs:
       email_template: šablonu e-mailu
       role: role
       form: formulář
+      attachment: přílohu
     attributes:
-      user:
+      people:
+        username: "Uživatelské jméno"
         login: "Uživatelské jméno"
         password: "Heslo"
         password_confirmation: "Potvrzení hesla"
         name: "Jméno"
         roles: "Role"
+        teacher: Učitel
       observation:
         course: Předmět
         teachers: Přednášející
@@ -223,20 +228,25 @@ cs:
         semester: Semestr
         head_of_department: Vedoucí katedry
       evaluation:
-        teacher: Jméno vyučujícího
+        teacher: Vyučující
         course: Předmět
         datetime_observation: Datum a čas výuky
-        created_at: Datum, čas vyplnění
-        guarant: Zodpovědný za předmět
+        created_at: Datum a čas vyplnění
+        guarant: Garant předmětu
         room: Učebna
         forms: Formuláře
+        state: Stav
+        semester: Semestr
       email_template:
         subject: Předmět
         text: Zpráva
-        form_code: Kód kormuláře
+        form_code: Kód formuláře
       role:
         roles: Role
       form:
         created_at: Vytvořen
         updated_at: Upraven
+        name: Název
+        code: Kód
+        people: Vyplnil
         

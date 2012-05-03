@@ -13,7 +13,7 @@
 
     <%= show_item(t("course.range"), course.range) %>
 
-    <%= show_item(t("course.guarantors"), full_url_peoples(instance.guarantors))  unless instance.nil? %>
+    <%= show_item(t("course.guarantors"), full_url_people(instance.guarantors))  unless instance.nil? %>
 
-    <%= show_item(t("course.lecturers"), full_url_peoples(instance.lecturers))  unless instance.nil? %>
+    <%= show_item(t("course.lecturers"), full_url_people(instance.lecturers))  unless instance.nil? %>
   </dl>

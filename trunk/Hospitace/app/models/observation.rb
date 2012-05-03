@@ -26,7 +26,7 @@ class Observation < ActiveRecord::Base
   
   validates :course, :presence => true
   validates :semester, :presence => true
-  
+  validates :head_of_department, :presence => true
   validates :observation_type,:presence => true, :inclusion => {:in => TYPES} 
     
   #accepts_nested_attributes_for :head_of_department
