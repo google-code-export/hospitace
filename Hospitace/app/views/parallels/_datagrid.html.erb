@@ -17,7 +17,7 @@
     <% parallels.each do |parallel| %>
       <tr>
         <td><%= parallel.number %></td>
-        <td><%= short_peoples(parallel.teachers) %></td>
+        <td><%= short_people(parallel.teachers) %></td>
         <td><%= parallel.day_t %></td>
         <td><%= parallel_time(parallel) %></td>
         <td><%= parallel.parity_t %></td>

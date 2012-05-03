@@ -1,9 +1,9 @@
 # encoding: utf-8
 
 module PeopleHelper
-  def short_peoples(peoples)
+  def short_people(peoples)
     return if peoples.nil?
-    return unless peoples.is_a? Array
+    peoples = [peoples] unless peoples.is_a? Array
     u = []
     peoples.each do |l|
       (next u << l.login) if l.lastname.nil?
@@ -12,15 +12,15 @@ module PeopleHelper
     u.join(", ")
   end
    
-  def full_url_peoples(peoples)
+  def full_url_people(peoples)
     return if peoples.nil?
     return unless peoples.is_a? Array
     peoples.collect do |l|
-      full_url_people(l)
+      full_url_person(l)
     end.join(", ").html_safe
   end
   
-  def full_url_people(people)
+  def full_url_person(people)
     return if people.nil?
     name = "#{people.firstname} #{people.lastname}"
     name = people.login if people.lastname.nil?

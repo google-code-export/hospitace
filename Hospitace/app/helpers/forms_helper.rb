@@ -106,11 +106,11 @@ module FormsHelper
             <td>F</td>
           </tr>
           <tr>
-            <td>vysoce nad průměrná</td>
-            <td>mírně nad průměrná</td>
+            <td>vysoce nadprůměrná</td>
+            <td>mírně nadprůměrná</td>
             <td>průměrná</td>
-            <td>mírně pod průměrná</td>
-            <td>velmi pod průměrná</td>
+            <td>mírně podprůměrná</td>
+            <td>velmi podprůměrná</td>
             <td>zcela nedostatečná</td>
           </tr>
         </tbody>

@@ -3,7 +3,7 @@
 <% content_for :secoundary_content do %>
 	
 	<div class="header">
-		<h3>Filter</h3>
+		<h3>Filtr</h3>
 	</div>	
 	
 	<%= simple_form_for :search,:html=> {:id=>"search_form", :class => 'form-horizontal form-search'},:method=>:get do |f| %>
@@ -47,7 +47,7 @@
     <td><%= people.id %></td>
     <td><%= people.username %></td>
     <td><%= people.full_name %></td>
-    <td><%= t people.teacher? %></td>
+    <td><%= t people.teacher?.to_s %></td>
     <td><%= roles(people) %></td>
     <td><%= actions do yield people if block_given? end%></td>
   </tr>

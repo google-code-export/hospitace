@@ -7,7 +7,7 @@ module ParallelsHelper
   end
   
   def short_parallel_with_time(parallel)
-    "#{parallel.parallel_type_t} #{parallel.day_t}, #{parallel_time(parallel)}" unless parallel.nil?
+    "#{parallel.parallel_type_t}, #{parallel.day_t}, #{parallel_time(parallel)}" unless parallel.nil?
   end
   
   def parallel_time (parallel)
