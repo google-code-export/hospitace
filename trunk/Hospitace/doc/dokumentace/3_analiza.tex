@@ -24,14 +24,16 @@ Tato sekce se zabývá požadavky na funkčnost systému.
 \item Systém umožní hospitujícímu nahrát naskenovaný dokument hodnocení výuky \cite{prototyp_documentace}.
 \item Systém umožní hospitujícímu napsat slovní hodnocení z výuky \cite{prototyp_documentace}.
 \item Systém umožní hospitujícímu napsat závěrečné shrnutí hospitace \cite{prototyp_documentace}.
-\item Systém bude odesílat emailem zprávy o naplánování hospitací a jednotlivé hodnocení a stanoviska příslušným osobám \cite{prototyp_documentace}.
+\item Systém bude odesílat emailem zprávy o vyplnění hodnotícího dokumentu příslušným osobám \cite{prototyp_documentace}.
 \item Systém umožní vyhledávat předměty z KOSapi.
 \item Systém umožní vyhledávat osoby z KOSapi.
 \item Systém umožní upravovat strukturu hodnotících dokumentů.
+\item Systém umožní spravovat emailové šablony k hodnotících dokumentů.
+\item Systém umožní generovat emailové zprávy ze šablon.
 \end{enumerate}
 
 \section{Uživatelské role}
-V systému je celkem 6 uživatelských rolí, ty jsou odvozeny z modelu aktérů na obrázku \ref{fig:actors}. Máme tři základní uživatelské role, které jsou základem systému - přihlášený uživatel, nepřihlášený uživatel a administrátor hospitací. Další role, jako hospitovaný a hospitující uživatel, jsou přiděleny příslušným osobám zainteresovaných v jednotlivých hospitacích.
+V systému je celkem 7 uživatelských rolí. Definoval jsem tři základní uživatelské role, které jsou základem systému: nepřihlášený uživatel, přihlášený uživatel, administrátor hospitací a admin. Další dvě role hospitovaný a hospitující se přidělují v rámci jednotlivých hospitací. Na obrázku \ref{fig:actors} jsou vidět jednotlivé aktéry a jejich zobecnění.
 
 \begin{figure}[h]
 \begin{center}
@@ -41,30 +43,28 @@ V systému je celkem 6 uživatelských rolí, ty jsou odvozeny z modelu aktérů
 \end{center}
 \end{figure}
 
-V systému jsou následující role:
-
 \subsection{Nepřihlášený uživatel}
-Nepřihlášený uživatel je role pro hosty naší aplikace. V systému má ze všech rolí nejmenší pravomoc. V tomto stavu je každý uživatel, který se doposud nepřihlásil do systému a je mu umožněno vykonat následující akce: přihlásit se, zobrazit seznam naplánovaných veřejných hospitací na aktuální a následující semestr, má také přístup k závěrečným shrnutím hospitací.
+Nepřihlášený uživatel je role pro hosty naší aplikace. V systému má ze všech rolí nejmenší pravomoc. V tomto stavu je každý uživatel, který se doposud nepřihlásil do systému.
 
 \subsection{Přihlášený uživatel}
-Přihlášený uživatel vychází z role nepřihlášeného uživatele. Je to uživatel, který má vytvořený účet v systému a již se přihlásil. Tato role přidává možnost odhlásit se a procházet veškeré ohlášené hospitace. Jedná se o roli základní pro všechny další role, které z ní vychází.
+Přihlášený uživatel vychází z role nepřihlášeného uživatele. Je to uživatel, který se do systému přihlásil. Jedná se o základní roli pro všechny další role, které ji rozšiřují.
 
 \subsection{Hospitovaný}
-Hospitovaný je role pro přihlášeného uživatele v systému. Je přidělena pro každého vyučujícího, který vyučuje předmět, na němž byla naplánovaná hospitace. Tato role přidává možnost přístupu k naplánovaným hospitacím, kde figuruje jako hospitovaný. U těchto hospitací má právo na zobrazení všech hodnotících dokumentů a umožní mu sepsat dokument se stanovisky k názorům hospitujícího.
+Hospitovaný je role pro přihlášeného uživatele v systému. Je přidělena pro každého vyučujícího, který vyučuje předmět, na němž byla naplánovaná hospitace a proběhla.
 
 \subsection{Hospitující}
-Hospitující je role pro přihlášeného uživatele v systému. Přiděluje ji administrátor hospitací osobám, které mají za úkol vykonat hospitaci. U přidělených hospitací má uživatel právo na zobrazení informací o jeho hospitaci a povinnost sepsat hodnotící dokumenty z vykonané hospitace.
+Hospitující je role pro přihlášeného uživatele v systému. Tato role se přiděluje automaticky z naplánovaných hospitací, nebo ji může přidělit administrátor hospitací.
 
 \subsection{Administrátor hospitací}
-Tato role patří mezi nejdůležitější role v systému, protože spravuje hospitace a přiděluje uživatelům nové role. Hlavním úkolem této role je plánovat hospitace na předměty a posléze je spravovat.   
+Hlavním úkolem této role je plánovat hospitace na předměty a posléze je spravovat.
 
 \subsection{Administrátor}
-Administrátor je super uživatel, který má nejvyšší pravomoc v systému. Má přístup ke všem zdrojům aplikace a může nastavovat aplikaci.
+Administrátor je super uživatel, který má nejvyšší pravomoc v systému. Má přístup ke všem zdrojům aplikace a může aplikaci spravovat.
 
 \section{Doménový model}
 Doménový model na obrázku \ref{fig:domainmodel} reprezentuje entity v systému a jejich vzájemné vztahy. 
 
-Popis domény jsem pro přehlednost rozdělil podle zdroje na dvě základní skupiny. V první skupině jsou domény, které používám z KOSapi a druhou skupinou jsou domény specifické pro moji aplikaci. 
+Popis domény jsem pro přehlednost rozdělil podle zdroje na dvě základní skupiny. V první skupině jsou domény, které jsem převzal ze struktury KOSapi a druhou skupinou jsou domény specifické pro moji aplikaci. 
 
 \subsection{Domény z KOSapi}
 \begin{itemize}
@@ -118,3 +118,5 @@ Ve třetí fázi může hospitovaný do dvou dnů vyplnit stanovisko hodnocenéh
 
 V poslední fázi jeden z hospitujících sepíše poslední formulář Závěrečné shrnutí. Po vyplnění tohoto formuláře se hospitace stává ukončenou a tím končí její životní cyklu.
  
+\subsection{Ukončená}
+Po sepsáním posledního hodnotícího dokumentu se hospitace dostane do fáze ukončená. 
