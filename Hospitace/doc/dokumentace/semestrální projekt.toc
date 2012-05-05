@@ -7,27 +7,29 @@
 \contentsline {section}{\numberline {2.3}Re\IeC {\v s}er\IeC {\v s}e}{3}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1}Prototyp}{4}{subsection.2.3.1}
 \contentsline {subsection}{\numberline {2.3.2}Postupy pro kontrolu kvality v\IeC {\'y}uky}{4}{subsection.2.3.2}
-\contentsline {subsubsection}{\numberline {2.3.2.1}Pl\IeC {\'a}nov\IeC {\'a}n\IeC {\'\i } hospitac\IeC {\'\i }}{4}{subsubsection.2.3.2.1}
-\contentsline {subsubsection}{\numberline {2.3.2.2}Proveden\IeC {\'\i } hospitace}{4}{subsubsection.2.3.2.2}
-\contentsline {subsubsection}{\numberline {2.3.2.3}Hodnocen\IeC {\'\i } v\IeC {\'y}uky}{4}{subsubsection.2.3.2.3}
+\contentsline {subsubsection}{\numberline {2.3.2.1}Administr\IeC {\'a}tor hospitac\IeC {\'\i }}{4}{subsubsection.2.3.2.1}
+\contentsline {subsubsection}{\numberline {2.3.2.2}Pl\IeC {\'a}nov\IeC {\'a}n\IeC {\'\i } hospitac\IeC {\'\i }}{4}{subsubsection.2.3.2.2}
+\contentsline {subsubsection}{\numberline {2.3.2.3}Proveden\IeC {\'\i } hospitace}{5}{subsubsection.2.3.2.3}
+\contentsline {subsubsection}{\numberline {2.3.2.4}Hodnocen\IeC {\'\i } v\IeC {\'y}uky}{5}{subsubsection.2.3.2.4}
 \contentsline {chapter}{\numberline {3}Anal\IeC {\'y}za}{7}{chapter.3}
 \contentsline {section}{\numberline {3.1}Po\IeC {\v z}adavky}{7}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}Obecn\IeC {\'e} po\IeC {\v z}adavky}{7}{subsection.3.1.1}
 \contentsline {subsection}{\numberline {3.1.2}Funk\IeC {\v c}n\IeC {\'\i } po\IeC {\v z}adavky}{7}{subsection.3.1.2}
 \contentsline {section}{\numberline {3.2}U\IeC {\v z}ivatelsk\IeC {\'e} role}{8}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Nep\IeC {\v r}ihl\IeC {\'a}\IeC {\v s}en\IeC {\'y} u\IeC {\v z}ivatel}{9}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}P\IeC {\v r}ihl\IeC {\'a}\IeC {\v s}en\IeC {\'y} u\IeC {\v z}ivatel}{9}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}Hospitovan\IeC {\'y}}{9}{subsection.3.2.3}
-\contentsline {subsection}{\numberline {3.2.4}Hospituj\IeC {\'\i }c\IeC {\'\i }}{9}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {3.2.1}Nep\IeC {\v r}ihl\IeC {\'a}\IeC {\v s}en\IeC {\'y} u\IeC {\v z}ivatel}{8}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}P\IeC {\v r}ihl\IeC {\'a}\IeC {\v s}en\IeC {\'y} u\IeC {\v z}ivatel}{8}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Hospitovan\IeC {\'y}}{8}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}Hospituj\IeC {\'\i }c\IeC {\'\i }}{8}{subsection.3.2.4}
 \contentsline {subsection}{\numberline {3.2.5}Administr\IeC {\'a}tor hospitac\IeC {\'\i }}{9}{subsection.3.2.5}
 \contentsline {subsection}{\numberline {3.2.6}Administr\IeC {\'a}tor}{9}{subsection.3.2.6}
 \contentsline {section}{\numberline {3.3}Dom\IeC {\'e}nov\IeC {\'y} model}{9}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Dom\IeC {\'e}ny z KOSapi}{10}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.1}Dom\IeC {\'e}ny z KOSapi}{9}{subsection.3.3.1}
 \contentsline {subsection}{\numberline {3.3.2}Dom\IeC {\'e}ny aplikace}{10}{subsection.3.3.2}
 \contentsline {section}{\numberline {3.4}\IeC {\v Z}ivotn\IeC {\'\i } cyklus hospitace}{10}{section.3.4}
 \contentsline {subsection}{\numberline {3.4.1}Vytvo\IeC {\v r}en\IeC {\'\i }}{10}{subsection.3.4.1}
 \contentsline {subsection}{\numberline {3.4.2}Napl\IeC {\'a}nov\IeC {\'a}n\IeC {\'\i }}{10}{subsection.3.4.2}
 \contentsline {subsection}{\numberline {3.4.3}Hodnocen\IeC {\'\i }}{11}{subsection.3.4.3}
+\contentsline {subsection}{\numberline {3.4.4}Ukon\IeC {\v c}en\IeC {\'a}}{11}{subsection.3.4.4}
 \contentsline {chapter}{\numberline {4}N\IeC {\'a}vrh}{13}{chapter.4}
 \contentsline {section}{\numberline {4.1}Technologie}{13}{section.4.1}
 \contentsline {subsection}{\numberline {4.1.1}Ruby on Rails}{13}{subsection.4.1.1}
