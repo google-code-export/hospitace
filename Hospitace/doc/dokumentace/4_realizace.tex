@@ -1,39 +1,91 @@
 \chapter{Realizace}
 Po dohodě s vedoucím práce byl zvolen iterační vývoj aplikace. Za účelem postupného vyvíjený částí aplikace, tak aby bylo možné testovat aplikaci na letním semestru 2011/2012. V této kapitole popisuji jednotlivá zadání každé iterace. Jak jsem postupoval k vyřešení zadání a výstupy z jednotlivých iterací. Jednotlivé iterace byly prezentovány na konzultacích s vedoucím práce.
 
+pužité nástroje pro realizaci jsem použil vývojové prostředí netbeans + vedení projektu používám google code. Kde se nachází základ projektu.
+
 \section{První iterace}
 \subsection{Zadání}
-První iterace měla za cíl vytvořit základní architekturu aplikace s napojením na KOSapi \cite{kosapi} a k tomu vytvořit funkční část aplikace pro plánování hospitací.
+Tato iterace patřila k nejobsáhlejším ze všech iterací. Jedním z důvodů bylo  seznámení z novou technologii Ruby on Rails, s kterou jsem neměl zkušenost. První iterace měla za cíl navrhnout a vytvořit základní architekturu aplikace s napojením na KOSapi \cite{kosapi} a k tomu vytvořit funkční část aplikace pro plánování hospitací, tak abych mohl prezentovat funkčnost.
 
 \subsection{Postup}
 \subsubsection{Datová vrstva}
-Protože aplikace využívá dva datové zdroje KOSapi \ref{kosapi} a databázi aplikace, bylo potřeba nejdřív vyřešit jak se připojit ke KOSapi. V této části vycházím z prototypu aplikace pro správu hospitací. Kde využívá knihovnu z projektu VyVy \cite{vyvy}. Poté bylo potřeba vytvořil modely tak, aby umožnily komunikaci mezi KOSapi a databází aplikace.
+Protože aplikace využívá dva datové zdroje KOSapi viz. \ref{kosapi} a databázi aplikace, bylo potřeba nejdřív vyřešit jak se připojit ke KOSapi. V této části vycházím z prototypu aplikace pro správu hospitací. Kde využívá již naprogramovanou knihovnu z projektu VyVy \cite{vyvy}. Poté bylo potřeba vytvořil modely tak, aby umožnily komunikaci mezi KOSapi a databází aplikace. Při implementování knihovny do aplikace jsem musel vyřešit lokalizaci jazykových konstant v date získaných z API. Vyřešil jsem to rozšířením knihovny o podporu modul i18n\footnote{lokalizace softwaru pro různé jazyky a jejich místních zvyklostí}, který je součástí Rails.
 
-\subsubsection{Autentizace a autorizace}
-Pro autentizaci, v této fázi vývoje, jsem zatím neimplementoval autentizaci prostřednictvím FElid \ref{felid}. Dočasně jsem pro tento účel použil modul authlogic \cite{authlogic}.
+\subsubsection{Autentizace}
+Pro autentizaci, v této fázi vývoje, používám modul authlogic, který jsem zprovoznil pomocí návodu \cite{authlogic}. Tento modul používám jen dočasně pro vývoj aplikace. Ve finální fázi bude nahrazen autentizační službou FELid viz. \ref{felid}, kterou lze zprovoznit jen na serveru, kde bude aplikace nasazena. 
 
-Pro autorizaci používám modul CanCan \cite{cancan}. CanCan je modul pro Ruby on Rails, který určuje, k jakým zdrojům má daný uživatel povolený přístup. Všechna oprávnění jsou definována na jednom místě (třída Ability). Umí filtrovat controllery, views i databázové dotazy.
+\subsubsection{Autorizace}
+Autentizace v hospitacích je jedena z kritických oblastí, kterou bylo potřeba vyřešit hned na začátku vývoje. V aplikaci potřebuji autentizovat uživatele podle role, tak i podle vztahu k hospitaci. Proto jsem hledal modul, který by dokázal nadefinovat pravidla autentizace. Modul, který jsem použil, se jmenuje CanCan \cite{cancan} . Tento modul má velmi jednoduchý a přesto flexibilní zápis pravidel, které dokáží filtrovat jak podle zdroje tak i podle jednotlivých záznamů, dokáže filtrovat controllery tak i zdroje aplikace.  Veškerá pravidla jsou definována na jednom místě\footnote{model Ability}.
+
+\begin{quote}
+Příklad zapsaného pravidla pomocí CanCan v modelu Ability. Pravidlo slouží pro administrátora hospitací a umožní mu zobrazovat, vytvářet, upravovat a mazat ze zdroje Observation. Zároveň zakáže tyto operace pro záznamy, které nevytvořil.
+
+\begin{verbatim}
+def admin
+    can :manage, Observation
+    cannot :manage, Observation do |ob|
+        !(ob.created_by==current_user)
+    end
+end
+\end{verbatim} 
+\end{quote}
+
+\subsubsection{Role}
+Role pro jednotlivé uživatelé uchovávám v modelu Role. Kde jednotlivé role uživatele ukládám do bitové masky. Role v bitové masce jsou reprezentovány mocniny čísla 2 díky tomu lze skládat role pomocí bitové operace OR. V tabulce \ref{tab:role} je přehled rolí s číslem reprezentovaným bitovou masku role.
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{|l|c|}
+
+\hline
+\textbf{Role} & \textbf{Bitová maska} \\ \hline
+Administrátor hospitací & 1 \\
+Hospitující & 2 \\ 
+Hospitovaný & 4 \\
+Admin & 8 \\\hline
+
+\end{tabular}
+\caption{Reprezentace rolí v bitové masce}
+\label{tab:role}
+\end{center}
+\end{table}
 
 \subsubsection{Uživatelské prostředí}
-Pro vytvoření uživatelského prostředí jsem použil již existující modul Bootstrap \cite{bootstrap} od Twitteru. Použil jsem tuto knihovnu abych si usnadnil implementaci uživatelského prostředí. Knihovna obsahuje kompletní CSS tak i Javascriptové moduly. Mezi další výhody patří licence ta je open-source a další výhodou je známé uživatelské prostředí.
+Pro vytvoření uživatelského prostředí jsem použil již existující modul Bootstrap \cite{bootstrap}. Použil jsem tuto knihovnu abych si usnadnil implementaci uživatelského prostředí. Knihovna obsahuje kompletní CSS tak i Javascriptové moduly. Mezi další výhody patří licence ta je open-source a další výhodou je známé uživatelské prostředí používané v Twitteru.
 
-Pro usnadnění implementace Bootstrap \cite{bootstrap} modulu do aplikace jsem využil další dva moduly pro aplikaci. První je modul SimpleForm \cite{simpleform} zjednoduší vytváření formulářů tak, že stačí definovat jedno nadefinovat styl skládání formuláře a v aplikaci už jen jednoduše vytvářet formuláře bez zbytečného stylování. A druhým modulem je WillPaginate \cite{willpaginate}, ten slouží k implementaci stránkování dat.
+Pro usnadnění implementace Bootstrap modulu do aplikace jsem využil další dva moduly pro aplikaci. První je modul SimpleForm \cite{simpleform}, slouží k vytváření formulářů. Základním cílem je nadefinovat rozvržení všech formulářů na jednom místě. Druhým modulem je WillPaginate \cite{willpaginate} pros stránkován dat.
 
 \subsection{Výstup} 
-Výstupem z první iterace vznikla část aplikace, která uměla plánovat hospitace a uměla přímo získávat data z webové služby KOSapi.
+Výstupem z první iterace vznikla část aplikace, která uměla plánovat hospitace a uměla získávat data z webové služby KOSapi.
 
 
 \section{Druhá iterace}
 \subsection{Zadání}
-Zadáním druhé iterace bylo na-implementovat hodnotící formuláře hospitací. Požadavkem bylo možnost upravovat formuláře bez zásahu do kódu aplikace. Dalším cílem bylo potřeba vyřešit problém s KOSapi \ref{kosapi}, který vznikl při přechodu na nový semestr. Stalo se to že služba neudržuje data instancí předmětů z minulých semestrů a tím nebylo možné získat všechny potřebné informace pro starších hospitací.
+Zadáním druhé iterace bylo na-implementovat hodnotící formuláře hospitací. Požadavkem bylo možnost upravovat formuláře bez zásahu do kódu aplikace. Dalším cílem bylo potřeba vyřešit problém s KOSapi, který vznikl při přechodu na nový semestr. Stalo se to že služba neudržuje data instancí předmětů z minulých semestrů a tím nebylo možné získat všechny potřebné informace pro hospitace z minulých semestrů.
 
 \subsection{Postup}
 \subsubsection{Datová vrstva}
-Problém se ztrátou dat jsem vyřešil tak, že  importuji data z KOSapi \ref{kosapi} do databáze aplikace, kterou jsem rozšířil o entity z KOSapi. Pro importování dat bylo potřeba vytvořit rake script, který bude automaticky aktualizovat data.
+Problém se ztrátou dat byl velmi vážný, proto bylo potřeba tento problém rychle vyřešit abych mohl pokračovat ve vývoji. Musel jsem proto předělat datovou část. Rozšířil jsem databázi o entity z kapitoly \ref{sec:domeny_kosapi} tak, aby data z KOSapi byli uložené v databázi. Data je potřeba synchronizovat v databázi s KOSapi. O synchronizaci se stará \verb|rake|\footnote{rake je sada nástrojů používané pro vývoj a nasazení Rails aplikací} script stará se o přidává a aktualizaci záznamy. Synchronizační script  spuštím každý den pomocí programu \verb|Cron|\footnote{Cron je program, který na pozadí operačního systému spouští naplánované úlohy}.
 
-Jeden ze zádrhelů, který jsem řešil byly \verb|asociace|\footnote{asociace garant, přednášející, vyučující, instruktor a zkoušející.} mezi osobou a instancí předmětu nebo paralelkou. Problém byl v množství asociací mezi entitami. Vyřešil jsem to elegantně za pomocí polymorfních asociací \cite{guide_pa} v Ruby on Rails.
+Po přidání nových entit bylo potřeba na-implementovat asociace mezi novými entitami. V doménového modelu na obrázku \ref{fig:domainmodel} je spousta asociací mezi osobou - paralelkou a osobou - instancí předmětu. Protože všechny tyto asociace\footnote{asociace garant, přednášející, vyučující, instruktor a zkoušející.} mají kardinalitu N:M. Pokud bych použil klasickou dekompozicí přes pomocnou tabulku, která rozloží asociace na 1:N a 1:M. Vzniklo by mi 6 pomocných tabulek. Proto jsem rozhodl požít jiný způsob dekompozice, který používá polymorfní asociace \cite{guide_pa} v Ruby on Rails. Výhodou této  dekompozice je redukce počtu pomocných tabulek. Tento druh asociace zredukoval počet ze 6 na 1 tabulku. V tabulce \ref{tab:people_related} jsou popsány jednotlivé atributy s příklady modelu \verb|PeopleRelated|.
 
-Samotné předělání aplikace nebylo příliš složité stačilo pouze upravit modely tak, aby získávaly data z databáze místo z webové služby. 
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{|l|c|l|}
+
+\hline
+\textbf{Atribut} & \textbf{Příklad} & \textbf{Popis} \\ \hline
+related\_id & 1 & cizí klíč záznamu, který je v asociaci s osobou \\\hline
+related\_type & Parallel & jméno modelu ke kterému patří cizí klíč \\ \hline
+relation & teachers & název asociace \\\hline
+people\_id & 100 & cizí klíč pro osobu  \\\hline
+
+\end{tabular}
+\caption{Popis atributů modelu PeopleRelated}
+\label{tab:people_related}
+\end{center}
+\end{table}
+
 
 \subsubsection{Hodnotící formuláře}
 Z důvodu možné změny hodnotících formulářů v budoucnosti. Jsem vytvořil návrh, který umožní vytvářet nové typy formulářů, nebo upravovat již existující. Formuláře se definují šablonou, která definuje základní vlastnosti jako jsou minimální a maximální počet vyplnění, název a kdo může formulář vyplnit. Samotný obsah šablony formuláře se skládá z položek. Položky formuláře mohou být hodnotící tabulka, nadpis, hodnocení, text. Na obrázku \ref{fig:dynamicform} je doménový model dynamický formulářů.
@@ -49,12 +101,41 @@ Z důvodu možné změny hodnotících formulářů v budoucnosti. Jsem vytvoři
 \subsection{Výstup} 
 Výstupem této iterace byla aplikace, která již využívala pouze svoji databázi pro zdroj dat a prototyp dynamických formulářů s nadefinovanými hodnotícími formuláři.
 
-%\section{Třetí iterace}
-%\subsection{Zadání}
+\section{Třetí iterace}
+\subsection{Zadání}
+Zadáním třetí iterace bylo připravit server pro nasazení aplikace a zprovoznit službu Shibboleth pro FELid.
+Mezi dalšími požadavky bylo zprovoznit automatické zálohování databáze.
+
 %připravit server pro felid(instalace apache, passenger, rvm, shibboleth), nasazení aplikace, uprava požadavků z konzultací
 %sheduled zálohování databáze
+%script pro aktualizaci dat v databázi
 
-%\subsection{Postup}
+\subsection{Postup}
+\subsubsection{Nasazení aplikace}
+V této fázi bylo potřeba připravit server na nasazení aplikace. Na obrázku \ref{fig:deployment} jde vidět diagram nasazení serveru. Pro podporo rails jsem použil software RVM \ref{RVM} pro spravování verzí ruby a gemsets.
 
-%\subsection{Výstup} 
+Do apache jsem musel nainstalovat dva zásuvné moduly. Jeden pro podporu rails aplikací Passanger a pro zprovoznění FELid modul Shibboleth. Pro samotnou konfiguraci Shibbolethu jsem postupoval pomocí návodu na stránkách FELid \cite{felid_navod}.
+
+%Na serveru bylo potřeba nainstalovat platformu Ruby a framework Ruby on Rails. A pro to jsem se rozhodl využit software RVM. Ten umožní nainstalovat různé platformy Ruby na jednom počítači. Mezi další přínosem je vytváření setů knihoven a přepínaná mezi nimi. Díky tomuto programu lze na serveru rozjet několik aplikací na Ruby aniž by nastávaly kolize v knihovnách.
+
+%protože jsem se rozhodnu pro webový server Apache HTTP server 2. Musel jsem do něj nainstalovat dva zásuvné moduly. Jedním znich byl modul Passanger (mod_rails). Slouží pro nasazení Rails aplikací na apache.
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[scale=0.7]{figures/deployment}
+\caption{Diagram nasazení}
+\label{fig:deployment}
+\end{center}
+\end{figure}
+
+\subsubsection{Záloha databáze}
+Pro automatické zálohování databáze jsem použil existující ruby aplikaci pro zálohování. Tato aplikace každý den vytvoří zálohu databáze, kterou uloží na disk. Na disku uchovává 300 záloh databáze , při překročení počtu záloh se starší zálohy nahrazují novými. Výhodou tohoto řešení je podpora různých databázových systémů a možnost ukládat zálohy na externích uložiště\footnote{pro příklad Amazon Simple Storage Service (S3)} pro uchování záloh. Záloha se spouští pomocí příkazu v konzoli:
+\begin{verbatim}
+backup perform --trigger backup
+\end{verbatim} 
+
+\subsubsection{Cron úlohy}
+
+
+\subsection{Výstup} 
 
