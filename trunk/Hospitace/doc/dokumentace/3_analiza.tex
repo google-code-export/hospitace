@@ -32,12 +32,16 @@ Tato sekce se zabývá požadavky na funkčnost systému.
 \item Systém umožní generovat emailové zprávy ze šablon.
 \end{enumerate}
 
+\newpage 
 \section{Uživatelské role}
-V systému je celkem 7 uživatelských rolí. Definoval jsem tři základní uživatelské role, které jsou základem systému: nepřihlášený uživatel, přihlášený uživatel, administrátor hospitací a admin. Další dvě role hospitovaný a hospitující se přidělují v rámci jednotlivých hospitací. Na obrázku \ref{fig:actors} jsou vidět jednotlivé aktéry a jejich zobecnění.
+V systému je celkem 7 uživatelských rolí. Definoval jsem tři základní uživatelské role, které jsou základem systému: nepřihlášený uživatel, přihlášený uživatel, administrátor hospitací a admin. Další dvě role hospitovaný a hospitující se přidělují v rámci jednotlivých hospitací. Na obrázku \ref{fig:actors} jsou vidět jednotlivý aktéři a jejich zobecnění. V další části této sekce rozeberu jednotlivé role a k ním případy užití.
 
-\begin{figure}[h]
+\paragraph*{Use cases}
+neboli případy užití je nástroj pro popsání chování jak by systém měl spolupracovat s koncovým uživatelem. Popisuje všechny způsoby jak uživatel komunikuje se systémem.
+
+\begin{figure}[H]
 \begin{center}
-\includegraphics[width=14cm]{figures/Actors}
+\includegraphics[width=10cm]{figures/Actors}
 \caption{Aktéři}
 \label{fig:actors}
 \end{center}
@@ -46,26 +50,77 @@ V systému je celkem 7 uživatelských rolí. Definoval jsem tři základní už
 \subsection{Nepřihlášený uživatel}
 Nepřihlášený uživatel je role pro hosty naší aplikace. V systému má ze všech rolí nejmenší pravomoc. V tomto stavu je každý uživatel, který se doposud nepřihlásil do systému.
 
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=10cm]{figures/actor_base}
+\caption{Use case - nepřihlášený uživatel}
+\label{fig:actor_base}
+\end{center}
+\end{figure}
+
 \subsection{Přihlášený uživatel}
 Přihlášený uživatel vychází z role nepřihlášeného uživatele. Je to uživatel, který se do systému přihlásil. Jedná se o základní roli pro všechny další role, které ji rozšiřují.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=10cm]{figures/actor_logged}
+\caption{Use case - přihlášený uživatel}
+\label{fig:actor_logged}
+\end{center}
+\end{figure}
+
 
 \subsection{Hospitovaný}
 Hospitovaný je role pro přihlášeného uživatele v systému. Je přidělena pro každého vyučujícího, který vyučuje předmět, na němž byla naplánovaná hospitace a proběhla.
 
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=10cm]{figures/actor_observed}
+\caption{Use case - hospitovaný}
+\label{fig:actor_observed}
+\end{center}
+\end{figure}
+
 \subsection{Hospitující}
 Hospitující je role pro přihlášeného uživatele v systému. Tato role se přiděluje automaticky z naplánovaných hospitací, nebo ji může přidělit administrátor hospitací.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=10cm]{figures/actor_observer}
+\caption{Use case - hospitující}
+\label{fig:actor_observer}
+\end{center}
+\end{figure}
 
 \subsection{Administrátor hospitací}
 Hlavním úkolem této role je plánovat hospitace na předměty a posléze je spravovat.
 
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=10cm]{figures/actor_admin}
+\caption{Use case - administrátor hospitací}
+\label{fig:actor_admin}
+\end{center}
+\end{figure}
+
 \subsection{Administrátor}
 Administrátor je super uživatel, který má nejvyšší pravomoc v systému. Má přístup ke všem zdrojům aplikace a může aplikaci spravovat.
 
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=10cm]{figures/actor_root}
+\caption{Use case - administrátor}
+\label{fig:actor_root}
+\end{center}
+\end{figure}
+
+\newpage 
 \section{Doménový model}
 Doménový model na obrázku \ref{fig:domainmodel} reprezentuje entity v systému a jejich vzájemné vztahy. 
 
 Popis domény jsem pro přehlednost rozdělil podle zdroje na dvě základní skupiny. V první skupině jsou domény, které jsem převzal ze struktury KOSapi a druhou skupinou jsou domény specifické pro moji aplikaci. 
 
+\label{sec:domeny_kosapi} 
 \subsection{Domény z KOSapi}
 \begin{itemize}
 \item Osoba - informace o osobě nacházející se na FEL. Každá osoba může být učitelem a studentem.
@@ -78,7 +133,6 @@ Popis domény jsem pro přehlednost rozdělil podle zdroje na dvě základní sk
 
 \subsection{Domény aplikace}
 \begin{itemize}
-\item Uživatel - obsahuje dodatečné informace a role pro osobu v aplikaci.
 \item Hospitace - obsahuje informace o naplánování hospitace. 
 \item Poznámka - je textová poznámka pro hospitaci napsaná uživatelem.
 \item Příloha - je připojený datový soubor k hodnocení hospitace.
@@ -88,13 +142,15 @@ Popis domény jsem pro přehlednost rozdělil podle zdroje na dvě základní sk
 \item Položka - je šablona jedné položky ve formuláři.
 \end{itemize}
 
-\begin{figure}[h]
+\begin{figure}[p]
 \begin{center}
 \includegraphics[width=14cm]{figures/DomainModel2}
 \caption{Doménový model}
 \label{fig:domainmodel}
 \end{center}
 \end{figure}
+
+
 
 \section{Životní cyklus hospitace}
 Cílem této části analýzy je popsat životní cyklus, kterým hospitace prochází. 
@@ -120,3 +176,11 @@ V poslední fázi jeden z hospitujících sepíše poslední formulář Závěre
  
 \subsection{Ukončená}
 Po sepsáním posledního hodnotícího dokumentu se hospitace dostane do fáze ukončená. 
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=14cm]{figures/hospitace}
+\caption{Život hospitace}
+\label{fig:hospitace}
+\end{center}
+\end{figure}

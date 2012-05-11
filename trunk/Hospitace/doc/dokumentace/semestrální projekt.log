@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.4.27)  5 MAY 2012 23:57
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.4.27)  11 MAY 2012 22:03
 entering extended mode
  %&-line parsing enabled.
 **"semestr√°ln√≠ projekt.tex"
@@ -276,12 +276,20 @@ Now handling font encoding U ...
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
 ))
+(/usr/share/texmf-texlive/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count90
+\float@exts=\toks16
+\float@box=\box26
+\@float@everytoks=\toks17
+\@floatcapt=\box27
+)
 (/usr/share/texmf-texlive/tex/latex/graphics/graphicx.sty
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texmf-texlive/tex/latex/graphics/keyval.sty
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
-\KV@toks@=\toks16
+\KV@toks@=\toks18
 )
 (/usr/share/texmf-texlive/tex/latex/graphics/graphics.sty
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
@@ -296,7 +304,7 @@ Package graphics Info: Driver file: pdftex.def on input line 91.
 
 (/usr/share/texmf-texlive/tex/latex/pdftex-def/pdftex.def
 File: pdftex.def 2010/03/12 v0.04p Graphics/color for pdfTeX
-\Gread@gobject=\count90
+\Gread@gobject=\count91
 ))
 \Gin@req@height=\dimen104
 \Gin@req@width=\dimen105
@@ -306,15 +314,63 @@ Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
 )
 (./k336_thesis_macros.sty
 Two side layout redefined.
-(./hyphen.tex))
-Bakalarska prace
-(/usr/share/texmf-texlive/tex/latex/hyperref/hyperref.sty
-Package: hyperref 2009/10/09 v6.79a Hypertext links for LaTeX
+(./hyphen.tex)) (./dirtree.sty
+
+LaTeX Warning: You have requested package `dirtree',
+               but the package provides `durtree'.
+
+Package: durtree 2010/12/04 v0.1
+(/usr/share/texmf-texlive/tex/latex/oberdiek/zref-abspage.sty
+Package: zref-abspage 2009/08/07 v2.4 Module abspage for zref (HO)
+
+(/usr/share/texmf-texlive/tex/latex/oberdiek/zref-base.sty
+Package: zref-base 2009/08/07 v2.4 Module base for zref (HO)
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2007/12/12 v1.2 Prefix for e-TeX command names (HO)
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2007/09/09 v1.2 Providing info/warning/message (HO)
+)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)
+(/usr/share/texmf-texlive/tex/latex/oberdiek/auxhook.sty
+Package: auxhook 2007/04/06 v1.1 Hooks for auxiliary files (HO)
+)
+Package zref Info: New property list: main on input line 419.
+Package zref Info: New property: default on input line 420.
+Package zref Info: New property: page on input line 421.
+)
+(/usr/share/texmf-texlive/tex/generic/oberdiek/atbegshi.sty
+Package: atbegshi 2008/07/31 v1.9 At begin shipout hook (HO)
 
 (/usr/share/texmf-texlive/tex/generic/oberdiek/ifpdf.sty
 Package: ifpdf 2009/04/10 v2.0 Provides the ifpdf switch (HO)
 Package ifpdf Info: pdfTeX in pdf mode detected.
+))
+\c@abspage=\count92
+Package zref Info: New property: abspage on input line 49.
 )
+\DT@offset=\dimen106
+\DT@width=\dimen107
+\DT@sep=\dimen108
+\DT@all=\dimen109
+\DT@rulewidth=\dimen110
+\DT@dotwidth=\dimen111
+\DTbaselineskip=\dimen112
+\DT@counti=\count93
+\DT@countii=\count94
+\DT@countiii=\count95
+\DT@countiv=\count96
+\DT@treenum=\count97
+)
+Bakalarska prace
+(/usr/share/texmf-texlive/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2009/10/09 v6.79a Hypertext links for LaTeX
+
 (/usr/share/texmf-texlive/tex/generic/oberdiek/ifvtex.sty
 Package: ifvtex 2008/11/04 v1.4 Switches for detecting VTeX and its modes (HO)
 Package ifvtex Info: VTeX not detected.
@@ -329,25 +385,14 @@ O)
 (/usr/share/texmf-texlive/tex/latex/oberdiek/xcolor-patch.sty
 Package: xcolor-patch 2009/10/02 xcolor patch
 ))
-\@linkdim=\dimen106
-\Hy@linkcounter=\count91
-\Hy@pagecounter=\count92
+\@linkdim=\dimen113
+\Hy@linkcounter=\count98
+\Hy@pagecounter=\count99
 
 (/usr/share/texmf-texlive/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2009/10/09 v6.79a Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
-)
-(/usr/share/texmf-texlive/tex/generic/oberdiek/etexcmds.sty
-Package: etexcmds 2007/12/12 v1.2 Prefix for e-TeX command names (HO)
-
-(/usr/share/texmf-texlive/tex/generic/oberdiek/infwarerr.sty
-Package: infwarerr 2007/09/09 v1.2 Providing info/warning/message (HO)
-)
-Package etexcmds Info: Could not find \expanded.
-(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
-(etexcmds)             that some package has redefined \expanded.
-(etexcmds)             In the latter case, load this package earlier.
 )
 (/usr/share/texmf-texlive/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
@@ -408,10 +453,10 @@ Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 )))
-\Fld@menulength=\count93
-\Field@Width=\dimen107
-\Fld@charsize=\dimen108
-\Field@toks=\toks17
+\Fld@menulength=\count100
+\Field@Width=\dimen114
+\Fld@charsize=\dimen115
+\Field@toks=\toks19
 Package hyperref Info: Hyper figures OFF on input line 4377.
 Package hyperref Info: Link nesting OFF on input line 4382.
 Package hyperref Info: Hyper index ON on input line 4385.
@@ -419,60 +464,58 @@ Package hyperref Info: backreferencing OFF on input line 4392.
 Package hyperref Info: Link coloring ON on input line 4395.
 Package hyperref Info: Link coloring with OCG OFF on input line 4402.
 Package hyperref Info: PDF/A mode OFF on input line 4407.
-
-(/usr/share/texmf-texlive/tex/generic/oberdiek/atbegshi.sty
-Package: atbegshi 2008/07/31 v1.9 At begin shipout hook (HO)
-)
-\Hy@abspage=\count94
-\c@Item=\count95
-\c@Hfootnote=\count96
+\Hy@abspage=\count101
+\c@Item=\count102
+\c@Hfootnote=\count103
 )
 *hyperref using default driver hpdftex*
 (/usr/share/texmf-texlive/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2009/10/09 v6.79a Hyperref driver for pdfTeX
-\Fld@listcount=\count97
+\Fld@listcount=\count104
 )
 (/usr/share/texmf-texlive/tex/latex/natbib/natbib.sty
 Package: natbib 2009/07/16 8.31 (PWD, AO)
 \bibhang=\skip43
 \bibsep=\skip44
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count98
+\c@NAT@ctr=\count105
 )
 (./semestr√°ln√≠ projekt.aux (./1_uvod.aux) (./2_teorie.aux) (./3_analiza.aux)
 (./3_navrh.aux) (./4_realizace.aux) (./5_testovani.aux) (./6_zaver.aux)
 (./zkratky.aux))
 \openout1 = `"semestr√°ln√≠ projekt.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 133.
-LaTeX Font Info:    ... okay on input line 133.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 133.
-LaTeX Font Info:    ... okay on input line 133.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 133.
-LaTeX Font Info:    ... okay on input line 133.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 133.
-LaTeX Font Info:    ... okay on input line 133.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 133.
-LaTeX Font Info:    ... okay on input line 133.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 133.
-LaTeX Font Info:    ... okay on input line 133.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 133.
-LaTeX Font Info:    ... okay on input line 133.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 133.
-LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 135.
+LaTeX Font Info:    ... okay on input line 135.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 135.
+LaTeX Font Info:    ... okay on input line 135.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 135.
+LaTeX Font Info:    ... okay on input line 135.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 135.
+LaTeX Font Info:    ... okay on input line 135.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 135.
+LaTeX Font Info:    ... okay on input line 135.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 135.
+LaTeX Font Info:    ... okay on input line 135.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 135.
+LaTeX Font Info:    ... okay on input line 135.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 135.
+LaTeX Font Info:    ... okay on input line 135.
  (/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count99
-\scratchdimen=\dimen109
-\scratchbox=\box26
-\nofMPsegments=\count100
-\nofMParguments=\count101
-\everyMPshowfont=\toks18
-\MPscratchCnt=\count102
-\MPscratchDim=\dimen110
-\MPnumerator=\count103
-\everyMPtoPDFconversion=\toks19
-) (/usr/share/texmf-texlive/tex/latex/graphics/color.sty
+\scratchcounter=\count106
+\scratchdimen=\dimen116
+\scratchbox=\box28
+\nofMPsegments=\count107
+\nofMParguments=\count108
+\everyMPshowfont=\toks20
+\MPscratchCnt=\count109
+\MPscratchDim=\dimen117
+\MPnumerator=\count110
+\everyMPtoPDFconversion=\toks21
+)
+\AtBeginShipoutBox=\box29
+ (/usr/share/texmf-texlive/tex/latex/graphics/color.sty
 Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
 
 (/etc/texmf/tex/latex/config/color.cfg
@@ -480,7 +523,7 @@ File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package color Info: Driver file: pdftex.def on input line 130.
 )
-Package hyperref Info: Link coloring ON on input line 133.
+Package hyperref Info: Link coloring ON on input line 135.
 
 (/usr/share/texmf-texlive/tex/latex/hyperref/nameref.sty
 Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
@@ -488,16 +531,15 @@ Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
 (/usr/share/texmf-texlive/tex/latex/oberdiek/refcount.sty
 Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
 )
-\c@section@level=\count104
+\c@section@level=\count111
 )
-LaTeX Info: Redefining \ref on input line 133.
-LaTeX Info: Redefining \pageref on input line 133.
+LaTeX Info: Redefining \ref on input line 135.
+LaTeX Info: Redefining \pageref on input line 135.
 
 (./semestr√°ln√≠ projekt.out) (./semestr√°ln√≠ projekt.out)
 \@outlinefile=\write3
 \openout3 = `"semestr√°ln√≠ projekt.out"'.
 
-\AtBeginShipoutBox=\box27
 
 ************************************************
 Zvoleny jazyk: cestina
@@ -516,7 +558,7 @@ Vedouci prace: Ing. Martin Kom\IeC {\'a}rek
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2
 
 ]
-<figures/LogoCVUT.pdf, id=247, 93.34875pt x 70.2625pt>
+<figures/LogoCVUT.pdf, id=303, 93.34875pt x 70.2625pt>
 File: figures/LogoCVUT.pdf Graphic file (type pdf)
 
 <use figures/LogoCVUT.pdf> [3 <./figures/LogoCVUT.pdf>] [4
@@ -562,6 +604,10 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
  (./1_uvod.tex
 Kapitola 1.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9> on input line 3.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 3.
 ) [1
 
 
@@ -575,10 +621,6 @@ Kapitola 1.
 ]
 Kapitola 2.
 [3]
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 28.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 28.
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 33.
  (/usr/share/texmf-texlive/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
@@ -595,98 +637,136 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 
 ]
 Kapitola 3.
-[7] <figures/Actors.png, id=446, 562.1pt x 345.29pt>
+[7] [8] <figures/Actors.png, id=552, 562.1pt x 345.29pt>
 File: figures/Actors.png Graphic file (type png)
- <use figures/Actors.png>
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+<use figures/Actors.png>
+<figures/actor_base.png, id=553, 698.61pt x 314.17375pt>
+File: figures/actor_base.png Graphic file (type png)
 
-[8] [9 <./figures/Actors.png (PNG copy)>]
-<figures/DomainModel.PNG, id=467, 1488.56125pt x 1497.595pt>
-File: figures/DomainModel.PNG Graphic file (type png)
+<use figures/actor_base.png>
+<figures/actor_logged.png, id=554, 518.93875pt x 263.98625pt>
+File: figures/actor_logged.png Graphic file (type png)
 
-<use figures/DomainModel.PNG>
+<use figures/actor_logged.png> [9 <./figures/Actors.png (PNG copy)> <./figures/
+actor_base.png (PNG copy)>]
+<figures/actor_observed.png, id=561, 763.85374pt x 361.35pt>
+File: figures/actor_observed.png Graphic file (type png)
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+<use figures/actor_observed.png>
+<figures/actor_observer.png, id=562, 773.89125pt x 384.43625pt>
+File: figures/actor_observer.png Graphic file (type png)
 
+<use figures/actor_observer.png> [10 <./figures/actor_logged.png (PNG copy)> <.
+/figures/actor_observed.png (PNG copy)>]
+<figures/actor_admin.png, id=567, 791.95876pt x 831.105pt>
+File: figures/actor_admin.png Graphic file (type png)
 
-Overfull \hbox (9.41774pt too wide) in paragraph at lines 106--107
+<use figures/actor_admin.png>
+<figures/actor_root.png, id=568, 532.99126pt x 269.005pt>
+File: figures/actor_root.png Graphic file (type png)
+
+<use figures/actor_root.png>
+Underfull \vbox (badness 2772) has occurred while \output is active []
+
+ [11 <./figures/actor_observer.png (PNG copy)> <./figures/actor_admin.png (PNG 
+copy)>]
+[12 <./figures/actor_root.png (PNG copy)>]
+<figures/DomainModel2.png, id=578, 753.81625pt x 961.5925pt>
+File: figures/DomainModel2.png Graphic file (type png)
+
+<use figures/DomainModel2.png>
+Overfull \hbox (9.41774pt too wide) in paragraph at lines 162--163
 \T1/cmr/m/n/10.95 cyklu ad-min-istr·-tor ur£Ì hos-pi-to-vanou par-alelku p∞ed-m
 •tu a da-tum, kdy se hos-pi-tace uskute£nÌ. 
  []
 
-[10]) [11] [12 <./figures/DomainModel.PNG>]
+[13] [14 <./figures/DomainModel2.png (PNG copy)>]
+<figures/hospitace.png, id=587, 846.16125pt x 433.62pt>
+File: figures/hospitace.png Graphic file (type png)
+
+<use figures/hospitace.png>) [15 <./figures/hospitace.png (PNG copy)>]
 \openout2 = `3_navrh.aux'.
 
- (./3_navrh.tex
-Kapitola 4.
-[13
 
-
-
-]) [14] [15]
-\openout2 = `4_realizace.aux'.
-
- (./4_realizace.tex [16
+(./3_navrh.tex [16
 
 
 
 ]
+Kapitola 4.
+[17] [18]
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 54.
+ (/usr/share/texmf-texlive/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+) [19]) [20]
+\openout2 = `4_realizace.aux'.
+
+
+(./4_realizace.tex
 Kapitola 5.
-
-Package natbib Warning: Citation `authlogic' on page 17 undefined on input line
- 13.
-
-[17]
-
-Package natbib Warning: Citation `simpleform' on page 18 undefined on input lin
-e 20.
+[21
 
 
-Overfull \hbox (0.60579pt too wide) in paragraph at lines 28--29
+
+] [22]
+Overfull \hbox (0.60579pt too wide) in paragraph at lines 64--65
 []\T1/cmr/m/n/10.95 Zad·nÌm druhÈ it-er-ace bylo na-implementovat hod-notÌcÌ fo
 r-mul·∞e hos-pi-tacÌ. Po∫a-davkem
  []
 
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 34.
-(/usr/share/texmf-texlive/tex/latex/base/t1cmtt.fd
-File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)
-
-Package natbib Warning: Citation `guide_pa' on page 18 undefined on input line 
-34.
-
-[18] <figures/Dynamic_form.png, id=557, 372.39125pt x 354.32375pt>
+[23] <figures/Dynamic_form.png, id=701, 372.39125pt x 354.32375pt>
 File: figures/Dynamic_form.png Graphic file (type png)
 
-<use figures/Dynamic_form.png>) [19 <./figures/Dynamic_form.png (PNG copy)>]
+<use figures/Dynamic_form.png> [24 <./figures/Dynamic_form.png (PNG copy)>]
+
+LaTeX Warning: Reference `RVM' on page 25 undefined on input line 115.
+
+
+Package natbib Warning: Citation `felid_navod' on page 25 undefined on input li
+ne 117.
+
+<figures/deployment.png, id=708, 680.5425pt x 371.3875pt>
+File: figures/deployment.png Graphic file (type png)
+
+<use figures/deployment.png>
+Overfull \hbox (40.86136pt too wide) in paragraph at lines 125--126
+ [] 
+ []
+
+[25 <./figures/deployment.png (PNG copy)>]) [26]
 \openout2 = `5_testovani.aux'.
 
-
-(./5_testovani.tex [20
+ (./5_testovani.tex
+Kapitola 6.
+) [27
 
 
 
 ]
-Kapitola 6.
-) [21]
 \openout2 = `6_zaver.aux'.
 
- (./6_zaver.tex [22
+ (./6_zaver.tex [28
 
 
 
 ]
 Kapitola 7.
-) [23] (./semestr√°ln√≠ projekt.bbl [24
+) [29] (./semestr√°ln√≠ projekt.bbl [30
 
 
-] [25]) [26]
+]
+Underfull \hbox (badness 1496) in paragraph at lines 9--12
+[]\T1/cmr/m/it/10.95 Authlogic \T1/cmr/m/n/10.95 [on-line]. [cit. 2012-04-07]. 
+ Dos-tupnÈ z: <[][]$\T1/cmtt/m/n/10.95 http : / / rdoc . info / github /
+ []
+
+[31]) [32]
 \openout2 = `zkratky.aux'.
 
  (./zkratky.tex
 P\v {r}\'{\i }loha A.
-) [27
+) [33
 
 
 ]
@@ -695,32 +775,35 @@ Package natbib Warning: There were undefined citations.
 
 (./semestr√°ln√≠ projekt.aux (./1_uvod.aux) (./2_teorie.aux) (./3_analiza.aux)
 (./3_navrh.aux) (./4_realizace.aux) (./5_testovani.aux) (./6_zaver.aux)
-(./zkratky.aux)) ) 
+(./zkratky.aux))
+
+LaTeX Warning: There were undefined references.
+
+ ) 
 Here is how much of TeX's memory you used:
- 6951 strings out of 495061
- 92678 string characters out of 1182621
- 166816 words of memory out of 3000000
- 9789 multiletter control sequences out of 15000+50000
+ 7307 strings out of 495061
+ 98142 string characters out of 1182621
+ 174163 words of memory out of 3000000
+ 10081 multiletter control sequences out of 15000+50000
  19833 words of font info for 43 fonts, out of 3000000 for 9000
  32 hyphenation exceptions out of 8191
- 38i,8n,38p,850b,442s stack positions out of 5000i,500n,10000p,200000b,50000s
- </home/osman/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1095
-.600pk> </home/osman/.texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1095.600pk> </h
-ome/osman/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0900.600pk> </home/osman/.
-texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0800.600pk> </home/osman/.texmf-var/f
-onts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/osman/.texmf-var/fonts/pk/ljf
-our/jknappen/ec/ecsl1095.600pk> </home/osman/.texmf-var/fonts/pk/ljfour/jknappe
-n/ec/ecbx1095.600pk> </home/osman/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm06
-00.600pk> </home/osman/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2074.600pk> <
-/home/osman/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1440.600pk> </home/osman
-/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/osman/.texmf-var
-/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/osman/.texmf-var/fonts/pk/l
-jfour/jknappen/ec/ecrm1095.600pk> </home/osman/.texmf-var/fonts/pk/ljfour/jknap
-pen/ec/ecbx2488.600pk></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/
-cmsy10.pfb>
-Output written on "semestr√°ln√≠ projekt.pdf" (43 pages, 438126 bytes).
+ 38i,8n,38p,944b,438s stack positions out of 5000i,500n,10000p,200000b,50000s
+ </home/osman/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1095.600pk> </home/o
+sman/.texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1095.600pk> </home/osman/.texmf
+-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/osman/.texmf-var/fonts/
+pk/ljfour/jknappen/ec/ecrm0900.600pk> </home/osman/.texmf-var/fonts/pk/ljfour/j
+knappen/ec/ecrm0800.600pk> </home/osman/.texmf-var/fonts/pk/ljfour/jknappen/ec/
+ecsl1095.600pk> </home/osman/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1095.60
+0pk> </home/osman/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0600.600pk> </home
+/osman/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2074.600pk> </home/osman/.tex
+mf-var/fonts/pk/ljfour/jknappen/ec/ecti1440.600pk> </home/osman/.texmf-var/font
+s/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/osman/.texmf-var/fonts/pk/ljfour
+/jknappen/ec/ecrm1200.600pk> </home/osman/.texmf-var/fonts/pk/ljfour/jknappen/e
+c/ecrm1095.600pk> </home/osman/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2488.
+600pk></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on "semestr√°ln√≠ projekt.pdf" (49 pages, 788973 bytes).
 PDF statistics:
- 1243 PDF objects out of 1440 (max. 8388607)
- 154 named destinations out of 1000 (max. 500000)
- 485 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1467 PDF objects out of 1728 (max. 8388607)
+ 200 named destinations out of 1000 (max. 500000)
+ 637 words of extra memory for PDF output out of 10000 (max. 10000000)
 

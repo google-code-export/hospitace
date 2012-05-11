@@ -1,9 +1,14 @@
-\begin{thebibliography}{22}
+\begin{thebibliography}{25}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[aut()]{authlogic}
+\emph{Authlogic} [online]. [cit.~2012-04-07].
+\newblock Dostupn{\'{e}} z:
+  \url{http://rdoc.info/github/binarylogic/authlogic}.
 
 \bibitem[boo(2012)]{bootstrap}
 Apache HTTP server, 2012.
@@ -36,6 +41,11 @@ Apache HTTP server, 2012.
 \newblock Dostupn{\'{e}} z:
   \url{http://wiki.feld.cvut.cz/net/admin/aai/provoz/pozadavky}.
 
+\bibitem[gui()]{guide_pa}
+\emph{A Guide to Active Record Associations} [online]. [cit.~2012-04-07].
+\newblock Dostupn{\'{e}} z:
+  \url{http://guides.rubyonrails.org/association_basics.html}.
+
 \bibitem[kos(17.8.2004, last modified on 3.4.2011)]{kosapi}
 \emph{Representational state transfer. In: Wikipedia: the free encyclopedia}
   [online]. St. Petersburg (Florida): Wikipedia Foundation, 17.8.2004, last
@@ -64,6 +74,10 @@ Apache HTTP server, 2012.
 \bibitem[rub({\natexlab{b}})]{rubyonrails}
 \emph{Ruby on Rails} [online]. [cit.~2011-12-15].
 \newblock Dostupn{\'{e}} z: \url{http://rubyonrails.org/}.
+
+\bibitem[sim()]{simpleform}
+\emph{SimpleForm 2.0 + Bootstrap} [online]. [cit.~2012-04-07].
+\newblock Dostupn{\'{e}} z: \url{https://github.com/plataformatec/simple_form}.
 
 \bibitem[vyv(2012{\natexlab{a}})]{vyvy}
 Aplikace Vykazování výuky, 2012{\natexlab{a}}.
