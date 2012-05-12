@@ -6,17 +6,17 @@
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
 \bibitem[aut()]{authlogic}
-\emph{Authlogic} [online]. [cit.~2012-04-07].
+\emph{Authlogic: documentation} [online]. [cit.~2012-04-07].
 \newblock Dostupn{\'{e}} z:
   \url{http://rdoc.info/github/binarylogic/authlogic}.
 
-\bibitem[boo(2012)]{bootstrap}
-Apache HTTP server, 2012.
-\newblock \verb|http://httpd.apache.org/|.
+\bibitem[boo(2012-04-07)]{bootstrap}
+\emph{Bootstrap, from Twitter} [online]. 2012-04-07.
+\newblock Dostupn{\'{e}} z: \url{http://twitter.github.com/bootstrap/}.
 
 \bibitem[can(2012)]{cancan}
-Apache HTTP server, 2012.
-\newblock \verb|http://httpd.apache.org/|.
+\emph{CanCan: Getting Started} [online]. 2012.
+\newblock Dostupn{\'{e}} z: \url{https://github.com/ryanb/cancan}.
 
 \bibitem[coc(20.9.2007, last modified on 10.12.2011)]{coc}
 \emph{Convention over configuration. In: Wikipedia: the free encyclopedia}
@@ -37,7 +37,7 @@ Apache HTTP server, 2012.
 \newblock Dostupn{\'{e}} z: \url{http://wiki.feld.cvut.cz/net/felid/about}.
 
 \bibitem[fel(2012-02-15)]{felid_pozadavky}
-\emph{Požadavky. FELid} [online]. 2012-02-15.
+\emph{Požadavky FELid} [online]. 2012-02-15.
 \newblock Dostupn{\'{e}} z:
   \url{http://wiki.feld.cvut.cz/net/admin/aai/provoz/pozadavky}.
 
@@ -76,30 +76,31 @@ Apache HTTP server, 2012.
 \newblock Dostupn{\'{e}} z: \url{http://rubyonrails.org/}.
 
 \bibitem[sim()]{simpleform}
-\emph{SimpleForm 2.0 + Bootstrap} [online]. [cit.~2012-04-07].
+\emph{SimpleForm: Rails forms made easy} [online]. [cit.~2012-04-07].
 \newblock Dostupn{\'{e}} z: \url{https://github.com/plataformatec/simple_form}.
 
 \bibitem[vyv(2012{\natexlab{a}})]{vyvy}
-Aplikace Vykazování výuky, 2012{\natexlab{a}}.
-\newblock \verb|https://vyvy.felk.cvut.cz/|.
+\emph{Aplikace Vykazování výuky} [online]. 2012{\natexlab{a}}.
+\newblock Dostupn{\'{e}} z: \url{https://vyvy.felk.cvut.cz/}.
 
 \bibitem[vyv(2012{\natexlab{b}})]{vyvy_project}
-Stránky projektu VyVy, 2012{\natexlab{b}}.
-\newblock \verb|http://code.google.com/p/vykazovani-vyuky-cvut/|.
+\emph{Stránky projektu VyVy} [online]. 2012{\natexlab{b}}.
+\newblock Dostupn{\'{e}} z:
+  \url{http://code.google.com/p/vykazovani-vyuky-cvut/}.
 
-\bibitem[wil(2012)]{willpaginate}
-Apache HTTP server, 2012.
-\newblock \verb|http://httpd.apache.org/|.
-
-\bibitem[aPACHE SOFTWARE~FOUNDATION()]{apache}
-APACHE SOFTWARE FOUNDATION.
-\newblock \emph{Apache HTTP server 2.4} [software]. [přístup 2012-04-07].
-\newblock Dostupn{\'{e}} z: \url{http://httpd.apache.org/download.cgi}.
+\bibitem[wil(2012-04-07)]{willpaginate}
+\emph{Will\_paginate: documentation} [online]. 2012-04-07.
+\newblock Dostupn{\'{e}} z: \url{https://github.com/mislav/will_paginate/wiki}.
 
 \bibitem[Corporation()]{mysql}
 ORACLE CORPORATION.
 \newblock \emph{MySQL 5.5} [software].
 \newblock Dostupn{\'{e}} z: \url{http://dev.mysql.com/downloads/mysql/}.
+
+\bibitem[FOUNDATION()]{apache}
+APACHE SOFTWARE FOUNDATION.
+\newblock \emph{Apache HTTP server 2.4} [software]. [přístup 2012-04-07].
+\newblock Dostupn{\'{e}} z: \url{http://httpd.apache.org/download.cgi}.
 
 \bibitem[Hipp()]{sqlite}
 D. RICHARD HIPP.

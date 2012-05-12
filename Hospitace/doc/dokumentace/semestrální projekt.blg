@@ -39,30 +39,30 @@ while executing---line 1510 of file csplainnat.bst
 Warning--empty publisher in postupy
 You've used 25 entries,
             2954 wiz_defined-function locations,
-            729 strings with 7495 characters,
-and the built_in function-call counts, 6066 in all, are:
-= -- 798
+            733 strings with 7639 characters,
+and the built_in function-call counts, 6021 in all, are:
+= -- 848
 > -- 79
 < -- 9
 + -- 49
 - -- 22
-* -- 437
-:= -- 788
-add.period$ -- 78
+* -- 462
+:= -- 818
+add.period$ -- 83
 call.type$ -- 25
 change.case$ -- 43
 chr.to.int$ -- 23
 cite$ -- 85
-duplicate$ -- 311
-empty$ -- 519
+duplicate$ -- 296
+empty$ -- 439
 format.name$ -- 36
-if$ -- 1425
+if$ -- 1405
 int.to.chr$ -- 3
 int.to.str$ -- 1
-missing$ -- 56
+missing$ -- 71
 newline$ -- 117
 num.names$ -- 30
-pop$ -- 152
+pop$ -- 97
 preamble$ -- 1
 purify$ -- 34
 quote$ -- 0
