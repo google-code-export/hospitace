@@ -31,6 +31,7 @@ end
 \end{quote}
 
 \subsubsection{Role}
+\label{sec:role}
 Role pro jednotlivé uživatelé uchovávám v modelu Role. Kde jednotlivé role uživatele ukládám do bitové masky. Role v bitové masce jsou reprezentovány mocniny čísla 2 díky tomu lze skládat role pomocí bitové operace OR. V tabulce \ref{tab:role} je přehled rolí s číslem reprezentovaným bitovou masku role.
 
 \begin{table}[h]
@@ -92,23 +93,59 @@ Z důvodu možné změny hodnotících formulářů v budoucnosti. Jsem vytvoři
 
 \begin{figure}[h]
 \begin{center}
-\includegraphics[scale=0.7]{figures/Dynamic_form}
+\includegraphics[scale=0.6]{figures/Dynamic_form}
 \caption{Doménový model dynamických formulářů}
 \label{fig:dynamicform}
 \end{center}
 \end{figure}
 
+Hodnotící formuláře se generuji podle šablony formuláře získané z databáze. Šablona je reprezentovaná modelem \verb|FormTemplate|. Tato šablona obsahuje veškeré informace potřebné pro definování chování formuláře. Mezi základní vlastnosti, které definuje šablona, patří název, popis a kód. Kód šablony je velmi důležitý vlastnost, definuje skupinu kam patří formulář. Skupiny formulářů jsou rozděleny podle druhu formuláře a ty popisuji v sekci hodnocení výuky \ref{sec:formulare}. Formuláře jsou rozdělené do skupin protože se časem mohou upravovat a nemůžu si dovolit upravit již vytvořenou šablonu. Mohlo by nastat ztráta dat ve vyplněných formulářích, proto musím se musí vždy vytvořit nová šablona.  
+
+Šablona formuláře definuje také postupné hodnocení. Pro otevření dalšího formuláře se musí splnit několik podmínek:
+
+\begin{list}{}{}
+\item Povinný formulář musí být vyplněn a také musí splnit podmínku pro minimální počet. V jiném případě není potřeba vyplnit žádný formulář.
+\item Minimální počet lze definovat buď přesným počtem, nebo dynamicky podle asociace. Kde minimální počet mi definuje počet instancí v asociaci. Počet vytvořených formulářů se počítá pouze z jednoho hodnocení hospitace.
+\item Hospitující i hospitovaný může vyplnit maximálně jeden formulář.
+\end{list}
+
+U dynamických formulářů jsem musel také řešit, jejich chování pro různé role v systému. Proto jsem přidal do šablony dvě bytové masky jednu pro zobrazování a druhou pro vyplňování formulářů. Používám zde princip pro identifikaci rolí viz. \ref{sec:role}.
+
+Protože formulář Práva pro vytváření i zobrazování formulářů jsem použil stejný způsob identifikace rolí, který využívám pro role osob. Jsou obsaženy v šabloně Používám dvě masky v  jedna  identifikuje role pro tvorbu formulářů a druhá definuje role které mohou zobrazit formulář.
+
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{|l|c|l|}
+
+\hline
+\textbf{Typ} & \textbf{Návratová hodnota} & \textbf{Popis} \\ \hline
+label &  & textový popisek \\\hline
+integer & číslo & vstupní element pro čísla \\ \hline
+text & text & formulář pro psaní textů \\\hline
+text/file & text & formulář pro psaní textů s možností \\ & &  nahrání souboru s naskenovaným formulářem \\\hline
+ranking\_table &  & tabulka pro hodnocení, může obsahovat několik \\ & & elementů typu \verb|ranking| \\\hline
+column\_table & & tabulka do které se vkládají jiné elementy \\ & &  po sloupcích \\\hline
+ranking & [A,B,C,D,E,F] & vstupní element pro zadávaní známkování  \\ & &   od A do F \\\hline
+ranking\_scale & & tabulka s hodnotící stupnicí \\\hline
+note & text & vstupní element pro napsání textové poznámky \\\hline
+
+\end{tabular}
+\caption{Seznam typů elementů}
+\label{tab:elements}
+\end{center}
+\end{table}
+
+Pro vygenerování obsahu formuláře používám položky formuláře reprezentované modelem \verb|EntryTemplate|. Položky formuláře definuje co se má vykreslit a kde. Umístění jednotlivých položek v dokumentu je definované ve stromové struktuře. Kde kořenem stromu je šablona formuláře a ta se postupně větví přes asociaci podpoložka. Co se má vykreslit je definované atributem typu elementu. Seznam podporovaných typů elementů a jejich vlastnosti jsou vypsány v tabulce \ref{tab:elements}. Samotné generování obsahu není složitý proces. Celý formulář se sestaví hierarchicky i s hodnotami z modelu \verb|Entry|.
+
+Nestačí nám pouze vygenerovat formululář ale potřebujeme i uložit jeho hodnoty do databáze o to se starají modely \verb|Form| a \verb|Entry|. Model \verb|Form| složí pro identifikaci konkrétního vyplněného formuláře. Jednotlivé hodnoty z vyplněného formuláře jsou uložené v \verb|Entry|.
+
 \subsection{Výstup} 
-Výstupem této iterace byla aplikace, která již využívala pouze svoji databázi pro zdroj dat a prototyp dynamických formulářů s nadefinovanými hodnotícími formuláři.
+Výstupem této iterace byla aplikace, která již využívala pouze svoji databázi pro zdroj dat z KOSu a dynamických formulářů s nadefinovanými šablonami hodnotících formulářů.
 
 \section{Třetí iterace}
 \subsection{Zadání}
-Zadáním třetí iterace bylo připravit server pro nasazení aplikace a zprovoznit službu Shibboleth pro FELid.
-Mezi dalšími požadavky bylo zprovoznit automatické zálohování databáze.
-
-%připravit server pro felid(instalace apache, passenger, rvm, shibboleth), nasazení aplikace, uprava požadavků z konzultací
-%sheduled zálohování databáze
-%script pro aktualizaci dat v databázi
+Zadáním třetí iterace bylo připravit server pro službu Shibboleth pro FELid. Dalším požadavkem bylo zprovoznění automatické zálohování databáze.
 
 \subsection{Postup}
 \subsubsection{Nasazení aplikace}
@@ -122,7 +159,7 @@ Do apache jsem musel nainstalovat dva zásuvné moduly. Jeden pro podporu rails 
 
 \begin{figure}[h]
 \begin{center}
-\includegraphics[scale=0.7]{figures/deployment}
+\includegraphics[width=12cm]{figures/deployment}
 \caption{Diagram nasazení}
 \label{fig:deployment}
 \end{center}

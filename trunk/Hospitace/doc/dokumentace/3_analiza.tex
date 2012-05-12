@@ -30,6 +30,7 @@ Tato sekce se zabývá požadavky na funkčnost systému.
 \item Systém umožní upravovat strukturu hodnotících dokumentů.
 \item Systém umožní spravovat emailové šablony k hodnotících dokumentů.
 \item Systém umožní generovat emailové zprávy ze šablon.
+\item Systém bude automaticky zálohovat databázi.
 \end{enumerate}
 
 \newpage 
@@ -123,23 +124,25 @@ Popis domény jsem pro přehlednost rozdělil podle zdroje na dvě základní sk
 \label{sec:domeny_kosapi} 
 \subsection{Domény z KOSapi}
 \begin{itemize}
-\item Osoba - informace o osobě nacházející se na FEL. Každá osoba může být učitelem a studentem.
-\item Semestr - informace o jednotlivých semestrech. 
-\item Předmět - jednotlivé předměty vyučované na FEL.
+\item Osoba - je osoba v KOSu. Každá osoba může být učitelem a studentem.
+\item Semestr - semestr vyučovaný na FEL. 
+\item Předmět - předměty vyučované na FEL.
 \item Instance předmětu - jsou instance předmětu vypsané v konkrétním semestru.
 \item Paralelka - je vypsaná rozvrhová paralelka pro instanci předmětu.
-\item Místnost - informace o místech, kde probíhá výuka předmětů
+\item Místnost - místnost na FEL
 \end{itemize}
 
 \subsection{Domény aplikace}
 \begin{itemize}
 \item Hospitace - obsahuje informace o naplánování hospitace. 
-\item Poznámka - je textová poznámka pro hospitaci napsaná uživatelem.
+\item Poznámka - je textová poznámka k plánování hospitace.
+\item Hodnocení - reprezentuje informace z proběhlé hospitace hospitace, jsou to informace o datu vykonání hospitace, hospitujícím, předmětu a garantovi.
 \item Příloha - je připojený datový soubor k hodnocení hospitace.
-\item Formulář - je vyplněný formulář pro hospitaci.
-\item Hodnota - je vyplněná hodnota jedné formulářové položky.
-\item Typ formuláře - udává formát dokumentu, který se používá pro hospitace. 
-\item Položka - je šablona jedné položky ve formuláři.
+\item Šablona formuláře - šablona pro tvorbu formulářů. Definuje vlastnosti jakým se budou vytvářet hodnotící formuláře.
+\item Položka - položka reprezentuje jednotlivé segmenty formuláře. Tyto segmenty pak v celku definují strukturu formuláře.
+\item Formulář - vyplněný hodnotící formulář.
+\item Hodnota - je hodnota z vyplněného formuláře. Ta se ukládá z položky formuláře.
+\item Šablona emailu - šablona emailu ze které se budou generovat emailové zprávy.
 \end{itemize}
 
 \begin{figure}[p]

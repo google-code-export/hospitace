@@ -91,18 +91,29 @@ DELETE /observations/1
 \end{quote}
 
 \section{Struktura aplikace}
-
+V této sekci popíšu základní strukturu aplikace. Struktura aplikace je vygenerovaná pomocí generátorů v Ruby on Rails a proto nepopíšu celou strukturu, ale pouze části aplikace, které byli nejdůležitější pro vývoj aplikace. Na obrázku \ref{tree:hospitace} je popsaná strukturu složek a k nim v popisku jejich obsah.
 
 \begin{figure}[h]
 	\dirtree{%
-		.1 root.
-		.2 readme.txt\DTcomment{stručný popis obsahu CD}.
-		.2 exe\DTcomment{adresář se spustitelnou formou implementace}.
-		.2 required\DTcomment{potřebné programy pro spuštění}.
-		.2 src.
-		.3 impl\DTcomment{zdrojové kódy implementace}.
-		.3 thesis\DTcomment{zdrojová forma práce ve formátu \LaTeX{}}.
-		.2 text\DTcomment{text práce}.
-		.3 thesis.pdf\DTcomment{text práce ve formátu PDF}.
+		.1 Hospitace/.
+		.2 app/.
+		.3 assets/ \DTcomment{obsahuje obrázky, JavaScript, CSS}.
+		.3 controllers/ \DTcomment{controllers aplikace}.
+		.3 helpers/ \DTcomment{pomocné funkce pro vytváření pohledů}.
+		.3 inputs/ \DTcomment{speciální vstupní položky pro tvorbu formulářů}.
+		.3 mailers/ \DTcomment{třídy které generují a odesílají emaily}.
+		.3 models/ \DTcomment{modely aplikace}.
+		.3 views/ \DTcomment{šablony aplikace}.		
+		.2 lib/\DTcomment{rozšíření a moduly pro aplikaci}.
+		.3 email\_templates/ \DTcomment{modul pro generování emailů}.
+		.3 tasks/ \DTcomment{obsahuje rake scripty}.
+		.3 kosapi/ \DTcomment{knihovna pro připojení ke KOSapi}.
+		.3 will\_paginate/ \DTcomment{rozšíření pro modul will\_paginate}.
+		.2 public/ \DTcomment{složka, která je přístupná přes web. Obsahuje statické soubory}.
+		.2 config/ \DTcomment{konfigurační soubory a směrování}.		
+		.2 db/ \DTcomment{schéma databáze a databázové migrace}. 
+		.2 test/\DTcomment{testy, testovací data a nástroje pro testování aplikace}.
 	}
+	\caption{Struktura aplikace}
+\label{tree:hospitace}
 \end{figure}
