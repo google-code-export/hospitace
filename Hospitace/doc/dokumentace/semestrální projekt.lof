@@ -3,20 +3,22 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Akt\IeC {\'e}\IeC {\v r}i}}{9}{figure.3.1}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Use case - nep\IeC {\v r}ihl\IeC {\'a}\IeC {\v s}en\IeC {\'y} u\IeC {\v z}ivatel}}{9}{figure.3.2}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Use case - p\IeC {\v r}ihl\IeC {\'a}\IeC {\v s}en\IeC {\'y} u\IeC {\v z}ivatel}}{10}{figure.3.3}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Use case - hospitovan\IeC {\'y}}}{10}{figure.3.4}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Use case - hospituj\IeC {\'\i }c\IeC {\'\i }}}{11}{figure.3.5}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Use case - administr\IeC {\'a}tor hospitac\IeC {\'\i }}}{11}{figure.3.6}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Use case - administr\IeC {\'a}tor}}{12}{figure.3.7}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Dom\IeC {\'e}nov\IeC {\'y} model}}{14}{figure.3.8}
-\contentsline {figure}{\numberline {3.9}{\ignorespaces \IeC {\v Z}ivot hospitace}}{16}{figure.3.9}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Akt\IeC {\'e}\IeC {\v r}i}}{8}{figure.3.1}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Dom\IeC {\'e}nov\IeC {\'y} model}}{11}{figure.3.2}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces \IeC {\v Z}ivot hospitace}}{13}{figure.3.3}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Struktura aplikace}}{20}{figure.4.1}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Struktura aplikace}}{19}{figure.4.1}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {5.1}{\ignorespaces Dom\IeC {\'e}nov\IeC {\'y} model dynamick\IeC {\'y}ch formul\IeC {\'a}\IeC {\v r}\IeC {\r u}}}{24}{figure.5.1}
 \contentsline {figure}{\numberline {5.2}{\ignorespaces Diagram nasazen\IeC {\'\i }}}{27}{figure.5.2}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Struktura zna\IeC {\v c}ky}}{29}{figure.5.3}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {B.1}{\ignorespaces Use case - nep\IeC {\v r}ihl\IeC {\'a}\IeC {\v s}en\IeC {\'y} u\IeC {\v z}ivatel}}{39}{figure.B.1}
+\contentsline {figure}{\numberline {B.2}{\ignorespaces Use case - p\IeC {\v r}ihl\IeC {\'a}\IeC {\v s}en\IeC {\'y} u\IeC {\v z}ivatel}}{40}{figure.B.2}
+\contentsline {figure}{\numberline {B.3}{\ignorespaces Use case - hospitovan\IeC {\'y}}}{40}{figure.B.3}
+\contentsline {figure}{\numberline {B.4}{\ignorespaces Use case - hospituj\IeC {\'\i }c\IeC {\'\i }}}{41}{figure.B.4}
+\contentsline {figure}{\numberline {B.5}{\ignorespaces Use case - administr\IeC {\'a}tor}}{41}{figure.B.5}
+\contentsline {figure}{\numberline {B.6}{\ignorespaces Use case - administr\IeC {\'a}tor hospitac\IeC {\'\i }}}{42}{figure.B.6}

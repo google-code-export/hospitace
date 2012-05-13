@@ -1,8 +1,6 @@
 \chapter{Realizace}
 Po dohodě s vedoucím práce byl zvolen iterační vývoj aplikace. Za účelem postupného vyvíjený částí aplikace, tak aby bylo možné testovat aplikaci na letním semestru 2011/2012. V této kapitole popisuji jednotlivá zadání každé iterace. Jak jsem postupoval k vyřešení zadání a výstupy z jednotlivých iterací. Jednotlivé iterace byly prezentovány na konzultacích s vedoucím práce.
 
-pužité nástroje pro realizaci jsem použil vývojové prostředí netbeans + vedení projektu používám google code. Kde se nachází základ projektu.
-
 \section{První iterace}
 \subsection{Zadání}
 Tato iterace patřila k nejobsáhlejším ze všech iterací. Jedním z důvodů bylo  seznámení z novou technologii Ruby on Rails, s kterou jsem neměl zkušenost. První iterace měla za cíl navrhnout a vytvořit základní architekturu aplikace s napojením na KOSapi \cite{kosapi} a k tomu vytvořit funkční část aplikace pro plánování hospitací, tak abych mohl prezentovat funkčnost.
@@ -12,10 +10,10 @@ Tato iterace patřila k nejobsáhlejším ze všech iterací. Jedním z důvodů
 Protože aplikace využívá dva datové zdroje KOSapi viz. \ref{kosapi} a databázi aplikace, bylo potřeba nejdřív vyřešit jak se připojit ke KOSapi. V této části vycházím z prototypu aplikace pro správu hospitací. Kde využívá již naprogramovanou knihovnu z projektu VyVy \cite{vyvy}. Poté bylo potřeba vytvořil modely tak, aby umožnily komunikaci mezi KOSapi a databází aplikace. Při implementování knihovny do aplikace jsem musel vyřešit lokalizaci jazykových konstant v date získaných z API. Vyřešil jsem to rozšířením knihovny o podporu modul i18n\footnote{lokalizace softwaru pro různé jazyky a jejich místních zvyklostí}, který je součástí Rails.
 
 \subsubsection{Autentizace}
-Pro autentizaci, v této fázi vývoje, používám modul authlogic, který jsem zprovoznil pomocí návodu \cite{authlogic}. Tento modul používám jen dočasně pro vývoj aplikace. Ve finální fázi bude nahrazen autentizační službou FELid viz. \ref{felid}, kterou lze zprovoznit jen na serveru, kde bude aplikace nasazena. 
+Pro autentizaci, v této fázi vývoje, používám knihovnu authlogic, kterou jsem zprovoznil pomocí návodu \cite{authlogic}. Tuto knihovnu používám jen dočasně pro vývoj aplikace. Ve finální fázi bude nahrazen autentizační službou FELid viz. \ref{felid}, kterou lze zprovoznit jen na serveru, kde bude aplikace nasazena. 
 
 \subsubsection{Autorizace}
-Autentizace v hospitacích je jedena z kritických oblastí, kterou bylo potřeba vyřešit hned na začátku vývoje. V aplikaci potřebuji autentizovat uživatele podle role, tak i podle vztahu k hospitaci. Proto jsem hledal modul, který by dokázal nadefinovat pravidla autentizace. Modul, který jsem použil, se jmenuje CanCan \cite{cancan} . Tento modul má velmi jednoduchý a přesto flexibilní zápis pravidel, které dokáží filtrovat jak podle zdroje tak i podle jednotlivých záznamů, dokáže filtrovat controllery tak i zdroje aplikace.  Veškerá pravidla jsou definována na jednom místě\footnote{model Ability}.
+Autentizace v hospitacích je jedena z kritických oblastí, kterou bylo potřeba vyřešit hned na začátku vývoje. V aplikaci potřebuji autentizovat uživatele podle role, tak i podle vztahu k hospitaci. Proto jsem hledal modul, který by dokázal nadefinovat pravidla autentizace. Knihovnu, kterou jsem použil, se jmenuje CanCan \cite{cancan} . Tato knihovna má velmi jednoduchý ale i přesto flexibilní zápis pravidel, která dokáží filtrovat jak podle zdroje tak i podle jednotlivých záznamů, dokáže filtrovat controllery tak i zdroje aplikace.  Veškerá pravidla jsou definována na jednom místě\footnote{model Ability} aplikace.
 
 \begin{quote}
 Příklad zapsaného pravidla pomocí CanCan v modelu Ability. Pravidlo slouží pro administrátora hospitací a umožní mu zobrazovat, vytvářet, upravovat a mazat ze zdroje Observation. Zároveň zakáže tyto operace pro záznamy, které nevytvořil.
@@ -145,17 +143,14 @@ Výstupem této iterace byla aplikace, která již využívala pouze svoji datab
 
 \section{Třetí iterace}
 \subsection{Zadání}
-Zadáním třetí iterace bylo připravit server pro službu Shibboleth pro FELid. Dalším požadavkem bylo zprovoznění automatické zálohování databáze.
+Zadáním třetí iterace bylo připravit server pro službu FELid. Dalším požadavkem bylo zprovoznění automatické zálohování databáze.
 
 \subsection{Postup}
 \subsubsection{Nasazení aplikace}
-V této fázi bylo potřeba připravit server na nasazení aplikace. Na obrázku \ref{fig:deployment} jde vidět diagram nasazení serveru. Pro podporo rails jsem použil software RVM \ref{RVM} pro spravování verzí ruby a gemsets.
+Na diagramu nasazení \ref{fig:deployment} jsou znázorněné komponenty potřebných pro rozjetí aplikace. Protože na serveru byly nainstalovány pouze webový server Apache HTTP Server a databázový systém Mysql, bylo potřeba nainstalovat platformu Ruby a framework Ruby on Rail. K instalaci Ruby jsem se rozhodl použít software RVM. Instalaci jsem provedl podle návodu pro více uživatelskou instalaci \cite{RVM}. Ten umožní nainstalovat různé platformy Ruby na jednom počítači. Mezi další přínosem je spravování gemsets\footnote{balíky knihoven mezi kterými lze přepínat pro různé aplikace}, díky nim lze zprovoznit několik aplikací zároveň na jednom počítači bez problému. Do nainstalovaného webového serveru bylo potřeba ještě přidat zásuvný modul, který umožní nasadit Rails aplikace. Modul se jmenuje Passanger (mod\_rails) a instaloval jsem ho podle návodu pro instalaci do Apache \cite{passenger}.
 
-Do apache jsem musel nainstalovat dva zásuvné moduly. Jeden pro podporu rails aplikací Passanger a pro zprovoznění FELid modul Shibboleth. Pro samotnou konfiguraci Shibbolethu jsem postupoval pomocí návodu na stránkách FELid \cite{felid_navod}.
-
-%Na serveru bylo potřeba nainstalovat platformu Ruby a framework Ruby on Rails. A pro to jsem se rozhodl využit software RVM. Ten umožní nainstalovat různé platformy Ruby na jednom počítači. Mezi další přínosem je vytváření setů knihoven a přepínaná mezi nimi. Díky tomuto programu lze na serveru rozjet několik aplikací na Ruby aniž by nastávaly kolize v knihovnách.
-
-%protože jsem se rozhodnu pro webový server Apache HTTP server 2. Musel jsem do něj nainstalovat dva zásuvné moduly. Jedním znich byl modul Passanger (mod_rails). Slouží pro nasazení Rails aplikací na apache.
+\subsubsection{FElid}
+Pro zprovoznění služby FELid, bylo potřeba splnit několik požadavků. Tyto požadavky jsou umístěny na oficiálních stránkách služby \cite{felid_pozadavky}. Jeden z požadavků je zprovoznění programu, který zajistí komunikaci se službou FELid. Tento program se jmenuje Shibboleth a obsahuje zásuvný modul do webového serveru mod\_shib. Konfiguraci programu jsem postupoval podle návodu, který se nachází na wiki stránkách FELid \citep{felid}. Po splnění všech požadavků stačilo jen zažádat o zaregistrování aplikace.
 
 \begin{figure}[h]
 \begin{center}
@@ -166,13 +161,89 @@ Do apache jsem musel nainstalovat dva zásuvné moduly. Jeden pro podporu rails 
 \end{figure}
 
 \subsubsection{Záloha databáze}
-Pro automatické zálohování databáze jsem použil existující ruby aplikaci pro zálohování. Tato aplikace každý den vytvoří zálohu databáze, kterou uloží na disk. Na disku uchovává 300 záloh databáze , při překročení počtu záloh se starší zálohy nahrazují novými. Výhodou tohoto řešení je podpora různých databázových systémů a možnost ukládat zálohy na externích uložiště\footnote{pro příklad Amazon Simple Storage Service (S3)} pro uchování záloh. Záloha se spouští pomocí příkazu v konzoli:
+Pro automatické zálohování databáze jsem použil existující ruby aplikaci pro zálohování. Tato aplikace každý den vytvoří zálohu databáze, kterou uloží na disk. Na disku uchovává 300 záloh databáze , při překročení počtu záloh se starší zálohy nahrazují novými. Výhodou tohoto řešení je podpora různých databázových systémů a možnost ukládat zálohy na externích uložiště\footnote{pro příklad Amazon Simple Storage Service (S3)} pro uchování záloh. Záloha se spouští pravidelně každý den brzo ráno pomocí příkazu v konzoli:
 \begin{verbatim}
 backup perform --trigger backup
 \end{verbatim} 
 
-\subsubsection{Cron úlohy}
-
-
 \subsection{Výstup} 
+V této iteraci jsem se mi podařilo zprovoznit aplikaci na serveru a otestovat její funkčnost. Také jsem pracoval na programu, který jsem upravoval podle získaných připomínek od vedoucího práce.
 
+\section{Čtvrtá iterace}
+\subsection{Zadání}
+Tato iterace je poslední a tím většinu zadání tvořily připomínky od vedoucího práce. Hlavními úkoly v této iteraci je vytvořit modul, který bude generovat emailové zprávy po vyplnění hodnotícího formuláře a integrovat autentizaci přes FELid. 
+\subsection{Postup}
+\subsubsection{Autentizace}
+V této fázi vývoje byla aplikace zaregistrovaná ve FELid. Před integrování autentizace přes FELid, je potřeba otestovat aplikaci. Nejdůležitější je otestovat správnou funkčnost práv pro různé role. Pro zprovoznění autentizace přes FELid mužné jednoduše testovat aplikaci pod různými uživateli. Od zprovoznění nebudu mít totiž kontrolu nad autentizací, tu zařizuje služba FELid.
+
+Integrace do aplikace je pak velmi jednoduchá. Stačilo jen odstranit dočasný způsob autentizace, který jsem implementoval v první iteraci. Systému FElid poskytuje informace o přihlášeném uživately prostřednictvím atributů v \verb|request.env|. Pro identifikaci přihlášeného uživatele používám atribut \verb|felid-uid| ve kterém se nachází uživatelské jméno. Autentizaci v aplikaci se stará jen jedna funkce \verb|current_user_session|.
+
+\begin{quote}
+\begin{verbatim}
+def current_user_session
+    return @user if defined?(@user)
+    if not request.local? and not request.env["felid-uid"].nil? 
+      and @user.nil? 
+    then
+      @user = People.find_by_username request.env["felid-uid"]
+    end
+    return @user
+end
+\end{verbatim} 
+\end{quote}
+
+\subsubsection{Emaily}
+Jeden z požadavků bylo odesílání emailových zpráv po vyplnění hodnotícího formuláře. Součástí zadaná je generování emailů ze šablon. Ty půjde upravovat. Šablona se skládá z přemětu, textu zprávy a název akce. Akce v systému mohou být různých druhů, podle zadání stačilo pouze implementovat akce pro vytvoření formulářů. Při vykonání akce se vygeneruje emailová správa ze šablony emailu.
+
+\subsubsection{Generátor obsahu emailových zpráv}
+Protože je potřeba generovat do emailu proměnná data v hospitací. Tak jsem vytvořil modul \verb|EmailTemplates| pro generování emailů. Úkolem modulu je nahradit značky v textu za skutečná data. Pro vložení generovaných dat se používá zápis \verb|%značka%| do textu zprávy. 
+\begin{quote}
+Příklad vygenerování jednoduchého emailu se značkou pro kód předmětu.
+\begin{verbatim}
+text %course_code% => text A7B36ASS
+\end{verbatim} 
+\end{quote}
+
+Při vývoji modulu jsem si dal za cíl vytvořit takový modul který by umožnil jednoduše nastavovat podporované značky. Největším zádrhelem v generování obsahu zprávy je v získání dat z hospitací. Vstupem do generátoru je pouze instance šablony a hodnocení hospitace. Ostatní data je potřeba získat z různých asociací.
+
+Modul obsahuje dva pod moduly. Prvním části je modul \verb|ModelHelper|, který slouží pro rozšíření libovolného modelu v aplikaci. Rozšíření umožní pomocí metody \verb|attrs_tagged(*args)| povolit atributy, které bude možné použít pro generování emailu. 
+
+\begin{quote}
+Příklad jednoduchého nastavení modelu \verb|Person|, které umožní generátoru emailů vkládat jméno, emailovou adresu a uživatelské jméno.
+\begin{verbatim}
+class Person < ActiveRecord::Base
+  include EmailTemplates::Tagged::ModelHelpers
+    attrs_tagged :name, :email, :username
+end
+\end{verbatim} 
+\end{quote}
+
+Druhou částí je modul \verb|EmailBuilder|. Tento modul pomáhá si vytvořit vlastní generátor pomocí jednoduchého nastavování. Modul poskytuje metodu \verb|source(model,name,*path)| pro nastavení jednotlivých zdrojů dat. Metoda využívá k nastavení generátoru nastavení z modelu, který byl rozšířen modulem \verb|ModelHelper|, název zdroje a cestu k instancím modelu s daty. Cesta je definovaná posloupností asociací mezi modely. 
+
+\begin{quote}
+Příklad implementace jednoduchého generátoru \verb|EmailBuilder|, který dokáže vkládat do emailů informace o hospitovaném učitely. 
+\begin{verbatim}
+class EmailBuilder
+  include Tagged::EmailBuilder
+  source Person, :teacher, :evaluation, :teacher
+end
+\end{verbatim} 
+Tento generátor bude podporovat tři značky \verb|%teacher_name%|, \verb|%teacher_email%| a \verb|%teacher_username%|. Tímto způsobem lze jednoduše nadefinovat velké množství značek.
+\end{quote}
+
+Struktura značky \ref{fig:znacka} se skládají ze dvou základních částí ze jména zdroje a jména atributu, ze kterého generátor získá data pro nahrazení značky. 
+\begin{figure}[h]
+\Tree [.\%teacher\_name\% [.teacher (zdroj) ]  [.name (atribut) ] ]
+\caption{Struktura značky}
+\label{fig:znacka}
+\end{figure}
+
+Výhodou tohoto modulu je krátký zápis a jednoduché nastavování generátoru. V aplikaci jsem celkem nadefinoval pro 9 zdrojů 32 značek.
+ 
+\subsubsection{Odesílání emailů}
+Podle zadání stačilo implementovat odesílání zpráv po akci vytvoření hodnotícího formuláře. Podle druhu hodnotícího formuláře se vygeneruje zpráva a odešle se administrátorovy hospitace, hospitujícím, hospitovaným garantovi předmětu a vedoucímu katedry. 
+
+Z časových a technických problémů se mi nepodařilo zprovoznit emailový server pro odesílání emailů, proto dočasně používám k odesílání emailový účet hospitace-FEL-CVUT@gmail.com na Gmail.
+
+\subsection{Výstup}
+Výstupem z této iterace je finální aplikace, které splnila všechny hlavní požadavky. 
