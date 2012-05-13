@@ -9,12 +9,12 @@ A level-1 auxiliary file: 5_testovani.aux
 A level-1 auxiliary file: 6_zaver.aux
 The style file: csplainnat.bst
 A level-1 auxiliary file: zkratky.aux
+A level-1 auxiliary file: priloha.aux
 Database file #1: reference.bib
 Repeated entry---line 78 of file reference.bib
  : @online{kosapi
  :               ,
 I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "felid_navod"
 Warning--to sort, need author or key in rubyonrails
 Warning--to sort, need author or key in ruby
 Warning--to sort, need author or key in vyvy_project
@@ -32,50 +32,51 @@ Warning--to sort, need author or key in bootstrap
 Warning--to sort, need author or key in simpleform
 Warning--to sort, need author or key in willpaginate
 Warning--to sort, need author or key in guide_pa
+Warning--to sort, need author or key in RVM
 `address' is a missing field, not a string, for entry postupy
 while executing---line 1510 of file csplainnat.bst
 `publisher' is a missing field, not a string, for entry postupy
 while executing---line 1510 of file csplainnat.bst
 Warning--empty publisher in postupy
-You've used 25 entries,
+You've used 26 entries,
             2954 wiz_defined-function locations,
-            733 strings with 7639 characters,
-and the built_in function-call counts, 6021 in all, are:
-= -- 848
+            737 strings with 7686 characters,
+and the built_in function-call counts, 6232 in all, are:
+= -- 881
 > -- 79
 < -- 9
-+ -- 49
++ -- 50
 - -- 22
-* -- 462
-:= -- 818
-add.period$ -- 83
-call.type$ -- 25
-change.case$ -- 43
-chr.to.int$ -- 23
-cite$ -- 85
-duplicate$ -- 296
-empty$ -- 439
+* -- 480
+:= -- 842
+add.period$ -- 86
+call.type$ -- 26
+change.case$ -- 44
+chr.to.int$ -- 24
+cite$ -- 89
+duplicate$ -- 306
+empty$ -- 455
 format.name$ -- 36
-if$ -- 1405
+if$ -- 1457
 int.to.chr$ -- 3
 int.to.str$ -- 1
-missing$ -- 71
-newline$ -- 117
+missing$ -- 74
+newline$ -- 121
 num.names$ -- 30
-pop$ -- 97
+pop$ -- 101
 preamble$ -- 1
-purify$ -- 34
+purify$ -- 35
 quote$ -- 0
-skip$ -- 258
+skip$ -- 267
 stack$ -- 0
-substring$ -- 67
-swap$ -- 30
+substring$ -- 70
+swap$ -- 31
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 270
-warning$ -- 18
+type$ -- 281
+warning$ -- 19
 while$ -- 19
 width$ -- 0
-write$ -- 282
+write$ -- 292
 (There were 3 error messages)

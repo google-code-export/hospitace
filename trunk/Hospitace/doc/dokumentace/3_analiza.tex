@@ -1,8 +1,8 @@
 \chapter{Analýza}
-Tato kapitola pojednává o analýze a návrhu vhodného řešení aplikace. Výstupem této analýzy jsou funkční a obecné požadavky. Dále návrh a popis domén a nejdůležitější případy užití s aktéry. 
+Tato kapitola pojednává o analýze. Výstupem této části jsou funkční, obecné požadavky, doménový model, aktéři a k nim případy užití.
 
 \section{Požadavky}
-Požadavky na systém se dělí na dvě sekce: obecné a funkční požadavky. Pro definování těchto požadavků jsem vycházel z oficiálního zadání práce tak i z prototypu aplikace, protože mi přesně definuje návrh aplikace a pro implementaci systému i potřebné technologie.
+Požadavky na systém se dělí na dvě sekce: obecné a funkční požadavky. Pro definování těchto požadavků jsem převzal z prototypu aplikace \citep{prototyp_documentace} a rozšířil jsem je. Tyto požadavky mi definují návrh aplikace a pro technologie potřebné pro implementaci systému.
 
 \subsection{Obecné požadavky}
 Obecné požadavky se netýkají funkčnosti, ale celkového návrhu a použitých technologií.
@@ -10,35 +10,36 @@ Obecné požadavky se netýkají funkčnosti, ale celkového návrhu a použitý
 \item Systém bude postaven na webovém frameworku Ruby on Rails.
 \item Systém bude webovou aplikací.
 \item Systém bude používat webovou službu KOSapi.
-\item Systém bude pro autentizaci používat FELid.
+\item Systém bude pro autentizaci používat aplikaci FELid.
 \end{enumerate}
 
 \subsection{Funkční požadavky}
 Tato sekce se zabývá požadavky na funkčnost systému.
 \begin{enumerate}
-\item Systém umožní spravovat uživatele.
-\item Systém umožní průběžné plánování hospitaci.
-\item Systém umožní hospitujícímu i hospitovanému prohlížet hospitace \cite{prototyp_documentace}.
-\item Systém umožní vystavit závěrečné hodnocení na veřejné části aplikace \cite{prototyp_documentace}. 
-\item Systém umožní hospitovanému sepsat stanoviska k názorům hospitujícího \cite{prototyp_documentace}.
-\item Systém umožní hospitujícímu nahrát naskenovaný dokument hodnocení výuky \cite{prototyp_documentace}.
-\item Systém umožní hospitujícímu napsat slovní hodnocení z výuky \cite{prototyp_documentace}.
-\item Systém umožní hospitujícímu napsat závěrečné shrnutí hospitace \cite{prototyp_documentace}.
-\item Systém bude odesílat emailem zprávy o vyplnění hodnotícího dokumentu příslušným osobám \cite{prototyp_documentace}.
+\item Systém umožní průběžně plánovat hospitace.
+\item Systém umožní hospitujícímu i hospitovanému prohlížet hospitace.
+\item Systém umožní vystavit závěrečné hodnocení na veřejné části aplikace. 
+\item Systém umožní hospitovanému sepsat stanoviska k názorům hospitujícího.
+\item Systém umožní hospitujícímu nahrát naskenovaný dokument Hodnocení výuky.
+\item Systém umožní hospitujícímu napsat slovní hodnocení z výuky.
+\item Systém umožní hospitujícímu napsat závěrečné shrnutí hospitace.
+\item Systém bude odesílat informační emailem zprávy při vyplnění hodnotícího dokumentu.
 \item Systém umožní vyhledávat předměty z KOSapi.
 \item Systém umožní vyhledávat osoby z KOSapi.
-\item Systém umožní upravovat strukturu hodnotících dokumentů.
-\item Systém umožní spravovat emailové šablony k hodnotících dokumentů.
-\item Systém umožní generovat emailové zprávy ze šablon.
+\item Systém umožní upravovat strukturu hodnotících formulářů.
+\item Systém umožní spravovat emailové šablony.
+\item Systém umožní generovat emailové zprávy ze emailových šablon.
 \item Systém bude automaticky zálohovat databázi.
 \end{enumerate}
 
-\newpage 
 \section{Uživatelské role}
 V systému je celkem 7 uživatelských rolí. Definoval jsem tři základní uživatelské role, které jsou základem systému: nepřihlášený uživatel, přihlášený uživatel, administrátor hospitací a admin. Další dvě role hospitovaný a hospitující se přidělují v rámci jednotlivých hospitací. Na obrázku \ref{fig:actors} jsou vidět jednotlivý aktéři a jejich zobecnění. V další části této sekce rozeberu jednotlivé role a k ním případy užití.
 
 \paragraph*{Use cases}
 neboli případy užití je nástroj pro popsání chování jak by systém měl spolupracovat s koncovým uživatelem. Popisuje všechny způsoby jak uživatel komunikuje se systémem.
+
+
+Důležitou součástí Use Case modelu jsou také scénáře užití. Tyto scénáře blíže rozvádějí jednotlivé aktivity stakeholderů a reakce modelovaného systému.
 
 \begin{figure}[H]
 \begin{center}
@@ -51,69 +52,20 @@ neboli případy užití je nástroj pro popsání chování jak by systém měl
 \subsection{Nepřihlášený uživatel}
 Nepřihlášený uživatel je role pro hosty naší aplikace. V systému má ze všech rolí nejmenší pravomoc. V tomto stavu je každý uživatel, který se doposud nepřihlásil do systému.
 
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=10cm]{figures/actor_base}
-\caption{Use case - nepřihlášený uživatel}
-\label{fig:actor_base}
-\end{center}
-\end{figure}
-
 \subsection{Přihlášený uživatel}
 Přihlášený uživatel vychází z role nepřihlášeného uživatele. Je to uživatel, který se do systému přihlásil. Jedná se o základní roli pro všechny další role, které ji rozšiřují.
-
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=10cm]{figures/actor_logged}
-\caption{Use case - přihlášený uživatel}
-\label{fig:actor_logged}
-\end{center}
-\end{figure}
-
 
 \subsection{Hospitovaný}
 Hospitovaný je role pro přihlášeného uživatele v systému. Je přidělena pro každého vyučujícího, který vyučuje předmět, na němž byla naplánovaná hospitace a proběhla.
 
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=10cm]{figures/actor_observed}
-\caption{Use case - hospitovaný}
-\label{fig:actor_observed}
-\end{center}
-\end{figure}
-
 \subsection{Hospitující}
 Hospitující je role pro přihlášeného uživatele v systému. Tato role se přiděluje automaticky z naplánovaných hospitací, nebo ji může přidělit administrátor hospitací.
-
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=10cm]{figures/actor_observer}
-\caption{Use case - hospitující}
-\label{fig:actor_observer}
-\end{center}
-\end{figure}
 
 \subsection{Administrátor hospitací}
 Hlavním úkolem této role je plánovat hospitace na předměty a posléze je spravovat.
 
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=10cm]{figures/actor_admin}
-\caption{Use case - administrátor hospitací}
-\label{fig:actor_admin}
-\end{center}
-\end{figure}
-
 \subsection{Administrátor}
 Administrátor je super uživatel, který má nejvyšší pravomoc v systému. Má přístup ke všem zdrojům aplikace a může aplikaci spravovat.
-
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=10cm]{figures/actor_root}
-\caption{Use case - administrátor}
-\label{fig:actor_root}
-\end{center}
-\end{figure}
 
 \newpage 
 \section{Doménový model}
@@ -154,7 +106,7 @@ Popis domény jsem pro přehlednost rozdělil podle zdroje na dvě základní sk
 \end{figure}
 
 
-
+\newpage 
 \section{Životní cyklus hospitace}
 Cílem této části analýzy je popsat životní cyklus, kterým hospitace prochází. 
 

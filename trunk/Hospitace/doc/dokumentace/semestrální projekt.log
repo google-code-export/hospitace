@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.4.27)  12 MAY 2012 18:34
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.4.27)  14 MAY 2012 00:43
 entering extended mode
  %&-line parsing enabled.
 **"semestr√°ln√≠ projekt.tex"
@@ -283,31 +283,156 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \float@box=\box26
 \@float@everytoks=\toks17
 \@floatcapt=\box27
+) (./qtree.sty
+Package: 2008/12/12 v.3.1bQtree: tree-drawing for linguistics
+Package: qtree 2008/12/12 v.3.1bQtree: tree-drawing for linguistics
+(/usr/share/texmf-texlive/tex/latex/pict2e/pict2e.sty
+Package: pict2e 2009/08/05 v0.2x Improved picture commands (HjG,RN,JT)
+
+(/etc/texmf/tex/latex/pict2e/pict2e.cfg
+File: pict2e.cfg 2009/08/05 v0.1s pict2e configuration for teTeX/TeXLive
+)
+Package pict2e Info: Driver file: pdftex.def on input line 101.
+
+(/usr/share/texmf-texlive/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2010/03/12 v0.04p Graphics/color for pdfTeX
+\Gread@gobject=\count91
+)
+Package pict2e Info: Driver file for pict2e: p2e-pdftex.def on input line 103.
+
+(/usr/share/texmf-texlive/tex/latex/pict2e/p2e-pdftex.def
+File: p2e-pdftex.def 2009/08/05 v0.1s Driver-dependant file (RN,HjG,JT)
+)
+(/usr/share/texmf-texlive/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+\pIIe@GRAPH=\toks18
+\@arclen=\dimen104
+\@arcrad=\dimen105
+\@tempdimd=\dimen106
+)
+\c@treecount=\count92
+\c@branchcount=\count93
+\parentbox=\box28
+\treebox=\box29
+\treeboxone=\box30
+\treeboxtwo=\box31
+\treeboxthree=\box32
+\treeboxfour=\box33
+\treeboxfive=\box34
+\treeboxsix=\box35
+\treeboxseven=\box36
+\treeboxeight=\box37
+\treeboxnine=\box38
+\treeboxten=\box39
+\treeboxeleven=\box40
+\treeboxtwelve=\box41
+\treeboxthirteen=\box42
+\treeboxfourteen=\box43
+\treeboxfifteen=\box44
+\treeboxsixteen=\box45
+\treeboxseventeen=\box46
+\treeboxeighteen=\box47
+\treeboxnineteen=\box48
+\treeboxtwenty=\box49
+\treeoffsetone=\skip43
+\treeoffsettwo=\skip44
+\treeoffsetthree=\skip45
+\treeoffsetfour=\skip46
+\treeoffsetfive=\skip47
+\treeoffsetsix=\skip48
+\treeoffsetseven=\skip49
+\treeoffseteight=\skip50
+\treeoffsetnine=\skip51
+\treeoffsetten=\skip52
+\treeoffseteleven=\skip53
+\treeoffsettwelve=\skip54
+\treeoffsetthirteen=\skip55
+\treeoffsetfourteen=\skip56
+\treeoffsetfifteen=\skip57
+\treeoffsetsixteen=\skip58
+\treeoffsetseventeen=\skip59
+\treeoffseteighteen=\skip60
+\treeoffsetnineteen=\skip61
+\treeoffsettwenty=\skip62
+\treeshiftone=\skip63
+\treeshifttwo=\skip64
+\treeshiftthree=\skip65
+\treeshiftfour=\skip66
+\treeshiftfive=\skip67
+\treeshiftsix=\skip68
+\treeshiftseven=\skip69
+\treeshifteight=\skip70
+\treeshiftnine=\skip71
+\treeshiftten=\skip72
+\treeshifteleven=\skip73
+\treeshifttwelve=\skip74
+\treeshiftthirteen=\skip75
+\treeshiftfourteen=\skip76
+\treeshiftfifteen=\skip77
+\treeshiftsixteen=\skip78
+\treeshiftseventeen=\skip79
+\treeshifteighteen=\skip80
+\treeshiftnineteen=\skip81
+\treeshifttwenty=\skip82
+\treewidthone=\skip83
+\treewidthtwo=\skip84
+\treewidththree=\skip85
+\treewidthfour=\skip86
+\treewidthfive=\skip87
+\treewidthsix=\skip88
+\treewidthseven=\skip89
+\treewidtheight=\skip90
+\treewidthnine=\skip91
+\treewidthten=\skip92
+\treewidtheleven=\skip93
+\treewidthtwelve=\skip94
+\treewidththirteen=\skip95
+\treewidthfourteen=\skip96
+\treewidthfifteen=\skip97
+\treewidthsixteen=\skip98
+\treewidthseventeen=\skip99
+\treewidtheighteen=\skip100
+\treewidthnineteen=\skip101
+\treewidthtwenty=\skip102
+\daughteroffsetone=\skip103
+\daughteroffsettwo=\skip104
+\daughteroffsetthree=\skip105
+\daughteroffsetfour=\skip106
+\branchwidthone=\skip107
+\branchwidthtwo=\skip108
+\branchwidththree=\skip109
+\branchwidthfour=\skip110
+\parentoffset=\skip111
+\treeoffset=\skip112
+\daughteroffset=\skip113
+\branchwidth=\skip114
+\parentwidth=\skip115
+\treewidth=\skip116
+\qta=\toks19
+\qtb=\toks20
+\nbranches=\count94
+\qroofx=\count95
+\qroofy=\count96
+\@qrscratchbox=\box50
 )
 (/usr/share/texmf-texlive/tex/latex/graphics/graphicx.sty
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texmf-texlive/tex/latex/graphics/keyval.sty
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
-\KV@toks@=\toks18
+\KV@toks@=\toks21
 )
 (/usr/share/texmf-texlive/tex/latex/graphics/graphics.sty
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-(/usr/share/texmf-texlive/tex/latex/graphics/trig.sty
-Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
-)
 (/etc/texmf/tex/latex/config/graphics.cfg
 File: graphics.cfg 2009/08/28 v1.8 graphics configuration of TeX Live
 )
 Package graphics Info: Driver file: pdftex.def on input line 91.
-
-(/usr/share/texmf-texlive/tex/latex/pdftex-def/pdftex.def
-File: pdftex.def 2010/03/12 v0.04p Graphics/color for pdfTeX
-\Gread@gobject=\count91
-))
-\Gin@req@height=\dimen104
-\Gin@req@width=\dimen105
+)
+\Gin@req@height=\dimen107
+\Gin@req@width=\dimen108
 )
 (/usr/share/texmf-texlive/tex/latex/tools/indentfirst.sty
 Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
@@ -351,21 +476,21 @@ Package: atbegshi 2008/07/31 v1.9 At begin shipout hook (HO)
 Package: ifpdf 2009/04/10 v2.0 Provides the ifpdf switch (HO)
 Package ifpdf Info: pdfTeX in pdf mode detected.
 ))
-\c@abspage=\count92
+\c@abspage=\count97
 Package zref Info: New property: abspage on input line 49.
 )
-\DT@offset=\dimen106
-\DT@width=\dimen107
-\DT@sep=\dimen108
-\DT@all=\dimen109
-\DT@rulewidth=\dimen110
-\DT@dotwidth=\dimen111
-\DTbaselineskip=\dimen112
-\DT@counti=\count93
-\DT@countii=\count94
-\DT@countiii=\count95
-\DT@countiv=\count96
-\DT@treenum=\count97
+\DT@offset=\dimen109
+\DT@width=\dimen110
+\DT@sep=\dimen111
+\DT@all=\dimen112
+\DT@rulewidth=\dimen113
+\DT@dotwidth=\dimen114
+\DTbaselineskip=\dimen115
+\DT@counti=\count98
+\DT@countii=\count99
+\DT@countiii=\count100
+\DT@countiv=\count101
+\DT@treenum=\count102
 )
 Bakalarska prace
 (/usr/share/texmf-texlive/tex/latex/hyperref/hyperref.sty
@@ -385,9 +510,9 @@ O)
 (/usr/share/texmf-texlive/tex/latex/oberdiek/xcolor-patch.sty
 Package: xcolor-patch 2009/10/02 xcolor patch
 ))
-\@linkdim=\dimen113
-\Hy@linkcounter=\count98
-\Hy@pagecounter=\count99
+\@linkdim=\dimen116
+\Hy@linkcounter=\count103
+\Hy@pagecounter=\count104
 
 (/usr/share/texmf-texlive/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2009/10/09 v6.79a Hyperref: PDFDocEncoding definition (HO)
@@ -453,10 +578,10 @@ Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 )))
-\Fld@menulength=\count100
-\Field@Width=\dimen114
-\Fld@charsize=\dimen115
-\Field@toks=\toks19
+\Fld@menulength=\count105
+\Field@Width=\dimen117
+\Fld@charsize=\dimen118
+\Field@toks=\toks22
 Package hyperref Info: Hyper figures OFF on input line 4377.
 Package hyperref Info: Link nesting OFF on input line 4382.
 Package hyperref Info: Hyper index ON on input line 4385.
@@ -464,57 +589,58 @@ Package hyperref Info: backreferencing OFF on input line 4392.
 Package hyperref Info: Link coloring ON on input line 4395.
 Package hyperref Info: Link coloring with OCG OFF on input line 4402.
 Package hyperref Info: PDF/A mode OFF on input line 4407.
-\Hy@abspage=\count101
-\c@Item=\count102
-\c@Hfootnote=\count103
+\Hy@abspage=\count106
+\c@Item=\count107
+\c@Hfootnote=\count108
 )
 *hyperref using default driver hpdftex*
 (/usr/share/texmf-texlive/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2009/10/09 v6.79a Hyperref driver for pdfTeX
-\Fld@listcount=\count104
+\Fld@listcount=\count109
 )
 (/usr/share/texmf-texlive/tex/latex/natbib/natbib.sty
 Package: natbib 2009/07/16 8.31 (PWD, AO)
-\bibhang=\skip43
-\bibsep=\skip44
+\bibhang=\skip117
+\bibsep=\skip118
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count105
+\c@NAT@ctr=\count110
 )
 (./semestr√°ln√≠ projekt.aux (./1_uvod.aux) (./2_teorie.aux) (./3_analiza.aux)
 (./3_navrh.aux) (./4_realizace.aux) (./5_testovani.aux) (./6_zaver.aux)
-(./zkratky.aux))
+(./zkratky.aux) (./priloha.aux))
 \openout1 = `"semestr√°ln√≠ projekt.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 135.
-LaTeX Font Info:    ... okay on input line 135.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 135.
-LaTeX Font Info:    ... okay on input line 135.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 135.
-LaTeX Font Info:    ... okay on input line 135.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 135.
-LaTeX Font Info:    ... okay on input line 135.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 135.
-LaTeX Font Info:    ... okay on input line 135.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 135.
-LaTeX Font Info:    ... okay on input line 135.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 135.
-LaTeX Font Info:    ... okay on input line 135.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 135.
-LaTeX Font Info:    ... okay on input line 135.
- (/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 136.
+LaTeX Font Info:    ... okay on input line 136.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 136.
+LaTeX Font Info:    ... okay on input line 136.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 136.
+LaTeX Font Info:    ... okay on input line 136.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 136.
+LaTeX Font Info:    ... okay on input line 136.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 136.
+LaTeX Font Info:    ... okay on input line 136.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 136.
+LaTeX Font Info:    ... okay on input line 136.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 136.
+LaTeX Font Info:    ... okay on input line 136.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 136.
+LaTeX Font Info:    ... okay on input line 136.
+
+(/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count106
-\scratchdimen=\dimen116
-\scratchbox=\box28
-\nofMPsegments=\count107
-\nofMParguments=\count108
-\everyMPshowfont=\toks20
-\MPscratchCnt=\count109
-\MPscratchDim=\dimen117
-\MPnumerator=\count110
-\everyMPtoPDFconversion=\toks21
+\scratchcounter=\count111
+\scratchdimen=\dimen119
+\scratchbox=\box51
+\nofMPsegments=\count112
+\nofMParguments=\count113
+\everyMPshowfont=\toks23
+\MPscratchCnt=\count114
+\MPscratchDim=\dimen120
+\MPnumerator=\count115
+\everyMPtoPDFconversion=\toks24
 )
-\AtBeginShipoutBox=\box29
+\AtBeginShipoutBox=\box52
  (/usr/share/texmf-texlive/tex/latex/graphics/color.sty
 Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
 
@@ -523,7 +649,7 @@ File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package color Info: Driver file: pdftex.def on input line 130.
 )
-Package hyperref Info: Link coloring ON on input line 135.
+Package hyperref Info: Link coloring ON on input line 136.
 
 (/usr/share/texmf-texlive/tex/latex/hyperref/nameref.sty
 Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
@@ -531,10 +657,10 @@ Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
 (/usr/share/texmf-texlive/tex/latex/oberdiek/refcount.sty
 Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
 )
-\c@section@level=\count111
+\c@section@level=\count116
 )
-LaTeX Info: Redefining \ref on input line 135.
-LaTeX Info: Redefining \pageref on input line 135.
+LaTeX Info: Redefining \ref on input line 136.
+LaTeX Info: Redefining \pageref on input line 136.
 
 (./semestr√°ln√≠ projekt.out) (./semestr√°ln√≠ projekt.out)
 \@outlinefile=\write3
@@ -558,7 +684,7 @@ Vedouci prace: Ing. Martin Kom\IeC {\'a}rek
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2
 
 ]
-<figures/LogoCVUT.pdf, id=303, 93.34875pt x 70.2625pt>
+<figures/LogoCVUT.pdf, id=379, 93.34875pt x 70.2625pt>
 File: figures/LogoCVUT.pdf Graphic file (type pdf)
 
 <use figures/LogoCVUT.pdf> [3 <./figures/LogoCVUT.pdf>] [4
@@ -579,25 +705,25 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 5.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 5.
- [11])
+ [11] [12])
 \tf@toc=\write4
 \openout4 = `"semestr√°ln√≠ projekt.toc"'.
 
- [12]
+ [13] [14
+
+]
 (./semestr√°ln√≠ projekt.lof)
 \tf@lof=\write5
 \openout5 = `"semestr√°ln√≠ projekt.lof"'.
 
- [13
-
-] [14
+ [15] [16
 
 ] (./semestr√°ln√≠ projekt.lot)
 \tf@lot=\write6
 \openout6 = `"semestr√°ln√≠ projekt.lot"'.
 
- [15]
-[16
+ [17]
+[18
 
 ]
 \openout2 = `1_uvod.aux'.
@@ -620,187 +746,219 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 ]
 Kapitola 2.
-[3]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 33.
- (/usr/share/texmf-texlive/tex/latex/base/omscmr.fd
-File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 33.
- [4]) [5]
+[3] [4]
+Overfull \hbox (0.73766pt too wide) in paragraph at lines 37--38
+ \T1/cmr/bx/n/10.95 P∞e-dem ohl·≤enÈ bez konkrÈt-nÌho ter-mÌnu \T1/cmr/m/n/10.9
+5 tento typ hos-pi-tace na rozdÌl od p∞ede≤lÈho
+ []
+
+) [5]
 \openout2 = `3_analiza.aux'.
 
-
-(./3_analiza.tex [6
+ (./3_analiza.tex [6
 
 
 
 ]
 Kapitola 3.
-[7] [8] <figures/Actors.png, id=557, 562.1pt x 345.29pt>
+[7] <figures/Actors.png, id=647, 562.1pt x 345.29pt>
 File: figures/Actors.png Graphic file (type png)
+ <use figures/Actors.png>
+[8 <./figures/Actors.png (PNG copy)>] [9]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 79.
 
-<use figures/Actors.png>
-<figures/actor_base.png, id=558, 698.61pt x 314.17375pt>
-File: figures/actor_base.png Graphic file (type png)
+(/usr/share/texmf-texlive/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 79.
 
-<use figures/actor_base.png>
-<figures/actor_logged.png, id=559, 518.93875pt x 263.98625pt>
-File: figures/actor_logged.png Graphic file (type png)
-
-<use figures/actor_logged.png> [9 <./figures/Actors.png (PNG copy)> <./figures/
-actor_base.png (PNG copy)>]
-<figures/actor_observed.png, id=566, 763.85374pt x 361.35pt>
-File: figures/actor_observed.png Graphic file (type png)
-
-<use figures/actor_observed.png>
-<figures/actor_observer.png, id=567, 773.89125pt x 384.43625pt>
-File: figures/actor_observer.png Graphic file (type png)
-
-<use figures/actor_observer.png> [10 <./figures/actor_logged.png (PNG copy)> <.
-/figures/actor_observed.png (PNG copy)>]
-<figures/actor_admin.png, id=572, 791.95876pt x 831.105pt>
-File: figures/actor_admin.png Graphic file (type png)
-
-<use figures/actor_admin.png>
-<figures/actor_root.png, id=573, 532.99126pt x 269.005pt>
-File: figures/actor_root.png Graphic file (type png)
-
-<use figures/actor_root.png>
-Underfull \vbox (badness 2772) has occurred while \output is active []
-
- [11 <./figures/actor_observer.png (PNG copy)> <./figures/actor_admin.png (PNG 
-copy)>]
-[12 <./figures/actor_root.png (PNG copy)>]
-<figures/DomainModel2.png, id=583, 753.81625pt x 961.5925pt>
+<figures/DomainModel2.png, id=667, 753.81625pt x 961.5925pt>
 File: figures/DomainModel2.png Graphic file (type png)
 
-<use figures/DomainModel2.png> [13] [14 <./figures/DomainModel2.png (PNG copy)>
+<use figures/DomainModel2.png> [10] [11 <./figures/DomainModel2.png (PNG copy)>
 ]
-Overfull \hbox (9.41774pt too wide) in paragraph at lines 165--166
+Overfull \hbox (9.41774pt too wide) in paragraph at lines 117--118
 \T1/cmr/m/n/10.95 cyklu ad-min-istr·-tor ur£Ì hos-pi-to-vanou par-alelku p∞ed-m
 •tu a da-tum, kdy se hos-pi-tace uskute£nÌ. 
  []
 
-<figures/hospitace.png, id=592, 846.16125pt x 433.62pt>
+<figures/hospitace.png, id=677, 846.16125pt x 433.62pt>
 File: figures/hospitace.png Graphic file (type png)
 
 <use figures/hospitace.png>
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) [15] [16 <./figures/hospitace.png (PNG copy)>]
+) [12] [13 <./figures/hospitace.png (PNG copy)>]
 \openout2 = `3_navrh.aux'.
 
- (./3_navrh.tex
+ (./3_navrh.tex [14
+
+
+
+]
 Kapitola 4.
-[17
-
-
-
-] [18]
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 54.
+[15] [16]
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 57.
  (/usr/share/texmf-texlive/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-) [19]) [20]
+) [17]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) [18] [19]
 \openout2 = `4_realizace.aux'.
 
+ (./4_realizace.tex [20
 
-(./4_realizace.tex
+
+
+]
 Kapitola 5.
-[21
-
-
-
-] [22]
-Overfull \hbox (0.60579pt too wide) in paragraph at lines 65--66
+[21] [22]
+Overfull \hbox (0.60579pt too wide) in paragraph at lines 63--64
 []\T1/cmr/m/n/10.95 Zad·nÌm druhÈ it-er-ace bylo na-implementovat hod-notÌcÌ fo
 r-mul·∞e hos-pi-tacÌ. Po∫a-davkem
  []
 
-[23] <figures/Dynamic_form.png, id=707, 372.39125pt x 354.32375pt>
+[23] <figures/Dynamic_form.png, id=806, 372.39125pt x 354.32375pt>
 File: figures/Dynamic_form.png Graphic file (type png)
 
 <use figures/Dynamic_form.png> [24 <./figures/Dynamic_form.png (PNG copy)>]
-[25]
-
-LaTeX Warning: Reference `RVM' on page 26 undefined on input line 152.
-
-
-Package natbib Warning: Citation `felid_navod' on page 26 undefined on input li
-ne 154.
-
-<figures/deployment.png, id=721, 680.5425pt x 371.3875pt>
+[25] <figures/deployment.png, id=826, 680.5425pt x 371.3875pt>
 File: figures/deployment.png Graphic file (type png)
 
 <use figures/deployment.png>
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) [26] [27 <./figures/deployment.png (PNG copy)>]
+[26] [27 <./figures/deployment.png (PNG copy)>]
+Overfull \hbox (15.56845pt too wide) in paragraph at lines 209--210
+\T1/cmr/m/n/10.95 roz≤Ì∞enÌ li-bo-vol-nÈho mod-elu v ap-likaci. Roz≤Ì∞enÌ umo∫n
+Ì po-mocÌ metody []\T1/cmtt/m/n/10.95 attrs_tagged(*args)
+ []
+
+[28]
+Overfull \hbox (5.88911pt too wide) in paragraph at lines 231--232
+\T1/cmr/m/n/10.95 a []\T1/cmtt/m/n/10.95 %teacher_username%\T1/cmr/m/n/10.95 . 
+TÌmto zp∑-sobem lze jednodu≤e nadefi-no-vat velkÈ mno∫stvÌ
+ []
+
+
+Overfull \hbox (41.23994pt too wide) in paragraph at lines 246--247
+\T1/cmr/m/n/10.95 odesÌl·nÌ email∑, proto do£asn• pou∫Ìv·m k odesÌl·nÌ emailov˝
+ ˙£et hospitace-FEL-CVUT@gmail.com
+ []
+
+[29]) [30]
 \openout2 = `5_testovani.aux'.
 
- (./5_testovani.tex [28
-
-
-
-]
+ (./5_testovani.tex
 Kapitola 6.
-) [29]
+[31
+
+
+
+]) [32]
 \openout2 = `6_zaver.aux'.
 
- (./6_zaver.tex [30
-
-
-
-]
+ (./6_zaver.tex
 Kapitola 7.
-) [31] (./semestr√°ln√≠ projekt.bbl [32
+) [33
 
 
-] [33]) [34]
+
+] (./semestr√°ln√≠ projekt.bbl [34
+
+
+] [35]) [36]
 \openout2 = `zkratky.aux'.
 
  (./zkratky.tex
 P\v {r}\'{\i }loha A.
-) [35
+) [37
 
 
 ]
+\openout2 = `priloha.aux'.
 
-Package natbib Warning: There were undefined citations.
+ (./priloha.tex [38
 
-(./semestr√°ln√≠ projekt.aux (./1_uvod.aux) (./2_teorie.aux) (./3_analiza.aux)
-(./3_navrh.aux) (./4_realizace.aux) (./5_testovani.aux) (./6_zaver.aux)
-(./zkratky.aux))
 
-LaTeX Warning: There were undefined references.
 
- ) 
+]
+P\v {r}\'{\i }loha B.
+<figures/actor_base.png, id=935, 698.61pt x 314.17375pt>
+File: figures/actor_base.png Graphic file (type png)
+
+<use figures/actor_base.png>
+<figures/actor_logged.png, id=936, 518.93875pt x 263.98625pt>
+File: figures/actor_logged.png Graphic file (type png)
+
+<use figures/actor_logged.png>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<figures/actor_observed.png, id=937, 763.85374pt x 361.35pt>
+File: figures/actor_observed.png Graphic file (type png)
+
+<use figures/actor_observed.png>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<figures/actor_observer.png, id=938, 773.89125pt x 384.43625pt>
+File: figures/actor_observer.png Graphic file (type png)
+
+<use figures/actor_observer.png>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<figures/actor_root.png, id=939, 532.99126pt x 269.005pt>
+File: figures/actor_root.png Graphic file (type png)
+
+<use figures/actor_root.png>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<figures/actor_admin.png, id=940, 791.95876pt x 831.105pt>
+File: figures/actor_admin.png Graphic file (type png)
+
+<use figures/actor_admin.png>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) [39 <./figures/actor_base.png (PNG copy)>] [40 <./figures/actor_logged.png (P
+NG copy)> <./figures/actor_observed.png (PNG copy)>] [41 <./figures/actor_obser
+ver.png (PNG copy)> <./figures/actor_root.png (PNG copy)>] [42 <./figures/actor
+_admin.png (PNG copy)>] (./semestr√°ln√≠ projekt.aux (./1_uvod.aux)
+(./2_teorie.aux) (./3_analiza.aux) (./3_navrh.aux) (./4_realizace.aux)
+(./5_testovani.aux) (./6_zaver.aux) (./zkratky.aux) (./priloha.aux)) ) 
 Here is how much of TeX's memory you used:
- 7352 strings out of 495061
- 98651 string characters out of 1182621
- 174522 words of memory out of 3000000
- 10121 multiletter control sequences out of 15000+50000
+ 7745 strings out of 495061
+ 103629 string characters out of 1182621
+ 186938 words of memory out of 3000000
+ 10458 multiletter control sequences out of 15000+50000
  19833 words of font info for 43 fonts, out of 3000000 for 9000
  32 hyphenation exceptions out of 8191
- 38i,9n,38p,944b,436s stack positions out of 5000i,500n,10000p,200000b,50000s
- </home/osman/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1095.600pk> </home/o
-sman/.texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1095.600pk> </home/osman/.texmf
--var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/osman/.texmf-var/fonts/
-pk/ljfour/jknappen/ec/ecrm0900.600pk> </home/osman/.texmf-var/fonts/pk/ljfour/j
-knappen/ec/ecrm0800.600pk> </home/osman/.texmf-var/fonts/pk/ljfour/jknappen/ec/
-ecsl1095.600pk> </home/osman/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1095.60
-0pk> </home/osman/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0600.600pk> </home
-/osman/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2074.600pk> </home/osman/.tex
-mf-var/fonts/pk/ljfour/jknappen/ec/ecti1440.600pk> </home/osman/.texmf-var/font
-s/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/osman/.texmf-var/fonts/pk/ljfour
-/jknappen/ec/ecrm1200.600pk> </home/osman/.texmf-var/fonts/pk/ljfour/jknappen/e
-c/ecrm1095.600pk> </home/osman/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2488.
-600pk></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on "semestr√°ln√≠ projekt.pdf" (51 pages, 799967 bytes).
+ 38i,10n,38p,1027b,490s stack positions out of 5000i,500n,10000p,200000b,50000s
+ </home/o
+sman/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1095.600pk> </home/osman/.texmf
+-var/fonts/pk/ljfour/jknappen/ec/ectt1095.600pk> </home/osman/.texmf-var/fonts/
+pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/osman/.texmf-var/fonts/pk/ljfour/j
+knappen/ec/ecrm0900.600pk> </home/osman/.texmf-var/fonts/pk/ljfour/jknappen/ec/
+ecrm0800.600pk> </home/osman/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecsl1095.60
+0pk> </home/osman/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1095.600pk> </home
+/osman/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0600.600pk> </home/osman/.tex
+mf-var/fonts/pk/ljfour/jknappen/ec/ecbx2074.600pk> </home/osman/.texmf-var/font
+s/pk/ljfour/jknappen/ec/ecti1440.600pk> </home/osman/.texmf-var/fonts/pk/ljfour
+/jknappen/ec/ecbx1440.600pk> </home/osman/.texmf-var/fonts/pk/ljfour/jknappen/e
+c/ecrm1200.600pk> </home/osman/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1095.
+600pk> </home/osman/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2488.600pk></usr
+/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on "semestr√°ln√≠ projekt.pdf" (60 pages, 850893 bytes).
 PDF statistics:
- 1499 PDF objects out of 1728 (max. 8388607)
- 205 named destinations out of 1000 (max. 500000)
- 637 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1702 PDF objects out of 1728 (max. 8388607)
+ 241 named destinations out of 1000 (max. 500000)
+ 789 words of extra memory for PDF output out of 10000 (max. 10000000)
 

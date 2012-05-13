@@ -1,6 +1,13 @@
 \chapter{Závěr}
 
-\begin{itemize}
-\item Zhodnocení splnění cílů DP/BP a  vlastního přínosu práce (při formulaci je třeba vzít v potaz zadání práce).
-\item Diskuse dalšího možného pokračování práce.
-\end{itemize} 
+Výstupem mé práce je aplikace pro evidenci hospitací. Aplikaci jsem nasadil na server
+http://kvalitavyuky.felk.cvut.cz, tak že ji lze použít v reálném provozu na ČVUT FEL. Samotná aplikace byla implementovaná na platformě Ruby on Rails, což je jeden z nejmodernějších frameworků pro vývoj webových aplikací. Bylo potřeba v aplikaci používat dvě fakultní aplikace. Pro autentizaci používá aplikaci FELid je globální autentizační systém pro webové aplikace na fakultě FEl.  Druhou aplikací je KOSapi, ta poskytuje aplikační rozhraní  k přístupu dat v KOSu.
+
+Pro vývoj aplikace byl použit iterační vývoj, kdy při každé iteraci byly zpracovány požadavky zadavatele a zdokumentovaný. Snažil jsem se vytvořit funkční a uživatelsky přívětivou aplikaci. Funkčnost aplikace jsem demonstroval simulací probíhajících hospitací pro studijní program STM v LS 2011/2012. Bohužel se nepodařilo aplikaci nasadit do reálného provozu, aby se vyzkoušela v reálném provozu.  
+
+Tato práce mi přinesla spoustu zkušenosti jak s novou technologií Ruby on Rail, kterou jsem do té doby nepoužil, tak i použití externích aplikací. Při vývoji jsem také vytvořil dvě velké části aplikace. Jsou to dynamické formuláře pro hodnocení a knihovna pro generování emailových zpráv.
+
+\section{Možnosti v pokračování práce}
+Možností pokračování v práci je několik. Nejvíc je potřeba nainstalovat a nastavit na serveru emailový server pro odesílání informačních emailových zpráv.
+
+Lze také pokračovat ve vývoji dynamických formulářů. Do aplikace jsem totiž neimplementoval uživatelské prostředí pro nastavování formulářů. Dále by bylo dobré předělat funkční část do knihovny. Jako dalším krokem pro vylepšení aplikace bych to vyděl na provedení refaktoring celé aplikace, protože při vývoji jsem se postupně učil pracovat v Ruby on Rails.
