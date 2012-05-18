@@ -11,10 +11,6 @@ The style file: csplainnat.bst
 A level-1 auxiliary file: zkratky.aux
 A level-1 auxiliary file: priloha.aux
 Database file #1: reference.bib
-Repeated entry---line 78 of file reference.bib
- : @online{kosapi
- :               ,
-I'm skipping whatever remains of this entry
 Warning--to sort, need author or key in rubyonrails
 Warning--to sort, need author or key in ruby
 Warning--to sort, need author or key in vyvy_project
@@ -24,7 +20,6 @@ Warning--to sort, need author or key in mvc
 Warning--to sort, need author or key in dry
 Warning--to sort, need author or key in coc
 Warning--to sort, need author or key in rest
-Warning--to sort, need author or key in kosapi
 Warning--to sort, need author or key in vyvy
 Warning--to sort, need author or key in authlogic
 Warning--to sort, need author or key in cancan
@@ -38,45 +33,45 @@ while executing---line 1510 of file csplainnat.bst
 `publisher' is a missing field, not a string, for entry postupy
 while executing---line 1510 of file csplainnat.bst
 Warning--empty publisher in postupy
-You've used 26 entries,
+You've used 25 entries,
             2954 wiz_defined-function locations,
-            737 strings with 7686 characters,
-and the built_in function-call counts, 6232 in all, are:
-= -- 881
+            736 strings with 7680 characters,
+and the built_in function-call counts, 5992 in all, are:
+= -- 844
 > -- 79
 < -- 9
-+ -- 50
++ -- 49
 - -- 22
-* -- 480
-:= -- 842
-add.period$ -- 86
-call.type$ -- 26
-change.case$ -- 44
-chr.to.int$ -- 24
-cite$ -- 89
-duplicate$ -- 306
-empty$ -- 455
+* -- 459
+:= -- 814
+add.period$ -- 82
+call.type$ -- 25
+change.case$ -- 43
+chr.to.int$ -- 23
+cite$ -- 85
+duplicate$ -- 293
+empty$ -- 435
 format.name$ -- 36
-if$ -- 1457
+if$ -- 1397
 int.to.chr$ -- 3
 int.to.str$ -- 1
-missing$ -- 74
-newline$ -- 121
+missing$ -- 71
+newline$ -- 117
 num.names$ -- 30
-pop$ -- 101
+pop$ -- 98
 preamble$ -- 1
-purify$ -- 35
+purify$ -- 34
 quote$ -- 0
-skip$ -- 267
+skip$ -- 257
 stack$ -- 0
-substring$ -- 70
-swap$ -- 31
+substring$ -- 67
+swap$ -- 30
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 281
-warning$ -- 19
+type$ -- 270
+warning$ -- 18
 while$ -- 19
 width$ -- 0
-write$ -- 292
-(There were 3 error messages)
+write$ -- 280
+(There were 2 error messages)

@@ -1,4 +1,4 @@
-\begin{thebibliography}{26}
+\begin{thebibliography}{25}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -49,13 +49,6 @@
 \emph{A Guide to Active Record Associations} [online]. [cit.~2012-04-07].
 \newblock Dostupn{\'{e}} z:
   \url{http://guides.rubyonrails.org/association_basics.html}.
-
-\bibitem[kos(17.8.2004, last modified on 3.4.2011)]{kosapi}
-\emph{Representational state transfer. In: Wikipedia: the free encyclopedia}
-  [online]. St. Petersburg (Florida): Wikipedia Foundation, 17.8.2004, last
-  modified on 3.4.2011. [cit.~2012-03-05].
-\newblock Dostupn{\'{e}} z:
-  \url{http://en.wikipedia.org/wiki/Representational_state_transfer}.
 
 \bibitem[mvc(5.11.2003, last modified on 5.4.2012)]{mvc}
 \emph{Model–view–controller. In: Wikipedia: the free encyclopedia}
