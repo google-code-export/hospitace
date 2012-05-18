@@ -1,6 +1,6 @@
 \chapter{Popis problému, specifikace cíle}
 \section{Motivace}
-Jak jsem uvedl v úvodu, tak v současné době probíhá jakákoliv administrativní činnost okolo hospitací převážně pomocí emailové komunikace. Kterou zajišťuje garantem studijního oboru přidělený administrátor kontroly výuky, který je dále  uváděn jako administrátor, nebo administrátor hospitací. 
+Jak jsem uvedl v úvodu, tak v současné době probíhá jakákoliv administrativní činnost okolo hospitací převážně pomocí emailové komunikace.  Zajištuje jí garantem studijního oboru přiřazený administrátor kontroly výuky, který je dále  uváděn jako administrátor, nebo administrátor hospitací. 
 
 Jeho úkolem je starat se o plánování hospitací a vystavování dokumentů na stránkách rady studijního programu \cite{kvalitavyukyweb}. Při naplánování hospitace musí administrátor ručně obeslat emailem informaci o naplánované hospitaci všem zainteresovaným osobám. To jsou hospitovaní, hospitující, přednášející a garanti příslušného předmětu. Po provedení hospitace je potřeba shromáždit a vystavit veškeré dokumenty na webových stránkách Rady programu. Administrátor musí hlídat tok dokumentů a rozesílat vzniklé dokumenty mezi účastníky hospitace.
 
@@ -10,45 +10,45 @@ Tento systém sice funguje, ale je administrativně a časově náročný při z
 Hlavním cílem mé práce je rozšířit prototyp aplikace pro evidenci hospitací, tak aby bylo možné ji nasadit do reálného provozu na FEL ČVUT. V průběhu letního semestru 2011/2012 se bude postupně demonstrovat její funkčnost na realizovaných hospitacích v daném semestru.
 
 \section{Rešerše}
-Hospitace jak už jsem nastínil v motivaci je zavedený vnitřní proces kontroly kvality výuky na ČVUT FEL, proto čerpám informace pro tvorbu této práce z dvou hlavních zdrojů. Prvním zdrojem je dokument Postupy pro kontrolu kvality výuky \cite{postupy}, který definuje jak se mají hospitace provádět. A druhým zdrojem je prototyp aplikace z rozpracované bakalářské práce Návrh a implementace systému pro správu hospitací \cite{prototyp_documentace}.
+Hospitace, jak už jsem nastínil v motivaci, je zavedený vnitřní proces kontroly kvality výuky na ČVUT FEL. Informace proto čerpám ze dvou hlavních zdrojů. Prvním zdrojem je dokument Postupy pro kontrolu kvality výuky \cite{postupy}, který definuje jak se mají hospitace provádět. A druhým zdrojem je prototyp aplikace z rozpracované bakalářské práce Návrh a implementace systému pro správu hospitací \cite{prototyp_documentace}.
 
 \subsection{Prototyp}
 
-Jako referenční řešení práce jsem obdržel prototyp aplikace napsaný v Ruby on Rails. Ten se skládá z dokumentační části a z rozpracované webové aplikace. Dokumentační část prototypu obsahuje analýzu i návrh aplikace. Hlavně na začátku mi velmi pomohl pochopit problematiku hospitací a obsahovala velmi užitečné informace pro samotný vývoj aplikace. Horší to bylo se samotnou aplikací. Verze programu kterou jsou získal byla velmi rozpracovaná jelikož se mi ji nepodařilo zprovoznit tak, aby byla funkční. Po hlubším zkoumání a upravování zdrojového kódu jsem zjistil, že aplikace umí plánovat hospitace. Dále byli vytvořeny html šablony pro hodnotící formuláře. Prototyp také obsahuje knihovnu pro komunikaci s aplikací KOSapi\footnote{viz. \ref{kosapi}}.
+Jako referenční řešení práce jsem obdržel prototyp aplikace napsaný v Ruby on Rails. Ten se skládá z dokumentace a z rozpracované webové aplikace. Dokumentace k prototypu obsahuje analýzu a návrh aplikace, což  mi pomohlo při vývoji aplikace a také pochopení problematiky hospitací. Práce se samotnou aplikací byla již obtížnější, protože verze, kterou jsem obdržel byla velmi rozpracovaná. Nepodařilo se mi jí zprovoznit tak, aby byla plně funkční. Po hlubším zkoumání a upravování aplikace jsem zjistil, že aplikace umí částečně plánovat hospitace. [?co neumí?] Dále byli vytvořeny html šablony pro hodnotící formuláře a knihovna pro komunikaci s aplikací KOSapi\footnote{viz. \ref{kosapi}}.
 
-Důvod proč navazuji na rozpracovanou práci je ten že autor se  rozhodl kompletně přejít na jinou technologii než je Ruby on Rails. Nakonec po hlubší analýze prototypu programu jsem rozhodl převzít z prototypu aplikace pouze připojení ke KOSapi a zbytek udělat od základů nový. 
+Důvod proč navazuji na rozpracovanou práci je ten, že autor se rozhodl kompletně přejít na jinou technologii než je Ruby on Rails. Nakonec, po hlubší analýze prototypu programu, jsem se rozhodl převzít z prototypu aplikace pouze připojení ke KOSapi a zbytek udělat od základů nový. 
 
 \subsection{Postupy pro kontrolu kvality výuky}
 V této části kapitoly popisuji hlavní procesy při vykonávání hospitací. Tyto informace čerpám z již zmíněného dokumentu Postupy pro kontrolu kvality výuky \cite{postupy}, kde jsou obsaženy veškeré potřebné informace o průběhu hospitací.
 
 \subsubsection{Administrátor hospitací}
-Administrátora hospitací je jedna pro studijní program, kterou vybírá garant studijního oboru. Tato osoba se stará o hospitace pro studijní obor ke kterému je přiřazen. Jeho hlavními úkoly jsou plánování a řízení hospitací.
+Ke každému studijnímu programu je přidělena určitá osoba, kterou vybírá garant studijního oboru. Tato osoba se stará o hospitace pro studijní obor ke kterému je přiřazena. Hlavními úkoly administrátora jsou plánování a řízení hospitací.
 
 \subsubsection{Plánování hospitací}
-Pro naplánování hospitace musí administrátor hospitací definovat předmět, paralelku a datum hospitace. Hospitace může probíhat jak na přednášky tak i na cvičení. Do plánování patří i přiřazení hospitujících\footnote{typicky je to dvojce pedagogů jeden zkušený a druhý začínající}, kteří provedou kontrolní návštěvu ve výuce.
+Pro naplánování hospitace musí administrátor hospitací nadefinovat předmět, paralelku a datum hospitace. Hospitace může probíhat jak na přednáškách, tak i na cvičeních. Do plánování patří i přiřazení hospitujících\footnote{typicky je to dvojce pedagogů jeden zkušený a druhý začínající}, kteří provedou kontrolní návštěvu ve výuce.
 
 \subsubsection{Typy hospitací}
-Administrátor také určuje typ hospitace. Jsou zavedeny tři druhy a především se rozlišují z hlediska hospitovaného.  Jsou to:
+Administrátor také určuje typ hospitace. Jsou zavedeny tři druhy, které se především rozlišují z hlediska hospitovaného.  Jsou to:
 
 \paragraph*{Předem ohlášené na konkrétní datum} 
 u tohoto typu hospitace jsou veřejné všechny informace o naplánování hospitace. Proto je potřeba, aby administrátor naplánoval hospitaci s předstihem a informoval o tom hospitovaného.
 
 \paragraph*{Předem ohlášené bez konkrétního termínu} 
-tento typ hospitace na rozdíl od předešlého typu nemá pevně stanovený datum hospitace. Hospitovaný sice ví o naplánovaná hospitaci, ale není zveřejněn datum kdy proběhne.
+tento typ hospitace na rozdíl od předešlého typu nemá pevně stanovený datum hospitace. Hospitovaný sice ví o naplánované hospitaci, ale není zveřejněn datum kdy proběhne.
 
 \paragraph*{Předem neohlášené} 
 tento typ hospitace se používá jen zřídka a to u problémových předmětů, nebo při vážných stížností na vyučujícího. Proto u  tohoto typu hospitace je předem informován pouze garant, zástupce garanta a administrátor výuky.
 
 \subsubsection{Provedení hospitace}
-Hospitace se vykoná kontrolní návštěvou hospitujících na výuce a sepíší dokument Hodnocení výuky. V něm zdokumentují průběh hodiny a její hodnocení.
+Hospitace se vykoná kontrolní návštěvou hospitujících ve výuce, o které sepíší dokument Hodnocení výuky. V něm zdokumentují průběh hodiny a její hodnocení.
 
 \subsubsection{Hodnocení výuky}
 Po vykonání hospitace následuje hodnotící fáze. Ta se skládá ze čtyř druhů dokumentů, které zhodnotí proběhlou výuku. Všechny dokumenty musí být předány administrátorovi hospitací. Ten je vystaví na privátní části webových stránek Rady programu \cite{kvalitavyukyweb}. Po sepsání a vystavení všech dokumentů je hospitace ukončená. Dokumenty používané při hodnocení:
 
 \label{sec:formulare}
 \begin{itemize}
-\item[A] Hodnocení výuky při hospitaci - ten dokument  je písemný výstup z hospitace. Hlavním účelem tohoto dokumentu je slovně popsat průběh výuky. Dokument se Skládá z dokumentační části a z hodnotící části. Tento formulář vyplňuje každý hospitující sám za sebe.
-\item[B] Slovní hodnocení hospitační návštěvy hospitujícím(mi) - tento dokument sepíše po hospitaci jeden z hospitujících a účelem tohoto dokumentu je slovně zhodnotit výuku. 
+\item[A] Hodnocení výuky při hospitaci - ten dokument  je písemný výstup z hospitace. Hlavním účelem tohoto dokumentu je slovně popsat průběh výuky. Dokument se skládá z dokumentační části a z hodnotící části. Tento formulář vyplňuje každý hospitující sám za sebe.
+\item[B] Slovní hodnocení hospitační návštěvy hospitujícím(mi) - tento dokument sepíše po provedení hospitace jeden z hospitujících a účelem tohoto dokumentu je slovně zhodnotit výuku. 
 \item[C] Stanovisko hodnoceného učitele k názorům hospitujícího - Tímto dokumentem se může hospitovaný, garant předmětu a vedoucí katedry vyjádřit k slovnímu hodnocení. Proto tento dokument lze sepsat až po vystavení formuláře B.
-\item[D] Závěrečné shrnutí hospitujícím - je poslední dokument a nejdůležitějším dokumentem ze všech. Sepíše ho jeden z hospitujících. Tento dokument slouží jako výstup hodnocení hospitace. Dokument obsahuje klady, zápory, navržená opatření a závěr. Je také jediným veřejným veřejným dokumentem a proto je potřeba ho vytavit na volně přístupných stránkách.
+\item[D] Závěrečné shrnutí hospitujícím - je poslední a nejdůležitější dokument ze všech. Sepíše ho jeden z hospitujících. Tento dokument slouží jako výstup hodnocení hospitace. Dokument obsahuje klady, zápory, navržená opatření a závěr. Je také jediným veřejným dokumentem a proto je potřeba ho vytavit na volně přístupných stránkách.
 \end{itemize}

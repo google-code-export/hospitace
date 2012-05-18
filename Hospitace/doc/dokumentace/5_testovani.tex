@@ -1,20 +1,18 @@
 \chapter{Testování}
 
-Cílem testování bylo otestovat reálnou funkčnost aplikace a odhalit vzniklé chyby  při vývoji aplikace. Aplikaci jsem testoval dvěma způsoby manuálně, kde jsem musel ručně procházet aplikaci a zkoušet její funkčnost, a  Funkčnost aplikace jsem testoval manuálně a automaticky pomocí testovacích nástrojů v Ruby on Rails. Aplikaci jsem testoval v průběhu celého vývoje.  
+Cílem testování bylo otestovat reálnou funkčnost aplikace a odhalit vzniklé chyby  při vývoji aplikace. Aplikaci jsem testoval dvěma způsoby manuálně, kde jsem musel ručně procházet aplikaci a zkoušet její funkčnost a automaticky pomocí testovacích nástrojů v Ruby on Rails. Aplikace byla testována v průběhu celého vývoje.
 
 \section{Automatické testování}
-Automatické testy je důležité používat na místech, kde je velké riziko vzniku chyb. Nejčastější vznikají chyby při přidávání, nebo úpravě funkcionality.
-Pro automatické testování jsem použil testovací nástroje v Ruby on Rails.
-V Ruby on Rails se testy dělí do tří kategorií.
+Automatické testy je důležité používat na místech, kde je velké riziko vzniku chyb. Chyby nejčastěji vznikají při přidávání, nebo úpravě funkcionalit v aplikaci. Pro automatické testování jsem použil testovací nástroje v Ruby on Rails. V Ruby on Rails se testy dělí do tří kategorií  Unit, Functional a Integration.
 
 \subsection{Testovací data}
-Pro automatické testování je potřeba připravit testovací data. Testovací data jsou obsažená ve struktuře programu pod tests/fixtures. Zde se pak nacházejí Soubory s testovacími daty pro jednotlivé modely ve formátu YAML.
+Pro automatické testování je potřeba připravit testovací data. Testovací data jsou obsažená ve struktuře programu pod tests/fixtures. Zde se pak nacházejí soubory s testovacími daty pro jednotlivé modely ve formátu YAML.
 
 \subsection{Unit testing}
 Unit testy slouží k testování samostatných částí programů. V Rails se Unit testy používají hlavně pro testování funkčnosti modelů. Testuje se hlavně validace vstupů a perzistence dat.
 
 \subsection{Functional tests}
-Tyto testy testůjí rozné činnosti v jednotlivých controllerech aplikace. Controllery zpracovávají příchozí webové requesty a nakonec odpoví vyrendrovaným pohledem. Tento typ testů testuje:
+Tyto testy testují různé činnosti v jednotlivých controllerech aplikace. Controllery zpracovávají příchozí webové requesty a nakonec vyrendrují view. Tento typ testů testuje:
 
 \begin{list}{•}{}
 \item Byl webový požadavek úspěšný?
@@ -25,7 +23,7 @@ Tyto testy testůjí rozné činnosti v jednotlivých controllerech aplikace. Co
 \end{list} 
 
 \subsection{Integration testing}
-Integrační testy se používají k testování interakce mezi libovolným počtem kontrolorů. Obvykle se používají k testování důležitých pracovních toků v rámci aplikace.
+Integrační testy se používají k testování interakce mezi libovolným počtem kontrolorů. Tyto testy se používají k testování větších celků v rámci aplikace.
 
 \section{Manuální testování}
 Manuálně jsem testoval části aplikace u kterých se špatně vytvářejí automatické testy, nebo byl potřeba lidský úsudek\footnote{testování uživatelského prostředí}. Primárně jsem testoval reálnou funkčnost aplikace na konci každé iterace. Procházel jsem aplikaci podle scénářů užití a využíval jsem reálná data z probíhajících hospitací v letním semestru 2011/2012.

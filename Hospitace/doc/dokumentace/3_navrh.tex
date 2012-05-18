@@ -4,32 +4,32 @@
 Tato část popisuje jednotlivé technologie a služby potřebné pro implementaci aplikace.
 
 \subsection{Ruby on Rails}
-Ruby on Rails \cite{rubyonrails}, zkráceně Rails, je jedno z implementačních omezení, které se nachází přímo v zadání práce. Jedná se o framework primárně určený pro vývoj webových aplikací napojených na relační databázi. Framework je napsán na skriptovacím interpretovaným programovací jazyku Ruby \cite{ruby}. Rails používá návrhový vzor Model-view-controller viz. \ref{mvc}. Mezi základními myšlenkami a filozofií frameworku patří dva principy. Prvním principem je Convention over Configuration viz. \ref{coc} a druhým je Don’t Repeat Yourself viz. \ref{dry}.
+Ruby on Rails \cite{rubyonrails}, zkráceně Rails, je jedno z implementačních omezení, které se nachází v zadání práce. Jedná se o moderní framework určený pro vývoj webových aplikací napojených na relační databázi. Framework je napsán ve skriptovacím interpretovaným programovacím jazyku Ruby \cite{ruby}. Rails používá návrhový vzor Model-view-controller viz \ref{mvc}. Mezi základní myšlenky a filozofií frameworku patří dva principy. Prvním principem je Convention over Configuration viz \ref{coc} a druhým je Don’t Repeat Yourself viz \ref{dry}.
 
 \subsubsection{Balíckovací systém RubyGems}
-Protože jsou Rails postaveny na jazyku Ruby lze používat balíčkovací systém RubyGems, kde existuje velké množství již existujících řešení, které jsou dostupné jako knihovny\footnote{v RubyGems se knihovna nazývá Gem}. 
+Protože jsou Rails postaveny na jazyku Ruby lze používat balíčkovací systém RubyGems, kde je velké množství již existujících řešení, které jsou dostupné jako knihovny\footnote{v RubyGems se knihovna nazývá Gem}. 
 
 \subsection{KOSapi}
 \label{kosapi}
-KOSapi je webová služba poskytující aplikační rozhraní v podobě RESTful webové služby \ref{rest}. Je určená pro vznik školních aplikací, které potřebují mít přístup k datům souvisejících s výukou. Pro aplikaci používám stabilní verzi API 2. 
+KOSapi je školní webová služba poskytující aplikační rozhraní v podobě RESTful webové služby \ref{rest}. Je určená pro vznik školních aplikací, které potřebují mít přístup k datům souvisejících s výukou. Při vývoji aplikace používám stabilní verzi 2 API. 
 
-Z této služby čerpám hlavně data předmětů a osob v KOSu. Pro připojení ke KOSapi používám již existující knihovnu napsanou v Ruby Tomášem Linhartem a Tomášem Jukínem ve školním projektu VyVy \cite{vyvy_project}.  
+Z této služby aplikace čerpá hlavně data předmětů a osob v KOSu. Pro připojení ke KOSapi používám již existující knihovnu napsanou v Ruby ze školního projektu VyVy\cite{vyvy_project}.  
 
 \subsection{FELid}
 \label{felid}
 FELid \cite{felid} je globální autentizační a autorizační systém pro webovské aplikace na síti FEL. Poskytuje jednotný a bezpečný způsob přihlášení uživatelů a přenos jejich údajů do různých aplikací na webu. Zároveň podporuje jednorázové přihlášení (tzv. single sign-on). Znamená to, že se uživatel přihlašuje pouze do první použité aplikaci a u dalších aplikací už nemusí zadávat svoje přihlašovací údaje.
 
-Tuto službu používám pro autentizaci uživatelů do systému. Abych mohl používat v aplikaci FELid je nutné splnit technické požadavky, které jsou napsány na stránkách FELid \cite{felid_pozadavky}.
+Tuto službu používám pro autentizaci uživatelů do systému. Pro zprovoznění aplikace FELid je nutné splnit technické požadavky, které jsou vystaveny na oficiálních stránkách \cite{felid_pozadavky}.
 
 \subsection{Aplikační server}
 \label{apache}
-Pro zprovoznění aplikace do reálného provozu jsem použil webový server Apache HTTP server \cite{apache} ve verzi 2. Tento aplikační server jsem zvolil kvůli obecným požadavkům aplikace pro využití FELid a pažadavku aby aplikace byla napsaná v Ruby on Rails. Tato verze webového serveru totiž umožňuje instalaci zásuvných modulů Passenger \cite{passenger} a Shibboleth \cite{shibboleth}. Passenger umožňuje nasazení rails aplikací na aplikačním serveru. Druhý modul Shibboleth zprostředkovává single sign-on autentizaci mezi aplikačním serverem a službou FELid.
+Pro zprovoznění aplikace do reálného provozu jsem použil webový server Apache HTTP server 2.4 \cite{apache}. Tento aplikační server jsem musel zvolit, abych mohl splnit dva obecné požadavky aplikace. Aplikace musí být napsaná v Ruby on Rails a využívat aplikaci FELid pro autentizaci. Tato verze webového serveru totiž dovolí nainstalovat zásuvné moduly Passenger \cite{passenger} a Shibboleth \cite{shibboleth}. Passenger umožňuje nasazení Rails aplikací na aplikačním serveru. Druhý modul Shibboleth zprostředkovává single sign-on autentizaci mezi aplikačním serverem a službou FELid.
 
 \subsection{Databáze}
-Ruby on Rails poskytuje možnost připojení k různým databázovým systémům prostřednictvím adaptérů. Díky tomu není aplikace závislá na použitém databázovém systému a díky tomu mohu používat pro vývoj a testování aplikace jednoduchý databázový systém SQLite \cite{sqlite}, který pro tyto účely bohatě postačuje a není potřeba jej složitě konfigurovat. Pro samotné nasazení aplikace do provozu už používám databázový systém MySQL \cite{mysql}.
+Ruby on Rails poskytuje možnost připojení k různým databázovým systémům prostřednictvím adaptérů. Díky tomu není aplikace závislá na databázovém systému. Tuto vlastnost používám při vývoji a testování aplikace, kde využívám jednoduchý a snadno konfigurovatelný databázový systém SQLite \cite{sqlite}, který pro tyto účely bohatě postačí. Pro samotné nasazení aplikace do provozu už používám databázový systém MySQL \cite{mysql}.
 
 \section{Architektura}
-V této části popisuji použité architektonické vzory a konvence, které dodržuji při návrhu aplikace.
+V této části popisuji použité architektonické vzory a konvence, které dodržuji při implementaci aplikace.
 
 \subsection{MVC}
 \label{mvc}
@@ -46,18 +46,18 @@ Kontrolory fungují jako zprostředkovatel mezi modely a views. V Rails slouží
 
 \subsection{DRY}
 \label{dry}
-DRY (Don’t repeat yourself) \cite{dry} je princip vývoje softwaru zaměřený na snížení opakování psaní stejného kódu a tím zvyšuje čitelnost a znovupoužitelnost kódu. To znamená, že informace se nacházejí na jednoznačném místě. Pro příklad Ruby on Rails získává definici sloupců pro třídu modelu přímo z databáze.  
+DRY (Don’t repeat yourself) \cite{dry} je princip vývoje softwaru zaměřený na snížení opakování psaní stejného kódu a tím zvyšuje čitelnost a znovupoužitelnost kódu. To znamená, že informace se nacházejí na jednoznačném místě. Pro příklad Ruby on Rails získává definici atributů pro třídu modelu přímo z databáze.  
 
 \subsection{CoC}
 \label{coc}
-CoC (Convention over Configuration) \cite{coc} je další princip používaný v Rails pro zlepšení čitelnosti a znovupoužitelnosti kódu. Tento princip znamená, že konvence má přednost před konfigurací a to tak, že Rails předpokládá to, co chcete udělat, místo toho, aby vás nutil specifikovat každou drobnost v konfiguraci. 
+CoC (Convention over Configuration) \cite{coc} je další princip používaný v Rails pro zlepšení čitelnosti a znovupoužitelnosti kódu. Tento princip znamená, že konvence má přednost před konfigurací a to tak, že Rails předpokládá to, co chcete udělat místo toho, aby vás nutil specifikovat každou drobnost v konfiguraci. 
 
 \subsection{REST}
 \label{rest}
-REST (Representational State Transfer) \cite{rest} je architektonický vzor pro webové aplikace. Je založen na HTTP protokolu a hlavní myšlenkou je poskytovat přístup ke zdrojům dat. Všechny zdroje jsou identifikovány přes URI. REST definuje čtyři základní metody pro přístup ke zdrojům. Jsou známé pod označením CRUD\footnote{create, retriece, update a delete}. Tyto metody jsou implementovány pomocí odpovídajících metod HTTP protokolu. Jednotlivé metody rozeberu na příkladech pro zdroj \verb|observations|\footnote{zdroj aplikace pro práci s hospitacemi}.
+REST (Representational State Transfer) \cite{rest} je architektonický vzor pro webové aplikace. Je založen na HTTP protokolu a hlavní myšlenkou je poskytovat přístup ke zdrojům dat. Všechny zdroje jsou identifikovány přes URI. REST definuje čtyři základní metody pro přístup ke zdrojům. Jsou známé pod označením CRUD\footnote{create, retriece, update a delete}. Tyto metody jsou implementovány pomocí odpovídajících metod HTTP protokolu. Jednotlivé metody rozeberu na příkladech pro zdroj \textit{observations}\footnote{zdroj aplikace pro práci s hospitacemi}.
 
 \paragraph*{Create}
-je požadavek, který pomocí metody POST vytvoří nový záznam. Příklad dotazu vytvoří novou hospitaci.
+je požadavek, který pomocí metody POST vytvoří nový záznam. Příklad pro vytvoření nové hospitace.
 
 \begin{quote}
 \begin{verbatim}
@@ -66,7 +66,7 @@ POST /observations
 \end{quote}
 
 \paragraph*{Retrieve}
-je požadavek pro přístup ke zdrojům. Funguje stejným způsobem jako běžný požadavek na stránku pomocí GET metody. V prvním příklad vrátí seznam všech hospitace. Druhý příklad vrátí podrobnosti hospitace s id 1.
+je požadavek pro přístup ke zdrojům. Funguje stejným způsobem jako běžný požadavek na stránku pomocí GET metody. První příklad vrátí seznam všech hospitací. Druhý příklad vrátí podrobnosti o konkrétní hospitaci.
 
 \begin{quote}
 \begin{verbatim}
@@ -94,7 +94,7 @@ DELETE /observations/1
 \end{quote}
 
 \section{Struktura aplikace}
-V této sekci popíšu základní strukturu aplikace. Struktura aplikace je vygenerovaná pomocí generátorů v Ruby on Rails a proto nepopíšu celou strukturu, ale pouze části aplikace, které byli nejdůležitější pro vývoj aplikace. Na obrázku \ref{tree:hospitace} je popsaná strukturu složek a k nim v popisku jejich obsah.
+V této sekci popíšu základní strukturu aplikace. Struktura aplikace je vygenerovaná pomocí generátor v Ruby on Rails. Proto nepopíšu celou strukturu, ale pouze části aplikace, které jsou nejdůležitější pro její vývoj. Na obrázku \ref{tree:hospitace} je popsaná strukturu nejdůležitějších složek a k nim popis obsahu.
 
 \begin{figure}[h]
 	\dirtree{%
@@ -102,11 +102,11 @@ V této sekci popíšu základní strukturu aplikace. Struktura aplikace je vyge
 		.2 app/.
 		.3 assets/ \DTcomment{obsahuje obrázky, JavaScript, CSS}.
 		.3 controllers/ \DTcomment{controllers aplikace}.
-		.3 helpers/ \DTcomment{pomocné funkce pro vytváření pohledů}.
-		.3 inputs/ \DTcomment{speciální vstupní položky pro tvorbu formulářů}.
+		.3 helpers/ \DTcomment{pomocné funkce pro generování views}.
+		.3 inputs/ \DTcomment{vytvořené vstupní pole pro gem SimpleForm}.
 		.3 mailers/ \DTcomment{třídy které generují a odesílají emaily}.
 		.3 models/ \DTcomment{modely aplikace}.
-		.3 views/ \DTcomment{šablony aplikace}.		
+		.3 views/ \DTcomment{views aplikace}.		
 		.2 lib/\DTcomment{rozšíření a moduly pro aplikaci}.
 		.3 email\_templates/ \DTcomment{modul pro generování emailů}.
 		.3 tasks/ \DTcomment{obsahuje rake scripty}.
