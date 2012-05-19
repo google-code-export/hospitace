@@ -1,4 +1,4 @@
-\begin{thebibliography}{25}
+\begin{thebibliography}{26}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -8,6 +8,10 @@
 \bibitem[RVM()]{RVM}
 \emph{Installing RVM} [online]. [cit.~2012-04-07].
 \newblock Dostupn{\'{e}} z: \url{https://rvm.io/rvm/install/}.
+
+\bibitem[RoR()]{RoR_testing}
+\emph{A Guide to Testing Rails Applications} [online]. [cit.~2012-05-17].
+\newblock Dostupn{\'{e}} z: \url{http://guides.rubyonrails.org/testing.html}.
 
 \bibitem[aut()]{authlogic}
 \emph{Authlogic: documentation} [online]. [cit.~2012-04-07].
