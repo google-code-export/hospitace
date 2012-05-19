@@ -14,9 +14,11 @@ Hospitace, jak už jsem nastínil v motivaci, je zavedený vnitřní proces kont
 
 \subsection{Prototyp}
 
-Jako referenční řešení práce jsem obdržel prototyp aplikace napsaný v Ruby on Rails. Ten se skládá z dokumentace a z rozpracované webové aplikace. Dokumentace k prototypu obsahuje analýzu a návrh aplikace, což  mi pomohlo při vývoji aplikace a také pochopení problematiky hospitací. Práce se samotnou aplikací byla již obtížnější, protože verze, kterou jsem obdržel byla velmi rozpracovaná. Nepodařilo se mi jí zprovoznit tak, aby byla plně funkční. Po hlubším zkoumání a upravování aplikace jsem zjistil, že aplikace umí částečně plánovat hospitace. [?co neumí?] Dále byli vytvořeny html šablony pro hodnotící formuláře a knihovna pro komunikaci s aplikací KOSapi\footnote{viz. \ref{kosapi}}.
+Jako referenční řešení práce jsem obdržel prototyp aplikace napsaný v Ruby on Rails. Ten se skládá z dokumentace a z rozpracované webové aplikace. Dokumentace k prototypu obsahuje analýzu a návrh aplikace, což  mi pomohlo při vývoji aplikace a také pochopení problematiky hospitací. Práce se samotnou aplikací byla již obtížnější, protože verze, kterou jsem obdržel, byla velmi rozpracovaná a nešla spustit. 
 
-Důvod proč navazuji na rozpracovanou práci je ten, že autor se rozhodl kompletně přejít na jinou technologii než je Ruby on Rails. Nakonec, po hlubší analýze prototypu programu, jsem se rozhodl převzít z prototypu aplikace pouze připojení ke KOSapi a zbytek udělat od základů nový. 
+Po zprovoznění aplikace do spustitelného stavu jsem zjistil, že aplikace umí získávat data ze služby KOSapi\footnote{viz. \ref{kosapi}} a plánovat hospitace. Způsob plánování hospitací je v prototypu uživatelsky nepřívětivý. Pro naplánování hospitace musí uživatel vybírat předmět a hospitujícího pomocí roletkových seznamů bez možnosti filtrování. S tisíci záznamy v seznamu je skoro nemožné najít ten správný záznam. V nedostatečném stavu byly i hodnotící formuláře. Prototyp sice obsahuje formuláře, ale nebyla k nim implementována funkcionalita. 
+
+Důvod proč navazuji na rozpracovanou práci je ten, že původní autor se rozhodl kompletně přejít na jinou technologii než je Ruby on Rails. Nakonec, po hlubší analýze prototypu programu, jsem se rozhodl převzít z prototypu aplikace pouze připojení ke KOSapi a zbytek udělat od základů nový. 
 
 \subsection{Postupy pro kontrolu kvality výuky}
 V této části kapitoly popisuji hlavní procesy při vykonávání hospitací. Tyto informace čerpám z již zmíněného dokumentu Postupy pro kontrolu kvality výuky \cite{postupy}, kde jsou obsaženy veškeré potřebné informace o průběhu hospitací.

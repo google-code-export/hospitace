@@ -99,20 +99,23 @@ V této sekci popíšu základní strukturu aplikace. Struktura aplikace je vyge
 \begin{figure}[h]
 	\dirtree{%
 		.1 Hospitace/.
-		.2 app/.
-		.3 assets/ \DTcomment{obsahuje obrázky, JavaScript, CSS}.
+		.2 app/ \DTcomment{jádro MVC aplikace}.
+		.3 assets/.
+		.4 images/ \DTcomment{grafika  a obrázky}.
+		.4 javascripts/ \DTcomment{JavaScriptové knihovny}.
+		.4 stylesheets/ \DTcomment{kaskádové styly}.
 		.3 controllers/ \DTcomment{controllers aplikace}.
-		.3 helpers/ \DTcomment{pomocné funkce pro generování views}.
-		.3 inputs/ \DTcomment{vytvořené vstupní pole pro gem SimpleForm}.
+		.3 helpers/ \DTcomment{pomocné metody pro šablony}.
+		.3 inputs/ \DTcomment{vytvořené vstupní pole pro knihovnu SimpleForm}.
 		.3 mailers/ \DTcomment{třídy které generují a odesílají emaily}.
 		.3 models/ \DTcomment{modely aplikace}.
-		.3 views/ \DTcomment{views aplikace}.		
-		.2 lib/\DTcomment{rozšíření a moduly pro aplikaci}.
+		.3 views/ \DTcomment{šablony aplikace}.		
+		.2 lib/\DTcomment{knihovny a moduly pro aplikaci}.
 		.3 email\_templates/ \DTcomment{modul pro generování emailů}.
-		.3 tasks/ \DTcomment{obsahuje rake scripty}.
+		.3 tasks/ \DTcomment{rake scripty}.
 		.3 kosapi/ \DTcomment{knihovna pro připojení ke KOSapi}.
-		.3 will\_paginate/ \DTcomment{rozšíření pro modul will\_paginate}.
-		.2 public/ \DTcomment{složka, která je přístupná přes web. Obsahuje statické soubory}.
+		.3 will\_paginate/ \DTcomment{rozšíření pro knihovnu will\_paginate}.
+		.2 public/ \DTcomment{obsahuje statické soubory přístupné z webu}.
 		.2 config/ \DTcomment{konfigurační soubory a směrování}.		
 		.2 db/ \DTcomment{schéma databáze a databázové migrace}. 
 		.2 test/\DTcomment{testy, testovací data a nástroje pro testování aplikace}.

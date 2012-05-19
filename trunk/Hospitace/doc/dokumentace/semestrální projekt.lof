@@ -9,11 +9,12 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Struktura aplikace}}{19}{figure.4.1}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Dom\IeC {\'e}nov\IeC {\'y} model dynamick\IeC {\'y}ch formul\IeC {\'a}\IeC {\v r}\IeC {\r u}}}{24}{figure.5.1}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces P\IeC {\v r}\IeC {\'\i }klad stromov\IeC {\'a} struktura formul\IeC {\'a}\IeC {\v r}\IeC {\r u}}}{26}{figure.5.2}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces P\IeC {\v r}\IeC {\'\i }klad ulo\IeC {\v z}en\IeC {\'y}ch dat}}{26}{figure.5.3}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Diagram nasazen\IeC {\'\i }}}{27}{figure.5.4}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Struktura zna\IeC {\v c}ky}}{30}{figure.5.5}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Dekompozice pomoc\IeC {\'\i } polymorfn\IeC {\'\i } asociace}}{24}{figure.5.1}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Dom\IeC {\'e}nov\IeC {\'y} model dynamick\IeC {\'y}ch formul\IeC {\'a}\IeC {\v r}\IeC {\r u}}}{25}{figure.5.2}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces P\IeC {\v r}\IeC {\'\i }klad stromov\IeC {\'e} struktury formul\IeC {\'a}\IeC {\v r}e}}{26}{figure.5.3}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces P\IeC {\v r}\IeC {\'\i }klad ulo\IeC {\v z}en\IeC {\'y}ch dat}}{26}{figure.5.4}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Diagram nasazen\IeC {\'\i }}}{27}{figure.5.5}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Struktura zna\IeC {\v c}ky}}{30}{figure.5.6}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
@@ -24,3 +25,8 @@
 \contentsline {figure}{\numberline {B.4}{\ignorespaces Use case - hospituj\IeC {\'\i }c\IeC {\'\i }}}{41}{figure.B.4}
 \contentsline {figure}{\numberline {B.5}{\ignorespaces Use case - administr\IeC {\'a}tor}}{41}{figure.B.5}
 \contentsline {figure}{\numberline {B.6}{\ignorespaces Use case - administr\IeC {\'a}tor hospitac\IeC {\'\i }}}{42}{figure.B.6}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {C.1}{\ignorespaces Hodnot\IeC {\'\i }c\IeC {\'\i } formul\IeC {\'a}\IeC {\v r} A}}{44}{figure.C.1}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {E.1}{\ignorespaces Obsah CD}}{47}{figure.E.1}

@@ -71,25 +71,25 @@ Doménový model na obrázku \ref{fig:domainmodel} reprezentuje entity v systém
 \label{sec:domeny_kosapi} 
 \subsection{Domény v KOSapi}
 \begin{itemize}
-\item Osoba - je osoba v KOSu. Každá osoba může být učitelem a studentem.
-\item Semestr - semestr vyučovaný na FEL. 
-\item Předmět - předměty vyučované na FEL.
-\item Instance předmětu - jsou instance předmětu vypsané v konkrétním semestru.
-\item Paralelka - je vypsaná rozvrhová paralelka pro instanci předmětu.
-\item Místnost - místnost na FEL
+\item Person - je osoba v KOSu. Každá osoba může být učitelem a studentem.
+\item Semester - semestr vyučovaný na FEL. 
+\item Course - předměty vyučované na FEL.
+\item CourseInstance - jsou instance předmětu vypsané v konkrétním semestru.
+\item Parallel - je vypsaná rozvrhová paralelka pro instanci předmětu.
+\item Room - místnost na FEL.
 \end{itemize}
 
 \subsection{Domény aplikace}
 \begin{itemize}
-\item Hospitace - obsahuje informace o naplánování hospitace. 
-\item Poznámka - je textová poznámka k plánování hospitace.
-\item Hodnocení - reprezentuje informace z proběhlé hospitace hospitace, jsou to informace o datu vykonání hospitace, hospitujícím, předmětu a garantovi.
-\item Příloha - je připojený datový soubor k hodnocení hospitace.
-\item Šablona formuláře - šablona pro tvorbu formulářů. Definuje vlastnosti jakým se budou vytvářet hodnotící formuláře.
-\item Položka - položka reprezentuje jednotlivé segmenty formuláře. Tyto segmenty pak v celku definují strukturu formuláře.
-\item Formulář - vyplněný hodnotící formulář.
-\item Hodnota - je hodnota z vyplněného formuláře. Ta se ukládá z položky formuláře.
-\item Šablona emailu - šablona emailu ze které se budou generovat emailové zprávy.
+\item Observation - je hospitace. Obsahuje informace o naplánování hospitace. 
+\item Note - je textová poznámka k plánování hospitace.
+\item Evaluation - reprezentuje informace pro hodnocení z proběhlé hospitace hospitace, jsou to informace o datu vykonání hospitace, hospitujícím, předmětu a garantovi.
+\item Attachment - je příloha s datový soubor k hodnocení hospitace.
+\item FormTemplate - šablona pro tvorbu formulářů. Definuje vlastnosti jakým se budou vytvářet hodnotící formuláře.
+\item EntryTemplate - položka reprezentuje jednotlivé segmenty formuláře. Tyto segmenty pak v celku definují strukturu formuláře.
+\item Form - vyplněný hodnotící formulář.
+\item Entry - je položka s hodnotou vyplněného formuláře.
+\item EmailTemplate - šablona emailu ze které se budou generovat emailové zprávy.
 \end{itemize}
 
 \begin{figure}[p]
