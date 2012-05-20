@@ -1,20 +1,20 @@
 \chapter{Testování}
 
-Cílem testování bylo otestovat reálnou funkčnost aplikace a odhalit chyby při návrhu a vývoji aplikace. Aplikaci jsem testoval dvěma způsoby manuálně, kde jsem musel ručně procházet aplikaci a zkoušet její funkčnost a automaticky pomocí testovacích nástrojů v Ruby on Rails. Aplikaci jsem testoval v průběhu celého vývoje. 
+Cílem testování bylo otestovat reálnou funkčnost aplikace a odhalit chyby při návrhu a vývoji aplikace. Aplikaci jsem testoval dvěma způsoby: manuálně, kde jsem musel ručně procházet aplikaci a zkoušet její funkčnost, a automaticky pomocí testovacích nástrojů v Ruby on Rails. Aplikaci jsem testoval v průběhu celého vývoje. 
 
 \section{Automatické testování}
-Pro automatické testování jsem použil testovací nástroje v Ruby on Rails \cite{RoR_testing}. V Rails se testy dělí do tří kategorií Unit, Functional a Integration. Jednotlivé kategorie popíši dál v textu. Testy jsem tvořil jen na kritických částech aplikace tam,  kde byla velká pravděpodobnost vzniku chyb při úpravách funkcionality a návrhu aplikace.
+Pro automatické testování jsem použil testovací nástroje v Ruby on Rails \cite{RoR_testing}. V Rails se testy dělí do tří kategorii: Unit, Functional a Integration. Jednotlivé kategorie popíši dále v textu. Testy jsem tvořil jen na kritických částech aplikace tam,  kde byla velká pravděpodobnost vzniku chyb při úpravách funkcionality a návrhu aplikace.
 
 %Automatické testy je důležité používat na místech, kde je velké riziko vzniku chyb. Protiže jsem při přechodu mezi iteracemi přidával velké množství funkcionality, nebo jsem upravoval strukturu    Chyby nejčastěji vznikají při přidávání, nebo úpravě funkcionalit v aplikaci.  Pro automatické testování jsem použil testovací nástroje v Ruby on Rails \cite{RoR_testing}. V Ruby on Rails se testy dělí do tří kategorií  Unit, Functional a Integration.
 
 \subsection{Testovací data}
-Testovací nástroje potřebují pro svou funkčnost testovací data. Tyto data se nacházejí ve struktuře programu ve složce tests/fixtures, zde  pak jsou soubory s testovacími daty pro jednotlivé modely. Data jsou uložená ve formátu YAML\footnote{je formát pro serializaci strukturovaných dat}. Před spuštěním testů se nahrají tato data do testovací databáze, v mém případě lokální databáze SQLite. Díky oddělené databázi nemá testování vliv na produkční databázi.
+Testovací nástroje potřebují pro svou funkčnost testovací data. Tyto data se nacházejí ve struktuře programu ve složce tests/fixtures, zde jsou pak soubory s testovacími daty pro jednotlivé modely. Data jsou uložená ve formátu YAML\footnote{YAML je formát pro serializaci strukturovaných dat}. Před spuštěním testů se nahrají tato data do testovací databáze, v mém případě lokální databáze SQLite. Díky oddělené databázi nemá testování vliv na produkční databázi.
 
 \subsection{Unit testing}
 Unit testy slouží k testování samostatných částí programů. V Rails se tyto testy používají hlavně pro testování funkčnosti modelů. Testuje se hlavně validace vstupů a perzistence dat. Tyto testy mi odhalily spoustu chyb, které vznikly při změnách doménového modelu aplikace.
 
 \subsection{Functional tests}
-Tyto testy testují různé činnosti v jednotlivých controllerech aplikace. Controllery zpracovávají příchozí webové požadavky a nakonec odpovědí vyrendrovaným view.
+Tyto testy testují různé činnosti v jednotlivých controllerech aplikace. Controllery zpracovávají příchozí webové požadavky a nakonec odpovědí vyrendrovanou šablonou.
 
 \begin{list}{•}{\textbf{Tento typ testů testuje:}}
 \item Byl webový požadavek úspěšný?
@@ -25,7 +25,7 @@ Tyto testy testují různé činnosti v jednotlivých controllerech aplikace. Co
 \end{list} 
 
 \subsection{Integration testing}
-Integrační testy se používají v Rails hlavně k testování interakce mezi libovolným počtem kontrolorů, také se používají k testování větších celků v rámci aplikace pro příklad knihovny.
+Integrační testy se používají v Rails hlavně k testování interakce mezi libovolným počtem kontrolorů, také se používají k testování větších celků v rámci aplikace například knihovny.
 
 \section{Manuální testování}
 Manuálně jsem testoval části aplikace u kterých se špatně vytvářejí  testy, nebo byl potřeba lidský úsudek. Tyto vlastnosti splňuje testování uživatelského rozhraní a testování autorizace. Primárně jsem testoval reálnou funkčnost aplikace. Nejrozsáhlejší testování bylo vždy před koncem každé iterace. Musel jsem projít celou aplikaci a otestovat její funkčnost. 

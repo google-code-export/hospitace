@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.4.27)  20 MAY 2012 22:27
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.4.27)  20 MAY 2012 23:19
 entering extended mode
  %&-line parsing enabled.
 **"semestr√°ln√≠ projekt.tex"
@@ -937,6 +937,12 @@ Overfull \vbox (57.24963pt too high) has occurred while \output is active []
 
 [44 <./figures/form_A.png (PNG copy)>]
 P\v {r}\'{\i }loha D.
+
+Overfull \hbox (10.45242pt too wide) in paragraph at lines 104--105
+[]\T1/cmr/m/n/10.95 D·le nain-stalu-jte balÌ£ko-vacÌ sys-tÈm RubyGems a ak-tu-a
+l-izu-jte ho na poslednÌ pod-porovanou
+ []
+
 [45
 
 ] [46]
@@ -968,9 +974,9 @@ ur/jknappen/ec/ecbx2074.600pk> </home/osman/.texmf-var/fonts/pk/ljfour/jknappen
 home/osman/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1095.600pk> </home/osman/
 .texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2488.600pk></usr/share/texmf-texlive
 /fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on "semestr√°ln√≠ projekt.pdf" (65 pages, 1042451 bytes).
+Output written on "semestr√°ln√≠ projekt.pdf" (65 pages, 1043410 bytes).
 PDF statistics:
- 1822 PDF objects out of 2073 (max. 8388607)
+ 1825 PDF objects out of 2073 (max. 8388607)
  268 named destinations out of 1000 (max. 500000)
  855 words of extra memory for PDF output out of 10000 (max. 10000000)
 
