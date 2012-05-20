@@ -85,7 +85,7 @@ note & text & vstupní element pro napsání textové poznámky \\\hline
 
 %*****************************************************************************
 \chapter{Instalační a uživatelská příručka}
-Instalační příručka je napsaná pro zprovoznění aplikace v prostředí development. Návod je napsaný pro operační systém Ubuntu 11.10. Pro zprovoznění aplikace je potřeba nainstalovat tyto programy:
+Instalační příručka je napsaná pro zprovoznění aplikace v prostředí development. Návod je určený pro operační systém Ubuntu 11.10. Pro zprovoznění aplikace je potřeba nainstalovat tyto programy:
 \begin{itemize}
 \item Ruby 1.9.3
 \item RubyGems 1.8.13
@@ -101,7 +101,7 @@ Nejprve je potřeba nainstalovat platformu Ruby do systému. S ruby je potřeba 
 sudo apt-get install ruby1.9.3-full build-essential git-core
 \end{verbatim}
 
-Je potřeba nainstalovat i balíčkovací systém RubyGems a aktualizovat jeho verzi na poslední podporovanou.
+Dále nainstalujte balíčkovací systém RubyGems a aktualizujte ho na poslední podporovanou verzi.
 \begin{verbatim}
 sudo apt-get install rubygems1.8
 sudo gem update --system
@@ -113,7 +113,7 @@ V poslední fázi je potřeba nainstalovat Ruby on Rails pomocí balíčkovacíh
 sudo gem install rails
 \end{verbatim}
 
-Po nainstalovaní Ruby on Rails je potřeba doinstalovat všech závislosti aplikace. Nejprve je potřeba někam do systémů zkopírovat aplikaci třeba do domovského adresáře. Ve všech dalších krocích je potřeba abychom se nacházeli v adresáři aplikace. Druhý příkaz slouží k instalaci závislostí aplikace.
+Po nainstalovaní Ruby on Rails je potřeba doinstalovat všech závislostí aplikace. Nejprve je potřeba někam do systémů zkopírovat aplikaci např. do domovského adresáře. Ve všech dalších krocích se budeme pohybovat v adresáři aplikace. Druhý příkaz slouží k instalaci závislostí aplikace.
 
 \begin{verbatim}
 cd ~/Hospitace
@@ -121,14 +121,14 @@ bundle install
 \end{verbatim}  
 
 \section{Konfigurace a příprava aplikace}
-Před spuštěním aplikace je potřeba nastavit přístupové údaje k databázi. Nastavení databáze se nachází v souboru config/database.yml, který se nalézá v aplikaci. Pro zavedení databáze pak stačí jen spustit příkazy:
+Před spuštěním aplikace je důležité nastavit přístupové údaje k databázi. Nastavení databáze se nachází v souboru config/database.yml, který se nalézá v aplikaci. Pro zavedení databáze pak stačí jen spustit příkazy:
 
 \begin{verbatim}
 rake db:create
 rake db:migrate
 \end{verbatim}  
 
-Teď už je vytvořená databáze, ale je ji potřeba naplnit daty z KOSapi. Pro tento účel slouží příkaz:
+Máme vytvořenu databázi, ale je ji potřeba naplnit daty z KOSapi. Pro tento účel slouží příkaz:
 
 \begin{verbatim}
 rake import
