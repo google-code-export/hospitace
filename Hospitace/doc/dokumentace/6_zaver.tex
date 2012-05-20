@@ -2,14 +2,14 @@
 
 Cílem bakalářské práce bylo vytvořit webovou aplikaci pro evidenci hospitací, která navazuje na dříve vytvořený prototyp. Musí být v takovém stavu, aby ji šlo použít v reálném provozu na ČVUT Fakultě elektrotechnické. Aplikace má totiž pomoct ulehčit administrativní zátěž, která se zvyšuje s nárůstem počtu hospitací. 
 
-Podařilo se mi vytvořit aplikaci, která slouží k tomuhle účelu a je implementována na platformě Ruby on Rails, což je jeden z nejmodernějších frameworků pro vývoj webových aplikací. Pro nasazení do reálného provozu aplikace používá dvě fakultní aplikace. Pro autentizaci používá aplikaci FELid, což je globální autentizační systém pro webové aplikace FEL. Druhou aplikací je KOSapi, ta poskytuje aplikační rozhraní k přístupu dat v KOSu.
+Podařilo se mi vytvořit aplikaci, která slouží k tomuhle účelu a je implementována na platformě Ruby on Rails, což je jeden z nejmodernějších frameworků pro vývoj webových aplikací. Pro nasazení do reálného provozu aplikace používám dvě fakultní aplikace. Pro autentizaci používá aplikaci FELid, což je globální autentizační systém pro webové aplikace FEL. Druhou aplikací je KOSapi, ta poskytuje aplikační rozhraní k přístupu dat v KOSu.
 
 Součástí práce bylo i vytvoření dvou rozsáhlých částí aplikace. První částí jsou dynamické formuláře, které umožňují vytvářet formuláře s možností editace struktury a druhou částí aplikace je knihovna, která umožňuje generovat obsah informačních emailů s daty z hospitace pomocí šablony. Výsledná aplikace je nasazená na serveru http://kvalitavyuky.felk.cvut.cz a připravená na použití v reálném provozu.
 
 \section{Osobní přínos}
-Protože obsah práce byl obsáhlý od implementace aplikace až po její nasazení s instalací serveru jsem získal spoustu zkušeností. Největším přínosem pro mně je poznání nového a zajímavého jazyka Ruby a moderním  frameworku Ruby on Rails. Při tvorbě jsem narazil i na problémy s externími aplikacemi, které jsem musel řešit.
+Protože obsah práce byl obsáhlý, od implementace aplikace, její ho nasazení, až po instalaci serveru, jsem získal spoustu zkušeností. Největším přínosem pro mně je poznání nového a zajímavého jazyka Ruby a moderním  frameworku Ruby on Rails. Při tvorbě jsem narazil i na problémy s externími aplikacemi, které jsem musel řešit, což mě přimělo hlouběji se touto problematikou zabývat.
 
 \section{Možnosti pokračování}
 Možností pokračování v práci je několik. V první řadě je potřeba nainstalovat a nastavit emailový server pro odesílání informačních emailových zpráv.
 
-Lze také pokračovat ve vývoji dynamických formulářů. Do aplikace jsem totiž neimplementoval uživatelské prostředí pro nastavování formulářů. Dále by bylo dobré předělat funkční část do samostatné knihovny. Do budoucna je i možnost rozšířit aplikaci o podporu nové verze KOSapi, která je momentálně ve vývoji. Nová verze bude totiž obsahovat data z Bílé knihy a bude možné pak rozšířit aplikaci o podporu studijních programů s obory.
+Lze také pokračovat ve vývoji dynamických formulářů. Do aplikace jsem totiž neimplementoval uživatelské prostředí pro nastavování formulářů. Dále by bylo dobré předělat funkční část do samostatné knihovny. Do budoucna je i možnost rozšířit aplikaci o podporu nové verze KOSapi, která je momentálně ve vývoji. Nová verze bude totiž obsahovat data z Bílé knihy\footnote{je to dokument, který obsahuje informace o organizací studijních plánů} a bude možné pak rozšířit aplikaci o podporu studijních programů i s obory.
