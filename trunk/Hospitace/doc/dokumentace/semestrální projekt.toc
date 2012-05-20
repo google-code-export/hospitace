@@ -93,5 +93,8 @@
 \contentsline {chapter}{\numberline {B}UML diagramy a obr\IeC {\'a}zky}{39}{appendix.B}
 \contentsline {section}{\numberline {B.1}Use cases}{39}{section.B.1}
 \contentsline {chapter}{\numberline {C}Dynamick\IeC {\'e} formul\IeC {\'a}\IeC {\v r}e}{43}{appendix.C}
-\contentsline {chapter}{\numberline {D}Instala\IeC {\v c}n\IeC {\'\i } p\IeC {\v r}\IeC {\'\i }ru\IeC {\v c}ka}{45}{appendix.D}
+\contentsline {chapter}{\numberline {D}Instala\IeC {\v c}n\IeC {\'\i } a u\IeC {\v z}ivatelsk\IeC {\'a} p\IeC {\v r}\IeC {\'\i }ru\IeC {\v c}ka}{45}{appendix.D}
+\contentsline {section}{\numberline {D.1}Instalace}{45}{section.D.1}
+\contentsline {section}{\numberline {D.2}Konfigurace a p\IeC {\v r}\IeC {\'\i }prava aplikace}{46}{section.D.2}
+\contentsline {section}{\numberline {D.3}Spu\IeC {\v s}t\IeC {\v e}n\IeC {\'\i } aplikace}{46}{section.D.3}
 \contentsline {chapter}{\numberline {E}Obsah p\IeC {\v r}ilo\IeC {\v z}en\IeC {\'e}ho CD}{47}{appendix.E}

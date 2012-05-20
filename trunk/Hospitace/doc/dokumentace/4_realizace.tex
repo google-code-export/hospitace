@@ -7,16 +7,16 @@ Tato iterace patřila k nejobsáhlejším ze všech iterací. Jedním z důvodů
 
 \subsection{Postup}
 \subsubsection{Datová vrstva}
-Protože aplikace využívá dva datové zdroje KOSapi  a databázi aplikace, bylo potřeba nejdřív vyřešit jak se připojit ke KOSapi. V této části vycházím z prototypu aplikace pro správu hospitací. Ta využívá již naprogramovanou knihovnu z projektu VyVy \cite{vyvy}. Poté bylo potřeba vytvořil modely tak, aby umožnily komunikaci mezi KOSapi a databází aplikace. Při implementování knihovny do aplikace jsem musel vyřešit lokalizaci jazykových konstant v datech získaných z API. Řešení bylo jednoduché, stačilo rozšířit knihovnu o podporu modul i18n\footnote{lokalizace softwaru pro různé jazyky a jejich místních zvyklostí}, který je součástí Rails.
+Protože aplikace využívá dva datové zdroje KOSapi  a databázi aplikace, bylo potřeba nejdřív vyřešit jak se připojit ke KOSapi. V této části vycházím z prototypu aplikace pro správu hospitací. Ta využívá již naprogramovanou knihovnu z projektu VyVy \cite{vyvy}. Poté bylo potřeba vytvořil modely tak, aby umožnily komunikaci mezi KOSapi a databází aplikace. Při implementování knihovny do aplikace jsem musel vyřešit lokalizaci jazykových konstant v datech získaných z API. Řešení bylo jednoduché, stačilo rozšířit knihovnu o podporu knihovny i18n\footnote{lokalizace softwaru pro různé jazyky a jejich místních zvyklostí}, který je součástí Rails.
 
 \subsubsection{Autentizace}
-Pro autentizaci, v této fázi vývoje, používám knihovnu authlogic, kterou jsem zprovoznil pomocí návodu \cite{authlogic}. Tuto knihovnu používám jen dočasně po dobu vývoje aplikace. Ve finální fázi bude nahrazen autentizační službou FELid viz. \ref{felid}, kterou lze zprovoznit jen na serveru, kde bude aplikace nasazena. 
+Pro autentizaci, v této fázi vývoje, používám knihovnu \textit{Authlogic}, kterou jsem zprovoznil pomocí návodu \cite{authlogic}. Tuto knihovnu používám jen dočasně po dobu vývoje aplikace. Ve finální fázi bude nahrazen autentizační službou FELid viz. \ref{felid}, kterou lze zprovoznit jen na serveru, kde bude aplikace nasazena. 
 
 \subsubsection{Autorizace}
-Autentizace v hospitacích je jedena z kritických oblastí, kterou bylo potřeba vyřešit hned na začátku vývoje. V aplikaci potřebuji autorizovat uživatele jak podle role, tak i podle vztahu k hospitaci. Proto jsem hledal modul, který by dokázal nadefinovat pravidla autorizace. Knihovna, kterou jsem použil, se jmenuje CanCan \cite{cancan} . Tato knihovna má velmi jednoduchý, ale i přesto flexibilní zápis pravidel. Tyto pravidla umí filtrovat jak podle zdroje, tak i podle jednotlivých instancí záznamů. Umí také dokáže filtrovat metody v kontrolorech i celé zdroje aplikace. Veškerá pravidla jsou definována na jednom místě\footnote{model Ability} aplikace.
+Autentizace v hospitacích je jedena z kritických oblastí, kterou bylo potřeba vyřešit hned na začátku vývoje. V aplikaci potřebuji autorizovat uživatele jak podle role, tak i podle vztahu k hospitaci. Proto jsem hledal modul, který by dokázal nadefinovat pravidla autorizace. Knihovna, kterou jsem použil, se jmenuje \textit{CanCan} \cite{cancan} . Tato knihovna má velmi jednoduchý, ale i přesto flexibilní zápis pravidel. Tyto pravidla umí filtrovat jak podle zdroje, tak i podle jednotlivých instancí záznamů. Umí také dokáže filtrovat metody v kontrolorech i celé zdroje aplikace. Veškerá pravidla jsou definována na jednom místě\footnote{model Ability} aplikace.
 
 \begin{quote}
-Příklad zapsaného pravidla pro administrátora hospitací pomocí knihovny CanCan ve třídě modelu Ability. První pravidlo \verb|can| umožní zobrazovat, vytvářet, upravovat a mazat ze zdroje Observation. Zároveň druhé pravidlo \verb|cannot| zakáže operace pro správu záznamů, které administrátor hospitací nevytvořil.
+Příklad zapsaného pravidla pro administrátora hospitací pomocí knihovny \textit{CanCan} ve třídě modelu Ability. První pravidlo \verb|can| umožní zobrazovat, vytvářet, upravovat a mazat ze zdroje \textit{Observation}. Zároveň druhé pravidlo \verb|cannot| zakáže operace pro správu záznamů, které administrátor hospitací nevytvořil.
 
 \begin{verbatim}
 def admin
@@ -30,7 +30,7 @@ end
 
 \subsubsection{Role}
 \label{sec:role}
-Role pro jednotlivé uživatelé uchovávám v modelu Role. Kde jednotlivé role uživatele ukládám do jednoho atributu \verb|roles_mask| pomocí bitové masky. V bitové masce jsou reprezentovány role čísly mocniny 2. Díky tomu lze skládat role pomocí bitové operace OR. V tabulce \ref{tab:role} je přehled rolí s číslem reprezentující bitovou masku pro roli.
+Role pro jednotlivé uživatelé uchovávám v modelu \textit{Role}. Kde jednotlivé role uživatele ukládám do jednoho atributu \verb|roles_mask| pomocí bitové masky. V bitové masce jsou reprezentovány role čísly mocniny 2. Díky tomu lze skládat role pomocí bitové operace OR. V tabulce \ref{tab:role} je přehled rolí s číslem reprezentující bitovou masku pro roli.
 
 \begin{table}[h]
 \begin{center}
@@ -50,9 +50,9 @@ Admin & 8 \\\hline
 \end{table}
 
 \subsubsection{Uživatelské prostředí}
-Pro vytvoření uživatelského prostředí jsem použil již existující knihovnu Bootstrap \cite{bootstrap}. Použil jsem tuto knihovnu abych si usnadnil implementaci uživatelského prostředí. Knihovna obsahuje kompletní CSS tak i JavaScriptové moduly. Mezi další výhody patří open-source licence a další výhodou je známé uživatelské prostředí používané ve webové aplikaci Twitter.
+Pro vytvoření uživatelského prostředí jsem použil již existující knihovnu \textit{Bootstrap} \cite{bootstrap}. Použil jsem tuto knihovnu abych si usnadnil implementaci uživatelského prostředí. Knihovna obsahuje kompletní CSS tak i JavaScriptové moduly. Mezi další výhody patří open-source licence a další výhodou je známé uživatelské prostředí používané ve webové aplikaci Twitter.
 
-Pro usnadnění implementace knihovny Bootstrap do aplikace jsem použil další dvě knihovny. První je modul SimpleForm \cite{simpleform}, který slouží k vytváření formulářů. Základním cílem je nadefinovat rozvržení všech formulářů na jednom místě. Druhým modulem je WillPaginate \cite{willpaginate} pro stránkování dat.
+Pro usnadnění implementace knihovny \textit{Bootstrap} do aplikace jsem použil další dvě knihovny. První je modul \textit{SimpleForm} \cite{simpleform}, který slouží k vytváření formulářů. Základním cílem je nadefinovat rozvržení všech formulářů na jednom místě. Druhým modulem je \textit{WillPaginate} \cite{willpaginate} pro stránkování dat.
 
 \subsection{Výstup} 
 Výstupem z první iterace vznikla část aplikace, která uměla plánovat hospitace a uměla získávat data z webové služby KOSapi.
@@ -66,7 +66,7 @@ Zadáním druhé iterace bylo na-implementovat hodnotící formuláře hospitac�
 \subsubsection{Datová vrstva}
 Problém se ztrátou dat byl velmi vážný, proto bylo potřeba tento problém rychle vyřešit, abych mohl pokračovat dále ve vývoji. Musel jsem proto předělat datovou část. Rozšířil jsem databázi o entity z kapitoly \ref{sec:domeny_kosapi} tak, aby data z KOSapi byla uložena v databázi. Data je potřeba synchronizovat v databázi s KOSapi. O synchronizaci se starájí \textit{rake}\footnote{rake je sada nástrojů používaná pro vývoj a nasazení Rails aplikací} scripty, které přidávají nové záznamy nebo je aktualizují. Synchronizační scripty se spouštějí každý den pomocí programu \textit{Cron}\footnote{Cron je program, který na pozadí operačního systému spouští naplánované úlohy}.
 
-Po přidání nových entit bylo potřeba na-implementovat asociace mezi novými entitami. V modelu KOSapi je spousta asociací mezi entitami osoba - paralelka a osoba - instance předmětu. V aplikaci jich celkem používám šest. Všechny tyto asociace\footnote{asociace garant, přednášející, vyučující, instruktor a zkoušející.} mají kardinalitu N:M. Pokud bych použil klasickou dekompozicí přes pomocnou tabulku, která rozloží asociace na 1:N a 1:M. Vzniklo by mi šest pomocných tabulek. Proto jsem se rozhodl použít jiný způsob dekompozice přes polymorfní asociace \cite{guide_pa} v Ruby on Rails. Výhodou tohoto řešení je redukce počtu pomocných tabulek. Polymorfní asociace zredukoval počet ze šesti na jednu tabulku viz \ref{fig:polymorfni}. V tabulce \ref{tab:people_related} jsou popsány jednotlivé atributy pomocné tabulky \textit{PeopleRelated} s příklady hodnot.
+Po přidání nových entit bylo potřeba na-implementovat asociace mezi novými entitami. V modelu KOSapi je spousta asociací mezi entitami osoba - paralelka a osoba - instance předmětu. V aplikaci jich celkem používám šest. Všechny tyto asociace\footnote{asociace garant, přednášející, vyučující, instruktor a zkoušející.} mají kardinalitu N:M. Pokud bych použil klasickou dekompozicí přes pomocnou tabulku, která rozloží asociace na 1:N a 1:M. Vzniklo by mi šest pomocných tabulek. Proto jsem se rozhodl použít jiný způsob dekompozice přes polymorfní asociace \cite{guide_pa} v Ruby on Rails. Výhodou tohoto řešení je redukce počtu pomocných tabulek. Polymorfní asociace zredukoval počet ze šesti na jednu tabulku viz obrázek \ref{fig:polymorfni}. V tabulce \ref{tab:people_related} jsou popsány jednotlivé atributy pomocné tabulky \textit{PeopleRelated} s příklady hodnot.
 
 \begin{figure}[h]
 \begin{center}
@@ -95,7 +95,7 @@ people\_id & 100 & cizí klíč pro osobu  \\\hline
 
 
 \subsubsection{Hodnotící formuláře}
-Z důvodu možné změny hodnotících formulářů v budoucnosti, jsem vytvořil návrh, který umožní vytvářet nové typy formulářů, nebo upravovat již existující. Formuláře se definují šablonou. Tato šablona definuje základní vlastnosti: minimální, maximální počet vyplnění, název a kdo může formulář vyplnit. Samotný obsah šablony formuláře se skládá z položek. Položky formuláře mohou být hodnotící tabulka, nadpis, hodnocení, text a jiné. Na obrázku \ref{fig:dynamicform} je doménový model dynamický formulářů.
+Z důvodu možné změny hodnotících formulářů v budoucnosti, jsem vytvořil návrh, který umožní vytvářet nové typy formulářů, nebo upravovat již existující. Formuláře se definují šablonou. Tato šablona definuje základní vlastnosti: minimální, maximální počet vyplnění, název a kdo může formulář vyplnit. Samotný obsah šablony formuláře se skládá z položek. Položky formuláře mohou být hodnotící tabulka, nadpis, hodnocení, text a jiné. Na obrázku \ref{fig:dynamicform} je doménový model dynamický formulářů. 
 
 \begin{figure}[h]
 \begin{center}
@@ -105,21 +105,21 @@ Z důvodu možné změny hodnotících formulářů v budoucnosti, jsem vytvoři
 \end{center}
 \end{figure}
 
-Hodnotící formuláře se generují podle šablony formuláře získané z databáze. Šablona je reprezentovaná modelem \textit{FormTemplate}. Obsahuje veškeré informace potřebné pro formulaci chování formuláře. Mezi základní vlastnosti, které definuje šablona, patří název, popis a kód. Kód šablony je velmi důležitá vlastnost, definuje skupinu kam patří formulář. Skupiny formulářů jsou rozděleny podle druhu formuláře a ty popisuji v sekci hodnocení výuky \ref{sec:formulare}. Rozdělení formulářů do skupin s kombinací data vytvoření využívám pro verzování šablon. Šablony musím verzovat, jinak by mi při úpravě nebo smazání existující šablony, mohla nastat ztráta dat z vyplněných formulářů.
+Hodnotící formuláře se generují podle šablony formuláře získané z databáze. Šablona je reprezentovaná modelem \textit{FormTemplate}. Obsahuje veškeré informace potřebné pro formulaci chování formuláře. Mezi základní vlastnosti, které definuje šablona, patří název, popis a kód. Kód šablony je velmi důležitá vlastnost, definuje skupinu kam patří formulář. Skupiny formulářů jsou rozděleny podle druhu formuláře a ty popisuji v sekci hodnocení výuky \ref{sec:formulare}. Rozdělení formulářů do skupin s kombinací data vytvoření využívám pro verzování šablon. Šablony musím verzovat, jinak by mi při úpravě nebo smazání existující šablony, mohla nastat ztráta dat z  dříve vyplněných formulářů.
 
 %Formuláře jsou rozděleny do skupin protože se časem mohou upravovat a nemůžu si dovolit upravit již vytvořenou šablonu. Mohlo by nastat ztráta dat ve vyplněných formulářích, proto se musí vždy vytvořit nová šablona.  
 
-Šablona formuláře definuje také postupné hodnocení. Pro otevření dalšího formuláře se musí splnit několik podmínek:
+Šablona formuláře definuje také postupné hodnocení. Pro otevření dalšího typu formuláře se musí splnit několik podmínek:
 
 \begin{enumerate}
-\item Povinný formulář musí být vyplněn a také musí splnit podmínku pro minimální počet. V jiném případě není potřeba vyplnit žádný formulář.
+\item Povinný formulář musí být vyplněn a také musí splnit podmínku pro minimální počet. V jiném případě není potřeba vyplnit žádný jiný formulář.
 \item Minimální počet lze definovat buď přesným počtem, nebo dynamicky podle asociace. Kde minimální počet mi definuje počet instancí v asociaci. Počet vytvořených formulářů se počítá pouze z jednoho hodnocení hospitace.
 \item Hospitující i hospitovaný může vyplnit maximálně jeden formulář.
 \end{enumerate}
 
-U dynamických formulářů jsem musel také řešit jejich chování pro různé role v systému. Proto jsem přidal do šablony dva atributy s bitovými maskami rolí jedna maska pro role, které mohou zobrazit formuláře, druhá maska pro vyplnění formuláře. Používám stejný způsob rozlišování rolí v bitové masce jako u rolí pro uživatele viz \ref{sec:role}.
+U dynamických formulářů jsem musel také řešit jejich chování pro různé role v systému. Proto jsem přidal do šablony dva atributy s bitovými maskami rolí jedna maska pro role, které mohou zobrazit formulář, druhá maska pro vyplnění formuláře. Používám stejný způsob rozlišování rolí v bitové masce jako u rolí pro uživatele viz \ref{sec:role}.
 
-Obsah formuláře generuji pomocí položek, ty jsou reprezentovány modelem \textit{EntryTemplate}. Položky formuláře definují co se má vykreslit a kde. Umístění jednotlivých položek v dokumentu je definované ve stromové struktuře \ref{fig:tree_form}, kde kořenem stromu je šablona formuláře a ta se postupně větví přes potomky. Co se má vykreslit je definované atributem typu elementu. Seznam podporovaných typů elementů a jejich vlastnosti jsou vypsány v tabulce \ref{tab:elements}. Samotné generování obsahu není složitý proces. Celý formulář se sestaví hierarchicky i s hodnotami z modelu \textit{Entry}.
+Obsah formuláře generuji pomocí položek, ty jsou reprezentovány modelem \textit{EntryTemplate}. Položky formuláře definují co se má vykreslit a kde. Umístění jednotlivých položek v dokumentu je definované ve stromové struktuře, kde kořenem stromu je šablona formuláře a ta se postupně větví přes instance modelu \textit{EntryTemplate}. Co se má vykreslit je definované atributem typ elementu. Na obrázku \ref{fig:tree_form} je zobrazen příklad stromové struktury s typy elementů. Příloha \ref{sec:forms} dokumentu obsahuje  seznam všech podporovaných typů elementů a jejich vlastnosti v tabulce i s obrázkem se sestaveným formulářem s rozložením typů elementů. Samotné generování obsahu není složitý proces. Celý formulář se sestaví hierarchicky i s hodnotami z modelu \textit{Entry}.
 
 \begin{figure}[h]
 \Tree [.FormTemplate [.EntryTemplate\\(ranking\_table) [.EntryTemplate\\(ranking) ][.EntryTemplate\\(ranking) ]] [.EntryTemplate\\(text) ] [.EntryTemplate\\(label) ]]
@@ -128,7 +128,7 @@ Obsah formuláře generuji pomocí položek, ty jsou reprezentovány modelem \te
 \label{fig:tree_form}
 \end{figure}
 
-Nestačí nám pouze vygenerovat formulář, ale potřebujeme i uložit jeho hodnoty do databáze. O to se starají modely \textit{Form} a \textit{Entry}. Model \textit{Form} složí pro identifikaci konkrétního vyplněného formuláře. Jednotlivé hodnoty z vyplněného formuláře jsou uložené v \textit{Entry} \ref{fig:data_form}.
+Nestačí nám pouze vygenerovat formulář, ale potřebujeme i uložit jeho hodnoty do databáze. O to se starají modely \textit{Form} a \textit{Entry}. Model \textit{Form} složí pro identifikaci konkrétního vyplněného formuláře. Jednotlivé hodnoty z vyplněného formuláře jsou uložené v \textit{Entry} viz obrázek \ref{fig:data_form}.
 
 \begin{figure}[h]
 \Tree [.Form [.Entry\\(A) ] [.Entry\\(B) ] [.Entry\\(text) ]]
