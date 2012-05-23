@@ -1,4 +1,4 @@
-\select@language {english}
+\select@language {czech}
 \select@language {czech}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
@@ -19,14 +19,15 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {B.1}{\ignorespaces Use case - nep\IeC {\v r}ihl\IeC {\'a}\IeC {\v s}en\IeC {\'y} u\IeC {\v z}ivatel}}{39}{figure.B.1}
-\contentsline {figure}{\numberline {B.2}{\ignorespaces Use case - p\IeC {\v r}ihl\IeC {\'a}\IeC {\v s}en\IeC {\'y} u\IeC {\v z}ivatel}}{40}{figure.B.2}
-\contentsline {figure}{\numberline {B.3}{\ignorespaces Use case - hospitovan\IeC {\'y}}}{40}{figure.B.3}
-\contentsline {figure}{\numberline {B.4}{\ignorespaces Use case - hospituj\IeC {\'\i }c\IeC {\'\i }}}{41}{figure.B.4}
-\contentsline {figure}{\numberline {B.5}{\ignorespaces Use case - administr\IeC {\'a}tor}}{41}{figure.B.5}
-\contentsline {figure}{\numberline {B.6}{\ignorespaces Use case - administr\IeC {\'a}tor hospitac\IeC {\'\i }}}{42}{figure.B.6}
+\contentsline {figure}{\numberline {B.1}{\ignorespaces Use case - nep\IeC {\v r}ihl\IeC {\'a}\IeC {\v s}en\IeC {\'y} u\IeC {\v z}ivatel}}{41}{figure.B.1}
+\contentsline {figure}{\numberline {B.2}{\ignorespaces Use case - p\IeC {\v r}ihl\IeC {\'a}\IeC {\v s}en\IeC {\'y} u\IeC {\v z}ivatel}}{42}{figure.B.2}
+\contentsline {figure}{\numberline {B.3}{\ignorespaces Use case - hospitovan\IeC {\'y}}}{42}{figure.B.3}
+\contentsline {figure}{\numberline {B.4}{\ignorespaces Use case - hospituj\IeC {\'\i }c\IeC {\'\i }}}{43}{figure.B.4}
+\contentsline {figure}{\numberline {B.5}{\ignorespaces Use case - administr\IeC {\'a}tor}}{43}{figure.B.5}
+\contentsline {figure}{\numberline {B.6}{\ignorespaces Use case - administr\IeC {\'a}tor hospitac\IeC {\'\i }}}{44}{figure.B.6}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {C.1}{\ignorespaces Hodnot\IeC {\'\i }c\IeC {\'\i } formul\IeC {\'a}\IeC {\v r} A}}{44}{figure.C.1}
+\contentsline {figure}{\numberline {C.1}{\ignorespaces Hodnot\IeC {\'\i }c\IeC {\'\i } formul\IeC {\'a}\IeC {\v r} A}}{46}{figure.C.1}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {E.1}{\ignorespaces Obsah CD}}{47}{figure.E.1}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {F.1}{\ignorespaces Obsah CD}}{53}{figure.F.1}

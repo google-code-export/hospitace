@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.4.27)  20 MAY 2012 23:19
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.4.27)  23 MAY 2012 22:58
 entering extended mode
  %&-line parsing enabled.
 **"semestr√°ln√≠ projekt.tex"
@@ -44,15 +44,7 @@ Package babel Warning: No hyphenation patterns were loaded for
 Package babel Info: Making " an active character on input line 172.
 \cs@wordlen=\count89
 Package babel Info: Making - an active character on input line 226.
-) (/usr/share/texmf-texlive/tex/generic/babel/english.ldf
-Language: english 2005/03/30 v3.3o English support from the babel system
-\l@british = a dialect from \language\l@english 
-\l@UKenglish = a dialect from \language\l@english 
-\l@canadian = a dialect from \language\l@american 
-\l@australian = a dialect from \language\l@british 
-\l@newzealand = a dialect from \language\l@british 
-))
-(/usr/share/texmf-texlive/tex/latex/base/fontenc.sty
+)) (/usr/share/texmf-texlive/tex/latex/base/fontenc.sty
 Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 
 (/usr/share/texmf-texlive/tex/latex/base/t1enc.def
@@ -416,12 +408,80 @@ Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 \qroofy=\count96
 \@qrscratchbox=\box50
 )
+(/usr/share/texmf-texlive/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2000/07/18 v2.13 AMS math features
+\@mathmargin=\skip117
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texmf-texlive/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/usr/share/texmf-texlive/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks21
+\ex@=\dimen107
+))
+(/usr/share/texmf-texlive/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen108
+)
+(/usr/share/texmf-texlive/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count97
+LaTeX Info: Redefining \frac on input line 211.
+\uproot@=\count98
+\leftroot@=\count99
+LaTeX Info: Redefining \overline on input line 307.
+\classnum@=\count100
+\DOTSCASE@=\count101
+LaTeX Info: Redefining \ldots on input line 379.
+LaTeX Info: Redefining \dots on input line 382.
+LaTeX Info: Redefining \cdots on input line 467.
+\Mathstrutbox@=\box51
+\strutbox@=\box52
+\big@size=\dimen109
+LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+\macc@depth=\count102
+\c@MaxMatrixCols=\count103
+\dotsspace@=\muskip10
+\c@parentequation=\count104
+\dspbrk@lvl=\count105
+\tag@help=\toks22
+\row@=\count106
+\column@=\count107
+\maxfields@=\count108
+\andhelp@=\toks23
+\eqnshift@=\dimen110
+\alignsep@=\dimen111
+\tagshift@=\dimen112
+\tagwidth@=\dimen113
+\totwidth@=\dimen114
+\lineht@=\dimen115
+\@envbody=\toks24
+\multlinegap=\skip118
+\multlinetaggap=\skip119
+\mathdisplay@stack=\toks25
+LaTeX Info: Redefining \[ on input line 2666.
+LaTeX Info: Redefining \] on input line 2667.
+)
+(/usr/share/texmf-texlive/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2009/06/22 v3.00
+
+(/usr/share/texmf-texlive/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
+))
 (/usr/share/texmf-texlive/tex/latex/graphics/graphicx.sty
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texmf-texlive/tex/latex/graphics/keyval.sty
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
-\KV@toks@=\toks21
+\KV@toks@=\toks26
 )
 (/usr/share/texmf-texlive/tex/latex/graphics/graphics.sty
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
@@ -431,8 +491,8 @@ File: graphics.cfg 2009/08/28 v1.8 graphics configuration of TeX Live
 )
 Package graphics Info: Driver file: pdftex.def on input line 91.
 )
-\Gin@req@height=\dimen107
-\Gin@req@width=\dimen108
+\Gin@req@height=\dimen116
+\Gin@req@width=\dimen117
 )
 (/usr/share/texmf-texlive/tex/latex/tools/indentfirst.sty
 Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
@@ -476,21 +536,21 @@ Package: atbegshi 2008/07/31 v1.9 At begin shipout hook (HO)
 Package: ifpdf 2009/04/10 v2.0 Provides the ifpdf switch (HO)
 Package ifpdf Info: pdfTeX in pdf mode detected.
 ))
-\c@abspage=\count97
+\c@abspage=\count109
 Package zref Info: New property: abspage on input line 49.
 )
-\DT@offset=\dimen109
-\DT@width=\dimen110
-\DT@sep=\dimen111
-\DT@all=\dimen112
-\DT@rulewidth=\dimen113
-\DT@dotwidth=\dimen114
-\DTbaselineskip=\dimen115
-\DT@counti=\count98
-\DT@countii=\count99
-\DT@countiii=\count100
-\DT@countiv=\count101
-\DT@treenum=\count102
+\DT@offset=\dimen118
+\DT@width=\dimen119
+\DT@sep=\dimen120
+\DT@all=\dimen121
+\DT@rulewidth=\dimen122
+\DT@dotwidth=\dimen123
+\DTbaselineskip=\dimen124
+\DT@counti=\count110
+\DT@countii=\count111
+\DT@countiii=\count112
+\DT@countiv=\count113
+\DT@treenum=\count114
 )
 Bakalarska prace
 (/usr/share/texmf-texlive/tex/latex/hyperref/hyperref.sty
@@ -510,9 +570,9 @@ O)
 (/usr/share/texmf-texlive/tex/latex/oberdiek/xcolor-patch.sty
 Package: xcolor-patch 2009/10/02 xcolor patch
 ))
-\@linkdim=\dimen116
-\Hy@linkcounter=\count103
-\Hy@pagecounter=\count104
+\@linkdim=\dimen125
+\Hy@linkcounter=\count115
+\Hy@pagecounter=\count116
 
 (/usr/share/texmf-texlive/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2009/10/09 v6.79a Hyperref: PDFDocEncoding definition (HO)
@@ -548,7 +608,7 @@ Package hyperref Info: Backreferencing OFF on input line 2995.
 Implicit mode ON; LaTeX internals redefined
 Package hyperref Info: Bookmarks ON on input line 3191.
 (/usr/share/texmf-texlive/tex/latex/ltxmisc/url.sty
-\Urlmuskip=\muskip10
+\Urlmuskip=\muskip11
 Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 3428.
@@ -578,10 +638,10 @@ Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 )))
-\Fld@menulength=\count105
-\Field@Width=\dimen117
-\Fld@charsize=\dimen118
-\Field@toks=\toks22
+\Fld@menulength=\count117
+\Field@Width=\dimen126
+\Fld@charsize=\dimen127
+\Field@toks=\toks27
 Package hyperref Info: Hyper figures OFF on input line 4377.
 Package hyperref Info: Link nesting OFF on input line 4382.
 Package hyperref Info: Hyper index ON on input line 4385.
@@ -589,58 +649,58 @@ Package hyperref Info: backreferencing OFF on input line 4392.
 Package hyperref Info: Link coloring ON on input line 4395.
 Package hyperref Info: Link coloring with OCG OFF on input line 4402.
 Package hyperref Info: PDF/A mode OFF on input line 4407.
-\Hy@abspage=\count106
-\c@Item=\count107
-\c@Hfootnote=\count108
+\Hy@abspage=\count118
+\c@Item=\count119
+\c@Hfootnote=\count120
 )
 *hyperref using default driver hpdftex*
 (/usr/share/texmf-texlive/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2009/10/09 v6.79a Hyperref driver for pdfTeX
-\Fld@listcount=\count109
+\Fld@listcount=\count121
 )
 (/usr/share/texmf-texlive/tex/latex/natbib/natbib.sty
 Package: natbib 2009/07/16 8.31 (PWD, AO)
-\bibhang=\skip117
-\bibsep=\skip118
+\bibhang=\skip120
+\bibsep=\skip121
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count110
+\c@NAT@ctr=\count122
 )
 (./semestr√°ln√≠ projekt.aux (./1_uvod.aux) (./2_teorie.aux) (./3_analiza.aux)
 (./3_navrh.aux) (./4_realizace.aux) (./5_testovani.aux) (./6_zaver.aux)
 (./zkratky.aux) (./priloha.aux))
 \openout1 = `"semestr√°ln√≠ projekt.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 136.
-LaTeX Font Info:    ... okay on input line 136.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 136.
-LaTeX Font Info:    ... okay on input line 136.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 136.
-LaTeX Font Info:    ... okay on input line 136.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 136.
-LaTeX Font Info:    ... okay on input line 136.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 136.
-LaTeX Font Info:    ... okay on input line 136.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 136.
-LaTeX Font Info:    ... okay on input line 136.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 136.
-LaTeX Font Info:    ... okay on input line 136.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 136.
-LaTeX Font Info:    ... okay on input line 136.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 139.
+LaTeX Font Info:    ... okay on input line 139.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 139.
+LaTeX Font Info:    ... okay on input line 139.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 139.
+LaTeX Font Info:    ... okay on input line 139.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 139.
+LaTeX Font Info:    ... okay on input line 139.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 139.
+LaTeX Font Info:    ... okay on input line 139.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 139.
+LaTeX Font Info:    ... okay on input line 139.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 139.
+LaTeX Font Info:    ... okay on input line 139.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 139.
+LaTeX Font Info:    ... okay on input line 139.
 
 (/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count111
-\scratchdimen=\dimen119
-\scratchbox=\box51
-\nofMPsegments=\count112
-\nofMParguments=\count113
-\everyMPshowfont=\toks23
-\MPscratchCnt=\count114
-\MPscratchDim=\dimen120
-\MPnumerator=\count115
-\everyMPtoPDFconversion=\toks24
+\scratchcounter=\count123
+\scratchdimen=\dimen128
+\scratchbox=\box53
+\nofMPsegments=\count124
+\nofMParguments=\count125
+\everyMPshowfont=\toks28
+\MPscratchCnt=\count126
+\MPscratchDim=\dimen129
+\MPnumerator=\count127
+\everyMPtoPDFconversion=\toks29
 )
-\AtBeginShipoutBox=\box52
+\AtBeginShipoutBox=\box54
  (/usr/share/texmf-texlive/tex/latex/graphics/color.sty
 Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
 
@@ -649,7 +709,7 @@ File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package color Info: Driver file: pdftex.def on input line 130.
 )
-Package hyperref Info: Link coloring ON on input line 136.
+Package hyperref Info: Link coloring ON on input line 139.
 
 (/usr/share/texmf-texlive/tex/latex/hyperref/nameref.sty
 Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
@@ -657,10 +717,10 @@ Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
 (/usr/share/texmf-texlive/tex/latex/oberdiek/refcount.sty
 Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
 )
-\c@section@level=\count116
+\c@section@level=\count128
 )
-LaTeX Info: Redefining \ref on input line 136.
-LaTeX Info: Redefining \pageref on input line 136.
+LaTeX Info: Redefining \ref on input line 139.
+LaTeX Info: Redefining \pageref on input line 139.
 
 (./semestr√°ln√≠ projekt.out) (./semestr√°ln√≠ projekt.out)
 \@outlinefile=\write3
@@ -684,7 +744,7 @@ Vedouci prace: Ing. Martin Kom\IeC {\'a}rek
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2
 
 ]
-<figures/LogoCVUT.pdf, id=407, 93.34875pt x 70.2625pt>
+<figures/LogoCVUT.pdf, id=415, 93.34875pt x 70.2625pt>
 File: figures/LogoCVUT.pdf Graphic file (type pdf)
 
 <use figures/LogoCVUT.pdf> [3 <./figures/LogoCVUT.pdf>] [4
@@ -699,13 +759,16 @@ File: figures/LogoCVUT.pdf Graphic file (type pdf)
 ] [10
 
 ] (./semestr√°ln√≠ projekt.toc
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 5.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 5.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 5.
- [11] [12])
+LaTeX Font Info:    Try loading font information for U+msa on input line 5.
+
+(/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2009/06/22 v3.00 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 5.
+
+(/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2009/06/22 v3.00 AMS symbols B
+) [11] [12])
 \tf@toc=\write4
 \openout4 = `"semestr√°ln√≠ projekt.toc"'.
 
@@ -730,10 +793,6 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
  (./1_uvod.tex
 Kapitola 1.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 3.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 3.
 ) [1
 
 
@@ -761,7 +820,7 @@ Overfull \hbox (0.73766pt too wide) in paragraph at lines 39--40
 
 ]
 Kapitola 3.
-[7] <figures/Actors.png, id=692, 562.1pt x 345.29pt>
+[7] <figures/Actors.png, id=705, 562.1pt x 345.29pt>
 File: figures/Actors.png Graphic file (type png)
  <use figures/Actors.png>
 [8 <./figures/Actors.png (PNG copy)>] [9]
@@ -773,11 +832,11 @@ File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 74.
 
-<figures/DomainModel2.png, id=721, 753.81625pt x 991.705pt>
+<figures/DomainModel2.png, id=736, 753.81625pt x 991.705pt>
 File: figures/DomainModel2.png Graphic file (type png)
 
 <use figures/DomainModel2.png> [10] [11 <./figures/DomainModel2.png (PNG copy)>
-] <figures/hospitace.png, id=734, 846.16125pt x 433.62pt>
+] <figures/hospitace.png, id=750, 846.16125pt x 433.62pt>
 File: figures/hospitace.png Graphic file (type png)
 
 <use figures/hospitace.png>
@@ -810,17 +869,11 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 ]
 Kapitola 5.
-[21] [22]
-Overfull \hbox (0.60579pt too wide) in paragraph at lines 63--64
-[]\T1/cmr/m/n/10.95 Zad·nÌm druhÈ it-er-ace bylo na-implementovat hod-notÌcÌ fo
-r-mul·∞e hos-pi-tacÌ. Po∫a-davkem
- []
-
-[23] <figures/PeopleRelateds.png, id=867, 530.98375pt x 187.70125pt>
+[21] [22] [23] <figures/PeopleRelateds.png, id=882, 530.98375pt x 187.70125pt>
 File: figures/PeopleRelateds.png Graphic file (type png)
 
 <use figures/PeopleRelateds.png>
-<figures/DynamicForms.png, id=869, 417.56pt x 367.3725pt>
+<figures/DynamicForms.png, id=884, 417.56pt x 367.3725pt>
 File: figures/DynamicForms.png Graphic file (type png)
 
 <use figures/DynamicForms.png>
@@ -835,12 +888,12 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [25 <./figures/DynamicForms.png (PNG copy)>] [26]
-<figures/deployment.png, id=899, 680.5425pt x 371.3875pt>
+<figures/deployment.png, id=915, 680.5425pt x 371.3875pt>
 File: figures/deployment.png Graphic file (type png)
 
 <use figures/deployment.png> [27 <./figures/deployment.png (PNG copy)>]
 [28]
-Overfull \hbox (5.88911pt too wide) in paragraph at lines 229--230
+Overfull \hbox (5.89633pt too wide) in paragraph at lines 230--231
 \T1/cmr/m/n/10.95 a []\T1/cmtt/m/n/10.95 %teacher_username%\T1/cmr/m/n/10.95 . 
 TÌmto zp∑-sobem lze jednodu≤e nadefi-no-vat velkÈ mno∫stvÌ
  []
@@ -857,109 +910,125 @@ Kapitola 6.
 
 
 
-]) [32]
+]
+Overfull \hbox (0.61168pt too wide) in paragraph at lines 37--38
+[]\T1/cmr/m/n/10.95 V p∞Ìloze doku-mentu [][]D[][] jsou pop-s·ny jed-notlivÈ te
+sto-vacÌ p∞Ì-pady pro sys-tÈ-movÈ testov·nÌ.
+ []
+
+[32]) [33]
 \openout2 = `6_zaver.aux'.
 
- (./6_zaver.tex
+ (./6_zaver.tex [34
+
+
+
+]
 Kapitola 7.
-) [33
+[35]) [36] (./semestr√°ln√≠ projekt.bbl [37
 
 
-
-] [34] (./semestr√°ln√≠ projekt.bbl [35
-
-
-]) [36]
+]) [38]
 \openout2 = `zkratky.aux'.
 
  (./zkratky.tex
 P\v {r}\'{\i }loha A.
-) [37
+) [39
 
 
 ]
 \openout2 = `priloha.aux'.
 
- (./priloha.tex [38
+ (./priloha.tex [40
 
 
 
 ]
 P\v {r}\'{\i }loha B.
-<figures/actor_base.png, id=1005, 698.61pt x 314.17375pt>
+<figures/actor_base.png, id=1042, 698.61pt x 314.17375pt>
 File: figures/actor_base.png Graphic file (type png)
 
 <use figures/actor_base.png>
-<figures/actor_logged.png, id=1006, 518.93875pt x 263.98625pt>
+<figures/actor_logged.png, id=1043, 518.93875pt x 263.98625pt>
 File: figures/actor_logged.png Graphic file (type png)
 
 <use figures/actor_logged.png>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [39 <./figures/actor_base.png (PNG copy)>]
-<figures/actor_observed.png, id=1011, 763.85374pt x 361.35pt>
+ [41 <./figures/actor_base.png (PNG copy)>]
+<figures/actor_observed.png, id=1048, 763.85374pt x 361.35pt>
 File: figures/actor_observed.png Graphic file (type png)
 
 <use figures/actor_observed.png>
-<figures/actor_observer.png, id=1012, 773.89125pt x 384.43625pt>
+<figures/actor_observer.png, id=1049, 773.89125pt x 384.43625pt>
 File: figures/actor_observer.png Graphic file (type png)
 
 <use figures/actor_observer.png>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [40 <./figures/actor_logged.png (PNG copy)> <./figures/actor_observed.png (PNG
+ [42 <./figures/actor_logged.png (PNG copy)> <./figures/actor_observed.png (PNG
  copy)>]
-<figures/actor_root.png, id=1017, 532.99126pt x 269.005pt>
+<figures/actor_root.png, id=1054, 532.99126pt x 269.005pt>
 File: figures/actor_root.png Graphic file (type png)
 
 <use figures/actor_root.png>
-<figures/actor_admin.png, id=1018, 791.95876pt x 831.105pt>
+<figures/actor_admin.png, id=1055, 791.95876pt x 831.105pt>
 File: figures/actor_admin.png Graphic file (type png)
 
 <use figures/actor_admin.png>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [41 <./figures/actor_observer.png (PNG copy)> <./figures/actor_root.png (PNG c
+ [43 <./figures/actor_observer.png (PNG copy)> <./figures/actor_root.png (PNG c
 opy)>]
-[42 <./figures/actor_admin.png (PNG copy)>]
+[44 <./figures/actor_admin.png (PNG copy)>]
 P\v {r}\'{\i }loha C.
-<figures/form_A.png, id=1027, 1032.85875pt x 1678.27pt>
+<figures/form_A.png, id=1065, 1032.85875pt x 1678.27pt>
 File: figures/form_A.png Graphic file (type png)
 
 <use figures/form_A.png>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [43
+ [45
 
 ]
 Overfull \vbox (57.24963pt too high) has occurred while \output is active []
 
 
-[44 <./figures/form_A.png (PNG copy)>]
+[46 <./figures/form_A.png (PNG copy)>]
 P\v {r}\'{\i }loha D.
 
-Overfull \hbox (10.45242pt too wide) in paragraph at lines 104--105
+Overfull \hbox (4.95052pt too wide) in paragraph at lines 113--114
+[]\T1/cmr/m/n/10.95 Zobrazil se sez-nam napl·no-van˝ch hos-pi-tacÌ a ob-sahuje 
+v≤echny
+ []
+
+[47
+
+] [48] [49] [50]
+P\v {r}\'{\i }loha E.
+
+Overfull \hbox (10.45242pt too wide) in paragraph at lines 292--293
 []\T1/cmr/m/n/10.95 D·le nain-stalu-jte balÌ£ko-vacÌ sys-tÈm RubyGems a ak-tu-a
 l-izu-jte ho na poslednÌ pod-porovanou
  []
 
-[45
+[51
 
-] [46]
-P\v {r}\'{\i }loha E.
-) [47
+] [52]
+P\v {r}\'{\i }loha F.
+) [53
 
 ] (./semestr√°ln√≠ projekt.aux (./1_uvod.aux) (./2_teorie.aux)
 (./3_analiza.aux) (./3_navrh.aux) (./4_realizace.aux) (./5_testovani.aux)
 (./6_zaver.aux) (./zkratky.aux) (./priloha.aux)) ) 
 Here is how much of TeX's memory you used:
- 7820 strings out of 495061
- 104563 string characters out of 1182621
- 187491 words of memory out of 3000000
- 10504 multiletter control sequences out of 15000+50000
- 19833 words of font info for 43 fonts, out of 3000000 for 9000
+ 8696 strings out of 495061
+ 114111 string characters out of 1182621
+ 202482 words of memory out of 3000000
+ 11331 multiletter control sequences out of 15000+50000
+ 23020 words of font info for 58 fonts, out of 3000000 for 9000
  32 hyphenation exceptions out of 8191
- 38i,10n,38p,1030b,491s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 38i,15n,38p,1030b,496s stack positions out of 5000i,500n,10000p,200000b,50000s
  </home/osman/.texmf-var/font
 s/pk/ljfour/jknappen/ec/ectt1095.600pk> </home/osman/.texmf-var/fonts/pk/ljfour
 /jknappen/ec/ecti1095.600pk> </home/osman/.texmf-var/fonts/pk/ljfour/jknappen/e
@@ -973,10 +1042,11 @@ ur/jknappen/ec/ecbx2074.600pk> </home/osman/.texmf-var/fonts/pk/ljfour/jknappen
 0.600pk> </home/osman/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </
 home/osman/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1095.600pk> </home/osman/
 .texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2488.600pk></usr/share/texmf-texlive
-/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on "semestr√°ln√≠ projekt.pdf" (65 pages, 1043410 bytes).
+/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type
+1/public/amsfonts/symbols/msam10.pfb>
+Output written on "semestr√°ln√≠ projekt.pdf" (71 pages, 1066975 bytes).
 PDF statistics:
- 1825 PDF objects out of 2073 (max. 8388607)
- 268 named destinations out of 1000 (max. 500000)
- 855 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1888 PDF objects out of 2073 (max. 8388607)
+ 282 named destinations out of 1000 (max. 500000)
+ 871 words of extra memory for PDF output out of 10000 (max. 10000000)
 

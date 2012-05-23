@@ -11,6 +11,7 @@ The style file: csplainnat.bst
 A level-1 auxiliary file: zkratky.aux
 A level-1 auxiliary file: priloha.aux
 Database file #1: reference.bib
+Warning--to sort, need author or key in ea
 Warning--to sort, need author or key in rubyonrails
 Warning--to sort, need author or key in ruby
 Warning--to sort, need author or key in vyvy_project
@@ -29,50 +30,51 @@ Warning--to sort, need author or key in willpaginate
 Warning--to sort, need author or key in guide_pa
 Warning--to sort, need author or key in RVM
 Warning--to sort, need author or key in RoR_testing
+Warning--empty year in ea
 `address' is a missing field, not a string, for entry postupy
 while executing---line 1510 of file csplainnat.bst
 `publisher' is a missing field, not a string, for entry postupy
 while executing---line 1510 of file csplainnat.bst
 Warning--empty publisher in postupy
-You've used 26 entries,
+You've used 27 entries,
             2954 wiz_defined-function locations,
-            741 strings with 7791 characters,
-and the built_in function-call counts, 6203 in all, are:
-= -- 877
+            745 strings with 7862 characters,
+and the built_in function-call counts, 6445 in all, are:
+= -- 903
 > -- 79
 < -- 9
-+ -- 50
++ -- 51
 - -- 22
-* -- 477
-:= -- 838
-add.period$ -- 85
-call.type$ -- 26
-change.case$ -- 44
-chr.to.int$ -- 24
-cite$ -- 89
-duplicate$ -- 303
-empty$ -- 451
+* -- 491
+:= -- 860
+add.period$ -- 88
+call.type$ -- 27
+change.case$ -- 45
+chr.to.int$ -- 25
+cite$ -- 94
+duplicate$ -- 317
+empty$ -- 485
 format.name$ -- 36
-if$ -- 1449
+if$ -- 1510
 int.to.chr$ -- 3
 int.to.str$ -- 1
 missing$ -- 74
-newline$ -- 121
+newline$ -- 126
 num.names$ -- 30
-pop$ -- 102
+pop$ -- 115
 preamble$ -- 1
-purify$ -- 35
+purify$ -- 36
 quote$ -- 0
-skip$ -- 266
+skip$ -- 278
 stack$ -- 0
-substring$ -- 70
-swap$ -- 31
+substring$ -- 73
+swap$ -- 32
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 281
-warning$ -- 19
+type$ -- 292
+warning$ -- 21
 while$ -- 19
 width$ -- 0
-write$ -- 290
+write$ -- 301
 (There were 2 error messages)

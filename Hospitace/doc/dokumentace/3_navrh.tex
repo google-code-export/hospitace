@@ -6,7 +6,7 @@ Tato část popisuje jednotlivé technologie a služby potřebné pro implementa
 \subsection{Ruby on Rails}
 Ruby on Rails \cite{rubyonrails}, zkráceně Rails, je jedno z implementačních omezení, které se nachází v zadání práce. Jedná se o moderní framework určený pro vývoj webových aplikací napojených na relační databázi. Framework je napsán ve skriptovacím interpretovaným programovacím jazyku Ruby \cite{ruby}. Rails používá návrhový vzor Model-view-controller viz \ref{mvc}. Mezi základní myšlenky a filozofií frameworku patří dva principy. Prvním principem je Convention over Configuration viz \ref{coc} a druhým je Don’t Repeat Yourself viz \ref{dry}.
 
-\subsubsection{Balíckovací systém RubyGems}
+\subsubsection{Balíčkovací systém RubyGems}
 Protože jsou Rails postaveny na jazyku Ruby lze používat balíčkovací systém RubyGems, kde je velké množství již existujících řešení, které jsou dostupné jako knihovny\footnote{v RubyGems se knihovna nazývá Gem}. 
 
 \subsection{KOSapi}
@@ -17,7 +17,7 @@ Z této služby aplikace čerpá hlavně data předmětů a osob v KOSu. Pro př
 
 \subsection{FELid}
 \label{felid}
-FELid \cite{felid} je globální autentizační a autorizační systém pro webovské aplikace na síti FEL. Poskytuje jednotný a bezpečný způsob přihlášení uživatelů a přenos jejich údajů do různých aplikací na webu. Zároveň podporuje jednorázové přihlášení (tzv. single sign-on). Znamená to, že se uživatel přihlašuje pouze do první použité aplikaci a u dalších aplikací už nemusí zadávat svoje přihlašovací údaje.
+FELid \cite{felid} je globální autentizační a autorizační systém pro webovské aplikace na síti FEL. Poskytuje jednotný a bezpečný způsob přihlášení uživatelů a přenos jejich údajů do různých aplikací na webu. Zároveň podporuje jednorázové přihlášení (tzv. single sign-on). Znamená to, že se uživatel přihlašuje pouze do první použité aplikace a u dalších aplikací už nemusí zadávat svoje přihlašovací údaje.
 
 Tuto službu používám pro autentizaci uživatelů do systému. Pro zprovoznění aplikace FELid je nutné splnit technické požadavky, které jsou vystaveny na oficiálních stránkách \cite{felid_pozadavky}.
 
@@ -35,18 +35,18 @@ V této části popisuji použité architektonické vzory a konvence, které dod
 \label{mvc}
 MVC (Model-view-controller) \cite{mvc} je softwarová architektura, která rozděluje datový model aplikace, uživatelské rozhraní a řídicí logiku do tří nezávislých komponent\footnote{models, views a controllers} tak, že modifikace některé z nich má minimální vliv na ostatní. Tento architektonický vzor obsahuje ve svém jádru Ruby on Rails, proto pro implementaci tohoto vzoru vycházím z fungování frameworku.
 
-\subsubsection{Models}
-Model reprezentuje informace v aplikaci a pravidla pro práci s nimi. V případě Rails jsou modely primárně využívány pro interakci s příslušnou tabulkou v databázi a pro ukládání pravidel této interakce. Ve většině případů odpovídá jedna tabulka v databázi jednomu modelu aplikaci. Modely obsahují většinu aplikační logiky.
+\subsubsection{Model}
+Model reprezentuje informace v aplikaci a pravidla pro práci s nimi. V případě Rails jsou modely primárně využívány pro interakci s příslušnou tabulkou v databázi a pro ukládání pravidel této interakce. Ve většině případů odpovídá jedna tabulka v databázi jednomu modelu aplikace. Modely obsahují většinu aplikační logiky.
 
-\subsubsection{Views}
-Pohledy, neboli views reprezentují uživatelské rozhraní aplikace. V Rails jsou views obvykle HTML soubory s vloženými částmi Ruby kódu, který provádí pouze úkony týkající se prezentace dat. Views mají na starosti poskytování dat webovému prohlížeči nebo jinému nástroji, který zasílá vaší aplikaci požadavky.
+\subsubsection{View}
+Pohledy, neboli views reprezentují uživatelské rozhraní aplikace. V Rails jsou views obvykle HTML soubory s vloženými částmi Ruby kódu, který provádí pouze úkony týkající se prezentace dat. Views mají na starosti poskytování dat webovému prohlížeči, nebo jinému nástroji, který zasílá vaší aplikaci požadavky.
 
-\subsubsection{Controllers}
-Kontrolory fungují jako zprostředkovatel mezi modely a views. V Rails slouží kontrolory k zpracování požadavků které přichází z webového prohlížeče, získávání dat z modelů a k odesílání těchto dat do views, kde budou zobrazeny.
+\subsubsection{Controller}
+Kontrolory fungují jako zprostředkovatel mezi modely a views. V Rails slouží kontrolory k zpracování požadavků, které přicházejí z webového prohlížeče, získávání dat z modelů a k odesílání těchto dat do views, kde budou zobrazeny.
 
 \subsection{DRY}
 \label{dry}
-DRY (Don’t repeat yourself) \cite{dry} je princip vývoje softwaru zaměřený na snížení opakování psaní stejného kódu a tím zvyšuje čitelnost a znovupoužitelnost kódu. To znamená, že informace se nacházejí na jednoznačném místě. Pro příklad Ruby on Rails získává definici atributů pro třídu modelu přímo z databáze.  
+DRY (Don’t repeat yourself) \cite{dry} je princip vývoje softwaru zaměřený na snížení opakování psaní stejného kódu, čímž se zvyšuje čitelnost a znovupoužitelnost kódu. To znamená, že informace se nacházejí na jednoznačném místě. Pro příklad Ruby on Rails získává definici atributů pro třídu modelu přímo z databáze.  
 
 \subsection{CoC}
 \label{coc}
@@ -94,7 +94,7 @@ DELETE /observations/1
 \end{quote}
 
 \section{Struktura aplikace}
-V této sekci popíšu základní strukturu aplikace. Struktura aplikace je vygenerovaná pomocí generátor v Ruby on Rails. Proto nepopíšu celou strukturu, ale pouze části aplikace, které jsou nejdůležitější pro její vývoj. Na obrázku \ref{tree:hospitace} je popsaná strukturu nejdůležitějších složek a k nim popis obsahu.
+V této sekci popíši základní strukturu aplikace. Struktura aplikace je vygenerovaná pomocí generátoru v Ruby on Rails. Proto nepopíši celou strukturu, ale pouze části aplikace, které jsou nejdůležitější pro její vývoj. Na obrázku \ref{tree:hospitace} je popsána struktura nejdůležitějších složek a popis jejich obsahu.
 
 \begin{figure}[h]
 	\dirtree{%

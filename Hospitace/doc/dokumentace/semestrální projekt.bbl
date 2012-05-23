@@ -1,4 +1,4 @@
-\begin{thebibliography}{26}
+\begin{thebibliography}{27}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -39,6 +39,11 @@
   9.2.2012. [cit.~2012-03-05].
 \newblock Dostupn{\'{e}} z:
   \url{http://en.wikipedia.org/wiki/Don't_repeat_yourself}.
+
+\bibitem[ea()]{ea}
+Analíza aplikace v programu Enterprise Architect.
+\newblock [CD].
+\newblock Dostupn{\'{e}} z: \url{EA/hospitace.ear}.
 
 \bibitem[fel()]{felid}
 \emph{O systému FELid} [online]. [cit.~2012-02-15].
