@@ -65,9 +65,9 @@ text & text & formulář pro psaní textů \\\hline
 text/file & text & formulář pro psaní textů s možností \\ & &  nahrání souboru s naskenovaným formulářem \\\hline
 ranking\_table &  & tabulka pro hodnocení, může obsahovat několik \\ & & elementů typu \textit{ranking} \\\hline
 column\_table & & tabulka do které se vkládají jiné elementy \\ & &  po sloupcích \\\hline
-ranking & [A,B,C,D,E,F] & vstupní element pro zadávaní známkování  \\ & &   od A do F \\\hline
+ranking & [A,B,C,D,E,F] & vstupní element pro zadávání známek \\ & &   od A do F \\\hline
 ranking\_scale & & tabulka s hodnotící stupnicí \\\hline
-note & text & vstupní element pro napsání textové poznámky \\\hline
+note & text & vstupní element pro zápis textové poznámky \\\hline
 
 \end{tabular}
 \caption{Seznam podporovaných typů elementů}
@@ -83,9 +83,197 @@ note & text & vstupní element pro napsání textové poznámky \\\hline
 \end{center}
 \end{figure}
 
+\chapter{Test Cases}
+\label{test}
+\begin{description}
+\item[Test Case ID:] 1
+\begin{description}
+\item[Co:] Přihlášení uživatele do systému.
+\item[Role:] Nepřihlášený uživatel
+\item[Požadavky:] Musí být zprovozněna služba FELid.
+\item[Očekávaný výsledek:] Uživatel je přihlášený.
+\end{description}
+\end{description}
+
+\begin{description}
+\item[Test Case ID:] 2
+\begin{description}
+\item[Co:] Odhlášení uživatele ze systému.
+\item[Role:] Přihlášený uživatel
+\item[Požadavky:] Musí být zprovozněna služba FELid.
+\item[Očekávaný výsledek:] Uživatel není přihlášený.
+\end{description}
+\end{description}
+
+\begin{description}
+\item[Test Case ID:] 3
+\begin{description}
+\item[Co:] Seznam naplánovaných hospitací.
+\item[Role:] Všechny
+\item[Očekávaný výsledek:] Zobrazil se seznam naplánovaných hospitací a obsahuje všechny hospitace typu ohlášená a plovoucí.
+\end{description}
+\end{description}
+
+\begin{description}
+\item[Test Case ID:] 4
+\begin{description}
+\item[Co:] Seznam hodnocení s filtrováním dle: předmětu, učitele, garanta a semestru.
+\item[Role:] Všechny
+\item[Požadavky:] Existují hodnocené hospitace.
+\item[Očekávaný výsledek:] Zobrazil se seznam a lze v něm filtrovat záznamy. 
+\end{description}
+\end{description}
+
+\begin{description}
+\item[Test Case ID:] 5
+\begin{description}
+\item[Co:] Přístup k formuláři Závěrečné hodnocení hospitace.
+\item[Role:] Všechny
+\item[Požadavky:] Existuje ukončená hospitace.
+\item[Očekávaný výsledek:] Zobrazil se formulář. 
+\end{description}
+\end{description}
+
+\begin{description}
+\item[Test Case ID:] 6
+\begin{description}
+\item[Co:] Seznam hospituji.
+\item[Role:] Hospitující
+\item[Očekávaný výsledek:] Zobrazil se seznam a jsou v něm všechny hospitace, které uživatel hospituje v daném semestru.
+\end{description}
+\end{description}
+
+\begin{description}
+\item[Test Case ID:] 7
+\begin{description}
+\item[Co:] Zahájení hodnocení hospitace.
+\item[Role:] Hospitující a administrátor hospitací
+\item[Požadavky:] Naplánovaná hospitace
+\item[Očekávaný výsledek:] Bylo úspěšně zahájeno hodnocení.
+\end{description}
+\end{description}
+
+\begin{description}
+\item[Test Case ID:] 8
+\begin{description}
+\item[Co:] Vyplnit hodnotící formulář A
+\item[Role:] Hospitující
+\item[Požadavky:] Zahájené hodnocení hospitace
+\item[Očekávaný výsledek:] Hodnotící formulář byl úspěšně uložen.
+\end{description}
+\end{description}
+
+\begin{description}
+\item[Test Case ID:] 9
+\begin{description}
+\item[Co:] Nahrát přílohu k hodnotícímu formuláři A
+\item[Role:] Hospitující
+\item[Požadavky:] Vyplněný formulář A
+\item[Očekávaný výsledek:] Příloha je uložená a lze ji stáhnout.
+\end{description}
+\end{description}
+
+\begin{description}
+\item[Test Case ID:] 10
+\begin{description}
+\item[Co:] Vyplnit hodnotící formulář B
+\item[Role:] Hospitující
+\item[Požadavky:] Zahájené hodnocení hospitace, vyplněné všechny formuláře A
+\item[Očekávaný výsledek:] Hodnotící formulář byl úspěšně uložen.
+\end{description}
+\end{description}
+
+\begin{description}
+\item[Test Case ID:] 11
+\begin{description}
+\item[Co:] Vyplnit hodnotící formulář C
+\item[Role:] Hospitovaný
+\item[Požadavky:] Zahájené hodnocení hospitace, vyplněný formulář B
+\item[Očekávaný výsledek:] Hodnotící formulář byl úspěšně uložen.
+\end{description}
+\end{description}
+
+\begin{description}
+\item[Test Case ID:] 12
+\begin{description}
+\item[Co:] Vyplnit hodnotící formulář D
+\item[Role:] Hospitující
+\item[Požadavky:] Zahájené hodnocení hospitace, vyplněný formulář B
+\item[Očekávaný výsledek:] Hodnotící formulář byl úspěšně uložen a hospitace je ve stavu ukončená.
+\end{description}
+\end{description}
+
+\begin{description}
+\item[Test Case ID:] 13
+\begin{description}
+\item[Co:] Odesílání emailů po uložení hodnotícího formuláře.
+\item[Role:] Systém
+\item[Požadavky:] Existuje emailová šablona pro druh hodnotícího formuláře.
+\item[Očekávaný výsledek:] Email byl správně sestavený a doručený do emailové schránky.
+\end{description}
+\end{description}
+
+\begin{description}
+\item[Test Case ID:] 14
+\begin{description}
+\item[Co:] Seznam hospitován.
+\item[Role:] Hospitovaný
+\item[Očekávaný výsledek:] V seznamu jsou všechny hospitace, které mají zahájené hodnocení a uživatel je s nimi ve vztahu hospitovaný.
+\end{description}
+\end{description}
+
+\begin{description}
+\item[Test Case ID:] 15
+\begin{description}
+\item[Co:] Vytvořit hospitaci
+\item[Role:] Administrátor hospitací
+\item[Očekávaný výsledek:] Hospitace byla uložena.
+\end{description}
+\end{description}
+
+\begin{description}
+\item[Test Case ID:] 16
+\begin{description}
+\item[Co:] Přiřadit hospitujícího k hospitaci
+\item[Role:] Administrátor hospitací
+\item[Požadavky:] Existuje vytvořená hospitace, kterou uživatel spravuje.
+\item[Očekávaný výsledek:] K hospitaci byl úspěšně přiřazen hospitující.
+\end{description}
+\end{description}
+
+\begin{description}
+\item[Test Case ID:] 17
+\begin{description}
+\item[Co:] Naplánovat hospitaci
+\item[Role:] Administrátor hospitací
+\item[Požadavky:] Existuje vytvořená hospitace, kterou uživatel spravuje.
+\item[Očekávaný výsledek:] Hospitace je ve stavu naplánovaná.
+\end{description}
+\end{description}
+
+\begin{description}
+\item[Test Case ID:] 18
+\begin{description}
+\item[Co:] Napsat poznámku k hospitaci
+\item[Role:] Administrátor hospitací
+\item[Požadavky:] Existuje vytvořená hospitace, kterou uživatel spravuje.
+\item[Očekávaný výsledek:] Poznámka byla vytvořena a lze ji zobrazit.
+\end{description}
+\end{description}
+
+\begin{description}
+\item[Test Case ID:] 19
+\begin{description}
+\item[Co:] Přiřadit roli osobě
+\item[Role:] Administrátor
+\item[Očekávaný výsledek:] Osobě byla úspěšně přiřazena role.
+\end{description}
+\end{description}
+
+
 %*****************************************************************************
 \chapter{Instalační a uživatelská příručka}
-Instalační příručka je napsaná pro zprovoznění aplikace v prostředí development. Návod je určený pro operační systém Ubuntu 11.10. Pro zprovoznění aplikace je potřeba nainstalovat tyto programy:
+Instalační příručka je napsaná pro zprovoznění aplikace v prostředí development. Návod je určený pro operační systém Ubuntu 11.10. Pro zprovoznění aplikace musíme nainstalovat tyto programy:
 \begin{itemize}
 \item Ruby 1.9.3
 \item RubyGems 1.8.13
@@ -95,7 +283,7 @@ Instalační příručka je napsaná pro zprovoznění aplikace v prostředí de
 \end{itemize}
 
 \section{Instalace}
-Nejprve je potřeba nainstalovat platformu Ruby do systému. S ruby je potřeba nainstalovat i balík build-essential a git-core kvůli  knihovnám, které jsou potřeba pro zprovoznění aplikace. 
+Nejprve je potřeba nainstalovat platformu Ruby do systému. S ruby nainstalujte i balík build-essential a git-core kvůli  knihovnám, které jsou potřeba pro zprovoznění aplikace. 
 
 \begin{verbatim}
 sudo apt-get install ruby1.9.3-full build-essential git-core
@@ -113,7 +301,7 @@ V poslední fázi je potřeba nainstalovat Ruby on Rails pomocí balíčkovacíh
 sudo gem install rails
 \end{verbatim}
 
-Po nainstalovaní Ruby on Rails je potřeba doinstalovat všech závislostí aplikace. Nejprve je potřeba někam do systémů zkopírovat aplikaci např. do domovského adresáře. Ve všech dalších krocích se budeme pohybovat v adresáři aplikace. Druhý příkaz slouží k instalaci závislostí aplikace.
+Po nainstalování Ruby on Rails je potřeba doinstalovat všech závislosti aplikace. Nejprve musíme někam do systému zkopírovat aplikaci např. do domovského adresáře. Ve všech dalších krocích se budeme pohybovat v adresáři aplikace. Druhý příkaz slouží k instalaci závislostí aplikace.
 
 \begin{verbatim}
 cd ~/Hospitace
@@ -128,7 +316,7 @@ rake db:create
 rake db:migrate
 \end{verbatim}  
 
-Máme vytvořenu databázi, ale je ji potřeba naplnit daty z KOSapi. Pro tento účel slouží příkaz:
+Máme vytvořenu databázi, je nutné ji naplnit naplnit daty z KOSapi. Pro tento účel slouží příkaz:
 
 \begin{verbatim}
 rake import
@@ -147,16 +335,18 @@ rails server
 \begin{figure}[h]
 	\dirtree{%
 		.1 /.
-		.2 readme.txt\DTcomment{stručný popis obsahu CD}.
-		.2 src/\DTcomment{zdrojové kódy aplikace}.
+		.2 EA/.
+		.3 hospitace.ear\DTcomment{analýza aplikace v programu Enterprise Architect}.
 		.2 prototyp/\DTcomment{prototyp aplikace}.
 		.3 src/\DTcomment{zdrojové kódy prototypu}.
 		.3 BP.pdf\DTcomment{text prototypu ve formátu PDF}.
+		.2 src/\DTcomment{zdrojové kódy aplikace}.
+		.2 text/.
+		.3 thesis.pdf\DTcomment{text práce ve formátu PDF}.
 		.2 thesis/\DTcomment{zdrojová forma práce ve formátu
 \LaTeX{}}.
  		.3 figures/\DTcomment{obrázky pro text práce}.
-		.2 text/\DTcomment{zdrojová forma práce ve formátu}.
-		.3 thesis.pdf\DTcomment{text práce ve formátu PDF}.
+		.2 readme.txt\DTcomment{stručný popis obsahu CD}.
 	}
 	\caption{Obsah CD}
 \label{tree:obsah_cd}

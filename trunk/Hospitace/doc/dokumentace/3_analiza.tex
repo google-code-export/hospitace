@@ -2,7 +2,7 @@
 Tato kapitola pojednává o analýze aplikace. Výstupem této části jsou funkční, obecné požadavky, doménový model, aktéři a k nim případy užití.
 
 \section{Požadavky}
-Požadavky na systém se dělí na dvě sekce: obecné a funkční požadavky. Požadavky na systém jsem převzal z prototypu aplikace \citep{prototyp_documentace} a rozšířil jsem je o rozšířující specifikace zadavatele. Tyto požadavky mi definují návrh aplikace a technologie potřebné pro implementaci systému.
+Požadavky na systém se dělí na dvě sekce: obecné a funkční požadavky. Požadavky na systém jsem převzal z prototypu aplikace \citep{prototyp_documentace} a rozšířil jsem je o rozšiřující specifikace zadavatele. Tyto požadavky mi definují návrh aplikace a technologie potřebné pro implementaci systému.
 
 \subsection{Obecné požadavky}
 Obecné požadavky se netýkají funkčnosti, ale celkového návrhu a použitých technologií.
@@ -33,10 +33,10 @@ Tato sekce se zabývá požadavky na funkčnost systému.
 \end{enumerate}
 
 \section{Uživatelské role}
-V systému je celkem 7 uživatelských rolí. Definoval jsem čtyři základní uživatelské role, které jsou základem systému: nepřihlášený uživatel, přihlášený uživatel, administrátor hospitací a administrátor. Další dvě role hospitovaný a hospitující se přidělují v rámci konkrétních hospitací. Na obrázku \ref{fig:actors} jsou vidět jednotlivý aktéři a jejich zobecnění. V další části této sekce rozeberu jednotlivé role a k nim případy užití. Případy užití jsou obsaženy v příloze \ref{use_cases} tohoto dokumentu.
+V systému je celkem 7 uživatelských rolí. Definoval jsem čtyři základní uživatelské role, které jsou základem systému: nepřihlášený uživatel, přihlášený uživatel, administrátor hospitací a administrátor. Další dvě role hospitovaný a hospitující se přidělují v rámci konkrétních hospitací. Na obrázku \ref{fig:actors} jsou jednotliví aktéři a jejich zobecnění. V další části této sekce rozeberu jednotlivé role a k nim případy užití, ty jsem rozšířil z prototypu aplikace \citep{prototyp_documentace}. Případy užití jsou obsaženy v příloze \ref{use_cases} tohoto dokumentu. 
 
 \paragraph*{Use cases}
-neboli případy užití je nástroj pro popsání chování jak by systém měl spolupracovat s koncovým uživatelem. Popisuje všechny způsoby jak uživatel komunikuje se systémem.
+neboli případy užití je nástroj pro popsání chování, jak by měl systém spolupracovat s koncovým uživatelem. Popisuje všechny způsoby, jak uživatel komunikuje se systémem.
 
 \begin{figure}[H]
 \begin{center}
@@ -66,10 +66,10 @@ Administrátor je super uživatel, který má nejvyšší pravomoc v systému. M
 
 \newpage 
 \section{Doménový model}
-Doménový model na obrázku \ref{fig:domainmodel} reprezentuje entity v systému a jejich vzájemné vztahy. Popis jednotlivých domény jsem pro přehlednost rozdělil podle zdroje na dvě základní skupiny. V první skupině jsou domény, které jsem převzal z RESTful rozhraní KOSapi\footnote{viz. \ref{kosapi}} a druhou skupinou jsou domény specifické pro moji aplikaci. 
+Doménový model na obrázku \ref{fig:domainmodel} reprezentuje entity v systému a jejich vzájemné vztahy. Doménový model z prototypu \citep{prototyp_documentace} jsem musel předělat, protože v něm byla spousta návrhových chyb a byl nedostatečný. Popis jednotlivých entit jsem pro přehlednost rozdělil podle zdroje na dvě základní skupiny. V první skupině jsou entity, které jsem převzal z RESTful rozhraní KOSapi\footnote{viz. \ref{kosapi}} a druhou skupinou jsou entity specifické pro moji aplikaci. Detailní popis jednotlivých entit s doménovým modelem je k dispozici v elektronické příloze \cite{ea}.
 
 \label{sec:domeny_kosapi} 
-\subsection{Domény v KOSapi}
+\subsection{Entity v KOSapi}
 \begin{itemize}
 \item Person - je osoba v KOSu. Každá osoba může být učitelem a studentem.
 \item Semester - semestr vyučovaný na FEL. 
@@ -79,12 +79,12 @@ Doménový model na obrázku \ref{fig:domainmodel} reprezentuje entity v systém
 \item Room - místnost na FEL.
 \end{itemize}
 
-\subsection{Domény aplikace}
+\subsection{Entity aplikace}
 \begin{itemize}
 \item Observation - je hospitace. Obsahuje informace o naplánování hospitace. 
 \item Note - je textová poznámka k plánování hospitace.
 \item Evaluation - reprezentuje informace pro hodnocení z proběhlé hospitace hospitace, jsou to informace o datu vykonání hospitace, hospitujícím, předmětu a garantovi.
-\item Attachment - je příloha s datový soubor k hodnocení hospitace.
+\item Attachment - je příloha s s datovým souborem k hodnocení hospitace.
 \item FormTemplate - šablona pro tvorbu formulářů. Definuje vlastnosti jakým se budou vytvářet hodnotící formuláře.
 \item EntryTemplate - položka reprezentuje jednotlivé segmenty formuláře. Tyto segmenty pak v celku definují strukturu formuláře.
 \item Form - vyplněný hodnotící formulář.
@@ -116,10 +116,10 @@ Po vykonání kontrolní návštěvy začíná nová fáze hodnocení vyučován
 \begin{enumerate}
 \item Hospitující musí vyplnit, nebo nahrát naskenovaný formulář Hodnocení výuky při hospitaci. Tento formulář slouží k dokumentaci průběhu hospitace.
 \item Jeden z hospitujících sepíše Slovní hodnocení hospitační návštěvy.
-\item Pokud hospitovaný se chce vyjádřit k hospitaci, může vyplnit formulář Stanovisko hodnoceného k názorům hospitujícího.
+\item Pokud se chce hospitovaný vyjádřit k hospitaci, může vyplnit formulář Stanovisko hodnoceného k názorům hospitujícího.
 \item Jeden z hospitujících sepíše formulář Závěrečné shrnutí.
 \end{enumerate}
- 
+
 \subsection{Ukončená}
 Po vyplnění posledního formuláře Závěrečné shrnutí je hospitace ve stavu ukončená a tím končí i její životní cyklus.
 
